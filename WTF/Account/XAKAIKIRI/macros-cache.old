@@ -1,0 +1,58 @@
+VER 3 0000000000000019 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/use Horde Battle Standard
+END
+VER 3 0000000000000016 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [noflyable] Vicious War Spider
+/cast [flyable] Enchanted Fey Dragon
+END
+VER 3 000000000000001C " " "INV_MISC_QUESTIONMARK"
+#showtooltip Alter Time
+/cancelaura Alter Time
+END
+VER 3 0000000000000011 " " "136071"
+#showtooltip
+/petpassive
+/cast Polymorph
+END
+VER 3 000000000000001F " " "575588"
+/target [@party1]
+END
+VER 3 000000000000001E " " "575587"
+/target [@player]
+END
+VER 3 0000000000000020 " " "575589"
+/target [@party2]
+END
+VER 3 0000000000000021 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/use 13
+END
+VER 3 0000000000000023 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/use 14
+END
+VER 3 0000000000000024 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@focus] Hammer of Justice
+END
+VER 3 0000000000000014 "  Target Arena2" "2399245"
+/target arena2
+END
+VER 3 0000000000000015 "  Target Arena3" "2399243"
+/target arena3
+END
+VER 3 0000000000000022 " Annoying Prompt" "INV_MISC_QUESTIONMARK"
+/click StaticPopup1Button1
+END
+VER 3 0000000000000017 " tar focus" "132212"
+/target focus
+END
+VER 3 000000000000001D " Tar TC Tar" "969782"
+/tar [exists] Sharuke
+/tar targettarget
+END
+VER 3 0000000000000013 " Target Arena1" "2399244"
+/target arena1
+END

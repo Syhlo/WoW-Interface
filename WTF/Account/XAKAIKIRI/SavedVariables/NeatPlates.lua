@@ -1,0 +1,6 @@
+
+NeatPlatesSettings = {
+	["DefaultProfile"] = "Default",
+	["GlobalAdditonalAuras"] = {
+	},
+}

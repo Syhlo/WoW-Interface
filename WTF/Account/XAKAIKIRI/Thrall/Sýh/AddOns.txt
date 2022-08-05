@@ -1,0 +1,7 @@
+Spy: disabled
+OmniBar: disabled
+WeakAurasCompanion: enabled
+WeakAurasArchive: enabled
+Bagnon_GuildBank: disabled
+Ace3: disabled
+WorldQuestTracker: disabled

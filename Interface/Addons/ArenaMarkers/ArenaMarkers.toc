@@ -1,0 +1,8 @@
+## Interface: 90001
+## Title: |cFF34EBE5ArenaMarkers|r - v1.0.0-beta
+## Notes: Automatically adds target markers to your arena party.
+## Version: 1.0.0-beta
+## Author: Syh
+## DefaultState: enabled
+
+ArenaMarkers.lua

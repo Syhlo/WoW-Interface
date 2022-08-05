@@ -1,0 +1,61 @@
+VER 3 0100000000000004 " " "INV_Misc_QuestionMark"
+#showtooltip Spiritwalker's Grace
+/cast Spiritwalker's Grace
+/stopcasting
+END
+VER 3 0100000000000005 " " "INV_Misc_QuestionMark"
+#showtooltip
+/cast [@mouseover,exists,help] Cleanse Spirit; Cleanse Spirit
+END
+VER 3 0100000000000001 " " "Ability_Druid_FlightForm"
+/use [flyable] Black Drake
+/use [swimming] Abyssal Seahorse
+/use [noflyable] Black War Bear
+/script VehicleExit()
+/dismount [mounted]
+END
+VER 3 0100000000000006 " " "INV_Misc_QuestionMark"
+#showtooltip
+/cast [@arena1,exists] Purge; Purge
+END
+VER 3 0100000000000007 " " "INV_Misc_QuestionMark"
+#showtooltip
+/cast [@arena2,exists] Purge; Purge
+END
+VER 3 0100000000000002 " " "INV_Misc_QuestionMark"
+#showtooltip
+/stopcasting
+/cast Wind Shear
+END
+VER 3 0100000000000003 " " "INV_Misc_QuestionMark"
+#showtooltip
+/cast [help,nodead][@player]Unleash Elements 
+END
+VER 3 0100000000000008 " " "INV_Misc_QuestionMark"
+#showtooltip
+/cast [@arena3,exists] Purge; Purge
+END
+VER 3 010000000000000A " " "INV_Misc_QuestionMark"
+#showtooltip
+/cast [@arena2,exists] Wind Shear; Wind Shear
+END
+VER 3 010000000000000B " " "INV_Misc_QuestionMark"
+#showtooltip
+/cast [@arena3,exists] Wind Shear; Wind Shear
+END
+VER 3 010000000000000C " " "INV_Misc_QuestionMark"
+#showtooltip
+/cast [@arena1,exists] Hex; Hex
+END
+VER 3 010000000000000D " " "INV_Misc_QuestionMark"
+#showtooltip
+/cast [@arena2,exists] Hex; Hex
+END
+VER 3 010000000000000E " " "INV_Misc_QuestionMark"
+#showtooltip
+/cast [@arena3,exists] Hex; Hex
+END
+VER 3 010000000000000F " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@arena1,exists] Wind Shear; Wind Shear
+END

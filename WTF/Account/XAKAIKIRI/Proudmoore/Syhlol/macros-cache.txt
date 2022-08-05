@@ -1,0 +1,4 @@
+VER 3 0100000000000006 "ZGVMacro4" "0"
+/target Guthrum Thunderfist
+/run ZGV:MRM():CG(1,4)
+END

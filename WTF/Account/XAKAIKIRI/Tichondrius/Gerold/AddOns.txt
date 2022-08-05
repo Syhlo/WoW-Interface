@@ -1,0 +1,7 @@
+TradeSkillMaster: enabled
+WeakAurasCompanion: enabled
+WeakAurasArchive: enabled
+Spy: disabled
+Blizzard_CompactRaidFrames: enabled
+Blizzard_CUFProfiles: enabled
+ArenaMarkers: enabled

@@ -1,0 +1,9 @@
+TradeSkillMaster: enabled
+WeakAurasCompanion: enabled
+WeakAurasArchive: enabled
+Spy: disabled
+Blizzard_CompactRaidFrames: disabled
+Blizzard_CUFProfiles: disabled
+WorldQuestTracker: disabled
+Capping_Options: enabled
+SortGroup: disabled

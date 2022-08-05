@@ -1,0 +1,10 @@
+# Ignore Everything
+*
+
+# Except directories
+!*/
+
+# Whitelist
+!.gitignore
+!Interface/**
+!WTF/**

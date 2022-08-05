@@ -1,0 +1,4 @@
+VER 3 010000000000002C "ZGVMacro1" "0"
+/target Blackrock Battle Worgs
+/run ZGV:MRM():CG(2,1)
+END

@@ -1,0 +1,161 @@
+
+ChatterDB = {
+	["namespaces"] = {
+		["PlayerNames"] = {
+		},
+		["ChannelNames"] = {
+		},
+		["Scrollback"] = {
+		},
+		["Invite Links"] = {
+			["profiles"] = {
+				["Default"] = {
+					["words"] = {
+						["inv"] = "inv",
+						["invite"] = "invite",
+					},
+				},
+			},
+		},
+		["ChannelColors"] = {
+			["profiles"] = {
+				["Default"] = {
+					["colors"] = {
+						["Officer"] = {
+							["r"] = 0.250980406999588,
+							["g"] = 0.7529412508010864,
+							["b"] = 0.250980406999588,
+						},
+						["Trade"] = {
+							["b"] = 0.7529412508010864,
+							["g"] = 0.7529412508010864,
+							["r"] = 1,
+						},
+						["Party Leader"] = {
+							["r"] = 0.4627451300621033,
+							["g"] = 0.7843137979507446,
+							["b"] = 1,
+						},
+						["Instance Leader"] = {
+							["r"] = 1,
+							["g"] = 0.2823529541492462,
+							["b"] = 0.03529411926865578,
+						},
+						["Instance"] = {
+							["r"] = 1,
+							["g"] = 0.4980392456054688,
+							["b"] = 0,
+						},
+						["Raid Leader"] = {
+							["r"] = 1,
+							["g"] = 0.2823529541492462,
+							["b"] = 0.03529411926865578,
+						},
+						["General"] = {
+							["b"] = 0.7529412508010864,
+							["g"] = 0.7529412508010864,
+							["r"] = 1,
+						},
+						["Yell"] = {
+							["r"] = 1,
+							["g"] = 0.250980406999588,
+							["b"] = 0.250980406999588,
+						},
+						["LocalDefense"] = {
+							["b"] = 0.7529412508010864,
+							["g"] = 0.7529412508010864,
+							["r"] = 1,
+						},
+						["Party"] = {
+							["r"] = 0.6666666865348816,
+							["g"] = 0.6666666865348816,
+							["b"] = 1,
+						},
+						["Whisper"] = {
+							["r"] = 1,
+							["g"] = 0.501960813999176,
+							["b"] = 1,
+						},
+						["Say"] = {
+							["r"] = 1,
+							["g"] = 1,
+							["b"] = 1,
+						},
+						["Guild"] = {
+							["r"] = 0.250980406999588,
+							["g"] = 1,
+							["b"] = 0.250980406999588,
+						},
+						["Raid"] = {
+							["r"] = 1,
+							["g"] = 0.4980392456054688,
+							["b"] = 0,
+						},
+						["Real ID Whisper"] = {
+							["r"] = 0,
+							["g"] = 1,
+							["b"] = 0.9647059440612793,
+						},
+						["Raid Warning"] = {
+							["r"] = 1,
+							["g"] = 0.2823529541492462,
+							["b"] = 0,
+						},
+					},
+				},
+			},
+		},
+		["StickyChannels"] = {
+		},
+		["ChatFrameBorders"] = {
+		},
+		["Buttons"] = {
+		},
+		["Server Positioning"] = {
+		},
+		["Timestamps"] = {
+		},
+		["EditBox"] = {
+		},
+		["Mousewheel Scroll"] = {
+		},
+		["ChatTabs"] = {
+		},
+		["ChatFont"] = {
+		},
+		["CopyChat"] = {
+		},
+		["UrlCopy"] = {
+		},
+		["Editbox History"] = {
+			["realm"] = {
+				["Tichondrius"] = {
+					["history"] = {
+						"/details hide", -- [1]
+						"/gladius hide", -- [2]
+						"/gladius lock", -- [3]
+						"/gladius hide", -- [4]
+						"/details", -- [5]
+						"/details options", -- [6]
+						"/details hide", -- [7]
+						"/ob", -- [8]
+						"/att", -- [9]
+					},
+				},
+			},
+		},
+		["Highlight"] = {
+		},
+		["JustifyText"] = {
+		},
+	},
+	["profileKeys"] = {
+		["Asdfsadfasdf - Blood Furnace"] = "Default",
+		["Asdfasfdsafs - Tichondrius"] = "Default",
+	},
+	["profiles"] = {
+		["Default"] = {
+			["welcomeMessaged"] = true,
+		},
+	},
+}

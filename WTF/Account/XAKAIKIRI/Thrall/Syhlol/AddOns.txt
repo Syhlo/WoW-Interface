@@ -1,0 +1,10 @@
+Spy: disabled
+Ace3: enabled
+TomTom: enabled
+OmniBar: disabled
+AuctionatorMiniFeatures: disabled
+WeakAurasCompanion: enabled
+WeakAurasArchive: enabled
+Bagnon_GuildBank: disabled
+Capping_Options: enabled
+Favorites: disabled

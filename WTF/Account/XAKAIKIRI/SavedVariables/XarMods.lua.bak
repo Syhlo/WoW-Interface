@@ -1,0 +1,13 @@
+
+XarModsDB = {
+	["profileKeys"] = {
+		["Syhlol - Thrall"] = "Default",
+	},
+	["profiles"] = {
+		["Default"] = {
+			["UnitFrames"] = {
+				["combatIndicator"] = true,
+			},
+		},
+	},
+}

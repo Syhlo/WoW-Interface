@@ -1,0 +1,86 @@
+VER 3 0100000000000001 " " "INV_MISC_QUESTIONMARK"
+#showtooltip sap
+/cleartarget
+/targetenemyplayer
+/cast sap
+END
+VER 3 0100000000000002 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@focus, exists] [] Blind
+END
+VER 3 0100000000000005 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@focus, exists] [] Kick
+END
+VER 3 0100000000000008 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@arena1, exists, noraid] [] Shadowstep
+/target arena1
+END
+VER 3 0100000000000009 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@arena2, exists, noraid] [] Shadowstep
+/target arena2
+END
+VER 3 010000000000000A " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@arena3, exists, noraid] [] Shadowstep
+/target arena3
+END
+VER 3 010000000000000C " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast Shadow Blades
+/cast Ancestral Call(Racial)
+END
+VER 3 010000000000000E " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast Symbols of Death
+/use 13
+/cast [@party1] Tricks of the Trade
+END
+VER 3 010000000000000F " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/stopmacro [noharm]
+/cast Backstab
+END
+VER 3 0100000000000010 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/stopmacro [noharm]
+/cast Eviscerate
+END
+VER 3 0100000000000011 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/stopmacro [noharm]
+/cast Cheap Shot
+END
+VER 3 0100000000000013 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/stopmacro [noharm]
+/cast Rupture
+END
+VER 3 0100000000000014 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/stopmacro [noharm]
+/cast Kidney Shot
+END
+VER 3 0100000000000017 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/stopmacro [noharm]
+/cast Shadowstrike
+END
+VER 3 0100000000000018 " " "INV_MISC_QUESTIONMARK"
+#showtooltip Echoing Reprimand
+/stopmacro [noharm]
+/cast Shadow Dance
+/cast Symbols of Death
+/cast Echoing Reprimand
+END
+VER 3 0100000000000019 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@focus] Sap
+END
+VER 3 010000000000001A " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast Shadow Blades
+/cast Ancestral Call(Racial)
+END

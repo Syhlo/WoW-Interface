@@ -1,0 +1,79 @@
+
+HHTD_SavedVariables = {
+	["char"] = {
+		["Cyf - Tichondrius"] = {
+			["settingsMigrated"] = false,
+		},
+		["Sýh - Thrall"] = {
+			["settingsMigrated"] = false,
+		},
+		["Wthrename - Tichondrius"] = {
+			["settingsMigrated"] = false,
+		},
+		["Gerold - Tichondrius"] = {
+			["settingsMigrated"] = false,
+		},
+		["Sydh - Thrall"] = {
+			["settingsMigrated"] = false,
+		},
+		["Syhlol - Thrall"] = {
+			["settingsMigrated"] = false,
+		},
+		["Youreterribl - Burning Legion"] = {
+			["settingsMigrated"] = false,
+		},
+		["Isellpropane - Proudmoore"] = {
+			["settingsMigrated"] = false,
+		},
+		["Crylo - Tichondrius"] = {
+			["settingsMigrated"] = false,
+		},
+		["Syhdk - Thrall"] = {
+			["settingsMigrated"] = false,
+		},
+		["Regèn - Tichondrius"] = {
+			["settingsMigrated"] = false,
+		},
+		["Syhlo - Thrall"] = {
+			["settingsMigrated"] = false,
+		},
+		["Syh - Thrall"] = {
+			["settingsMigrated"] = false,
+		},
+	},
+	["namespaces"] = {
+		["Announcer"] = {
+			["global"] = {
+				["Sounds"] = false,
+				["ProtectMessage"] = "Friendly Healers: [HEALERS]",
+				["PostToChat"] = true,
+			},
+		},
+		["CM"] = {
+		},
+		["NPH"] = {
+		},
+	},
+	["global"] = {
+		["settingsMigrated"] = false,
+		["HealerUnderAttackAlerts"] = false,
+		["SetFriendlyHealersRole"] = false,
+		["Pve"] = false,
+		["oldNameEnableState"] = 0,
+	},
+	["profileKeys"] = {
+		["Cyf - Tichondrius"] = "Cyf - Tichondrius",
+		["Sýh - Thrall"] = "Sýh - Thrall",
+		["Wthrename - Tichondrius"] = "Wthrename - Tichondrius",
+		["Gerold - Tichondrius"] = "Gerold - Tichondrius",
+		["Sydh - Thrall"] = "Sydh - Thrall",
+		["Syhlol - Thrall"] = "Syhlol - Thrall",
+		["Youreterribl - Burning Legion"] = "Youreterribl - Burning Legion",
+		["Isellpropane - Proudmoore"] = "Isellpropane - Proudmoore",
+		["Crylo - Tichondrius"] = "Crylo - Tichondrius",
+		["Syhdk - Thrall"] = "Syhdk - Thrall",
+		["Regèn - Tichondrius"] = "Regèn - Tichondrius",
+		["Syhlo - Thrall"] = "Syhlo - Thrall",
+		["Syh - Thrall"] = "Syh - Thrall",
+	},
+}

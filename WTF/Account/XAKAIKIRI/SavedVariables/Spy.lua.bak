@@ -1,0 +1,352 @@
+
+SpyDB = {
+	["kosData"] = {
+		["Thrall"] = {
+			["Horde"] = {
+				["Syh"] = {
+				},
+				["Syhdk"] = {
+				},
+				["Syhloc"] = {
+				},
+				["Syhlo"] = {
+				},
+				["Syhlol"] = {
+				},
+				["Sydh"] = {
+				},
+				["Sýh"] = {
+				},
+			},
+			["Alliance"] = {
+				["Syhlo"] = {
+				},
+			},
+		},
+		["Illidan"] = {
+			["Horde"] = {
+				["Syhlol"] = {
+				},
+			},
+		},
+		["Tichondrius"] = {
+			["Alliance"] = {
+				["Cyf"] = {
+				},
+				["Regèn"] = {
+				},
+				["Wthrename"] = {
+				},
+				["Crylo"] = {
+				},
+				["Gerold"] = {
+				},
+			},
+		},
+		["Ragnaros"] = {
+			["Horde"] = {
+				["Scatterffs"] = {
+				},
+			},
+		},
+		["Proudmoore"] = {
+			["Alliance"] = {
+				["Isellpropane"] = {
+				},
+			},
+		},
+		["Burning Legion"] = {
+			["Alliance"] = {
+				["Youreterribl"] = {
+				},
+			},
+		},
+	},
+	["removeKOSData"] = {
+		["Thrall"] = {
+			["Horde"] = {
+			},
+			["Alliance"] = {
+			},
+		},
+		["Illidan"] = {
+			["Horde"] = {
+			},
+		},
+		["Tichondrius"] = {
+			["Alliance"] = {
+			},
+		},
+		["Ragnaros"] = {
+			["Horde"] = {
+			},
+		},
+		["Proudmoore"] = {
+			["Alliance"] = {
+			},
+		},
+		["Burning Legion"] = {
+			["Alliance"] = {
+			},
+		},
+	},
+	["profileKeys"] = {
+		["Syh - Thrall"] = "Syh - Thrall",
+		["Isellpropane - Proudmoore"] = "Isellpropane - Proudmoore",
+		["Sýh - Thrall"] = "Sýh - Thrall",
+		["Wthrename - Tichondrius"] = "Wthrename - Tichondrius",
+		["Syhlol - Thrall"] = "Syhlol - Thrall",
+		["Gerold - Tichondrius"] = "Gerold - Tichondrius",
+		["Syhlol - Illidan"] = "Syhlol - Illidan",
+		["Syhloc - Thrall"] = "Syhloc - Thrall",
+		["Scatterffs - Ragnaros"] = "Scatterffs - Ragnaros",
+		["Syhlo - Thrall"] = "Syhlo - Thrall",
+		["Cyf - Tichondrius"] = "Cyf - Tichondrius",
+		["Crylo - Tichondrius"] = "Crylo - Tichondrius",
+		["Syhdk - Thrall"] = "Syhdk - Thrall",
+		["Regèn - Tichondrius"] = "Regèn - Tichondrius",
+		["Youreterribl - Burning Legion"] = "Youreterribl - Burning Legion",
+		["Sydh - Thrall"] = "Sydh - Thrall",
+	},
+	["profiles"] = {
+		["Syh - Thrall"] = {
+			["AppendUnitNameCheck"] = true,
+			["MainWindow"] = {
+				["Position"] = {
+					["y"] = 1066.667114257813,
+					["x"] = 1317.332885742188,
+					["w"] = 160.0001373291016,
+					["h"] = 34.9999885559082,
+				},
+			},
+			["Colors"] = {
+				["Bar"] = {
+					["Bar Text"] = {
+						["a"] = 1,
+					},
+				},
+			},
+			["AppendUnitKoSCheck"] = true,
+			["MainWindowVis"] = false,
+			["Enabled"] = false,
+			["EnableSound"] = false,
+		},
+		["Isellpropane - Proudmoore"] = {
+			["AppendUnitNameCheck"] = true,
+			["MainWindowVis"] = false,
+			["Colors"] = {
+				["Bar"] = {
+					["Bar Text"] = {
+						["a"] = 1,
+					},
+				},
+			},
+			["AppendUnitKoSCheck"] = true,
+		},
+		["Sýh - Thrall"] = {
+			["AppendUnitNameCheck"] = true,
+			["MainWindow"] = {
+				["Position"] = {
+					["x"] = 4.000000476837158,
+					["w"] = 160.0000305175781,
+					["h"] = 34.9999885559082,
+				},
+			},
+			["Colors"] = {
+				["Bar"] = {
+					["Bar Text"] = {
+						["a"] = 1,
+					},
+				},
+			},
+			["AppendUnitKoSCheck"] = true,
+			["Enabled"] = false,
+		},
+		["Wthrename - Tichondrius"] = {
+			["AppendUnitNameCheck"] = true,
+			["MainWindowVis"] = false,
+			["Colors"] = {
+				["Bar"] = {
+					["Bar Text"] = {
+						["a"] = 1,
+					},
+				},
+			},
+			["AppendUnitKoSCheck"] = true,
+		},
+		["Syhlol - Thrall"] = {
+			["AppendUnitNameCheck"] = true,
+			["MainWindow"] = {
+				["Position"] = {
+					["y"] = 212.0001373291016,
+					["x"] = 1601.333374023438,
+					["w"] = 180.0001525878906,
+					["h"] = 35,
+				},
+			},
+			["Colors"] = {
+				["Alert"] = {
+					["Stealth Text"] = {
+						["a"] = 1,
+					},
+					["Name Text"] = {
+						["a"] = 1,
+					},
+				},
+				["Bar"] = {
+					["Bar Text"] = {
+						["a"] = 1,
+					},
+				},
+			},
+			["AppendUnitKoSCheck"] = true,
+		},
+		["Gerold - Tichondrius"] = {
+			["AppendUnitNameCheck"] = true,
+			["MainWindow"] = {
+				["Position"] = {
+					["h"] = 35,
+				},
+			},
+			["Colors"] = {
+				["Bar"] = {
+					["Bar Text"] = {
+						["a"] = 1,
+					},
+				},
+			},
+			["AppendUnitKoSCheck"] = true,
+			["MainWindowVis"] = false,
+		},
+		["Syhlol - Illidan"] = {
+			["AppendUnitNameCheck"] = true,
+			["MainWindowVis"] = false,
+			["Colors"] = {
+				["Bar"] = {
+					["Bar Text"] = {
+						["a"] = 1,
+					},
+				},
+			},
+			["AppendUnitKoSCheck"] = true,
+		},
+		["Syhloc - Thrall"] = {
+			["AppendUnitNameCheck"] = true,
+			["MainWindowVis"] = false,
+			["Colors"] = {
+				["Bar"] = {
+					["Bar Text"] = {
+						["a"] = 1,
+					},
+				},
+			},
+			["AppendUnitKoSCheck"] = true,
+		},
+		["Scatterffs - Ragnaros"] = {
+			["AppendUnitNameCheck"] = true,
+			["MainWindowVis"] = false,
+			["Colors"] = {
+				["Bar"] = {
+					["Bar Text"] = {
+						["a"] = 1,
+					},
+				},
+			},
+			["AppendUnitKoSCheck"] = true,
+		},
+		["Syhlo - Thrall"] = {
+			["AppendUnitNameCheck"] = true,
+			["MainWindow"] = {
+				["Position"] = {
+					["y"] = 739.9999389648438,
+					["h"] = 82.99996185302734,
+				},
+			},
+			["Colors"] = {
+				["Bar"] = {
+					["Bar Text"] = {
+						["a"] = 1,
+					},
+				},
+			},
+			["AppendUnitKoSCheck"] = true,
+			["MainWindowVis"] = false,
+		},
+		["Cyf - Tichondrius"] = {
+			["AppendUnitNameCheck"] = true,
+			["MainWindow"] = {
+				["Position"] = {
+					["y"] = 739.9999389648438,
+					["h"] = 82.99996185302734,
+				},
+			},
+			["Colors"] = {
+				["Bar"] = {
+					["Bar Text"] = {
+						["a"] = 1,
+					},
+				},
+			},
+			["AppendUnitKoSCheck"] = true,
+			["MainWindowVis"] = false,
+		},
+		["Crylo - Tichondrius"] = {
+			["Colors"] = {
+				["Bar"] = {
+					["Bar Text"] = {
+						["a"] = 1,
+					},
+				},
+			},
+			["AppendUnitNameCheck"] = true,
+			["AppendUnitKoSCheck"] = true,
+		},
+		["Syhdk - Thrall"] = {
+			["AppendUnitNameCheck"] = true,
+			["MainWindowVis"] = false,
+			["Colors"] = {
+				["Bar"] = {
+					["Bar Text"] = {
+						["a"] = 1,
+					},
+				},
+			},
+			["AppendUnitKoSCheck"] = true,
+		},
+		["Regèn - Tichondrius"] = {
+			["AppendUnitNameCheck"] = true,
+			["Colors"] = {
+				["Bar"] = {
+					["Bar Text"] = {
+						["a"] = 1,
+					},
+				},
+			},
+			["AppendUnitKoSCheck"] = true,
+		},
+		["Youreterribl - Burning Legion"] = {
+			["AppendUnitNameCheck"] = true,
+			["MainWindowVis"] = false,
+			["Colors"] = {
+				["Bar"] = {
+					["Bar Text"] = {
+						["a"] = 1,
+					},
+				},
+			},
+			["AppendUnitKoSCheck"] = true,
+		},
+		["Sydh - Thrall"] = {
+			["AppendUnitNameCheck"] = true,
+			["MainWindowVis"] = false,
+			["Colors"] = {
+				["Bar"] = {
+					["Bar Text"] = {
+						["a"] = 1,
+					},
+				},
+			},
+			["AppendUnitKoSCheck"] = true,
+		},
+	},
+}

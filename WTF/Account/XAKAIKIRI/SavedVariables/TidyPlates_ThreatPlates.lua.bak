@@ -1,0 +1,362 @@
+
+ThreatPlatesDB = {
+	["char"] = {
+		["Cyf - Tichondrius"] = {
+			["welcome"] = true,
+			["spec"] = {
+				nil, -- [1]
+				nil, -- [2]
+				true, -- [3]
+				false, -- [4]
+			},
+		},
+		["Sýh - Thrall"] = {
+			["welcome"] = true,
+			["spec"] = {
+				[3] = true,
+			},
+		},
+		["Wthrename - Tichondrius"] = {
+			["spec"] = {
+				[3] = false,
+			},
+			["welcome"] = true,
+		},
+		["Crylo - Tichondrius"] = {
+			["spec"] = {
+				[3] = false,
+			},
+			["welcome"] = true,
+		},
+		["Gerold - Tichondrius"] = {
+			["spec"] = {
+				nil, -- [1]
+				true, -- [2]
+				false, -- [3]
+			},
+			["welcome"] = true,
+		},
+		["Syhlol - Thrall"] = {
+			["welcome"] = true,
+			["spec"] = {
+				[3] = false,
+			},
+		},
+		["Syhlo - Thrall"] = {
+			["spec"] = {
+				[3] = false,
+			},
+			["welcome"] = true,
+		},
+	},
+	["profileKeys"] = {
+		["Cyf - Tichondrius"] = "Global",
+		["Sýh - Thrall"] = "Default",
+		["Wthrename - Tichondrius"] = "Default",
+		["Crylo - Tichondrius"] = "Default",
+		["Gerold - Tichondrius"] = "Default",
+		["Syhlol - Thrall"] = "Global",
+		["Syhlo - Thrall"] = "Default",
+	},
+	["namespaces"] = {
+		["LibDualSpec-1.0"] = {
+			["char"] = {
+				["Cyf - Tichondrius"] = {
+					["enabled"] = false,
+				},
+			},
+		},
+	},
+	["global"] = {
+		["version"] = "10.4.1",
+	},
+	["profiles"] = {
+		["Default"] = {
+			["nameplate"] = {
+				["toggle"] = {
+					["OccludedUnits"] = true,
+					["TargetS"] = true,
+					["TargetA"] = true,
+				},
+				["alpha"] = {
+					["OccludedUnits"] = 0.75,
+					["Target"] = 2,
+					["NonTarget"] = 0.75,
+				},
+				["scale"] = {
+					["Target"] = 0.25,
+					["Pet"] = 0.6000000000000005,
+					["FriendlyPlayer"] = 0.7000000000000002,
+				},
+			},
+			["uniqueSettings"] = {
+				{
+					["showIcon"] = false,
+					["showNameplate"] = false,
+					["ShowHeadlineView"] = true,
+					["Name"] = "Ignore Minions",
+					["Trigger"] = {
+						["Name"] = {
+							["Input"] = "Army of the Dead, Wild Imp, Malicious Imp, Dreadstalker",
+							["AsArray"] = {
+								"Army of the Dead, Wild Imp, Malicious Imp, Dreadstalker", -- [1]
+							},
+						},
+					},
+				}, -- [1]
+			},
+			["CVarsBackup"] = {
+				["nameplateMinAlpha"] = "0.6",
+				["nameplateMaxAlpha"] = "1.0",
+			},
+			["FocusWidget"] = {
+				["a"] = 0.4900000095367432,
+				["r"] = 1,
+				["g"] = 0.8274509803921568,
+				["b"] = 0,
+				["theme"] = "arrow_less_than",
+				["Size"] = 30,
+			},
+			["totemWidget"] = {
+				["scale"] = 50,
+			},
+			["AuraWidget"] = {
+				["ON"] = false,
+			},
+			["settings"] = {
+				["customtext"] = {
+					["typeface"] = "Friz Quadrata TT",
+					["size"] = 8,
+					["SubtextColorUseSpecific"] = true,
+				},
+				["eliteicon"] = {
+					["theme"] = "stddragon",
+				},
+				["elitehealthborder"] = {
+					["show"] = true,
+				},
+				["level"] = {
+					["x"] = 42,
+					["typeface"] = "Arial Narrow",
+					["show"] = false,
+					["size"] = 8,
+				},
+				["healthbar"] = {
+					["TargetUnit"] = {
+						["Font"] = {
+							["flags"] = "NONE, MONOCHROME",
+							["Typeface"] = "Arial Narrow",
+						},
+					},
+					["width"] = 140,
+					["height"] = 8,
+				},
+				["castbar"] = {
+					["y"] = -20,
+				},
+				["threatborder"] = {
+					["show"] = false,
+				},
+				["name"] = {
+					["typeface"] = "Arial Narrow",
+					["size"] = 13,
+					["y"] = 16,
+				},
+				["frame"] = {
+					["height"] = 50.525,
+					["width"] = 182,
+				},
+				["raidicon"] = {
+					["scale"] = 44,
+					["hpColor"] = false,
+					["show"] = false,
+					["x"] = -2,
+					["y"] = 65,
+				},
+			},
+			["targetWidget"] = {
+				["a"] = 0.5722883641719818,
+				["r"] = 0.984313725490196,
+				["b"] = 0.984313725490196,
+				["theme"] = "squarethin",
+			},
+			["HeadlineView"] = {
+				["EnemySubtext"] = "NONE",
+			},
+			["Scale"] = {
+				["IgnoreUIScale"] = false,
+				["PixelPerfectUI"] = true,
+			},
+			["classWidget"] = {
+				["ON"] = false,
+			},
+			["Visibility"] = {
+				["FriendlyMinus"] = {
+					["Show"] = false,
+				},
+			},
+			["threat"] = {
+				["ON"] = false,
+			},
+		},
+		["Global"] = {
+			["nameplate"] = {
+				["toggle"] = {
+					["OccludedUnits"] = true,
+					["TargetS"] = true,
+					["TargetA"] = true,
+				},
+				["alpha"] = {
+					["Target"] = 2,
+					["OccludedUnits"] = 0.6499999999999999,
+					["NonTarget"] = 0.75,
+				},
+				["scale"] = {
+					["Target"] = 0.2999999999999998,
+					["Pet"] = 0.6000000000000005,
+					["FriendlyPlayer"] = 0.7000000000000002,
+				},
+			},
+			["threat"] = {
+				["ON"] = false,
+			},
+			["CVarsBackup"] = {
+				["nameplateMinAlpha"] = "0.6",
+				["nameplateMaxAlpha"] = "1.0",
+			},
+			["Scale"] = {
+				["IgnoreUIScale"] = false,
+				["PixelPerfectUI"] = true,
+			},
+			["HeadlineView"] = {
+				["EnemySubtext"] = "NONE",
+			},
+			["AuraWidget"] = {
+				["Debuffs"] = {
+					["HealthbarMode"] = {
+						["VerticalOffset"] = 42,
+					},
+					["ModeIcon"] = {
+						["IconHeight"] = 26,
+						["Style"] = "custom",
+						["IconWidth"] = 26,
+					},
+				},
+				["CrowdControl"] = {
+					["ShowFriendly"] = false,
+					["ShowEnemy"] = false,
+				},
+				["FlashWhenExpiring"] = true,
+				["Buffs"] = {
+					["ShowEnemy"] = false,
+					["HideUnlimitedDuration"] = true,
+					["ShowDispellable"] = false,
+					["ShowOnEnemyNPCs"] = false,
+					["ShowAllEnemy"] = true,
+				},
+				["ShowCooldownSpiral"] = true,
+			},
+			["uniqueSettings"] = {
+				{
+					["Trigger"] = {
+						["Name"] = {
+							["Input"] = "Wild Imp; Malicious Imp; Army of the Dead; Dreadstalker",
+							["AsArray"] = {
+								"Wild Imp", -- [1]
+								"Malicious Imp", -- [2]
+								"Army of the Dead", -- [3]
+								"Dreadstalker", -- [4]
+							},
+						},
+					},
+					["showIcon"] = false,
+					["showNameplate"] = false,
+					["color"] = {
+						["r"] = 0.5215686274509804,
+						["g"] = 0.5215686274509804,
+						["b"] = 0.5215686274509804,
+					},
+					["Name"] = "Ignored Minions",
+					["alpha"] = 0.7,
+					["ShowHeadlineView"] = true,
+				}, -- [1]
+			},
+			["totemWidget"] = {
+				["scale"] = 50,
+			},
+			["classWidget"] = {
+				["ON"] = false,
+			},
+			["settings"] = {
+				["customtext"] = {
+					["typeface"] = "Friz Quadrata TT",
+					["SubtextColorUseSpecific"] = true,
+					["size"] = 8,
+				},
+				["healthbar"] = {
+					["height"] = 14,
+					["width"] = 145,
+					["TargetUnit"] = {
+						["Font"] = {
+							["flags"] = "NONE, MONOCHROME",
+							["Typeface"] = "Arial Narrow",
+						},
+					},
+				},
+				["eliteicon"] = {
+					["theme"] = "stddragon",
+				},
+				["threatborder"] = {
+					["show"] = false,
+				},
+				["elitehealthborder"] = {
+					["show"] = true,
+				},
+				["castbar"] = {
+					["y"] = -20,
+				},
+				["frame"] = {
+					["height"] = 57.575,
+					["width"] = 189,
+				},
+				["level"] = {
+					["typeface"] = "Arial Narrow",
+					["x"] = 42,
+					["show"] = false,
+					["size"] = 8,
+				},
+				["name"] = {
+					["typeface"] = "Arial Narrow",
+					["y"] = 16,
+					["size"] = 13,
+				},
+				["raidicon"] = {
+					["show"] = false,
+					["x"] = -2,
+					["scale"] = 56,
+					["hpColor"] = false,
+					["y"] = 65,
+				},
+			},
+			["FocusWidget"] = {
+				["a"] = 0.4900000095367432,
+				["b"] = 0,
+				["r"] = 1,
+				["theme"] = "arrow_less_than",
+				["g"] = 0.8274509803921568,
+				["Size"] = 30,
+			},
+			["Visibility"] = {
+				["FriendlyMinus"] = {
+					["Show"] = false,
+				},
+			},
+			["targetWidget"] = {
+				["a"] = 0.5722883641719818,
+				["r"] = 0.984313725490196,
+				["theme"] = "squarethin",
+				["b"] = 0.984313725490196,
+			},
+		},
+	},
+}

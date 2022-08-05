@@ -1,0 +1,4 @@
+VER 3 0100000000000002 "ZGVMacro2" "0"
+/target Warlord Dar'toon
+/run ZGV:MRM()
+END

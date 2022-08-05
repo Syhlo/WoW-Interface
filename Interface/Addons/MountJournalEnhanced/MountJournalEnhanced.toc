@@ -1,0 +1,62 @@
+## Interface: 90205
+## Title: Mount Journal Enhanced
+## Notes: Extends the default Mount Journal
+## Author: eXochron
+## Version: 2.18.1
+## SavedVariablesPerCharacter: MountJournalEnhancedSettings, MJEPersonalSettings
+## SavedVariables: MJEGlobalSettings, MJETrackingData
+## X-Curse-Project-ID: 86372
+## X-Wago-ID: nQN5m7NB
+
+Libs\LibStub\LibStub.lua
+Libs\CallbackHandler-1.0\CallbackHandler-1.0.lua
+Libs\AceGUI-3.0\AceGUI-3.0.xml
+Libs\HereBeDragons\HereBeDragons-2.0.lua
+Libs\TaintLess.xml
+Libs\UIFixes.lua
+
+Locals.lua
+Database\Database.lua
+Database\colors.db.lua
+Database\families.db.lua
+Database\tradable.db.lua
+Database\restrictions.db.lua
+
+PlayerConditions.lua
+Filters.lua
+Sort.lua
+MountJournalEnhanced.lua
+Api.lua
+Settings\Handling.lua
+Settings\Settings.lua
+Settings\OptionsPanel.lua
+Favorites.lua
+Tracking.lua
+SlashCommand.lua
+Debug.lua
+
+UI\Templates.xml
+UI\Functions.lua
+UI\ElvUIList.lua
+
+UI\EnhancedList.lua
+UI\EnhancedDisplay.lua
+UI\EnhancedMountButton.lua
+UI\CompactMountList.lua
+UI\AchievementPoints.lua
+UI\MountCount.lua
+UI\DisplayDirector.lua
+UI\EquipmentSlot.lua
+UI\FilterDropdown\Main.lua
+UI\FilterDropdown\Color.lua
+UI\FilterDropdown\Family.lua
+UI\FilterDropdown\Sort.lua
+UI\DisplayCamera.lua
+UI\DisplayStatistics.lua
+UI\Hotkeys.lua
+UI\MountListDropDown.lua
+UI\SettingsDropDown.lua
+UI\DressUpButton.lua
+UI\Resize.lua
+UI\ShopButton.lua
+UI\BlizzFixes.lua

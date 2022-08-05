@@ -1,0 +1,13 @@
+## Interface: 90205
+## Title: |cFF74D06CRE|rFlex
+## Notes: Collect statistics of played arena matches and battlegrounds.
+## Version: 3.1.9
+## Author: AcidWeb
+## SavedVariablesPerCharacter: REFlexSettings, REFlexDatabase, REFlexHonorDatabase
+## X-WoWI-ID: 19190
+## X-Wago-ID: vEGPQRN1
+
+TaintLess.xml
+Embeds.xml
+Locale\Locale.xml
+REFlex.xml

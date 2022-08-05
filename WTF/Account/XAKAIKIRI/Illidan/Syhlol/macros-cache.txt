@@ -1,0 +1,62 @@
+VER 3 0100000000000015 " " "INV_MISC_QUESTIONMARK"
+#showtooltip Tricks of the Trade
+/cast [@targettarget, help] Tricks of the Trade
+END
+VER 3 0100000000000006 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/dismount [mounted]
+/cast [flyable] Sandstone Drake; Mechano-Hog
+END
+VER 3 0100000000000014 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast Shadow Dance
+/use Ruthless Gladiator's Badge of Conquest
+END
+VER 3 010000000000000E " 1" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@arena1,exists] Kick; Kick
+END
+VER 3 0100000000000011 " 1" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@arena1,exists] Shadowstep; Shadowstep
+END
+VER 3 010000000000000B " 1" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@arena1,exists] Blind; Blind
+END
+VER 3 010000000000000F " 2" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@arena2,exists] Kick; Kick
+END
+VER 3 0100000000000012 " 2" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@arena2,exists] Shadowstep; Shadowstep
+END
+VER 3 010000000000000C " 2" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@arena2,exists] Blind; Blind
+END
+VER 3 0100000000000008 " 2" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@arena2,exists] Gouge; Gouge
+END
+VER 3 0100000000000010 " 3" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@arena3,exists] Kick; Kick
+END
+VER 3 010000000000000D " 3" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@arena3,exists] Blind; Blind
+END
+VER 3 0100000000000009 " 3" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@arena3,exists] Gouge; Gouge
+END
+VER 3 0100000000000013 " 3" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@arena3,exists] Shadowstep; Shadowstep
+END
+VER 3 0100000000000007 "1" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@arena1,exists] Gouge; Gouge
+END

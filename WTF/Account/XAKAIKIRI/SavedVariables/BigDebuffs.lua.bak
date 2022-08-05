@@ -1,0 +1,54 @@
+
+BigDebuffsDB = {
+	["namespaces"] = {
+		["LibDualSpec-1.0"] = {
+		},
+	},
+	["profileKeys"] = {
+		["Cyf - Tichondrius"] = "Default",
+		["Sýh - Thrall"] = "Default",
+		["Wthrename - Tichondrius"] = "Default",
+		["Sydh - Thrall"] = "Default",
+		["Gerold - Tichondrius"] = "Default",
+		["Isellpropane - Proudmoore"] = "Default",
+		["Youreterribl - Burning Legion"] = "Default",
+		["Syhlol - Illidan"] = "Default",
+		["Syhlol - Thrall"] = "Default",
+		["Scatterffs - Ragnaros"] = "Default",
+		["Crylo - Tichondrius"] = "Default",
+		["Syhdk - Thrall"] = "Default",
+		["Regèn - Tichondrius"] = "Default",
+		["Syhlo - Thrall"] = "Default",
+		["Syh - Thrall"] = "Default",
+	},
+	["profiles"] = {
+		["Default"] = {
+			["raidFrames"] = {
+				["dispellable"] = {
+					["cc"] = 75,
+				},
+				["maxDebuffs"] = 6,
+				["warningList"] = {
+					[323673] = true,
+				},
+			},
+			["nameplates"] = {
+				["enemyAnchor"] = {
+					["x"] = 5,
+				},
+			},
+			["spells"] = {
+				[122470] = {
+					["customPriority"] = false,
+				},
+			},
+			["unitFrames"] = {
+				["arena1"] = {
+				},
+				["arena"] = {
+					["enabled"] = false,
+				},
+			},
+		},
+	},
+}

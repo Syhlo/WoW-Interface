@@ -1,0 +1,80 @@
+VER 3 0100000000000001 " " "INV_MISC_QUESTIONMARK"
+#showtooltip Summon Felhunter
+/cast [pet,nodead]Soul Link
+/cast [nopet] Soulburn
+/cast [nopet] Summon Felhunter
+/run if UnitIsDead("pet") then PetDismiss() end
+END
+VER 3 0100000000000006 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast Devour Magic
+END
+VER 3 010000000000000C " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@mouseover,harm] Fel Flame
+/cast Fel Flame
+END
+VER 3 010000000000000D " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@mouseover,harm] Banish
+/cast Banish
+END
+VER 3 010000000000000B " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast Spell Lock
+END
+VER 3 010000000000000A " " "INV_MISC_QUESTIONMARK"
+#showtooltip Demonic Circle: Teleport
+/cast [mod:alt] Demonic Circle: Summon
+/cast [nomod] Demonic Circle: Teleport
+END
+VER 3 0100000000000010 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@arena1,exists] Fear; Fear
+END
+VER 3 0100000000000011 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/use [flyable] Armored Snowy Gryphon; Dreadsteed
+/petpassive
+END
+VER 3 0100000000000012 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast Unstable Affliction
+/petattack
+END
+VER 3 0100000000000013 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@Pammella,exists] Dark Intent; Dark Intent
+END
+VER 3 0100000000000014 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@arena2,exists] Fear; Fear
+END
+VER 3 0100000000000015 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@arena3,exists] Fear; Fear
+END
+VER 3 0100000000000016 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@arena1,exists] Death Coil; Death Coil
+END
+VER 3 0100000000000017 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@arena2,exists] Death Coil; Death Coil
+END
+VER 3 0100000000000018 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@arena3,exists] Death Coil; Death Coil
+END
+VER 3 0100000000000019 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@arena1,exists] Spell Lock; Spell Lock
+END
+VER 3 010000000000001A " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@arena2,exists] Spell Lock; Spell Lock
+END
+VER 3 010000000000001B " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@arena3,exists] Spell Lock; Spell Lock
+END

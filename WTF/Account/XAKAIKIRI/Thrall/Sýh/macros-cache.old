@@ -1,0 +1,58 @@
+VER 3 0100000000000004 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@cursor] Heroic Leap
+END
+VER 3 0100000000000006 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [noraid,@party1] [] Intervene
+END
+VER 3 0100000000000007 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [noraid,@party2] [] Intervene
+END
+VER 3 0100000000000001 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [noraid, @arena1, exists] [] Charge
+/target arena1
+END
+VER 3 0100000000000008 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@cursor] Spear of Bastion
+END
+VER 3 0100000000000002 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [noraid, @arena2, exists] [] Charge
+/target arena2
+END
+VER 3 0100000000000003 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [noraid, @arena3, exists] [] Charge
+/target arena3
+END
+VER 3 0100000000000009 " " "INV_MISC_QUESTIONMARK"
+#showtooltip Storm Bolt
+/cast [noraid, @arena2, exists] [] Storm Bolt
+END
+VER 3 010000000000000A " " "INV_MISC_QUESTIONMARK"
+#showtooltip Storm Bolt
+/cast [noraid, @arena1, exists] [] Storm Bolt
+END
+VER 3 010000000000000B " " "INV_MISC_QUESTIONMARK"
+#showtooltip Storm Bolt
+/cast [noraid, @arena3, exists] [] Storm Bolt
+END
+VER 3 010000000000000C " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast Avatar
+/cast Ancestral Call(Racial)
+/use Sinful Aspirant's Badge of Ferocity
+END
+VER 3 010000000000000E " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cancelaura Bladestorm
+/cast Mortal Strike
+END
+VER 3 010000000000000F " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@mouseover,exists] [] Heroic Throw
+END

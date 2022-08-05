@@ -1,0 +1,14 @@
+
+favsDB = {
+	["profileKeys"] = {
+		["Syhlol - Thrall"] = "Default",
+	},
+	["profiles"] = {
+		["Default"] = {
+			["hiddenFavNames"] = {
+				["Blizzard Favorites"] = true,
+				["Search Results"] = true,
+			},
+		},
+	},
+}

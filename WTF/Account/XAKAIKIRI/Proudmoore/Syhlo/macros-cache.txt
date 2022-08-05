@@ -1,0 +1,13 @@
+VER 3 0100000000000073 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast Freeze
+END
+VER 3 0100000000000001 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast Frostbolt
+/petattack
+END
+VER 3 01000000000000D0 "ZGVMacro1" "0"
+/target Quartermaster Kaoshin
+/run ZGV:MRM():CG(39,1)
+END

@@ -1,0 +1,87 @@
+VER 3 0100000000000006 " " "INV_Misc_QuestionMark"
+#showtooltip
+/dismount
+/petpassive
+/stopmacro [mounted]
+/use [flyable]Magnificent Flying Carpet; Raven Lord
+END
+VER 3 0100000000000001 " " "INV_Misc_QuestionMark"
+#showtooltip
+/cast Freeze
+END
+VER 3 0100000000000005 " " "INV_Misc_QuestionMark"
+#showtooltip
+/cast Icy Veins
+/cast Mirror Image
+/use Cataclysmic Gladiator's Badge of Dominance
+/use Soul Casket
+END
+VER 3 0100000000000007 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@arena1,exists] Polymorph; Polymorph
+END
+VER 3 0100000000000008 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@arena2,exists] Polymorph; Polymorph
+END
+VER 3 0100000000000009 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@arena3,exists] Polymorph; Polymorph
+END
+VER 3 010000000000000A " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/stopcasting
+/cast [@arena1,exists] Deep Freeze; Deep Freeze
+END
+VER 3 010000000000000B " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/stopcasting
+/cast [@arena2,exists] Deep Freeze; Deep Freeze
+END
+VER 3 010000000000000C " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/stopcasting
+/cast [@arena3,exists] Deep Freeze; Deep Freeze
+END
+VER 3 010000000000000D " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/stopcasting
+/cast [@arena1,exists] Counterspell; Counterspell
+END
+VER 3 010000000000000E " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/stopcasting
+/cast [@arena2,exists] Counterspell; Counterspell
+END
+VER 3 010000000000000F " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/stopcasting
+/cast [@arena3,exists] Counterspell; Counterspell
+END
+VER 3 0100000000000014 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/stopcasting
+/cast Counterspell
+END
+VER 3 0100000000000015 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast frostbolt
+/petattack
+END
+VER 3 0100000000000018 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/stopcasting
+/cast Ice block
+END
+VER 3 0100000000000019 " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@focus] Polymorph; Polymorph
+END
+VER 3 010000000000001A " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@Lilesh,exists] Remove Curse; Remove Curse
+END
+VER 3 010000000000001B " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@Ph,exists] Remove Curse; Remove Curse
+END
