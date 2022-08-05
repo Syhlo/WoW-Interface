@@ -252,7 +252,7 @@ MasqueDB = {
 					["Backdrop"] = true,
 					["SkinID"] = "Caith",
 				},
-				["OmniBar_Rebuke"] = {
+				["Bagnon_guild - bags"] = {
 					["Shadow"] = true,
 					["Colors"] = {
 						["Normal"] = {
@@ -310,7 +310,7 @@ MasqueDB = {
 					["SkinID"] = "Caith",
 					["Inherit"] = false,
 				},
-				["WeakAuras_Int8p64J47C"] = {
+				["WeakAuras_oH0pxpktwhz"] = {
 					["Shadow"] = true,
 					["Backdrop"] = true,
 					["Upgraded"] = true,
@@ -322,8 +322,8 @@ MasqueDB = {
 							1, -- [4]
 						},
 					},
-					["Inherit"] = false,
 					["SkinID"] = "Caith",
+					["Inherit"] = false,
 				},
 				["Bartender4_PetBar"] = {
 					["Shadow"] = true,
@@ -452,8 +452,10 @@ MasqueDB = {
 					["Backdrop"] = true,
 					["SkinID"] = "Caith",
 				},
-				["Bagnon_guild - bags"] = {
+				["WeakAuras_eEgZEjNMrJA"] = {
 					["Shadow"] = true,
+					["Backdrop"] = true,
+					["Upgraded"] = true,
 					["Colors"] = {
 						["Normal"] = {
 							0.2941176470588235, -- [1]
@@ -462,9 +464,8 @@ MasqueDB = {
 							1, -- [4]
 						},
 					},
-					["Inherit"] = false,
-					["Backdrop"] = true,
 					["SkinID"] = "Caith",
+					["Inherit"] = false,
 				},
 				["Ability Team Tracker"] = {
 					["Shadow"] = true,
@@ -763,7 +764,7 @@ MasqueDB = {
 					["Backdrop"] = true,
 					["SkinID"] = "Caith",
 				},
-				["WeakAuras_eEgZEjNMrJA"] = {
+				["WeakAuras_Int8p64J47C"] = {
 					["Shadow"] = true,
 					["Backdrop"] = true,
 					["Upgraded"] = true,
@@ -775,8 +776,8 @@ MasqueDB = {
 							1, -- [4]
 						},
 					},
-					["SkinID"] = "Caith",
 					["Inherit"] = false,
+					["SkinID"] = "Caith",
 				},
 				["OmniBar_Muzzle"] = {
 					["Shadow"] = true,
@@ -807,10 +808,8 @@ MasqueDB = {
 					["SkinID"] = "Caith",
 					["Inherit"] = false,
 				},
-				["WeakAuras_oH0pxpktwhz"] = {
+				["OmniBar_Rebuke"] = {
 					["Shadow"] = true,
-					["Backdrop"] = true,
-					["Upgraded"] = true,
 					["Colors"] = {
 						["Normal"] = {
 							0.2941176470588235, -- [1]
@@ -819,8 +818,9 @@ MasqueDB = {
 							1, -- [4]
 						},
 					},
-					["SkinID"] = "Caith",
 					["Inherit"] = false,
+					["Backdrop"] = true,
+					["SkinID"] = "Caith",
 				},
 				["OmniBar_Disrupt"] = {
 					["Shadow"] = true,

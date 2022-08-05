@@ -56,7 +56,9 @@ Gladius2DB = {
 			["dispellGlossColor"] = {
 				["a"] = 0,
 			},
-			["castBarHeight"] = 44,
+			["drTrackerGlossColor"] = {
+				["a"] = 0,
+			},
 			["powerBarHeight"] = 25,
 			["trinketSize"] = 58,
 			["targetBarAdjustWidth"] = false,
@@ -69,42 +71,6 @@ Gladius2DB = {
 			["x"] = {
 				["arena1"] = 901.5125218295725,
 			},
-			["y"] = {
-				["arena1"] = 536.6411241055466,
-			},
-			["drTrackerSize"] = 54,
-			["healthBarHeight"] = 26,
-			["frameScale"] = 0.8,
-			["targetBarAttachTo"] = "Dispel",
-			["highlightHover"] = false,
-			["drTrackerGlossColor"] = {
-				["a"] = 0,
-			},
-			["trinketIconCrop"] = true,
-			["castBarBackgroundColor"] = {
-				["a"] = 0.1816238760948181,
-				["r"] = 0.0392156862745098,
-				["g"] = 0.0392156862745098,
-				["b"] = 0.0392156862745098,
-			},
-			["trinketGloss"] = false,
-			["drTrackerMargin"] = 7,
-			["globalFont"] = "Arial Narrow",
-			["timerMinutesFontSize"] = 20,
-			["classIconCooldown"] = true,
-			["backgroundColor"] = {
-				["a"] = 0,
-			},
-			["timerSoonFontSize"] = 20,
-			["targetBarOffsetY"] = -13,
-			["targetBarIcon"] = false,
-			["castTextSize"] = 14,
-			["dispellIconCrop"] = true,
-			["drTrackerAdjustSize"] = false,
-			["classIconCooldownReverse"] = true,
-			["targetBarHeight"] = 32,
-			["locked"] = true,
-			["timerSecondsFontSize"] = 20,
 			["tags"] = {
 				["maxhealth"] = {
 					["func"] = "function(unit)\nreturn not Gladius.test and UnitHealthMax(unit) or Gladius.testing[unit].maxHealth\nend",
@@ -179,19 +145,53 @@ Gladius2DB = {
 					["events"] = "UNIT_HEALTH UNIT_MAXHEALTH UNIT_NAME_UPDATE",
 				},
 			},
-			["auraVersion"] = 1,
-			["dispellSize"] = 56,
+			["drTrackerSize"] = 54,
+			["healthBarHeight"] = 26,
+			["frameScale"] = 0.8,
+			["targetBarAttachTo"] = "Dispel",
+			["highlightHover"] = false,
+			["y"] = {
+				["arena1"] = 536.6411241055466,
+			},
+			["trinketIconCrop"] = true,
+			["backgroundPadding"] = 0,
+			["trinketGloss"] = false,
+			["dispellAdjustSize"] = false,
+			["drFontSize"] = 20,
+			["timerMinutesFontSize"] = 20,
 			["targetBarOffsetX"] = 15,
+			["castBarBackgroundColor"] = {
+				["a"] = 0.1816238760948181,
+				["r"] = 0.0392156862745098,
+				["g"] = 0.0392156862745098,
+				["b"] = 0.0392156862745098,
+			},
+			["drTrackerCooldown"] = true,
+			["castBarHeight"] = 44,
+			["targetBarIcon"] = false,
+			["globalFontSize"] = 16,
+			["dispellIconCrop"] = true,
+			["drTrackerAdjustSize"] = false,
+			["dispellSize"] = 56,
+			["targetBarHeight"] = 32,
+			["classIconCooldownReverse"] = true,
+			["timerSecondsFontSize"] = 20,
+			["globalFont"] = "Arial Narrow",
+			["auraVersion"] = 1,
+			["targetBarOffsetY"] = -13,
+			["timerSoonFontSize"] = 20,
 			["classIconGlossColor"] = {
 				["a"] = 0,
 			},
-			["drFontSize"] = 20,
+			["castTextSize"] = 14,
 			["dispellCooldownReverse"] = true,
-			["globalFontSize"] = 16,
-			["drTrackerCooldown"] = true,
-			["backgroundPadding"] = 0,
+			["classIconCooldown"] = true,
+			["backgroundColor"] = {
+				["a"] = 0,
+			},
+			["drTrackerMargin"] = 7,
 			["tagsVersion"] = 4,
-			["dispellAdjustSize"] = false,
+			["locked"] = true,
 			["barWidth"] = 180,
 		},
 		["Wthrename - Tichondrius"] = {
@@ -212,87 +212,13 @@ Gladius2DB = {
 			["castBarInverse"] = true,
 			["castBarHeight"] = 44,
 			["timerMinutesFontSize"] = 20,
-			["tags"] = {
-				["maxhealth"] = {
-					["func"] = "function(unit)\nreturn not Gladius.test and UnitHealthMax(unit) or Gladius.testing[unit].maxHealth\nend",
-					["events"] = "UNIT_HEALTH UNIT_MAXHEALTH UNIT_NAME_UPDATE",
-				},
-				["class:short"] = {
-					["preparation"] = true,
-					["func"] = "function(unit)\nreturn not Gladius.test and Gladius.L[LOCALIZED_CLASS_NAMES_MALE[Gladius.buttons[unit].class]..\":short\"] or Gladius.L[LOCALIZED_CLASS_NAMES_MALE[Gladius.testing[unit].unitClass]..\":short\"]\nend",
-					["events"] = "UNIT_NAME_UPDATE",
-				},
-				["health:short"] = {
-					["func"] = "function(unit)\nlocal health = not Gladius.test and UnitHealth(unit) or Gladius.testing[unit].health\nif (health > 999) then\nreturn strformat(\"%.1fk\", (health / 1000))\nelse\nreturn health\nend\nend",
-					["events"] = "UNIT_HEALTH UNIT_MAXHEALTH UNIT_NAME_UPDATE",
-				},
-				["class"] = {
-					["preparation"] = true,
-					["func"] = "function(unit)\nreturn not Gladius.test and LOCALIZED_CLASS_NAMES_MALE[Gladius.buttons[unit].class] or LOCALIZED_CLASS_NAMES_MALE[Gladius.testing[unit].unitClass]\nend",
-					["events"] = "UNIT_NAME_UPDATE",
-				},
-				["power:short"] = {
-					["func"] = "function(unit)\nlocal power = not Gladius.test and UnitPower(unit) or Gladius.testing[unit].power\nif (power > 999) then\nreturn strformat(\"%.1fk\", (power / 1000))\nelse\nreturn power\nend\nend",
-					["events"] = "UNIT_POWER_UPDATE UNIT_DISPLAYPOWER UNIT_NAME_UPDATE",
-				},
-				["race"] = {
-					["func"] = "function(unit)\nreturn not Gladius.test and UnitRace(unit) or Gladius.testing[unit].unitRace\nend",
-					["events"] = "UNIT_NAME_UPDATE",
-				},
-				["maxpower:short"] = {
-					["func"] = "function(unit)\nlocal power = not Gladius.test and UnitPowerMax(unit) or Gladius.testing[unit].maxPower\nif (power > 999) then\nreturn strformat(\"%.1fk\", (power / 1000))\nelse\nreturn power\nend\nend",
-					["events"] = "UNIT_MAXPOWER UNIT_DISPLAYPOWER UNIT_NAME_UPDATE",
-				},
-				["power"] = {
-					["func"] = "function(unit)\nreturn not Gladius.test and UnitPower(unit) or Gladius.testing[unit].power\nend",
-					["events"] = "UNIT_POWER_UPDATE UNIT_DISPLAYPOWER UNIT_NAME_UPDATE",
-				},
-				["name:status"] = {
-					["func"] = "function(unit)\nreturn UnitIsDeadOrGhost(unit) and Gladius.L[\"DEAD\"] or (UnitName(unit) or unit)\nend",
-					["events"] = "UNIT_NAME_UPDATE UNIT_HEALTH",
-				},
-				["spec"] = {
-					["preparation"] = true,
-					["func"] = "function(unit)\nreturn Gladius.test and Gladius.testing[unit].unitSpec or Gladius.buttons[unit].spec\nend",
-					["events"] = "UNIT_NAME_UPDATE GLADIUS_SPEC_UPDATE",
-				},
-				["power:percentage"] = {
-					["func"] = "function(unit)\nlocal power = not Gladius.test and UnitPower(unit) or Gladius.testing[unit].power\nlocal maxPower = not Gladius.test and UnitPowerMax(unit) or Gladius.testing[unit].maxPower\nreturn strformat(\"%.1f%%\", (power / maxPower * 100))\nend",
-					["events"] = "UNIT_POWER_UPDATE UNIT_MAXPOWER UNIT_DISPLAYPOWER UNIT_NAME_UPDATE",
-				},
-				["name"] = {
-					["func"] = "function(unit)\nreturn UnitName(unit) or unit\nend",
-					["events"] = "UNIT_NAME_UPDATE",
-				},
-				["spec:short"] = {
-					["preparation"] = true,
-					["func"] = "function(unit)\nlocal spec = Gladius.test and Gladius.testing[unit].unitSpec or Gladius.buttons[unit].spec\nif (spec == nil or spec == \"\") then\nreturn \"\"\nend\nreturn Gladius.L[spec..\":short\"]\nend",
-					["events"] = "UNIT_NAME_UPDATE GLADIUS_SPEC_UPDATE",
-				},
-				["health:percentage"] = {
-					["func"] = "function(unit)\nlocal health = not Gladius.test and UnitHealth(unit) or Gladius.testing[unit].health\nlocal maxHealth = not Gladius.test and UnitHealthMax(unit) or Gladius.testing[unit].maxHealth\nreturn strformat(\"%.1f%%\", (health / maxHealth * 100))\nend",
-					["events"] = "UNIT_HEALTH UNIT_MAXHEALTH UNIT_NAME_UPDATE",
-				},
-				["maxpower"] = {
-					["func"] = "function(unit)\nreturn not Gladius.test and UnitPowerMax(unit) or Gladius.testing[unit].maxPower\nend",
-					["events"] = "UNIT_MAXPOWER UNIT_DISPLAYPOWER UNIT_NAME_UPDATE",
-				},
-				["maxhealth:short"] = {
-					["func"] = "function(unit)\nlocal health = not Gladius.test and UnitHealthMax(unit) or Gladius.testing[unit].maxHealth\nif (health > 999) then\nreturn strformat(\"%.1fk\", (health / 1000))\nelse\nreturn health\nend\nend",
-					["events"] = "UNIT_HEALTH UNIT_MAXHEALTH UNIT_NAME_UPDATE",
-				},
-				["health"] = {
-					["func"] = "function(unit)\nreturn not Gladius.test and UnitHealth(unit) or Gladius.testing[unit].health\nend",
-					["events"] = "UNIT_HEALTH UNIT_MAXHEALTH UNIT_NAME_UPDATE",
-				},
-			},
 			["highlightFocus"] = false,
 			["dispellAdjustSize"] = false,
 			["drTrackerGlossColor"] = {
 				["a"] = 0,
 			},
 			["powerBarHeight"] = 25,
-			["targetBarOffsetX"] = 15,
+			["drTrackerAdjustSize"] = false,
 			["tagsVersion"] = 4,
 			["drTrackerCooldownReverse"] = true,
 			["locked"] = true,
@@ -318,7 +244,6 @@ Gladius2DB = {
 			["castTextSize"] = 14,
 			["trinketGloss"] = false,
 			["timerSecondsFontSize"] = 20,
-			["dispellIconCrop"] = true,
 			["globalFontSize"] = 16,
 			["drTrackerMargin"] = 7,
 			["direction"] = 2,
@@ -350,6 +275,7 @@ Gladius2DB = {
 			["highlightHover"] = false,
 			["trinketIconCrop"] = true,
 			["classIconCooldownReverse"] = true,
+			["dispellIconCrop"] = true,
 			["classIconGlossColor"] = {
 				["a"] = 0,
 			},
@@ -365,12 +291,86 @@ Gladius2DB = {
 				["g"] = 0.0392156862745098,
 				["r"] = 0.0392156862745098,
 			},
-			["drTrackerAdjustSize"] = false,
+			["targetBarOffsetX"] = 15,
 			["auraVersion"] = 1,
 			["barWidth"] = 180,
 			["backgroundPadding"] = 0,
 			["y"] = {
 				["arena1"] = 536.6411241055466,
+			},
+			["tags"] = {
+				["maxhealth"] = {
+					["func"] = "function(unit)\nreturn not Gladius.test and UnitHealthMax(unit) or Gladius.testing[unit].maxHealth\nend",
+					["events"] = "UNIT_HEALTH UNIT_MAXHEALTH UNIT_NAME_UPDATE",
+				},
+				["class:short"] = {
+					["preparation"] = true,
+					["func"] = "function(unit)\nreturn not Gladius.test and Gladius.L[LOCALIZED_CLASS_NAMES_MALE[Gladius.buttons[unit].class]..\":short\"] or Gladius.L[LOCALIZED_CLASS_NAMES_MALE[Gladius.testing[unit].unitClass]..\":short\"]\nend",
+					["events"] = "UNIT_NAME_UPDATE",
+				},
+				["health:short"] = {
+					["func"] = "function(unit)\nlocal health = not Gladius.test and UnitHealth(unit) or Gladius.testing[unit].health\nif (health > 999) then\nreturn strformat(\"%.1fk\", (health / 1000))\nelse\nreturn health\nend\nend",
+					["events"] = "UNIT_HEALTH UNIT_MAXHEALTH UNIT_NAME_UPDATE",
+				},
+				["class"] = {
+					["preparation"] = true,
+					["func"] = "function(unit)\nreturn not Gladius.test and LOCALIZED_CLASS_NAMES_MALE[Gladius.buttons[unit].class] or LOCALIZED_CLASS_NAMES_MALE[Gladius.testing[unit].unitClass]\nend",
+					["events"] = "UNIT_NAME_UPDATE",
+				},
+				["power:short"] = {
+					["func"] = "function(unit)\nlocal power = not Gladius.test and UnitPower(unit) or Gladius.testing[unit].power\nif (power > 999) then\nreturn strformat(\"%.1fk\", (power / 1000))\nelse\nreturn power\nend\nend",
+					["events"] = "UNIT_POWER_UPDATE UNIT_DISPLAYPOWER UNIT_NAME_UPDATE",
+				},
+				["race"] = {
+					["func"] = "function(unit)\nreturn not Gladius.test and UnitRace(unit) or Gladius.testing[unit].unitRace\nend",
+					["events"] = "UNIT_NAME_UPDATE",
+				},
+				["maxpower:short"] = {
+					["func"] = "function(unit)\nlocal power = not Gladius.test and UnitPowerMax(unit) or Gladius.testing[unit].maxPower\nif (power > 999) then\nreturn strformat(\"%.1fk\", (power / 1000))\nelse\nreturn power\nend\nend",
+					["events"] = "UNIT_MAXPOWER UNIT_DISPLAYPOWER UNIT_NAME_UPDATE",
+				},
+				["power"] = {
+					["func"] = "function(unit)\nreturn not Gladius.test and UnitPower(unit) or Gladius.testing[unit].power\nend",
+					["events"] = "UNIT_POWER_UPDATE UNIT_DISPLAYPOWER UNIT_NAME_UPDATE",
+				},
+				["name:status"] = {
+					["func"] = "function(unit)\nreturn UnitIsDeadOrGhost(unit) and Gladius.L[\"DEAD\"] or (UnitName(unit) or unit)\nend",
+					["events"] = "UNIT_NAME_UPDATE UNIT_HEALTH",
+				},
+				["spec"] = {
+					["preparation"] = true,
+					["func"] = "function(unit)\nreturn Gladius.test and Gladius.testing[unit].unitSpec or Gladius.buttons[unit].spec\nend",
+					["events"] = "UNIT_NAME_UPDATE GLADIUS_SPEC_UPDATE",
+				},
+				["power:percentage"] = {
+					["func"] = "function(unit)\nlocal power = not Gladius.test and UnitPower(unit) or Gladius.testing[unit].power\nlocal maxPower = not Gladius.test and UnitPowerMax(unit) or Gladius.testing[unit].maxPower\nreturn strformat(\"%.1f%%\", (power / maxPower * 100))\nend",
+					["events"] = "UNIT_POWER_UPDATE UNIT_MAXPOWER UNIT_DISPLAYPOWER UNIT_NAME_UPDATE",
+				},
+				["name"] = {
+					["func"] = "function(unit)\nreturn UnitName(unit) or unit\nend",
+					["events"] = "UNIT_NAME_UPDATE",
+				},
+				["spec:short"] = {
+					["preparation"] = true,
+					["func"] = "function(unit)\nlocal spec = Gladius.test and Gladius.testing[unit].unitSpec or Gladius.buttons[unit].spec\nif (spec == nil or spec == \"\") then\nreturn \"\"\nend\nreturn Gladius.L[spec..\":short\"]\nend",
+					["events"] = "UNIT_NAME_UPDATE GLADIUS_SPEC_UPDATE",
+				},
+				["health:percentage"] = {
+					["func"] = "function(unit)\nlocal health = not Gladius.test and UnitHealth(unit) or Gladius.testing[unit].health\nlocal maxHealth = not Gladius.test and UnitHealthMax(unit) or Gladius.testing[unit].maxHealth\nreturn strformat(\"%.1f%%\", (health / maxHealth * 100))\nend",
+					["events"] = "UNIT_HEALTH UNIT_MAXHEALTH UNIT_NAME_UPDATE",
+				},
+				["maxpower"] = {
+					["func"] = "function(unit)\nreturn not Gladius.test and UnitPowerMax(unit) or Gladius.testing[unit].maxPower\nend",
+					["events"] = "UNIT_MAXPOWER UNIT_DISPLAYPOWER UNIT_NAME_UPDATE",
+				},
+				["maxhealth:short"] = {
+					["func"] = "function(unit)\nlocal health = not Gladius.test and UnitHealthMax(unit) or Gladius.testing[unit].maxHealth\nif (health > 999) then\nreturn strformat(\"%.1fk\", (health / 1000))\nelse\nreturn health\nend\nend",
+					["events"] = "UNIT_HEALTH UNIT_MAXHEALTH UNIT_NAME_UPDATE",
+				},
+				["health"] = {
+					["func"] = "function(unit)\nreturn not Gladius.test and UnitHealth(unit) or Gladius.testing[unit].health\nend",
+					["events"] = "UNIT_HEALTH UNIT_MAXHEALTH UNIT_NAME_UPDATE",
+				},
 			},
 		},
 		["Crylo - Tichondrius"] = {

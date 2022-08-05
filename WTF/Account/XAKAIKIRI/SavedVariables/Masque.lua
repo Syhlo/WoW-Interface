@@ -225,10 +225,8 @@ MasqueDB = {
 					["Backdrop"] = true,
 					["SkinID"] = "Caith",
 				},
-				["WeakAuras_oH0pxpktwhz"] = {
+				["OmniBar_Rebuke"] = {
 					["Shadow"] = true,
-					["Backdrop"] = true,
-					["Upgraded"] = true,
 					["Colors"] = {
 						["Normal"] = {
 							0.2941176470588235, -- [1]
@@ -238,6 +236,7 @@ MasqueDB = {
 						},
 					},
 					["Inherit"] = false,
+					["Backdrop"] = true,
 					["SkinID"] = "Caith",
 				},
 				["Bartender4_10"] = {
@@ -398,7 +397,7 @@ MasqueDB = {
 					["Backdrop"] = true,
 					["SkinID"] = "Caith",
 				},
-				["WeakAuras_eEgZEjNMrJA"] = {
+				["WeakAuras_Int8p64J47C"] = {
 					["Shadow"] = true,
 					["Backdrop"] = true,
 					["Upgraded"] = true,
@@ -410,8 +409,8 @@ MasqueDB = {
 							1, -- [4]
 						},
 					},
-					["Inherit"] = false,
 					["SkinID"] = "Caith",
+					["Inherit"] = false,
 				},
 				["Bartender4_6"] = {
 					["Shadow"] = true,
@@ -455,7 +454,7 @@ MasqueDB = {
 					["Backdrop"] = true,
 					["SkinID"] = "Caith",
 				},
-				["OmniBar_Rebuke"] = {
+				["Bagnon_guild - bags"] = {
 					["Shadow"] = true,
 					["Colors"] = {
 						["Normal"] = {
@@ -780,21 +779,7 @@ MasqueDB = {
 					["Backdrop"] = true,
 					["Inherit"] = false,
 				},
-				["Bagnon_guild - bags"] = {
-					["Shadow"] = true,
-					["Colors"] = {
-						["Normal"] = {
-							0.2941176470588235, -- [1]
-							0.2941176470588235, -- [2]
-							0.2941176470588235, -- [3]
-							1, -- [4]
-						},
-					},
-					["Inherit"] = false,
-					["Backdrop"] = true,
-					["SkinID"] = "Caith",
-				},
-				["WeakAuras_Int8p64J47C"] = {
+				["WeakAuras_eEgZEjNMrJA"] = {
 					["Shadow"] = true,
 					["Backdrop"] = true,
 					["Upgraded"] = true,
@@ -806,8 +791,23 @@ MasqueDB = {
 							1, -- [4]
 						},
 					},
-					["SkinID"] = "Caith",
 					["Inherit"] = false,
+					["SkinID"] = "Caith",
+				},
+				["WeakAuras_oH0pxpktwhz"] = {
+					["Shadow"] = true,
+					["Backdrop"] = true,
+					["Upgraded"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["Inherit"] = false,
+					["SkinID"] = "Caith",
 				},
 				["Bartender4_5"] = {
 					["Shadow"] = true,

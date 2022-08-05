@@ -65,6 +65,14 @@ MJEGlobalSettings = {
 		},
 		["hiddenIngame"] = false,
 		["hidden"] = false,
+		["onlyUsable"] = false,
+		["faction"] = {
+			["horde"] = true,
+			["alliance"] = true,
+			["noFaction"] = true,
+		},
+		["onlyFavorites"] = false,
+		["onlyTradable"] = false,
 		["mountType"] = {
 			["repair"] = true,
 			["transform"] = true,
@@ -72,14 +80,6 @@ MJEGlobalSettings = {
 			["passenger"] = true,
 			["ground"] = true,
 			["flying"] = true,
-		},
-		["onlyUsable"] = false,
-		["onlyFavorites"] = false,
-		["onlyTradable"] = false,
-		["faction"] = {
-			["horde"] = true,
-			["alliance"] = true,
-			["noFaction"] = true,
 		},
 		["family"] = {
 			["Arachnids"] = {
@@ -179,10 +179,10 @@ MJEGlobalSettings = {
 				["Wolves"] = true,
 			},
 			["Rays"] = {
-				["Nether Rays"] = true,
-				["Stingrays"] = true,
-				["Mana Rays"] = true,
 				["Fathom Rays"] = true,
+				["Nether Rays"] = true,
+				["Mana Rays"] = true,
+				["Stingrays"] = true,
 			},
 			["Elementals"] = {
 				["Sabers"] = true,
@@ -342,10 +342,10 @@ MJETrackingData = {
 		19103.27826562646, -- [4]
 	},
 	[460] = {
-		34, -- [1]
-		1659561032, -- [2]
-		3974, -- [3]
-		6220.798908815164, -- [4]
+		35, -- [1]
+		1659678829, -- [2]
+		3984, -- [3]
+		6306.032181333368, -- [4]
 	},
 	[832] = {
 		0, -- [1]
@@ -366,9 +366,9 @@ MJETrackingData = {
 		641.9859684561987, -- [4]
 	},
 	[219] = {
-		685, -- [1]
-		1659663500, -- [2]
-		78106, -- [3]
+		694, -- [1]
+		1659668126, -- [2]
+		78222, -- [3]
 		437612.1079190956, -- [4]
 		1287676800, -- [5]
 	},
@@ -385,10 +385,10 @@ MJETrackingData = {
 		[5] = 1603036800,
 	},
 	[551] = {
-		66, -- [1]
-		1659531110, -- [2]
-		6435, -- [3]
-		94831.28377434677, -- [4]
+		67, -- [1]
+		1659677885, -- [2]
+		6445, -- [3]
+		95055.2105139965, -- [4]
 	},
 	[276] = {
 		24, -- [1]
@@ -403,10 +403,10 @@ MJETrackingData = {
 		96208.54394976255, -- [4]
 	},
 	[1352] = {
-		176, -- [1]
-		1659654559, -- [2]
-		21375, -- [3]
-		114871.9407004817, -- [4]
+		201, -- [1]
+		1659692705, -- [2]
+		27347, -- [3]
+		134116.2872672261, -- [4]
 	},
 	[185] = {
 		0, -- [1]

@@ -7068,11 +7068,12 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Chaotic Rift",
 		},
-		[47944] = {
+		[264442] = {
 			["school"] = 1,
 			["token"] = {
-				["SPELL_DAMAGE"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
 			},
+			["source"] = "Islan-Nemesis",
 		},
 		[197277] = {
 			["school"] = 2,
@@ -7093,12 +7094,11 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Ambassador Hellmaw",
 		},
-		[264442] = {
+		[47944] = {
 			["school"] = 1,
 			["token"] = {
-				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_DAMAGE"] = true,
 			},
-			["source"] = "Islan-Nemesis",
 		},
 		[30153] = {
 			["school"] = 1,
@@ -7232,13 +7232,14 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Aeolian-Perenolde",
 		},
-		[246152] = {
-			["school"] = 1,
-			["type"] = "BUFF",
+		[2061] = {
+			["school"] = 2,
 			["token"] = {
-				["SPELL_AURA_APPLIED"] = true,
+				["SPELL_CAST_START"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_HEAL"] = true,
 			},
-			["source"] = "Awoljc-ArgentDawn",
+			["source"] = "Nannÿ-Zul'jin",
 		},
 		[366285] = {
 			["school"] = 32,
@@ -7257,14 +7258,13 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Nezorf-EmeraldDream",
 		},
-		[2061] = {
-			["school"] = 2,
+		[246152] = {
+			["school"] = 1,
+			["type"] = "BUFF",
 			["token"] = {
-				["SPELL_CAST_START"] = true,
-				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_HEAL"] = true,
+				["SPELL_AURA_APPLIED"] = true,
 			},
-			["source"] = "Nannÿ-Zul'jin",
+			["source"] = "Awoljc-ArgentDawn",
 		},
 		[363727] = {
 			["school"] = 2,
@@ -7430,12 +7430,13 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Skadi the Ruthless",
 		},
-		[267523] = {
-			["school"] = 1,
+		[48585] = {
+			["school"] = 32,
+			["type"] = "DEBUFF",
 			["token"] = {
-				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_AURA_APPLIED"] = true,
 			},
-			["source"] = "Captain Jolly",
+			["source"] = "Avenging Spirit",
 		},
 		[152837] = {
 			["school"] = 4,
@@ -7524,13 +7525,14 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Undying Stonefiend",
 		},
-		[51336] = {
-			["school"] = 1,
+		[45195] = {
+			["school"] = 16,
+			["type"] = "DEBUFF",
 			["token"] = {
-				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_CAST_START"] = true,
+				["SPELL_AURA_APPLIED"] = true,
+				["SPELL_DAMAGE"] = true,
 			},
-			["source"] = "Drakos the Interrogator",
+			["source"] = "Nethermancer Sepethrea",
 		},
 		[86392] = {
 			["school"] = 1,
@@ -7744,22 +7746,6 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Isavella-Malfurion",
 		},
-		[332525] = {
-			["school"] = 64,
-			["token"] = {
-				["SPELL_CAST_START"] = true,
-				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_DAMAGE"] = true,
-			},
-			["source"] = "Kyrian Goliath",
-		},
-		[325872] = {
-			["school"] = 1,
-			["token"] = {
-				["SPELL_CAST_SUCCESS"] = true,
-			},
-			["source"] = "Depraved Obliterator",
-		},
 		[255371] = {
 			["school"] = 32,
 			["type"] = "DEBUFF",
@@ -7770,6 +7756,22 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Rezan",
 		},
+		[325872] = {
+			["school"] = 1,
+			["token"] = {
+				["SPELL_CAST_SUCCESS"] = true,
+			},
+			["source"] = "Depraved Obliterator",
+		},
+		[332525] = {
+			["school"] = 64,
+			["token"] = {
+				["SPELL_CAST_START"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_DAMAGE"] = true,
+			},
+			["source"] = "Kyrian Goliath",
+		},
 		[267533] = {
 			["school"] = 4,
 			["token"] = {
@@ -7777,6 +7779,15 @@ EncounterDetailsDB = {
 				["SPELL_CAST_START"] = true,
 			},
 			["source"] = "Captain Jolly",
+		},
+		[332526] = {
+			["school"] = 64,
+			["token"] = {
+				["SPELL_CAST_START"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_HEAL"] = true,
+			},
+			["source"] = "Kyrian Goliath",
 		},
 		[28747] = {
 			["school"] = 1,
@@ -7798,15 +7809,6 @@ EncounterDetailsDB = {
 				["SPELL_CAST_START"] = true,
 			},
 			["source"] = "Beauty",
-		},
-		[332526] = {
-			["school"] = 64,
-			["token"] = {
-				["SPELL_CAST_START"] = true,
-				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_HEAL"] = true,
-			},
-			["source"] = "Kyrian Goliath",
 		},
 		[191587] = {
 			["school"] = 32,
@@ -7937,13 +7939,13 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Rotting Slimeclaw",
 		},
-		[326389] = {
-			["school"] = 1,
+		[76032] = {
+			["school"] = 4,
 			["token"] = {
 				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_CAST_START"] = true,
+				["SPELL_DAMAGE"] = true,
 			},
-			["source"] = "Echelon",
+			["source"] = "Beauty",
 		},
 		[162491] = {
 			["school"] = 1,
@@ -8057,13 +8059,13 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Nalthor the Rimebinder",
 		},
-		[76032] = {
-			["school"] = 4,
+		[326389] = {
+			["school"] = 1,
 			["token"] = {
 				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_DAMAGE"] = true,
+				["SPELL_CAST_START"] = true,
 			},
-			["source"] = "Beauty",
+			["source"] = "Echelon",
 		},
 		[53385] = {
 			["school"] = 2,
@@ -8281,14 +8283,13 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Daggerfall",
 		},
-		[45195] = {
-			["school"] = 16,
-			["type"] = "DEBUFF",
+		[51336] = {
+			["school"] = 1,
 			["token"] = {
-				["SPELL_AURA_APPLIED"] = true,
-				["SPELL_DAMAGE"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_CAST_START"] = true,
 			},
-			["source"] = "Nethermancer Sepethrea",
+			["source"] = "Drakos the Interrogator",
 		},
 		[26573] = {
 			["school"] = 2,
@@ -8323,13 +8324,12 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Cernnunös-Proudmoore",
 		},
-		[48585] = {
-			["school"] = 32,
-			["type"] = "DEBUFF",
+		[267523] = {
+			["school"] = 1,
 			["token"] = {
-				["SPELL_AURA_APPLIED"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
 			},
-			["source"] = "Avenging Spirit",
+			["source"] = "Captain Jolly",
 		},
 		[320772] = {
 			["school"] = 16,

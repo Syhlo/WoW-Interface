@@ -234,7 +234,7 @@ MADB = {
 						"UIParent", -- [2]
 						"BOTTOM", -- [3]
 						0, -- [4]
-						140, -- [5]
+						175, -- [5]
 					},
 					["name"] = "UIWidgetPowerBarContainerFrame",
 					["pos"] = {

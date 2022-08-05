@@ -1082,7 +1082,7 @@ Bartender4DB = {
 							},
 						}, -- [2]
 						{
-							["hidemacrotext"] = true,
+							["fadeoutalpha"] = 0.65,
 							["fadeout"] = true,
 							["position"] = {
 								["y"] = 223.2000300725304,
@@ -1090,10 +1090,10 @@ Bartender4DB = {
 								["point"] = "RIGHT",
 								["scale"] = 0.8999999761581421,
 							},
-							["version"] = 3,
-							["rows"] = 12,
 							["padding"] = 5,
-							["fadeoutalpha"] = 0.65,
+							["hidemacrotext"] = true,
+							["rows"] = 12,
+							["version"] = 3,
 						}, -- [3]
 						{
 							["fadeout"] = true,
@@ -1939,9 +1939,9 @@ Bartender4DB = {
 		["BagBar"] = {
 			["profiles"] = {
 				["Isellpropane - Proudmoore"] = {
-					["version"] = 3,
 					["fadeoutalpha"] = 0,
 					["fadeout"] = true,
+					["version"] = 3,
 					["position"] = {
 						["y"] = 48.61392211914063,
 						["x"] = -180.35791015625,
@@ -2037,9 +2037,9 @@ Bartender4DB = {
 					},
 				},
 				["Syhlo - Thrall"] = {
-					["fadeoutalpha"] = 0,
 					["version"] = 3,
 					["fadeout"] = true,
+					["fadeoutalpha"] = 0,
 					["position"] = {
 						["y"] = 48.61392211914063,
 						["x"] = -180.35791015625,
