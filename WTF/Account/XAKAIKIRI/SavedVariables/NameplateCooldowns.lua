@@ -676,7 +676,7 @@ NameplateCooldownsAceDB = {
 				[19647] = {
 					["enabled"] = true,
 				},
-				[89766] = {
+				[122470] = {
 					["enabled"] = true,
 				},
 				[187707] = {
@@ -691,7 +691,7 @@ NameplateCooldownsAceDB = {
 				[108194] = {
 					["enabled"] = true,
 				},
-				[122470] = {
+				[116849] = {
 					["enabled"] = true,
 				},
 				[328530] = {
@@ -937,7 +937,7 @@ NameplateCooldownsAceDB = {
 				[108199] = {
 					["enabled"] = true,
 				},
-				[116849] = {
+				[89766] = {
 					["enabled"] = true,
 				},
 				[212182] = {
@@ -1665,7 +1665,7 @@ NameplateCooldownsAceDB = {
 				[122278] = {
 					["enabled"] = true,
 				},
-				[89766] = {
+				[122470] = {
 					["enabled"] = true,
 				},
 				[187707] = {
@@ -1680,7 +1680,7 @@ NameplateCooldownsAceDB = {
 				[328530] = {
 					["enabled"] = true,
 				},
-				[122470] = {
+				[116849] = {
 					["enabled"] = true,
 				},
 				[108194] = {
@@ -1926,7 +1926,7 @@ NameplateCooldownsAceDB = {
 				[23920] = {
 					["enabled"] = true,
 				},
-				[116849] = {
+				[89766] = {
 					["enabled"] = true,
 				},
 				[212182] = {
@@ -2654,7 +2654,7 @@ NameplateCooldownsAceDB = {
 				[19647] = {
 					["enabled"] = true,
 				},
-				[89766] = {
+				[122470] = {
 					["enabled"] = true,
 				},
 				[187707] = {
@@ -2669,7 +2669,7 @@ NameplateCooldownsAceDB = {
 				[108194] = {
 					["enabled"] = true,
 				},
-				[122470] = {
+				[116849] = {
 					["enabled"] = true,
 				},
 				[328530] = {
@@ -2915,7 +2915,7 @@ NameplateCooldownsAceDB = {
 				[108199] = {
 					["enabled"] = true,
 				},
-				[116849] = {
+				[89766] = {
 					["enabled"] = true,
 				},
 				[212182] = {
@@ -3643,7 +3643,7 @@ NameplateCooldownsAceDB = {
 				[122278] = {
 					["enabled"] = true,
 				},
-				[116849] = {
+				[89766] = {
 					["enabled"] = true,
 				},
 				[187707] = {
@@ -3658,7 +3658,7 @@ NameplateCooldownsAceDB = {
 				[328530] = {
 					["enabled"] = true,
 				},
-				[89766] = {
+				[122470] = {
 					["enabled"] = true,
 				},
 				[108194] = {
@@ -3904,7 +3904,7 @@ NameplateCooldownsAceDB = {
 				[23920] = {
 					["enabled"] = true,
 				},
-				[122470] = {
+				[116849] = {
 					["enabled"] = true,
 				},
 				[212182] = {
@@ -3972,6 +3972,7 @@ NameplateCooldownsAceDB = {
 				0.9686274509803922, -- [2]
 				0.9372549019607843, -- [3]
 			},
+			["IconSpacing"] = 1,
 			["SpellCDs"] = {
 				[47585] = {
 					["enabled"] = true,
@@ -4961,11 +4962,10 @@ NameplateCooldownsAceDB = {
 			["MigrationVersion"] = 7,
 			["IconXOffset"] = 33,
 			["ShowCooldownAnimation"] = true,
-			["IconSpacing"] = 1,
-			["IconYOffset"] = 6,
-			["IconSortMode"] = "interrupt-other",
 			["ShowBorderTrinkets"] = false,
 			["IconSize"] = 16,
+			["IconSortMode"] = "interrupt-other",
+			["IconYOffset"] = 6,
 			["FontScale"] = 0.8,
 		},
 		["Gerold - Tichondrius"] = {
@@ -5634,7 +5634,7 @@ NameplateCooldownsAceDB = {
 				[19647] = {
 					["enabled"] = true,
 				},
-				[122470] = {
+				[116849] = {
 					["enabled"] = true,
 				},
 				[187707] = {
@@ -5649,7 +5649,7 @@ NameplateCooldownsAceDB = {
 				[108194] = {
 					["enabled"] = true,
 				},
-				[116849] = {
+				[89766] = {
 					["enabled"] = true,
 				},
 				[328530] = {
@@ -5895,7 +5895,7 @@ NameplateCooldownsAceDB = {
 				[108199] = {
 					["enabled"] = true,
 				},
-				[89766] = {
+				[122470] = {
 					["enabled"] = true,
 				},
 				[212182] = {
@@ -5958,13 +5958,12 @@ NameplateCooldownsAceDB = {
 			},
 		},
 		["Global"] = {
+			["ShowBorderInterrupts"] = false,
 			["TimerTextColor"] = {
 				1, -- [1]
 				0.9686274509803922, -- [2]
 				0.9372549019607843, -- [3]
 			},
-			["ShowBorderInterrupts"] = false,
-			["IconSpacing"] = 1,
 			["SpellCDs"] = {
 				[47585] = {
 					["enabled"] = true,
@@ -6953,11 +6952,12 @@ NameplateCooldownsAceDB = {
 			},
 			["MigrationVersion"] = 7,
 			["IconXOffset"] = -1,
-			["IconYOffset"] = 13,
-			["IconSize"] = 16,
-			["ShowBorderTrinkets"] = false,
-			["IconSortMode"] = "interrupt-other",
 			["ShowCooldownAnimation"] = true,
+			["IconSpacing"] = 1,
+			["IconSortMode"] = "interrupt-other",
+			["ShowBorderTrinkets"] = false,
+			["IconSize"] = 16,
+			["IconYOffset"] = 13,
 		},
 		["Crylo - Tichondrius"] = {
 			["MigrationVersion"] = 7,
@@ -7625,7 +7625,7 @@ NameplateCooldownsAceDB = {
 				[19647] = {
 					["enabled"] = true,
 				},
-				[89766] = {
+				[122470] = {
 					["enabled"] = true,
 				},
 				[187707] = {
@@ -7640,7 +7640,7 @@ NameplateCooldownsAceDB = {
 				[108194] = {
 					["enabled"] = true,
 				},
-				[122470] = {
+				[116849] = {
 					["enabled"] = true,
 				},
 				[328530] = {
@@ -7886,7 +7886,7 @@ NameplateCooldownsAceDB = {
 				[108199] = {
 					["enabled"] = true,
 				},
-				[116849] = {
+				[89766] = {
 					["enabled"] = true,
 				},
 				[212182] = {

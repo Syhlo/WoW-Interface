@@ -2,13 +2,13 @@
 ThreatPlatesDB = {
 	["char"] = {
 		["Cyf - Tichondrius"] = {
-			["welcome"] = true,
 			["spec"] = {
 				nil, -- [1]
 				nil, -- [2]
 				true, -- [3]
 				false, -- [4]
 			},
+			["welcome"] = true,
 		},
 		["Sýh - Thrall"] = {
 			["welcome"] = true,
@@ -37,10 +37,10 @@ ThreatPlatesDB = {
 			["welcome"] = true,
 		},
 		["Syhlol - Thrall"] = {
-			["welcome"] = true,
 			["spec"] = {
 				[3] = false,
 			},
+			["welcome"] = true,
 		},
 		["Syhlo - Thrall"] = {
 			["spec"] = {

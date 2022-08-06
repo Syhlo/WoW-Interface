@@ -75,16 +75,16 @@ Bagnon_Sets = {
 				"quest", -- [19]
 				"misc", -- [20]
 			},
-			["itemScale"] = 1,
 			["hiddenRules"] = {
 			},
+			["alpha"] = 1,
 			["bagBreak"] = false,
 			["y"] = 66.43365478515625,
 			["x"] = -77.67113950821249,
 			["search"] = true,
 			["broker"] = true,
 			["reverseSlots"] = false,
-			["alpha"] = 1,
+			["itemScale"] = 1,
 			["borderColor"] = {
 				0.1058823529411765, -- [1]
 				0.1058823529411765, -- [2]

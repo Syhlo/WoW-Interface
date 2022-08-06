@@ -77,8 +77,3 @@ VER 3 010000000000002E " " "INV_MISC_QUESTIONMARK"
 #showtooltip
 /cast [@player] Innervate
 END
-VER 3 010000000000002F " " "INV_MISC_QUESTIONMARK"
-#showtooltip
-/cancelform
-/cast Rejuvenation
-END

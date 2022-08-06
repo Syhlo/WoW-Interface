@@ -16,10 +16,10 @@ HHTD_SavedVariables = {
 		["Sydh - Thrall"] = {
 			["settingsMigrated"] = false,
 		},
-		["Syhlo - Thrall"] = {
+		["Syhlol - Thrall"] = {
 			["settingsMigrated"] = false,
 		},
-		["Syhlol - Thrall"] = {
+		["Youreterribl - Burning Legion"] = {
 			["settingsMigrated"] = false,
 		},
 		["Isellpropane - Proudmoore"] = {
@@ -34,7 +34,7 @@ HHTD_SavedVariables = {
 		["Regèn - Tichondrius"] = {
 			["settingsMigrated"] = false,
 		},
-		["Youreterribl - Burning Legion"] = {
+		["Syhlo - Thrall"] = {
 			["settingsMigrated"] = false,
 		},
 		["Syh - Thrall"] = {
@@ -44,9 +44,9 @@ HHTD_SavedVariables = {
 	["namespaces"] = {
 		["Announcer"] = {
 			["global"] = {
-				["PostToChat"] = true,
 				["Sounds"] = false,
 				["ProtectMessage"] = "Friendly Healers: [HEALERS]",
+				["PostToChat"] = true,
 			},
 		},
 		["CM"] = {
@@ -67,13 +67,13 @@ HHTD_SavedVariables = {
 		["Wthrename - Tichondrius"] = "Wthrename - Tichondrius",
 		["Gerold - Tichondrius"] = "Gerold - Tichondrius",
 		["Sydh - Thrall"] = "Sydh - Thrall",
-		["Syhlo - Thrall"] = "Syhlo - Thrall",
 		["Syhlol - Thrall"] = "Syhlol - Thrall",
+		["Youreterribl - Burning Legion"] = "Youreterribl - Burning Legion",
 		["Isellpropane - Proudmoore"] = "Isellpropane - Proudmoore",
 		["Crylo - Tichondrius"] = "Crylo - Tichondrius",
 		["Syhdk - Thrall"] = "Syhdk - Thrall",
 		["Regèn - Tichondrius"] = "Regèn - Tichondrius",
-		["Youreterribl - Burning Legion"] = "Youreterribl - Burning Legion",
+		["Syhlo - Thrall"] = "Syhlo - Thrall",
 		["Syh - Thrall"] = "Syh - Thrall",
 	},
 }

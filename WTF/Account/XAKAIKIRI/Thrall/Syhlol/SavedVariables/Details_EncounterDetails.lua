@@ -97,14 +97,12 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Remornia",
 		},
-		[326707] = {
+		[326833] = {
 			["school"] = 32,
 			["token"] = {
-				["SPELL_CAST_START"] = true,
-				["SPELL_CAST_SUCCESS"] = true,
 				["SPELL_DAMAGE"] = true,
 			},
-			["source"] = "Sire Denathrius",
+			["source"] = "Echo of Sin",
 		},
 		[330627] = {
 			["school"] = 32,
@@ -166,13 +164,14 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Remornia",
 		},
-		[320785] = {
-			["school"] = 64,
-			["type"] = "BUFF",
+		[326707] = {
+			["school"] = 32,
 			["token"] = {
-				["SPELL_AURA_APPLIED"] = true,
+				["SPELL_CAST_START"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_DAMAGE"] = true,
 			},
-			["source"] = "Millhouse Manastorm",
+			["source"] = "Sire Denathrius",
 		},
 		[327227] = {
 			["school"] = 32,
@@ -253,12 +252,14 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Greater Healing Ward",
 		},
-		[320145] = {
+		[332619] = {
 			["school"] = 1,
+			["type"] = "DEBUFF",
 			["token"] = {
-				["SPELL_DAMAGE"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_AURA_APPLIED"] = true,
 			},
-			["source"] = "Millificent Manastorm",
+			["source"] = "Sire Denathrius",
 		},
 		[78801] = {
 			["school"] = 16,
@@ -286,15 +287,14 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Sire Denathrius",
 		},
-		[326824] = {
+		[326005] = {
 			["school"] = 32,
 			["type"] = "BUFF",
 			["token"] = {
 				["SPELL_AURA_APPLIED"] = true,
-				["SPELL_CAST_START"] = true,
 				["SPELL_CAST_SUCCESS"] = true,
 			},
-			["source"] = "Echo of Sin",
+			["source"] = "Sire Denathrius",
 		},
 		[118297] = {
 			["school"] = 4,
@@ -312,11 +312,10 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Millificent Manastorm",
 		},
-		[332619] = {
+		[328839] = {
 			["school"] = 1,
-			["type"] = "DEBUFF",
+			["type"] = "BUFF",
 			["token"] = {
-				["SPELL_CAST_SUCCESS"] = true,
 				["SPELL_AURA_APPLIED"] = true,
 			},
 			["source"] = "Sire Denathrius",
@@ -340,12 +339,12 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Millificent Manastorm",
 		},
-		[332620] = {
+		[329974] = {
 			["school"] = 1,
 			["token"] = {
 				["SPELL_DAMAGE"] = true,
 			},
-			["source"] = "Sire Denathrius",
+			["source"] = "Remornia",
 		},
 		[327122] = {
 			["school"] = 1,
@@ -354,13 +353,12 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Remornia",
 		},
-		[328839] = {
+		[320145] = {
 			["school"] = 1,
-			["type"] = "BUFF",
 			["token"] = {
-				["SPELL_AURA_APPLIED"] = true,
+				["SPELL_DAMAGE"] = true,
 			},
-			["source"] = "Sire Denathrius",
+			["source"] = "Millificent Manastorm",
 		},
 		[330871] = {
 			["school"] = 1,
@@ -371,14 +369,12 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Sire Denathrius",
 		},
-		[329785] = {
-			["school"] = 32,
-			["type"] = "DEBUFF",
+		[332620] = {
+			["school"] = 1,
 			["token"] = {
-				["SPELL_AURA_APPLIED"] = true,
-				["SPELL_PERIODIC_DAMAGE"] = true,
+				["SPELL_DAMAGE"] = true,
 			},
-			["source"] = "Crimson Cabalist",
+			["source"] = "Sire Denathrius",
 		},
 		[320823] = {
 			["school"] = 4,
@@ -388,14 +384,14 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Millificent Manastorm",
 		},
-		[326005] = {
+		[329785] = {
 			["school"] = 32,
-			["type"] = "BUFF",
+			["type"] = "DEBUFF",
 			["token"] = {
 				["SPELL_AURA_APPLIED"] = true,
-				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_PERIODIC_DAMAGE"] = true,
 			},
-			["source"] = "Sire Denathrius",
+			["source"] = "Crimson Cabalist",
 		},
 		[342905] = {
 			["school"] = 16,
@@ -430,12 +426,15 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Sire Denathrius",
 		},
-		[329974] = {
-			["school"] = 1,
+		[326824] = {
+			["school"] = 32,
+			["type"] = "BUFF",
 			["token"] = {
-				["SPELL_DAMAGE"] = true,
+				["SPELL_AURA_APPLIED"] = true,
+				["SPELL_CAST_START"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
 			},
-			["source"] = "Remornia",
+			["source"] = "Echo of Sin",
 		},
 		[328117] = {
 			["school"] = 32,
@@ -500,12 +499,13 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Sire Denathrius",
 		},
-		[326833] = {
-			["school"] = 32,
+		[320785] = {
+			["school"] = 64,
+			["type"] = "BUFF",
 			["token"] = {
-				["SPELL_DAMAGE"] = true,
+				["SPELL_AURA_APPLIED"] = true,
 			},
-			["source"] = "Echo of Sin",
+			["source"] = "Millhouse Manastorm",
 		},
 		[333932] = {
 			["school"] = 32,

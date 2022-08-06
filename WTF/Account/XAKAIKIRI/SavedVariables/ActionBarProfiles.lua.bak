@@ -6,13 +6,13 @@ ActionBarProfilesDBv3 = {
 		["Wthrename - Tichondrius"] = "WARLOCK",
 		["Gerold - Tichondrius"] = "PALADIN",
 		["Sydh - Thrall"] = "DEMONHUNTER",
-		["Syhlo - Thrall"] = "DEMONHUNTER",
 		["Syhlol - Thrall"] = "ROGUE",
+		["Youreterribl - Burning Legion"] = "DRUID",
 		["Isellpropane - Proudmoore"] = "ROGUE",
 		["Crylo - Tichondrius"] = "MAGE",
 		["Syhdk - Thrall"] = "DEATHKNIGHT",
 		["Regèn - Tichondrius"] = "SHAMAN",
-		["Youreterribl - Burning Legion"] = "DRUID",
+		["Syhlo - Thrall"] = "DEMONHUNTER",
 		["Syh - Thrall"] = "MAGE",
 	},
 	["profiles"] = {
@@ -933,14 +933,14 @@ ActionBarProfilesDBv3 = {
 						[49] = "|cff71d5ff|Hspell:1459:0|h[Arcane Intellect]|h|r",
 						[67] = "|cff71d5ff|Htalent:22471|h[Ring of Frost]|h|r",
 						[69] = "|cff71d5ff|Htalent:22447|h[Rune of Power]|h|r",
-						[52] = "|cff71d5ff|Hspell:130:0|h[Slow Fall]|h|r",
+						[71] = "|cff71d5ff|Hspell:131474:0|h[Fishing]|h|r",
 						[104] = "|cff71d5ff|Hspell:1953:0|h[Blink]|h|r",
 						[65] = "|cff71d5ff|Hspell:116:0|h[Frostbolt]|h|r",
 						[50] = "|cff71d5ff|Hspell:190336:0|h[Conjure Refreshment]|h|r",
 						[51] = "|cffffffff|Hitem:113509::::::::60:63:::::::::|h[Conjured Mana Bun]|h|r",
-						[71] = "|cff71d5ff|Hspell:131474:0|h[Fishing]|h|r",
-						[53] = "|cff71d5ff|Hspell:13262:0|h[Disenchant]|h|r",
 						[102] = "|cff71d5ff|Hspell:2120:0|h[Flamestrike]|h|r",
+						[53] = "|cff71d5ff|Hspell:13262:0|h[Disenchant]|h|r",
+						[52] = "|cff71d5ff|Hspell:130:0|h[Slow Fall]|h|r",
 						[55] = "|cffff0000|Habp:macro:609811:#showtooltip Alter Time~0a/cancelaura Alter Time~0a:1|h[ ]|h|r",
 						[110] = "|cffff0000|Habp:macro:135824:#showtooltip~0a/cast Combustion~0a/use Cosmic Aspirant's Badge of Ferocity~0a|h[ ]|h|r",
 						[112] = "|cff71d5ff|Hspell:2139:0|h[Counterspell]|h|r",
@@ -2477,23 +2477,23 @@ ActionBarProfilesDBv3 = {
 						[68] = "|cffffffff|Hitem:5512::::::::60:65:::::::::|h[Healthstone]|h|r",
 						[101] = "|cff0070dd|Hitem:186966::::::::60:65:::::::::|h[Cosmic Aspirant's Medallion]|h|r",
 						[103] = "|cff71d5ff|Hspell:26573:0|h[Consecration]|h|r",
-						[69] = "|cff71d5ff|Hspell:4987:0|h[Cleanse]|h|r",
+						[51] = "|cff71d5ff|Hspell:465:0|h[Devotion Aura]|h|r",
 						[39] = "|cffffffff|Hitem:6948::::::::60:65:::::::::|h[Hearthstone]|h|r",
 						[109] = "|cffff0000|Habp:macro:135875:#showtooltip~0a/cast Avenging Wrath~0a/use Ruthless Gladiator's Badge of Dominance~0a|h[ ]|h|r",
 						[65] = "|cff71d5ff|Hspell:53563:0|h[Beacon of Light]|h|r",
 						[113] = "|cff71d5ff|Hspell:190784:0|h[Divine Steed]|h|r",
-						[98] = "|cff71d5ff|Hspell:498:0|h[Divine Protection]|h|r",
+						[67] = "|cff71d5ff|Hspell:10326:0|h[Turn Evil]|h|r",
 						[104] = "|cff71d5ff|Hspell:1044:0|h[Blessing of Freedom]|h|r",
 						[102] = "|cff71d5ff|Hspell:4987:0|h[Cleanse]|h|r",
 						[46] = "|cff71d5ff|Hspell:31821:0|h[Aura Mastery]|h|r",
-						[100] = "|cff71d5ff|Hspell:1022:0|h[Blessing of Protection]|h|r",
+						[69] = "|cff71d5ff|Hspell:4987:0|h[Cleanse]|h|r",
 						[48] = "|cff71d5ff|Hspell:59996:0|h[Blue Proto-Drake]|h|r",
 						[49] = "|cff71d5ff|Hspell:32223:0|h[Crusader Aura]|h|r",
-						[67] = "|cff71d5ff|Hspell:10326:0|h[Turn Evil]|h|r",
-						[51] = "|cff71d5ff|Hspell:465:0|h[Devotion Aura]|h|r",
+						[50] = "|cff71d5ff|Hspell:317920:0|h[Concentration Aura]|h|r",
+						[100] = "|cff71d5ff|Hspell:1022:0|h[Blessing of Protection]|h|r",
 						[71] = "|cff71d5ff|Hspell:633:0|h[Lay on Hands]|h|r",
 						[53] = "|cff71d5ff|Hspell:7328:0|h[Redemption]|h|r",
-						[50] = "|cff71d5ff|Hspell:317920:0|h[Concentration Aura]|h|r",
+						[98] = "|cff71d5ff|Hspell:498:0|h[Divine Protection]|h|r",
 						[55] = "|cffff0000|Habp:macro:135963:#showtooltip~0a/cast ~5b@focus,exists~5d~5b~5d Hammer of Justice~0a|h[ ]|h|r",
 						[110] = "|cff71d5ff|Hspell:210294:0|h[Divine Favor]|h|r",
 						[99] = "|cff71d5ff|Hspell:642:0|h[Divine Shield]|h|r",
@@ -2673,8 +2673,8 @@ ActionBarProfilesDBv3 = {
 						["CLICK BT4Button72:LeftButton"] = {
 							"CTRL-=", -- [1]
 						},
-						["ACTIONBUTTON8"] = {
-							"F2", -- [1]
+						["CLICK BT4Button33:LeftButton"] = {
+							"NUMPAD9", -- [1]
 						},
 						["ACTIONBUTTON5"] = {
 							"5", -- [1]
@@ -2688,8 +2688,8 @@ ActionBarProfilesDBv3 = {
 						["CLICK BT4Button64:LeftButton"] = {
 							"SHIFT-4", -- [1]
 						},
-						["CLICK BT4Button33:LeftButton"] = {
-							"NUMPAD9", -- [1]
+						["TARGETPARTYPET4"] = {
+							"SHIFT-F5", -- [1]
 						},
 						["TOGGLECHARACTER4"] = {
 							"H", -- [1]
@@ -2841,8 +2841,8 @@ ActionBarProfilesDBv3 = {
 						["VEHICLEAIMINCREMENT"] = {
 							"CTRL-MOUSEWHEELUP", -- [1]
 						},
-						["TARGETPARTYPET4"] = {
-							"SHIFT-F5", -- [1]
+						["ACTIONBUTTON8"] = {
+							"F2", -- [1]
 						},
 						["STRAFERIGHT"] = {
 							"E", -- [1]

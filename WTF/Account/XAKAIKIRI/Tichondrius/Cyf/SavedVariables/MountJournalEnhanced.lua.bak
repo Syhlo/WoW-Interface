@@ -65,14 +65,7 @@ MJEPersonalSettings = {
 		["hiddenIngame"] = false,
 		["hidden"] = false,
 		["notCollected"] = true,
-		["faction"] = {
-			["horde"] = true,
-			["alliance"] = true,
-			["noFaction"] = true,
-		},
 		["onlyUsable"] = false,
-		["onlyFavorites"] = false,
-		["onlyTradable"] = false,
 		["mountType"] = {
 			["repair"] = true,
 			["flying"] = true,
@@ -80,6 +73,13 @@ MJEPersonalSettings = {
 			["transform"] = true,
 			["ground"] = true,
 			["passenger"] = true,
+		},
+		["onlyFavorites"] = false,
+		["onlyTradable"] = false,
+		["faction"] = {
+			["horde"] = true,
+			["alliance"] = true,
+			["noFaction"] = true,
 		},
 		["family"] = {
 			["Arachnids"] = {
@@ -184,10 +184,10 @@ MJEPersonalSettings = {
 				["Hyenas"] = true,
 			},
 			["Rays"] = {
-				["Fathom Rays"] = true,
-				["Nether Rays"] = true,
-				["Mana Rays"] = true,
 				["Stingrays"] = true,
+				["Fathom Rays"] = true,
+				["Mana Rays"] = true,
+				["Nether Rays"] = true,
 			},
 			["Elementals"] = {
 				["Sabers"] = true,

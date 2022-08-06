@@ -252,8 +252,10 @@ MasqueDB = {
 					["Backdrop"] = true,
 					["SkinID"] = "Caith",
 				},
-				["Bagnon_guild - bags"] = {
+				["WeakAuras_Int8p64J47C"] = {
 					["Shadow"] = true,
+					["Backdrop"] = true,
+					["Upgraded"] = true,
 					["Colors"] = {
 						["Normal"] = {
 							0.2941176470588235, -- [1]
@@ -263,7 +265,6 @@ MasqueDB = {
 						},
 					},
 					["Inherit"] = false,
-					["Backdrop"] = true,
 					["SkinID"] = "Caith",
 				},
 				["Bartender4_5"] = {
@@ -310,10 +311,8 @@ MasqueDB = {
 					["SkinID"] = "Caith",
 					["Inherit"] = false,
 				},
-				["WeakAuras_oH0pxpktwhz"] = {
+				["Bagnon_guild - bags"] = {
 					["Shadow"] = true,
-					["Backdrop"] = true,
-					["Upgraded"] = true,
 					["Colors"] = {
 						["Normal"] = {
 							0.2941176470588235, -- [1]
@@ -322,8 +321,9 @@ MasqueDB = {
 							1, -- [4]
 						},
 					},
-					["SkinID"] = "Caith",
 					["Inherit"] = false,
+					["Backdrop"] = true,
+					["SkinID"] = "Caith",
 				},
 				["Bartender4_PetBar"] = {
 					["Shadow"] = true,
@@ -452,7 +452,7 @@ MasqueDB = {
 					["Backdrop"] = true,
 					["SkinID"] = "Caith",
 				},
-				["WeakAuras_eEgZEjNMrJA"] = {
+				["WeakAuras_oH0pxpktwhz"] = {
 					["Shadow"] = true,
 					["Backdrop"] = true,
 					["Upgraded"] = true,
@@ -764,10 +764,8 @@ MasqueDB = {
 					["Backdrop"] = true,
 					["SkinID"] = "Caith",
 				},
-				["WeakAuras_Int8p64J47C"] = {
+				["OmniBar_Rebuke"] = {
 					["Shadow"] = true,
-					["Backdrop"] = true,
-					["Upgraded"] = true,
 					["Colors"] = {
 						["Normal"] = {
 							0.2941176470588235, -- [1]
@@ -777,6 +775,7 @@ MasqueDB = {
 						},
 					},
 					["Inherit"] = false,
+					["Backdrop"] = true,
 					["SkinID"] = "Caith",
 				},
 				["OmniBar_Muzzle"] = {
@@ -808,8 +807,10 @@ MasqueDB = {
 					["SkinID"] = "Caith",
 					["Inherit"] = false,
 				},
-				["OmniBar_Rebuke"] = {
+				["WeakAuras_eEgZEjNMrJA"] = {
 					["Shadow"] = true,
+					["Backdrop"] = true,
+					["Upgraded"] = true,
 					["Colors"] = {
 						["Normal"] = {
 							0.2941176470588235, -- [1]
@@ -818,9 +819,8 @@ MasqueDB = {
 							1, -- [4]
 						},
 					},
-					["Inherit"] = false,
-					["Backdrop"] = true,
 					["SkinID"] = "Caith",
+					["Inherit"] = false,
 				},
 				["OmniBar_Disrupt"] = {
 					["Shadow"] = true,

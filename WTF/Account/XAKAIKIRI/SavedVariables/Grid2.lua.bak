@@ -24,10 +24,10 @@ Grid2DB = {
 							["toggleForVehicle"] = true,
 						}, -- [1]
 						["meta"] = {
-							["arena"] = true,
 							["raid"] = true,
-							["solo"] = true,
 							["party"] = true,
+							["solo"] = true,
+							["arena"] = true,
 						},
 					},
 				},
@@ -46,10 +46,10 @@ Grid2DB = {
 						["raid@pvp"] = "By Role",
 						["party"] = "By Role",
 						[5] = "By Role",
-						["arena"] = "By Role",
-						["raid@none"] = "By Role",
-						["raid@mythic"] = "By Role",
 						["raid"] = "By Role",
+						["raid@none"] = "By Role",
+						["arena"] = "By Role",
+						["raid@mythic"] = "By Role",
 						["raid@flex"] = "By Role",
 						["raid@other"] = "By Role",
 					},
@@ -120,10 +120,10 @@ Grid2DB = {
 								["raid@pvp"] = "By Role",
 								["raid@other"] = "By Role",
 								["party"] = "By Role",
-								["raid@mythic"] = "By Role",
-								["raid@none"] = "By Role",
-								["raid"] = "By Role",
 								["arena"] = "By Role",
+								["raid@none"] = "By Role",
+								["raid@mythic"] = "By Role",
+								["raid"] = "By Role",
 								["raid@flex"] = "By Role",
 								[5] = "By Role",
 							},
@@ -168,10 +168,10 @@ Grid2DB = {
 								["raid@pvp"] = "By Role",
 								["party"] = "By Role",
 								[5] = "By Role",
-								["raid"] = "By Role",
-								["raid@none"] = "By Role",
-								["arena"] = "By Role",
 								["raid@mythic"] = "By Role",
+								["raid@none"] = "By Role",
+								["raid"] = "By Role",
+								["arena"] = "By Role",
 								["raid@flex"] = "By Role",
 								["raid@other"] = "By Role",
 							},
@@ -245,11 +245,11 @@ Grid2DB = {
 					},
 					["PosY"] = -385.5987072537027,
 					["BorderR"] = 0,
-					["Spacing"] = 6,
+					["PosX"] = 367.0224047205556,
 					["BorderG"] = 0,
 					["horizontal"] = false,
+					["Spacing"] = 6,
 					["BorderTexture"] = "None",
-					["PosX"] = 367.0224047205556,
 				},
 				["Syhlo - Thrall"] = {
 					["PosY"] = -128.1778242843029,
@@ -266,11 +266,11 @@ Grid2DB = {
 						["raid@pvp"] = "By Role",
 					},
 					["PosY"] = -369.951137430362,
-					["PosX"] = 330.755954189608,
-					["FrameDisplay"] = "Raid",
-					["BorderTexture"] = "None",
-					["BorderR"] = 0,
 					["Spacing"] = 6,
+					["FrameDisplay"] = "Raid",
+					["PosX"] = 330.755954189608,
+					["BorderR"] = 0,
+					["BorderTexture"] = "None",
 					["BorderG"] = 0,
 					["horizontal"] = false,
 					["Positions"] = {
@@ -293,9 +293,9 @@ Grid2DB = {
 		["Grid2Frame"] = {
 			["profiles"] = {
 				["Gerold - Tichondrius"] = {
-					["frameWidth"] = 38,
 					["frameHeight"] = 38,
 					["frameTexture"] = "Grid2 Flat",
+					["frameWidth"] = 38,
 				},
 				["Healer Arena"] = {
 					["extraThemes"] = {
@@ -308,17 +308,22 @@ Grid2DB = {
 							},
 							["fontSize"] = 12,
 							["frameBorder"] = 3,
-							["iconSize"] = 24,
+							["iconSize"] = 20,
 							["mouseoverTexture"] = "Blizzard Quest Title Highlight",
 							["frameBorderDistance"] = 1,
 							["frameHeight"] = 67,
-							["frameTexture"] = "Grid2 Flat",
-							["barTexture"] = "Gradient",
 							["frameBorderColor"] = {
 								["a"] = 0.3795174360275269,
 								["r"] = 0,
 								["g"] = 0,
 								["b"] = 0,
+							},
+							["barTexture"] = "Gradient",
+							["mouseoverColor"] = {
+								["a"] = 1,
+								["r"] = 1,
+								["g"] = 1,
+								["b"] = 1,
 							},
 							["frameWidths"] = {
 							},
@@ -335,12 +340,7 @@ Grid2DB = {
 							["frameHeights"] = {
 							},
 							["frameWidth"] = 100,
-							["mouseoverColor"] = {
-								["a"] = 1,
-								["r"] = 1,
-								["g"] = 1,
-								["b"] = 1,
-							},
+							["frameTexture"] = "Grid2 Flat",
 						}, -- [1]
 						{
 							["frameColor"] = {
@@ -443,9 +443,9 @@ Grid2DB = {
 					["frameWidth"] = 44,
 				},
 				["Syh - Thrall"] = {
-					["frameWidth"] = 44,
 					["frameHeight"] = 44,
 					["frameTexture"] = "Grid2 Flat",
+					["frameWidth"] = 44,
 				},
 			},
 		},
@@ -1712,11 +1712,11 @@ Grid2DB = {
 					["debuff-Disease"] = 90,
 					["health-low"] = 55,
 					["debuff-Poison"] = 80,
-					["vehicle"] = 91,
-					["debuff-Curse"] = 60,
 					["debuff-Magic"] = 70,
-					["target"] = 50,
+					["debuff-Curse"] = 60,
 					["offline"] = 92,
+					["target"] = 50,
+					["vehicle"] = 91,
 				},
 				["corner-top-right-color"] = {
 					["buff-DivineShield-mine"] = 97,
@@ -2132,7 +2132,42 @@ Grid2DB = {
 					},
 					["fontSize"] = 8,
 				},
-				["health-color"] = {
+				["heals"] = {
+					["type"] = "bar",
+					["texture"] = "Gradient",
+					["anchorTo"] = "health",
+					["location"] = {
+						["y"] = 0,
+						["relPoint"] = "CENTER",
+						["point"] = "CENTER",
+						["x"] = 0,
+					},
+					["level"] = 1,
+					["opacity"] = 0.25,
+					["color1"] = {
+						["a"] = 0,
+						["r"] = 0,
+						["g"] = 0,
+						["b"] = 0,
+					},
+				},
+				["absorb"] = {
+					["type"] = "bar",
+					["reverseFill"] = true,
+					["opacity"] = 1,
+					["width"] = 75,
+					["location"] = {
+						["y"] = 3,
+						["relPoint"] = "RIGHT",
+						["point"] = "CENTER",
+						["x"] = -37,
+					},
+					["orientation"] = "HORIZONTAL",
+					["level"] = 3,
+					["height"] = 54,
+					["hideWhenInactive"] = true,
+				},
+				["absorb-color"] = {
 					["type"] = "bar-color",
 				},
 				["icon-right"] = {
@@ -2158,41 +2193,27 @@ Grid2DB = {
 					["alpha"] = 0.4,
 					["type"] = "alpha",
 				},
-				["heals"] = {
-					["type"] = "bar",
-					["texture"] = "Gradient",
-					["anchorTo"] = "health",
-					["location"] = {
-						["y"] = 0,
-						["relPoint"] = "CENTER",
-						["point"] = "CENTER",
-						["x"] = 0,
-					},
-					["level"] = 1,
-					["opacity"] = 0.25,
-					["color1"] = {
-						["a"] = 0,
-						["r"] = 0,
-						["g"] = 0,
-						["b"] = 0,
-					},
-				},
 				["text-down-color"] = {
 					["type"] = "text-color",
 				},
-				["corner-top-right"] = {
-					["type"] = "icon",
+				["Mana-color"] = {
+					["type"] = "bar-color",
+				},
+				["text-up"] = {
+					["type"] = "text",
+					["duration"] = true,
 					["font"] = "Friz Quadrata TT",
-					["level"] = 9,
+					["fontSize"] = 10,
+					["stack"] = false,
 					["location"] = {
-						["y"] = 0,
-						["relPoint"] = "TOPRIGHT",
-						["point"] = "TOPRIGHT",
+						["y"] = -8,
+						["relPoint"] = "TOP",
+						["point"] = "TOP",
 						["x"] = 0,
 					},
-					["duration"] = true,
-					["textlength"] = 12,
-					["fontSize"] = 8,
+					["level"] = 7,
+					["textlength"] = 6,
+					["size"] = 0.33,
 				},
 				["health"] = {
 					["type"] = "bar",
@@ -2211,21 +2232,19 @@ Grid2DB = {
 						["b"] = 0,
 					},
 				},
-				["text-up"] = {
-					["type"] = "text",
-					["duration"] = true,
+				["corner-top-right"] = {
+					["type"] = "icon",
 					["font"] = "Friz Quadrata TT",
-					["fontSize"] = 10,
-					["stack"] = false,
+					["level"] = 9,
 					["location"] = {
-						["y"] = -8,
-						["relPoint"] = "TOP",
-						["point"] = "TOP",
+						["y"] = 0,
+						["relPoint"] = "TOPRIGHT",
+						["point"] = "TOPRIGHT",
 						["x"] = 0,
 					},
-					["level"] = 7,
-					["textlength"] = 6,
-					["size"] = 0.33,
+					["duration"] = true,
+					["textlength"] = 12,
+					["fontSize"] = 8,
 				},
 				["corner-bottom-left"] = {
 					["type"] = "icon",
@@ -2247,9 +2266,6 @@ Grid2DB = {
 				["text-up-color"] = {
 					["type"] = "text-color",
 				},
-				["Mana-color"] = {
-					["type"] = "bar-color",
-				},
 				["Mana"] = {
 					["type"] = "bar",
 					["backColor"] = {
@@ -2268,6 +2284,9 @@ Grid2DB = {
 					},
 					["orientation"] = "HORIZONTAL",
 				},
+				["health-color"] = {
+					["type"] = "bar-color",
+				},
 			},
 			["statuses"] = {
 				["buff-GuardianSpirit-mine"] = {
@@ -2284,9 +2303,9 @@ Grid2DB = {
 				["debuff-Mindgames"] = {
 					["color1"] = {
 						["a"] = 1,
-						["b"] = 0.3254901960784314,
-						["g"] = 0,
-						["r"] = 0.7254901960784313,
+						["b"] = 0,
+						["g"] = 0.01176470588235294,
+						["r"] = 1,
 					},
 					["type"] = "debuff",
 					["useSpellId"] = true,
@@ -2307,8 +2326,8 @@ Grid2DB = {
 					["color1"] = {
 						["a"] = 1,
 						["r"] = 0,
-						["g"] = 0.9921568627450981,
-						["b"] = 1,
+						["g"] = 1,
+						["b"] = 0.9568627450980391,
 					},
 					["type"] = "debuffs",
 					["useWhiteList"] = true,
@@ -2317,15 +2336,15 @@ Grid2DB = {
 					},
 				},
 				["buff-Rejuvenation-mine"] = {
-					["spellName"] = 774,
-					["type"] = "buff",
-					["mine"] = 1,
 					["color1"] = {
 						["a"] = 1,
-						["r"] = 0.6274509803921569,
+						["r"] = 0,
 						["g"] = 0,
-						["b"] = 1,
+						["b"] = 0,
 					},
+					["type"] = "buff",
+					["mine"] = 1,
+					["spellName"] = 774,
 				},
 				["buff-PrayerofMending-mine"] = {
 					["color1"] = {
@@ -2365,12 +2384,17 @@ Grid2DB = {
 						["a"] = 1,
 						["r"] = 0,
 						["g"] = 1,
-						["b"] = 1,
+						["b"] = 0.9803921568627451,
 					},
 					["type"] = "debuffs",
 					["useWhiteList"] = true,
 					["auras"] = {
 						51514, -- [1]
+					},
+				},
+				["shields-overflow"] = {
+					["color1"] = {
+						["a"] = 0.3554208874702454,
 					},
 				},
 				["debuffs-UndispellableCC"] = {
@@ -2509,8 +2533,8 @@ Grid2DB = {
 					["color1"] = {
 						["a"] = 1,
 						["r"] = 0,
-						["g"] = 0.9607843137254902,
-						["b"] = 1,
+						["g"] = 1,
+						["b"] = 0.9882352941176471,
 					},
 					["type"] = "debuffs",
 					["useWhiteList"] = true,
@@ -2717,6 +2741,9 @@ Grid2DB = {
 				["heals"] = {
 					["heals-incoming"] = 99,
 				},
+				["absorb-color"] = {
+					["shields-overflow"] = 52,
+				},
 				["corner-top-right"] = {
 					["buff-DivineProtection-mine"] = 95,
 					["buff-HandOfProtection-mine"] = 93,
@@ -2727,11 +2754,6 @@ Grid2DB = {
 				["heals-color"] = {
 					["classcolor"] = 99,
 				},
-				["alpha"] = {
-					["vehicle"] = 107,
-					["range"] = 99,
-					["death"] = 106,
-				},
 				["health-color"] = {
 					["debuffs-PoisonCC"] = 102,
 					["classcolor"] = 99,
@@ -2740,19 +2762,29 @@ Grid2DB = {
 					["debuff-Mindgames"] = 103,
 					["debuff-Warlock>UnstableAffliction"] = 104,
 				},
+				["alpha"] = {
+					["vehicle"] = 107,
+					["range"] = 99,
+					["death"] = 106,
+				},
 				["icon-right"] = {
 					["debuff-Forbearance"] = 50,
 				},
-				["background"] = {
-				},
-				["health"] = {
-					["health-current"] = 99,
+				["Mana"] = {
+					["mana"] = 51,
+					["poweralt"] = 50,
+					["power"] = 52,
 				},
 				["corner-bottom-left"] = {
 					["buff-HandOfSalvation-mine"] = 100,
 					["threat"] = 99,
 					["buff-PrayerofMending-mine"] = 102,
 					["buff-Lifebloom-mine"] = 103,
+				},
+				["health"] = {
+					["health-current"] = 99,
+				},
+				["background"] = {
 				},
 				["text-up"] = {
 					["offline"] = 93,
@@ -2761,14 +2793,12 @@ Grid2DB = {
 				},
 				["text-up-color"] = {
 				},
-				["Mana"] = {
-					["mana"] = 51,
-					["poweralt"] = 50,
-					["power"] = 52,
-				},
 				["Mana-color"] = {
 					["mana"] = 52,
 					["power"] = 53,
+				},
+				["absorb"] = {
+					["shields-overflow"] = 50,
 				},
 			},
 			["themes"] = {
@@ -4420,10 +4450,10 @@ Grid2DB = {
 					["debuffs-PoisonCC"] = 94,
 					["health-low"] = 55,
 					["debuff-Poison"] = 70,
-					["debuffs-CurseCC"] = 95,
-					["target"] = 50,
 					["offline"] = 92,
+					["target"] = 50,
 					["vehicle"] = 91,
+					["debuffs-CurseCC"] = 95,
 					["debuff-Disease"] = 80,
 				},
 				["text-down-color"] = {

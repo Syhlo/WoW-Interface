@@ -65,14 +65,6 @@ MJEGlobalSettings = {
 		},
 		["hiddenIngame"] = false,
 		["hidden"] = false,
-		["onlyUsable"] = false,
-		["faction"] = {
-			["horde"] = true,
-			["alliance"] = true,
-			["noFaction"] = true,
-		},
-		["onlyFavorites"] = false,
-		["onlyTradable"] = false,
 		["mountType"] = {
 			["repair"] = true,
 			["transform"] = true,
@@ -80,6 +72,14 @@ MJEGlobalSettings = {
 			["passenger"] = true,
 			["ground"] = true,
 			["flying"] = true,
+		},
+		["onlyUsable"] = false,
+		["onlyFavorites"] = false,
+		["onlyTradable"] = false,
+		["faction"] = {
+			["horde"] = true,
+			["alliance"] = true,
+			["noFaction"] = true,
 		},
 		["family"] = {
 			["Arachnids"] = {
@@ -179,10 +179,10 @@ MJEGlobalSettings = {
 				["Wolves"] = true,
 			},
 			["Rays"] = {
-				["Fathom Rays"] = true,
 				["Nether Rays"] = true,
-				["Mana Rays"] = true,
 				["Stingrays"] = true,
+				["Mana Rays"] = true,
+				["Fathom Rays"] = true,
 			},
 			["Elementals"] = {
 				["Sabers"] = true,
@@ -385,10 +385,10 @@ MJETrackingData = {
 		[5] = 1603036800,
 	},
 	[551] = {
-		67, -- [1]
-		1659677885, -- [2]
-		6445, -- [3]
-		95055.2105139965, -- [4]
+		68, -- [1]
+		1659741344, -- [2]
+		6471, -- [3]
+		95453.91946879681, -- [4]
 	},
 	[276] = {
 		24, -- [1]
@@ -403,10 +403,10 @@ MJETrackingData = {
 		96208.54394976255, -- [4]
 	},
 	[1352] = {
-		201, -- [1]
-		1659692705, -- [2]
-		27347, -- [3]
-		134116.2872672261, -- [4]
+		211, -- [1]
+		1659741382, -- [2]
+		30939, -- [3]
+		158272.0923493417, -- [4]
 	},
 	[185] = {
 		0, -- [1]

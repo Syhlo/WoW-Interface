@@ -225,8 +225,10 @@ MasqueDB = {
 					["Backdrop"] = true,
 					["SkinID"] = "Caith",
 				},
-				["OmniBar_Rebuke"] = {
+				["WeakAuras_eEgZEjNMrJA"] = {
 					["Shadow"] = true,
+					["Backdrop"] = true,
+					["Upgraded"] = true,
 					["Colors"] = {
 						["Normal"] = {
 							0.2941176470588235, -- [1]
@@ -236,7 +238,6 @@ MasqueDB = {
 						},
 					},
 					["Inherit"] = false,
-					["Backdrop"] = true,
 					["SkinID"] = "Caith",
 				},
 				["Bartender4_10"] = {
@@ -397,10 +398,8 @@ MasqueDB = {
 					["Backdrop"] = true,
 					["SkinID"] = "Caith",
 				},
-				["WeakAuras_Int8p64J47C"] = {
+				["OmniBar_Rebuke"] = {
 					["Shadow"] = true,
-					["Backdrop"] = true,
-					["Upgraded"] = true,
 					["Colors"] = {
 						["Normal"] = {
 							0.2941176470588235, -- [1]
@@ -409,8 +408,9 @@ MasqueDB = {
 							1, -- [4]
 						},
 					},
-					["SkinID"] = "Caith",
 					["Inherit"] = false,
+					["Backdrop"] = true,
+					["SkinID"] = "Caith",
 				},
 				["Bartender4_6"] = {
 					["Shadow"] = true,
@@ -454,8 +454,10 @@ MasqueDB = {
 					["Backdrop"] = true,
 					["SkinID"] = "Caith",
 				},
-				["Bagnon_guild - bags"] = {
+				["WeakAuras_Int8p64J47C"] = {
 					["Shadow"] = true,
+					["Backdrop"] = true,
+					["Upgraded"] = true,
 					["Colors"] = {
 						["Normal"] = {
 							0.2941176470588235, -- [1]
@@ -464,9 +466,8 @@ MasqueDB = {
 							1, -- [4]
 						},
 					},
-					["Inherit"] = false,
-					["Backdrop"] = true,
 					["SkinID"] = "Caith",
+					["Inherit"] = false,
 				},
 				["OmniBar_Avenger's Shield"] = {
 					["Shadow"] = true,
@@ -779,7 +780,7 @@ MasqueDB = {
 					["Backdrop"] = true,
 					["Inherit"] = false,
 				},
-				["WeakAuras_eEgZEjNMrJA"] = {
+				["WeakAuras_oH0pxpktwhz"] = {
 					["Shadow"] = true,
 					["Backdrop"] = true,
 					["Upgraded"] = true,
@@ -794,10 +795,8 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "Caith",
 				},
-				["WeakAuras_oH0pxpktwhz"] = {
+				["Bagnon_guild - bags"] = {
 					["Shadow"] = true,
-					["Backdrop"] = true,
-					["Upgraded"] = true,
 					["Colors"] = {
 						["Normal"] = {
 							0.2941176470588235, -- [1]
@@ -807,6 +806,7 @@ MasqueDB = {
 						},
 					},
 					["Inherit"] = false,
+					["Backdrop"] = true,
 					["SkinID"] = "Caith",
 				},
 				["Bartender4_5"] = {

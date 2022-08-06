@@ -65,18 +65,11 @@ MJEGlobalSettings = {
 		},
 		["notCollected"] = true,
 		["hidden"] = false,
+		["onlyUsable"] = false,
 		["faction"] = {
 			["horde"] = true,
 			["alliance"] = true,
 			["noFaction"] = true,
-		},
-		["mountType"] = {
-			["repair"] = true,
-			["transform"] = true,
-			["underwater"] = true,
-			["flying"] = true,
-			["ground"] = true,
-			["passenger"] = true,
 		},
 		["onlyFavorites"] = false,
 		["family"] = {
@@ -256,10 +249,10 @@ MJEGlobalSettings = {
 				["Others"] = true,
 			},
 			["Rays"] = {
-				["Stingrays"] = true,
 				["Fathom Rays"] = true,
-				["Mana Rays"] = true,
 				["Nether Rays"] = true,
+				["Mana Rays"] = true,
+				["Stingrays"] = true,
 			},
 			["Vombata"] = true,
 			["Drakes"] = {
@@ -281,7 +274,14 @@ MJEGlobalSettings = {
 			["Rylaks"] = true,
 			["Snail"] = true,
 		},
-		["onlyUsable"] = false,
+		["mountType"] = {
+			["repair"] = true,
+			["transform"] = true,
+			["underwater"] = true,
+			["flying"] = true,
+			["ground"] = true,
+			["passenger"] = true,
+		},
 		["onlyTradable"] = false,
 		["collected"] = true,
 		["onlyRecent"] = false,
@@ -354,10 +354,10 @@ MJETrackingData = {
 		[5] = 1286812800,
 	},
 	[551] = {
-		67, -- [1]
-		1659677885, -- [2]
-		6445, -- [3]
-		95055.2105139965, -- [4]
+		68, -- [1]
+		1659741344, -- [2]
+		6471, -- [3]
+		95453.91946879681, -- [4]
 	},
 	[422] = {
 		2, -- [1]
@@ -403,10 +403,10 @@ MJETrackingData = {
 		96208.54394976255, -- [4]
 	},
 	[1352] = {
-		201, -- [1]
-		1659692705, -- [2]
-		27347, -- [3]
-		134116.2872672261, -- [4]
+		212, -- [1]
+		1659752834, -- [2]
+		30939, -- [3]
+		173891.7527369113, -- [4]
 	},
 	[832] = {
 		0, -- [1]
