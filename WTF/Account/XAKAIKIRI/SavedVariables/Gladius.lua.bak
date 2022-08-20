@@ -5,11 +5,14 @@ Gladius2DB = {
 		["Sýh - Thrall"] = "Syh - Thrall",
 		["Wthrename - Tichondrius"] = "Wthrename - Tichondrius",
 		["Gerold - Tichondrius"] = "Syh - Thrall",
+		["Dwarfmounts - Tichondrius"] = "Global",
+		["Sydh - Thrall"] = "Sydh - Thrall",
 		["Syhlo - Thrall"] = "Syh - Thrall",
+		["Syhlol - Thrall"] = "Global",
 		["Crylo - Tichondrius"] = "Crylo - Tichondrius",
 		["Syhdk - Thrall"] = "Syh - Thrall",
-		["Sydh - Thrall"] = "Sydh - Thrall",
-		["Syhlol - Thrall"] = "Global",
+		["Regèn - Tichondrius"] = "Regèn - Tichondrius",
+		["Pandamounts - Tichondrius"] = "Global",
 		["Syh - Thrall"] = "Syh - Thrall",
 	},
 	["profiles"] = {
@@ -53,7 +56,7 @@ Gladius2DB = {
 			},
 			["castBarInverse"] = true,
 			["trinketAdjustSize"] = false,
-			["dispellGlossColor"] = {
+			["backgroundColor"] = {
 				["a"] = 0,
 			},
 			["drTrackerGlossColor"] = {
@@ -79,28 +82,32 @@ Gladius2DB = {
 			["frameScale"] = 0.8,
 			["targetBarAttachTo"] = "Dispel",
 			["highlightHover"] = false,
-			["dispellAdjustSize"] = false,
-			["trinketIconCrop"] = true,
-			["drFontSize"] = 20,
-			["trinketGloss"] = false,
 			["backgroundPadding"] = 0,
+			["trinketIconCrop"] = true,
+			["dispellAdjustSize"] = false,
+			["trinketGloss"] = false,
+			["targetBarOffsetY"] = -13,
+			["targetBarOffsetX"] = 15,
+			["timerMinutesFontSize"] = 20,
 			["castBarBackgroundColor"] = {
 				["a"] = 0.1816238760948181,
 				["b"] = 0.0392156862745098,
 				["g"] = 0.0392156862745098,
 				["r"] = 0.0392156862745098,
 			},
-			["timerMinutesFontSize"] = 20,
-			["globalFontSize"] = 16,
-			["castBarHeight"] = 44,
 			["drTrackerCooldown"] = true,
-			["timerSoonFontSize"] = 20,
+			["dispellGlossColor"] = {
+				["a"] = 0,
+			},
+			["castBarHeight"] = 44,
 			["targetBarIcon"] = false,
-			["targetBarOffsetX"] = 15,
+			["dispellIconCrop"] = true,
 			["classIconCooldownReverse"] = true,
 			["drTrackerAdjustSize"] = false,
 			["dispellSize"] = 56,
 			["targetBarHeight"] = 32,
+			["drFontSize"] = 20,
+			["timerSecondsFontSize"] = 20,
 			["tags"] = {
 				["maxhealth"] = {
 					["func"] = "function(unit)\nreturn not Gladius.test and UnitHealthMax(unit) or Gladius.testing[unit].maxHealth\nend",
@@ -175,20 +182,16 @@ Gladius2DB = {
 					["events"] = "UNIT_MAXPOWER UNIT_DISPLAYPOWER UNIT_NAME_UPDATE",
 				},
 			},
-			["timerSecondsFontSize"] = 20,
-			["dispellIconCrop"] = true,
 			["auraVersion"] = 1,
 			["globalFont"] = "Arial Narrow",
-			["targetBarOffsetY"] = -13,
+			["globalFontSize"] = 16,
 			["classIconGlossColor"] = {
 				["a"] = 0,
 			},
 			["castTextSize"] = 14,
 			["dispellCooldownReverse"] = true,
 			["classIconCooldown"] = true,
-			["backgroundColor"] = {
-				["a"] = 0,
-			},
+			["timerSoonFontSize"] = 20,
 			["drTrackerMargin"] = 7,
 			["tagsVersion"] = 4,
 			["locked"] = true,
@@ -204,11 +207,29 @@ Gladius2DB = {
 				["arena1"] = 485.6890308578841,
 			},
 		},
-		["Sydh - Thrall"] = {
+		["Dwarfmounts - Tichondrius"] = {
 			["auraVersion"] = 1,
 			["tagsVersion"] = 4,
 		},
 		["Crylo - Tichondrius"] = {
+			["auraVersion"] = 1,
+			["tagsVersion"] = 4,
+		},
+		["Pandamounts - Tichondrius"] = {
+			["auraVersion"] = 1,
+			["tagsVersion"] = 4,
+		},
+		["Regèn - Tichondrius"] = {
+			["auraVersion"] = 1,
+			["tagsVersion"] = 4,
+			["x"] = {
+				["arena1"] = 1020.444729570554,
+			},
+			["y"] = {
+				["arena1"] = 445.1554795291668,
+			},
+		},
+		["Sydh - Thrall"] = {
 			["auraVersion"] = 1,
 			["tagsVersion"] = 4,
 		},
@@ -218,7 +239,10 @@ Gladius2DB = {
 				["Racial"] = false,
 			},
 			["castBarInverse"] = true,
-			["castBarHeight"] = 44,
+			["dispellGlossColor"] = {
+				["a"] = 0,
+			},
+			["castBarHeight"] = 52,
 			["timerMinutesFontSize"] = 20,
 			["tags"] = {
 				["maxhealth"] = {
@@ -300,13 +324,13 @@ Gladius2DB = {
 				["a"] = 0,
 			},
 			["powerBarHeight"] = 25,
-			["targetBarOffsetX"] = 15,
+			["drTrackerAdjustSize"] = false,
 			["tagsVersion"] = 4,
 			["drTrackerCooldownReverse"] = true,
 			["locked"] = true,
 			["trinketSize"] = 58,
 			["x"] = {
-				["arena1"] = 901.5125218295725,
+				["arena1"] = 908.6238414462132,
 			},
 			["classIconCooldown"] = true,
 			["castBarColor"] = {
@@ -362,9 +386,6 @@ Gladius2DB = {
 				["a"] = 0,
 			},
 			["classIconSize"] = 63,
-			["dispellGlossColor"] = {
-				["a"] = 0,
-			},
 			["drTrackerSize"] = 54,
 			["drTrackerCooldown"] = true,
 			["castBarBackgroundColor"] = {
@@ -373,12 +394,12 @@ Gladius2DB = {
 				["g"] = 0.0392156862745098,
 				["b"] = 0.0392156862745098,
 			},
-			["drTrackerAdjustSize"] = false,
+			["targetBarOffsetX"] = 15,
 			["auraVersion"] = 1,
 			["barWidth"] = 180,
 			["backgroundPadding"] = 0,
 			["y"] = {
-				["arena1"] = 536.6411241055466,
+				["arena1"] = 503.2187969073566,
 			},
 		},
 	},

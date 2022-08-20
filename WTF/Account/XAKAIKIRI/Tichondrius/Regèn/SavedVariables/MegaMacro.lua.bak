@@ -1,0 +1,32 @@
+
+MegaMacroCharacterData = {
+	["Macros"] = {
+		{
+			["Scope"] = "ch",
+			["ScopedIndex"] = 1,
+			["Class"] = "Shaman",
+			["Code"] = "/use [flyable] Black Drake\n/use [swimming] Abyssal Seahorse\n/use [noflyable] Black War Bear\n/script VehicleExit()\n/dismount [mounted]\n",
+			["Id"] = 121,
+			["IsStaticTextureFallback"] = true,
+			["StaticTexture"] = 134400,
+			["DisplayName"] = "",
+		}, -- [1]
+		{
+			["Scope"] = "ch",
+			["ScopedIndex"] = 2,
+			["Class"] = "Shaman",
+			["Code"] = "",
+			["Id"] = 122,
+			["IsStaticTextureFallback"] = true,
+			["StaticTexture"] = 134400,
+			["DisplayName"] = "",
+		}, -- [2]
+	},
+	["Specializations"] = {
+		["Restoration"] = {
+			["Macros"] = {
+			},
+		},
+	},
+	["Activated"] = true,
+}

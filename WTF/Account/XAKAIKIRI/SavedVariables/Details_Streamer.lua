@@ -1,30 +1,27 @@
 
 Details_StreamerDB = {
 	["characters"] = {
-		["Cyf - Tichondrius"] = "Syhlol - Thrall",
-		["Sýh - Thrall"] = "Syhlol - Thrall",
-		["Wthrename - Tichondrius"] = "Syhlol - Thrall",
-		["Syh - Thrall"] = "Syhlol - Thrall",
-		["Gerold - Tichondrius"] = "Syhlol - Thrall",
-		["Syhlo - Thrall"] = "Syhlol - Thrall",
-		["Syhlol - Thrall"] = "Syhlol - Thrall",
-		["Syhlol - Illidan"] = "Syhlol - Thrall",
-		["Youreterribl - Burning Legion"] = "Syhlol - Thrall",
-		["Scatterffs - Ragnaros"] = "Syhlol - Thrall",
-		["Crylo - Tichondrius"] = "Syhlol - Thrall",
-		["Syhdk - Thrall"] = "Syhlol - Thrall",
-		["Regèn - Tichondrius"] = "Syhlol - Thrall",
 		["Isellpropane - Proudmoore"] = "Syhlol - Thrall",
+		["Sýh - Thrall"] = "Syhlol - Thrall",
+		["Dwarfmounts - Tichondrius"] = "Syhlol - Thrall",
+		["Syhlol - Thrall"] = "Syhlol - Thrall",
+		["Crylo - Tichondrius"] = "Syhlol - Thrall",
+		["Regèn - Tichondrius"] = "Syhlol - Thrall",
 		["Sydh - Thrall"] = "Syhlol - Thrall",
+		["Cyf - Tichondrius"] = "Syhlol - Thrall",
+		["Wthrename - Tichondrius"] = "Syhlol - Thrall",
+		["Gerold - Tichondrius"] = "Syhlol - Thrall",
+		["Scatterffs - Ragnaros"] = "Syhlol - Thrall",
+		["Youreterribl - Burning Legion"] = "Syhlol - Thrall",
+		["Syhlol - Illidan"] = "Syhlol - Thrall",
+		["Syhdk - Thrall"] = "Syhlol - Thrall",
+		["Pandamounts - Tichondrius"] = "Syhlol - Thrall",
+		["Syhlo - Thrall"] = "Syhlol - Thrall",
+		["Syh - Thrall"] = "Syhlol - Thrall",
 	},
 	["profiles"] = {
 		["Syhlol - Thrall"] = {
-			["font_color"] = {
-				1, -- [1]
-				1, -- [2]
-				1, -- [3]
-				1, -- [4]
-			},
+			["use_square_mode"] = false,
 			["is_first_run"] = false,
 			["grow_direction"] = "right",
 			["arrow_color"] = {
@@ -42,18 +39,18 @@ Details_StreamerDB = {
 				["radius"] = 160,
 				["hide"] = true,
 			},
-			["use_square_mode"] = false,
+			["scale"] = 1,
 			["arrow_anchor_x"] = 0,
-			["main_frame_locked"] = false,
+			["row_height"] = 20,
 			["row_texture"] = "Details Serenity",
-			["arrow_anchor_y"] = 0,
-			["use_spark"] = true,
-			["row_color"] = {
-				0.1, -- [1]
-				0.1, -- [2]
-				0.1, -- [3]
-				0.4, -- [4]
+			["font_color"] = {
+				1, -- [1]
+				1, -- [2]
+				1, -- [3]
+				1, -- [4]
 			},
+			["point"] = "CENTER",
+			["main_frame_strata"] = "LOW",
 			["square_amount"] = 5,
 			["enabled"] = false,
 			["arrow_size"] = 10,
@@ -64,9 +61,9 @@ Details_StreamerDB = {
 				["font_shadow"] = true,
 				["y"] = 9.1552734375e-05,
 				["x"] = 6.103515625e-05,
-				["attribute_type"] = 1,
-				["update_speed"] = 0.05,
 				["size"] = 32,
+				["update_speed"] = 0.05,
+				["attribute_type"] = 1,
 			},
 			["row_spacement"] = 21,
 			["main_frame_color"] = {
@@ -82,10 +79,15 @@ Details_StreamerDB = {
 			["x"] = 6.103515625e-05,
 			["font_face"] = "Friz Quadrata TT",
 			["square_size"] = 32,
-			["main_frame_strata"] = "LOW",
-			["point"] = "CENTER",
-			["row_height"] = 20,
-			["scale"] = 1,
+			["use_spark"] = true,
+			["row_color"] = {
+				0.1, -- [1]
+				0.1, -- [2]
+				0.1, -- [3]
+				0.4, -- [4]
+			},
+			["main_frame_locked"] = false,
+			["arrow_anchor_y"] = 0,
 		},
 	},
 }

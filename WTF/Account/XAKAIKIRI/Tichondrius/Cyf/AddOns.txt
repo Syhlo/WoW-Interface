@@ -4,6 +4,8 @@ WeakAurasArchive: enabled
 Spy: disabled
 Blizzard_CompactRaidFrames: disabled
 Blizzard_CUFProfiles: disabled
-WorldQuestTracker: disabled
+WorldQuestTracker: enabled
 Capping_Options: enabled
 SortGroup: disabled
+Bagnon_GuildBank: disabled
+Gladius: disabled

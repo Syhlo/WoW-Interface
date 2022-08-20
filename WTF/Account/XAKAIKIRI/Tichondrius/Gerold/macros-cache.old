@@ -1,12 +1,11 @@
-VER 3 010000000000001A " " "3578228"
-#showtooltip
-/cleartarget [noharm]
-/targetenemy [noexists][dead]
-/cast Vanquisher's Hammer
-END
 VER 3 0100000000000017 " " "INV_MISC_QUESTIONMARK"
 #showtooltip
 /cast [@focus,exists][] Hammer of Justice
+END
+VER 3 010000000000001C " " "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast Divine Protection
+/use 13
 END
 VER 3 010000000000001B " " "INV_MISC_QUESTIONMARK"
 #showtooltip
@@ -17,8 +16,9 @@ VER 3 0100000000000009 " " "INV_MISC_QUESTIONMARK"
 /cast Avenging Wrath
 /use Ruthless Gladiator's Badge of Dominance
 END
-VER 3 0100000000000019 " " "132830"
+VER 3 010000000000001A " " "3578228"
 #showtooltip
-/cancelaura Kevin's oozeling
-/use Ambroria Dew
+/cleartarget [noharm]
+/targetenemy [noexists][dead]
+/cast Vanquisher's Hammer
 END

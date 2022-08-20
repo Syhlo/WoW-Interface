@@ -1,5 +1,5 @@
-## v4.11.32 Changes
+## v4.11.36 Changes
 
-* [Retail] Reverted previous change which caused issues with posted crafted items
+* [Retail] Added additional workaround to fix Blizzard not providing any seller data in many cases
 
 [Known Issues](https://support.tradeskillmaster.com/en_US/known_issues)

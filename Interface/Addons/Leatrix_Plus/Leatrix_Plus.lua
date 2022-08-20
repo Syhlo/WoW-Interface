@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 9.2.22 (3rd August 2022)
+-- 	Leatrix Plus 9.2.25 (17th August 2022)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -18,7 +18,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "9.2.22"
+	LeaPlusLC["AddonVer"] = "9.2.25"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -2414,7 +2414,7 @@
 			LeaPlusLC:MakeCB(QuestPanel, "AutoQuestCompleted", "Turn-in completed quests automatically", 16, -152, false, "If checked, completed quests will be turned-in automatically.")
 			LeaPlusLC:MakeCB(QuestPanel, "AutoQuestShift", "Require override key for quest automation", 16, -172, false, "If checked, you will need to hold the override key down for quests to be automated.|n|nIf unchecked, holding the override key will prevent quests from being automated.")
 
-			LeaPlusLC:CreateDropDown("AutoQuestKeyMenu", "Override key", QuestPanel, 146, "TOPLEFT", 356, -115, {L["SHIFT"], L["ALT"], L["CONTROL"]}, "")
+			LeaPlusLC:CreateDropDown("AutoQuestKeyMenu", "Override key", QuestPanel, 146, "TOPLEFT", 356, -115, {L["SHIFT"], L["ALT"], L["CONTROL"], L["CMD (MAC)"]}, "")
 
 			-- Help button hidden
 			QuestPanel.h:Hide()
@@ -2462,6 +2462,7 @@
 				if LeaPlusLC["AutoQuestKeyMenu"] == 1 and IsShiftKeyDown()
 				or LeaPlusLC["AutoQuestKeyMenu"] == 2 and IsAltKeyDown()
 				or LeaPlusLC["AutoQuestKeyMenu"] == 3 and IsControlKeyDown()
+				or LeaPlusLC["AutoQuestKeyMenu"] == 4 and IsMetaKeyDown()
 				then
 					return true
 				end
@@ -8969,8 +8970,8 @@
             end)
 
 			-- Function to show spell ID in tooltips
-			local function CooldownIDFunc(unit, target, index)
-				if LeaPlusLC["ShowCooldownID"] == "On" then
+			local function CooldownIDFunc(unit, target, index, auratype)
+				if LeaPlusLC["ShowCooldownID"] == "On" and auratype ~= "HARMFUL" then
 					local spellid = select(10, UnitAura(target, index))
 					if spellid then
 						GameTooltip:AddLine(L["Spell ID"] .. ": " .. spellid)
@@ -11407,7 +11408,7 @@
 				LeaPlusLC:LoadVarChk("AutoQuestDaily", "On")				-- Accept daily quests
 				LeaPlusLC:LoadVarChk("AutoQuestWeekly", "On")				-- Accept weekly quests
 				LeaPlusLC:LoadVarChk("AutoQuestCompleted", "On")			-- Turn-in completed quests
-				LeaPlusLC:LoadVarNum("AutoQuestKeyMenu", 1, 1, 3)			-- Automate quests override key
+				LeaPlusLC:LoadVarNum("AutoQuestKeyMenu", 1, 1, 4)			-- Automate quests override key
 				LeaPlusLC:LoadVarChk("AutomateGossip", "Off")				-- Automate gossip
 				LeaPlusLC:LoadVarChk("AutoAcceptSummon", "Off")				-- Accept summon
 				LeaPlusLC:LoadVarChk("AutoAcceptRes", "Off")				-- Accept resurrection
@@ -12388,7 +12389,7 @@
 
 		-- Create dropdown placeholder for value (set it using OnShow)
 		local value = dd:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
-		value:SetPoint("LEFT", lt, 26, 2); value:SetPoint("RIGHT", rt, -43, 0); value:SetJustifyH("LEFT")
+		value:SetPoint("LEFT", lt, 26, 2); value:SetPoint("RIGHT", rt, -43, 0); value:SetJustifyH("LEFT"); value:SetWordWrap(false)
 		dd:SetScript("OnShow", function() value:SetText(LeaPlusLC[ddname.."Table"][LeaPlusLC[ddname]]) end)
 
 		-- Create dropdown button (clicking it opens the dropdown list)
@@ -12428,6 +12429,10 @@
 			dditem.f = dditem:CreateFontString(nil, 'ARTWORK', 'GameFontHighlight');
 			dditem.f:SetPoint('LEFT', 16, 0)
 			dditem.f:SetText(items[k])
+
+			dditem.f:SetWordWrap(false)
+			dditem.f:SetJustifyH("LEFT")
+			dditem.f:SetWidth(ddlist:GetWidth()-36)
 
 			dditem.t = dditem:CreateTexture(nil, "BACKGROUND")
 			dditem.t:SetAllPoints()

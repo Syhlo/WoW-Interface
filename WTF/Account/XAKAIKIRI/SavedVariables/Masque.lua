@@ -9,6 +9,7 @@ MasqueDB = {
 		["Sýh - Thrall"] = "Default",
 		["Syhl - Thrall"] = "Default",
 		["Gfedcba - Elune"] = "Default",
+		["Dwarfmounts - Tichondrius"] = "Default",
 		["Syhlol - Thrall"] = "Default",
 		["Crylo - Tichondrius"] = "Default",
 		["Regèn - Tichondrius"] = "Default",
@@ -19,114 +20,16 @@ MasqueDB = {
 		["Scatterffs - Ragnaros"] = "Default",
 		["Syhlo - Thrall"] = "Default",
 		["Youreterribl - Burning Legion"] = "Default",
-		["Syhdk - Thrall"] = "Default",
-		["Syhlol - Illidan"] = "Default",
 		["Syhloc - Thrall"] = "Default",
+		["Pandamounts - Tichondrius"] = "Default",
+		["Syhlol - Illidan"] = "Default",
+		["Syhdk - Thrall"] = "Default",
 		["Syh - Thrall"] = "Default",
 	},
 	["profiles"] = {
 		["Default"] = {
 			["Groups"] = {
-				["Bagnon_bank - bags"] = {
-					["Shadow"] = true,
-					["Colors"] = {
-						["Normal"] = {
-							0.2941176470588235, -- [1]
-							0.2941176470588235, -- [2]
-							0.2941176470588235, -- [3]
-							1, -- [4]
-						},
-					},
-					["Inherit"] = false,
-					["Backdrop"] = true,
-					["SkinID"] = "Caith",
-				},
-				["Bartender4_StanceBar"] = {
-					["Shadow"] = true,
-					["Colors"] = {
-						["Normal"] = {
-							0.2941176470588235, -- [1]
-							0.2941176470588235, -- [2]
-							0.2941176470588235, -- [3]
-							1, -- [4]
-						},
-					},
-					["Inherit"] = false,
-					["Backdrop"] = true,
-					["SkinID"] = "Caith",
-				},
-				["Bagnon_guildbank - bags"] = {
-					["Shadow"] = true,
-					["Colors"] = {
-						["Normal"] = {
-							0.2941176470588235, -- [1]
-							0.2941176470588235, -- [2]
-							0.2941176470588235, -- [3]
-							1, -- [4]
-						},
-					},
-					["Inherit"] = false,
-					["Backdrop"] = true,
-					["SkinID"] = "Caith",
-				},
-				["WeakAuras_RxtOjID7l0X"] = {
-					["Shadow"] = true,
-					["Backdrop"] = true,
-					["Upgraded"] = true,
-					["Colors"] = {
-						["Normal"] = {
-							0.2941176470588235, -- [1]
-							0.2941176470588235, -- [2]
-							0.2941176470588235, -- [3]
-							1, -- [4]
-						},
-					},
-					["Inherit"] = false,
-					["SkinID"] = "Caith",
-				},
-				["Bartender4_7"] = {
-					["Shadow"] = true,
-					["Colors"] = {
-						["Normal"] = {
-							0.2941176470588235, -- [1]
-							0.2941176470588235, -- [2]
-							0.2941176470588235, -- [3]
-							1, -- [4]
-						},
-					},
-					["Inherit"] = false,
-					["Backdrop"] = true,
-					["SkinID"] = "Caith",
-				},
-				["OmniBar_Pummel"] = {
-					["Shadow"] = true,
-					["Colors"] = {
-						["Normal"] = {
-							0.2941176470588235, -- [1]
-							0.2941176470588235, -- [2]
-							0.2941176470588235, -- [3]
-							1, -- [4]
-						},
-					},
-					["Inherit"] = false,
-					["Backdrop"] = true,
-					["SkinID"] = "Caith",
-				},
-				["Bartender4_3"] = {
-					["Shadow"] = true,
-					["Colors"] = {
-						["Normal"] = {
-							0.2941176470588235, -- [1]
-							0.2941176470588235, -- [2]
-							0.2941176470588235, -- [3]
-							1, -- [4]
-						},
-					},
-					["Inherit"] = false,
-					["Backdrop"] = true,
-					["SkinID"] = "Caith",
-				},
-				["OmniBar_Call Felhunter"] = {
+				["OmniBar_Power Infusion"] = {
 					["Shadow"] = true,
 					["Colors"] = {
 						["Normal"] = {
@@ -140,7 +43,91 @@ MasqueDB = {
 					["Backdrop"] = true,
 					["Inherit"] = false,
 				},
-				["WeakAuras_3NKBzqniIxO"] = {
+				["OmniBar_Bonedust Brew"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Feign Death"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Unending Resolve"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Ray of Hope"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Barkskin"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Strangulate"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["WeakAuras_8svMfWdGz7F"] = {
 					["Shadow"] = true,
 					["Backdrop"] = true,
 					["Upgraded"] = true,
@@ -155,7 +142,91 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "Caith",
 				},
-				["Bagnon_guildbank - items"] = {
+				["OmniBar_Chain Harvest"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Shadowy Duel"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Darkness"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Survival Instincts"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Dispersion"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Psychic Scream"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["Bartender4_PetBar"] = {
 					["Shadow"] = true,
 					["Colors"] = {
 						["Normal"] = {
@@ -169,7 +240,191 @@ MasqueDB = {
 					["Backdrop"] = true,
 					["SkinID"] = "Caith",
 				},
-				["WeakAuras"] = {
+				["WeakAuras_)U6NGmezkvP"] = {
+					["Shadow"] = true,
+					["Backdrop"] = true,
+					["Upgraded"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["Inherit"] = false,
+					["SkinID"] = "Caith",
+				},
+				["OmniBar_Dark Soul: Instability"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["WeakAuras_Int8p64J47C"] = {
+					["Shadow"] = true,
+					["Backdrop"] = true,
+					["Upgraded"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["Inherit"] = false,
+					["SkinID"] = "Caith",
+				},
+				["OmniBar_Hammer of Justice"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Spectral Sight"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Incarnation: Chosen of Elune"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Celestial Alignment"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_War Banner"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["Bagnon_bank - items"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["Inherit"] = false,
+					["Backdrop"] = true,
+					["SkinID"] = "Caith",
+				},
+				["OmniBar_Shadow Blades"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Rapture"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Adrenaline Rush"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Ring of Frost"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Pain Suppression"] = {
 					["Shadow"] = true,
 					["Colors"] = {
 						["Normal"] = {
@@ -197,7 +452,21 @@ MasqueDB = {
 					["Backdrop"] = true,
 					["SkinID"] = "Caith",
 				},
-				["Bartender4_4"] = {
+				["OmniBar_Imprison"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["Bagnon_guildbank - bags"] = {
 					["Shadow"] = true,
 					["Colors"] = {
 						["Normal"] = {
@@ -211,21 +480,7 @@ MasqueDB = {
 					["Backdrop"] = true,
 					["SkinID"] = "Caith",
 				},
-				["OmniBar_Disrupt"] = {
-					["Shadow"] = true,
-					["Colors"] = {
-						["Normal"] = {
-							0.2941176470588235, -- [1]
-							0.2941176470588235, -- [2]
-							0.2941176470588235, -- [3]
-							1, -- [4]
-						},
-					},
-					["Inherit"] = false,
-					["Backdrop"] = true,
-					["SkinID"] = "Caith",
-				},
-				["WeakAuras_eEgZEjNMrJA"] = {
+				["WeakAuras_RxtOjID7l0X"] = {
 					["Shadow"] = true,
 					["Backdrop"] = true,
 					["Upgraded"] = true,
@@ -237,8 +492,106 @@ MasqueDB = {
 							1, -- [4]
 						},
 					},
-					["Inherit"] = false,
 					["SkinID"] = "Caith",
+					["Inherit"] = false,
+				},
+				["OmniBar_Asphyxiate"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Evasion"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Blessing of Sacrifice"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Vendetta"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Reverse Magic"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["WeakAuras"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Symbol of Hope"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
 				},
 				["Bartender4_10"] = {
 					["Shadow"] = true,
@@ -254,6 +607,48 @@ MasqueDB = {
 					["Backdrop"] = true,
 					["SkinID"] = "Caith",
 				},
+				["OmniBar_Frozen Orb"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Ironbark"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Rallying Cry"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
 				["WeakAuras_yFJo7uGqXnJ"] = {
 					["Shadow"] = true,
 					["Backdrop"] = true,
@@ -266,10 +661,10 @@ MasqueDB = {
 							1, -- [4]
 						},
 					},
-					["Inherit"] = false,
 					["SkinID"] = "Caith",
+					["Inherit"] = false,
 				},
-				["Bagnon_inventory - bags"] = {
+				["OmniBar_Spear Hand Strike"] = {
 					["Shadow"] = true,
 					["Colors"] = {
 						["Normal"] = {
@@ -282,6 +677,454 @@ MasqueDB = {
 					["Inherit"] = false,
 					["Backdrop"] = true,
 					["SkinID"] = "Caith",
+				},
+				["OmniBar_Chaos Nova"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Rebuke"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["Inherit"] = false,
+					["Backdrop"] = true,
+					["SkinID"] = "Caith",
+				},
+				["OmniBar_Paralysis"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["Bagnon_guild - items"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["Inherit"] = false,
+					["Backdrop"] = true,
+					["SkinID"] = "Caith",
+				},
+				["OmniBar_Avatar"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Pillar of Frost"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Leg Sweep"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Kick"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["Inherit"] = false,
+					["Backdrop"] = true,
+					["SkinID"] = "Caith",
+				},
+				["OmniBar_Combustion"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Kidney Shot"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Seduction"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["Bartender4"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["Inherit"] = false,
+					["Backdrop"] = true,
+					["SkinID"] = "Caith",
+				},
+				["OmniBar_Hex"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Breath of Sindragosa"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Storm Bolt"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["GladiusEx"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Intimidating Shout"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Abomination Limb"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Incarnation: King of the Jungle"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Metamorphosis"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["Bartender4_7"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["Inherit"] = false,
+					["Backdrop"] = true,
+					["SkinID"] = "Caith",
+				},
+				["OmniBar_Intervene"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["GladiusEx_Debuffs"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["GladiusEx_Buffs"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Aspect of the Turtle"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Aura Mastery"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Avenging Wrath"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Bestial Wrath"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Ice Block"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Intimidation"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Ring of Peace"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Anti-Magic Zone"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
 				},
 				["WeakAuras_Oru0TMJ1CFp"] = {
 					["Shadow"] = true,
@@ -295,25 +1138,10 @@ MasqueDB = {
 							1, -- [4]
 						},
 					},
-					["SkinID"] = "Caith",
-					["Inherit"] = false,
-				},
-				["WeakAuras_1b482DzNgx7"] = {
-					["Shadow"] = true,
-					["Backdrop"] = true,
-					["Upgraded"] = true,
-					["Colors"] = {
-						["Normal"] = {
-							0.2941176470588235, -- [1]
-							0.2941176470588235, -- [2]
-							0.2941176470588235, -- [3]
-							1, -- [4]
-						},
-					},
 					["Inherit"] = false,
 					["SkinID"] = "Caith",
 				},
-				["OmniBar_Muzzle"] = {
+				["OmniBar_Vanish"] = {
 					["Shadow"] = true,
 					["Colors"] = {
 						["Normal"] = {
@@ -323,11 +1151,11 @@ MasqueDB = {
 							1, -- [4]
 						},
 					},
-					["Inherit"] = false,
-					["Backdrop"] = true,
 					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
 				},
-				["Bartender4_PetBar"] = {
+				["OmniBar_Power Word: Barrier"] = {
 					["Shadow"] = true,
 					["Colors"] = {
 						["Normal"] = {
@@ -337,9 +1165,23 @@ MasqueDB = {
 							1, -- [4]
 						},
 					},
-					["Inherit"] = false,
-					["Backdrop"] = true,
 					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Ascendance"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
 				},
 				["Bagnon_voidstorage - bags"] = {
 					["Shadow"] = true,
@@ -355,10 +1197,8 @@ MasqueDB = {
 					["Backdrop"] = true,
 					["SkinID"] = "Caith",
 				},
-				["WeakAuras_)U6NGmezkvP"] = {
+				["OmniBar_Death Grip"] = {
 					["Shadow"] = true,
-					["Backdrop"] = true,
-					["Upgraded"] = true,
 					["Colors"] = {
 						["Normal"] = {
 							0.2941176470588235, -- [1]
@@ -368,6 +1208,7 @@ MasqueDB = {
 						},
 					},
 					["SkinID"] = "Caith",
+					["Backdrop"] = true,
 					["Inherit"] = false,
 				},
 				["OmniBar_Mind Freeze"] = {
@@ -384,7 +1225,7 @@ MasqueDB = {
 					["Backdrop"] = true,
 					["SkinID"] = "Caith",
 				},
-				["OmniBar_Spell Lock"] = {
+				["OmniBar_Dark Soul: Misery"] = {
 					["Shadow"] = true,
 					["Colors"] = {
 						["Normal"] = {
@@ -394,11 +1235,11 @@ MasqueDB = {
 							1, -- [4]
 						},
 					},
-					["Inherit"] = false,
-					["Backdrop"] = true,
 					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
 				},
-				["OmniBar_Rebuke"] = {
+				["OmniBar_Stormkeeper"] = {
 					["Shadow"] = true,
 					["Colors"] = {
 						["Normal"] = {
@@ -408,11 +1249,11 @@ MasqueDB = {
 							1, -- [4]
 						},
 					},
-					["Inherit"] = false,
-					["Backdrop"] = true,
 					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
 				},
-				["Bartender4_6"] = {
+				["OmniBar_Blessing of Sanctuary"] = {
 					["Shadow"] = true,
 					["Colors"] = {
 						["Normal"] = {
@@ -422,111 +1263,11 @@ MasqueDB = {
 							1, -- [4]
 						},
 					},
-					["Inherit"] = false,
-					["Backdrop"] = true,
 					["SkinID"] = "Caith",
-				},
-				["OmniBar_Spear Hand Strike"] = {
-					["Shadow"] = true,
-					["Colors"] = {
-						["Normal"] = {
-							0.2941176470588235, -- [1]
-							0.2941176470588235, -- [2]
-							0.2941176470588235, -- [3]
-							1, -- [4]
-						},
-					},
-					["Inherit"] = false,
 					["Backdrop"] = true,
-					["SkinID"] = "Caith",
-				},
-				["OmniBar_Counterspell"] = {
-					["Shadow"] = true,
-					["Colors"] = {
-						["Normal"] = {
-							0.2941176470588235, -- [1]
-							0.2941176470588235, -- [2]
-							0.2941176470588235, -- [3]
-							1, -- [4]
-						},
-					},
-					["Inherit"] = false,
-					["Backdrop"] = true,
-					["SkinID"] = "Caith",
-				},
-				["WeakAuras_Int8p64J47C"] = {
-					["Shadow"] = true,
-					["Backdrop"] = true,
-					["Upgraded"] = true,
-					["Colors"] = {
-						["Normal"] = {
-							0.2941176470588235, -- [1]
-							0.2941176470588235, -- [2]
-							0.2941176470588235, -- [3]
-							1, -- [4]
-						},
-					},
-					["SkinID"] = "Caith",
 					["Inherit"] = false,
 				},
-				["OmniBar_Avenger's Shield"] = {
-					["Shadow"] = true,
-					["Colors"] = {
-						["Normal"] = {
-							0.2941176470588235, -- [1]
-							0.2941176470588235, -- [2]
-							0.2941176470588235, -- [3]
-							1, -- [4]
-						},
-					},
-					["Inherit"] = false,
-					["Backdrop"] = true,
-					["SkinID"] = "Caith",
-				},
-				["Bartender4_8"] = {
-					["Shadow"] = true,
-					["Colors"] = {
-						["Normal"] = {
-							0.2941176470588235, -- [1]
-							0.2941176470588235, -- [2]
-							0.2941176470588235, -- [3]
-							1, -- [4]
-						},
-					},
-					["Inherit"] = false,
-					["Backdrop"] = true,
-					["SkinID"] = "Caith",
-				},
-				["OmniBar_Solar Beam"] = {
-					["Shadow"] = true,
-					["Colors"] = {
-						["Normal"] = {
-							0.2941176470588235, -- [1]
-							0.2941176470588235, -- [2]
-							0.2941176470588235, -- [3]
-							1, -- [4]
-						},
-					},
-					["Inherit"] = false,
-					["Backdrop"] = true,
-					["SkinID"] = "Caith",
-				},
-				["WeakAuras_cd5LZJU04Aq"] = {
-					["Shadow"] = true,
-					["Backdrop"] = true,
-					["Upgraded"] = true,
-					["Colors"] = {
-						["Normal"] = {
-							0.2941176470588235, -- [1]
-							0.2941176470588235, -- [2]
-							0.2941176470588235, -- [3]
-							1, -- [4]
-						},
-					},
-					["Inherit"] = false,
-					["SkinID"] = "Caith",
-				},
-				["WeakAuras_8A9Zan514XL"] = {
+				["WeakAuras_fCqD)B63v3g"] = {
 					["Shadow"] = true,
 					["Backdrop"] = true,
 					["Upgraded"] = true,
@@ -555,7 +1296,7 @@ MasqueDB = {
 					["Backdrop"] = true,
 					["SkinID"] = "Caith",
 				},
-				["OmniBar_Wind Shear"] = {
+				["Bagnon_guild - bags"] = {
 					["Shadow"] = true,
 					["Colors"] = {
 						["Normal"] = {
@@ -569,7 +1310,7 @@ MasqueDB = {
 					["Backdrop"] = true,
 					["SkinID"] = "Caith",
 				},
-				["OmniBar_Counter Shot"] = {
+				["OmniBar_Muzzle"] = {
 					["Shadow"] = true,
 					["Colors"] = {
 						["Normal"] = {
@@ -583,77 +1324,7 @@ MasqueDB = {
 					["Backdrop"] = true,
 					["SkinID"] = "Caith",
 				},
-				["Bartender4_BagBar"] = {
-					["Shadow"] = true,
-					["Colors"] = {
-						["Normal"] = {
-							0.2941176470588235, -- [1]
-							0.2941176470588235, -- [2]
-							0.2941176470588235, -- [3]
-							1, -- [4]
-						},
-					},
-					["Inherit"] = false,
-					["Backdrop"] = true,
-					["SkinID"] = "Caith",
-				},
-				["Bartender4_2"] = {
-					["Shadow"] = true,
-					["Colors"] = {
-						["Normal"] = {
-							0.2941176470588235, -- [1]
-							0.2941176470588235, -- [2]
-							0.2941176470588235, -- [3]
-							1, -- [4]
-						},
-					},
-					["Inherit"] = false,
-					["Backdrop"] = true,
-					["SkinID"] = "Apathy",
-				},
-				["OmniBar"] = {
-					["Shadow"] = true,
-					["Colors"] = {
-						["Normal"] = {
-							0.2941176470588235, -- [1]
-							0.2941176470588235, -- [2]
-							0.2941176470588235, -- [3]
-							1, -- [4]
-						},
-					},
-					["Inherit"] = false,
-					["Backdrop"] = true,
-					["SkinID"] = "Caith",
-				},
-				["OmniBar_Kick"] = {
-					["Shadow"] = true,
-					["Colors"] = {
-						["Normal"] = {
-							0.2941176470588235, -- [1]
-							0.2941176470588235, -- [2]
-							0.2941176470588235, -- [3]
-							1, -- [4]
-						},
-					},
-					["Inherit"] = false,
-					["Backdrop"] = true,
-					["SkinID"] = "Caith",
-				},
-				["Bagnon_bank - items"] = {
-					["Shadow"] = true,
-					["Colors"] = {
-						["Normal"] = {
-							0.2941176470588235, -- [1]
-							0.2941176470588235, -- [2]
-							0.2941176470588235, -- [3]
-							1, -- [4]
-						},
-					},
-					["Inherit"] = false,
-					["Backdrop"] = true,
-					["SkinID"] = "Caith",
-				},
-				["OmniBar_Kidney Shot"] = {
+				["Diminish"] = {
 					["Shadow"] = true,
 					["Colors"] = {
 						["Normal"] = {
@@ -667,7 +1338,7 @@ MasqueDB = {
 					["Backdrop"] = true,
 					["Inherit"] = false,
 				},
-				["OmniBar_Skull Bash"] = {
+				["OmniBar_Dampen Harm"] = {
 					["Shadow"] = true,
 					["Colors"] = {
 						["Normal"] = {
@@ -677,11 +1348,25 @@ MasqueDB = {
 							1, -- [4]
 						},
 					},
-					["Inherit"] = false,
-					["Backdrop"] = true,
 					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
 				},
-				["WeakAuras_7mXh801nYCM"] = {
+				["OmniBar_Blur"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["WeakAuras_8A9Zan514XL"] = {
 					["Shadow"] = true,
 					["Backdrop"] = true,
 					["Upgraded"] = true,
@@ -696,7 +1381,35 @@ MasqueDB = {
 					["SkinID"] = "Caith",
 					["Inherit"] = false,
 				},
-				["Bagnon_voidstorage - items"] = {
+				["OmniBar_Spell Reflection"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Smoke Bomb"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Counter Shot"] = {
 					["Shadow"] = true,
 					["Colors"] = {
 						["Normal"] = {
@@ -724,35 +1437,7 @@ MasqueDB = {
 					["Backdrop"] = true,
 					["SkinID"] = "Caith",
 				},
-				["Bagnon_guild - items"] = {
-					["Shadow"] = true,
-					["Colors"] = {
-						["Normal"] = {
-							0.2941176470588235, -- [1]
-							0.2941176470588235, -- [2]
-							0.2941176470588235, -- [3]
-							1, -- [4]
-						},
-					},
-					["Inherit"] = false,
-					["Backdrop"] = true,
-					["SkinID"] = "Caith",
-				},
-				["Bartender4"] = {
-					["Shadow"] = true,
-					["Colors"] = {
-						["Normal"] = {
-							0.2941176470588235, -- [1]
-							0.2941176470588235, -- [2]
-							0.2941176470588235, -- [3]
-							1, -- [4]
-						},
-					},
-					["Inherit"] = false,
-					["Backdrop"] = true,
-					["SkinID"] = "Caith",
-				},
-				["Ability Team Tracker"] = {
+				["OmniBar_Dark Transformation"] = {
 					["Shadow"] = true,
 					["Colors"] = {
 						["Normal"] = {
@@ -766,7 +1451,739 @@ MasqueDB = {
 					["Backdrop"] = true,
 					["Inherit"] = false,
 				},
-				["Diminish"] = {
+				["OmniBar"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["Inherit"] = false,
+					["Backdrop"] = true,
+					["SkinID"] = "Caith",
+				},
+				["OmniBar_Thorns"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Doom Winds"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Icebound Fortitude"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Camouflage"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["WeakAuras_7mXh801nYCM"] = {
+					["Shadow"] = true,
+					["Backdrop"] = true,
+					["Upgraded"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["Inherit"] = false,
+					["SkinID"] = "Caith",
+				},
+				["Bartender4_6"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["Inherit"] = false,
+					["Backdrop"] = true,
+					["SkinID"] = "Caith",
+				},
+				["OmniBar_Invoke Xuen, the White Tiger"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Dark Pact"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["Bartender4_8"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["Inherit"] = false,
+					["Backdrop"] = true,
+					["SkinID"] = "Caith",
+				},
+				["OmniBar_Recklessness"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["Bagnon_bank - bags"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["Inherit"] = false,
+					["Backdrop"] = true,
+					["SkinID"] = "Caith",
+				},
+				["OmniBar_Touch of Karma"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Blind"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Fade"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["Bartender4_2"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["Inherit"] = false,
+					["Backdrop"] = true,
+					["SkinID"] = "Apathy",
+				},
+				["WeakAuras_eEgZEjNMrJA"] = {
+					["Shadow"] = true,
+					["Backdrop"] = true,
+					["Upgraded"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Inherit"] = false,
+				},
+				["WeakAuras_1b482DzNgx7"] = {
+					["Shadow"] = true,
+					["Backdrop"] = true,
+					["Upgraded"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Inherit"] = false,
+				},
+				["Masque"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+				},
+				["OmniBar_Call Felhunter"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Arcane Power"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Pummel"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["Inherit"] = false,
+					["Backdrop"] = true,
+					["SkinID"] = "Caith",
+				},
+				["Bartender4_StanceBar"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["Inherit"] = false,
+					["Backdrop"] = true,
+					["SkinID"] = "Caith",
+				},
+				["WeakAuras_3NKBzqniIxO"] = {
+					["Shadow"] = true,
+					["Backdrop"] = true,
+					["Upgraded"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Inherit"] = false,
+				},
+				["OmniBar_Psychic Horror"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Anti-Magic Shell"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["Bagnon_vault - items"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["Inherit"] = false,
+					["Backdrop"] = true,
+					["SkinID"] = "Caith",
+				},
+				["OmniBar_Fel Eruption"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["Bartender4_1"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["Inherit"] = false,
+					["Backdrop"] = true,
+					["SkinID"] = "Caith",
+				},
+				["OmniBar_Berserker Rage"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Divine Shield"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["WeakAuras_cd5LZJU04Aq"] = {
+					["Shadow"] = true,
+					["Backdrop"] = true,
+					["Upgraded"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Inherit"] = false,
+				},
+				["OmniBar_Healing Tide Totem"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Unholy Assault"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Roar of Sacrifice"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["Bartender4_4"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["Inherit"] = false,
+					["Backdrop"] = true,
+					["SkinID"] = "Caith",
+				},
+				["OmniBar_Skull Bash"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["Inherit"] = false,
+					["Backdrop"] = true,
+					["SkinID"] = "Caith",
+				},
+				["OmniBar_Freezing Trap"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Silence"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Astral Shift"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["Bartender4_5"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["Inherit"] = false,
+					["Backdrop"] = true,
+					["SkinID"] = "Caith",
+				},
+				["OmniBar_Coordinated Assault"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Incapacitating Roar"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Berserk"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Avenger's Shield"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["Inherit"] = false,
+					["Backdrop"] = true,
+					["SkinID"] = "Caith",
+				},
+				["OmniBar_Disrupt"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["Inherit"] = false,
+					["Backdrop"] = true,
+					["SkinID"] = "Caith",
+				},
+				["OmniBar_Divine Protection"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Dragon's Breath"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Spell Lock"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["Inherit"] = false,
+					["Backdrop"] = true,
+					["SkinID"] = "Caith",
+				},
+				["OmniBar_Divine Toll"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Blinding Light"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Grounding Totem"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Mindgames"] = {
 					["Shadow"] = true,
 					["Colors"] = {
 						["Normal"] = {
@@ -792,10 +2209,10 @@ MasqueDB = {
 							1, -- [4]
 						},
 					},
-					["Inherit"] = false,
 					["SkinID"] = "Caith",
+					["Inherit"] = false,
 				},
-				["Bagnon_guild - bags"] = {
+				["Bagnon_guildbank - items"] = {
 					["Shadow"] = true,
 					["Colors"] = {
 						["Normal"] = {
@@ -809,7 +2226,7 @@ MasqueDB = {
 					["Backdrop"] = true,
 					["SkinID"] = "Caith",
 				},
-				["Bartender4_5"] = {
+				["Bartender4_3"] = {
 					["Shadow"] = true,
 					["Colors"] = {
 						["Normal"] = {
@@ -823,22 +2240,7 @@ MasqueDB = {
 					["Backdrop"] = true,
 					["SkinID"] = "Caith",
 				},
-				["WeakAuras_8svMfWdGz7F"] = {
-					["Shadow"] = true,
-					["Backdrop"] = true,
-					["Upgraded"] = true,
-					["Colors"] = {
-						["Normal"] = {
-							0.2941176470588235, -- [1]
-							0.2941176470588235, -- [2]
-							0.2941176470588235, -- [3]
-							1, -- [4]
-						},
-					},
-					["SkinID"] = "Caith",
-					["Inherit"] = false,
-				},
-				["Bartender4_1"] = {
+				["OmniBar_Solar Beam"] = {
 					["Shadow"] = true,
 					["Colors"] = {
 						["Normal"] = {
@@ -852,7 +2254,35 @@ MasqueDB = {
 					["Backdrop"] = true,
 					["SkinID"] = "Caith",
 				},
-				["Bagnon_vault - items"] = {
+				["OmniBar_Mass Dispel"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Transcendence: Transfer"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["Bagnon_inventory - bags"] = {
 					["Shadow"] = true,
 					["Colors"] = {
 						["Normal"] = {
@@ -866,7 +2296,7 @@ MasqueDB = {
 					["Backdrop"] = true,
 					["SkinID"] = "Caith",
 				},
-				["Masque"] = {
+				["OmniBar_Leap of Faith"] = {
 					["Shadow"] = true,
 					["Colors"] = {
 						["Normal"] = {
@@ -878,6 +2308,315 @@ MasqueDB = {
 					},
 					["SkinID"] = "Caith",
 					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Counterspell"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["Inherit"] = false,
+					["Backdrop"] = true,
+					["SkinID"] = "Caith",
+				},
+				["OmniBar_Blessing of Protection"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Tranquility"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Apotheosis"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Wind Shear"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["Inherit"] = false,
+					["Backdrop"] = true,
+					["SkinID"] = "Caith",
+				},
+				["Bartender4_BagBar"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["Inherit"] = false,
+					["Backdrop"] = true,
+					["SkinID"] = "Caith",
+				},
+				["OmniBar_Spear of Bastion"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Storm, Earth, and Fire"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Weapons of Order"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["Bagnon_voidstorage - items"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["Inherit"] = false,
+					["Backdrop"] = true,
+					["SkinID"] = "Caith",
+				},
+				["OmniBar_Repentance"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Life Cocoon"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Spirit Link Totem"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["Ability Team Tracker"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Exhilaration"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Convoke the Spirits"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Cloak of Shadows"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Holy Ward"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Die by the Sword"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Icy Veins"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_The Hunt"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
+				},
+				["OmniBar_Mighty Bash"] = {
+					["Shadow"] = true,
+					["Colors"] = {
+						["Normal"] = {
+							0.2941176470588235, -- [1]
+							0.2941176470588235, -- [2]
+							0.2941176470588235, -- [3]
+							1, -- [4]
+						},
+					},
+					["SkinID"] = "Caith",
+					["Backdrop"] = true,
+					["Inherit"] = false,
 				},
 			},
 		},

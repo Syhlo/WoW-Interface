@@ -1,0 +1,7 @@
+## Interface: 20501
+## Title: NoEscapeFrustration
+## Version: 1.0
+## Notes: Prevent the Escape key from closing some popup dialogs
+
+NoEscapeFrustration.lua
+

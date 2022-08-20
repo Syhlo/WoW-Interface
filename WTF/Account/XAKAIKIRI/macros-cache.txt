@@ -1,62 +1,960 @@
-VER 3 0000000000000019 " " "INV_MISC_QUESTIONMARK"
-#showtooltip
-/use Horde Battle Standard
+VER 3 0000000000000051 " " "134400"
+#068
+/click [btn:1] MegaMacroClicky68
+/click [btn:2] MegaMacroClicky68 RightButton
+/click [btn:3] MegaMacroClicky68 MiddleButton
+/click [btn:4] MegaMacroClicky68 Button4
+/click [btn:5] MegaMacroClicky68 Button5
 END
-VER 3 0000000000000016 " " "INV_MISC_QUESTIONMARK"
-#showtooltip
-/cast [noflyable] Vicious War Spider
-/cast [flyable] Enchanted Fey Dragon
+VER 3 0000000000000016 " " "134400"
+#002
+/click [btn:1] MegaMacroClicky2
+/click [btn:2] MegaMacroClicky2 RightButton
+/click [btn:3] MegaMacroClicky2 MiddleButton
+/click [btn:4] MegaMacroClicky2 Button4
+/click [btn:5] MegaMacroClicky2 Button5
 END
-VER 3 000000000000001C " " "INV_MISC_QUESTIONMARK"
-#showtooltip Alter Time
-/cancelaura Alter Time
+VER 3 000000000000001C " " "134400"
+#003
+/click [btn:1] MegaMacroClicky3
+/click [btn:2] MegaMacroClicky3 RightButton
+/click [btn:3] MegaMacroClicky3 MiddleButton
+/click [btn:4] MegaMacroClicky3 Button4
+/click [btn:5] MegaMacroClicky3 Button5
 END
-VER 3 0000000000000011 " " "136071"
-#showtooltip
-/petpassive
-/cast Polymorph
+VER 3 0000000000000011 " " "134400"
+#004
+/click [btn:1] MegaMacroClicky4
+/click [btn:2] MegaMacroClicky4 RightButton
+/click [btn:3] MegaMacroClicky4 MiddleButton
+/click [btn:4] MegaMacroClicky4 Button4
+/click [btn:5] MegaMacroClicky4 Button5
 END
-VER 3 000000000000001F " " "575588"
-/target [@party1]
+VER 3 000000000000001F " " "134400"
+#005
+/click [btn:1] MegaMacroClicky5
+/click [btn:2] MegaMacroClicky5 RightButton
+/click [btn:3] MegaMacroClicky5 MiddleButton
+/click [btn:4] MegaMacroClicky5 Button4
+/click [btn:5] MegaMacroClicky5 Button5
 END
-VER 3 000000000000001E " " "575587"
-/target [@player]
+VER 3 000000000000001E " " "134400"
+#006
+/click [btn:1] MegaMacroClicky6
+/click [btn:2] MegaMacroClicky6 RightButton
+/click [btn:3] MegaMacroClicky6 MiddleButton
+/click [btn:4] MegaMacroClicky6 Button4
+/click [btn:5] MegaMacroClicky6 Button5
 END
-VER 3 0000000000000020 " " "575589"
-/target [@party2]
+VER 3 0000000000000020 " " "134400"
+#007
+/click [btn:1] MegaMacroClicky7
+/click [btn:2] MegaMacroClicky7 RightButton
+/click [btn:3] MegaMacroClicky7 MiddleButton
+/click [btn:4] MegaMacroClicky7 Button4
+/click [btn:5] MegaMacroClicky7 Button5
 END
-VER 3 0000000000000021 " " "INV_MISC_QUESTIONMARK"
-#showtooltip
-/use 13
+VER 3 0000000000000021 " " "134400"
+#008
+/click [btn:1] MegaMacroClicky8
+/click [btn:2] MegaMacroClicky8 RightButton
+/click [btn:3] MegaMacroClicky8 MiddleButton
+/click [btn:4] MegaMacroClicky8 Button4
+/click [btn:5] MegaMacroClicky8 Button5
 END
-VER 3 0000000000000023 " " "INV_MISC_QUESTIONMARK"
-#showtooltip
-/use 14
+VER 3 0000000000000023 " " "134400"
+#009
+/click [btn:1] MegaMacroClicky9
+/click [btn:2] MegaMacroClicky9 RightButton
+/click [btn:3] MegaMacroClicky9 MiddleButton
+/click [btn:4] MegaMacroClicky9 Button4
+/click [btn:5] MegaMacroClicky9 Button5
 END
-VER 3 0000000000000024 " " "INV_MISC_QUESTIONMARK"
-#showtooltip
-/cast [@focus] Hammer of Justice
+VER 3 0000000000000024 " " "134400"
+#010
+/click [btn:1] MegaMacroClicky10
+/click [btn:2] MegaMacroClicky10 RightButton
+/click [btn:3] MegaMacroClicky10 MiddleButton
+/click [btn:4] MegaMacroClicky10 Button4
+/click [btn:5] MegaMacroClicky10 Button5
 END
-VER 3 0000000000000014 "  Target Arena2" "2399245"
-/target arena2
+VER 3 000000000000008B " " "134400"
+#018
+/click [btn:1] MegaMacroClicky18
+/click [btn:2] MegaMacroClicky18 RightButton
+/click [btn:3] MegaMacroClicky18 MiddleButton
+/click [btn:4] MegaMacroClicky18 Button4
+/click [btn:5] MegaMacroClicky18 Button5
 END
-VER 3 0000000000000015 "  Target Arena3" "2399243"
-/target arena3
+VER 3 000000000000008A " " "134400"
+#019
+/click [btn:1] MegaMacroClicky19
+/click [btn:2] MegaMacroClicky19 RightButton
+/click [btn:3] MegaMacroClicky19 MiddleButton
+/click [btn:4] MegaMacroClicky19 Button4
+/click [btn:5] MegaMacroClicky19 Button5
 END
-VER 3 0000000000000022 " Annoying Prompt" "INV_MISC_QUESTIONMARK"
-/click StaticPopup1Button1
+VER 3 0000000000000089 " " "134400"
+#020
+/click [btn:1] MegaMacroClicky20
+/click [btn:2] MegaMacroClicky20 RightButton
+/click [btn:3] MegaMacroClicky20 MiddleButton
+/click [btn:4] MegaMacroClicky20 Button4
+/click [btn:5] MegaMacroClicky20 Button5
 END
-VER 3 0000000000000017 " tar focus" "132212"
-/target focus
+VER 3 0000000000000088 " " "134400"
+#021
+/click [btn:1] MegaMacroClicky21
+/click [btn:2] MegaMacroClicky21 RightButton
+/click [btn:3] MegaMacroClicky21 MiddleButton
+/click [btn:4] MegaMacroClicky21 Button4
+/click [btn:5] MegaMacroClicky21 Button5
 END
-VER 3 000000000000001D " Tar TC Tar" "969782"
-/tar [exists] Sharuke
-/tar targettarget
+VER 3 0000000000000087 " " "134400"
+#022
+/click [btn:1] MegaMacroClicky22
+/click [btn:2] MegaMacroClicky22 RightButton
+/click [btn:3] MegaMacroClicky22 MiddleButton
+/click [btn:4] MegaMacroClicky22 Button4
+/click [btn:5] MegaMacroClicky22 Button5
 END
-VER 3 0000000000000013 " Target Arena1" "2399244"
-/target arena1
+VER 3 0000000000000086 " " "134400"
+#023
+/click [btn:1] MegaMacroClicky23
+/click [btn:2] MegaMacroClicky23 RightButton
+/click [btn:3] MegaMacroClicky23 MiddleButton
+/click [btn:4] MegaMacroClicky23 Button4
+/click [btn:5] MegaMacroClicky23 Button5
 END
-VER 3 0000000000000025 "Drink" "INV_MISC_QUESTIONMARK"
-/run local a,b,c,d="Conjured Mana Bun","Ambroria Dew","Drink" d=GetMacroBody(c)EditMacro(c,c,nil,strsub(d,1,strfind(d,";\n")).."\n/use "..(GetItemCount(a)>0 and a or b));
-/use Conjured Mana Bun
+VER 3 0000000000000085 " " "134400"
+#024
+/click [btn:1] MegaMacroClicky24
+/click [btn:2] MegaMacroClicky24 RightButton
+/click [btn:3] MegaMacroClicky24 MiddleButton
+/click [btn:4] MegaMacroClicky24 Button4
+/click [btn:5] MegaMacroClicky24 Button5
+END
+VER 3 0000000000000026 " " "134400"
+#025
+/click [btn:1] MegaMacroClicky25
+/click [btn:2] MegaMacroClicky25 RightButton
+/click [btn:3] MegaMacroClicky25 MiddleButton
+/click [btn:4] MegaMacroClicky25 Button4
+/click [btn:5] MegaMacroClicky25 Button5
+END
+VER 3 0000000000000027 " " "134400"
+#026
+/click [btn:1] MegaMacroClicky26
+/click [btn:2] MegaMacroClicky26 RightButton
+/click [btn:3] MegaMacroClicky26 MiddleButton
+/click [btn:4] MegaMacroClicky26 Button4
+/click [btn:5] MegaMacroClicky26 Button5
+END
+VER 3 0000000000000028 " " "134400"
+#027
+/click [btn:1] MegaMacroClicky27
+/click [btn:2] MegaMacroClicky27 RightButton
+/click [btn:3] MegaMacroClicky27 MiddleButton
+/click [btn:4] MegaMacroClicky27 Button4
+/click [btn:5] MegaMacroClicky27 Button5
+END
+VER 3 0000000000000029 " " "134400"
+#028
+/click [btn:1] MegaMacroClicky28
+/click [btn:2] MegaMacroClicky28 RightButton
+/click [btn:3] MegaMacroClicky28 MiddleButton
+/click [btn:4] MegaMacroClicky28 Button4
+/click [btn:5] MegaMacroClicky28 Button5
+END
+VER 3 000000000000002A " " "134400"
+#029
+/click [btn:1] MegaMacroClicky29
+/click [btn:2] MegaMacroClicky29 RightButton
+/click [btn:3] MegaMacroClicky29 MiddleButton
+/click [btn:4] MegaMacroClicky29 Button4
+/click [btn:5] MegaMacroClicky29 Button5
+END
+VER 3 000000000000002B " " "134400"
+#030
+/click [btn:1] MegaMacroClicky30
+/click [btn:2] MegaMacroClicky30 RightButton
+/click [btn:3] MegaMacroClicky30 MiddleButton
+/click [btn:4] MegaMacroClicky30 Button4
+/click [btn:5] MegaMacroClicky30 Button5
+END
+VER 3 000000000000002C " " "134400"
+#031
+/click [btn:1] MegaMacroClicky31
+/click [btn:2] MegaMacroClicky31 RightButton
+/click [btn:3] MegaMacroClicky31 MiddleButton
+/click [btn:4] MegaMacroClicky31 Button4
+/click [btn:5] MegaMacroClicky31 Button5
+END
+VER 3 000000000000002D " " "134400"
+#032
+/click [btn:1] MegaMacroClicky32
+/click [btn:2] MegaMacroClicky32 RightButton
+/click [btn:3] MegaMacroClicky32 MiddleButton
+/click [btn:4] MegaMacroClicky32 Button4
+/click [btn:5] MegaMacroClicky32 Button5
+END
+VER 3 000000000000002E " " "134400"
+#033
+/click [btn:1] MegaMacroClicky33
+/click [btn:2] MegaMacroClicky33 RightButton
+/click [btn:3] MegaMacroClicky33 MiddleButton
+/click [btn:4] MegaMacroClicky33 Button4
+/click [btn:5] MegaMacroClicky33 Button5
+END
+VER 3 000000000000002F " " "134400"
+#034
+/click [btn:1] MegaMacroClicky34
+/click [btn:2] MegaMacroClicky34 RightButton
+/click [btn:3] MegaMacroClicky34 MiddleButton
+/click [btn:4] MegaMacroClicky34 Button4
+/click [btn:5] MegaMacroClicky34 Button5
+END
+VER 3 0000000000000030 " " "134400"
+#035
+/click [btn:1] MegaMacroClicky35
+/click [btn:2] MegaMacroClicky35 RightButton
+/click [btn:3] MegaMacroClicky35 MiddleButton
+/click [btn:4] MegaMacroClicky35 Button4
+/click [btn:5] MegaMacroClicky35 Button5
+END
+VER 3 0000000000000031 " " "134400"
+#036
+/click [btn:1] MegaMacroClicky36
+/click [btn:2] MegaMacroClicky36 RightButton
+/click [btn:3] MegaMacroClicky36 MiddleButton
+/click [btn:4] MegaMacroClicky36 Button4
+/click [btn:5] MegaMacroClicky36 Button5
+END
+VER 3 0000000000000032 " " "134400"
+#037
+/click [btn:1] MegaMacroClicky37
+/click [btn:2] MegaMacroClicky37 RightButton
+/click [btn:3] MegaMacroClicky37 MiddleButton
+/click [btn:4] MegaMacroClicky37 Button4
+/click [btn:5] MegaMacroClicky37 Button5
+END
+VER 3 0000000000000033 " " "134400"
+#038
+/click [btn:1] MegaMacroClicky38
+/click [btn:2] MegaMacroClicky38 RightButton
+/click [btn:3] MegaMacroClicky38 MiddleButton
+/click [btn:4] MegaMacroClicky38 Button4
+/click [btn:5] MegaMacroClicky38 Button5
+END
+VER 3 0000000000000034 " " "134400"
+#039
+/click [btn:1] MegaMacroClicky39
+/click [btn:2] MegaMacroClicky39 RightButton
+/click [btn:3] MegaMacroClicky39 MiddleButton
+/click [btn:4] MegaMacroClicky39 Button4
+/click [btn:5] MegaMacroClicky39 Button5
+END
+VER 3 0000000000000035 " " "134400"
+#040
+/click [btn:1] MegaMacroClicky40
+/click [btn:2] MegaMacroClicky40 RightButton
+/click [btn:3] MegaMacroClicky40 MiddleButton
+/click [btn:4] MegaMacroClicky40 Button4
+/click [btn:5] MegaMacroClicky40 Button5
+END
+VER 3 0000000000000036 " " "134400"
+#041
+/click [btn:1] MegaMacroClicky41
+/click [btn:2] MegaMacroClicky41 RightButton
+/click [btn:3] MegaMacroClicky41 MiddleButton
+/click [btn:4] MegaMacroClicky41 Button4
+/click [btn:5] MegaMacroClicky41 Button5
+END
+VER 3 0000000000000037 " " "134400"
+#042
+/click [btn:1] MegaMacroClicky42
+/click [btn:2] MegaMacroClicky42 RightButton
+/click [btn:3] MegaMacroClicky42 MiddleButton
+/click [btn:4] MegaMacroClicky42 Button4
+/click [btn:5] MegaMacroClicky42 Button5
+END
+VER 3 0000000000000038 " " "134400"
+#043
+/click [btn:1] MegaMacroClicky43
+/click [btn:2] MegaMacroClicky43 RightButton
+/click [btn:3] MegaMacroClicky43 MiddleButton
+/click [btn:4] MegaMacroClicky43 Button4
+/click [btn:5] MegaMacroClicky43 Button5
+END
+VER 3 0000000000000039 " " "134400"
+#044
+/click [btn:1] MegaMacroClicky44
+/click [btn:2] MegaMacroClicky44 RightButton
+/click [btn:3] MegaMacroClicky44 MiddleButton
+/click [btn:4] MegaMacroClicky44 Button4
+/click [btn:5] MegaMacroClicky44 Button5
+END
+VER 3 000000000000003A " " "134400"
+#045
+/click [btn:1] MegaMacroClicky45
+/click [btn:2] MegaMacroClicky45 RightButton
+/click [btn:3] MegaMacroClicky45 MiddleButton
+/click [btn:4] MegaMacroClicky45 Button4
+/click [btn:5] MegaMacroClicky45 Button5
+END
+VER 3 000000000000003B " " "134400"
+#046
+/click [btn:1] MegaMacroClicky46
+/click [btn:2] MegaMacroClicky46 RightButton
+/click [btn:3] MegaMacroClicky46 MiddleButton
+/click [btn:4] MegaMacroClicky46 Button4
+/click [btn:5] MegaMacroClicky46 Button5
+END
+VER 3 000000000000003C " " "134400"
+#047
+/click [btn:1] MegaMacroClicky47
+/click [btn:2] MegaMacroClicky47 RightButton
+/click [btn:3] MegaMacroClicky47 MiddleButton
+/click [btn:4] MegaMacroClicky47 Button4
+/click [btn:5] MegaMacroClicky47 Button5
+END
+VER 3 000000000000003D " " "134400"
+#048
+/click [btn:1] MegaMacroClicky48
+/click [btn:2] MegaMacroClicky48 RightButton
+/click [btn:3] MegaMacroClicky48 MiddleButton
+/click [btn:4] MegaMacroClicky48 Button4
+/click [btn:5] MegaMacroClicky48 Button5
+END
+VER 3 000000000000003E " " "134400"
+#049
+/click [btn:1] MegaMacroClicky49
+/click [btn:2] MegaMacroClicky49 RightButton
+/click [btn:3] MegaMacroClicky49 MiddleButton
+/click [btn:4] MegaMacroClicky49 Button4
+/click [btn:5] MegaMacroClicky49 Button5
+END
+VER 3 000000000000003F " " "134400"
+#050
+/click [btn:1] MegaMacroClicky50
+/click [btn:2] MegaMacroClicky50 RightButton
+/click [btn:3] MegaMacroClicky50 MiddleButton
+/click [btn:4] MegaMacroClicky50 Button4
+/click [btn:5] MegaMacroClicky50 Button5
+END
+VER 3 0000000000000040 " " "134400"
+#051
+/click [btn:1] MegaMacroClicky51
+/click [btn:2] MegaMacroClicky51 RightButton
+/click [btn:3] MegaMacroClicky51 MiddleButton
+/click [btn:4] MegaMacroClicky51 Button4
+/click [btn:5] MegaMacroClicky51 Button5
+END
+VER 3 0000000000000041 " " "134400"
+#052
+/click [btn:1] MegaMacroClicky52
+/click [btn:2] MegaMacroClicky52 RightButton
+/click [btn:3] MegaMacroClicky52 MiddleButton
+/click [btn:4] MegaMacroClicky52 Button4
+/click [btn:5] MegaMacroClicky52 Button5
+END
+VER 3 0000000000000042 " " "134400"
+#053
+/click [btn:1] MegaMacroClicky53
+/click [btn:2] MegaMacroClicky53 RightButton
+/click [btn:3] MegaMacroClicky53 MiddleButton
+/click [btn:4] MegaMacroClicky53 Button4
+/click [btn:5] MegaMacroClicky53 Button5
+END
+VER 3 0000000000000043 " " "134400"
+#054
+/click [btn:1] MegaMacroClicky54
+/click [btn:2] MegaMacroClicky54 RightButton
+/click [btn:3] MegaMacroClicky54 MiddleButton
+/click [btn:4] MegaMacroClicky54 Button4
+/click [btn:5] MegaMacroClicky54 Button5
+END
+VER 3 0000000000000044 " " "134400"
+#055
+/click [btn:1] MegaMacroClicky55
+/click [btn:2] MegaMacroClicky55 RightButton
+/click [btn:3] MegaMacroClicky55 MiddleButton
+/click [btn:4] MegaMacroClicky55 Button4
+/click [btn:5] MegaMacroClicky55 Button5
+END
+VER 3 0000000000000045 " " "134400"
+#056
+/click [btn:1] MegaMacroClicky56
+/click [btn:2] MegaMacroClicky56 RightButton
+/click [btn:3] MegaMacroClicky56 MiddleButton
+/click [btn:4] MegaMacroClicky56 Button4
+/click [btn:5] MegaMacroClicky56 Button5
+END
+VER 3 0000000000000046 " " "134400"
+#057
+/click [btn:1] MegaMacroClicky57
+/click [btn:2] MegaMacroClicky57 RightButton
+/click [btn:3] MegaMacroClicky57 MiddleButton
+/click [btn:4] MegaMacroClicky57 Button4
+/click [btn:5] MegaMacroClicky57 Button5
+END
+VER 3 0000000000000047 " " "134400"
+#058
+/click [btn:1] MegaMacroClicky58
+/click [btn:2] MegaMacroClicky58 RightButton
+/click [btn:3] MegaMacroClicky58 MiddleButton
+/click [btn:4] MegaMacroClicky58 Button4
+/click [btn:5] MegaMacroClicky58 Button5
+END
+VER 3 0000000000000048 " " "134400"
+#059
+/click [btn:1] MegaMacroClicky59
+/click [btn:2] MegaMacroClicky59 RightButton
+/click [btn:3] MegaMacroClicky59 MiddleButton
+/click [btn:4] MegaMacroClicky59 Button4
+/click [btn:5] MegaMacroClicky59 Button5
+END
+VER 3 0000000000000049 " " "134400"
+#060
+/click [btn:1] MegaMacroClicky60
+/click [btn:2] MegaMacroClicky60 RightButton
+/click [btn:3] MegaMacroClicky60 MiddleButton
+/click [btn:4] MegaMacroClicky60 Button4
+/click [btn:5] MegaMacroClicky60 Button5
+END
+VER 3 000000000000004A " " "134400"
+#061
+/click [btn:1] MegaMacroClicky61
+/click [btn:2] MegaMacroClicky61 RightButton
+/click [btn:3] MegaMacroClicky61 MiddleButton
+/click [btn:4] MegaMacroClicky61 Button4
+/click [btn:5] MegaMacroClicky61 Button5
+END
+VER 3 000000000000004B " " "134400"
+#062
+/click [btn:1] MegaMacroClicky62
+/click [btn:2] MegaMacroClicky62 RightButton
+/click [btn:3] MegaMacroClicky62 MiddleButton
+/click [btn:4] MegaMacroClicky62 Button4
+/click [btn:5] MegaMacroClicky62 Button5
+END
+VER 3 000000000000004C " " "134400"
+#063
+/click [btn:1] MegaMacroClicky63
+/click [btn:2] MegaMacroClicky63 RightButton
+/click [btn:3] MegaMacroClicky63 MiddleButton
+/click [btn:4] MegaMacroClicky63 Button4
+/click [btn:5] MegaMacroClicky63 Button5
+END
+VER 3 000000000000004D " " "134400"
+#064
+/click [btn:1] MegaMacroClicky64
+/click [btn:2] MegaMacroClicky64 RightButton
+/click [btn:3] MegaMacroClicky64 MiddleButton
+/click [btn:4] MegaMacroClicky64 Button4
+/click [btn:5] MegaMacroClicky64 Button5
+END
+VER 3 000000000000004E " " "134400"
+#065
+/click [btn:1] MegaMacroClicky65
+/click [btn:2] MegaMacroClicky65 RightButton
+/click [btn:3] MegaMacroClicky65 MiddleButton
+/click [btn:4] MegaMacroClicky65 Button4
+/click [btn:5] MegaMacroClicky65 Button5
+END
+VER 3 000000000000004F " " "134400"
+#066
+/click [btn:1] MegaMacroClicky66
+/click [btn:2] MegaMacroClicky66 RightButton
+/click [btn:3] MegaMacroClicky66 MiddleButton
+/click [btn:4] MegaMacroClicky66 Button4
+/click [btn:5] MegaMacroClicky66 Button5
+END
+VER 3 0000000000000050 " " "134400"
+#067
+/click [btn:1] MegaMacroClicky67
+/click [btn:2] MegaMacroClicky67 RightButton
+/click [btn:3] MegaMacroClicky67 MiddleButton
+/click [btn:4] MegaMacroClicky67 Button4
+/click [btn:5] MegaMacroClicky67 Button5
+END
+VER 3 0000000000000017 " " "134400"
+#014
+/click [btn:1] MegaMacroClicky14
+/click [btn:2] MegaMacroClicky14 RightButton
+/click [btn:3] MegaMacroClicky14 MiddleButton
+/click [btn:4] MegaMacroClicky14 Button4
+/click [btn:5] MegaMacroClicky14 Button5
+END
+VER 3 0000000000000052 " " "134400"
+#069
+/click [btn:1] MegaMacroClicky69
+/click [btn:2] MegaMacroClicky69 RightButton
+/click [btn:3] MegaMacroClicky69 MiddleButton
+/click [btn:4] MegaMacroClicky69 Button4
+/click [btn:5] MegaMacroClicky69 Button5
+END
+VER 3 0000000000000053 " " "134400"
+#070
+/click [btn:1] MegaMacroClicky70
+/click [btn:2] MegaMacroClicky70 RightButton
+/click [btn:3] MegaMacroClicky70 MiddleButton
+/click [btn:4] MegaMacroClicky70 Button4
+/click [btn:5] MegaMacroClicky70 Button5
+END
+VER 3 0000000000000054 " " "134400"
+#071
+/click [btn:1] MegaMacroClicky71
+/click [btn:2] MegaMacroClicky71 RightButton
+/click [btn:3] MegaMacroClicky71 MiddleButton
+/click [btn:4] MegaMacroClicky71 Button4
+/click [btn:5] MegaMacroClicky71 Button5
+END
+VER 3 0000000000000055 " " "134400"
+#072
+/click [btn:1] MegaMacroClicky72
+/click [btn:2] MegaMacroClicky72 RightButton
+/click [btn:3] MegaMacroClicky72 MiddleButton
+/click [btn:4] MegaMacroClicky72 Button4
+/click [btn:5] MegaMacroClicky72 Button5
+END
+VER 3 0000000000000056 " " "134400"
+#073
+/click [btn:1] MegaMacroClicky73
+/click [btn:2] MegaMacroClicky73 RightButton
+/click [btn:3] MegaMacroClicky73 MiddleButton
+/click [btn:4] MegaMacroClicky73 Button4
+/click [btn:5] MegaMacroClicky73 Button5
+END
+VER 3 0000000000000057 " " "134400"
+#074
+/click [btn:1] MegaMacroClicky74
+/click [btn:2] MegaMacroClicky74 RightButton
+/click [btn:3] MegaMacroClicky74 MiddleButton
+/click [btn:4] MegaMacroClicky74 Button4
+/click [btn:5] MegaMacroClicky74 Button5
+END
+VER 3 0000000000000058 " " "134400"
+#075
+/click [btn:1] MegaMacroClicky75
+/click [btn:2] MegaMacroClicky75 RightButton
+/click [btn:3] MegaMacroClicky75 MiddleButton
+/click [btn:4] MegaMacroClicky75 Button4
+/click [btn:5] MegaMacroClicky75 Button5
+END
+VER 3 0000000000000059 " " "134400"
+#076
+/click [btn:1] MegaMacroClicky76
+/click [btn:2] MegaMacroClicky76 RightButton
+/click [btn:3] MegaMacroClicky76 MiddleButton
+/click [btn:4] MegaMacroClicky76 Button4
+/click [btn:5] MegaMacroClicky76 Button5
+END
+VER 3 000000000000005A " " "134400"
+#077
+/click [btn:1] MegaMacroClicky77
+/click [btn:2] MegaMacroClicky77 RightButton
+/click [btn:3] MegaMacroClicky77 MiddleButton
+/click [btn:4] MegaMacroClicky77 Button4
+/click [btn:5] MegaMacroClicky77 Button5
+END
+VER 3 000000000000005B " " "134400"
+#078
+/click [btn:1] MegaMacroClicky78
+/click [btn:2] MegaMacroClicky78 RightButton
+/click [btn:3] MegaMacroClicky78 MiddleButton
+/click [btn:4] MegaMacroClicky78 Button4
+/click [btn:5] MegaMacroClicky78 Button5
+END
+VER 3 000000000000005C " " "134400"
+#079
+/click [btn:1] MegaMacroClicky79
+/click [btn:2] MegaMacroClicky79 RightButton
+/click [btn:3] MegaMacroClicky79 MiddleButton
+/click [btn:4] MegaMacroClicky79 Button4
+/click [btn:5] MegaMacroClicky79 Button5
+END
+VER 3 000000000000005D " " "134400"
+#080
+/click [btn:1] MegaMacroClicky80
+/click [btn:2] MegaMacroClicky80 RightButton
+/click [btn:3] MegaMacroClicky80 MiddleButton
+/click [btn:4] MegaMacroClicky80 Button4
+/click [btn:5] MegaMacroClicky80 Button5
+END
+VER 3 000000000000005E " " "134400"
+#081
+/click [btn:1] MegaMacroClicky81
+/click [btn:2] MegaMacroClicky81 RightButton
+/click [btn:3] MegaMacroClicky81 MiddleButton
+/click [btn:4] MegaMacroClicky81 Button4
+/click [btn:5] MegaMacroClicky81 Button5
+END
+VER 3 000000000000005F " " "134400"
+#082
+/click [btn:1] MegaMacroClicky82
+/click [btn:2] MegaMacroClicky82 RightButton
+/click [btn:3] MegaMacroClicky82 MiddleButton
+/click [btn:4] MegaMacroClicky82 Button4
+/click [btn:5] MegaMacroClicky82 Button5
+END
+VER 3 0000000000000060 " " "134400"
+#083
+/click [btn:1] MegaMacroClicky83
+/click [btn:2] MegaMacroClicky83 RightButton
+/click [btn:3] MegaMacroClicky83 MiddleButton
+/click [btn:4] MegaMacroClicky83 Button4
+/click [btn:5] MegaMacroClicky83 Button5
+END
+VER 3 0000000000000061 " " "134400"
+#084
+/click [btn:1] MegaMacroClicky84
+/click [btn:2] MegaMacroClicky84 RightButton
+/click [btn:3] MegaMacroClicky84 MiddleButton
+/click [btn:4] MegaMacroClicky84 Button4
+/click [btn:5] MegaMacroClicky84 Button5
+END
+VER 3 0000000000000062 " " "134400"
+#085
+/click [btn:1] MegaMacroClicky85
+/click [btn:2] MegaMacroClicky85 RightButton
+/click [btn:3] MegaMacroClicky85 MiddleButton
+/click [btn:4] MegaMacroClicky85 Button4
+/click [btn:5] MegaMacroClicky85 Button5
+END
+VER 3 0000000000000063 " " "134400"
+#086
+/click [btn:1] MegaMacroClicky86
+/click [btn:2] MegaMacroClicky86 RightButton
+/click [btn:3] MegaMacroClicky86 MiddleButton
+/click [btn:4] MegaMacroClicky86 Button4
+/click [btn:5] MegaMacroClicky86 Button5
+END
+VER 3 0000000000000064 " " "134400"
+#087
+/click [btn:1] MegaMacroClicky87
+/click [btn:2] MegaMacroClicky87 RightButton
+/click [btn:3] MegaMacroClicky87 MiddleButton
+/click [btn:4] MegaMacroClicky87 Button4
+/click [btn:5] MegaMacroClicky87 Button5
+END
+VER 3 0000000000000065 " " "134400"
+#088
+/click [btn:1] MegaMacroClicky88
+/click [btn:2] MegaMacroClicky88 RightButton
+/click [btn:3] MegaMacroClicky88 MiddleButton
+/click [btn:4] MegaMacroClicky88 Button4
+/click [btn:5] MegaMacroClicky88 Button5
+END
+VER 3 0000000000000066 " " "134400"
+#089
+/click [btn:1] MegaMacroClicky89
+/click [btn:2] MegaMacroClicky89 RightButton
+/click [btn:3] MegaMacroClicky89 MiddleButton
+/click [btn:4] MegaMacroClicky89 Button4
+/click [btn:5] MegaMacroClicky89 Button5
+END
+VER 3 0000000000000067 " " "134400"
+#090
+/click [btn:1] MegaMacroClicky90
+/click [btn:2] MegaMacroClicky90 RightButton
+/click [btn:3] MegaMacroClicky90 MiddleButton
+/click [btn:4] MegaMacroClicky90 Button4
+/click [btn:5] MegaMacroClicky90 Button5
+END
+VER 3 0000000000000068 " " "134400"
+#091
+/click [btn:1] MegaMacroClicky91
+/click [btn:2] MegaMacroClicky91 RightButton
+/click [btn:3] MegaMacroClicky91 MiddleButton
+/click [btn:4] MegaMacroClicky91 Button4
+/click [btn:5] MegaMacroClicky91 Button5
+END
+VER 3 0000000000000069 " " "134400"
+#092
+/click [btn:1] MegaMacroClicky92
+/click [btn:2] MegaMacroClicky92 RightButton
+/click [btn:3] MegaMacroClicky92 MiddleButton
+/click [btn:4] MegaMacroClicky92 Button4
+/click [btn:5] MegaMacroClicky92 Button5
+END
+VER 3 000000000000006A " " "134400"
+#093
+/click [btn:1] MegaMacroClicky93
+/click [btn:2] MegaMacroClicky93 RightButton
+/click [btn:3] MegaMacroClicky93 MiddleButton
+/click [btn:4] MegaMacroClicky93 Button4
+/click [btn:5] MegaMacroClicky93 Button5
+END
+VER 3 000000000000006B " " "134400"
+#094
+/click [btn:1] MegaMacroClicky94
+/click [btn:2] MegaMacroClicky94 RightButton
+/click [btn:3] MegaMacroClicky94 MiddleButton
+/click [btn:4] MegaMacroClicky94 Button4
+/click [btn:5] MegaMacroClicky94 Button5
+END
+VER 3 000000000000006C " " "134400"
+#095
+/click [btn:1] MegaMacroClicky95
+/click [btn:2] MegaMacroClicky95 RightButton
+/click [btn:3] MegaMacroClicky95 MiddleButton
+/click [btn:4] MegaMacroClicky95 Button4
+/click [btn:5] MegaMacroClicky95 Button5
+END
+VER 3 000000000000006D " " "134400"
+#096
+/click [btn:1] MegaMacroClicky96
+/click [btn:2] MegaMacroClicky96 RightButton
+/click [btn:3] MegaMacroClicky96 MiddleButton
+/click [btn:4] MegaMacroClicky96 Button4
+/click [btn:5] MegaMacroClicky96 Button5
+END
+VER 3 000000000000006E " " "134400"
+#097
+/click [btn:1] MegaMacroClicky97
+/click [btn:2] MegaMacroClicky97 RightButton
+/click [btn:3] MegaMacroClicky97 MiddleButton
+/click [btn:4] MegaMacroClicky97 Button4
+/click [btn:5] MegaMacroClicky97 Button5
+END
+VER 3 000000000000006F " " "134400"
+#098
+/click [btn:1] MegaMacroClicky98
+/click [btn:2] MegaMacroClicky98 RightButton
+/click [btn:3] MegaMacroClicky98 MiddleButton
+/click [btn:4] MegaMacroClicky98 Button4
+/click [btn:5] MegaMacroClicky98 Button5
+END
+VER 3 0000000000000070 " " "134400"
+#099
+/click [btn:1] MegaMacroClicky99
+/click [btn:2] MegaMacroClicky99 RightButton
+/click [btn:3] MegaMacroClicky99 MiddleButton
+/click [btn:4] MegaMacroClicky99 Button4
+/click [btn:5] MegaMacroClicky99 Button5
+END
+VER 3 0000000000000071 " " "134400"
+#100
+/click [btn:1] MegaMacroClicky100
+/click [btn:2] MegaMacroClicky100 RightButton
+/click [btn:3] MegaMacroClicky100 MiddleButton
+/click [btn:4] MegaMacroClicky100 Button4
+/click [btn:5] MegaMacroClicky100 Button5
+END
+VER 3 0000000000000072 " " "134400"
+#101
+/click [btn:1] MegaMacroClicky101
+/click [btn:2] MegaMacroClicky101 RightButton
+/click [btn:3] MegaMacroClicky101 MiddleButton
+/click [btn:4] MegaMacroClicky101 Button4
+/click [btn:5] MegaMacroClicky101 Button5
+END
+VER 3 0000000000000073 " " "134400"
+#102
+/click [btn:1] MegaMacroClicky102
+/click [btn:2] MegaMacroClicky102 RightButton
+/click [btn:3] MegaMacroClicky102 MiddleButton
+/click [btn:4] MegaMacroClicky102 Button4
+/click [btn:5] MegaMacroClicky102 Button5
+END
+VER 3 0000000000000074 " " "134400"
+#103
+/click [btn:1] MegaMacroClicky103
+/click [btn:2] MegaMacroClicky103 RightButton
+/click [btn:3] MegaMacroClicky103 MiddleButton
+/click [btn:4] MegaMacroClicky103 Button4
+/click [btn:5] MegaMacroClicky103 Button5
+END
+VER 3 0000000000000075 " " "134400"
+#104
+/click [btn:1] MegaMacroClicky104
+/click [btn:2] MegaMacroClicky104 RightButton
+/click [btn:3] MegaMacroClicky104 MiddleButton
+/click [btn:4] MegaMacroClicky104 Button4
+/click [btn:5] MegaMacroClicky104 Button5
+END
+VER 3 0000000000000076 " " "134400"
+#105
+/click [btn:1] MegaMacroClicky105
+/click [btn:2] MegaMacroClicky105 RightButton
+/click [btn:3] MegaMacroClicky105 MiddleButton
+/click [btn:4] MegaMacroClicky105 Button4
+/click [btn:5] MegaMacroClicky105 Button5
+END
+VER 3 0000000000000077 " " "134400"
+#106
+/click [btn:1] MegaMacroClicky106
+/click [btn:2] MegaMacroClicky106 RightButton
+/click [btn:3] MegaMacroClicky106 MiddleButton
+/click [btn:4] MegaMacroClicky106 Button4
+/click [btn:5] MegaMacroClicky106 Button5
+END
+VER 3 0000000000000078 " " "134400"
+#107
+/click [btn:1] MegaMacroClicky107
+/click [btn:2] MegaMacroClicky107 RightButton
+/click [btn:3] MegaMacroClicky107 MiddleButton
+/click [btn:4] MegaMacroClicky107 Button4
+/click [btn:5] MegaMacroClicky107 Button5
+END
+VER 3 0000000000000079 " " "134400"
+#108
+/click [btn:1] MegaMacroClicky108
+/click [btn:2] MegaMacroClicky108 RightButton
+/click [btn:3] MegaMacroClicky108 MiddleButton
+/click [btn:4] MegaMacroClicky108 Button4
+/click [btn:5] MegaMacroClicky108 Button5
+END
+VER 3 000000000000007A " " "134400"
+#109
+/click [btn:1] MegaMacroClicky109
+/click [btn:2] MegaMacroClicky109 RightButton
+/click [btn:3] MegaMacroClicky109 MiddleButton
+/click [btn:4] MegaMacroClicky109 Button4
+/click [btn:5] MegaMacroClicky109 Button5
+END
+VER 3 000000000000007B " " "134400"
+#110
+/click [btn:1] MegaMacroClicky110
+/click [btn:2] MegaMacroClicky110 RightButton
+/click [btn:3] MegaMacroClicky110 MiddleButton
+/click [btn:4] MegaMacroClicky110 Button4
+/click [btn:5] MegaMacroClicky110 Button5
+END
+VER 3 000000000000007C " " "134400"
+#111
+/click [btn:1] MegaMacroClicky111
+/click [btn:2] MegaMacroClicky111 RightButton
+/click [btn:3] MegaMacroClicky111 MiddleButton
+/click [btn:4] MegaMacroClicky111 Button4
+/click [btn:5] MegaMacroClicky111 Button5
+END
+VER 3 000000000000007D " " "134400"
+#112
+/click [btn:1] MegaMacroClicky112
+/click [btn:2] MegaMacroClicky112 RightButton
+/click [btn:3] MegaMacroClicky112 MiddleButton
+/click [btn:4] MegaMacroClicky112 Button4
+/click [btn:5] MegaMacroClicky112 Button5
+END
+VER 3 000000000000007E " " "134400"
+#113
+/click [btn:1] MegaMacroClicky113
+/click [btn:2] MegaMacroClicky113 RightButton
+/click [btn:3] MegaMacroClicky113 MiddleButton
+/click [btn:4] MegaMacroClicky113 Button4
+/click [btn:5] MegaMacroClicky113 Button5
+END
+VER 3 000000000000007F " " "134400"
+#114
+/click [btn:1] MegaMacroClicky114
+/click [btn:2] MegaMacroClicky114 RightButton
+/click [btn:3] MegaMacroClicky114 MiddleButton
+/click [btn:4] MegaMacroClicky114 Button4
+/click [btn:5] MegaMacroClicky114 Button5
+END
+VER 3 0000000000000080 " " "134400"
+#115
+/click [btn:1] MegaMacroClicky115
+/click [btn:2] MegaMacroClicky115 RightButton
+/click [btn:3] MegaMacroClicky115 MiddleButton
+/click [btn:4] MegaMacroClicky115 Button4
+/click [btn:5] MegaMacroClicky115 Button5
+END
+VER 3 0000000000000081 " " "134400"
+#116
+/click [btn:1] MegaMacroClicky116
+/click [btn:2] MegaMacroClicky116 RightButton
+/click [btn:3] MegaMacroClicky116 MiddleButton
+/click [btn:4] MegaMacroClicky116 Button4
+/click [btn:5] MegaMacroClicky116 Button5
+END
+VER 3 0000000000000082 " " "134400"
+#117
+/click [btn:1] MegaMacroClicky117
+/click [btn:2] MegaMacroClicky117 RightButton
+/click [btn:3] MegaMacroClicky117 MiddleButton
+/click [btn:4] MegaMacroClicky117 Button4
+/click [btn:5] MegaMacroClicky117 Button5
+END
+VER 3 0000000000000083 " " "134400"
+#118
+/click [btn:1] MegaMacroClicky118
+/click [btn:2] MegaMacroClicky118 RightButton
+/click [btn:3] MegaMacroClicky118 MiddleButton
+/click [btn:4] MegaMacroClicky118 Button4
+/click [btn:5] MegaMacroClicky118 Button5
+END
+VER 3 0000000000000084 " " "134400"
+#119
+/click [btn:1] MegaMacroClicky119
+/click [btn:2] MegaMacroClicky119 RightButton
+/click [btn:3] MegaMacroClicky119 MiddleButton
+/click [btn:4] MegaMacroClicky119 Button4
+/click [btn:5] MegaMacroClicky119 Button5
+END
+VER 3 000000000000008C " " "134400"
+#120
+/click [btn:1] MegaMacroClicky120
+/click [btn:2] MegaMacroClicky120 RightButton
+/click [btn:3] MegaMacroClicky120 MiddleButton
+/click [btn:4] MegaMacroClicky120 Button4
+/click [btn:5] MegaMacroClicky120 Button5
+END
+VER 3 000000000000001D " " "134400"
+#015
+/click [btn:1] MegaMacroClicky15
+/click [btn:2] MegaMacroClicky15 RightButton
+/click [btn:3] MegaMacroClicky15 MiddleButton
+/click [btn:4] MegaMacroClicky15 Button4
+/click [btn:5] MegaMacroClicky15 Button5
+END
+VER 3 0000000000000014 "  Target Arena2" "134400"
+#011
+/click [btn:1] MegaMacroClicky11
+/click [btn:2] MegaMacroClicky11 RightButton
+/click [btn:3] MegaMacroClicky11 MiddleButton
+/click [btn:4] MegaMacroClicky11 Button4
+/click [btn:5] MegaMacroClicky11 Button5
+END
+VER 3 0000000000000015 "  Target Arena3" "134400"
+#012
+/click [btn:1] MegaMacroClicky12
+/click [btn:2] MegaMacroClicky12 RightButton
+/click [btn:3] MegaMacroClicky12 MiddleButton
+/click [btn:4] MegaMacroClicky12 Button4
+/click [btn:5] MegaMacroClicky12 Button5
+END
+VER 3 0000000000000022 " Annoying Prompt" "134400"
+#013
+/click [btn:1] MegaMacroClicky13
+/click [btn:2] MegaMacroClicky13 RightButton
+/click [btn:3] MegaMacroClicky13 MiddleButton
+/click [btn:4] MegaMacroClicky13 Button4
+/click [btn:5] MegaMacroClicky13 Button5
+END
+VER 3 0000000000000013 " Target Arena1" "134400"
+#016
+/click [btn:1] MegaMacroClicky16
+/click [btn:2] MegaMacroClicky16 RightButton
+/click [btn:3] MegaMacroClicky16 MiddleButton
+/click [btn:4] MegaMacroClicky16 Button4
+/click [btn:5] MegaMacroClicky16 Button5
+END
+VER 3 0000000000000025 "Drink" "134400"
+#017
+/click [btn:1] MegaMacroClicky17
+/click [btn:2] MegaMacroClicky17 RightButton
+/click [btn:3] MegaMacroClicky17 MiddleButton
+/click [btn:4] MegaMacroClicky17 Button4
+/click [btn:5] MegaMacroClicky17 Button5
+END
+VER 3 0000000000000019 "TomTom" "134400"
+#001
+/click [btn:1] MegaMacroClicky1
+/click [btn:2] MegaMacroClicky1 RightButton
+/click [btn:3] MegaMacroClicky1 MiddleButton
+/click [btn:4] MegaMacroClicky1 Button4
+/click [btn:5] MegaMacroClicky1 Button5
 END

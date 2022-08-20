@@ -1,7 +1,7 @@
 Spy: disabled
 Ace3: enabled
 TomTom: enabled
-OmniBar: disabled
+OmniBar: enabled
 AuctionatorMiniFeatures: disabled
 WeakAurasCompanion: enabled
 WeakAurasArchive: enabled

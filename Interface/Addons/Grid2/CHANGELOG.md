@@ -1,9 +1,13 @@
 # Grid2
 
-## [2.0.44](https://github.com/michaelnpsp/Grid2/tree/2.0.44) (2022-06-04)
-[Full Changelog](https://github.com/michaelnpsp/Grid2/compare/2.0.43...2.0.44) [Previous Releases](https://github.com/michaelnpsp/Grid2/releases)
+## [2.0.47](https://github.com/michaelnpsp/Grid2/tree/2.0.47) (2022-08-06)
+[Full Changelog](https://github.com/michaelnpsp/Grid2/compare/2.0.44...2.0.47) [Previous Releases](https://github.com/michaelnpsp/Grid2/releases)
 
-- Retail TOC Updated  
-- Fixing github issue #55 in Grid2 InsecureGroupHeaders code for classic and tbc.  
-- Create build.yml  
-- Fixing wrong translation in korean locale (wowace issue #1083)  
+- Fixed some incorrect characters in raid debuffs options WoD module.  
+- Merge pull request #65 from kayti-wow/SL-S4  
+    Reinstate Warlords RaidDebuffs  
+- Reinstate Warlords RaidDebuffs  
+- Fixing crash in WotlK beta.  
+- Now combat and combat-mine statuses can be inverted (github issue #57).  
+- Trying to fix github issue #58  
+- Fixing korean locale (github issue #56).  

@@ -69,29 +69,13 @@ MADB = {
 						95.99999237060547, -- [5]
 					},
 					["name"] = "TalkingHeadFrame",
+					["hidden"] = true,
 					["pos"] = {
 						"BOTTOM", -- [1]
 						"UIParent", -- [2]
 						"BOTTOM", -- [3]
-						-2.498870849609375, -- [4]
-						868.8335571289062, -- [5]
-					},
-				},
-				["VehicleSeatIndicator"] = {
-					["orgPos"] = {
-						"TOPRIGHT", -- [1]
-						"MinimapCluster", -- [2]
-						"BOTTOMRIGHT", -- [3]
-						40, -- [4]
-						15, -- [5]
-					},
-					["name"] = "VehicleSeatIndicator",
-					["pos"] = {
-						"TOPRIGHT", -- [1]
-						"MinimapCluster", -- [2]
-						"BOTTOMRIGHT", -- [3]
-						-14.0001220703125, -- [4]
-						-696.9999694824219, -- [5]
+						4.501220703125, -- [4]
+						173.8338470458984, -- [5]
 					},
 				},
 				["BossBanner"] = {
@@ -107,8 +91,8 @@ MADB = {
 						"TOP", -- [1]
 						"UIParent", -- [2]
 						"TOP", -- [3]
-						6.103515625e-05, -- [4]
-						-119.9998779296875, -- [5]
+						0.000213623046875, -- [4]
+						-119.9996948242188, -- [5]
 					},
 				},
 				["TargetFramePowerBarAltMover"] = {
@@ -124,25 +108,8 @@ MADB = {
 						"LEFT", -- [1]
 						"TargetFrame", -- [2]
 						"RIGHT", -- [3]
-						-24.99941615096695, -- [4]
-						4.999981397414099, -- [5]
-					},
-				},
-				["UIWidgetPowerBarContainerFrame"] = {
-					["orgPos"] = {
-						"BOTTOM", -- [1]
-						"UIParent", -- [2]
-						"BOTTOM", -- [3]
-						0, -- [4]
-						175, -- [5]
-					},
-					["name"] = "UIWidgetPowerBarContainerFrame",
-					["pos"] = {
-						"BOTTOM", -- [1]
-						"UIParent", -- [2]
-						"BOTTOM", -- [3]
-						-0.999786376953125, -- [4]
-						926.0001831054688, -- [5]
+						217.0005228138768, -- [4]
+						3.999889844679724, -- [5]
 					},
 				},
 				["BagItemTooltipMover"] = {
@@ -157,8 +124,58 @@ MADB = {
 						"TOP", -- [1]
 						"UIParent", -- [2]
 						"TOP", -- [3]
-						494.0006103515625, -- [4]
-						-914.9989624023438, -- [5]
+						433.0009765625, -- [4]
+						-960.9985885620117, -- [5]
+					},
+				},
+				["ExtraAbilityContainer"] = {
+					["orgPos"] = {
+						"CENTER", -- [1]
+						"BT4BarExtraActionBar", -- [2]
+						"TOPLEFT", -- [3]
+						63.99999618530273, -- [4]
+						-63.99999618530273, -- [5]
+					},
+					["name"] = "ExtraAbilityContainer",
+					["pos"] = {
+						"CENTER", -- [1]
+						"BT4BarExtraActionBar", -- [2]
+						"TOPLEFT", -- [3]
+						83.00015258789062, -- [4]
+						124.9997863769531, -- [5]
+					},
+				},
+				["ObjectiveTrackerBonusBannerFrame"] = {
+					["orgPos"] = {
+						"TOP", -- [1]
+						"UIParent", -- [2]
+						"TOP", -- [3]
+						0, -- [4]
+						-170, -- [5]
+					},
+					["name"] = "ObjectiveTrackerBonusBannerFrame",
+					["pos"] = {
+						"TOP", -- [1]
+						"UIParent", -- [2]
+						"TOP", -- [3]
+						13, -- [4]
+						-65.99969482421875, -- [5]
+					},
+				},
+				["TooltipMover"] = {
+					["orgPos"] = {
+						"TOP", -- [1]
+						"UIParent", -- [2]
+						0, -- [3]
+						0, -- [4]
+					},
+					["name"] = "TooltipMover",
+					["pos"] = {
+						"TOP", -- [1]
+						"UIParent", -- [2]
+						"TOP", -- [3]
+						433.0009765625, -- [4]
+						-958.9985885620117, -- [5]
 					},
 				},
 				["ObjectiveTrackerFrameMover"] = {
@@ -178,71 +195,21 @@ MADB = {
 						-51.0001220703125, -- [5]
 					},
 				},
-				["ObjectiveTrackerBonusBannerFrame"] = {
+				["VehicleSeatIndicator"] = {
 					["orgPos"] = {
-						"TOP", -- [1]
-						"UIParent", -- [2]
-						"TOP", -- [3]
-						0, -- [4]
-						-170, -- [5]
+						"TOPRIGHT", -- [1]
+						"MinimapCluster", -- [2]
+						"BOTTOMRIGHT", -- [3]
+						40, -- [4]
+						15, -- [5]
 					},
-					["name"] = "ObjectiveTrackerBonusBannerFrame",
+					["name"] = "VehicleSeatIndicator",
 					["pos"] = {
-						"TOP", -- [1]
-						"UIParent", -- [2]
-						"TOP", -- [3]
-						-3.0517578125e-05, -- [4]
-						-169.9998779296875, -- [5]
-					},
-				},
-				["ExtraAbilityContainer"] = {
-					["orgPos"] = {
-						"CENTER", -- [1]
-						"BT4BarExtraActionBar", -- [2]
-						"TOPLEFT", -- [3]
-						63.99999618530273, -- [4]
-						-63.99999618530273, -- [5]
-					},
-					["name"] = "ExtraAbilityContainer",
-					["pos"] = {
-						"CENTER", -- [1]
-						"BT4BarExtraActionBar", -- [2]
-						"TOPLEFT", -- [3]
-						64.00054931640625, -- [4]
-						-613.0007934570312, -- [5]
-					},
-				},
-				["PaladinPowerBarFrame"] = {
-					["orgPos"] = {
-						"TOP", -- [1]
-						"PlayerFrame", -- [2]
-						"BOTTOM", -- [3]
-						43, -- [4]
-						39, -- [5]
-					},
-					["name"] = "PaladinPowerBarFrame",
-					["pos"] = {
-						"TOP", -- [1]
-						"PlayerFrame", -- [2]
-						"BOTTOM", -- [3]
-						87.12446689605713, -- [4]
-						51.6534423828125, -- [5]
-					},
-				},
-				["TooltipMover"] = {
-					["orgPos"] = {
-						"TOP", -- [1]
-						"UIParent", -- [2]
-						0, -- [3]
-						0, -- [4]
-					},
-					["name"] = "TooltipMover",
-					["pos"] = {
-						"TOP", -- [1]
-						"UIParent", -- [2]
-						"TOP", -- [3]
-						491.0006103515625, -- [4]
-						-913.998779296875, -- [5]
+						"TOPRIGHT", -- [1]
+						"MinimapCluster", -- [2]
+						"BOTTOMRIGHT", -- [3]
+						-14.0001220703125, -- [4]
+						-696.9999694824219, -- [5]
 					},
 				},
 				["GuildBankItemTooltipMover"] = {
@@ -257,16 +224,16 @@ MADB = {
 						"TOP", -- [1]
 						"UIParent", -- [2]
 						"TOP", -- [3]
-						491.0004272460938, -- [4]
-						-916.9991912841797, -- [5]
+						434.0004272460938, -- [4]
+						-959.9994506835938, -- [5]
 					},
 				},
 			},
 		},
 	},
 	["modifiedFramesOnly"] = true,
-	["closeGUIOnEscape"] = false,
-	["noBags"] = false,
-	["playSound"] = false,
 	["tooltips"] = true,
+	["playSound"] = false,
+	["noBags"] = false,
+	["closeGUIOnEscape"] = false,
 }

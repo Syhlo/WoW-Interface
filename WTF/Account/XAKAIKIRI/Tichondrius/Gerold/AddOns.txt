@@ -2,6 +2,8 @@ TradeSkillMaster: enabled
 WeakAurasCompanion: enabled
 WeakAurasArchive: enabled
 Spy: disabled
-Blizzard_CompactRaidFrames: enabled
-Blizzard_CUFProfiles: enabled
+Blizzard_CompactRaidFrames: disabled
+Blizzard_CUFProfiles: disabled
 ArenaMarkers: enabled
+Capping_Options: enabled
+Gladius: disabled

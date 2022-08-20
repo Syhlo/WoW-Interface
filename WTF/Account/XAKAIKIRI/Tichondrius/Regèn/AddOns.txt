@@ -1,3 +1,5 @@
 TradeSkillMaster: enabled
 WeakAurasCompanion: enabled
 WeakAurasArchive: enabled
+Spy: disabled
+Gladius: disabled

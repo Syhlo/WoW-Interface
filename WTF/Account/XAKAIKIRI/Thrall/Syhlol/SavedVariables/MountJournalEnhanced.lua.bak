@@ -66,6 +66,7 @@ MJEPersonalSettings = {
 		["color"] = {
 		},
 		["notCollected"] = true,
+		["onlyUsable"] = false,
 		["mountType"] = {
 			["repair"] = true,
 			["flying"] = true,
@@ -73,11 +74,6 @@ MJEPersonalSettings = {
 			["passenger"] = true,
 			["ground"] = true,
 			["transform"] = true,
-		},
-		["faction"] = {
-			["horde"] = true,
-			["alliance"] = true,
-			["noFaction"] = true,
 		},
 		["onlyFavorites"] = false,
 		["family"] = {
@@ -265,10 +261,10 @@ MJEPersonalSettings = {
 				["Others"] = true,
 			},
 			["Rays"] = {
-				["Nether Rays"] = true,
 				["Stingrays"] = true,
-				["Mana Rays"] = true,
 				["Fathom Rays"] = true,
+				["Mana Rays"] = true,
+				["Nether Rays"] = true,
 			},
 			["Vombata"] = true,
 			["Rats"] = true,
@@ -282,7 +278,11 @@ MJEPersonalSettings = {
 			["Rylaks"] = true,
 			["Snail"] = true,
 		},
-		["onlyUsable"] = false,
+		["faction"] = {
+			["horde"] = true,
+			["alliance"] = true,
+			["noFaction"] = true,
+		},
 		["onlyTradable"] = false,
 		["collected"] = true,
 		["onlyRecent"] = false,

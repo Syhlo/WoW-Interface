@@ -27,7 +27,7 @@ local ClearInspectPlayer = ClearInspectPlayer
 local GetInspectSelectedPvpTalent = C_SpecializationInfo.GetInspectSelectedPvpTalent
 local LGlows = LibStub("LibATTButtonGlow")
 local ChatPrefix  = "ATT-Check"
-local ATTversion = 40
+local ATTversion = 42
 local ATTnewversion
 local db
 local selectedDB

@@ -1,13 +1,20 @@
 
 OmniCCDB = {
-	["profileKeys"] = {
-		["Syhlol - Thrall"] = "Default",
-		["Cyf - Tichondrius"] = "Default",
-		["Syhlo - Thrall"] = "Default",
-	},
 	["global"] = {
 		["dbVersion"] = 6,
-		["addonVersion"] = "9.2.0",
+		["addonVersion"] = "9.2.1",
+	},
+	["profileKeys"] = {
+		["Cyf - Tichondrius"] = "Default",
+		["Sýh - Thrall"] = "Default",
+		["Gerold - Tichondrius"] = "Default",
+		["Dwarfmounts - Tichondrius"] = "Default",
+		["Syhlol - Thrall"] = "Default",
+		["Crylo - Tichondrius"] = "Default",
+		["Pandamounts - Tichondrius"] = "Default",
+		["Regèn - Tichondrius"] = "Default",
+		["Syhlo - Thrall"] = "Default",
+		["Syh - Thrall"] = "Default",
 	},
 	["profiles"] = {
 		["Default"] = {
@@ -42,9 +49,9 @@ OmniCCDB = {
 			["themes"] = {
 				["Default"] = {
 					["textStyles"] = {
-						["minutes"] = {
-						},
 						["soon"] = {
+						},
+						["minutes"] = {
 						},
 						["seconds"] = {
 						},

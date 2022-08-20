@@ -1,0 +1,26 @@
+
+MegaMacroCharacterData = {
+	["Macros"] = {
+		{
+			["Scope"] = "ch",
+			["ScopedIndex"] = 1,
+			["Class"] = "Druid",
+			["Code"] = "/bow",
+			["Id"] = 121,
+			["IsStaticTextureFallback"] = true,
+			["StaticTexture"] = 134400,
+			["DisplayName"] = "",
+		}, -- [1]
+	},
+	["Specializations"] = {
+		["Restoration"] = {
+			["Macros"] = {
+			},
+		},
+		["Balance"] = {
+			["Macros"] = {
+			},
+		},
+	},
+	["Activated"] = true,
+}

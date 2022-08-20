@@ -29,21 +29,15 @@ Quartz3DB = {
 		},
 		["LibDualSpec-1.0"] = {
 		},
-		["Player"] = {
+		["Range"] = {
 			["profiles"] = {
 				["Default"] = {
-					["h"] = 22,
-					["nametextx"] = 10,
-					["w"] = 300,
-					["y"] = 203.3745635773921,
-					["x"] = -9.332603021452087,
-					["icongap"] = 4,
-					["point"] = "BOTTOM",
-					["scale"] = 0.800000011920929,
-					["border"] = "None",
-					["texture"] = "Solid",
-					["font"] = "Arial Narrow",
-					["alpha"] = 0.75,
+					["rangecolor"] = {
+						0.580392156862745, -- [1]
+						0.1254901960784314, -- [2]
+						0.1098039215686275, -- [3]
+						1, -- [4]
+					},
 				},
 			},
 		},
@@ -73,14 +67,14 @@ Quartz3DB = {
 					},
 					["w"] = 207,
 					["y"] = 75.92532242866946,
-					["x"] = -279.7484982451206,
+					["font"] = "Arial Narrow",
 					["icongap"] = 4,
 					["iconposition"] = "left",
 					["point"] = "CENTER",
 					["scale"] = 0.8999999761581421,
 					["border"] = "None",
 					["texture"] = "Solid",
-					["font"] = "Arial Narrow",
+					["x"] = -279.7484982451206,
 					["noInterruptChangeBorder"] = false,
 					["alpha"] = 0.75,
 				},
@@ -88,15 +82,21 @@ Quartz3DB = {
 		},
 		["Mirror"] = {
 		},
-		["Range"] = {
+		["Player"] = {
 			["profiles"] = {
 				["Default"] = {
-					["rangecolor"] = {
-						0.580392156862745, -- [1]
-						0.1254901960784314, -- [2]
-						0.1098039215686275, -- [3]
-						1, -- [4]
-					},
+					["h"] = 22,
+					["nametextx"] = 10,
+					["w"] = 300,
+					["y"] = 203.3745635773921,
+					["font"] = "Arial Narrow",
+					["icongap"] = 4,
+					["point"] = "BOTTOM",
+					["scale"] = 0.800000011920929,
+					["border"] = "None",
+					["texture"] = "Solid",
+					["x"] = -9.332603021452087,
+					["alpha"] = 0.75,
 				},
 			},
 		},
@@ -108,6 +108,7 @@ Quartz3DB = {
 		["Sýh - Thrall"] = "Default",
 		["Syhl - Thrall"] = "Default",
 		["Gfedcba - Elune"] = "Default",
+		["Dwarfmounts - Tichondrius"] = "Default",
 		["Syhlol - Thrall"] = "Default",
 		["Crylo - Tichondrius"] = "Default",
 		["Regèn - Tichondrius"] = "Default",
@@ -118,9 +119,10 @@ Quartz3DB = {
 		["Scatterffs - Ragnaros"] = "Default",
 		["Syhlo - Thrall"] = "Default",
 		["Youreterribl - Burning Legion"] = "Default",
+		["Pandamounts - Tichondrius"] = "Default",
 		["Syhdk - Thrall"] = "Default",
-		["Syhloc - Thrall"] = "Default",
 		["Syhlol - Illidan"] = "Default",
+		["Syhloc - Thrall"] = "Default",
 		["Syh - Thrall"] = "Default",
 	},
 	["profiles"] = {

@@ -5,21 +5,23 @@ BigDebuffsDB = {
 		},
 	},
 	["profileKeys"] = {
-		["Cyf - Tichondrius"] = "Default",
-		["Sýh - Thrall"] = "Default",
-		["Wthrename - Tichondrius"] = "Default",
-		["Syh - Thrall"] = "Default",
-		["Gerold - Tichondrius"] = "Default",
-		["Syhlo - Thrall"] = "Default",
-		["Syhlol - Thrall"] = "Default",
-		["Syhlol - Illidan"] = "Default",
-		["Youreterribl - Burning Legion"] = "Default",
-		["Scatterffs - Ragnaros"] = "Default",
-		["Crylo - Tichondrius"] = "Default",
-		["Syhdk - Thrall"] = "Default",
-		["Regèn - Tichondrius"] = "Default",
 		["Isellpropane - Proudmoore"] = "Default",
+		["Sýh - Thrall"] = "Default",
+		["Dwarfmounts - Tichondrius"] = "Default",
+		["Syhlol - Thrall"] = "Default",
+		["Crylo - Tichondrius"] = "Default",
+		["Regèn - Tichondrius"] = "Default",
 		["Sydh - Thrall"] = "Default",
+		["Cyf - Tichondrius"] = "Default",
+		["Wthrename - Tichondrius"] = "Default",
+		["Gerold - Tichondrius"] = "Default",
+		["Scatterffs - Ragnaros"] = "Default",
+		["Youreterribl - Burning Legion"] = "Default",
+		["Syhlol - Illidan"] = "Default",
+		["Syhdk - Thrall"] = "Default",
+		["Pandamounts - Tichondrius"] = "Default",
+		["Syhlo - Thrall"] = "Default",
+		["Syh - Thrall"] = "Default",
 	},
 	["profiles"] = {
 		["Default"] = {
@@ -44,6 +46,8 @@ BigDebuffsDB = {
 			},
 			["unitFrames"] = {
 				["arena1"] = {
+				},
+				["arena4"] = {
 				},
 				["arena"] = {
 					["enabled"] = false,

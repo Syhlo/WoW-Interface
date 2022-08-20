@@ -4,6 +4,7 @@ TomTomDB = {
 		["Isellpropane - Proudmoore"] = "Default",
 		["Sýh - Thrall"] = "Default",
 		["Syhl - Thrall"] = "Default",
+		["Dwarfmounts - Tichondrius"] = "Default",
 		["Syhlol - Thrall"] = "Default",
 		["Crylo - Tichondrius"] = "Default",
 		["Regèn - Tichondrius"] = "Default",
@@ -14,9 +15,10 @@ TomTomDB = {
 		["Scatterffs - Ragnaros"] = "Default",
 		["Syhloc - Thrall"] = "Default",
 		["Syhlo - Thrall"] = "Default",
+		["Pandamounts - Tichondrius"] = "Default",
 		["Syhdk - Thrall"] = "Default",
-		["Syhlol - Illidan"] = "Default",
 		["Youreterribl - Burning Legion"] = "Default",
+		["Syhlol - Illidan"] = "Default",
 		["Syh - Thrall"] = "Default",
 	},
 	["profiles"] = {
@@ -29,9 +31,6 @@ TomTomDB = {
 				["enable"] = false,
 				["setclosest"] = false,
 				["menu"] = false,
-				["showdistance"] = false,
-				["hideDuringPetBattles"] = false,
-				["showtta"] = false,
 				["position"] = {
 					"CENTER", -- [1]
 					nil, -- [2]
@@ -39,6 +38,9 @@ TomTomDB = {
 					0, -- [4]
 					0, -- [5]
 				},
+				["hideDuringPetBattles"] = false,
+				["showtta"] = false,
+				["showdistance"] = false,
 			},
 			["block"] = {
 				["bgcolor"] = {
@@ -74,6 +76,7 @@ TomTomWaypointsM = {
 		["Isellpropane - Proudmoore"] = "Isellpropane - Proudmoore",
 		["Sýh - Thrall"] = "Sýh - Thrall",
 		["Syhl - Thrall"] = "Syhl - Thrall",
+		["Dwarfmounts - Tichondrius"] = "Dwarfmounts - Tichondrius",
 		["Syhlol - Thrall"] = "Syhlol - Thrall",
 		["Crylo - Tichondrius"] = "Crylo - Tichondrius",
 		["Regèn - Tichondrius"] = "Regèn - Tichondrius",
@@ -84,9 +87,10 @@ TomTomWaypointsM = {
 		["Scatterffs - Ragnaros"] = "Scatterffs - Ragnaros",
 		["Syhloc - Thrall"] = "Syhloc - Thrall",
 		["Syhlo - Thrall"] = "Syhlo - Thrall",
+		["Pandamounts - Tichondrius"] = "Pandamounts - Tichondrius",
 		["Syhdk - Thrall"] = "Syhdk - Thrall",
-		["Syhlol - Illidan"] = "Syhlol - Illidan",
 		["Youreterribl - Burning Legion"] = "Youreterribl - Burning Legion",
+		["Syhlol - Illidan"] = "Syhlol - Illidan",
 		["Syh - Thrall"] = "Syh - Thrall",
 	},
 	["profiles"] = {
@@ -95,6 +99,8 @@ TomTomWaypointsM = {
 		["Sýh - Thrall"] = {
 		},
 		["Syhl - Thrall"] = {
+		},
+		["Dwarfmounts - Tichondrius"] = {
 		},
 		["Syhlol - Thrall"] = {
 		},
@@ -105,39 +111,6 @@ TomTomWaypointsM = {
 		["Sydh - Thrall"] = {
 		},
 		["Cyf - Tichondrius"] = {
-			[1970] = {
-				["1970:792624854.82047:418437308.21128:TomTom waypoint"] = {
-					1970, -- [1]
-					0.7926248548204681, -- [2]
-					0.4184373082112841, -- [3]
-					["arrivaldistance"] = 15,
-					["crazy"] = false,
-					["persistent"] = true,
-					["desc"] = "TomTom waypoint",
-					["silent"] = true,
-					["cleardistance"] = 10,
-					["title"] = "TomTom waypoint",
-					["from"] = "TomTom/wm",
-					["callbacks"] = {
-						["distance"] = {
-							[10] = nil --[[ skipped inline function ]],
-							[15] = nil --[[ skipped inline function ]],
-						},
-						["world"] = {
-							["onclick"] = nil --[[ skipped inline function ]],
-							["tooltip_update"] = nil --[[ skipped inline function ]],
-							["tooltip_show"] = nil --[[ skipped inline function ]],
-						},
-						["minimap"] = {
-							["onclick"] = nil --[[ skipped inline function ]],
-							["tooltip_update"] = nil --[[ skipped inline function ]],
-							["tooltip_show"] = nil --[[ skipped inline function ]],
-						},
-					},
-					["minimap"] = true,
-					["world"] = true,
-				},
-			},
 		},
 		["Wthrename - Tichondrius"] = {
 		},
@@ -149,11 +122,13 @@ TomTomWaypointsM = {
 		},
 		["Syhlo - Thrall"] = {
 		},
+		["Pandamounts - Tichondrius"] = {
+		},
 		["Syhdk - Thrall"] = {
 		},
-		["Syhlol - Illidan"] = {
-		},
 		["Youreterribl - Burning Legion"] = {
+		},
+		["Syhlol - Illidan"] = {
 		},
 		["Syh - Thrall"] = {
 		},

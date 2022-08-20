@@ -34,9 +34,7 @@ Bagnon_Sets = {
 	},
 	["version"] = "9.1.5",
 	["displayGems"] = true,
-	["glowQuality"] = true,
-	["fridgeColor"] = {
-	},
+	["displayGuildbank"] = true,
 	["global"] = {
 		["inventory"] = {
 			["strata"] = "HIGH",
@@ -51,8 +49,29 @@ Bagnon_Sets = {
 			["bagToggle"] = true,
 			["enabled"] = true,
 			["reverseBags"] = false,
-			["options"] = false,
 			["columns"] = 10,
+			["color"] = {
+				0.07058823529411765, -- [1]
+				0.07058823529411765, -- [2]
+				0.07058823529411765, -- [3]
+				0.587606281042099, -- [4]
+			},
+			["borderColor"] = {
+				0.1058823529411765, -- [1]
+				0.1058823529411765, -- [2]
+				0.1058823529411765, -- [3]
+				0, -- [4]
+			},
+			["alpha"] = 1,
+			["itemScale"] = 1,
+			["y"] = 28.06169319152832,
+			["bagBreak"] = false,
+			["x"] = -69.52929380508749,
+			["search"] = true,
+			["broker"] = true,
+			["reverseSlots"] = false,
+			["hiddenRules"] = {
+			},
 			["rules"] = {
 				"all", -- [1]
 				"all/normal", -- [2]
@@ -75,28 +94,7 @@ Bagnon_Sets = {
 				"quest", -- [19]
 				"misc", -- [20]
 			},
-			["hiddenRules"] = {
-			},
-			["alpha"] = 1,
-			["bagBreak"] = false,
-			["y"] = 66.43365478515625,
-			["x"] = -77.67113950821249,
-			["search"] = true,
-			["broker"] = true,
-			["reverseSlots"] = false,
-			["itemScale"] = 1,
-			["borderColor"] = {
-				0.1058823529411765, -- [1]
-				0.1058823529411765, -- [2]
-				0.1058823529411765, -- [3]
-				0, -- [4]
-			},
-			["color"] = {
-				0.07058823529411765, -- [1]
-				0.07058823529411765, -- [2]
-				0.07058823529411765, -- [3]
-				0.587606281042099, -- [4]
-			},
+			["options"] = false,
 		},
 		["vault"] = {
 			["y"] = 249.0008697509766,
@@ -127,11 +125,11 @@ Bagnon_Sets = {
 			},
 			["color"] = {
 			},
-			["borderColor"] = {
-			},
+			["x"] = 95.00000762939453,
 			["hiddenRules"] = {
 			},
-			["x"] = 95.00000762939453,
+			["borderColor"] = {
+			},
 		},
 		["guild"] = {
 			["enabled"] = false,
@@ -165,7 +163,7 @@ Bagnon_Sets = {
 			["hiddenRules"] = {
 			},
 			["y"] = 295.5027770996094,
-			["x"] = -206.66650390625,
+			["x"] = -206.6663818359375,
 			["borderColor"] = {
 			},
 		},
@@ -214,5 +212,7 @@ Bagnon_Sets = {
 			["showBags"] = true,
 		},
 	},
-	["displayGuildbank"] = true,
+	["fridgeColor"] = {
+	},
+	["glowQuality"] = true,
 }

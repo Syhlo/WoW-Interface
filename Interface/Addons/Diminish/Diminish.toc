@@ -1,12 +1,9 @@
 ## Interface: 90205
 ## X-Expansion: 1
-#@version-wrath@
-## X-Expansion: 6
-#@end-version-wrath@
 ## Title: Diminish
 ## Notes: Lightweight diminishing returns tracker for hostile and friendly units.
 ## SavedVariables: DiminishDB
-## Version: v2.5.0
+## Version: v2.5.2
 ## X-Curse-Project-ID: 92871
 ## X-Wago-ID: 7nGvPW6x
 

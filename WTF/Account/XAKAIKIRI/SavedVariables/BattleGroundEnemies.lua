@@ -4,16 +4,18 @@ BattleGroundEnemiesDB = {
 		["Cyf - Tichondrius"] = "Default",
 		["Sýh - Thrall"] = "Default",
 		["Wthrename - Tichondrius"] = "Default",
-		["Gerold - Tichondrius"] = "Default",
-		["Syh - Thrall"] = "Default",
-		["Syhlo - Thrall"] = "Default",
-		["Syhlol - Thrall"] = "Default",
-		["Isellpropane - Proudmoore"] = "Default",
-		["Crylo - Tichondrius"] = "Default",
-		["Syhdk - Thrall"] = "Default",
-		["Regèn - Tichondrius"] = "Default",
-		["Youreterribl - Burning Legion"] = "Default",
 		["Sydh - Thrall"] = "Default",
+		["Gerold - Tichondrius"] = "Default",
+		["Isellpropane - Proudmoore"] = "Default",
+		["Dwarfmounts - Tichondrius"] = "Default",
+		["Syhlol - Thrall"] = "Default",
+		["Youreterribl - Burning Legion"] = "Default",
+		["Syhdk - Thrall"] = "Default",
+		["Crylo - Tichondrius"] = "Default",
+		["Pandamounts - Tichondrius"] = "Default",
+		["Regèn - Tichondrius"] = "Default",
+		["Syhlo - Thrall"] = "Default",
+		["Syh - Thrall"] = "Default",
 	},
 	["profiles"] = {
 		["Default"] = {
@@ -28,6 +30,7 @@ BattleGroundEnemiesDB = {
 			["Font"] = "Arial Narrow",
 			["Locked"] = true,
 			["lastReadVersion"] = "9.2.0.11",
+			["DisableArenaFrames"] = true,
 			["Enemies"] = {
 				["40"] = {
 					["Enabled"] = false,
@@ -64,7 +67,6 @@ BattleGroundEnemiesDB = {
 					["healthBar"] = true,
 				},
 			},
-			["DisableArenaFrames"] = true,
 		},
 	},
 }

@@ -1,0 +1,12 @@
+
+SimpleCombatLoggerDB = {
+	["profileKeys"] = {
+		["Syhlol - Thrall"] = "Default",
+		["Cyf - Tichondrius"] = "Default",
+		["Gerold - Tichondrius"] = "Default",
+	},
+	["profiles"] = {
+		["Default"] = {
+		},
+	},
+}

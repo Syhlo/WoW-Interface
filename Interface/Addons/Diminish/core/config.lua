@@ -25,6 +25,7 @@ do
         [WOW_PROJECT_MAINLINE] = "retail",
         [WOW_PROJECT_CLASSIC] = "classic",
         [WOW_PROJECT_BURNING_CRUSADE_CLASSIC or 5] = "tbc",
+        [6] = "wrath", -- FIXME: temp until new constant is added
     }
 
     local isClassic = WOW_PROJECT_ID == WOW_PROJECT_CLASSIC
@@ -34,11 +35,12 @@ do
 
     local tocVersion = select(4, GetBuildInfo())
     if tocVersion >= 30400 and tocVersion < 40000 then
-        isWotlk = true -- temporary check for wotlk build until new constant is added
+        isTBC = false
+        isWotlk = true -- FIXME: temporary check for wotlk build until new constant is added
     end
 
-    NS.IS_CLASSIC = isClassic
-    NS.IS_CLASSIC_OR_TBC = isClassic or isTBC or isWotlk -- TODO: fix me for wotlk
+    NS.IS_CLASSIC = isClassic -- Is vanilla
+    NS.IS_NOT_RETAIL = isClassic or isTBC or isWotlk
 
     local alert = _G.message or _G.print
     local tocExp = tonumber(GetAddOnMetadata("Diminish", "X-Expansion"))

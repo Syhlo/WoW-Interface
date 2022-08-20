@@ -29,18 +29,6 @@ Quartz3DB = {
 		},
 		["LibDualSpec-1.0"] = {
 		},
-		["Range"] = {
-			["profiles"] = {
-				["Default"] = {
-					["rangecolor"] = {
-						0.580392156862745, -- [1]
-						0.1254901960784314, -- [2]
-						0.1098039215686275, -- [3]
-						1, -- [4]
-					},
-				},
-			},
-		},
 		["Player"] = {
 			["profiles"] = {
 				["Default"] = {
@@ -48,16 +36,18 @@ Quartz3DB = {
 					["nametextx"] = 10,
 					["w"] = 300,
 					["y"] = 203.3745635773921,
-					["font"] = "Arial Narrow",
+					["x"] = -9.332603021452087,
 					["icongap"] = 4,
 					["point"] = "BOTTOM",
 					["scale"] = 0.800000011920929,
 					["border"] = "None",
 					["texture"] = "Solid",
-					["x"] = -9.332603021452087,
+					["font"] = "Arial Narrow",
 					["alpha"] = 0.75,
 				},
 			},
+		},
+		["EnemyCasts"] = {
 		},
 		["GCD"] = {
 		},
@@ -83,14 +73,14 @@ Quartz3DB = {
 					},
 					["w"] = 207,
 					["y"] = 75.92532242866946,
-					["font"] = "Arial Narrow",
+					["x"] = -279.7484982451206,
 					["icongap"] = 4,
 					["iconposition"] = "left",
 					["point"] = "CENTER",
 					["scale"] = 0.8999999761581421,
 					["border"] = "None",
 					["texture"] = "Solid",
-					["x"] = -279.7484982451206,
+					["font"] = "Arial Narrow",
 					["noInterruptChangeBorder"] = false,
 					["alpha"] = 0.75,
 				},
@@ -98,7 +88,17 @@ Quartz3DB = {
 		},
 		["Mirror"] = {
 		},
-		["EnemyCasts"] = {
+		["Range"] = {
+			["profiles"] = {
+				["Default"] = {
+					["rangecolor"] = {
+						0.580392156862745, -- [1]
+						0.1254901960784314, -- [2]
+						0.1098039215686275, -- [3]
+						1, -- [4]
+					},
+				},
+			},
 		},
 		["Latency"] = {
 		},
@@ -108,6 +108,7 @@ Quartz3DB = {
 		["Sýh - Thrall"] = "Default",
 		["Syhl - Thrall"] = "Default",
 		["Gfedcba - Elune"] = "Default",
+		["Dwarfmounts - Tichondrius"] = "Default",
 		["Syhlol - Thrall"] = "Default",
 		["Crylo - Tichondrius"] = "Default",
 		["Regèn - Tichondrius"] = "Default",
@@ -118,9 +119,10 @@ Quartz3DB = {
 		["Scatterffs - Ragnaros"] = "Default",
 		["Syhlo - Thrall"] = "Default",
 		["Youreterribl - Burning Legion"] = "Default",
-		["Syhdk - Thrall"] = "Default",
-		["Syhlol - Illidan"] = "Default",
 		["Syhloc - Thrall"] = "Default",
+		["Pandamounts - Tichondrius"] = "Default",
+		["Syhlol - Illidan"] = "Default",
+		["Syhdk - Thrall"] = "Default",
 		["Syh - Thrall"] = "Default",
 	},
 	["profiles"] = {

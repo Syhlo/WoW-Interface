@@ -17,16 +17,10 @@ ThreatPlatesDB = {
 			},
 		},
 		["Wthrename - Tichondrius"] = {
+			["welcome"] = true,
 			["spec"] = {
 				[3] = false,
 			},
-			["welcome"] = true,
-		},
-		["Crylo - Tichondrius"] = {
-			["spec"] = {
-				[3] = false,
-			},
-			["welcome"] = true,
 		},
 		["Gerold - Tichondrius"] = {
 			["spec"] = {
@@ -36,11 +30,36 @@ ThreatPlatesDB = {
 			},
 			["welcome"] = true,
 		},
+		["Dwarfmounts - Tichondrius"] = {
+			["spec"] = {
+				[3] = false,
+			},
+			["welcome"] = true,
+		},
 		["Syhlol - Thrall"] = {
 			["spec"] = {
 				[3] = false,
 			},
 			["welcome"] = true,
+		},
+		["Crylo - Tichondrius"] = {
+			["welcome"] = true,
+			["spec"] = {
+				[3] = false,
+			},
+		},
+		["Pandamounts - Tichondrius"] = {
+			["spec"] = {
+				true, -- [1]
+				[3] = false,
+			},
+			["welcome"] = true,
+		},
+		["Regèn - Tichondrius"] = {
+			["welcome"] = true,
+			["spec"] = {
+				[3] = false,
+			},
 		},
 		["Syhlo - Thrall"] = {
 			["spec"] = {
@@ -48,15 +67,25 @@ ThreatPlatesDB = {
 			},
 			["welcome"] = true,
 		},
+		["Syh - Thrall"] = {
+			["welcome"] = true,
+			["spec"] = {
+				[3] = false,
+			},
+		},
 	},
 	["profileKeys"] = {
 		["Cyf - Tichondrius"] = "Global",
 		["Sýh - Thrall"] = "Default",
 		["Wthrename - Tichondrius"] = "Default",
-		["Crylo - Tichondrius"] = "Default",
-		["Gerold - Tichondrius"] = "Default",
+		["Gerold - Tichondrius"] = "Global",
+		["Dwarfmounts - Tichondrius"] = "Global",
 		["Syhlol - Thrall"] = "Global",
+		["Crylo - Tichondrius"] = "Default",
+		["Pandamounts - Tichondrius"] = "Global",
+		["Regèn - Tichondrius"] = "Default",
 		["Syhlo - Thrall"] = "Default",
+		["Syh - Thrall"] = "Default",
 	},
 	["namespaces"] = {
 		["LibDualSpec-1.0"] = {
@@ -68,7 +97,7 @@ ThreatPlatesDB = {
 		},
 	},
 	["global"] = {
-		["version"] = "10.4.1",
+		["version"] = "10.4.2",
 	},
 	["profiles"] = {
 		["Default"] = {
@@ -124,8 +153,8 @@ ThreatPlatesDB = {
 			},
 			["FocusWidget"] = {
 				["a"] = 0.4900000095367432,
-				["r"] = 1,
 				["b"] = 0,
+				["r"] = 1,
 				["g"] = 0.8274509803921568,
 				["theme"] = "arrow_less_than",
 				["Size"] = 30,
@@ -177,11 +206,11 @@ ThreatPlatesDB = {
 					["width"] = 182,
 				},
 				["raidicon"] = {
-					["show"] = false,
+					["y"] = 65,
 					["x"] = -2,
 					["scale"] = 44,
 					["hpColor"] = false,
-					["y"] = 65,
+					["show"] = false,
 				},
 			},
 			["totemWidget"] = {
@@ -194,9 +223,9 @@ ThreatPlatesDB = {
 			},
 			["targetWidget"] = {
 				["a"] = 0.5722883641719818,
-				["r"] = 0.984313725490196,
-				["theme"] = "squarethin",
 				["b"] = 0.984313725490196,
+				["theme"] = "squarethin",
+				["r"] = 0.984313725490196,
 			},
 		},
 		["Global"] = {
@@ -219,6 +248,11 @@ ThreatPlatesDB = {
 			},
 			["uniqueSettings"] = {
 				{
+					["color"] = {
+						["b"] = 0.5215686274509804,
+						["g"] = 0.5215686274509804,
+						["r"] = 0.5215686274509804,
+					},
 					["showIcon"] = false,
 					["showNameplate"] = false,
 					["Trigger"] = {
@@ -234,11 +268,6 @@ ThreatPlatesDB = {
 					},
 					["alpha"] = 0.7,
 					["Name"] = "Ignored Minions",
-					["color"] = {
-						["r"] = 0.5215686274509804,
-						["g"] = 0.5215686274509804,
-						["b"] = 0.5215686274509804,
-					},
 					["ShowHeadlineView"] = true,
 				}, -- [1]
 			},
@@ -251,9 +280,9 @@ ThreatPlatesDB = {
 			},
 			["FocusWidget"] = {
 				["a"] = 0.4900000095367432,
-				["b"] = 0,
-				["g"] = 0.8274509803921568,
 				["r"] = 1,
+				["g"] = 0.8274509803921568,
+				["b"] = 0,
 				["theme"] = "arrow_less_than",
 				["Size"] = 30,
 			},
@@ -265,7 +294,7 @@ ThreatPlatesDB = {
 						["IconHeight"] = 26,
 					},
 					["HealthbarMode"] = {
-						["VerticalOffset"] = 42,
+						["VerticalOffset"] = 22,
 					},
 				},
 				["CrowdControl"] = {
@@ -328,15 +357,15 @@ ThreatPlatesDB = {
 				["raidicon"] = {
 					["scale"] = 56,
 					["hpColor"] = false,
-					["show"] = false,
-					["x"] = -2,
 					["y"] = 65,
+					["x"] = -2,
+					["show"] = false,
 				},
 			},
 			["targetWidget"] = {
 				["a"] = 0.5722883641719818,
-				["r"] = 0.984313725490196,
 				["b"] = 0.984313725490196,
+				["r"] = 0.984313725490196,
 				["theme"] = "squarethin",
 			},
 			["HeadlineView"] = {
