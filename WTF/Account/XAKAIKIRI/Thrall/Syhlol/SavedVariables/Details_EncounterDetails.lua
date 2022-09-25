@@ -2180,6 +2180,15 @@ EncounterDetailsDB = {
 				["SPELL_AURA_APPLIED"] = true,
 			},
 		},
+		[136154] = {
+			["school"] = 1,
+			["token"] = {
+				["SPELL_DAMAGE"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_CAST_START"] = true,
+			},
+			["source"] = "Crimson Fog",
+		},
 		[62016] = {
 			["school"] = 8,
 			["type"] = "BUFF",
@@ -2197,15 +2206,6 @@ EncounterDetailsDB = {
 				["SPELL_CAST_START"] = true,
 			},
 			["source"] = "Guardian of Yogg-Saron",
-		},
-		[136154] = {
-			["school"] = 1,
-			["token"] = {
-				["SPELL_DAMAGE"] = true,
-				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_CAST_START"] = true,
-			},
-			["source"] = "Crimson Fog",
 		},
 		[137731] = {
 			["school"] = 4,
@@ -2340,12 +2340,14 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Runemaster Molgeim",
 		},
-		[133793] = {
-			["school"] = 32,
+		[62320] = {
+			["school"] = 64,
+			["type"] = "BUFF",
 			["token"] = {
-				["SPELL_DAMAGE"] = true,
+				["SPELL_AURA_APPLIED"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
 			},
-			["source"] = "Appraising Eye",
+			["source"] = "Dark Rune Warbringer",
 		},
 		[133678] = {
 			["school"] = 16,
@@ -2355,14 +2357,12 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Blue Eye",
 		},
-		[62320] = {
-			["school"] = 64,
-			["type"] = "BUFF",
+		[133793] = {
+			["school"] = 32,
 			["token"] = {
-				["SPELL_AURA_APPLIED"] = true,
-				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_DAMAGE"] = true,
 			},
-			["source"] = "Dark Rune Warbringer",
+			["source"] = "Appraising Eye",
 		},
 		[342905] = {
 			["school"] = 16,
@@ -2492,23 +2492,24 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Hungry Eye",
 		},
-		[134370] = {
-			["school"] = 1,
+		[139991] = {
+			["school"] = 64,
 			["type"] = "BUFF",
 			["token"] = {
 				["SPELL_AURA_APPLIED"] = true,
 				["SPELL_CAST_START"] = true,
 				["SPELL_CAST_SUCCESS"] = true,
 			},
-			["source"] = "Ji-Kun",
+			["source"] = "Arcane Head",
 		},
-		[134626] = {
+		[326994] = {
 			["school"] = 1,
-			["type"] = "DEBUFF",
+			["type"] = "BUFF",
 			["token"] = {
 				["SPELL_AURA_APPLIED"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
 			},
-			["source"] = "Durumu the Forgotten",
+			["source"] = "Sire Denathrius",
 		},
 		[71465] = {
 			["school"] = 66,
@@ -2528,14 +2529,13 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Brain of Yogg-Saron",
 		},
-		[326994] = {
+		[134626] = {
 			["school"] = 1,
-			["type"] = "BUFF",
+			["type"] = "DEBUFF",
 			["token"] = {
 				["SPELL_AURA_APPLIED"] = true,
-				["SPELL_CAST_SUCCESS"] = true,
 			},
-			["source"] = "Sire Denathrius",
+			["source"] = "Durumu the Forgotten",
 		},
 		[327122] = {
 			["school"] = 1,
@@ -2600,12 +2600,6 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Millificent Manastorm",
 		},
-		[134755] = {
-			["school"] = 64,
-			["token"] = {
-				["SPELL_PERIODIC_DAMAGE"] = true,
-			},
-		},
 		[133733] = {
 			["school"] = 4,
 			["token"] = {
@@ -2614,6 +2608,12 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Red Eye",
 		},
+		[134755] = {
+			["school"] = 64,
+			["token"] = {
+				["SPELL_PERIODIC_DAMAGE"] = true,
+			},
+		},
 		[137374] = {
 			["school"] = 8,
 			["token"] = {
@@ -2621,13 +2621,15 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Jin'rokh the Breaker",
 		},
-		[139993] = {
-			["school"] = 64,
+		[69869] = {
+			["school"] = 20,
 			["type"] = "DEBUFF",
 			["token"] = {
 				["SPELL_AURA_APPLIED"] = true,
+				["SPELL_CAST_START"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
 			},
-			["source"] = "Arcane Head",
+			["source"] = "Skybreaker Sorcerer",
 		},
 		[69901] = {
 			["school"] = 1,
@@ -2644,13 +2646,13 @@ EncounterDetailsDB = {
 				["SPELL_DAMAGE"] = true,
 			},
 		},
-		[69965] = {
-			["school"] = 8,
+		[62385] = {
+			["school"] = 1,
+			["type"] = "BUFF",
 			["token"] = {
-				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_DAMAGE"] = true,
+				["SPELL_AURA_APPLIED"] = true,
 			},
-			["source"] = "Skybreaker Protector",
+			["source"] = "Elder Brightleaf",
 		},
 		[332619] = {
 			["school"] = 1,
@@ -2704,10 +2706,10 @@ EncounterDetailsDB = {
 		[70189] = {
 			["school"] = 8,
 			["token"] = {
-				["SPELL_CAST_START"] = true,
 				["SPELL_PERIODIC_DAMAGE"] = true,
-				["SPELL_CAST_SUCCESS"] = true,
 				["SPELL_DAMAGE"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_CAST_START"] = true,
 			},
 			["source"] = "Spire Gargoyle",
 		},
@@ -2742,12 +2744,12 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Alysrazor",
 		},
-		[69902] = {
-			["school"] = 1,
+		[139548] = {
+			["school"] = 4,
 			["token"] = {
-				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_DAMAGE"] = true,
 			},
-			["source"] = "Skybreaker Protector",
+			["source"] = "Megaera",
 		},
 		[329181] = {
 			["school"] = 32,
@@ -2760,12 +2762,12 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Sire Denathrius",
 		},
-		[139548] = {
-			["school"] = 4,
+		[69902] = {
+			["school"] = 1,
 			["token"] = {
-				["SPELL_DAMAGE"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
 			},
-			["source"] = "Megaera",
+			["source"] = "Skybreaker Protector",
 		},
 		[69934] = {
 			["school"] = 2,
@@ -2782,11 +2784,15 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Guardian of Yogg-Saron",
 		},
-		[64733] = {
-			["school"] = 4,
+		[137313] = {
+			["school"] = 1,
+			["type"] = "BUFF",
 			["token"] = {
-				["SPELL_DAMAGE"] = true,
+				["SPELL_AURA_APPLIED"] = true,
+				["SPELL_CAST_START"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
 			},
+			["source"] = "Jin'rokh the Breaker",
 		},
 		[70541] = {
 			["school"] = 32,
@@ -2799,15 +2805,11 @@ EncounterDetailsDB = {
 			},
 			["source"] = "The Lich King",
 		},
-		[137313] = {
-			["school"] = 1,
-			["type"] = "BUFF",
+		[64733] = {
+			["school"] = 4,
 			["token"] = {
-				["SPELL_AURA_APPLIED"] = true,
-				["SPELL_CAST_START"] = true,
-				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_DAMAGE"] = true,
 			},
-			["source"] = "Jin'rokh the Breaker",
 		},
 		[133737] = {
 			["school"] = 1,
@@ -2817,15 +2819,12 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Yellow Eye",
 		},
-		[330580] = {
+		[134375] = {
 			["school"] = 1,
-			["type"] = "BUFF",
 			["token"] = {
-				["SPELL_AURA_APPLIED"] = true,
 				["SPELL_DAMAGE"] = true,
-				["SPELL_CAST_SUCCESS"] = true,
 			},
-			["source"] = "Sire Denathrius",
+			["source"] = "Ji-Kun",
 		},
 		[72905] = {
 			["school"] = 16,
@@ -2860,13 +2859,12 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Dark Rune Sentinel",
 		},
-		[69967] = {
-			["school"] = 2,
+		[99605] = {
+			["school"] = 4,
 			["token"] = {
-				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_CAST_START"] = true,
+				["SPELL_DAMAGE"] = true,
 			},
-			["source"] = "Skybreaker Vicar",
+			["source"] = "Alysrazor",
 		},
 		[65719] = {
 			["school"] = 32,
@@ -2911,12 +2909,13 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Prince Keleseth",
 		},
-		[99605] = {
-			["school"] = 4,
+		[62386] = {
+			["school"] = 1,
+			["type"] = "BUFF",
 			["token"] = {
-				["SPELL_DAMAGE"] = true,
+				["SPELL_AURA_APPLIED"] = true,
 			},
-			["source"] = "Alysrazor",
+			["source"] = "Elder Stonebark",
 		},
 		[137507] = {
 			["school"] = 8,
@@ -2973,13 +2972,13 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Proximity Mine",
 		},
-		[62386] = {
-			["school"] = 1,
-			["type"] = "BUFF",
+		[69967] = {
+			["school"] = 2,
 			["token"] = {
-				["SPELL_AURA_APPLIED"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_CAST_START"] = true,
 			},
-			["source"] = "Elder Stonebark",
+			["source"] = "Skybreaker Vicar",
 		},
 		[134122] = {
 			["school"] = 1,
@@ -3004,12 +3003,15 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Yellow Eye",
 		},
-		[134375] = {
+		[330580] = {
 			["school"] = 1,
+			["type"] = "BUFF",
 			["token"] = {
+				["SPELL_AURA_APPLIED"] = true,
 				["SPELL_DAMAGE"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
 			},
-			["source"] = "Ji-Kun",
+			["source"] = "Sire Denathrius",
 		},
 		[71405] = {
 			["school"] = 32,
@@ -3050,23 +3052,21 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Red Eye",
 		},
-		[62385] = {
-			["school"] = 1,
-			["type"] = "BUFF",
+		[69965] = {
+			["school"] = 8,
 			["token"] = {
-				["SPELL_AURA_APPLIED"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_DAMAGE"] = true,
 			},
-			["source"] = "Elder Brightleaf",
+			["source"] = "Skybreaker Protector",
 		},
-		[69869] = {
-			["school"] = 20,
+		[139993] = {
+			["school"] = 64,
 			["type"] = "DEBUFF",
 			["token"] = {
 				["SPELL_AURA_APPLIED"] = true,
-				["SPELL_CAST_START"] = true,
-				["SPELL_CAST_SUCCESS"] = true,
 			},
-			["source"] = "Skybreaker Sorcerer",
+			["source"] = "Arcane Head",
 		},
 		[328117] = {
 			["school"] = 32,
@@ -3125,15 +3125,15 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Greater Healing Ward",
 		},
-		[139991] = {
-			["school"] = 64,
+		[134370] = {
+			["school"] = 1,
 			["type"] = "BUFF",
 			["token"] = {
 				["SPELL_AURA_APPLIED"] = true,
 				["SPELL_CAST_START"] = true,
 				["SPELL_CAST_SUCCESS"] = true,
 			},
-			["source"] = "Arcane Head",
+			["source"] = "Ji-Kun",
 		},
 		[329951] = {
 			["school"] = 1,

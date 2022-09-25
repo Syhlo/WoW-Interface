@@ -1,0 +1,601 @@
+
+ExecAssistDB = {
+	["char"] = {
+		["Cyf - Tichondrius"] = {
+			["CharSpecificTaskWindow"] = false,
+			["map"] = {
+				["TW"] = {
+					["p"] = "player",
+					["PGT"] = {
+						["g100606"] = {
+							["p"] = "__garden",
+							["sibMap"] = {
+							},
+							["isCollapsed"] = true,
+						},
+						["__garden"] = {
+							["sibMap"] = {
+								"g100606", -- [1]
+								"g399737", -- [2]
+							},
+						},
+						["g399737"] = {
+							["p"] = "__garden",
+							["sibMap"] = {
+							},
+							["isCollapsed"] = false,
+						},
+					},
+					["isCollapsed"] = false,
+				},
+				["GTP"] = {
+					["g399737"] = {
+						["p"] = "__garden",
+						["sibMap"] = {
+							"t725772", -- [1]
+							"t727139", -- [2]
+							"t136110", -- [3]
+							"t332563", -- [4]
+							"t696589", -- [5]
+							"t309613", -- [6]
+							"t583041", -- [7]
+							"t643095", -- [8]
+							"t20733", -- [9]
+							"t624695", -- [10]
+							"t239444", -- [11]
+						},
+						["isCollapsed"] = true,
+					},
+					["t583041"] = {
+						["p"] = "g399737",
+						["isCollapsed"] = true,
+					},
+					["t748111"] = {
+						["p"] = "g100606",
+						["isCollapsed"] = true,
+					},
+					["t278720"] = {
+						["p"] = "g100606",
+						["isCollapsed"] = true,
+					},
+					["t271126"] = {
+						["p"] = "g100606",
+						["isCollapsed"] = true,
+					},
+					["t624695"] = {
+						["p"] = "g399737",
+						["isCollapsed"] = true,
+					},
+					["t203809"] = {
+						["p"] = "g100606",
+						["isCollapsed"] = true,
+					},
+					["t338332"] = {
+						["p"] = "g100606",
+						["isCollapsed"] = true,
+					},
+					["t239444"] = {
+						["p"] = "g399737",
+						["isCollapsed"] = true,
+					},
+					["t644883"] = {
+						["p"] = "g100606",
+						["isCollapsed"] = true,
+					},
+					["t775627"] = {
+						["p"] = "g100606",
+						["isCollapsed"] = true,
+					},
+					["g100606"] = {
+						["p"] = "__garden",
+						["sibMap"] = {
+							"t644883", -- [1]
+							"t288802", -- [2]
+							"t112573", -- [3]
+							"t718497", -- [4]
+							"t775627", -- [5]
+							"t807135", -- [6]
+							"t271126", -- [7]
+							"t278720", -- [8]
+							"t748111", -- [9]
+							"t338332", -- [10]
+							"t203809", -- [11]
+						},
+						["isCollapsed"] = false,
+					},
+					["t136110"] = {
+						["p"] = "g399737",
+						["isCollapsed"] = true,
+					},
+					["t807135"] = {
+						["p"] = "g100606",
+						["isCollapsed"] = true,
+					},
+					["t643095"] = {
+						["p"] = "g399737",
+						["isCollapsed"] = true,
+					},
+					["__garden"] = {
+						["sibMap"] = {
+							"g100606", -- [1]
+							"g399737", -- [2]
+						},
+					},
+					["t288802"] = {
+						["p"] = "g100606",
+						["isCollapsed"] = true,
+					},
+					["t332563"] = {
+						["p"] = "g399737",
+						["isCollapsed"] = true,
+					},
+					["t696589"] = {
+						["p"] = "g399737",
+						["isCollapsed"] = true,
+					},
+					["t309613"] = {
+						["p"] = "g399737",
+						["isCollapsed"] = true,
+					},
+					["t725772"] = {
+						["p"] = "g399737",
+						["isCollapsed"] = true,
+					},
+					["t20733"] = {
+						["p"] = "g399737",
+						["isCollapsed"] = true,
+					},
+					["t727139"] = {
+						["p"] = "g399737",
+						["isCollapsed"] = true,
+					},
+				},
+			},
+		},
+	},
+	["global"] = {
+		["clickmap"] = {
+			["ToggleShowTWControlButtons"] = {
+				["a"] = false,
+				["s"] = true,
+				["m"] = "RightButton",
+				["c"] = false,
+				["code"] = "Rm",
+			},
+			["TACM"] = {
+				["a"] = false,
+				["s"] = false,
+				["code"] = "Rm",
+				["m"] = "LeftButton",
+				["c"] = false,
+				["notify"] = false,
+			},
+			["ToggleTaskWindow"] = {
+				["a"] = false,
+				["s"] = false,
+				["m"] = "RightButton",
+				["c"] = false,
+				["code"] = "Rm",
+			},
+		},
+		["groupStem"] = {
+			["agg"] = {
+				["g399737"] = {
+					["hideDays"] = {
+					},
+					["p"] = "garden",
+					["DO"] = {
+						"t725772", -- [1]
+						"t727139", -- [2]
+						"t136110", -- [3]
+						"t332563", -- [4]
+						"t696589", -- [5]
+						"t309613", -- [6]
+						"t583041", -- [7]
+						"t643095", -- [8]
+						"t20733", -- [9]
+						"t624695", -- [10]
+						"t239444", -- [11]
+						"t536129", -- [12]
+					},
+					["isGroup"] = true,
+					["id"] = "g399737",
+					["listName"] = "Weekly Tasks",
+					["G"] = {
+						{
+							["id"] = "g399737",
+							["oo"] = 20,
+						}, -- [1]
+					},
+					["defaultEnabled"] = false,
+				},
+				["t583041"] = {
+					["hideDays"] = {
+					},
+					["resetType"] = "Weekly Automatic",
+					["isTask"] = true,
+					["id"] = "t583041",
+					["taskName"] = "Tempest Keep",
+					["p"] = "g399737",
+					["defaultEnabled"] = true,
+				},
+				["t136110"] = {
+					["hideDays"] = {
+					},
+					["resetType"] = "Weekly Automatic",
+					["isTask"] = true,
+					["id"] = "t136110",
+					["taskName"] = "ICC",
+					["p"] = "g399737",
+					["defaultEnabled"] = true,
+				},
+				["t278720"] = {
+					["hideDays"] = {
+					},
+					["resetType"] = "Daily Automatic",
+					["isTask"] = true,
+					["id"] = "t278720",
+					["taskName"] = "Kill Theater of Pain elites x5",
+					["p"] = "g100606",
+					["defaultEnabled"] = true,
+				},
+				["t332563"] = {
+					["hideDays"] = {
+					},
+					["resetType"] = "Weekly Automatic",
+					["isTask"] = true,
+					["id"] = "t332563",
+					["taskName"] = "Ulduar",
+					["p"] = "g399737",
+					["defaultEnabled"] = true,
+				},
+				["t696589"] = {
+					["hideDays"] = {
+					},
+					["resetType"] = "Weekly Automatic",
+					["isTask"] = true,
+					["id"] = "t696589",
+					["taskName"] = "Eye of Eternity",
+					["p"] = "g399737",
+					["defaultEnabled"] = true,
+				},
+				["t624695"] = {
+					["hideDays"] = {
+					},
+					["resetType"] = "Weekly Automatic",
+					["isTask"] = true,
+					["id"] = "t624695",
+					["taskName"] = "Galleon",
+					["p"] = "g399737",
+					["defaultEnabled"] = true,
+				},
+				["t644883"] = {
+					["hideDays"] = {
+					},
+					["resetType"] = "Daily Automatic",
+					["isTask"] = true,
+					["id"] = "t644883",
+					["taskName"] = "Kill Fleshwing",
+					["p"] = "g100606",
+					["defaultEnabled"] = true,
+				},
+				["garden"] = {
+					["DO"] = {
+						"g100606", -- [1]
+						"g399737", -- [2]
+					},
+				},
+				["t725772"] = {
+					["hideDays"] = {
+					},
+					["resetType"] = "Weekly Automatic",
+					["isTask"] = true,
+					["id"] = "t725772",
+					["taskName"] = "Throne of the Four WInds",
+					["p"] = "g399737",
+					["defaultEnabled"] = true,
+				},
+				["t338332"] = {
+					["hideDays"] = {
+					},
+					["resetType"] = "Daily Automatic",
+					["isTask"] = true,
+					["id"] = "t338332",
+					["taskName"] = "Kill MoP Warbringers",
+					["p"] = "g100606",
+					["defaultEnabled"] = true,
+				},
+				["t775627"] = {
+					["hideDays"] = {
+					},
+					["resetType"] = "Daily Automatic",
+					["isTask"] = true,
+					["id"] = "t775627",
+					["taskName"] = "Kill Nerissa Heartless",
+					["p"] = "g100606",
+					["defaultEnabled"] = true,
+				},
+				["g100606"] = {
+					["hideDays"] = {
+					},
+					["p"] = "garden",
+					["DO"] = {
+						"t644883", -- [1]
+						"t288802", -- [2]
+						"t775627", -- [3]
+						"t807135", -- [4]
+						"t271126", -- [5]
+						"t278720", -- [6]
+						"t748111", -- [7]
+						"t338332", -- [8]
+						"t203809", -- [9]
+					},
+					["isGroup"] = true,
+					["id"] = "g100606",
+					["listName"] = "Daily Tasks",
+					["G"] = {
+						{
+							["id"] = "g100606",
+							["oo"] = 10,
+						}, -- [1]
+					},
+					["defaultEnabled"] = false,
+				},
+				["t203809"] = {
+					["hideDays"] = {
+					},
+					["resetType"] = "Daily Automatic",
+					["isTask"] = true,
+					["id"] = "t203809",
+					["taskName"] = "Finish Calling(s)",
+					["p"] = "g100606",
+					["defaultEnabled"] = true,
+				},
+				["t807135"] = {
+					["hideDays"] = {
+					},
+					["resetType"] = "Daily Automatic",
+					["isTask"] = true,
+					["id"] = "t807135",
+					["taskName"] = "Kill Warbringer Mal'Korak",
+					["p"] = "g100606",
+					["defaultEnabled"] = true,
+				},
+				["t643095"] = {
+					["hideDays"] = {
+					},
+					["resetType"] = "Weekly Automatic",
+					["isTask"] = true,
+					["id"] = "t643095",
+					["taskName"] = "Sha of Anger",
+					["p"] = "g399737",
+					["defaultEnabled"] = true,
+				},
+				["t288802"] = {
+					["hideDays"] = {
+					},
+					["resetType"] = "Daily Automatic",
+					["isTask"] = true,
+					["id"] = "t288802",
+					["taskName"] = "Fish for Strange Goop x100",
+					["p"] = "g100606",
+					["defaultEnabled"] = false,
+				},
+				["t536129"] = {
+					["hideDays"] = {
+					},
+					["resetType"] = "Weekly Automatic",
+					["isTask"] = true,
+					["id"] = "t536129",
+					["taskName"] = "Vault of Archavon",
+					["p"] = "g399737",
+					["defaultEnabled"] = true,
+				},
+				["t271126"] = {
+					["hideDays"] = {
+					},
+					["resetType"] = "Daily Automatic",
+					["isTask"] = true,
+					["id"] = "t271126",
+					["taskName"] = "Kill Violet Mistake",
+					["p"] = "g100606",
+					["defaultEnabled"] = true,
+				},
+				["t748111"] = {
+					["hideDays"] = {
+					},
+					["resetType"] = "Daily Automatic",
+					["isTask"] = true,
+					["id"] = "t748111",
+					["taskName"] = "Kill Famu",
+					["p"] = "g100606",
+					["defaultEnabled"] = true,
+				},
+				["t239444"] = {
+					["hideDays"] = {
+					},
+					["resetType"] = "Weekly Automatic",
+					["isTask"] = true,
+					["id"] = "t239444",
+					["taskName"] = "Oondasta",
+					["p"] = "g399737",
+					["defaultEnabled"] = true,
+				},
+				["t309613"] = {
+					["hideDays"] = {
+					},
+					["resetType"] = "Weekly Automatic",
+					["isTask"] = true,
+					["id"] = "t309613",
+					["taskName"] = "Firelands",
+					["p"] = "g399737",
+					["defaultEnabled"] = true,
+				},
+				["t20733"] = {
+					["hideDays"] = {
+					},
+					["resetType"] = "Weekly Automatic",
+					["isTask"] = true,
+					["id"] = "t20733",
+					["taskName"] = "Nalak",
+					["p"] = "g399737",
+					["defaultEnabled"] = true,
+				},
+				["t727139"] = {
+					["hideDays"] = {
+					},
+					["resetType"] = "Weekly Automatic",
+					["isTask"] = true,
+					["id"] = "t727139",
+					["taskName"] = "Onyxia",
+					["p"] = "g399737",
+					["defaultEnabled"] = true,
+				},
+			},
+		},
+		["Options"] = {
+			["DailyResetTime"] = 12,
+		},
+		["nextMidnightReset"] = 1664164800,
+		["IsOldHat"] = true,
+		["nextWeeklyReset"] = 1664290800,
+		["nextDailyReset"] = 1664118000,
+		["taskWindow"] = {
+			["locked"] = true,
+			["toggleState_ToggledOff"] = false,
+			["widthMethod"] = 3,
+			["FixedWidth_FontString"] = 198,
+			["showChecked"] = false,
+			["useDragFrame"] = false,
+			["hidebuttons"] = true,
+			["hideTW_ifHideCompTaks_andNoUncompTasks"] = false,
+			["style"] = {
+				["border"] = "Square Clean",
+				["bgcolor"] = {
+					["a"] = 0.3799999952316284,
+					["r"] = 0.01176470588235294,
+					["g"] = 0.01176470588235294,
+					["b"] = 0.01176470588235294,
+				},
+				["bdrcolor"] = {
+					["a"] = 0,
+					["r"] = 0.01176470588235294,
+					["g"] = 0.01176470588235294,
+					["b"] = 0.01176470588235294,
+				},
+			},
+			["pos"] = {
+				["yOff"] = -185.0006256103516,
+				["xOff"] = 67.9998779296875,
+				["relTW"] = "BOTTOM",
+				["posW_relP"] = "LEFT",
+				["idx"] = 5,
+				["posW_rel"] = "LEFT",
+			},
+		},
+		["charStem"] = {
+			["Syhlol - Tichondrius"] = {
+				["agg"] = {
+					["g100606"] = {
+						["userOverride"] = 3,
+					},
+				},
+				["charClass"] = "MONK",
+			},
+			["Syhlo - Thrall"] = {
+				["agg"] = {
+				},
+				["charClass"] = "PRIEST",
+			},
+			["Sýh - Thrall"] = {
+				["agg"] = {
+				},
+				["charClass"] = "WARRIOR",
+			},
+			["Gerold - Tichondrius"] = {
+				["agg"] = {
+				},
+				["charClass"] = "PALADIN",
+			},
+			["Syhlol - Thrall"] = {
+				["agg"] = {
+				},
+				["charClass"] = "ROGUE",
+			},
+			["Cyf - Tichondrius"] = {
+				["agg"] = {
+					["g399737"] = {
+						["userOverride"] = 2,
+					},
+					["t583041"] = {
+						["checked"] = true,
+					},
+					["t136110"] = {
+						["checked"] = true,
+					},
+					["t332563"] = {
+						["checked"] = true,
+					},
+					["t696589"] = {
+						["checked"] = true,
+					},
+					["t727139"] = {
+						["checked"] = true,
+					},
+					["t278720"] = {
+					},
+					["t338332"] = {
+					},
+					["t309613"] = {
+					},
+					["t644883"] = {
+					},
+					["t203809"] = {
+					},
+					["g100606"] = {
+						["userOverride"] = 2,
+					},
+					["t271126"] = {
+					},
+					["t807135"] = {
+					},
+					["t725772"] = {
+						["checked"] = true,
+					},
+					["t288802"] = {
+						["userOverride"] = 2,
+					},
+					["t536129"] = {
+						["checked"] = true,
+					},
+					["t643095"] = {
+						["checked"] = true,
+					},
+					["t239444"] = {
+						["checked"] = true,
+					},
+					["t748111"] = {
+					},
+					["t775627"] = {
+					},
+					["t20733"] = {
+						["checked"] = true,
+					},
+					["t624695"] = {
+						["checked"] = true,
+					},
+				},
+				["charClass"] = "DRUID",
+			},
+		},
+		["hideHelp"] = true,
+	},
+	["profileKeys"] = {
+		["Syhlol - Tichondrius"] = "Default",
+		["Syhlo - Thrall"] = "Default",
+		["Sýh - Thrall"] = "Default",
+		["Gerold - Tichondrius"] = "Default",
+		["Syhlol - Thrall"] = "Default",
+		["Cyf - Tichondrius"] = "Default",
+	},
+}

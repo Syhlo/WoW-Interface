@@ -13,16 +13,17 @@ MJEPersonalSettings = {
 			0, -- [2]
 		},
 		["showPersonalCount"] = true,
-		["moveEquipmentSlot"] = true,
+		["showStatistics"] = true,
 		["previewButton"] = true,
 		["showShopButton"] = false,
-		["showUsageStatistics"] = true,
+		["moveEquipmentSlot"] = true,
 		["unlockDisplayCamera"] = true,
 		["debugMode"] = false,
 	},
 	["hiddenMounts"] = {
 	},
 	["personalUi"] = false,
+	["searchInDescription"] = true,
 	["favoredMounts"] = {
 	},
 	["sort"] = {
@@ -289,6 +290,8 @@ MJEPersonalSettings = {
 		["hidden"] = false,
 	},
 	["personalHiddenMounts"] = false,
-	["searchInDescription"] = true,
+	["searchInNotes"] = true,
+	["notes"] = {
+	},
 	["autoFavor"] = false,
 }

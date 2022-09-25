@@ -1,8 +1,10 @@
 # Capping
 
-## [v9.2.1](https://github.com/BigWigsMods/Capping/tree/v9.2.1) (2022-06-01)
-[Full Changelog](https://github.com/BigWigsMods/Capping/compare/v9.2.0...v9.2.1) [Previous Releases](https://github.com/BigWigsMods/Capping/releases)
+## [v9.2.6](https://github.com/BigWigsMods/Capping/tree/v9.2.6) (2022-09-19)
+[Full Changelog](https://github.com/BigWigsMods/Capping/compare/v9.2.5...v9.2.6) [Previous Releases](https://github.com/BigWigsMods/Capping/releases)
 
-- Workflow: Fix fetch-depth  
-- bump toc  
-- Workflow: move to checkout@v3  
+- Locales: Add some comments  
+- Options: Add some tips to the GUI  
+- Add separate file for esMX  
+- Add a tooltip when mousing over the anchor  
+- Update deDE (#121)  

@@ -6,9 +6,8 @@
 
 		local version, build, date, tocversion = GetBuildInfo()
 
-		_detalhes.build_counter = 9824
-		_detalhes.alpha_build_counter = 9824 --if this is higher than the regular counter, use it instead
-		_detalhes.bcc_counter = 39
+		_detalhes.build_counter = 10029
+		_detalhes.alpha_build_counter = 10029 --if this is higher than the regular counter, use it instead
 		_detalhes.dont_open_news = true
 		_detalhes.game_version = version
 		_detalhes.userversion = version .. _detalhes.build_counter
@@ -18,6 +17,8 @@
 
 		_detalhes.BFACORE = 131 --core version on BFA launch
 		_detalhes.SHADOWLANDSCORE = 143 --core version on Shadowlands launch
+--
+		_detalhes.dragonflight_beta_version = 32
 
 		Details = _detalhes
 
@@ -33,6 +34,29 @@ do
 	local Loc = _G.LibStub("AceLocale-3.0"):GetLocale( "Details" )
 
 	local news = {
+		{"v9.2.0.10001.146", "Aug 10th, 2022"},
+		"New feature: Arena DPS Bar, can be enabled at the Broadcaster Tools section, shows a bar in 'kamehameha' style showing which team is doing more damage in the latest 3 seconds.",
+		"/keystone now has more space for the dungeon name.",
+		"Revamp on the options section for Broadcaster tools.",
+		"Added 'Icon Size Offset' under Options > Bars: General, this new option allow to adjust the size of the class/spec icon shown on each bar.",
+		"Added 'Show Faction Icon' under Options > Bars: General, with this new option, you can choose to not show the faction icon, this icon is usually shown during battlegrounds.",
+		"Added 'Faction Icon Size Offset' under Options > Bars: General, new option to adjust the size of the faction icon.",
+		"Added 'Show Arena Role Icon' under Options > Bars: General, new option to hide or show the role icon of players during an arena match.",
+		"Added 'Clear On Start PVP' overall data option (Flamanis).",
+		"Added 'Arena Role Icon Size Offset' under Options > Bars: General, new option which allow to control the size of the arena role icon.",
+		"Added 'Level' option to Wallpapers, the wallpaper can now be placed on different levels which solves issues where the wallpaper is too low of certain configuration.",
+		"Streamer! plugin got updates, now it is more clear to pick which mode to use.",
+		"WotLK classic compatibility (Flamanis, Daniel Henry).",
+		"Fixed Grimrail Depot cannon and granades damage be added to players (dios-david).",
+		"Fixed the title bar text not showing when using the Custom Title Bar feature.",
+		"Fixed an issue with Dynamic Overall Damage printing errors into the chat window (Flamanis).",
+		"Role detection in classic versions got improvements.",
+		"New API: Details:GetTop5Actors(attributeId), return the top 5 actors from the selected attribute.",
+		"New API: Details:GetActorByRank(attributeId, rankIndex), return an actor from the selected attribute and rankIndex.",
+		"Major cleanup and code improvements on dropdowns for library Details! Framework.",
+		"Cleanup on NickTag library.",
+		"Removed LibGroupInSpecT, LibItemUpgradeInfo and LibCompress. These libraries got replaced by OpenRaidLib and LibDeflate.",
+
 		{"v9.2.0.9814.146", "May 15th, 2022"},
 		"Added slash command /keystone, this command show keystones of other users with addons using Open Raid library.",
 		"Added a second Title Bar (disabled by default), is recomended to make the Skin Color (under Window Body) full transparent while using it.",
@@ -894,6 +918,7 @@ do
 			if orig_type == 'table' then
 				copy = {}
 				for orig_key, orig_value in next, orig, nil do
+					--print(orig_key, orig_value)
 					copy [Details.CopyTable (orig_key)] = Details.CopyTable (orig_value)
 				end
 			else
@@ -985,4 +1010,16 @@ do
 			_G ["BINDING_NAME_DETAILS_BOOKMARK9"] = format (Loc ["STRING_KEYBIND_BOOKMARK_NUMBER"], 9)
 			_G ["BINDING_NAME_DETAILS_BOOKMARK10"] = format (Loc ["STRING_KEYBIND_BOOKMARK_NUMBER"], 10)
 			
+end
+
+if (select(4, GetBuildInfo()) >= 100000) then
+	local f = CreateFrame("frame")
+	f:RegisterEvent("ADDON_ACTION_FORBIDDEN")
+	f:SetScript("OnEvent", function()
+		local text = StaticPopup1 and StaticPopup1.text and StaticPopup1.text:GetText()
+		if (text and text:find("Details")) then
+			--fix false-positive taints that are being attributed to random addons
+			StaticPopup1.button2:Click()
+		end
+	end)
 end

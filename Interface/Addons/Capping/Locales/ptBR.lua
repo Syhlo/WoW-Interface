@@ -9,9 +9,13 @@ L.flagRespawns = "Bandeira reaparece"
 
 L.takenTheFlagTrigger = "^(.+) pegou a bandeira!"
 --L.hasTakenTheTrigger = "has taken the"
---L.upgradeToTrigger = "Upgrade to"
 L.droppedTrigger = "largada"
 L.capturedTheTrigger = "capturou"
+
+--- Alterac Valley
+--- This is the trigger option when talking to the NPC to auto hand in the quest items
+--- This chat interaction only appears when the NPC is ready to start an upgrade, and you need to confirm it
+--L.upgradeToTrigger = "Upgrade to" -- Needs to match the in game text exactly
 
 L.hordeGate = "Portão da Horda"
 L.allianceGate = "Portão da Aliança"
@@ -28,6 +32,8 @@ L.balinda = "Balinda"
 L.ivus = "Ivus"
 L.lokholar = "Lokholar"
 L.handIn = "|cFF33FF99Capping|r: Automaticamente entregando items de quest."
+L.anchorTooltip = "|cffeda55fClique-Direito|r para acessar as opções"
+--L.anchorTooltipNote = "Open the options and lock the bars to hide this moving anchor."
 
 --- Alliance IoC Workshop yells:
 -- Mecânico Gnômico grita: Estou na metade do caminho! Mantenha a Horda longe. Não ensinam luta na faculdade de engenharia!
@@ -58,3 +64,9 @@ L.mainEntrance = "Entrada Principal"
 L.westTower = "Torre Oeste"
 L.southTower = "Torre Sul"
 L.eastTower = "Torre Leste"
+
+-- Arena
+--L.arenaStartTrigger = "The Arena battle has begun!" -- Needs to match the in game text exactly
+--L.arenaStart60s = "One minute until the Arena battle begins!" -- Needs to match the in game text exactly
+--L.arenaStart30s = "Thirty seconds until the Arena battle begins!" -- Needs to match the in game text exactly
+--L.arenaStart15s = "Fifteen seconds until the Arena battle begins!" -- Needs to match the in game text exactly

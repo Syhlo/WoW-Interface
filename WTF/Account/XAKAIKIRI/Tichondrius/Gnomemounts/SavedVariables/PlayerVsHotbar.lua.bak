@@ -1,0 +1,9 @@
+
+PVHStore = {
+	["profiles"] = {
+		[5] = true,
+	},
+	["spec"] = 5,
+	["selectedProfile"] = "PvE",
+	["firstRun"] = false,
+}

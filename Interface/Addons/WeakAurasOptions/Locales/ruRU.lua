@@ -81,7 +81,7 @@ local L = WeakAuras.L
 	L["|cFFffcc00Extra:|r %s and %s %s"] = "|cFFFFCC00Дополнительные параметры:|r %s; %s%s"
 	L["|cFFffcc00Font Flags:|r |cFFFF0000%s|r and shadow |c%sColor|r with offset |cFFFF0000%s/%s|r%s%s"] = "|cFFFFCC00Атрибуты текста:|r |cFFE6CC80%s|r; Тень |c%sO|r цвета со смещением (%s, %s);%s%s"
 	L["|cFFffcc00Font Flags:|r |cFFFF0000%s|r and shadow |c%sColor|r with offset |cFFFF0000%s/%s|r%s%s%s"] = "|cFFFFCC00Атрибуты текста:|r |cFFE6CC80%s|r; Тень |c%sO|r цвета со смещением (%s, %s);%s%s%s"
-	L["|cFFffcc00Format Options|r"] = "|cFFFFCC00Параметры форматирования|r"
+	L["|cffffcc00Format Options|r"] = "|cFFFFCC00Параметры форматирования|r"
 	--[[Translation missing --]]
 	L[ [=[• |cff00ff00Player|r, |cff00ff00Target|r, |cff00ff00Focus|r, and |cff00ff00Pet|r correspond directly to those individual unitIDs.
 • |cff00ff00Specific Unit|r lets you provide a specific valid unitID to watch.
@@ -414,6 +414,7 @@ UNIT_POWER  UNIT_AURA, PLAYER_TARGET_CHANGED]=]
 	L["Filter by Class"] = "Фильтр по классу"
 	L["Filter by Group Role"] = "Фильтр по выбранной роли"
 	L["Filter by Nameplate Type"] = "Тип индикатора здоровья"
+	L["Filter by Npc ID"] = "Фильтр по ID NPC"
 	L["Filter by Raid Role"] = "Фильтр по роли в рейде"
 	L["Filter by Specialization"] = "Фильтр по специализации"
 	L["Filter by Unit Name"] = "Фильтр по имени единицы"
@@ -443,7 +444,6 @@ Can use \ to escape -.]=] ] = [=[Формат записи: Имя, Имя-Иг�
 	L["Frame Strata"] = "Слой кадра"
 	L["Frame Width"] = "Ширина кадра"
 	L["Frequency"] = "Частота"
-	L["From Template"] = "Из шаблона"
 	L["Full Circle"] = "Полный круг"
 	L["Get Help"] = "Получить помощь"
 	L["Global Conditions"] = "Универсальные условия"
@@ -638,6 +638,7 @@ Can use \ to escape -.]=] ] = [=[Формат записи: Имя, Имя-Иг�
 	L["Not Loaded"] = "Не загружено"
 	L["Note: Automated Messages to SAY and YELL are blocked outside of Instances."] = "|cFFFFCC00Примечание.|r Вне подземелий (instances) автоматизированная отправка сообщений в чат заблокирована для Сказать и Крик."
 	L["Note: The legacy buff trigger is now permanently disabled. It will be removed in the near future."] = "|cFFFFCC00Предупреждение.|r Устаревший тип триггера Аура теперь окончательно отключен. В ближайшее время он будет удален."
+	L["Npc ID"] = "ID NPC"
 	L["Number of Entries"] = "Число записей"
 	L["Offer a guided way to create auras for your character"] = "Предлагаем пошаговый способ создания индикаций для вашего персонажа"
 	L["Offset by |cFFFF0000%s|r/|cFFFF0000%s|r"] = "; Смещение (%.4g, %.4g)"
@@ -682,6 +683,7 @@ Can use \ to escape -.]=] ] = [=[Формат записи: Имя, Имя-Иг�
 	L["Portrait Zoom"] = "Увеличить портрет"
 	L["Position Settings"] = "Настройки размера и расположения"
 	L["Preferred Match"] = "Предпочтительный результат"
+	L["Premade Auras"] = "Готовые индикации"
 	L["Premade Snippets"] = "Готовые фрагменты кода"
 	L["Preset"] = "Набор эффектов"
 	L["Press Ctrl+C to copy"] = "Нажмите Ctrl+C, чтобы скопировать"
@@ -737,6 +739,7 @@ Can use \ to escape -.]=] ] = [=[Формат записи: Имя, Имя-Иг�
 	L["Same texture as Foreground"] = "Такая же текстура, что и на переднем плане"
 	L["Scale"] = "Масштаб"
 	L["Search"] = "Поиск"
+	L["Select Talent"] = "Выбрать талант"
 	L["Select the auras you always want to be listed first"] = "Выберите индикации для гибридной позиции"
 	L["Selected Frame"] = "Выбранный кадр"
 	L["Send To"] = "Отправить"

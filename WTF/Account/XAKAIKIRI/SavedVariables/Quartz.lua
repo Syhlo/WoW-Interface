@@ -29,25 +29,35 @@ Quartz3DB = {
 		},
 		["LibDualSpec-1.0"] = {
 		},
-		["Player"] = {
+		["Range"] = {
 			["profiles"] = {
 				["Default"] = {
-					["h"] = 22,
-					["nametextx"] = 10,
-					["w"] = 300,
-					["y"] = 203.3745635773921,
-					["x"] = -9.332603021452087,
-					["icongap"] = 4,
-					["point"] = "BOTTOM",
-					["scale"] = 0.800000011920929,
-					["border"] = "None",
-					["texture"] = "Solid",
-					["font"] = "Arial Narrow",
-					["alpha"] = 0.75,
+					["rangecolor"] = {
+						0.580392156862745, -- [1]
+						0.1254901960784314, -- [2]
+						0.1098039215686275, -- [3]
+						1, -- [4]
+					},
 				},
 			},
 		},
-		["EnemyCasts"] = {
+		["Player"] = {
+			["profiles"] = {
+				["Default"] = {
+					["h"] = 26,
+					["nametextx"] = 10,
+					["w"] = 297,
+					["y"] = -172.5997503846857,
+					["font"] = "Arial Narrow",
+					["icongap"] = 4,
+					["point"] = "CENTER",
+					["scale"] = 0.800000011920929,
+					["border"] = "None",
+					["texture"] = "Solid",
+					["x"] = 4.000112020970846,
+					["alpha"] = 0.75,
+				},
+			},
 		},
 		["GCD"] = {
 		},
@@ -72,15 +82,15 @@ Quartz3DB = {
 						1, -- [4]
 					},
 					["w"] = 207,
-					["y"] = 75.92532242866946,
-					["x"] = -279.7484982451206,
+					["y"] = 120,
+					["font"] = "Arial Narrow",
 					["icongap"] = 4,
 					["iconposition"] = "left",
 					["point"] = "CENTER",
 					["scale"] = 0.8999999761581421,
 					["border"] = "None",
 					["texture"] = "Solid",
-					["font"] = "Arial Narrow",
+					["x"] = -265,
 					["noInterruptChangeBorder"] = false,
 					["alpha"] = 0.75,
 				},
@@ -88,22 +98,13 @@ Quartz3DB = {
 		},
 		["Mirror"] = {
 		},
-		["Range"] = {
-			["profiles"] = {
-				["Default"] = {
-					["rangecolor"] = {
-						0.580392156862745, -- [1]
-						0.1254901960784314, -- [2]
-						0.1098039215686275, -- [3]
-						1, -- [4]
-					},
-				},
-			},
+		["EnemyCasts"] = {
 		},
 		["Latency"] = {
 		},
 	},
 	["profileKeys"] = {
+		["Gnomemounts - Tichondrius"] = "Default",
 		["Isellpropane - Proudmoore"] = "Default",
 		["Sýh - Thrall"] = "Default",
 		["Syhl - Thrall"] = "Default",
@@ -113,16 +114,17 @@ Quartz3DB = {
 		["Crylo - Tichondrius"] = "Default",
 		["Regèn - Tichondrius"] = "Default",
 		["Sydh - Thrall"] = "Default",
+		["Syhlol - Tichondrius"] = "Default",
 		["Cyf - Tichondrius"] = "Default",
 		["Wthrename - Tichondrius"] = "Default",
 		["Gerold - Tichondrius"] = "Default",
 		["Scatterffs - Ragnaros"] = "Default",
 		["Syhlo - Thrall"] = "Default",
 		["Youreterribl - Burning Legion"] = "Default",
-		["Syhloc - Thrall"] = "Default",
+		["Syhdk - Thrall"] = "Default",
 		["Pandamounts - Tichondrius"] = "Default",
 		["Syhlol - Illidan"] = "Default",
-		["Syhdk - Thrall"] = "Default",
+		["Syhloc - Thrall"] = "Default",
 		["Syh - Thrall"] = "Default",
 	},
 	["profiles"] = {

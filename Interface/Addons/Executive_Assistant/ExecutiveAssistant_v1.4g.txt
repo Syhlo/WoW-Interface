@@ -1,0 +1,322 @@
+Executive Assistant -- User Configurable To-Do List/Task List
+by VincentSDSH
+(email vincent at silver daggers dot net)
+
+Executive Assistant is a configurable Task (To-Do) List that lets you manage your game-time efficiently.
+
+At first blush, Executive Assistant may seem to be a show-room for the Choice Paradox but for what it does its learning-curve is fairly shallow. Getting started has 3 steps: 1) set your server's weekly reset day and daily reset time, 2) add a few tasks, and 3) NOW GO PLAY! and see that you do those tasks.
+
+Executive Assistant works from the principle of "don't worry about it till you needed it (or find that it annoys you), then make it easy to find and use (or at least make the Help helpful)." You don't need to know about account-wide tasks, purgable tasks, command line entry, the finer points of embedded Invisible Groups, or the other features unless you find a need for them. Don't be afraid to peruse the options and let your mind wander but don't get bogged down it: the learning curve is only as steep as you want it to be, and more than a few things have the defaults they do give you a taste of using them before you decided -how- (or if) you want to use them. 
+
+As a side note, all of the features in version 1 are ones I use (and about half of them from testing and wishing I could do something I couldn't at the time) with the exception of two (alphabetized character names and complete/uncomplete task counts -- I never use 'em *shrug*), so if you're wondering if Executive Assistant 'has features just for the sake of having features' the answer is: Yes...two. 
+
+I'd never come across a 'to-do list'-ish addon that addressed the problems I needed addressing in a way I was happy with. To get an idea...
+
+ -- To see all the chars at once, so I could see that I missed a swatch of stuff on a char w/o logging that character in
+ -- To see characters categorized by Task (e.g. event-related, special dailies, etc: expand that Task, see characters checked/unchecked so I can *easily* see who log in next for that Task)
+ -- Choice of a Task Window OR LDB ('cause not every character has the same needs or b/c sometimes it's nice to have a persistent list and sometimes it's annoying, etc)
+ -- Zoom In / Zoom Out (quickly focus on part of a list vs the full list, while keeping the same collapse/expands)
+ -- Being able to easily integrate special task groups (e.g., yearly events, darkmoon, etc) that don't have to be around all the time.
+ -- LDB / Minimap Icon clicks had to be on-the-fly user-alterable (what I find I want convenient changes what what I'm doing and there's /no way/ I'm going to be able to decide what the 'best' layout is for every user)
+ -- Being lazy, I refuse to enter "do X task" for 20 chars when I can do it once
+ -- Being lazy, I refuse to then turn off said task 19 times b/c I just want 1 char to see it
+ -- Account-Wide tasks (e.g., Blingtron), they are few but *sigh* in for a penny, in for the national debt
+ -- Blizzard's special 'weekly but not on these days' crazy...gotta take crazy into account 'cause being lazy and not too bright, I could see myself trying to do it on a day it wasn't available just b/c it was reset...
+ -- Command line task entry was a must (I'm old enough to love the command line)
+ -- I want task management organized and subordinated (less scrolling to find things) but not open 3-4 levels of twisties to check it off
+ -- And when I am putting the tasks into groups, I wanted to get a sense of what I am doing, especially with something as complex as managing groups of tasks, let alone doing it for multiple characters.
+ 
+...well, that's where I started, anyway. Along the way I decided that sub-groups just had to be able to have their own groups and, me being me, you can have as many as the stack can handle (There's even an efficient prune/regrow for dynamacy in the options tables, a feature that has a long story attached to it but suffice to say I spent hours on it and it saves you .003 to .01 milliseconds -- that is not a damned type-o, I used the blizzard debug profiler, so use those extra milliseconds of play-time well!). 
+
+I added a reset-type that could be on-demand purged of completed tasks: it rapidly became my hands-down favorite feature, especially rapid-fire entering these from the command line (e.g., shopping lists; remember-to-do-while-in-town; go-to-that-place-for-this-quest notes; remembering what quest I left off in the middle; what pets/toys/items in an area I'm still looking for; and...well, it's a long list) You can even make tasks for a particular character right from the command line.
+
+...I'm pretty sure I skipped a few features and the usage-tricks would make this a wall-of-text so I'll leave those to the in-game Help and your own curiosity. 
+ 
+
+
+TWO IMPORTANT TECHNICAL NOTES (but only for the addon-savvy or prospective addon authors)
+	Executive Assistant uses libQTip for the LDB/Minimap Button tooltip display and it has two issues of which you should be aware.
+	
+	* The libQTip that comes with Executive Assistant *has been modified* so a lib-less version is not possible, and this version should NOT be redistributed. The library was modified	to work around a problem (http://www.wowace.com/addons/libqtip-1-0/tickets/35-colspans-widen-the-wrong-column). The version that comes with this addon does not fix this problem properly (though that may come at a later time) so much as it shunts the problem into the tooltip in a way that achieves the result that Executive Assistant needs (and would be achieved if column max-width parameters were enforced) In short: my goal in this project was to write Executive Assistant and not rewrite a library.
+
+	* Also related to libQTip, there is a resizing bottleneck (as related by Torhal) such that, in my testing, individual cell modification could be up to 22x as long as the initial creation of a cell on the tooltip. We're talking about fractions of milliseconds but they add up. If you have 150 lines open, you will notice a tiny delay while at 240 lines it can be over 2 seconds. I ONLY TELL YOU THAT so you'll know what's going on. In practice, you'll rarely (if ever) come close to the 150 lines where you *might* notice a performance hit while doing multiple things on the tooltip but somebody, somewhere will intentionally or inadvertently run into this.
+
+
+
+Version Notes:
+	1.4g	BUGFIX: gametooltip backdrop call being made when gametooltip didn't have a backdrop (file cabinet and exec assist)
+		Libraries: updated to current versions
+	1.4b
+		BUGFIX: frame tweak for Task Window handling frames to address a drag-frame issues some were having.
+	1.4a
+		Repackaged due to packager failure to collect localization files.
+	1.4
+		More fixes to handle CreateFrame() API changes
+		NEW: Strata option added to TaskWindow (default: LOW) see Task Window -> Strata
+		NEW: When displaying All Characters: Sort by Char Name, then Server Name (default: ENABLED) see ldb tooltip -> options section (last option group)
+		KNOWN ISSUE: Help Panel in-line color coding is inconsistent. This seems to be a change in how WoW is handling these types of strings as the coding is inconsistent but fails early on. If no solution or practicable workaround is found, this feature might be removed just for the sake of consistency.
+		
+
+	1.3b
+		Update: Shadowlands
+		Update: Libraries
+
+	v1.3a
+		NEW FEATURE: Set AutoHide Delay - change the time (in seconds) before the DataBroker Tooltip gets lonely and hides
+	v1.3
+		Update for Battle for Azeroth 
+		Updated libraries
+				
+	v1.1.9k
+		NEW FEATURE: Customize the Scale, Width, and Height of the configuration window (Config Dialog Options, Executive Assistant tab)
+		BUGFIX: Missing formatting data for first config tab.
+	
+	v1.1.9i
+		Help Corrected:  Corrected 'Task Management' help section (format string has errant var order)
+		
+	v1.1.9g
+		NEW FEATURE: "Ignore Character": This feature (available on the PoV display) will disable root groups for chosen characters as long as it is enabled. Newly created groups and groups moved into the root will be automatically disabled, effectively 'ignoring' all tasks. (Any tasks created from that character or redirected to them from the command line will not be accessible until "Ignore Character" is disabled. (Nota Bene: Groups will have to be enabled manually as ExecAssist has no way to know what should/shouldn't be active for the character)
+		NEW FEATURE: Partial-Matching in Command Line Task Redirection - uniqu, uniquechar, uniquecharname-th, uniquecharname-thoriumbrotherhood will all tag "Uniquecharactername - Thorium Brotherhood"
+		IMPROVED FEATURE: Server Name in Command Line Task Redirection - Removes the weakness in command line task redirection for multiple chars with the same name on different servers. All Characters can now be properly redirected to.
+		FUNCTION CHANGE: Command Line Task Redirection (/ea task >charName Task Label) handles both partial matching and server names (see above). The function change removes vulnerabilities related to the NPC feature. Nota Bene: redirector names are still a single, contiguous string of characters: "Mychar - Silver Hand" => "Mychar-SilverHand"; "Housekeeping Tasks" => "HousekeepingTasks" (Also note comparisons are forced to lower-case so proper capitalization is not required)
+
+	v1.1.9d
+		NEW FEATURE: Hide Character if No Incomplete Tasks (If not 'showing complete tasks'). Located in the LDB Tooltip configuration under the "'Tasks by Character' Layout Specific" group. (OFF by default)
+		
+	v1.1.9a
+		NEW FEATURE : (for Power-Users) Ability to add 'NPC Characters,' categories that work like 'not logged in' characters in the databroker tooltip.
+	 		: Command Line Option: 'npc'
+	 		: Command Line Usage: /ea npc nameofnpc ; /ea npc nameofnpc - serverifyouwant ; /ea npc textofcateogryname
+	 		: NPC COLOR CONTROL: ldb tooltip tab, Style NPC section, NPC Color option	
+	v1.1.9
+  	BUGFIX: 'Move to Root' reorganization option will now only be available on the non-root-group that is 'picked up'
+
+	v1.1a
+		NEW FEATURE: 'Label for DataBroker' allows user to adjust the LDB Label since 'Executive Assistant' is quite long.
+		UPDATED: libraries (Ace3, libQTip, etc)
+
+	v1.1
+		NEW FEATURE: Keybind to Toggle the Task Window. See in-game Key Binds, Executive Assistant section.
+		Update: Changed the location of the Task Window 'Remember Toggle State' control and renamed it to 'Remember Toggle State Between Sessions.' The control is now inline with 'Use Task Window.' If Checked, a 'hidden' Task Window from the last seession will re-hide at Login; if Unchecked, the Task Window will always be shown at Login (only if 'Use Task Window' is enabled, of course)
+		Update: Added a new control (after 'Use Task Window' and before 'Remember Toggle State Between Sessions') to display the Show/Hide state of the Task Window. This is a convenience so the user (or *ahem* developer) doesn't have to wonder if the Task Window is hidden or just with 0-opacity and lost somewhere on the screen.
+	
+	v1.0.7
+		Reduced LibQTip AutoHide Delay (If this produces issues, open ea_Tooltip.lua, search for tooltip:SetAutoHideDelay, alter the delay)
+		Update: GameTooltip color reassertion now forced on LDB obj MouseOut
+		Fixed: Non-styled Tooltip shows Red instead of default
+		
+	v1.0.6
+		Improved Options opening when spawned from Interface Options Panel
+		Updated PlaySound() calls for 7.3
+		Independant Text Shadow controls for Tooltip and Task Window
+		Alpha Enabled for Border and Background Colors
+	
+	v1.0.5
+		New Feature: Background and Edge Controls for ldb Display.
+		
+	v1.0.4
+		Update .toc to 7.2
+		Update Ace framework files to r1158
+		New Feature: !! Warning: This Feature if Experimental !! Option to Hide Task Window when 'Show Completed Tasks' is Disabled and All Tasks are Complete. WARNING: this will effectively DISABLE the ClickMap 'Toggle Task Window' feature as the Task Window Toggle State is constantly reset by *this* feature. Use at your own risk."
+		
+	v1.0.3
+		File Cabinet to 1.0
+		New Feature: File Cabinet now able to Import/Export portions of a Group/Task list as well as full backup/restores.
+		Executive Assistant updated to provide native support (FC is not an Intern)
+		
+	v1.0.2
+		Help Fix: "/exa or /exa" now reads "/ea or /exa"
+		Bug Fix: Reset Time now Resets Time
+		Bug Fix: Reset Weekly now Resets Weekly
+		Bug Fix: Tooltip: Characters with no tasks are no longer displayed. Do Not Display Empty Groups is responsible for this. We've had a long chat about it, it now realizes that it is indeed part of its responsibilities, and it would like me to pass on its deepest apologies and promises not to stop doing it in the future no matter how badly the author writes the handling code.
+		
+		Caveat to this: the currently logged in character will /always/ be shown, regardless of empty status
+		
+	v1.0.1
+		Bug Fix: Account Wide Tasks were not real-time updating on the tooltip when clicked.
+	v1.0
+		TOC Update for Legion
+		Bug Fix: :ldbClickMap() handler will no longer attempt to call the service function of a functionless service entry (ClickMap service functions are not stored in the savedvariable and must be attached tot he service handle during runtime. If the referenced addon or service module is not loaded, the service function will not be attached.  Note that this is an .9.9L-series architecture stability-artifact: the service handling would have to be abstracted (ExecAssist service => n-Intern Module service -> ===> Service Provider, rather than current ExecAssist service ===> Service Provider. Service Architecture will likely be adjust in the future to allow for clickmap service hooks to be added to libExecAssist)
+		
+	v.9.9.o
+		GameTooltip now hides when opening the clickmap configuration
+		Bug: Reset Reschedule setting improper offset leading to improper resets and occasional client-load issues as AceTimer needed an aspirin
+		Assorted other Teeny-tiny-Tweaks
+
+	V.9.9.l-n: Special Thanks to Torchler for Intern Module testing.
+	
+	v.9.9.n
+		BUG FIX: Repaired bug when copying data from Global Task Window to Char Specific Task Window
+		BUG FIX: Repaired several Char Specific Task Window control and response bugs
+		BUG FIX: Repaired Purgable tag (comparitor was using 0.9.9L type-detection model)
+		
+		Normalization: Timer Handling Logic has been normalized and optimized. This should be transparent to the user but at most it should cause a single hiccup in automatic reset dates.
+	
+	v.9.9.m
+		NEW FEATURE: Width Constraint for Task Window: 3 modes: No Constraints, Maximum Width, and Fixed Width.
+		
+		NEW FEATURE: Toggle Hide Task Window Control Buttons (Task Window Options) & ClickMap entry to toggle. Note that it only applies when the window position is locked; control buttons will always show when movable.  When no Groups or Tasks are displayed, the window border will still be visible depending on the border style you elect to use.
+		
+		NEW FEATURE: Color codes (well, any escape code really) can now be used with Group and Task Names. Codes are exposed to the user by swapping the escape "|" char and "//" (e.g. //cffff9966TEXT//r => |cffff9966TEXT|r). If the "|" char is used directly, it will not be considered an escape char and will print as typed.  DO NOTE that the 'end color' tag will interrupt the config-only group name override-color but will display properly in the task window and tooltip.
+		
+		Correction: Collapse Map Garbage (when groups deleted) now being properly cleaned up.
+		
+		BUG FIX: Reorganization: Group now cannot be put inside group in its own lineage
+		
+		BUG FIX: resolved problems with Task Window Options reacting badly when the Task Window was unloaded.
+	
+		Internal Task Type Handling method refactored to allow modules to extend the number of Task Types.
+
+		BUG FIX (x2): Display Counts on Headers: Tooltip and Task Window. Code to 'update in place' instead of refresh the entire respective control would throw an error or not immediately visually update respectively. Both bugs have been fixed.
+
+		Blizzard Addons Panel now closes when using the Blizzard Addons Panel Buttons to open ExecAssist Configuration / ClickMap
+		
+		ExecAssist Configuration dialog now closes when opening the ClickMap Configuration (from inside the Configuration Dialog)		
+		
+		BUG FIX Click Map "Key In Use" message was not always showing the in-use operation
+		
+		BUG FIX: "Hide Empty Groups" now properly obeyed again -- REALLY this time (Not Displayed = Not Counted)
+		
+	v.9.9.l	
+		NEW FEATURE: LibExecAssist -- library for managing Groups/Tasks/Completion for 3rd party Addons is available. Stand Alone example provided separately 
+		
+			PURPOSE: to allow full-featured Addons the ability to inject and control Tasks based on 3rd-party addon criteria to let users create a single notification-of-action location IN ADDITION TO the x-number of addons' individual different alert methods.
+		
+		NEW FEATURE: Module plugins can now be added (referred to as "Interns" under ExecAssist naming conventions). Small framework adjustments were made to allow modules to inject Help, Click Map entries, Configuration, and custom controls.
+		
+			PURPOSE: to provide new functions w/o bloating Executive Assistant and give the user some de-cluttering control. Some planned modules also add 'stub' features (e.g., the Quest Intern will pick up Daily and Weekly quests, let you make ExecAssist Tasks from them, and automatically mark them 'complete' when you turn that quest in. (ExecAssist natively resets the Tasks)
+			
+		(embeddable library for 3rd party addons)
+		BUG FIX: :AddGroup() properly accepts a nil for the 2nd arg
+		UPDATE: added 3rd para to Add Group (..., noProgeny<boolean>) to suppress creating the 1st child task	
+
+		Convinced the configuration dialog to update the status panel when tabs were switched. It's a cheat and a kludge and I'm a bad, bad bear, but I like it and it's stayin'					
+	
+		BUG FIX: "Hide Empty Groups" now properly obeyed again
+	
+		Added sub-table selectability from Dialog short-calls
+		
+		BUG FIX: New Groups and Tasks autoselection repaired
+	
+		Fixed two places where AddonName was used when L.appName should have been
+		
+		BUG FIX: Header on Task Management page was being in advertently eaten by the pruner -- how the hell did I overlook that this long??
+	
+
+	v.9.9.k
+		New Control: for Task Window 'Remember Toggle State' at startup. (This restores implicit (read: accidental) functionality present pre 0.9.9i that caused problems). This state is ENABLED by Default.
+		
+		Minor optimizations
+		
+		Uncomplicated previous overcomplication as the electro-weak force lobby is far better funded than previously anticipated (module will be developed further in another project, then maybe we'll out-spend that dasterdly electro-weak force lobby)
+		
+	v.9.9.j
+		Overcomlicated some code just to see if it could be overcomplicated w/o causing a breakdown in the electro-weak force
+		
+		Minor optimizations and under-the-covers corrections
+	
+	v.9.9.i
+		BUG FIX: "Moving Border Issues." Some users experienced problems with the moving border being duplicated many times causing some rather bizarre behavior. This was a symptom of a Task Window toggle-handling problem (and too little late-night coffee) that has now been repaired.
+		
+		Users having issues with the Moving Border should now both find it behaving properly and lower ExecAssist resource utilization.
+	
+		FEATURE CHANGE: Purgable Task Behavior has been altered somewhat. (Skip to TL;DR if the 'why' of things is unimportant to you)
+		
+		When purgables are purged, any completed Tasks are deleted from the system. (see Ex 1)
+			Example 1: Create a purgable task, mark it complete, run the purge, zip its gone.
+			
+		However, as seen in Ex 2, some somewhat illogical behaivor is witnessed.
+			Example 2: Create a purgable task, mark it complete, swap to another char, mark it complete, swap to a 3rd where it is NOT complete, run the purge, zip its gone.
+			
+		In ExecAssist Versions up to v.9.9h, Purgables acted as defacto Account Wide Tasks but didn't Display that way. Needless to say, this causes a bit of unintended confusion.
+		
+		There are two routes to addressing this illogical behavior: 
+			 * Force-set-and-lock "Account Wide" for all Purgable Tasks and explain that "one use" means "one use from the USER point of view" -- which is contextually inconsistent wit the Task Management panel.
+			 * Alter the meaning of what "Complete" means in the code, and the behavior of 2-of-7-not-complete and handle the 5 "complete for character" in a way that 'disappears' them from that character but not from two waiting; and when 7-of-7-are-complete and the purge is run, THEN it is deleted.
+		
+		Unfortunately, both systems lead to a degree of confusion. The former mixes contexts badly but perhaps forgivably (as they can be made 'per char' by dropping them in only-seen-by-X-char groups. The latter allows Tasks to be errantly assigned to characters and hang around forEVER forcing the user to manually delete them or have them be a bit more of a management headache.
+		
+		I actually prefer the former solution as this fits how I use the things and why this logic problem never surfaced in all the time I've been fiddling with these things. That said, one of the *core* functionality aspects of ExecAssist is WO/UM (Write Once / Use Many) and to have one-time-task set for many characters using MY method, you'd have to create multiple events with the same text. (The sound you hear is my head hiddint the desk)
+		
+		TL;DR So, here's what the system now looks like: 		
+			Character Point of View: Purgable Task is Shown, Purgable Task is Completed, Purgables Purged, Task Disappears
+		
+			User / Task Management Point of View: 
+				Single Char Completes Purgable Task, Purgables Purged, Task is marked "Disabled" for the Completing Character
+				
+				All Using Chars Complete: Last Char Completes, Purgables Purged, Task is Deleted
+		
+			Account Wide reaches the 'all using chars complete' when marked completed by any char
+			
+		Nota Bene: The Characters by Task will be a godsend for this method. 
+		
+		
+		
+	v.9.9.h
+		NEW FEATURE: Calendar Automatic Task, allows for automatic resetting every n-Days. n=(1->365)
+
+		NEW FEATURE: Date-Based Reminder Task. Not displayed until the appointed day then appears as a Purgable Task
+		
+		NEW FEATURE: Show or Suppress Login Alerts (These alerts tell you what types of tasks were reset)
+		
+		Help for Special Types and Task Types reworked and expanded
+		
+		Minor visual bug related to Reorganization has been squashed
+		
+	v.9.9.g
+		NEW FEATURE: New Task Type: 'At Login'  This Task will reset at -each- login (requested by onedeadhero to remind to check garrison missions and other each-login reminders)
+
+		Tweaks to dragFrame handling to see if it resolves s-conley's reported behavior (since I can't reproduce it natively)
+
+		Dialog Window Status Bar Text now Status Bar Texting
+		
+	v.9.9.f
+		FEATURE UPDATE: Configuration... I know some folks love having all the addon configuration options in one place (the Bliz Options Frame) but it's not re-sizable (for reasons that still mystify me) which is a problem for Task Management at minimum. The AceConfigDialog /is/ re-sizable but it doesn't handle things quite the same way as the blizzard options panel (which is highly problematic) and winds up being rather confusing when the same style is used -- Tabs and Select are ok (but Select is a pain-in-the-ass) but Tree (the preferred) doesn't produce the same two-panel results you see in the blizzard opts (b/c it's only one panel).
+		
+		Neither is ideal and in the end, usability had to prevail. Optionally switching is an extremely minor technical issue and a teeny amount of added overhead and still manages to be confusing (even with forced reloads) and this beast is already confusing enough.
+		
+		If there really, really is call for it being optional, it can revisited.
+		
+		BUG: Accumulation error with sibling mapping repaired. 
+		
+		UPDATES: Collapse Map garbage collection strategy altered; now prunes char at login. Alpha-list made explicit rather than implicit.
+		
+	v.9.9e
+		EXPANDED FEATURE: Optional use of Blizzard Options frame or Re-sizable Configuration Dialog for all options.
+		
+	v.9.9d
+		NEW FEATURE: A 'drag-handle' Border has been added to the Task Window when it is available for moving. This feature may be Disabled under the Task Window 'Window Positioning' options.		
+		(related) 
+		Chat-Frame alerts are also displayed when locked/unlocked via any method. 
+		New Initial Task instructs user to lock the task window to get around that.		
+
+		NEW FEATURE: Optional Re-sizable Configuration Dialog for Task Management
+		
+		TWEAK: Updated Help and Information & tooltip for Daily/Weekly Rests to denote it is local-time-zone to avoid any confusion that it might refer to the server.
+		
+		BUG FIX: decimal color to hex color sometimes return single-digit hex instead of double-digit (e.g., 9d -> 9h instead of 09h) causing the |cff[hex] to show instead of being converted to markup.
+		
+		BUG FIX: task window refresh was not re-fetching fonts so would not dynamically adjust to style-manager updates; font wasn't re-applied to zoom-group area
+		
+		DESIGN CHANGE: Task Window Counts to use Header Font rather than Standard Font
+		BUG FIX(es): Several fixes to zoom-group special type display (inherits color properly, hides when IN zoom group (redundant), etc.
+		
+		BUG FIX: Task Window Hide-In-Combat events were being set at login if the option was checked even use task window was disabled. Gave the code a good talking to about the responsible use of logic.
+		
+	v.9.9c
+		TWEAK: Help and Information Display re New Users was tweaked for layout
+		BUG: "Hide Empty Groups" now properly obeyed in DataBroker Tooltip, Characters by Tasks display mode
+
+	v.9.9 
+		NEW FEATURE: Reorganization of Groups and Tasks. Initially this wasn't a feature on the table however when the core group/task architecture was refactored to the relational agglomeration, it became possible. The motility -itself- is simple however it took some experimentation to fine-tune the UX and determine if there was -any- reasonable workaround to the bruit-force update method that seems to be required. The method selected was a "reorg mode" which hides the normal controls and gives the user as close to drag-drop as I can get (pick up / put down)
+
+		BUG FIX: Group Name Color now working again (nb: this was a regression).
+
+		LOCALIZATION: Cleaned up some errant strings related to new user controls
+
+		EXCESSIVE ORGANIZATION UNEXCESSIVIZED: category pages should carry controls properly (applies to Help and Information categories as well as Group Names under Task Maintenance.)
+		
+	v.9.8
+		FIXED: File Cabinet updated to add in current character data if restored configuration does not contain the current character
+		** RELEASE CANDIDATE **
+

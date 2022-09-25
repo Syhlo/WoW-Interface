@@ -112,20 +112,21 @@ MADB = {
 						3.999889844679724, -- [5]
 					},
 				},
-				["BagItemTooltipMover"] = {
+				["ObjectiveTrackerBonusBannerFrame"] = {
 					["orgPos"] = {
 						"TOP", -- [1]
 						"UIParent", -- [2]
-						0, -- [3]
+						"TOP", -- [3]
 						0, -- [4]
+						-170, -- [5]
 					},
-					["name"] = "BagItemTooltipMover",
+					["name"] = "ObjectiveTrackerBonusBannerFrame",
 					["pos"] = {
 						"TOP", -- [1]
 						"UIParent", -- [2]
 						"TOP", -- [3]
-						433.0009765625, -- [4]
-						-960.9985885620117, -- [5]
+						13, -- [4]
+						-65.99969482421875, -- [5]
 					},
 				},
 				["ExtraAbilityContainer"] = {
@@ -145,56 +146,6 @@ MADB = {
 						124.9997863769531, -- [5]
 					},
 				},
-				["ObjectiveTrackerBonusBannerFrame"] = {
-					["orgPos"] = {
-						"TOP", -- [1]
-						"UIParent", -- [2]
-						"TOP", -- [3]
-						0, -- [4]
-						-170, -- [5]
-					},
-					["name"] = "ObjectiveTrackerBonusBannerFrame",
-					["pos"] = {
-						"TOP", -- [1]
-						"UIParent", -- [2]
-						"TOP", -- [3]
-						13, -- [4]
-						-65.99969482421875, -- [5]
-					},
-				},
-				["TooltipMover"] = {
-					["orgPos"] = {
-						"TOP", -- [1]
-						"UIParent", -- [2]
-						0, -- [3]
-						0, -- [4]
-					},
-					["name"] = "TooltipMover",
-					["pos"] = {
-						"TOP", -- [1]
-						"UIParent", -- [2]
-						"TOP", -- [3]
-						433.0009765625, -- [4]
-						-958.9985885620117, -- [5]
-					},
-				},
-				["ObjectiveTrackerFrameMover"] = {
-					["orgPos"] = {
-						"TOPRIGHT", -- [1]
-						"MinimapCluster", -- [2]
-						"BOTTOMRIGHT", -- [3]
-						-10, -- [4]
-						0, -- [5]
-					},
-					["name"] = "ObjectiveTrackerFrameMover",
-					["pos"] = {
-						"TOPRIGHT", -- [1]
-						"MinimapCluster", -- [2]
-						"BOTTOMRIGHT", -- [3]
-						-65.9996337890625, -- [4]
-						-51.0001220703125, -- [5]
-					},
-				},
 				["VehicleSeatIndicator"] = {
 					["orgPos"] = {
 						"TOPRIGHT", -- [1]
@@ -212,28 +163,12 @@ MADB = {
 						-696.9999694824219, -- [5]
 					},
 				},
-				["GuildBankItemTooltipMover"] = {
-					["orgPos"] = {
-						"TOP", -- [1]
-						"UIParent", -- [2]
-						0, -- [3]
-						0, -- [4]
-					},
-					["name"] = "GuildBankItemTooltipMover",
-					["pos"] = {
-						"TOP", -- [1]
-						"UIParent", -- [2]
-						"TOP", -- [3]
-						434.0004272460938, -- [4]
-						-959.9994506835938, -- [5]
-					},
-				},
 			},
 		},
 	},
 	["modifiedFramesOnly"] = true,
-	["tooltips"] = true,
-	["playSound"] = false,
-	["noBags"] = false,
 	["closeGUIOnEscape"] = false,
+	["noBags"] = false,
+	["playSound"] = false,
+	["tooltips"] = true,
 }

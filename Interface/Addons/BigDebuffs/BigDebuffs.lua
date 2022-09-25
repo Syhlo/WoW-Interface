@@ -294,6 +294,8 @@ else
         SHAMAN = {
             Disease = true,
             Poison = true,
+            -- Shamans 'Cleanse Spirit' restoration talent
+            Curse = function () return IsUsableSpell(GetSpellInfo(51886)) end
         },
         WARLOCK = {
             -- Felhunter's Devour Magic or Doomguard's Dispel Magic
@@ -1064,9 +1066,21 @@ function BigDebuffs:COMBAT_LOG_EVENT_UNFILTERED()
                     if improvedConcAuraRank > 0 and UnitBuffByName(unit, "Concentration Aura") then
                         duration = duration * (1.0 - 0.1 * improvedConcAuraRank)
                     end
-                end
-                if playerClass == "SHAMAN" then
+                elseif playerClass == "SHAMAN" then
                     local focusedMindRank = select(5, GetTalentInfo(3, 14))
+                    if focusedMindRank > 0 then
+                        duration = duration * (1.0 - 0.1 * focusedMindRank)
+                    end
+                end
+            elseif WOW_PROJECT_ID == WOW_PROJECT_WRATH_CLASSIC then
+                local _, playerClass = UnitClass("player")
+                if playerClass == "PALADIN" then
+                    local improvedConcAuraRank = select(5, GetTalentInfo(1, 8))
+                    if improvedConcAuraRank > 0 and UnitBuffByName(unit, "Concentration Aura") then
+                        duration = duration * (1.0 - 0.1 * improvedConcAuraRank)
+                    end
+                elseif playerClass == "SHAMAN" then
+                    local focusedMindRank = select(5, GetTalentInfo(3, 16))
                     if focusedMindRank > 0 then
                         duration = duration * (1.0 - 0.1 * focusedMindRank)
                     end

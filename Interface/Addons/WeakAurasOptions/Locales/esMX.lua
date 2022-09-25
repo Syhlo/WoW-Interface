@@ -131,7 +131,7 @@ local L = WeakAuras.L
 	--[[Translation missing --]]
 	L["|cFFffcc00Font Flags:|r |cFFFF0000%s|r and shadow |c%sColor|r with offset |cFFFF0000%s/%s|r%s%s%s"] = "|cFFffcc00Font Flags:|r |cFFFF0000%s|r and shadow |c%sColor|r with offset |cFFFF0000%s/%s|r%s%s%s"
 	--[[Translation missing --]]
-	L["|cFFffcc00Format Options|r"] = "|cFFffcc00Format Options|r"
+	L["|cffffcc00Format Options|r"] = "|cffffcc00Format Options|r"
 	--[[Translation missing --]]
 	L[ [=[• |cff00ff00Player|r, |cff00ff00Target|r, |cff00ff00Focus|r, and |cff00ff00Pet|r correspond directly to those individual unitIDs.
 • |cff00ff00Specific Unit|r lets you provide a specific valid unitID to watch.
@@ -592,6 +592,8 @@ UNIT_POWER, UNIT_AURA PLAYER_TARGET_CHANGED]=]
 	--[[Translation missing --]]
 	L["Filter by Nameplate Type"] = "Filter by Nameplate Type"
 	--[[Translation missing --]]
+	L["Filter by Npc ID"] = "Filter by Npc ID"
+	--[[Translation missing --]]
 	L["Filter by Raid Role"] = "Filter by Raid Role"
 	--[[Translation missing --]]
 	L["Filter by Specialization"] = "Filter by Specialization"
@@ -637,7 +639,6 @@ Can use \ to escape -.]=]
 	L["Frame Width"] = "Frame Width"
 	--[[Translation missing --]]
 	L["Frequency"] = "Frequency"
-	L["From Template"] = "Desde la plantilla"
 	--[[Translation missing --]]
 	L["Full Circle"] = "Full Circle"
 	--[[Translation missing --]]
@@ -944,6 +945,8 @@ Sólo un valor coincidente puede ser escogido.]=]
 	--[[Translation missing --]]
 	L["Note: The legacy buff trigger is now permanently disabled. It will be removed in the near future."] = "Note: The legacy buff trigger is now permanently disabled. It will be removed in the near future."
 	--[[Translation missing --]]
+	L["Npc ID"] = "Npc ID"
+	--[[Translation missing --]]
 	L["Number of Entries"] = "Number of Entries"
 	--[[Translation missing --]]
 	L["Offer a guided way to create auras for your character"] = "Offer a guided way to create auras for your character"
@@ -1016,6 +1019,8 @@ Sólo un valor coincidente puede ser escogido.]=]
 	L["Position Settings"] = "Position Settings"
 	--[[Translation missing --]]
 	L["Preferred Match"] = "Preferred Match"
+	--[[Translation missing --]]
+	L["Premade Auras"] = "Premade Auras"
 	--[[Translation missing --]]
 	L["Premade Snippets"] = "Premade Snippets"
 	L["Preset"] = "Predefinido"
@@ -1096,6 +1101,8 @@ Sólo un valor coincidente puede ser escogido.]=]
 	L["Same texture as Foreground"] = "Same texture as Foreground"
 	L["Scale"] = "Ajustar tamaño"
 	L["Search"] = "Buscar"
+	--[[Translation missing --]]
+	L["Select Talent"] = "Select Talent"
 	L["Select the auras you always want to be listed first"] = "Selecciona las auras que quieras que sean listadas primero"
 	--[[Translation missing --]]
 	L["Selected Frame"] = "Selected Frame"

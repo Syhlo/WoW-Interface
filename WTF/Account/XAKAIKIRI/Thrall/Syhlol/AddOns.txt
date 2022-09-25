@@ -8,3 +8,4 @@ WeakAurasArchive: enabled
 Bagnon_GuildBank: disabled
 Capping_Options: enabled
 Favorites: disabled
+DynamicCam: enabled

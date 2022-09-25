@@ -1,22 +1,15 @@
 # <DBM> World Bosses (Shadowlands)
 
-## [9.2.30](https://github.com/DeadlyBossMods/DBM-Retail/tree/9.2.30) (2022-08-16)
-[Full Changelog](https://github.com/DeadlyBossMods/DBM-Retail/compare/9.2.29...9.2.30) [Previous Releases](https://github.com/DeadlyBossMods/DBM-Retail/releases)
+## [9.2.34](https://github.com/DeadlyBossMods/DBM-Retail/tree/9.2.34) (2022-09-15)
+[Full Changelog](https://github.com/DeadlyBossMods/DBM-Retail/compare/9.2.33...9.2.34) [Previous Releases](https://github.com/DeadlyBossMods/DBM-Retail/releases)
 
-- bump tocs, prepare tag  
-- TOC bumps  
-- Fix typo  
-- Eranog Drycode  
-- Fixed a bug where blood barrier had wrong spellid/name  
-- small timer tweak  
-- Fix lua error  
-- More aggressive filtering and throttling for guild boss engage/defeat syncs in classic wow  
-- Update guardian to post hotfix affix behavior (which is actually quite a bit worse than pre hotfix, it's now possible to do entire fight without even seeing it 🤷‍♂️)  
-- Just don't do a stage 2 timer for affix on sylvanas, it's not reliable. post hotfix it's even less accurate somehow (despite blizzards attempt to make it more accurate).  
-    Fixed a bug causing first one of stage 3 not to show (I forgot to type it into table)  
-- German localization for Core  
-- German localization for GUI  
-- Fix another typo  
-- Fix typo  
-- slight timer tweak  
-- bump alpha  
+- prep new tags for wrath classic and retail Retail: Mostly Affix updates Wrath: more TBC fixes fo stuff pre patch broke  
+- Push rest of event affix timer changes + weekly affix timer updates  
+- Few affix timmer udpates  
+    This isn't done, have a lot more updates, but wanted to push some of them out now before bed.  
+- Terros drycode  
+- Always unschedule on encounter end (even if not initialized yet), to avoid reporting failed detection on early wipes/resets Closes #807  
+- Update castle nathria affixes timer data.  
+- Revert "Apparently arc counting is hard. Every single phase change announce ever put in DBM core, is using wrong arg for sound version"  
+- Weekly Kurog update it seems  
+- Bump alphas  

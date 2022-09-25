@@ -9,9 +9,13 @@ L.flagRespawns = "Réapparition drapeau(x)"
 
 L.takenTheFlagTrigger = "^(.+) a pris le drapeau !"
 L.hasTakenTheTrigger = "s'est emparée"
-L.upgradeToTrigger = "Passé à"
 L.droppedTrigger = "a été lâché"
 L.capturedTheTrigger = "a pris le drapeau de"
+
+--- Alterac Valley
+--- This is the trigger option when talking to the NPC to auto hand in the quest items
+--- This chat interaction only appears when the NPC is ready to start an upgrade, and you need to confirm it
+L.upgradeToTrigger = "Passé à"
 
 L.hordeGate = "Porte de la Horde"
 L.allianceGate = "Porte de l'Alliance"
@@ -28,6 +32,8 @@ L.balinda = "Balinda" -- Capitaine Balinda Gîtepierre
 L.ivus = "Ivus" -- Ivus le Seigneur de la forêt
 L.lokholar = "Lokholar" -- Lokholar le Seigneur des glaces
 L.handIn = "|cFF33FF99Capping|r: Remise automatique des objets de quête."
+L.anchorTooltip = "|cffeda55fClic droit|r pour accéder aux options."
+--L.anchorTooltipNote = "Open the options and lock the bars to hide this moving anchor."
 
 --- Alliance IoC Workshop yells:
 -- Mécano gnome crie : J'en suis à la moitié ! Tenez la Horde à distance. On n'apprend pas à se battre dans les écoles d'ingénieurs !
@@ -58,3 +64,9 @@ L.mainEntrance = "Entrée principale"
 L.westTower = "Tour Ouest"
 L.southTower = "Tour Sud"
 L.eastTower = "Tour Est"
+
+-- Arena
+--L.arenaStartTrigger = "The Arena battle has begun!" -- Needs to match the in game text exactly
+--L.arenaStart60s = "One minute until the Arena battle begins!" -- Needs to match the in game text exactly
+--L.arenaStart30s = "Thirty seconds until the Arena battle begins!" -- Needs to match the in game text exactly
+--L.arenaStart15s = "Fifteen seconds until the Arena battle begins!" -- Needs to match the in game text exactly

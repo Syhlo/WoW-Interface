@@ -7,33 +7,40 @@ ADDON.L = {}
 local L = ADDON.L
 
 L["Black Market"] = "Black Market"
-L["Family"] = "Family"
+L["DRESSUP_LABEL"] = "Journal"
+L["FAVOR_AUTO"] = "Auto-favor new mounts"
 L["FAVOR_DISPLAYED"] = "All Displayed"
 L["FAVOR_PER_CHARACTER"] = "Per Character"
-L["FAVOR_AUTO"] = "Auto-favor new mounts"
+L["FILTER_ONLY_LATEST"] = "Only latest additions"
+L["FILTER_SECRET"] = "Hidden by the game"
+L["Family"] = "Family"
 L["Hidden"] = "Hidden"
 L["Only tradable"] = "Only tradable"
 L["Only usable"] = "Only usable"
 L["Passenger"] = "Passenger"
-L["Reset filters"] = "Reset filters"
 L["ROTATE_DOWN"] = "Rotate Down"
 L["ROTATE_UP"] = "Rotate Up"
-L["DRESSUP_LABEL"] = "Journal"
-L["SORT_BY_LEARNED_DATE"] = "Date of receipt"
-L["SORT_BY_USAGE_COUNT"] = "Count of usage"
+L["Reset filters"] = "Reset filters"
 L["SORT_BY_LAST_USAGE"] = "Last usage"
+L["SORT_BY_LEARNED_DATE"] = "Date of receipt"
 L["SORT_BY_TRAVEL_DISTANCE"] = "Travelled distance"
 L["SORT_BY_TRAVEL_DURATION"] = "Travelled duration"
+L["SORT_BY_USAGE_COUNT"] = "Count of usage"
 L["SORT_FAVORITES_FIRST"] = "Favorites First"
 L["SORT_REVERSE"] = "Reverse Sort"
-L["SORT_UNUSABLE_BOTTOM"] = "Unusable after Usable"
 L["SORT_UNOWNED_BOTTOM"] = "Unowned at Bottom"
+L["SORT_UNUSABLE_BOTTOM"] = "Unusable after Usable"
+L["STATS_TIP_LEARNED_DATE_HEAD"] = "Possession date"
+L["STATS_TIP_RARITY_HEAD"] = "Rarity"
+L["STATS_TIP_RARITY_TEXT"] = "% of characters who own this mount\nData is kindly provided by {RR}."
+L["STATS_TIP_TRAVEL_DISTANCE_HEAD"] = "Travel distance"
+L["STATS_TIP_TRAVEL_TIME_HEAD"] = "Travel time"
+L["STATS_TIP_TRAVEL_TIME_TEXT"] = "in hours:minutes:seconds"
+L["STATS_TIP_USAGE_COUNT_HEAD"] = "Usage count"
 L["TASK_END"] = "[MJE] Phew! I'm done."
 L["TASK_FAVOR_START"] = "[MJE] Reapplying stars all over your mounts. Please wait a few seconds until I'm finished."
 L["TOGGLE_COLOR"] = "Show next color variation"
 L["Transform"] = "Transform"
-L["FILTER_ONLY_LATEST"] = "Only latest additions"
-L["FILTER_SECRET"] = "Hidden by the game"
 
 -- Families
 L["Airplanes"] = "Airplanes"
@@ -203,11 +210,13 @@ L["Yetis"] = "Yetis"
 -- Settings
 L["DISPLAY_ALL_SETTINGS"] = "Display all settings"
 L["RESET_WINDOW_SIZE"] = "Reset journal size"
+L["SETTING_ABOUT_AUTHOR"] = "Author"
 L["SETTING_ACHIEVEMENT_POINTS"] = "Show achievement points"
 L["SETTING_AUTO_FAVOR"] = "Automatically set new mounts as favorite"
 L["SETTING_COMPACT_LIST"] = "Compact mount list"
 L["SETTING_CURSOR_KEYS"] = "Enable Up&Down keys to browse mounts"
 L["SETTING_FAVORITE_PER_CHAR"] = "Favorite mounts per character"
+L["SETTING_HEAD_ABOUT"] = "About"
 L["SETTING_HEAD_BEHAVIOUR"] = "Behavior"
 L["SETTING_MOUNT_COUNT"] = "Show personal mount count"
 L["SETTING_MOVE_EQUIPMENT"] = "Move equipment slot into display"
@@ -216,8 +225,9 @@ L["SETTING_PERSONAL_HIDDEN_MOUNTS"] = "Apply hidden mounts only to this characte
 L["SETTING_PERSONAL_UI"] = "Apply Interface settings only to this character"
 L["SETTING_PREVIEW_LINK"] = "Show Collection button in mount preview"
 L["SETTING_SEARCH_MORE"] = "Search also in description text"
+L["SETTING_SEARCH_NOTES"] = "Search also in own notes"
 L["SETTING_SHOP_BUTTON"] = "Show shop button at untrained shop mounts"
-L["SETTING_SHOW_USAGE"] = "Display mount usage statistics"
+L["SETTING_SHOW_STATISTICS"] = "Show mount statistics in display"
 L["SETTING_TRACK_USAGE"] = "Track mount usage behavior on all characters"
 L["SETTING_YCAMERA"] = "Unlock Y rotation with mouse in display"
 
@@ -246,6 +256,14 @@ L["SORT_FAVORITES_FIRST"] = "Favoriten zuerst"
 L["SORT_REVERSE"] = "Sortierung umkehren"
 L["SORT_UNOWNED_BOTTOM"] = "Nicht gesammelt nach unten"
 L["SORT_UNUSABLE_BOTTOM"] = "Nicht nutzbare nach nutzbaren"
+L["STATS_TIP_LEARNED_DATE_HEAD"] = "Besitzdatum"
+L["STATS_TIP_RARITY_HEAD"] = "Seltenheit"
+L["STATS_TIP_RARITY_TEXT"] = [=[% an Charakteren die dieses Reittier besitzen.
+Daten wurden freundlicherweise von {RR} bereit gestellt.]=]
+L["STATS_TIP_TRAVEL_DISTANCE_HEAD"] = "Reisedistanz"
+L["STATS_TIP_TRAVEL_TIME_HEAD"] = "Reisedauer"
+L["STATS_TIP_TRAVEL_TIME_TEXT"] = "als Stunden:Minuten:Sekunden"
+L["STATS_TIP_USAGE_COUNT_HEAD"] = "Anzahl der Einsätze"
 L["TASK_END"] = "[MJE] Uff! Endlich geschafft."
 L["TASK_FAVOR_START"] = "[MJE] Bitte warten. Deine Reittiere werden mit Sternen neu beklebt."
 L["TOGGLE_COLOR"] = "Zeige nächste Farbvariante"
@@ -254,12 +272,14 @@ L["Transform"] = "Verwandlung"
     -- Settings
 L["DISPLAY_ALL_SETTINGS"] = "Zeige alle Einstellungen"
 L[ [=[RESET_WINDOW_SIZE
-]=] ] = "Fentergröße zurücksetzen"
+]=] ] = "Journalgröße zurücksetzen"
+L["SETTING_ABOUT_AUTHOR"] = "Autor"
 L["SETTING_ACHIEVEMENT_POINTS"] = "Zeige Erfolgspunkte"
 L["SETTING_AUTO_FAVOR"] = "Setze neue Reittiere automatisch als Favoriten"
 L["SETTING_COMPACT_LIST"] = "Kompakte Mount-Liste"
 L["SETTING_CURSOR_KEYS"] = "Aktiviere Aufwärts- und Abwärtspfeiltaste zum Durchblättern"
 L["SETTING_FAVORITE_PER_CHAR"] = "Speichere Favoriten pro Charakter"
+L["SETTING_HEAD_ABOUT"] = "Über"
 L["SETTING_HEAD_BEHAVIOUR"] = "Verhalten"
 L["SETTING_MOUNT_COUNT"] = "Zeige Reittieranzahl diesen Charakters"
 L["SETTING_MOVE_EQUIPMENT"] = "Verschiebe Ausrüstungsplatz in Modellanzeige"
@@ -268,8 +288,9 @@ L["SETTING_PERSONAL_HIDDEN_MOUNTS"] = "Benutze versteckte Reittiere nur bei dies
 L["SETTING_PERSONAL_UI"] = "Benutze Interface-Einstellungen nur bei diesem Charakter"
 L["SETTING_PREVIEW_LINK"] = "Zeige Knopf zur Sammlung in Anprobe"
 L["SETTING_SEARCH_MORE"] = "Suche auch im Beschreibungstext"
+L["SETTING_SEARCH_NOTES"] = "Suche auch in eigenen Notizen"
 L["SETTING_SHOP_BUTTON"] = "Zeige Shop bei verfügbaren Reittieren"
-L["SETTING_SHOW_USAGE"] = "Zeige Statistiken zum Nutzungsverhalten"
+L["SETTING_SHOW_STATISTICS"] = "Zeige Statistiken in Modellanzeige"
 L["SETTING_TRACK_USAGE"] = "Verfolge Reittier Nutzungsverhalten bei allen Charakteren"
 L["SETTING_YCAMERA"] = "Aktiviere Y-Rotation via Maus in Modellanzeige"
 
@@ -329,7 +350,7 @@ L["Flies"] = "Fliegen"
 L["Flying Steeds"] = "Fliegende Pferde"
 L["Foxes"] = "Füchse"
 L["Gargon"] = "Gargon"
-L["Gargoyle"] = "Gargoyle"
+L["Gargoyle"] = "Wasserspeier"
 L["Goats"] = "Ziegen"
 L["Gorger"] = "Verschlinger"
 L["Gorm"] = "Gorm"
@@ -464,6 +485,13 @@ L["SORT_FAVORITES_FIRST"] = "Favoritas primero"
 L["SORT_REVERSE"] = "Ordenación inversa"
 L["SORT_UNOWNED_BOTTOM"] = "Faltantes al final"
 L["SORT_UNUSABLE_BOTTOM"] = "Inutilizables después de las Usables"
+L["STATS_TIP_LEARNED_DATE_HEAD"] = "Fecha de posesión"
+L["STATS_TIP_RARITY_HEAD"] = "Rareza"
+L["STATS_TIP_RARITY_TEXT"] = "el % de tus personajes tienen esta montura La información es proporcionada amablemente por {RR}."
+L["STATS_TIP_TRAVEL_DISTANCE_HEAD"] = "Distancia de viaje"
+L["STATS_TIP_TRAVEL_TIME_HEAD"] = "Duración del viaje"
+L["STATS_TIP_TRAVEL_TIME_TEXT"] = "en horas:minutos:segundos"
+L["STATS_TIP_USAGE_COUNT_HEAD"] = "Contador de usos"
 L["TASK_END"] = "[MJE] ¡Fiuuu! He acabado."
 L["TASK_FAVOR_START"] = "[MJE] Reaplicando estrellas a tus monturas. Por favor, espera unos segundos hasta que haya acabado."
 L["TOGGLE_COLOR"] = "Muestra las variaciones de colores"
@@ -473,11 +501,13 @@ L["Transform"] = "Transformaciones"
 L["DISPLAY_ALL_SETTINGS"] = "Mostrar todos los ajustes"
 L[ [=[RESET_WINDOW_SIZE
 ]=] ] = "Restablecer el tamaño del diario"
+L["SETTING_ABOUT_AUTHOR"] = "Autor"
 L["SETTING_ACHIEVEMENT_POINTS"] = "Mostrar los puntos de logros"
 L["SETTING_AUTO_FAVOR"] = "Selecciona automáticamente las nuevas monturas como favoritas"
 L["SETTING_COMPACT_LIST"] = "Compactar la lista de monturas"
 L["SETTING_CURSOR_KEYS"] = "Habilitar las teclas Arriba y Abajo para explorar las monturas"
 L["SETTING_FAVORITE_PER_CHAR"] = "Monturas favoritas por personaje"
+L["SETTING_HEAD_ABOUT"] = "Sobre"
 L["SETTING_HEAD_BEHAVIOUR"] = "Comportamiento"
 L["SETTING_MOUNT_COUNT"] = "Mostrar el número personal de monturas"
 L["SETTING_MOVE_EQUIPMENT"] = "Mover la ranura de equipo a la vista previa de la montura"
@@ -486,8 +516,9 @@ L["SETTING_PERSONAL_HIDDEN_MOUNTS"] = "Poner las monturas ocultas sólo para est
 L["SETTING_PERSONAL_UI"] = "Aplicar las opciones de interfaz sólo para este personaje"
 L["SETTING_PREVIEW_LINK"] = "Mostrar el botón Colección en la vista previa de la montura"
 L["SETTING_SEARCH_MORE"] = "Buscar también en la descripción del texto"
+L["SETTING_SEARCH_NOTES"] = "Buscar también en las notas propias"
 L["SETTING_SHOP_BUTTON"] = "Mostrar el botón de la tienda en las monturas que no se tienen"
-L["SETTING_SHOW_USAGE"] = "Mostrar las estadísticas de uso de las monturas"
+L["SETTING_SHOW_STATISTICS"] = "Mostrar las estadísticas de la montura en pantalla"
 L["SETTING_TRACK_USAGE"] = "Seguimiento del comportamiento de uso de las monturas en todos los personajes"
 L["SETTING_YCAMERA"] = "Desbloquear la rotación Y del ratón en la pantalla"
 
@@ -701,6 +732,21 @@ L["Reset filters"] = "Réinitialiser les filtres"
 --[[Translation missing --]]
 --[[ L["SORT_UNUSABLE_BOTTOM"] = "Unusable after Usable"--]] 
 --[[Translation missing --]]
+--[[ L["STATS_TIP_LEARNED_DATE_HEAD"] = "Possession date"--]] 
+--[[Translation missing --]]
+--[[ L["STATS_TIP_RARITY_HEAD"] = "Rarity"--]] 
+--[[Translation missing --]]
+--[[ L["STATS_TIP_RARITY_TEXT"] = [=[% of characters who own this mount
+Data is kindly provided by {RR}.]=]--]] 
+--[[Translation missing --]]
+--[[ L["STATS_TIP_TRAVEL_DISTANCE_HEAD"] = "Travel distance"--]] 
+--[[Translation missing --]]
+--[[ L["STATS_TIP_TRAVEL_TIME_HEAD"] = "Travel time"--]] 
+--[[Translation missing --]]
+--[[ L["STATS_TIP_TRAVEL_TIME_TEXT"] = "in hours:minutes:seconds"--]] 
+--[[Translation missing --]]
+--[[ L["STATS_TIP_USAGE_COUNT_HEAD"] = "Usage count"--]] 
+--[[Translation missing --]]
 --[[ L["TASK_END"] = "[MJE] Phew! I'm done."--]] 
 --[[Translation missing --]]
 --[[ L["TASK_FAVOR_START"] = "[MJE] Reapplying stars all over your mounts. Please wait a few seconds until I'm finished."--]] 
@@ -715,6 +761,8 @@ L["Transform"] = "Transformation"
 --[[ L[ [=[RESET_WINDOW_SIZE
 ]=] ] = "Reset journal size"--]] 
 --[[Translation missing --]]
+--[[ L["SETTING_ABOUT_AUTHOR"] = "Author"--]] 
+--[[Translation missing --]]
 --[[ L["SETTING_ACHIEVEMENT_POINTS"] = "Show achievement points"--]] 
 --[[Translation missing --]]
 --[[ L["SETTING_AUTO_FAVOR"] = "Automatically set new mounts as favorite"--]] 
@@ -724,6 +772,8 @@ L["Transform"] = "Transformation"
 --[[ L["SETTING_CURSOR_KEYS"] = "Enable Up&Down keys to browse mounts"--]] 
 --[[Translation missing --]]
 --[[ L["SETTING_FAVORITE_PER_CHAR"] = "Favorite mounts per character"--]] 
+--[[Translation missing --]]
+--[[ L["SETTING_HEAD_ABOUT"] = "About"--]] 
 --[[Translation missing --]]
 --[[ L["SETTING_HEAD_BEHAVIOUR"] = "Behavior"--]] 
 --[[Translation missing --]]
@@ -741,9 +791,11 @@ L["Transform"] = "Transformation"
 --[[Translation missing --]]
 --[[ L["SETTING_SEARCH_MORE"] = "Search also in description text"--]] 
 --[[Translation missing --]]
+--[[ L["SETTING_SEARCH_NOTES"] = "Search also in own notes"--]] 
+--[[Translation missing --]]
 --[[ L["SETTING_SHOP_BUTTON"] = "Show shop button at untrained shop mounts"--]] 
 --[[Translation missing --]]
---[[ L["SETTING_SHOW_USAGE"] = "Display mount usage statistics"--]] 
+--[[ L["SETTING_SHOW_STATISTICS"] = "Show mount statistics in display"--]] 
 --[[Translation missing --]]
 --[[ L["SETTING_TRACK_USAGE"] = "Track mount usage behavior on all characters"--]] 
 --[[Translation missing --]]
@@ -1061,6 +1113,21 @@ L["Reset filters"] = "필터 초기화"
 --[[ L["SORT_UNOWNED_BOTTOM"] = "Unowned at Bottom"--]] 
 --[[Translation missing --]]
 --[[ L["SORT_UNUSABLE_BOTTOM"] = "Unusable after Usable"--]] 
+--[[Translation missing --]]
+--[[ L["STATS_TIP_LEARNED_DATE_HEAD"] = "Possession date"--]] 
+--[[Translation missing --]]
+--[[ L["STATS_TIP_RARITY_HEAD"] = "Rarity"--]] 
+--[[Translation missing --]]
+--[[ L["STATS_TIP_RARITY_TEXT"] = [=[% of characters who own this mount
+Data is kindly provided by {RR}.]=]--]] 
+--[[Translation missing --]]
+--[[ L["STATS_TIP_TRAVEL_DISTANCE_HEAD"] = "Travel distance"--]] 
+--[[Translation missing --]]
+--[[ L["STATS_TIP_TRAVEL_TIME_HEAD"] = "Travel time"--]] 
+--[[Translation missing --]]
+--[[ L["STATS_TIP_TRAVEL_TIME_TEXT"] = "in hours:minutes:seconds"--]] 
+--[[Translation missing --]]
+--[[ L["STATS_TIP_USAGE_COUNT_HEAD"] = "Usage count"--]] 
 L["TASK_END"] = "[MJE] 작업 완료"
 L["TASK_FAVOR_START"] = "[MJE] 탈것 목록 즐겨찾기 재설정을 시작합니다"
 --[[Translation missing --]]
@@ -1074,12 +1141,16 @@ L["Transform"] = "변환"
 --[[ L[ [=[RESET_WINDOW_SIZE
 ]=] ] = "Reset journal size"--]] 
 --[[Translation missing --]]
+--[[ L["SETTING_ABOUT_AUTHOR"] = "Author"--]] 
+--[[Translation missing --]]
 --[[ L["SETTING_ACHIEVEMENT_POINTS"] = "Show achievement points"--]] 
 --[[Translation missing --]]
 --[[ L["SETTING_AUTO_FAVOR"] = "Automatically set new mounts as favorite"--]] 
 L["SETTING_COMPACT_LIST"] = "간소한 목록"
 L["SETTING_CURSOR_KEYS"] = "위 아래 화살표 키로 목록 탐색하기"
 L["SETTING_FAVORITE_PER_CHAR"] = "캐릭터별 즐겨찾기"
+--[[Translation missing --]]
+--[[ L["SETTING_HEAD_ABOUT"] = "About"--]] 
 --[[Translation missing --]]
 --[[ L["SETTING_HEAD_BEHAVIOUR"] = "Behavior"--]] 
 --[[Translation missing --]]
@@ -1095,9 +1166,11 @@ L["SETTING_MOVE_EQUIPMENT"] = "착용 장비 표시 이동"
 --[[ L["SETTING_PREVIEW_LINK"] = "Show Collection button in mount preview"--]] 
 --[[Translation missing --]]
 --[[ L["SETTING_SEARCH_MORE"] = "Search also in description text"--]] 
+--[[Translation missing --]]
+--[[ L["SETTING_SEARCH_NOTES"] = "Search also in own notes"--]] 
 L["SETTING_SHOP_BUTTON"] = "구매 버튼 활성화"
 --[[Translation missing --]]
---[[ L["SETTING_SHOW_USAGE"] = "Display mount usage statistics"--]] 
+--[[ L["SETTING_SHOW_STATISTICS"] = "Show mount statistics in display"--]] 
 --[[Translation missing --]]
 --[[ L["SETTING_TRACK_USAGE"] = "Track mount usage behavior on all characters"--]] 
 L["SETTING_YCAMERA"] = "표시 화면에서 마우스로 Y 축 회전 잠금 해제"
@@ -1320,6 +1393,21 @@ L["SORT_FAVORITES_FIRST"] = "Favoritos Primeiro"
 L["SORT_REVERSE"] = "Ordem Inversa"
 L["SORT_UNOWNED_BOTTOM"] = "Não aprendidos por último"
 L["SORT_UNUSABLE_BOTTOM"] = "Inutilizável depois de utilizável"
+--[[Translation missing --]]
+--[[ L["STATS_TIP_LEARNED_DATE_HEAD"] = "Possession date"--]] 
+--[[Translation missing --]]
+--[[ L["STATS_TIP_RARITY_HEAD"] = "Rarity"--]] 
+--[[Translation missing --]]
+--[[ L["STATS_TIP_RARITY_TEXT"] = [=[% of characters who own this mount
+Data is kindly provided by {RR}.]=]--]] 
+--[[Translation missing --]]
+--[[ L["STATS_TIP_TRAVEL_DISTANCE_HEAD"] = "Travel distance"--]] 
+--[[Translation missing --]]
+--[[ L["STATS_TIP_TRAVEL_TIME_HEAD"] = "Travel time"--]] 
+--[[Translation missing --]]
+--[[ L["STATS_TIP_TRAVEL_TIME_TEXT"] = "in hours:minutes:seconds"--]] 
+--[[Translation missing --]]
+--[[ L["STATS_TIP_USAGE_COUNT_HEAD"] = "Usage count"--]] 
 L["TASK_END"] = "[MJE] Ufa! Terminei."
 L["TASK_FAVOR_START"] = "[MJE] Reaplicando estrelas em todas as suas montagens. Por favor, espere alguns segundos até eu terminar."
 L["TOGGLE_COLOR"] = "Mostrar próxima variação de cor"
@@ -1329,11 +1417,15 @@ L["Transform"] = "Transformar"
 L["DISPLAY_ALL_SETTINGS"] = "Exibir todas as configurações"
 L[ [=[RESET_WINDOW_SIZE
 ]=] ] = "Redefinir tamanho do diário"
+--[[Translation missing --]]
+--[[ L["SETTING_ABOUT_AUTHOR"] = "Author"--]] 
 L["SETTING_ACHIEVEMENT_POINTS"] = "Mostrar Pontos de Conquista"
 L["SETTING_AUTO_FAVOR"] = "Definir automaticamente novas montagens como favoritas"
 L["SETTING_COMPACT_LIST"] = "Lista de Montarias Compacta"
 L["SETTING_CURSOR_KEYS"] = "Ativar as teclas para cima e para baixo para navegar pelas montarias"
 L["SETTING_FAVORITE_PER_CHAR"] = "Montarias favoritas por personagem"
+--[[Translation missing --]]
+--[[ L["SETTING_HEAD_ABOUT"] = "About"--]] 
 L["SETTING_HEAD_BEHAVIOUR"] = "Comportamento"
 L["SETTING_MOUNT_COUNT"] = "Mostrar contagem de montaria pessoal"
 L["SETTING_MOVE_EQUIPMENT"] = "Mova o slot do equipamento para a tela"
@@ -1342,8 +1434,11 @@ L["SETTING_PERSONAL_HIDDEN_MOUNTS"] = "Aplicar montarias ocultas apenas para est
 L["SETTING_PERSONAL_UI"] = "Aplicar configurações de inferface apenas para este personagem"
 L["SETTING_PREVIEW_LINK"] = "Mostrar Botão de Coleção na pré-visualização de montaria"
 L["SETTING_SEARCH_MORE"] = "Pesquisar também no texto de descrição"
+--[[Translation missing --]]
+--[[ L["SETTING_SEARCH_NOTES"] = "Search also in own notes"--]] 
 L["SETTING_SHOP_BUTTON"] = "Mostrar o botão de loja em montarias de loja não aprendidas"
-L["SETTING_SHOW_USAGE"] = "Exibir estatísticas de uso de montarias"
+--[[Translation missing --]]
+--[[ L["SETTING_SHOW_STATISTICS"] = "Show mount statistics in display"--]] 
 L["SETTING_TRACK_USAGE"] = "Rastreie o comportamento de uso da montaria em todos os personagens"
 L["SETTING_YCAMERA"] = "Desbloquear rotação vertical com o mouse na tela"
 
@@ -1516,366 +1611,237 @@ L["Yetis"] = "Yetis"
 elseif locale == "ruRU" then
     ADDON.isMetric = true
     L["Black Market"] = "Черный рынок"
---[[Translation missing --]]
---[[ L["DRESSUP_LABEL"] = "Journal"--]] 
+L["DRESSUP_LABEL"] = "Журнал"
 L["Family"] = "Семейство"
---[[Translation missing --]]
---[[ L["FAVOR_AUTO"] = "Auto-favor new mounts"--]] 
---[[Translation missing --]]
---[[ L["FAVOR_DISPLAYED"] = "All Displayed"--]] 
---[[Translation missing --]]
---[[ L["FAVOR_PER_CHARACTER"] = "Per Character"--]] 
---[[Translation missing --]]
---[[ L["FILTER_ONLY_LATEST"] = "Only latest additions"--]] 
---[[Translation missing --]]
---[[ L["FILTER_SECRET"] = "Hidden by the game"--]] 
+L["FAVOR_AUTO"] = "Автоматически добавлять новый транспорт в избранное"
+L["FAVOR_DISPLAYED"] = "Показать всех"
+L["FAVOR_PER_CHARACTER"] = "Избранный транспорт для каждого персонажа"
+L["FILTER_ONLY_LATEST"] = "Только последний патч"
+L["FILTER_SECRET"] = "Скрытые игрой"
 L["Hidden"] = "Скрытые"
---[[Translation missing --]]
---[[ L["Only tradable"] = "Only tradable"--]] 
-L["Passenger"] = "Пассажирский"
+L["Only tradable"] = "Только передающиеся"
+L["Passenger"] = "Пассажирские"
 L["Reset filters"] = "Сбросить фильтры"
+L["ROTATE_DOWN"] = "Вращение вниз"
+L["ROTATE_UP"] = "Вращение вверх"
+L["SORT_BY_LAST_USAGE"] = "Последнее использование"
+L["SORT_BY_LEARNED_DATE"] = "Дата получения"
+L["SORT_BY_TRAVEL_DISTANCE"] = "Преодоленное расстояние"
+L["SORT_BY_TRAVEL_DURATION"] = "Продолжительность поездки"
+L["SORT_BY_USAGE_COUNT"] = "Количество использований"
+L["SORT_FAVORITES_FIRST"] = "Избранные первыми"
+L["SORT_REVERSE"] = "Обратная сортировка"
+L["SORT_UNOWNED_BOTTOM"] = "Не полученные в конце списка"
+L["SORT_UNUSABLE_BOTTOM"] = "Не используемые после используемых"
 --[[Translation missing --]]
---[[ L["ROTATE_DOWN"] = "Rotate Down"--]] 
+--[[ L["STATS_TIP_LEARNED_DATE_HEAD"] = "Possession date"--]] 
 --[[Translation missing --]]
---[[ L["ROTATE_UP"] = "Rotate Up"--]] 
+--[[ L["STATS_TIP_RARITY_HEAD"] = "Rarity"--]] 
 --[[Translation missing --]]
---[[ L["SORT_BY_LAST_USAGE"] = "Last usage"--]] 
+--[[ L["STATS_TIP_RARITY_TEXT"] = [=[% of characters who own this mount
+Data is kindly provided by {RR}.]=]--]] 
 --[[Translation missing --]]
---[[ L["SORT_BY_LEARNED_DATE"] = "Date of receipt"--]] 
+--[[ L["STATS_TIP_TRAVEL_DISTANCE_HEAD"] = "Travel distance"--]] 
 --[[Translation missing --]]
---[[ L["SORT_BY_TRAVEL_DISTANCE"] = "Travelled distance"--]] 
+--[[ L["STATS_TIP_TRAVEL_TIME_HEAD"] = "Travel time"--]] 
 --[[Translation missing --]]
---[[ L["SORT_BY_TRAVEL_DURATION"] = "Travelled duration"--]] 
+--[[ L["STATS_TIP_TRAVEL_TIME_TEXT"] = "in hours:minutes:seconds"--]] 
 --[[Translation missing --]]
---[[ L["SORT_BY_USAGE_COUNT"] = "Count of usage"--]] 
---[[Translation missing --]]
---[[ L["SORT_FAVORITES_FIRST"] = "Favorites First"--]] 
---[[Translation missing --]]
---[[ L["SORT_REVERSE"] = "Reverse Sort"--]] 
---[[Translation missing --]]
---[[ L["SORT_UNOWNED_BOTTOM"] = "Unowned at Bottom"--]] 
---[[Translation missing --]]
---[[ L["SORT_UNUSABLE_BOTTOM"] = "Unusable after Usable"--]] 
---[[Translation missing --]]
---[[ L["TASK_END"] = "[MJE] Phew! I'm done."--]] 
---[[Translation missing --]]
---[[ L["TASK_FAVOR_START"] = "[MJE] Reapplying stars all over your mounts. Please wait a few seconds until I'm finished."--]] 
---[[Translation missing --]]
---[[ L["TOGGLE_COLOR"] = "Show next color variation"--]] 
-L["Transform"] = "Универсальный"
+--[[ L["STATS_TIP_USAGE_COUNT_HEAD"] = "Usage count"--]] 
+L["TASK_END"] = "[MJE] Фух! Все готово."
+L["TASK_FAVOR_START"] = "[MJE] Применяю звездочки для всего вашего транспорта. Пожалуйста подождите пару секунд  для завершения."
+L["TOGGLE_COLOR"] = "Показать следующую вариацию цвета"
+L["Transform"] = "Трансформация"
 
     -- Settings
+L["DISPLAY_ALL_SETTINGS"] = "Показать все настройки"
+L[ [=[RESET_WINDOW_SIZE
+]=] ] = "Сбросить настройки журнала"
 --[[Translation missing --]]
---[[ L["DISPLAY_ALL_SETTINGS"] = "Display all settings"--]] 
+--[[ L["SETTING_ABOUT_AUTHOR"] = "Author"--]] 
+L["SETTING_ACHIEVEMENT_POINTS"] = "Показать достижения"
+L["SETTING_AUTO_FAVOR"] = "Автоматически добавлять новый транспорт в избранное"
+L["SETTING_COMPACT_LIST"] = "Компактный список транспорта"
+L["SETTING_CURSOR_KEYS"] = "Включить Клавиши \"Вверх\" и \"Вниз\" для навигации по списку транспорта"
+L["SETTING_FAVORITE_PER_CHAR"] = "Избранный транспорт для персонажа"
 --[[Translation missing --]]
---[[ L[ [=[RESET_WINDOW_SIZE
-]=] ] = "Reset journal size"--]] 
+--[[ L["SETTING_HEAD_ABOUT"] = "About"--]] 
+L["SETTING_HEAD_BEHAVIOUR"] = "Поведение"
+L["SETTING_MOUNT_COUNT"] = "Показать персональный счетчик транспорта"
+L["SETTING_MOVE_EQUIPMENT"] = "Переместить слот экипировки на экран обзора"
+L["SETTING_PERSONAL_FILTER"] = "Применить фильтры только для этого персонажа"
+L["SETTING_PERSONAL_HIDDEN_MOUNTS"] = "Применить скрытый транспорт только для этого персонажа"
+L["SETTING_PERSONAL_UI"] = "Применить настройки интерфейса только для этого персонажа"
+L["SETTING_PREVIEW_LINK"] = "Показать кнопку коллекции на экрана обзора транспорта"
+L["SETTING_SEARCH_MORE"] = "Искать также в описании транспорта"
 --[[Translation missing --]]
---[[ L["SETTING_ACHIEVEMENT_POINTS"] = "Show achievement points"--]] 
+--[[ L["SETTING_SEARCH_NOTES"] = "Search also in own notes"--]] 
+L["SETTING_SHOP_BUTTON"] = "Показать кнопку магазина на неизученном транспорте из магазина"
 --[[Translation missing --]]
---[[ L["SETTING_AUTO_FAVOR"] = "Automatically set new mounts as favorite"--]] 
---[[Translation missing --]]
---[[ L["SETTING_COMPACT_LIST"] = "Compact mount list"--]] 
---[[Translation missing --]]
---[[ L["SETTING_CURSOR_KEYS"] = "Enable Up&Down keys to browse mounts"--]] 
---[[Translation missing --]]
---[[ L["SETTING_FAVORITE_PER_CHAR"] = "Favorite mounts per character"--]] 
---[[Translation missing --]]
---[[ L["SETTING_HEAD_BEHAVIOUR"] = "Behavior"--]] 
---[[Translation missing --]]
---[[ L["SETTING_MOUNT_COUNT"] = "Show personal mount count"--]] 
---[[Translation missing --]]
---[[ L["SETTING_MOVE_EQUIPMENT"] = "Move equipment slot into display"--]] 
---[[Translation missing --]]
---[[ L["SETTING_PERSONAL_FILTER"] = "Apply filters only to this character"--]] 
---[[Translation missing --]]
---[[ L["SETTING_PERSONAL_HIDDEN_MOUNTS"] = "Apply hidden mounts only to this character"--]] 
---[[Translation missing --]]
---[[ L["SETTING_PERSONAL_UI"] = "Apply Interface settings only to this character"--]] 
---[[Translation missing --]]
---[[ L["SETTING_PREVIEW_LINK"] = "Show Collection button in mount preview"--]] 
---[[Translation missing --]]
---[[ L["SETTING_SEARCH_MORE"] = "Search also in description text"--]] 
---[[Translation missing --]]
---[[ L["SETTING_SHOP_BUTTON"] = "Show shop button at untrained shop mounts"--]] 
---[[Translation missing --]]
---[[ L["SETTING_SHOW_USAGE"] = "Display mount usage statistics"--]] 
---[[Translation missing --]]
---[[ L["SETTING_TRACK_USAGE"] = "Track mount usage behavior on all characters"--]] 
---[[Translation missing --]]
---[[ L["SETTING_YCAMERA"] = "Unlock Y rotation with mouse in display"--]] 
+--[[ L["SETTING_SHOW_STATISTICS"] = "Show mount statistics in display"--]] 
+L["SETTING_TRACK_USAGE"] = "Отслеживание использования транспорта для всех персонажей"
+L["SETTING_YCAMERA"] = "Разблокировать вертикальное вращение транспорта с помощью мыши"
 
     -- Families
---[[Translation missing --]]
---[[ L["Airplanes"] = "Airplanes"--]] 
---[[Translation missing --]]
---[[ L["Airships"] = "Airships"--]] 
---[[Translation missing --]]
---[[ L["Alpacas"] = "Alpacas"--]] 
---[[Translation missing --]]
---[[ L["Amphibian"] = "Amphibian"--]] 
---[[Translation missing --]]
---[[ L["Animite"] = "Animite"--]] 
---[[Translation missing --]]
---[[ L["Aqir Flyers"] = "Aqir Flyers"--]] 
---[[Translation missing --]]
---[[ L["Arachnids"] = "Arachnids"--]] 
---[[Translation missing --]]
---[[ L["Assault Wagons"] = "Assault Wagons"--]] 
---[[Translation missing --]]
---[[ L["Basilisks"] = "Basilisks"--]] 
+L["Airplanes"] = "Самолеты"
+L["Airships"] = "Воздушные Судна"
+L["Alpacas"] = "Альпаки"
+L["Amphibian"] = "Амфибии"
+L["Animite"] = "Анимаклещи"
+L["Aqir Flyers"] = "Акиры Летуны"
+L["Arachnids"] = "Арахниды"
+L["Assault Wagons"] = "Штурмовые Повозки"
+L["Basilisks"] = "Василиски"
 L["Bats"] = "Летучие мыши"
 L["Bears"] = "Медведи"
---[[Translation missing --]]
---[[ L["Bees"] = "Bees"--]] 
+L["Bees"] = "Пчелы"
 L["Birds"] = "Птицы"
---[[Translation missing --]]
---[[ L["Blood Ticks"] = "Blood Ticks"--]] 
+L["Blood Ticks"] = "Кровяной Клещ"
 L["Boars"] = "Кабаны"
---[[Translation missing --]]
---[[ L["Book"] = "Book"--]] 
---[[Translation missing --]]
---[[ L["Bovids"] = "Bovids"--]] 
---[[Translation missing --]]
---[[ L["Brutosaurs"] = "Brutosaurs"--]] 
+L["Book"] = "Книги"
+L["Bovids"] = "Полорогие"
+L["Brutosaurs"] = "Брутозавры"
 L["Camels"] = "Верблюды"
---[[Translation missing --]]
---[[ L["Carnivorans"] = "Carnivorans"--]] 
---[[Translation missing --]]
---[[ L["Carpets"] = "Carpets"--]] 
+L["Carnivorans"] = "Плотоядные"
+L["Carpets"] = "Ковры"
 L["Cats"] = "Кошки"
---[[Translation missing --]]
---[[ L["Cervid"] = "Cervid"--]] 
---[[Translation missing --]]
---[[ L["Chargers"] = "Chargers"--]] 
---[[Translation missing --]]
---[[ L["Chickens"] = "Chickens"--]] 
+L["Cervid"] = "Сервиды"
+L["Chargers"] = "Скакуны"
+L["Chickens"] = "Курицы"
 L["Clefthooves"] = "Копытни"
 L["Cloud Serpents"] = "Облачные змеи"
---[[Translation missing --]]
---[[ L["Core Hounds"] = "Core Hounds"--]] 
---[[Translation missing --]]
---[[ L["Crabs"] = "Crabs"--]] 
+L["Core Hounds"] = "Гончие Недр"
+L["Crabs"] = "Крабы"
 L["Cranes"] = "Журавли"
---[[Translation missing --]]
---[[ L["Crawgs"] = "Crawgs"--]] 
-L["Crocolisks"] = "Кроколиск"
---[[Translation missing --]]
---[[ L["Crows"] = "Crows"--]] 
---[[Translation missing --]]
---[[ L["Demonic Hounds"] = "Demonic Hounds"--]] 
---[[Translation missing --]]
---[[ L["Demonic Steeds"] = "Demonic Steeds"--]] 
---[[Translation missing --]]
---[[ L["Demons"] = "Demons"--]] 
---[[Translation missing --]]
---[[ L["Devourer"] = "Devourer"--]] 
---[[Translation missing --]]
---[[ L["Dinosaurs"] = "Dinosaurs"--]] 
---[[Translation missing --]]
---[[ L["Dire Wolves"] = "Dire Wolves"--]] 
+L["Crawgs"] = "Кроги"
+L["Crocolisks"] = "Кроколиски"
+L["Crows"] = "Вороны"
+L["Demonic Hounds"] = "Демонические Гончие"
+L["Demonic Steeds"] = "Демонические Скакуны"
+L["Demons"] = "Демонические"
+L["Devourer"] = "Пожиратели"
+L["Dinosaurs"] = "Динозавры"
+L["Dire Wolves"] = "Лютоволки"
 L["Direhorns"] = "Дикороги"
---[[Translation missing --]]
---[[ L["Discs"] = "Discs"--]] 
+L["Discs"] = "Диски"
 L["Dragonhawks"] = "Дракондоры"
 L["Drakes"] = "Драконы"
---[[Translation missing --]]
---[[ L["Dread Ravens"] = "Dread Ravens"--]] 
+L["Dread Ravens"] = "Грозные вороны"
 L["Elekks"] = "Элекки"
---[[Translation missing --]]
---[[ L["Elementals"] = "Elementals"--]] 
---[[Translation missing --]]
---[[ L["Falcosaurs"] = "Falcosaurs"--]] 
---[[Translation missing --]]
---[[ L["Fathom Rays"] = "Fathom Rays"--]] 
---[[Translation missing --]]
---[[ L["Feathermanes"] = "Feathermanes"--]] 
---[[Translation missing --]]
---[[ L["Felsabers"] = "Felsabers"--]] 
+L["Elementals"] = "Элементали"
+L["Falcosaurs"] = "Грифозавры"
+L["Fathom Rays"] = "Глубинные Скаты"
+L["Feathermanes"] = "Пернатые"
+L["Felsabers"] = "Саблезубы"
 L["Fish"] = "Рыбы"
---[[Translation missing --]]
---[[ L["Flies"] = "Flies"--]] 
---[[Translation missing --]]
---[[ L["Flying Steeds"] = "Flying Steeds"--]] 
-L["Foxes"] = "лисицы"
---[[Translation missing --]]
---[[ L["Gargon"] = "Gargon"--]] 
---[[Translation missing --]]
---[[ L["Gargoyle"] = "Gargoyle"--]] 
+L["Flies"] = "Мухи"
+L["Flying Steeds"] = "Летающие Скакуны"
+L["Foxes"] = "Лисы"
+L["Gargon"] = "Гаргоны"
+L["Gargoyle"] = "Гаргульи"
 L["Goats"] = "Козлы"
---[[Translation missing --]]
---[[ L["Gorger"] = "Gorger"--]] 
---[[Translation missing --]]
---[[ L["Gorm"] = "Gorm"--]] 
---[[Translation missing --]]
---[[ L["Grand Drakes"] = "Grand Drakes"--]] 
+L["Gorger"] = "Поглотители"
+L["Gorm"] = "Гормы"
+L["Grand Drakes"] = "Великие Драконы"
 L["Gronnlings"] = "Малые гронны"
 L["Gryphons"] = "Грифоны"
---[[Translation missing --]]
---[[ L["Gyrocopters"] = "Gyrocopters"--]] 
---[[Translation missing --]]
---[[ L["Hands"] = "Hands"--]] 
+L["Gyrocopters"] = "Гирокоптеры"
+L["Hands"] = "Руки"
 L["Hawkstriders"] = "Крылобеги"
 L["Hippogryphs"] = "Гиппогрифы"
---[[Translation missing --]]
---[[ L["Horned Steeds"] = "Horned Steeds"--]] 
-L["Horses"] = "Лошади"
+L["Horned Steeds"] = "Рогатые Скакуны"
+L["Horses"] = "Скакуны"
 L["Hounds"] = "Гончие"
---[[Translation missing --]]
---[[ L["Hovercraft"] = "Hovercraft"--]] 
---[[Translation missing --]]
---[[ L["Humanoids"] = "Humanoids"--]] 
---[[Translation missing --]]
---[[ L["Hyenas"] = "Hyenas"--]] 
-L["Infernals"] = "инферналов"
---[[Translation missing --]]
---[[ L["Insects"] = "Insects"--]] 
+L["Hovercraft"] = "Везделеты"
+L["Humanoids"] = "Гуманоиды"
+L["Hyenas"] = "Гиены"
+L["Infernals"] = "Инферналы"
+L["Insects"] = "Насекомые"
 L["Jellyfish"] = "Медузы"
---[[Translation missing --]]
---[[ L["Jet Aerial Units"] = "Jet Aerial Units"--]] 
---[[Translation missing --]]
---[[ L["Kites"] = "Kites"--]] 
+L["Jet Aerial Units"] = "Реактивные Воздушные"
+L["Kites"] = "Воздушные Змеи"
 L["Kodos"] = "Кодо"
---[[Translation missing --]]
---[[ L["Krolusks"] = "Krolusks"--]] 
---[[Translation missing --]]
---[[ L["Larion"] = "Larion"--]] 
---[[Translation missing --]]
---[[ L["Lions"] = "Lions"--]] 
---[[Translation missing --]]
---[[ L["Lupine"] = "Lupine"--]] 
+L["Krolusks"] = "Кролуски"
+L["Larion"] = "Ларионы"
+L["Lions"] = "Львы"
+L["Lupine"] = "Люпины"
 L["Mammoths"] = "Мамонты"
---[[Translation missing --]]
---[[ L["Mana Rays"] = "Mana Rays"--]] 
---[[Translation missing --]]
---[[ L["Manasabers"] = "Manasabers"--]] 
---[[Translation missing --]]
---[[ L["Mauler"] = "Mauler"--]] 
---[[Translation missing --]]
---[[ L["Mechanical Animals"] = "Mechanical Animals"--]] 
---[[Translation missing --]]
---[[ L["Mechanical Birds"] = "Mechanical Birds"--]] 
---[[Translation missing --]]
---[[ L["Mechanical Cats"] = "Mechanical Cats"--]] 
---[[Translation missing --]]
---[[ L["Mechanical Steeds"] = "Mechanical Steeds"--]] 
+L["Mana Rays"] = "Манаскаты"
+L["Manasabers"] = "Манапарды"
+L["Mauler"] = "Терзатели"
+L["Mechanical Animals"] = "Механические Животные"
+L["Mechanical Birds"] = "Механические Птицы"
+L["Mechanical Cats"] = "Механические Кошки"
+L["Mechanical Steeds"] = "Механические Скакуны"
 L["Mechanostriders"] = "Механодолгоноги"
---[[Translation missing --]]
---[[ L["Mecha-suits"] = "Mecha-suits"--]] 
-L["Moose"] = "Лось"
---[[Translation missing --]]
---[[ L["Moth"] = "Moth"--]] 
---[[Translation missing --]]
---[[ L["Motorcycles"] = "Motorcycles"--]] 
---[[Translation missing --]]
---[[ L["Mountain Horses"] = "Mountain Horses"--]] 
+L["Mecha-suits"] = "Мехакостюмы"
+L["Moose"] = "Лоси"
+L["Moth"] = "Мотыльки"
+L["Motorcycles"] = "Мотоциклы"
+L["Mountain Horses"] = "Горные Скакуны"
 L["Mushan"] = "Мушаны"
---[[Translation missing --]]
---[[ L["Nether Drakes"] = "Nether Drakes"--]] 
+L["Nether Drakes"] = "Драконы Пустоты"
 L["Nether Rays"] = "Скаты Пустоты"
---[[Translation missing --]]
---[[ L["N'Zoth Serpents"] = "N'Zoth Serpents"--]] 
---[[Translation missing --]]
---[[ L["Others"] = "Others"--]] 
---[[Translation missing --]]
---[[ L["Ox"] = "Ox"--]] 
---[[Translation missing --]]
---[[ L["Pandaren Phoenixes"] = "Pandaren Phoenixes"--]] 
---[[Translation missing --]]
---[[ L["Parrots"] = "Parrots"--]] 
+L["N'Zoth Serpents"] = "Черви Н'Зота"
+L["Others"] = "Прочие"
+L["Ox"] = "Волы"
+L["Pandaren Phoenixes"] = "Пандаренские Фениксы"
+L["Parrots"] = "Попугаи"
 L["Phoenixes"] = "Фениксы"
---[[Translation missing --]]
---[[ L["Proto-Drakes"] = "Proto-Drakes"--]] 
-L["Pterrordaxes"] = "Птеродактили"
---[[Translation missing --]]
---[[ L["Quilen"] = "Quilen"--]] 
+L["Proto-Drakes"] = "Протодраконы"
+L["Pterrordaxes"] = "Терродактили"
+L["Quilen"] = "Цийлини"
 L["Rams"] = "Бараны"
---[[Translation missing --]]
---[[ L["Raptora"] = "Raptora"--]] 
+L["Raptora"] = "Рапторы"
 L["Raptors"] = "Ящеры"
 L["Rats"] = "Крысы"
-L["Ravagers"] = "Разорители"
---[[Translation missing --]]
---[[ L["Rays"] = "Rays"--]] 
---[[Translation missing --]]
---[[ L["Razorwing"] = "Razorwing"--]] 
---[[Translation missing --]]
---[[ L["Reptiles"] = "Reptiles"--]] 
+L["Ravagers"] = "Опустошители"
+L["Rays"] = "Скаты"
+L["Razorwing"] = "Острокрылы"
+L["Reptiles"] = "Рептилии"
 L["Rhinos"] = "Носороги"
 L["Riverbeasts"] = "Речные чудовища"
---[[Translation missing --]]
---[[ L["Roc"] = "Roc"--]] 
---[[Translation missing --]]
---[[ L["Rockets"] = "Rockets"--]] 
---[[Translation missing --]]
---[[ L["Ruinstriders"] = "Ruinstriders"--]] 
---[[Translation missing --]]
---[[ L["Runestag"] = "Runestag"--]] 
---[[Translation missing --]]
---[[ L["Rylaks"] = "Rylaks"--]] 
---[[Translation missing --]]
---[[ L["Sabers"] = "Sabers"--]] 
+L["Roc"] = "Рухи"
+L["Rockets"] = "Ракеты"
+L["Ruinstriders"] = "Скитальцы"
+L["Runestag"] = "Рунический Олень"
+L["Rylaks"] = "Рилаки"
+L["Sabers"] = "Саблезубы"
 L["Scorpions"] = "Скорпионы"
---[[Translation missing --]]
---[[ L["Sea Serpents"] = "Sea Serpents"--]] 
+L["Sea Serpents"] = "Морские Змеи"
 L["Seahorses"] = "Морские коньки"
---[[Translation missing --]]
---[[ L["Seat"] = "Seat"--]] 
+L["Seat"] = "Повозки"
 L["Silithids"] = "Силитиды"
---[[Translation missing --]]
---[[ L["Snail"] = "Snail"--]] 
---[[Translation missing --]]
---[[ L["Snapdragons"] = "Snapdragons"--]] 
---[[Translation missing --]]
---[[ L["Spider Tanks"] = "Spider Tanks"--]] 
-L["Spiders"] = "пауки"
---[[Translation missing --]]
---[[ L["Steeds"] = "Steeds"--]] 
---[[Translation missing --]]
---[[ L["Stingrays"] = "Stingrays"--]] 
---[[Translation missing --]]
---[[ L["Stone Cats"] = "Stone Cats"--]] 
---[[Translation missing --]]
---[[ L["Stone Drakes"] = "Stone Drakes"--]] 
+L["Snail"] = "Улитки"
+L["Snapdragons"] = "Вараны"
+L["Spider Tanks"] = "Механопауки"
+L["Spiders"] = "Пауки"
+L["Steeds"] = "Кони"
+L["Stingrays"] = "Жалохвосты"
+L["Stone Cats"] = "Каменные Кошки"
+L["Stone Drakes"] = "Каменные Драконы"
 L["Talbuks"] = "Талбуки"
 L["Tallstriders"] = "Долгоноги"
-L["Talonbirds"] = "Вороны"
---[[Translation missing --]]
---[[ L["Tauralus"] = "Tauralus"--]] 
---[[Translation missing --]]
---[[ L["Tigers"] = "Tigers"--]] 
---[[Translation missing --]]
---[[ L["Toads"] = "Toads"--]] 
+L["Talonbirds"] = "Когти"
+L["Tauralus"] = "Тауралы"
+L["Tigers"] = "Тигры"
+L["Toads"] = "Жабы"
 L["Turtles"] = "Черепахи"
---[[Translation missing --]]
---[[ L["Undead Drakes"] = "Undead Drakes"--]] 
---[[Translation missing --]]
---[[ L["Undead Steeds"] = "Undead Steeds"--]] 
---[[Translation missing --]]
---[[ L["Undead Wolves"] = "Undead Wolves"--]] 
---[[Translation missing --]]
---[[ L["Ungulates"] = "Ungulates"--]] 
---[[Translation missing --]]
---[[ L["Ur'zul"] = "Ur'zul"--]] 
---[[Translation missing --]]
---[[ L["Vehicles"] = "Vehicles"--]] 
---[[Translation missing --]]
---[[ L["Vombata"] = "Vombata"--]] 
---[[Translation missing --]]
---[[ L["Vulpin"] = "Vulpin"--]] 
---[[Translation missing --]]
---[[ L["Vultures"] = "Vultures"--]] 
---[[Translation missing --]]
---[[ L["War Wolves"] = "War Wolves"--]] 
---[[Translation missing --]]
---[[ L["Wasp"] = "Wasp"--]] 
+L["Undead Drakes"] = "Драконы Нежить"
+L["Undead Steeds"] = "Скакуны Нежить"
+L["Undead Wolves"] = "Волки Нежить"
+L["Ungulates"] = "Копытные"
+L["Ur'zul"] = "Ур'зул"
+L["Vehicles"] = "Транспортные средства"
+L["Vombata"] = "Вомбаты"
+L["Vulpin"] = "Лисохвосты"
+L["Vultures"] = "Падальщики"
+L["War Wolves"] = "Боевые Волки"
+L["Wasp"] = "Осы"
 L["Water Striders"] = "Водные долгоноги"
---[[Translation missing --]]
---[[ L["Wilderlings"] = "Wilderlings"--]] 
---[[Translation missing --]]
---[[ L["Wind Drakes"] = "Wind Drakes"--]] 
---[[Translation missing --]]
---[[ L["Wolfhawks"] = "Wolfhawks"--]] 
+L["Wilderlings"] = "Чащобники"
+L["Wind Drakes"] = "Драконы Ветра"
+L["Wolfhawks"] = "Звероястребы"
 L["Wolves"] = "Волки"
 L["Wyverns"] = "Виверны"
 L["Yaks"] = "Яки"
@@ -1917,6 +1883,21 @@ L["SORT_REVERSE"] = "反向排序"
 L["SORT_UNOWNED_BOTTOM"] = "未收集在底部"
 --[[Translation missing --]]
 --[[ L["SORT_UNUSABLE_BOTTOM"] = "Unusable after Usable"--]] 
+--[[Translation missing --]]
+--[[ L["STATS_TIP_LEARNED_DATE_HEAD"] = "Possession date"--]] 
+--[[Translation missing --]]
+--[[ L["STATS_TIP_RARITY_HEAD"] = "Rarity"--]] 
+--[[Translation missing --]]
+--[[ L["STATS_TIP_RARITY_TEXT"] = [=[% of characters who own this mount
+Data is kindly provided by {RR}.]=]--]] 
+--[[Translation missing --]]
+--[[ L["STATS_TIP_TRAVEL_DISTANCE_HEAD"] = "Travel distance"--]] 
+--[[Translation missing --]]
+--[[ L["STATS_TIP_TRAVEL_TIME_HEAD"] = "Travel time"--]] 
+--[[Translation missing --]]
+--[[ L["STATS_TIP_TRAVEL_TIME_TEXT"] = "in hours:minutes:seconds"--]] 
+--[[Translation missing --]]
+--[[ L["STATS_TIP_USAGE_COUNT_HEAD"] = "Usage count"--]] 
 L["TASK_END"] = "[MJE] 唷！完成了。"
 L["TASK_FAVOR_START"] = "[MJE] 正在给你的坐骑重新标星收藏。请等待一会儿直到完成。"
 --[[Translation missing --]]
@@ -1929,12 +1910,16 @@ L["Transform"] = "变形"
 --[[Translation missing --]]
 --[[ L[ [=[RESET_WINDOW_SIZE
 ]=] ] = "Reset journal size"--]] 
+--[[Translation missing --]]
+--[[ L["SETTING_ABOUT_AUTHOR"] = "Author"--]] 
 L["SETTING_ACHIEVEMENT_POINTS"] = "显示成就点"
 --[[Translation missing --]]
 --[[ L["SETTING_AUTO_FAVOR"] = "Automatically set new mounts as favorite"--]] 
 L["SETTING_COMPACT_LIST"] = "紧凑坐骑列表"
 L["SETTING_CURSOR_KEYS"] = "启用上下键浏览坐骑"
 L["SETTING_FAVORITE_PER_CHAR"] = "每角色坐骑收藏"
+--[[Translation missing --]]
+--[[ L["SETTING_HEAD_ABOUT"] = "About"--]] 
 L["SETTING_HEAD_BEHAVIOUR"] = "行为"
 L["SETTING_MOUNT_COUNT"] = "显示个人坐骑数量"
 L["SETTING_MOVE_EQUIPMENT"] = "移动装备插槽到展示窗口"
@@ -1944,8 +1929,11 @@ L["SETTING_PERSONAL_UI"] = "仅对这个角色应用界面设置"
 L["SETTING_PREVIEW_LINK"] = "在坐骑预览中显示收集按钮"
 --[[Translation missing --]]
 --[[ L["SETTING_SEARCH_MORE"] = "Search also in description text"--]] 
+--[[Translation missing --]]
+--[[ L["SETTING_SEARCH_NOTES"] = "Search also in own notes"--]] 
 L["SETTING_SHOP_BUTTON"] = "在未学习的商店坐骑上显示购买按钮"
-L["SETTING_SHOW_USAGE"] = "显示坐骑使用统计"
+--[[Translation missing --]]
+--[[ L["SETTING_SHOW_STATISTICS"] = "Show mount statistics in display"--]] 
 L["SETTING_TRACK_USAGE"] = "跟踪所有角色的坐骑使用行为"
 L["SETTING_YCAMERA"] = "展示窗解锁鼠标Y轴旋转"
 

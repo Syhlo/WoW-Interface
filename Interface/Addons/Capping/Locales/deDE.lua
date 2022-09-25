@@ -9,9 +9,13 @@ L.flagRespawns = "Flaggen"
 
 L.takenTheFlagTrigger = "^(.+) hat die Fahne erobert!"
 L.hasTakenTheTrigger = "eingenommen!"
---L.upgradeToTrigger = "Upgrade to" -- todo: muss Schmied Regzar bzw. Murgot Tiefenschmied Gossip-Option sein!
 L.droppedTrigger = "fallen lassen!"
 L.capturedTheTrigger = "errungen!"
+
+--- Alterac Valley
+--- This is the trigger option when talking to the NPC to auto hand in the quest items
+--- This chat interaction only appears when the NPC is ready to start an upgrade, and you need to confirm it
+--L.upgradeToTrigger = "Upgrade to" -- todo: muss Schmied Regzar bzw. Murgot Tiefenschmied Gossip-Option sein! -- Needs to match the in game text exactly
 
 L.hordeGate = "Hordentor"
 L.allianceGate = "Allianztor"
@@ -21,13 +25,15 @@ L.front = "Vorne"
 L.east = "Ost"
 L.hordeBoss = "Hordenboss"
 L.allianceBoss = "Allianzboss"
---L.hordeGuardian = "Horde Guardian"
---L.allianceGuardian = "Alliance Guardian"
+L.hordeGuardian = "Horde Wächter"
+L.allianceGuardian = "Allianz Wächter"
 L.galvangar = "Galvangar" -- Hauptmann Galvangar
 L.balinda = "Balinda" -- Hauptmann Balinda Steinbruch
 L.ivus = "Ivus" -- Ivus der Waldlord
 L.lokholar = "Lokholar" -- Lokholar der Eislord
 L.handIn = "|cFF33FF99Capping|r: Gebe Quest-Gegenstände automatisch ab."
+L.anchorTooltip = "|cffeda55fRechtsklick|r, um auf die Optionen zuzugreifen"
+--L.anchorTooltipNote = "Open the options and lock the bars to hide this moving anchor."
 
 --- Alliance IoC Workshop yells:
 -- Gnomenmechaniker: Ich hab's gleich! Haltet die Horde von hier fern. Kämpfen stand in der Ingenieursschule nicht auf dem
@@ -58,3 +64,9 @@ L.mainEntrance = "Haupteingang"
 L.westTower = "Westlicher Turm"
 L.southTower = "Südlicher Turm"
 L.eastTower = "Östlicher Turm"
+
+-- Arena
+L.arenaStartTrigger = "Der Arenakampf hat begonnen!"
+L.arenaStart60s = "Noch eine Minute bis der Arenakampf beginnt!"
+L.arenaStart30s = "Noch dreißig Sekunden bis der Arenakampf beginnt!"
+L.arenaStart15s = "Noch fünfzehn Sekunden bis der Arenakampf beginnt!"

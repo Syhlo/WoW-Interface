@@ -10,16 +10,6 @@ local GetNumGroupMembers = GetNumGroupMembers
 
 local CONST_INSPECT_ACHIEVEMENT_DISTANCE = 1 --Compare Achievements, 28 yards
 
-local ItemUpgradeInfo = LibStub ("LibItemUpgradeInfo-1.0")
---local LibGroupInSpecT = LibStub ("LibGroupInSpecT-1.1") --disabled due to classic wow
-local ItemUpgradeInfo
-local LibGroupInSpecT
-
-if (DetailsFramework.IsTimewalkWoW()) then
-	ItemUpgradeInfo = false
-	LibGroupInSpecT = false
-end
-
 local storageDebug = false --remember to turn this to false!
 local store_instances = _detalhes.InstancesToStoreData
 
@@ -1921,13 +1911,8 @@ function ilvl_core:CalcItemLevel (unitid, guid, shout)
 				if (item) then
 					local _, _, itemRarity, iLevel, _, _, _, _, equipSlot = GetItemInfo (item)
 					if (iLevel) then
-						if (ItemUpgradeInfo) then
-							local ilvl = ItemUpgradeInfo:GetUpgradedItemLevel (item)
-							item_level = item_level + (ilvl or iLevel)
-						else
-							item_level = item_level + iLevel
-						end
-						
+						item_level = item_level + iLevel
+
 						--> 16 = main hand 17 = off hand
 						-->  if using a two-hand, ignore the off hand slot
 						if (equip_id == 16 and two_hand [equipSlot]) then
@@ -2079,7 +2064,7 @@ function ilvl_core:GetItemLevel (unitid, guid, is_forced, try_number)
 	inspecting [guid] = {unitid, ilvl_core:ScheduleTimer ("InspectTimeOut", 12, guid)}
 	ilvl_core.amt_inspecting = ilvl_core.amt_inspecting + 1
 
-	NotifyInspect (unitid)
+	--NotifyInspect (unitid)
 end
 
 local NotifyInspectHook = function (unitid)
@@ -2101,7 +2086,7 @@ local NotifyInspectHook = function (unitid)
 		end
 	end
 end
-hooksecurefunc ("NotifyInspect", NotifyInspectHook)
+--hooksecurefunc ("NotifyInspect", NotifyInspectHook)
 
 function ilvl_core:Reset()
 	ilvl_core.raid_id = 1
@@ -2114,6 +2099,11 @@ function ilvl_core:Reset()
 end
 
 function ilvl_core:QueryInspect (unitName, callback, param1)
+	--disable for timewalk wow ~timewalk
+	if (DetailsFramework.IsTimewalkWoW()) then
+		return
+	end
+
 	local unitid
 
 	if (IsInRaid()) then
@@ -2166,6 +2156,11 @@ function ilvl_core:ClearQueryInspectQueue()
 end
 
 function ilvl_core:Loop()
+	--disable for timewalk wow ~timewalk
+	if (DetailsFramework.IsTimewalkWoW()) then
+		return
+	end
+
 	if (ilvl_core.amt_inspecting >= MAX_INSPECT_AMOUNT) then
 		return
 	end
@@ -2213,6 +2208,11 @@ function ilvl_core:EnterCombat()
 end
 
 local can_start_loop = function()
+	--disable for timewalk wow ~timewalk
+	if (DetailsFramework.IsTimewalkWoW()) then
+		return false
+	end
+
 	if ((_detalhes:GetZoneType() ~= "raid" and _detalhes:GetZoneType() ~= "party") or ilvl_core.loop_process or _detalhes.in_combat or not _detalhes.track_item_level) then
 		return false
 	end
@@ -2301,36 +2301,6 @@ function _detalhes:GetSpecFromSerial (guid)
 	return _detalhes.cached_specs [guid]
 end
 
-if (LibGroupInSpecT) then
-	function _detalhes:LibGroupInSpecT_UpdateReceived (event, guid, unitid, info)
-		--> update talents
-		local talents = _detalhes.cached_talents [guid] or {}
-		local i = 1
-		for talentId, _ in pairs (info.talents) do 
-			talents [i] = talentId
-			i = i + 1
-		end
-		_detalhes.cached_talents [guid] = talents
-		
-		if (_detalhes.debug) then
-			_detalhes:Msg ("(debug) received GroupInSpecT_Update from user", guid)
-		end
-		
-		--> update spec
-		if (info.global_spec_id and info.global_spec_id ~= 0) then
-			if (not _detalhes.class_specs_coords [info.global_spec_id]) then
-				print ("Details! Spec Id Invalid:", info.global_spec_id, info.name)
-			else
-				_detalhes.cached_specs [guid] = info.global_spec_id
-			end
-		end
-		
-		--print ("LibGroupInSpecT Received from", info.name, info.global_spec_id)
-	end
-	LibGroupInSpecT.RegisterCallback (_detalhes, "GroupInSpecT_Update", "LibGroupInSpecT_UpdateReceived")
-end
-
-
 --------------------------------------------------------------------------------------------------------------------------------------------
 --compress data
 
@@ -2403,7 +2373,7 @@ function Details:DecompressData (data, dataType)
 end
 
 --oldschool talent tree
-if (DetailsFramework.IsTBCWow()) then
+if (DetailsFramework.IsWotLKWow()) then
 	local talentWatchClassic = CreateFrame ("frame")
 	talentWatchClassic:RegisterEvent("CHARACTER_POINTS_CHANGED")
 	talentWatchClassic:RegisterEvent("SPELLS_CHANGED")
@@ -2417,7 +2387,7 @@ if (DetailsFramework.IsTBCWow()) then
 	end)
 
 	talentWatchClassic:SetScript("OnEvent", function(self, event, ...)
-		if (talentWatchClassic.delayedUpdate and not talentWatchClassic.delayedUpdate._cancelled) then
+		if (talentWatchClassic.delayedUpdate and not talentWatchClassic.delayedUpdate:IsCancelled()) then
 			return
 		else
 			talentWatchClassic.delayedUpdate = C_Timer.NewTimer(5, Details.GetOldSchoolTalentInformation)
@@ -2426,7 +2396,7 @@ if (DetailsFramework.IsTBCWow()) then
 
 	function Details.GetOldSchoolTalentInformation()
 		--cancel any schedule
-		if (talentWatchClassic.delayedUpdate and not talentWatchClassic.delayedUpdate._cancelled) then
+		if (talentWatchClassic.delayedUpdate and not talentWatchClassic.delayedUpdate:IsCancelled()) then
 			talentWatchClassic.delayedUpdate:Cancel()
 		end
 		talentWatchClassic.delayedUpdate = nil
@@ -2511,12 +2481,7 @@ if (DetailsFramework.IsTBCWow()) then
 					if (item) then
 						local _, _, itemRarity, iLevel, _, _, _, _, equipSlot = GetItemInfo(item)
 						if (iLevel) then
-							if (ItemUpgradeInfo) then
-								local ilvl = ItemUpgradeInfo:GetUpgradedItemLevel (item)
-								item_level = item_level + (ilvl or iLevel)
-							else
-								item_level = item_level + iLevel
-							end
+							item_level = item_level + iLevel
 							
 							--> 16 = main hand 17 = off hand
 							-->  if using a two-hand, ignore the off hand slot
@@ -2599,6 +2564,12 @@ if (DetailsFramework.IsTBCWow()) then
 		[71] = "DAMAGER", --ARMS
 		[72] = "DAMAGER", --FURY
 		[73] = "TANK", --PROT
+		
+		--Death Knight
+		[250] = "TANK", --Blood
+		[251] = "DAMAGER", --Frost
+		[252] = "DAMAGER", --Unholy
+		
 	}
 
 	function _detalhes:GetRoleFromSpec (specId, unitGUID)
@@ -2691,14 +2662,18 @@ if (DetailsFramework.IsTBCWow()) then
 		ShamanEnhancement = 263,
 		ShamanRestoration = 264,
 
-		WarlockCurses = 265,
-		WarlockDestruction = 266,
-		WarlockSummoning = 267,
+		WarlockCurses = 265, --affliction
+		WarlockSummoning = 266, --demo
+		WarlockDestruction = 267, --destruction
 
 		--WarriorArm = 71,
 		WarriorArms = 71,
 		WarriorFury = 72,
 		WarriorProtection = 73,
+
+		DeathKnightBlood = 250,
+		DeathKnightFrost = 251,
+		DeathKnightUnholy = 252,
 	}
 
 
@@ -2739,6 +2714,10 @@ if (DetailsFramework.IsTBCWow()) then
 		[71] = "WarriorArms",
 		[72] = "WarriorFury",
 		[73] = "WarriorProtection",
+
+		[250] = "DeathKnightBlood",
+		[251] = "DeathKnightFrost",
+		[252] = "DeathKnightUnholy",
 	}
 
 	function Details.IsValidSpecId (specId)
@@ -2748,4 +2727,47 @@ if (DetailsFramework.IsTBCWow()) then
 	function Details.GetClassicSpecByTalentTexture (talentTexture)
 		return Details.textureToSpec [talentTexture] or nil
 	end
+end
+
+
+--dragonflight talents, return {[spellId] = true}
+function Details.GetDragonflightTalentsAsHashTable()
+	local allTalents = {}
+	local configId = C_ClassTalents.GetActiveConfigID()
+	if (not configId) then
+		return allTalents
+	end
+
+	local configInfo = C_Traits.GetConfigInfo(configId)
+
+	for treeIndex, treeId in ipairs(configInfo.treeIDs) do
+		local treeNodes = C_Traits.GetTreeNodes(treeId)
+
+		for nodeIdIndex, treeNodeID in ipairs(treeNodes) do
+			local traitNodeInfo = C_Traits.GetNodeInfo(configId, treeNodeID)
+
+			if (traitNodeInfo) then
+				local activeEntry = traitNodeInfo.activeEntry
+				if (activeEntry) then
+					local entryId = activeEntry.entryID
+					local rank = activeEntry.rank
+					if (rank > 0) then
+						--get the entry info
+						local traitEntryInfo = C_Traits.GetEntryInfo(configId, entryId)
+						local definitionId = traitEntryInfo.definitionID
+
+						--definition info
+						local traitDefinitionInfo = C_Traits.GetDefinitionInfo(definitionId)
+						local spellId = traitDefinitionInfo.overriddenSpellID or traitDefinitionInfo.spellID
+						local spellName, _, spellTexture = GetSpellInfo(spellId)
+						if (spellName) then
+							allTalents[spellId] = true
+						end
+					end
+				end
+			end
+		end
+	end
+
+	return allTalents
 end

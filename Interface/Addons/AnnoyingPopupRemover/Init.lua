@@ -1,8 +1,8 @@
 -- Init.lua
 -- Written by KyrosKrane Sylvanblade (kyros@kyros.info)
--- Copyright (c) 2015-2020 KyrosKrane Sylvanblade
+-- Copyright (c) 2015-2022 KyrosKrane Sylvanblade
 -- Licensed under the MIT License, as per the included file.
--- Addon version: v14.0.0-release
+-- Addon version: v14.1.1-release
 
 
 -- This file initializes some settings for Annoying Popup Remover.
@@ -49,7 +49,7 @@ APR.HIDE_STARTUP = false
 --#########################################
 
 -- Determine whether we're running Classic or normal. Burning Crusade and Classic Era (vanilla) both count as Classic.
-APR.IsClassic = select(4, GetBuildInfo()) < 30000
+APR.IsClassic = select(4, GetBuildInfo()) < 40000
 
 -- Get the ordering constant of the next module
 APR.NextOrdering = 110

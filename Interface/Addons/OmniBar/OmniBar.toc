@@ -1,7 +1,7 @@
-## Interface: 90205
+## Interface: 90207
 ## Title: OmniBar
 ## Notes: Tracks enemy cooldowns
-## Version: v14.0
+## Version: v14.1
 ## Author: Jordon
 ## SavedVariables: OmniBarDB
 ## X-Curse-Project-ID: 85814

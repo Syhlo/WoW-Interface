@@ -291,7 +291,7 @@ Private.format_types = {
       addOption(symbol .. "_time_legacy_floor", {
         type = "toggle",
         name = L["Use Legacy floor rounding"],
-        desc = L["Enables (incorrect) round down of seconds, which was the previous default behaviour."],
+        desc = L["Enables (incorrect) round down of seconds, which was the previous default behavior."],
         width = WeakAuras.normalWidth,
         hidden = hidden,
         disabled = function() return get(symbol .. "_time_format", 0) ~= 0 end
@@ -1314,6 +1314,18 @@ Private.combatlog_raid_mark_check_type = {
   L["Any"]
 }
 
+Private.combatlog_raidFlags = {
+  [0] = 0,
+  [1] = 1,
+  [2] = 2,
+  [4] = 3,
+  [8] = 4,
+  [16] = 5,
+  [32] = 6,
+  [64] = 7,
+  [128] = 8,
+}
+
 Private.raid_mark_check_type = CopyTable(Private.combatlog_raid_mark_check_type)
 Private.raid_mark_check_type[9] = nil
 
@@ -1422,6 +1434,7 @@ for i = 1, 5 do
 end
 
 Private.loss_of_control_types = {
+  NONE = "NONE",
   CHARM = "CHARM",
   CONFUSE = "CONFUSE",
   DISARM = "DISARM",
@@ -1979,7 +1992,7 @@ Private.texture_types["PowerAuras Separated"] = {
   [PowerAurasPath.."Aura104"] = "Shield Center",
   [PowerAurasPath.."Aura105"] = "Shield Full",
   [PowerAurasPath.."Aura106"] = "Shield Top Right",
-  [PowerAurasPath.."Aura107"] = "Shiled Top Left",
+  [PowerAurasPath.."Aura107"] = "Shield Top Left",
   [PowerAurasPath.."Aura108"] = "Shield Bottom Right",
   [PowerAurasPath.."Aura109"] = "Shield Bottom Left",
   [PowerAurasPath.."Aura121"] = "Vine Top Right Leaf",
@@ -2245,7 +2258,7 @@ Private.instance_difficulty_types = {
 
 do
   -- Fill out instance_difficulty_types automatically.
-  -- Unfourtunately the names BLizzard gives are not entirely unique,
+  -- Unfortunately the names BLizzard gives are not entirely unique,
   -- so try hard to disambiguate them via the type, and if nothing works by
   -- including the plain id.
 
@@ -2770,7 +2783,7 @@ end
 Private.update_categories = {
   {
     name = "anchor",
-    -- Note, these are special cased for child auras and considered arrangment
+    -- Note, these are special cased for child auras and considered arrangement
     fields = {
       "xOffset",
       "yOffset",

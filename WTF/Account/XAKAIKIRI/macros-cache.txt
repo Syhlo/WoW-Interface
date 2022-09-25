@@ -910,6 +910,14 @@ VER 3 000000000000001D " " "134400"
 /click [btn:4] MegaMacroClicky15 Button4
 /click [btn:5] MegaMacroClicky15 Button5
 END
+VER 3 0000000000000022 " " "134400"
+#013
+/click [btn:1] MegaMacroClicky13
+/click [btn:2] MegaMacroClicky13 RightButton
+/click [btn:3] MegaMacroClicky13 MiddleButton
+/click [btn:4] MegaMacroClicky13 Button4
+/click [btn:5] MegaMacroClicky13 Button5
+END
 VER 3 0000000000000014 "  Target Arena2" "134400"
 #011
 /click [btn:1] MegaMacroClicky11
@@ -925,14 +933,6 @@ VER 3 0000000000000015 "  Target Arena3" "134400"
 /click [btn:3] MegaMacroClicky12 MiddleButton
 /click [btn:4] MegaMacroClicky12 Button4
 /click [btn:5] MegaMacroClicky12 Button5
-END
-VER 3 0000000000000022 " Annoying Prompt" "134400"
-#013
-/click [btn:1] MegaMacroClicky13
-/click [btn:2] MegaMacroClicky13 RightButton
-/click [btn:3] MegaMacroClicky13 MiddleButton
-/click [btn:4] MegaMacroClicky13 Button4
-/click [btn:5] MegaMacroClicky13 Button5
 END
 VER 3 0000000000000013 " Target Arena1" "134400"
 #016

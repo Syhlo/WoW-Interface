@@ -1,3 +1,39 @@
+9.2.36 - 22nd September 2022
+- Dragonflight: Updated for game version 10.0.2.45698 (Sep 20 2022) (100002).
+- Dragonflight: Updated 'Class cololored frames' ('Frames').
+- Dragonflight: Fixed Lua errors due to game code changes.
+
+9.2.35 - 21st September 2022
+- Added a new option 'Restore chat messages' ('Chat').  If enabled, you can reload your UI without losing your recent chat messages.
+- For 'Show ready timer' ('Interface'), Dungeon Finder timer bars from other addons which use the standard status bar frame type (such as BigWigs) will now be hidden so they don't conflict.
+- Dragonflight: For 'Enhance tooltip' ('Interface'), there is no longer an overlay anchor.  Use Edit Mode to position the tooltip.
+- Dragonflight: Leatrix Plus is now listed in the minimap addon menu and the game options panel.
+
+9.2.34 - 14 September 2022
+- Dragonflight: Added a new option 'Set chat font size' ('Chat').  If enabled, you will be able to set the chat font size.  This also applies to the guild and communities chat frame and the GM chat frame.  Enabling this option will prevent you from using the default UI to set the chat font size.  This is a Dragonflight compatible replacement for the 'More font sizes' option from Shadowlands.
+
+9.2.33 - 11th September 2022
+- For 'Enhance tooltip' ('Interface'), if you use the setting to hide tooltips for world units during combat, you can now specify whether holding shift should override that setting or not.  Also updated locale code.
+
+9.2.31 - 8th September 2022
+- Dragonflight: Updated for 10.0.0.45480 (PTR).
+- Dragonflight: You should always use the latest Leatrix Plus alpha release until Dragonflight is launched.  In CurseForge App, right-click Leatrix Plus in your Retail PTR addons listing and set the release type to alpha.
+
+9.2.28 - 7th September 2022
+- Updated for Dragonflight Beta.  A few options are currently locked out (read the blue text in the locked option tooltips for more information).
+- For 'Automate quests' ('Automation'), fixed an issue which caused Darkmoon Faire quests to not be automated.
+- Dragonflight: You should always use the latest Leatrix Plus alpha release while Dragonflight is in beta.
+
+9.2.27 - 31st August 2022
+- Added a new option called 'Manage timer' ('Frames').  The 'Manage frames' option no longer includes the timer bar.
+- Added a new option 'Manage durability' ('Frames').  If enabled, you can move and scale the armored man durability frame.
+- For 'Enhance minimap' ('Interface'), added a new setting that will allow you to adjust the minimap cluster scale without it affecting the minimap scale.
+- Tweaks to ElvUI locks.
+
+9.2.26 - 24th August 2022
+- The 'Hide action button text' option ('Text') is now two options - 'Hide keybind text' and 'Hide macro text'.
+- If you use ElvUI, Leatrix Plus options which are not compatible with specific ElvUI modules will now be disabled and locked while those ElvUI modules are enabled.  The option tooltip will tell you which ElvUI module is causing the Leatrix Plus option to be disabled.  Disabling the relevant ElvUI module will make the Leatrix Plus setting available again.
+
 9.2.25 - 17th August 2022
 - Updated for game version 9.2.7.
 - Fixed a minor issue with 'Show cooldowns' ('Interface') which caused buff spell IDs to show in debuff tooltips.

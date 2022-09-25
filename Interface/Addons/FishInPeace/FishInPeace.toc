@@ -1,0 +1,6 @@
+## Interface: 90200
+## Title: FishInPeace
+## Description: Mutes everything but cast and bobber fishing sounds
+## Version: 1.0
+
+FishInPeace.lua

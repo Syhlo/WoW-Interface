@@ -1,0 +1,12 @@
+Executive Assistant -- User Configurable To-Do List/Task List
+by VincentSDSH
+(email vincent at silver daggers dot net)
+
+Executive Assistant is a configurable Task (To-Do) List that lets you manage your game-time efficiently.
+File Cabinet lets you back up all that work.
+
+
+Version Notes:
+	v.99a
+		Altered the "Make Backup" button's text to be more direct in what the user should do (and so it's harder to confuse the popup with a tootip descriptor)
+	

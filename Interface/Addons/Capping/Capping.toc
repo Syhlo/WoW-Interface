@@ -1,5 +1,5 @@
-## Interface: 90205
-## Version: v9.2.1
+## Interface: 90207
+## Version: v9.2.6
 ## Title: Capping
 ## Author: Funkydude
 ## Notes: Battleground timers and other PvP features.
@@ -23,7 +23,23 @@
 ## X-License: All Rights Reserved: You are free to fork and modify on GitHub, please ask us about anything else.
 ## X-Curse-Project-ID: 20143
 ## X-WoWI-ID: 11177
+## X-Wago-ID: Rn6VXOGd
 
 embeds.xml
 locales.xml
+
+Core.lua
+Modules\AlteracValley.lua
+Modules\ArathiBasin.lua
+Modules\Arena.lua
+Modules\Ashran.lua
+Modules\DeepwindGorge.lua
+Modules\EyeOfTheStorm.lua
+Modules\Gilneas.lua
+Modules\IsleOfConquest.lua
+Modules\QueueTimers.lua
+Modules\TwinPeaks.lua
+Modules\WarsongGulch.lua
+Modules\Wintergrasp.lua
+
 modules.xml

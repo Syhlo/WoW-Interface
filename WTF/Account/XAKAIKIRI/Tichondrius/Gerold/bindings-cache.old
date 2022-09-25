@@ -1,7 +1,7 @@
 bind BUTTON3 TOGGLEAUTORUN
-bind UP CAMERAZOOMIN
+bind UP CLICK BT4Button55:LeftButton
 bind S CLICK BT4Button97:LeftButton
-bind DOWN CAMERAZOOMOUT
+bind DOWN NONE
 bind LEFT NONE
 bind RIGHT NONE
 bind NUMPAD0 NONE
@@ -22,13 +22,13 @@ bind CTRL-2 CLICK BT4Button50:LeftButton
 bind CTRL-3 CLICK BT4Button51:LeftButton
 bind CTRL-4 CLICK BT4Button52:LeftButton
 bind CTRL-5 CLICK BT4Button53:LeftButton
-bind CTRL-6 CLICK BT4Button54:LeftButton
+bind CTRL-6 NONE
 bind CTRL-7 NONE
 bind CTRL-8 NONE
 bind CTRL-9 NONE
 bind CTRL-0 NONE
 bind F1 NONE
-bind F2 CLICK BT4Button56:LeftButton
+bind F2 NONE
 bind F3 NONE
 bind F4 NONE
 bind F5 NONE
@@ -46,13 +46,11 @@ bind F11 NONE
 bind F12 NONE
 bind NUMPADPLUS NONE
 bind NUMPADMINUS CLICK BT4Button36:LeftButton
-bind CTRL-S CLICK BT4Button112:LeftButton
+bind CTRL-S NONE
 bind CTRL-= CLICK BT4Button72:LeftButton
 bind CTRL-- CLICK BT4Button59:LeftButton
 bind ALT-Z NONE
-bind MOUSEWHEELUP NONE
-bind MOUSEWHEELDOWN NONE
-bind HOME CLICK BT4Button55:LeftButton
+bind HOME CLICK BT4Button54:LeftButton
 bind CTRL-R NONE
 bind CTRL-T CLICK BT4Button38:LeftButton
 bind NUMPAD5 CLICK BT4Button29:LeftButton
@@ -83,7 +81,7 @@ bind ALT-- NONE
 bind ALT-= NONE
 bind BUTTON5 NONE
 bind ALT-BACKSPACE NONE
-bind SHIFT-7 CLICK BT4Button67:LeftButton
+bind SHIFT-7 NONE
 bind ` CLICK BT4Button104:LeftButton
 bind NUMPAD2 CLICK BT4Button26:LeftButton
 bind NUMPAD4 CLICK BT4Button28:LeftButton
@@ -100,8 +98,8 @@ bind ALT-R NONE
 bind ALT-SHIFT-Z TOGGLEUI
 bind ' NONE
 bind SHIFT-X CLICK BT4Button103:LeftButton
-bind SHIFT-Z NONE
+bind SHIFT-Z CLICK BT4Button67:LeftButton
 bind CTRL-SHIFT-V FRIENDNAMEPLATES
-bind SHIFT-F CLICK BT4Button57:LeftButton
+bind SHIFT-F CLICK BT4Button112:LeftButton
 bind ALT-SHIFT-R TOGGLEFPS
 modifiedclick NONE AUTOLOOTTOGGLE

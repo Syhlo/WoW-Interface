@@ -2,7 +2,7 @@
 -- Written by KyrosKrane Sylvanblade (kyros@kyros.info)
 -- Copyright (c) 2015-2021 KyrosKrane Sylvanblade
 -- Licensed under the MIT License, as per the included file.
--- Addon version: v14.0.0-release
+-- Addon version: v14.1.1-release
 
 -- This module changes the popup when deleting a "good" item from requiring you to type the word "delete" to just clicking Yes.
 

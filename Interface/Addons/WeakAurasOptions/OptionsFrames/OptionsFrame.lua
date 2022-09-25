@@ -1156,9 +1156,9 @@ function OptionsPrivate.CreateFrame()
       containerScroll:AddChild(simpleLabel)
 
       local button = AceGUI:Create("WeakAurasNewButton")
-      button:SetTitle(L["From Template"])
+      button:SetTitle(L["Premade Auras"])
       button:SetDescription(L["Offer a guided way to create auras for your character"])
-      button:SetIcon("Interface\\Icons\\INV_Misc_Book_06")
+      button:SetIcon("Interface\\Icons\\Inv_misc_book_09")
       button:SetClick(function()
         OptionsPrivate.OpenTriggerTemplate(nil, self:GetTargetAura())
       end)
@@ -1181,7 +1181,7 @@ function OptionsPrivate.CreateFrame()
       tinsert(regionTypesSorted, regionType)
     end
 
-    -- Sort group + dynamic group first, then the others alphabeticaly
+    -- Sort group + dynamic group first, then the others alphabetically
     table.sort(regionTypesSorted, function(a, b)
       if (a == "group") then
         return true

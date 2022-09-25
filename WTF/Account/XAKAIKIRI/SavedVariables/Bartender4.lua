@@ -3,10 +3,20 @@ Bartender4DB = {
 	["namespaces"] = {
 		["StatusTrackingBar"] = {
 			["profiles"] = {
-				["Isellpropane - Proudmoore"] = {
+				["Gnomemounts - Tichondrius"] = {
 					["enabled"] = true,
 					["version"] = 3,
+					["position"] = {
+						["scale"] = 1.264999985694885,
+						["x"] = -515,
+						["point"] = "BOTTOM",
+						["y"] = 62,
+					},
+				},
+				["Isellpropane - Proudmoore"] = {
+					["enabled"] = true,
 					["fadeout"] = true,
+					["version"] = 3,
 					["position"] = {
 						["y"] = 3.00030517578125,
 						["x"] = -304.1247100830078,
@@ -94,6 +104,16 @@ Bartender4DB = {
 						["y"] = 62,
 					},
 				},
+				["Syhlol - Tichondrius"] = {
+					["enabled"] = true,
+					["version"] = 3,
+					["position"] = {
+						["y"] = 62,
+						["x"] = -515,
+						["point"] = "BOTTOM",
+						["scale"] = 1.264999985694885,
+					},
+				},
 				["Cyf - Tichondrius"] = {
 					["enabled"] = true,
 					["version"] = 3,
@@ -103,6 +123,17 @@ Bartender4DB = {
 						["point"] = "BOTTOM",
 						["scale"] = 1.264999985694885,
 					},
+				},
+				["Global"] = {
+					["enabled"] = true,
+					["version"] = 3,
+					["position"] = {
+						["y"] = 4.0001220703125,
+						["x"] = -405.5001220703125,
+						["point"] = "TOP",
+					},
+					["fadeout"] = true,
+					["fadeoutalpha"] = 0,
 				},
 				["Wthrename - Tichondrius"] = {
 					["enabled"] = true,
@@ -124,14 +155,25 @@ Bartender4DB = {
 						["y"] = 62,
 					},
 				},
-				["Youreterribl - Burning Legion"] = {
+				["Paladin"] = {
+					["enabled"] = true,
+					["fadeoutalpha"] = 0,
+					["position"] = {
+						["y"] = 4.0001220703125,
+						["x"] = -405.5001220703125,
+						["point"] = "TOP",
+					},
+					["version"] = 3,
+					["fadeout"] = true,
+				},
+				["Syhlol - Illidan"] = {
 					["enabled"] = true,
 					["version"] = 3,
 					["position"] = {
-						["scale"] = 1.264999985694885,
+						["y"] = 62,
 						["x"] = -515,
 						["point"] = "BOTTOM",
-						["y"] = 62,
+						["scale"] = 1.264999985694885,
 					},
 				},
 				["Scatterffs - Ragnaros"] = {
@@ -165,7 +207,7 @@ Bartender4DB = {
 						["y"] = 62,
 					},
 				},
-				["Syhloc - Thrall"] = {
+				["Syhdk - Thrall"] = {
 					["enabled"] = true,
 					["version"] = 3,
 					["position"] = {
@@ -185,17 +227,17 @@ Bartender4DB = {
 						["y"] = 62,
 					},
 				},
-				["Syhlol - Illidan"] = {
+				["Syhloc - Thrall"] = {
 					["enabled"] = true,
 					["version"] = 3,
 					["position"] = {
-						["y"] = 62,
+						["scale"] = 1.264999985694885,
 						["x"] = -515,
 						["point"] = "BOTTOM",
-						["scale"] = 1.264999985694885,
+						["y"] = 62,
 					},
 				},
-				["Syhdk - Thrall"] = {
+				["Youreterribl - Burning Legion"] = {
 					["enabled"] = true,
 					["version"] = 3,
 					["position"] = {
@@ -207,35 +249,101 @@ Bartender4DB = {
 				},
 				["Syh - Thrall"] = {
 					["enabled"] = true,
-					["version"] = 3,
 					["fadeout"] = true,
 					["position"] = {
 						["y"] = 4.0001220703125,
 						["x"] = -405.5001220703125,
 						["point"] = "TOP",
 					},
+					["version"] = 3,
 					["fadeoutalpha"] = 0,
 				},
 			},
 		},
 		["ActionBars"] = {
 			["profiles"] = {
+				["Gnomemounts - Tichondrius"] = {
+					["actionbars"] = {
+						{
+							["padding"] = 6,
+							["version"] = 3,
+							["position"] = {
+								["y"] = 41.75,
+								["x"] = -510,
+								["point"] = "BOTTOM",
+							},
+						}, -- [1]
+						{
+							["enabled"] = false,
+							["version"] = 3,
+							["position"] = {
+								["y"] = -227.4998474121094,
+								["x"] = -231.5001831054688,
+								["point"] = "CENTER",
+							},
+						}, -- [2]
+						{
+							["rows"] = 12,
+							["padding"] = 5,
+							["version"] = 3,
+							["position"] = {
+								["y"] = 610,
+								["x"] = -82,
+								["point"] = "BOTTOMRIGHT",
+							},
+						}, -- [3]
+						{
+							["rows"] = 12,
+							["padding"] = 5,
+							["version"] = 3,
+							["position"] = {
+								["y"] = 610,
+								["x"] = -42,
+								["point"] = "BOTTOMRIGHT",
+							},
+						}, -- [4]
+						{
+							["padding"] = 6,
+							["version"] = 3,
+							["position"] = {
+								["y"] = 110,
+								["x"] = 3,
+								["point"] = "BOTTOM",
+							},
+						}, -- [5]
+						{
+							["padding"] = 6,
+							["version"] = 3,
+							["position"] = {
+								["y"] = 110,
+								["x"] = -510,
+								["point"] = "BOTTOM",
+							},
+						}, -- [6]
+						{
+						}, -- [7]
+						{
+						}, -- [8]
+						[10] = {
+						},
+					},
+				},
 				["Isellpropane - Proudmoore"] = {
 					["actionbars"] = {
 						{
 							["fadeoutalpha"] = 0,
 							["buttons"] = 8,
-							["version"] = 3,
-							["padding"] = 7,
-							["visibility"] = {
-								["always"] = false,
-							},
 							["position"] = {
 								["y"] = 160,
 								["x"] = -156.1500233292572,
 								["point"] = "BOTTOM",
 								["scale"] = 0.8999999761581421,
 							},
+							["padding"] = 7,
+							["visibility"] = {
+								["always"] = false,
+							},
+							["version"] = 3,
 						}, -- [1]
 						{
 							["enabled"] = false,
@@ -257,23 +365,23 @@ Bartender4DB = {
 								["point"] = "RIGHT",
 								["scale"] = 0.8999999761581421,
 							},
-							["padding"] = 5,
-							["rows"] = 12,
-							["version"] = 3,
 							["fadeoutalpha"] = 0,
+							["padding"] = 5,
+							["version"] = 3,
+							["rows"] = 12,
 						}, -- [3]
 						{
 							["fadeout"] = true,
 							["buttons"] = 4,
+							["fadeoutalpha"] = 0,
+							["padding"] = 5,
+							["version"] = 3,
 							["position"] = {
 								["y"] = 141.6587822580659,
 								["x"] = 174.9089173570683,
 								["point"] = "BOTTOM",
 								["scale"] = 0.8999999761581421,
 							},
-							["padding"] = 5,
-							["version"] = 3,
-							["fadeoutalpha"] = 0,
 						}, -- [4]
 						{
 							["version"] = 3,
@@ -315,13 +423,13 @@ Bartender4DB = {
 							["version"] = 3,
 							["buttons"] = 8,
 							["padding"] = 7,
-							["hidemacrotext"] = true,
 							["position"] = {
 								["y"] = 247.9352168206315,
 								["x"] = -456.4597426751861,
 								["point"] = "BOTTOM",
 								["scale"] = 0.8999999761581421,
 							},
+							["hidemacrotext"] = true,
 						}, -- [8]
 						{
 							["enabled"] = true,
@@ -370,8 +478,8 @@ Bartender4DB = {
 							},
 						}, -- [2]
 						{
-							["padding"] = 5,
 							["rows"] = 12,
+							["padding"] = 5,
 							["version"] = 3,
 							["position"] = {
 								["y"] = 610,
@@ -380,8 +488,8 @@ Bartender4DB = {
 							},
 						}, -- [3]
 						{
-							["padding"] = 5,
 							["rows"] = 12,
+							["padding"] = 5,
 							["version"] = 3,
 							["position"] = {
 								["y"] = 610,
@@ -437,8 +545,8 @@ Bartender4DB = {
 							},
 						}, -- [2]
 						{
-							["padding"] = 5,
 							["rows"] = 12,
+							["padding"] = 5,
 							["version"] = 3,
 							["position"] = {
 								["y"] = 610,
@@ -447,8 +555,8 @@ Bartender4DB = {
 							},
 						}, -- [3]
 						{
-							["padding"] = 5,
 							["rows"] = 12,
+							["padding"] = 5,
 							["version"] = 3,
 							["position"] = {
 								["y"] = 610,
@@ -504,8 +612,8 @@ Bartender4DB = {
 							},
 						}, -- [2]
 						{
-							["padding"] = 5,
 							["rows"] = 12,
+							["padding"] = 5,
 							["version"] = 3,
 							["position"] = {
 								["y"] = 610,
@@ -514,8 +622,8 @@ Bartender4DB = {
 							},
 						}, -- [3]
 						{
-							["padding"] = 5,
 							["rows"] = 12,
+							["padding"] = 5,
 							["version"] = 3,
 							["position"] = {
 								["y"] = 610,
@@ -570,8 +678,8 @@ Bartender4DB = {
 							},
 						}, -- [2]
 						{
-							["rows"] = 12,
 							["padding"] = 5,
+							["rows"] = 12,
 							["version"] = 3,
 							["position"] = {
 								["y"] = 610,
@@ -580,8 +688,8 @@ Bartender4DB = {
 							},
 						}, -- [3]
 						{
-							["rows"] = 12,
 							["padding"] = 5,
+							["rows"] = 12,
 							["version"] = 3,
 							["position"] = {
 								["y"] = 610,
@@ -637,8 +745,8 @@ Bartender4DB = {
 							},
 						}, -- [2]
 						{
-							["padding"] = 5,
 							["rows"] = 12,
+							["padding"] = 5,
 							["version"] = 3,
 							["position"] = {
 								["y"] = 610,
@@ -647,8 +755,8 @@ Bartender4DB = {
 							},
 						}, -- [3]
 						{
-							["padding"] = 5,
 							["rows"] = 12,
+							["padding"] = 5,
 							["version"] = 3,
 							["position"] = {
 								["y"] = 610,
@@ -704,8 +812,8 @@ Bartender4DB = {
 							},
 						}, -- [2]
 						{
-							["rows"] = 12,
 							["padding"] = 5,
+							["rows"] = 12,
 							["version"] = 3,
 							["position"] = {
 								["y"] = 610,
@@ -714,8 +822,8 @@ Bartender4DB = {
 							},
 						}, -- [3]
 						{
-							["rows"] = 12,
 							["padding"] = 5,
+							["rows"] = 12,
 							["version"] = 3,
 							["position"] = {
 								["y"] = 610,
@@ -771,6 +879,73 @@ Bartender4DB = {
 							},
 						}, -- [2]
 						{
+							["rows"] = 12,
+							["padding"] = 5,
+							["version"] = 3,
+							["position"] = {
+								["y"] = 610,
+								["x"] = -82,
+								["point"] = "BOTTOMRIGHT",
+							},
+						}, -- [3]
+						{
+							["rows"] = 12,
+							["padding"] = 5,
+							["version"] = 3,
+							["position"] = {
+								["y"] = 610,
+								["x"] = -42,
+								["point"] = "BOTTOMRIGHT",
+							},
+						}, -- [4]
+						{
+							["padding"] = 6,
+							["version"] = 3,
+							["position"] = {
+								["y"] = 110,
+								["x"] = 3,
+								["point"] = "BOTTOM",
+							},
+						}, -- [5]
+						{
+							["padding"] = 6,
+							["version"] = 3,
+							["position"] = {
+								["y"] = 110,
+								["x"] = -510,
+								["point"] = "BOTTOM",
+							},
+						}, -- [6]
+						{
+						}, -- [7]
+						{
+						}, -- [8]
+						nil, -- [9]
+						{
+						}, -- [10]
+					},
+				},
+				["Sydh - Thrall"] = {
+					["actionbars"] = {
+						{
+							["padding"] = 6,
+							["version"] = 3,
+							["position"] = {
+								["y"] = 41.75,
+								["x"] = -510,
+								["point"] = "BOTTOM",
+							},
+						}, -- [1]
+						{
+							["enabled"] = false,
+							["version"] = 3,
+							["position"] = {
+								["y"] = -227.4998474121094,
+								["x"] = -231.5001831054688,
+								["point"] = "CENTER",
+							},
+						}, -- [2]
+						{
 							["padding"] = 5,
 							["rows"] = 12,
 							["version"] = 3,
@@ -812,12 +987,11 @@ Bartender4DB = {
 						}, -- [7]
 						{
 						}, -- [8]
-						nil, -- [9]
-						{
-						}, -- [10]
+						[10] = {
+						},
 					},
 				},
-				["Sydh - Thrall"] = {
+				["Syhlol - Tichondrius"] = {
 					["actionbars"] = {
 						{
 							["padding"] = 6,
@@ -879,8 +1053,9 @@ Bartender4DB = {
 						}, -- [7]
 						{
 						}, -- [8]
-						[10] = {
-						},
+						nil, -- [9]
+						{
+						}, -- [10]
 					},
 				},
 				["Cyf - Tichondrius"] = {
@@ -950,6 +1125,152 @@ Bartender4DB = {
 						}, -- [10]
 					},
 				},
+				["Global"] = {
+					["actionbars"] = {
+						{
+							["position"] = {
+								["y"] = 160,
+								["x"] = -156.1500233292572,
+								["point"] = "BOTTOM",
+								["scale"] = 0.8999999761581421,
+							},
+							["fadeoutalpha"] = 0,
+							["buttons"] = 8,
+							["version"] = 3,
+							["padding"] = 7,
+							["visibility"] = {
+								["always"] = false,
+							},
+							["states"] = {
+								["stance"] = {
+									["DRUID"] = {
+										["cat"] = 8,
+										["bear"] = 7,
+									},
+								},
+							},
+						}, -- [1]
+						{
+							["fadeout"] = true,
+							["buttons"] = 8,
+							["position"] = {
+								["y"] = 40.05000580549222,
+								["x"] = -155.699893132849,
+								["point"] = "BOTTOM",
+								["scale"] = 0.8999999761581421,
+							},
+							["padding"] = 7,
+							["version"] = 3,
+							["fadeoutalpha"] = 0,
+						}, -- [2]
+						{
+							["hidemacrotext"] = true,
+							["fadeout"] = true,
+							["position"] = {
+								["y"] = 223.2000300725304,
+								["x"] = -39.14914716925705,
+								["point"] = "RIGHT",
+								["scale"] = 0.8999999761581421,
+							},
+							["fadeoutalpha"] = 0.65,
+							["rows"] = 12,
+							["version"] = 3,
+							["padding"] = 5,
+						}, -- [3]
+						{
+							["fadeout"] = true,
+							["buttons"] = 4,
+							["position"] = {
+								["y"] = 141.6587822580659,
+								["x"] = 174.9089173570683,
+								["point"] = "BOTTOM",
+								["scale"] = 0.8999999761581421,
+							},
+							["padding"] = 5,
+							["version"] = 3,
+							["fadeoutalpha"] = 0,
+						}, -- [4]
+						{
+							["fadeout"] = true,
+							["position"] = {
+								["y"] = 102.9587764168109,
+								["x"] = 174.7424744903838,
+								["point"] = "BOTTOM",
+								["scale"] = 0.8999999761581421,
+							},
+							["version"] = 3,
+							["padding"] = 5,
+							["visibility"] = {
+								["always"] = false,
+							},
+							["fadeoutalpha"] = 0,
+						}, -- [5]
+						{
+							["version"] = 3,
+							["buttons"] = 8,
+							["position"] = {
+								["y"] = 122.06038189834,
+								["x"] = -155.699734773465,
+								["point"] = "BOTTOM",
+								["scale"] = 0.8999999761581421,
+							},
+							["padding"] = 7,
+							["visibility"] = {
+								["always"] = false,
+							},
+							["fadeoutalpha"] = 0,
+						}, -- [6]
+						{
+							["version"] = 3,
+							["position"] = {
+								["y"] = -227.4998321533203,
+								["x"] = -231.49951171875,
+								["point"] = "CENTER",
+							},
+						}, -- [7]
+						{
+							["version"] = 3,
+							["buttons"] = 8,
+							["padding"] = 7,
+							["hidemacrotext"] = true,
+							["position"] = {
+								["y"] = 247.9352168206315,
+								["x"] = -456.4597426751861,
+								["point"] = "BOTTOM",
+								["scale"] = 0.8999999761581421,
+							},
+						}, -- [8]
+						{
+							["enabled"] = true,
+							["version"] = 3,
+							["buttons"] = 8,
+							["padding"] = 7,
+							["visibility"] = {
+								["stance"] = {
+									[0] = false,
+								},
+							},
+							["position"] = {
+								["y"] = 82.24097224762772,
+								["x"] = -155.699734773465,
+								["point"] = "BOTTOM",
+								["scale"] = 0.8999999761581421,
+							},
+						}, -- [9]
+						{
+							["enabled"] = true,
+							["version"] = 3,
+							["buttons"] = 5,
+							["padding"] = 7,
+							["position"] = {
+								["y"] = 199.4352348901102,
+								["x"] = -97.6498461745432,
+								["point"] = "BOTTOM",
+								["scale"] = 0.8999999761581421,
+							},
+						}, -- [10]
+					},
+				},
 				["Wthrename - Tichondrius"] = {
 					["actionbars"] = {
 						{
@@ -971,8 +1292,8 @@ Bartender4DB = {
 							},
 						}, -- [2]
 						{
-							["padding"] = 5,
 							["rows"] = 12,
+							["padding"] = 5,
 							["version"] = 3,
 							["position"] = {
 								["y"] = 610,
@@ -981,8 +1302,8 @@ Bartender4DB = {
 							},
 						}, -- [3]
 						{
-							["padding"] = 5,
 							["rows"] = 12,
+							["padding"] = 5,
 							["version"] = 3,
 							["position"] = {
 								["y"] = 610,
@@ -1038,8 +1359,8 @@ Bartender4DB = {
 							},
 						}, -- [2]
 						{
-							["padding"] = 5,
 							["rows"] = 12,
+							["padding"] = 5,
 							["version"] = 3,
 							["position"] = {
 								["y"] = 610,
@@ -1048,8 +1369,8 @@ Bartender4DB = {
 							},
 						}, -- [3]
 						{
-							["padding"] = 5,
 							["rows"] = 12,
+							["padding"] = 5,
 							["version"] = 3,
 							["position"] = {
 								["y"] = 610,
@@ -1083,73 +1404,164 @@ Bartender4DB = {
 						},
 					},
 				},
-				["Youreterribl - Burning Legion"] = {
+				["Paladin"] = {
 					["actionbars"] = {
 						{
-							["padding"] = 6,
 							["version"] = 3,
+							["fadeout"] = true,
 							["position"] = {
-								["y"] = 41.75,
-								["x"] = -510,
+								["y"] = 34.80000662207613,
+								["x"] = -394.563516964965,
 								["point"] = "BOTTOM",
+								["scale"] = 0.800000011920929,
+							},
+							["fadeoutalpha"] = 0,
+							["padding"] = 5,
+							["visibility"] = {
+								["combat"] = false,
+								["always"] = false,
+							},
+							["states"] = {
+								["stance"] = {
+									["DRUID"] = {
+										["cat"] = 8,
+										["bear"] = 7,
+									},
+								},
 							},
 						}, -- [1]
 						{
 							["enabled"] = false,
-							["version"] = 3,
+							["fadeout"] = true,
+							["buttons"] = 8,
 							["position"] = {
-								["y"] = -227.4998474121094,
-								["x"] = -231.5001831054688,
-								["point"] = "CENTER",
+								["y"] = 36.04998683797021,
+								["x"] = -461.4353617181951,
+								["point"] = "BOTTOM",
+								["scale"] = 0.8999999761581421,
 							},
+							["padding"] = 7,
+							["version"] = 3,
+							["fadeoutalpha"] = 0,
 						}, -- [2]
 						{
+							["fadeout"] = true,
 							["rows"] = 12,
-							["padding"] = 5,
-							["version"] = 3,
+							["fadeoutalpha"] = 0,
 							["position"] = {
-								["y"] = 610,
-								["x"] = -82,
-								["point"] = "BOTTOMRIGHT",
+								["y"] = -58.23716323133158,
+								["x"] = -65.19938642381749,
+								["point"] = "RIGHT",
+								["scale"] = 0.800000011920929,
 							},
+							["hidemacrotext"] = true,
+							["padding"] = 5,
+							["visibility"] = {
+								["combat"] = false,
+							},
+							["version"] = 3,
 						}, -- [3]
 						{
-							["rows"] = 12,
-							["padding"] = 5,
+							["fadeout"] = true,
 							["version"] = 3,
 							["position"] = {
-								["y"] = 610,
-								["x"] = -42,
-								["point"] = "BOTTOMRIGHT",
+								["y"] = -58.23733412977163,
+								["x"] = -34.7995812833251,
+								["point"] = "RIGHT",
+								["scale"] = 0.800000011920929,
 							},
+							["padding"] = 5,
+							["rows"] = 12,
+							["visibility"] = {
+								["combat"] = false,
+							},
+							["fadeoutalpha"] = 0,
 						}, -- [4]
 						{
-							["padding"] = 6,
-							["version"] = 3,
+							["fadeout"] = true,
 							["position"] = {
-								["y"] = 110,
-								["x"] = 3,
+								["y"] = 34.80000662207613,
+								["x"] = -1.701743532743421,
 								["point"] = "BOTTOM",
+								["scale"] = 0.800000011920929,
 							},
+							["version"] = 3,
+							["padding"] = 5,
+							["visibility"] = {
+								["combat"] = false,
+								["always"] = false,
+							},
+							["fadeoutalpha"] = 0,
 						}, -- [5]
 						{
-							["padding"] = 6,
+							["fadeout"] = true,
 							["version"] = 3,
+							["buttons"] = 5,
 							["position"] = {
-								["y"] = 110,
-								["x"] = -510,
+								["y"] = 65.745582034373,
+								["x"] = -86.79998698830605,
 								["point"] = "BOTTOM",
+								["scale"] = 0.800000011920929,
 							},
+							["padding"] = 7,
+							["visibility"] = {
+								["combat"] = false,
+								["always"] = false,
+							},
+							["fadeoutalpha"] = 0,
 						}, -- [6]
 						{
+							["version"] = 3,
+							["position"] = {
+								["y"] = -227.4998321533203,
+								["x"] = -231.49951171875,
+								["point"] = "CENTER",
+							},
 						}, -- [7]
 						{
+							["version"] = 3,
+							["buttons"] = 8,
+							["padding"] = 7,
+							["hidemacrotext"] = true,
+							["position"] = {
+								["y"] = 247.9352168206315,
+								["x"] = -456.4597426751861,
+								["point"] = "BOTTOM",
+								["scale"] = 0.8999999761581421,
+							},
 						}, -- [8]
-						[10] = {
-						},
+						{
+							["version"] = 3,
+							["buttons"] = 8,
+							["position"] = {
+								["y"] = 189.4655543680838,
+								["x"] = 235.2446826922969,
+								["point"] = "BOTTOM",
+								["scale"] = 0.8999999761581421,
+							},
+							["padding"] = 7,
+							["visibility"] = {
+								["stance"] = {
+									[0] = false,
+								},
+							},
+							["fadeoutalpha"] = 0,
+						}, -- [9]
+						{
+							["version"] = 3,
+							["buttons"] = 5,
+							["padding"] = 7,
+							["position"] = {
+								["y"] = -129.4492448846686,
+								["x"] = 238.580166409276,
+								["point"] = "LEFT",
+								["scale"] = 0.8999999761581421,
+							},
+							["fadeoutalpha"] = 0,
+						}, -- [10]
 					},
 				},
-				["Scatterffs - Ragnaros"] = {
+				["Syhlol - Illidan"] = {
 					["actionbars"] = {
 						{
 							["padding"] = 6,
@@ -1216,22 +1628,89 @@ Bartender4DB = {
 						}, -- [10]
 					},
 				},
+				["Scatterffs - Ragnaros"] = {
+					["actionbars"] = {
+						{
+							["padding"] = 6,
+							["version"] = 3,
+							["position"] = {
+								["y"] = 41.75,
+								["x"] = -510,
+								["point"] = "BOTTOM",
+							},
+						}, -- [1]
+						{
+							["enabled"] = false,
+							["version"] = 3,
+							["position"] = {
+								["y"] = -227.4998321533203,
+								["x"] = -231.49951171875,
+								["point"] = "CENTER",
+							},
+						}, -- [2]
+						{
+							["padding"] = 5,
+							["rows"] = 12,
+							["version"] = 3,
+							["position"] = {
+								["y"] = 610,
+								["x"] = -82,
+								["point"] = "BOTTOMRIGHT",
+							},
+						}, -- [3]
+						{
+							["padding"] = 5,
+							["rows"] = 12,
+							["version"] = 3,
+							["position"] = {
+								["y"] = 610,
+								["x"] = -42,
+								["point"] = "BOTTOMRIGHT",
+							},
+						}, -- [4]
+						{
+							["padding"] = 6,
+							["version"] = 3,
+							["position"] = {
+								["y"] = 110,
+								["x"] = 3,
+								["point"] = "BOTTOM",
+							},
+						}, -- [5]
+						{
+							["padding"] = 6,
+							["version"] = 3,
+							["position"] = {
+								["y"] = 110,
+								["x"] = -510,
+								["point"] = "BOTTOM",
+							},
+						}, -- [6]
+						{
+						}, -- [7]
+						{
+						}, -- [8]
+						nil, -- [9]
+						{
+						}, -- [10]
+					},
+				},
 				["Syhlo - Thrall"] = {
 					["actionbars"] = {
 						{
-							["version"] = 3,
-							["buttons"] = 8,
 							["fadeoutalpha"] = 0,
-							["padding"] = 7,
-							["visibility"] = {
-								["always"] = false,
-							},
+							["buttons"] = 8,
 							["position"] = {
 								["y"] = 160,
 								["x"] = -156.1500233292572,
 								["point"] = "BOTTOM",
 								["scale"] = 0.8999999761581421,
 							},
+							["padding"] = 7,
+							["visibility"] = {
+								["always"] = false,
+							},
+							["version"] = 3,
 						}, -- [1]
 						{
 							["enabled"] = false,
@@ -1246,7 +1725,7 @@ Bartender4DB = {
 							},
 						}, -- [2]
 						{
-							["fadeout"] = true,
+							["fadeoutalpha"] = 0.65,
 							["version"] = 3,
 							["position"] = {
 								["y"] = 223.2000300725304,
@@ -1254,23 +1733,23 @@ Bartender4DB = {
 								["point"] = "RIGHT",
 								["scale"] = 0.8999999761581421,
 							},
+							["rows"] = 12,
 							["hidemacrotext"] = true,
 							["padding"] = 5,
-							["rows"] = 12,
-							["fadeoutalpha"] = 0.65,
+							["fadeout"] = true,
 						}, -- [3]
 						{
 							["fadeout"] = true,
 							["buttons"] = 4,
+							["version"] = 3,
+							["padding"] = 5,
+							["fadeoutalpha"] = 0,
 							["position"] = {
 								["y"] = 141.6587822580659,
 								["x"] = 174.9089173570683,
 								["point"] = "BOTTOM",
 								["scale"] = 0.8999999761581421,
 							},
-							["padding"] = 5,
-							["fadeoutalpha"] = 0,
-							["version"] = 3,
 						}, -- [4]
 						{
 							["fadeout"] = true,
@@ -1280,27 +1759,27 @@ Bartender4DB = {
 								["point"] = "BOTTOM",
 								["scale"] = 0.8999999761581421,
 							},
-							["fadeoutalpha"] = 0,
+							["version"] = 3,
 							["padding"] = 5,
 							["visibility"] = {
 								["always"] = false,
 							},
-							["version"] = 3,
+							["fadeoutalpha"] = 0,
 						}, -- [5]
 						{
 							["version"] = 3,
 							["buttons"] = 8,
+							["fadeoutalpha"] = 0,
+							["padding"] = 7,
+							["visibility"] = {
+								["always"] = false,
+							},
 							["position"] = {
 								["y"] = 122.06038189834,
 								["x"] = -155.699734773465,
 								["point"] = "BOTTOM",
 								["scale"] = 0.8999999761581421,
 							},
-							["padding"] = 7,
-							["visibility"] = {
-								["always"] = false,
-							},
-							["fadeoutalpha"] = 0,
 						}, -- [6]
 						{
 							["version"] = 3,
@@ -1314,13 +1793,13 @@ Bartender4DB = {
 							["version"] = 3,
 							["buttons"] = 8,
 							["padding"] = 7,
-							["hidemacrotext"] = true,
 							["position"] = {
 								["y"] = 247.9352168206315,
 								["x"] = -456.4597426751861,
 								["point"] = "BOTTOM",
 								["scale"] = 0.8999999761581421,
 							},
+							["hidemacrotext"] = true,
 						}, -- [8]
 						{
 							["enabled"] = true,
@@ -1369,8 +1848,8 @@ Bartender4DB = {
 							},
 						}, -- [2]
 						{
-							["padding"] = 5,
 							["rows"] = 12,
+							["padding"] = 5,
 							["version"] = 3,
 							["position"] = {
 								["y"] = 610,
@@ -1379,8 +1858,8 @@ Bartender4DB = {
 							},
 						}, -- [3]
 						{
-							["padding"] = 5,
 							["rows"] = 12,
+							["padding"] = 5,
 							["version"] = 3,
 							["position"] = {
 								["y"] = 610,
@@ -1414,7 +1893,7 @@ Bartender4DB = {
 						},
 					},
 				},
-				["Syhloc - Thrall"] = {
+				["Syhdk - Thrall"] = {
 					["actionbars"] = {
 						{
 							["padding"] = 6,
@@ -1501,8 +1980,8 @@ Bartender4DB = {
 							},
 						}, -- [2]
 						{
-							["padding"] = 5,
 							["rows"] = 12,
+							["padding"] = 5,
 							["version"] = 3,
 							["position"] = {
 								["y"] = 610,
@@ -1511,8 +1990,8 @@ Bartender4DB = {
 							},
 						}, -- [3]
 						{
-							["padding"] = 5,
 							["rows"] = 12,
+							["padding"] = 5,
 							["version"] = 3,
 							["position"] = {
 								["y"] = 610,
@@ -1546,7 +2025,7 @@ Bartender4DB = {
 						},
 					},
 				},
-				["Syhlol - Illidan"] = {
+				["Syhloc - Thrall"] = {
 					["actionbars"] = {
 						{
 							["padding"] = 6,
@@ -1567,8 +2046,8 @@ Bartender4DB = {
 							},
 						}, -- [2]
 						{
-							["padding"] = 5,
 							["rows"] = 12,
+							["padding"] = 5,
 							["version"] = 3,
 							["position"] = {
 								["y"] = 610,
@@ -1577,8 +2056,8 @@ Bartender4DB = {
 							},
 						}, -- [3]
 						{
-							["padding"] = 5,
 							["rows"] = 12,
+							["padding"] = 5,
 							["version"] = 3,
 							["position"] = {
 								["y"] = 610,
@@ -1608,12 +2087,11 @@ Bartender4DB = {
 						}, -- [7]
 						{
 						}, -- [8]
-						nil, -- [9]
-						{
-						}, -- [10]
+						[10] = {
+						},
 					},
 				},
-				["Syhdk - Thrall"] = {
+				["Youreterribl - Burning Legion"] = {
 					["actionbars"] = {
 						{
 							["padding"] = 6,
@@ -1628,14 +2106,14 @@ Bartender4DB = {
 							["enabled"] = false,
 							["version"] = 3,
 							["position"] = {
-								["y"] = -227.4998321533203,
-								["x"] = -231.49951171875,
+								["y"] = -227.4998474121094,
+								["x"] = -231.5001831054688,
 								["point"] = "CENTER",
 							},
 						}, -- [2]
 						{
-							["rows"] = 12,
 							["padding"] = 5,
+							["rows"] = 12,
 							["version"] = 3,
 							["position"] = {
 								["y"] = 610,
@@ -1644,8 +2122,8 @@ Bartender4DB = {
 							},
 						}, -- [3]
 						{
-							["rows"] = 12,
 							["padding"] = 5,
+							["rows"] = 12,
 							["version"] = 3,
 							["position"] = {
 								["y"] = 610,
@@ -1683,14 +2161,14 @@ Bartender4DB = {
 					["actionbars"] = {
 						{
 							["buttons"] = 8,
-							["version"] = 3,
+							["fadeoutalpha"] = 0,
 							["position"] = {
 								["y"] = 160,
 								["x"] = -156.1500233292572,
 								["point"] = "BOTTOM",
 								["scale"] = 0.8999999761581421,
 							},
-							["fadeoutalpha"] = 0,
+							["version"] = 3,
 							["padding"] = 7,
 							["visibility"] = {
 								["always"] = false,
@@ -1707,8 +2185,8 @@ Bartender4DB = {
 						{
 							["fadeout"] = true,
 							["buttons"] = 8,
-							["fadeoutalpha"] = 0,
 							["version"] = 3,
+							["fadeoutalpha"] = 0,
 							["position"] = {
 								["y"] = 40.05000580549222,
 								["x"] = -155.699893132849,
@@ -1719,9 +2197,8 @@ Bartender4DB = {
 						}, -- [2]
 						{
 							["rows"] = 12,
-							["fadeout"] = true,
+							["fadeoutalpha"] = 0,
 							["hidemacrotext"] = true,
-							["fadeoutalpha"] = 0.65,
 							["version"] = 3,
 							["position"] = {
 								["y"] = 223.2000300725304,
@@ -1734,11 +2211,11 @@ Bartender4DB = {
 						{
 							["fadeout"] = true,
 							["buttons"] = 4,
-							["version"] = 3,
 							["fadeoutalpha"] = 0,
+							["version"] = 3,
 							["position"] = {
-								["y"] = 141.6587822580659,
-								["x"] = 174.9089173570683,
+								["y"] = 77.85000480413419,
+								["x"] = 174.4461247325962,
 								["point"] = "BOTTOM",
 								["scale"] = 0.8999999761581421,
 							},
@@ -1746,11 +2223,11 @@ Bartender4DB = {
 						}, -- [4]
 						{
 							["fadeout"] = true,
-							["fadeoutalpha"] = 0,
 							["version"] = 3,
+							["fadeoutalpha"] = 0,
 							["position"] = {
-								["y"] = 102.9587764168109,
-								["x"] = 174.7424744903838,
+								["y"] = 39.14999896287918,
+								["x"] = 172.6032231700883,
 								["point"] = "BOTTOM",
 								["scale"] = 0.8999999761581421,
 							},
@@ -1797,6 +2274,7 @@ Bartender4DB = {
 						{
 							["enabled"] = true,
 							["buttons"] = 8,
+							["fadeoutalpha"] = 0,
 							["version"] = 3,
 							["position"] = {
 								["y"] = 82.24097224762772,
@@ -1814,6 +2292,7 @@ Bartender4DB = {
 						{
 							["enabled"] = true,
 							["buttons"] = 5,
+							["fadeoutalpha"] = 0,
 							["version"] = 3,
 							["position"] = {
 								["y"] = 199.4352348901102,
@@ -1831,6 +2310,14 @@ Bartender4DB = {
 		},
 		["ExtraActionBar"] = {
 			["profiles"] = {
+				["Gnomemounts - Tichondrius"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = -252.4999389648438,
+						["x"] = -63.50006103515625,
+						["point"] = "CENTER",
+					},
+				},
 				["Isellpropane - Proudmoore"] = {
 					["version"] = 3,
 					["position"] = {
@@ -1903,12 +2390,28 @@ Bartender4DB = {
 						["point"] = "CENTER",
 					},
 				},
+				["Syhlol - Tichondrius"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = -252.4999389648438,
+						["x"] = -63.50006103515625,
+						["point"] = "CENTER",
+					},
+				},
 				["Cyf - Tichondrius"] = {
 					["version"] = 3,
 					["position"] = {
 						["y"] = 223.0000152587891,
 						["x"] = -31.4998779296875,
 						["point"] = "BOTTOM",
+					},
+				},
+				["Global"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = -204.2767944335938,
+						["x"] = -63.49981689453125,
+						["point"] = "TOP",
 					},
 				},
 				["Wthrename - Tichondrius"] = {
@@ -1927,12 +2430,20 @@ Bartender4DB = {
 						["point"] = "CENTER",
 					},
 				},
-				["Youreterribl - Burning Legion"] = {
+				["Paladin"] = {
 					["version"] = 3,
 					["position"] = {
-						["y"] = -252.4999389648438,
-						["x"] = -63.50006103515625,
-						["point"] = "CENTER",
+						["y"] = -204.2767944335938,
+						["x"] = -63.49981689453125,
+						["point"] = "TOP",
+					},
+				},
+				["Syhlol - Illidan"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = 223.0000152587891,
+						["x"] = -31.4998779296875,
+						["point"] = "BOTTOM",
 					},
 				},
 				["Scatterffs - Ragnaros"] = {
@@ -1959,7 +2470,7 @@ Bartender4DB = {
 						["point"] = "CENTER",
 					},
 				},
-				["Syhloc - Thrall"] = {
+				["Syhdk - Thrall"] = {
 					["version"] = 3,
 					["position"] = {
 						["y"] = 287.0000305175781,
@@ -1975,20 +2486,20 @@ Bartender4DB = {
 						["point"] = "CENTER",
 					},
 				},
-				["Syhlol - Illidan"] = {
-					["version"] = 3,
-					["position"] = {
-						["y"] = 223.0000152587891,
-						["x"] = -31.4998779296875,
-						["point"] = "BOTTOM",
-					},
-				},
-				["Syhdk - Thrall"] = {
+				["Syhloc - Thrall"] = {
 					["version"] = 3,
 					["position"] = {
 						["y"] = 287.0000305175781,
 						["x"] = -63.49981689453125,
 						["point"] = "BOTTOM",
+					},
+				},
+				["Youreterribl - Burning Legion"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = -252.4999389648438,
+						["x"] = -63.50006103515625,
+						["point"] = "CENTER",
 					},
 				},
 				["Syh - Thrall"] = {
@@ -2003,6 +2514,16 @@ Bartender4DB = {
 		},
 		["MicroMenu"] = {
 			["profiles"] = {
+				["Gnomemounts - Tichondrius"] = {
+					["padding"] = -2,
+					["version"] = 3,
+					["position"] = {
+						["scale"] = 1,
+						["x"] = 37.5,
+						["point"] = "BOTTOM",
+						["y"] = 41.75,
+					},
+				},
 				["Isellpropane - Proudmoore"] = {
 					["enabled"] = false,
 					["padding"] = -2,
@@ -2094,6 +2615,16 @@ Bartender4DB = {
 						["y"] = 41.75,
 					},
 				},
+				["Syhlol - Tichondrius"] = {
+					["padding"] = -2,
+					["version"] = 3,
+					["position"] = {
+						["y"] = 41.75,
+						["x"] = 37.5,
+						["point"] = "BOTTOM",
+						["scale"] = 1,
+					},
+				},
 				["Cyf - Tichondrius"] = {
 					["padding"] = -2,
 					["version"] = 3,
@@ -2103,6 +2634,18 @@ Bartender4DB = {
 						["point"] = "BOTTOM",
 						["scale"] = 1,
 					},
+				},
+				["Global"] = {
+					["fadeout"] = true,
+					["position"] = {
+						["y"] = 53.21999359130859,
+						["x"] = -474.871826171875,
+						["point"] = "BOTTOMRIGHT",
+						["scale"] = 1,
+					},
+					["padding"] = -2,
+					["version"] = 3,
+					["fadeoutalpha"] = 0,
 				},
 				["Wthrename - Tichondrius"] = {
 					["padding"] = -2,
@@ -2124,14 +2667,26 @@ Bartender4DB = {
 						["y"] = 41.75,
 					},
 				},
-				["Youreterribl - Burning Legion"] = {
+				["Paladin"] = {
+					["fadeout"] = true,
+					["position"] = {
+						["y"] = 40,
+						["x"] = -292.0003662109375,
+						["point"] = "BOTTOMRIGHT",
+						["scale"] = 1,
+					},
+					["padding"] = -2,
+					["fadeoutalpha"] = 0,
+					["version"] = 3,
+				},
+				["Syhlol - Illidan"] = {
 					["padding"] = -2,
 					["version"] = 3,
 					["position"] = {
-						["scale"] = 1,
+						["y"] = 41.75,
 						["x"] = 37.5,
 						["point"] = "BOTTOM",
-						["y"] = 41.75,
+						["scale"] = 1,
 					},
 				},
 				["Scatterffs - Ragnaros"] = {
@@ -2145,7 +2700,7 @@ Bartender4DB = {
 					},
 				},
 				["Syhlo - Thrall"] = {
-					["fadeout"] = true,
+					["fadeoutalpha"] = 0,
 					["position"] = {
 						["y"] = 53.21999359130859,
 						["x"] = -474.871826171875,
@@ -2153,7 +2708,7 @@ Bartender4DB = {
 						["scale"] = 1,
 					},
 					["padding"] = -2,
-					["fadeoutalpha"] = 0,
+					["fadeout"] = true,
 					["version"] = 3,
 				},
 				["Default"] = {
@@ -2166,7 +2721,7 @@ Bartender4DB = {
 						["y"] = 41.75,
 					},
 				},
-				["Syhloc - Thrall"] = {
+				["Syhdk - Thrall"] = {
 					["padding"] = -2,
 					["version"] = 3,
 					["position"] = {
@@ -2186,17 +2741,17 @@ Bartender4DB = {
 						["y"] = 41.75,
 					},
 				},
-				["Syhlol - Illidan"] = {
+				["Syhloc - Thrall"] = {
 					["padding"] = -2,
 					["version"] = 3,
 					["position"] = {
-						["y"] = 41.75,
+						["scale"] = 1,
 						["x"] = 37.5,
 						["point"] = "BOTTOM",
-						["scale"] = 1,
+						["y"] = 41.75,
 					},
 				},
-				["Syhdk - Thrall"] = {
+				["Youreterribl - Burning Legion"] = {
 					["padding"] = -2,
 					["version"] = 3,
 					["position"] = {
@@ -2207,14 +2762,14 @@ Bartender4DB = {
 					},
 				},
 				["Syh - Thrall"] = {
-					["fadeoutalpha"] = 0,
+					["fadeout"] = true,
 					["position"] = {
-						["y"] = 53.21999359130859,
-						["x"] = -474.871826171875,
+						["y"] = 40,
+						["x"] = -292.0003662109375,
 						["point"] = "BOTTOMRIGHT",
 						["scale"] = 1,
 					},
-					["fadeout"] = true,
+					["fadeoutalpha"] = 0,
 					["padding"] = -2,
 					["version"] = 3,
 				},
@@ -2222,10 +2777,18 @@ Bartender4DB = {
 		},
 		["BagBar"] = {
 			["profiles"] = {
+				["Gnomemounts - Tichondrius"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = 38.5,
+						["x"] = 345,
+						["point"] = "BOTTOM",
+					},
+				},
 				["Isellpropane - Proudmoore"] = {
-					["fadeout"] = true,
 					["version"] = 3,
 					["fadeoutalpha"] = 0,
+					["fadeout"] = true,
 					["position"] = {
 						["y"] = 48.61392211914063,
 						["x"] = -180.35791015625,
@@ -2296,12 +2859,30 @@ Bartender4DB = {
 						["point"] = "BOTTOM",
 					},
 				},
+				["Syhlol - Tichondrius"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = 38.5,
+						["x"] = 345,
+						["point"] = "BOTTOM",
+					},
+				},
 				["Cyf - Tichondrius"] = {
 					["version"] = 3,
 					["position"] = {
 						["y"] = 38.5,
 						["x"] = 345,
 						["point"] = "BOTTOM",
+					},
+				},
+				["Global"] = {
+					["fadeoutalpha"] = 0,
+					["version"] = 3,
+					["fadeout"] = true,
+					["position"] = {
+						["y"] = 48.61392211914063,
+						["x"] = -180.35791015625,
+						["point"] = "BOTTOMRIGHT",
 					},
 				},
 				["Wthrename - Tichondrius"] = {
@@ -2320,7 +2901,18 @@ Bartender4DB = {
 						["point"] = "BOTTOM",
 					},
 				},
-				["Youreterribl - Burning Legion"] = {
+				["Paladin"] = {
+					["enabled"] = false,
+					["fadeout"] = true,
+					["position"] = {
+						["y"] = 48.61392211914063,
+						["x"] = -180.35791015625,
+						["point"] = "BOTTOMRIGHT",
+					},
+					["fadeoutalpha"] = 0,
+					["version"] = 3,
+				},
+				["Syhlol - Illidan"] = {
 					["version"] = 3,
 					["position"] = {
 						["y"] = 38.5,
@@ -2337,9 +2929,9 @@ Bartender4DB = {
 					},
 				},
 				["Syhlo - Thrall"] = {
-					["fadeoutalpha"] = 0,
 					["fadeout"] = true,
 					["version"] = 3,
+					["fadeoutalpha"] = 0,
 					["position"] = {
 						["y"] = 48.61392211914063,
 						["x"] = -180.35791015625,
@@ -2347,30 +2939,6 @@ Bartender4DB = {
 					},
 				},
 				["Default"] = {
-					["version"] = 3,
-					["position"] = {
-						["y"] = 38.5,
-						["x"] = 345,
-						["point"] = "BOTTOM",
-					},
-				},
-				["Syhloc - Thrall"] = {
-					["version"] = 3,
-					["position"] = {
-						["y"] = 38.5,
-						["x"] = 345,
-						["point"] = "BOTTOM",
-					},
-				},
-				["Pandamounts - Tichondrius"] = {
-					["version"] = 3,
-					["position"] = {
-						["y"] = 38.5,
-						["x"] = 345,
-						["point"] = "BOTTOM",
-					},
-				},
-				["Syhlol - Illidan"] = {
 					["version"] = 3,
 					["position"] = {
 						["y"] = 38.5,
@@ -2386,8 +2954,33 @@ Bartender4DB = {
 						["point"] = "BOTTOM",
 					},
 				},
+				["Pandamounts - Tichondrius"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = 38.5,
+						["x"] = 345,
+						["point"] = "BOTTOM",
+					},
+				},
+				["Syhloc - Thrall"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = 38.5,
+						["x"] = 345,
+						["point"] = "BOTTOM",
+					},
+				},
+				["Youreterribl - Burning Legion"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = 38.5,
+						["x"] = 345,
+						["point"] = "BOTTOM",
+					},
+				},
 				["Syh - Thrall"] = {
 					["fadeout"] = true,
+					["enabled"] = false,
 					["version"] = 3,
 					["position"] = {
 						["y"] = 48.61392211914063,
@@ -2400,6 +2993,15 @@ Bartender4DB = {
 		},
 		["BlizzardArt"] = {
 			["profiles"] = {
+				["Gnomemounts - Tichondrius"] = {
+					["enabled"] = true,
+					["version"] = 3,
+					["position"] = {
+						["y"] = 47,
+						["x"] = -512,
+						["point"] = "BOTTOM",
+					},
+				},
 				["Isellpropane - Proudmoore"] = {
 					["version"] = 3,
 					["position"] = {
@@ -2480,8 +3082,25 @@ Bartender4DB = {
 						["point"] = "BOTTOM",
 					},
 				},
+				["Syhlol - Tichondrius"] = {
+					["enabled"] = true,
+					["version"] = 3,
+					["position"] = {
+						["y"] = 47,
+						["x"] = -512,
+						["point"] = "BOTTOM",
+					},
+				},
 				["Cyf - Tichondrius"] = {
 					["enabled"] = true,
+					["version"] = 3,
+					["position"] = {
+						["y"] = 47,
+						["x"] = -512,
+						["point"] = "BOTTOM",
+					},
+				},
+				["Global"] = {
 					["version"] = 3,
 					["position"] = {
 						["y"] = 47,
@@ -2507,7 +3126,15 @@ Bartender4DB = {
 						["point"] = "BOTTOM",
 					},
 				},
-				["Youreterribl - Burning Legion"] = {
+				["Paladin"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = 47,
+						["x"] = -512,
+						["point"] = "BOTTOM",
+					},
+				},
+				["Syhlol - Illidan"] = {
 					["enabled"] = true,
 					["version"] = 3,
 					["position"] = {
@@ -2542,7 +3169,7 @@ Bartender4DB = {
 						["point"] = "BOTTOM",
 					},
 				},
-				["Syhloc - Thrall"] = {
+				["Syhdk - Thrall"] = {
 					["enabled"] = true,
 					["version"] = 3,
 					["position"] = {
@@ -2560,7 +3187,7 @@ Bartender4DB = {
 						["point"] = "BOTTOM",
 					},
 				},
-				["Syhlol - Illidan"] = {
+				["Syhloc - Thrall"] = {
 					["enabled"] = true,
 					["version"] = 3,
 					["position"] = {
@@ -2569,7 +3196,7 @@ Bartender4DB = {
 						["point"] = "BOTTOM",
 					},
 				},
-				["Syhdk - Thrall"] = {
+				["Youreterribl - Burning Legion"] = {
 					["enabled"] = true,
 					["version"] = 3,
 					["position"] = {
@@ -2588,8 +3215,84 @@ Bartender4DB = {
 				},
 			},
 		},
+		["ZoneAbilityBar"] = {
+			["profiles"] = {
+				["Syhlol - Illidan"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = 223.0000152587891,
+						["x"] = -31.4998779296875,
+						["point"] = "BOTTOM",
+					},
+				},
+				["Isellpropane - Proudmoore"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = 260.0786437988281,
+						["x"] = -31.4998779296875,
+						["point"] = "BOTTOM",
+					},
+				},
+				["Syhl - Thrall"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = 223.0000152587891,
+						["x"] = -31.4998779296875,
+						["point"] = "BOTTOM",
+					},
+				},
+				["Crylo - Tichondrius"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = 223.0000152587891,
+						["x"] = -31.4998779296875,
+						["point"] = "BOTTOM",
+					},
+				},
+				["Gfedcba - Elune"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = 223.0000152587891,
+						["x"] = -31.4998779296875,
+						["point"] = "BOTTOM",
+					},
+				},
+				["Syhlo - Thrall"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = 223.0000152587891,
+						["x"] = -31.4998779296875,
+						["point"] = "BOTTOM",
+					},
+				},
+				["Cyf - Tichondrius"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = 223.0000152587891,
+						["x"] = -31.4998779296875,
+						["point"] = "BOTTOM",
+					},
+				},
+				["Syh - Thrall"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = 185.9891357421875,
+						["x"] = -31.4998779296875,
+						["point"] = "CENTER",
+					},
+				},
+			},
+		},
 		["Vehicle"] = {
 			["profiles"] = {
+				["Gnomemounts - Tichondrius"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = 42.50006103515625,
+						["x"] = 104.5,
+						["point"] = "CENTER",
+					},
+				},
 				["Isellpropane - Proudmoore"] = {
 					["version"] = 3,
 					["position"] = {
@@ -2662,11 +3365,27 @@ Bartender4DB = {
 						["point"] = "CENTER",
 					},
 				},
+				["Syhlol - Tichondrius"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = 42.50006103515625,
+						["x"] = 104.5,
+						["point"] = "CENTER",
+					},
+				},
 				["Cyf - Tichondrius"] = {
 					["version"] = 3,
 					["position"] = {
 						["y"] = 42.50015258789063,
 						["x"] = 104.5003051757813,
+						["point"] = "CENTER",
+					},
+				},
+				["Global"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = -185.6830902099609,
+						["x"] = -15.4998779296875,
 						["point"] = "CENTER",
 					},
 				},
@@ -2686,11 +3405,19 @@ Bartender4DB = {
 						["point"] = "CENTER",
 					},
 				},
-				["Youreterribl - Burning Legion"] = {
+				["Paladin"] = {
 					["version"] = 3,
 					["position"] = {
-						["y"] = 42.50006103515625,
-						["x"] = 104.5,
+						["y"] = 218.0476226806641,
+						["x"] = -198.0440673828125,
+						["point"] = "BOTTOMRIGHT",
+					},
+				},
+				["Syhlol - Illidan"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = 42.50015258789063,
+						["x"] = 104.5003051757813,
 						["point"] = "CENTER",
 					},
 				},
@@ -2718,7 +3445,7 @@ Bartender4DB = {
 						["point"] = "CENTER",
 					},
 				},
-				["Syhloc - Thrall"] = {
+				["Syhdk - Thrall"] = {
 					["version"] = 3,
 					["position"] = {
 						["y"] = 42.50015258789063,
@@ -2734,7 +3461,7 @@ Bartender4DB = {
 						["point"] = "CENTER",
 					},
 				},
-				["Syhlol - Illidan"] = {
+				["Syhloc - Thrall"] = {
 					["version"] = 3,
 					["position"] = {
 						["y"] = 42.50015258789063,
@@ -2742,11 +3469,11 @@ Bartender4DB = {
 						["point"] = "CENTER",
 					},
 				},
-				["Syhdk - Thrall"] = {
+				["Youreterribl - Burning Legion"] = {
 					["version"] = 3,
 					["position"] = {
-						["y"] = 42.50015258789063,
-						["x"] = 104.5003051757813,
+						["y"] = 42.50006103515625,
+						["x"] = 104.5,
 						["point"] = "CENTER",
 					},
 				},
@@ -2754,184 +3481,6 @@ Bartender4DB = {
 					["position"] = {
 						["y"] = -185.6830902099609,
 						["x"] = -15.4998779296875,
-						["point"] = "CENTER",
-					},
-					["version"] = 3,
-				},
-			},
-		},
-		["StanceBar"] = {
-			["profiles"] = {
-				["Isellpropane - Proudmoore"] = {
-					["version"] = 3,
-					["position"] = {
-						["y"] = -14.99991607666016,
-						["x"] = -82.49993896484375,
-						["point"] = "CENTER",
-					},
-				},
-				["Sýh - Thrall"] = {
-					["version"] = 3,
-					["position"] = {
-						["y"] = -14.99991607666016,
-						["x"] = -82.49993896484375,
-						["point"] = "CENTER",
-					},
-				},
-				["Syhl - Thrall"] = {
-					["version"] = 3,
-					["position"] = {
-						["y"] = -14.99991607666016,
-						["x"] = -82.49993896484375,
-						["point"] = "CENTER",
-					},
-				},
-				["Gfedcba - Elune"] = {
-					["version"] = 3,
-					["position"] = {
-						["y"] = -14.99991607666016,
-						["x"] = -82.49993896484375,
-						["point"] = "CENTER",
-					},
-				},
-				["Dwarfmounts - Tichondrius"] = {
-					["version"] = 3,
-					["position"] = {
-						["y"] = -14.99996185302734,
-						["x"] = -82.5,
-						["point"] = "CENTER",
-					},
-				},
-				["Syhlol - Thrall"] = {
-					["version"] = 3,
-					["position"] = {
-						["y"] = 143,
-						["x"] = -460,
-						["point"] = "BOTTOM",
-						["scale"] = 1,
-					},
-				},
-				["Crylo - Tichondrius"] = {
-					["version"] = 3,
-					["position"] = {
-						["y"] = -14.99991607666016,
-						["x"] = -82.49993896484375,
-						["point"] = "CENTER",
-					},
-				},
-				["Regèn - Tichondrius"] = {
-					["version"] = 3,
-					["position"] = {
-						["y"] = -14.99996185302734,
-						["x"] = -82.5,
-						["point"] = "CENTER",
-					},
-				},
-				["Sydh - Thrall"] = {
-					["version"] = 3,
-					["position"] = {
-						["y"] = -14.99996185302734,
-						["x"] = -82.5,
-						["point"] = "CENTER",
-					},
-				},
-				["Cyf - Tichondrius"] = {
-					["version"] = 3,
-					["position"] = {
-						["y"] = 143,
-						["x"] = -460,
-						["point"] = "BOTTOM",
-						["scale"] = 1,
-					},
-				},
-				["Wthrename - Tichondrius"] = {
-					["version"] = 3,
-					["position"] = {
-						["y"] = -14.99991607666016,
-						["x"] = -82.49993896484375,
-						["point"] = "CENTER",
-					},
-				},
-				["Gerold - Tichondrius"] = {
-					["version"] = 3,
-					["position"] = {
-						["scale"] = 1,
-						["x"] = -460,
-						["point"] = "BOTTOM",
-						["y"] = 143,
-					},
-				},
-				["Youreterribl - Burning Legion"] = {
-					["version"] = 3,
-					["position"] = {
-						["y"] = -14.99996185302734,
-						["x"] = -82.5,
-						["point"] = "CENTER",
-					},
-				},
-				["Scatterffs - Ragnaros"] = {
-					["version"] = 3,
-					["position"] = {
-						["y"] = -14.99991607666016,
-						["x"] = -82.49993896484375,
-						["point"] = "CENTER",
-					},
-				},
-				["Syhlo - Thrall"] = {
-					["enabled"] = false,
-					["version"] = 3,
-					["position"] = {
-						["y"] = -14.99991607666016,
-						["x"] = -82.49993896484375,
-						["point"] = "CENTER",
-					},
-				},
-				["Default"] = {
-					["version"] = 3,
-					["position"] = {
-						["y"] = -14.99996185302734,
-						["x"] = -82.5,
-						["point"] = "CENTER",
-					},
-				},
-				["Syhloc - Thrall"] = {
-					["version"] = 3,
-					["position"] = {
-						["y"] = -14.99991607666016,
-						["x"] = -82.49993896484375,
-						["point"] = "CENTER",
-					},
-				},
-				["Pandamounts - Tichondrius"] = {
-					["version"] = 3,
-					["position"] = {
-						["y"] = -14.99996185302734,
-						["x"] = -82.5,
-						["point"] = "CENTER",
-					},
-				},
-				["Syhlol - Illidan"] = {
-					["version"] = 3,
-					["position"] = {
-						["y"] = 143,
-						["x"] = -460,
-						["point"] = "BOTTOM",
-						["scale"] = 1,
-					},
-				},
-				["Syhdk - Thrall"] = {
-					["version"] = 3,
-					["position"] = {
-						["y"] = -14.99991607666016,
-						["x"] = -82.49993896484375,
-						["point"] = "CENTER",
-					},
-				},
-				["Syh - Thrall"] = {
-					["enabled"] = false,
-					["position"] = {
-						["y"] = -14.99991607666016,
-						["x"] = -82.49993896484375,
 						["point"] = "CENTER",
 					},
 					["version"] = 3,
@@ -2940,6 +3489,14 @@ Bartender4DB = {
 		},
 		["PetBar"] = {
 			["profiles"] = {
+				["Gnomemounts - Tichondrius"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = 143,
+						["x"] = -460,
+						["point"] = "BOTTOM",
+					},
+				},
 				["Isellpropane - Proudmoore"] = {
 					["enabled"] = false,
 					["version"] = 3,
@@ -3013,11 +3570,29 @@ Bartender4DB = {
 						["point"] = "BOTTOM",
 					},
 				},
+				["Syhlol - Tichondrius"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = 143,
+						["x"] = -460,
+						["point"] = "BOTTOM",
+					},
+				},
 				["Cyf - Tichondrius"] = {
 					["version"] = 3,
 					["position"] = {
 						["y"] = 143,
 						["x"] = -120,
+						["point"] = "BOTTOM",
+					},
+				},
+				["Global"] = {
+					["enabled"] = false,
+					["version"] = 3,
+					["fadeout"] = true,
+					["position"] = {
+						["y"] = 233.3352508544922,
+						["x"] = -178.8778686523438,
 						["point"] = "BOTTOM",
 					},
 				},
@@ -3037,11 +3612,21 @@ Bartender4DB = {
 						["point"] = "BOTTOM",
 					},
 				},
-				["Youreterribl - Burning Legion"] = {
+				["Paladin"] = {
+					["enabled"] = false,
+					["version"] = 3,
+					["fadeout"] = true,
+					["position"] = {
+						["y"] = 233.3352508544922,
+						["x"] = -178.8778686523438,
+						["point"] = "BOTTOM",
+					},
+				},
+				["Syhlol - Illidan"] = {
 					["version"] = 3,
 					["position"] = {
 						["y"] = 143,
-						["x"] = -460,
+						["x"] = -120,
 						["point"] = "BOTTOM",
 					},
 				},
@@ -3070,7 +3655,7 @@ Bartender4DB = {
 						["point"] = "BOTTOM",
 					},
 				},
-				["Syhloc - Thrall"] = {
+				["Syhdk - Thrall"] = {
 					["version"] = 3,
 					["position"] = {
 						["y"] = 143,
@@ -3086,15 +3671,15 @@ Bartender4DB = {
 						["point"] = "BOTTOM",
 					},
 				},
-				["Syhlol - Illidan"] = {
+				["Syhloc - Thrall"] = {
 					["version"] = 3,
 					["position"] = {
 						["y"] = 143,
-						["x"] = -120,
+						["x"] = -460,
 						["point"] = "BOTTOM",
 					},
 				},
-				["Syhdk - Thrall"] = {
+				["Youreterribl - Burning Legion"] = {
 					["version"] = 3,
 					["position"] = {
 						["y"] = 143,
@@ -3104,8 +3689,8 @@ Bartender4DB = {
 				},
 				["Syh - Thrall"] = {
 					["enabled"] = false,
-					["fadeout"] = true,
 					["version"] = 3,
+					["fadeout"] = true,
 					["position"] = {
 						["y"] = 233.3352508544922,
 						["x"] = -178.8778686523438,
@@ -3114,76 +3699,221 @@ Bartender4DB = {
 				},
 			},
 		},
-		["ZoneAbilityBar"] = {
+		["StanceBar"] = {
 			["profiles"] = {
-				["Syhlol - Illidan"] = {
+				["Gnomemounts - Tichondrius"] = {
 					["version"] = 3,
 					["position"] = {
-						["y"] = 223.0000152587891,
-						["x"] = -31.4998779296875,
-						["point"] = "BOTTOM",
+						["y"] = -14.99996185302734,
+						["x"] = -82.5,
+						["point"] = "CENTER",
 					},
 				},
 				["Isellpropane - Proudmoore"] = {
 					["version"] = 3,
 					["position"] = {
-						["y"] = 260.0786437988281,
-						["x"] = -31.4998779296875,
-						["point"] = "BOTTOM",
+						["y"] = -14.99991607666016,
+						["x"] = -82.49993896484375,
+						["point"] = "CENTER",
 					},
 				},
-				["Crylo - Tichondrius"] = {
+				["Sýh - Thrall"] = {
 					["version"] = 3,
 					["position"] = {
-						["y"] = 223.0000152587891,
-						["x"] = -31.4998779296875,
-						["point"] = "BOTTOM",
+						["y"] = -14.99991607666016,
+						["x"] = -82.49993896484375,
+						["point"] = "CENTER",
 					},
 				},
 				["Syhl - Thrall"] = {
 					["version"] = 3,
 					["position"] = {
-						["y"] = 223.0000152587891,
-						["x"] = -31.4998779296875,
-						["point"] = "BOTTOM",
+						["y"] = -14.99991607666016,
+						["x"] = -82.49993896484375,
+						["point"] = "CENTER",
 					},
 				},
 				["Gfedcba - Elune"] = {
 					["version"] = 3,
 					["position"] = {
-						["y"] = 223.0000152587891,
-						["x"] = -31.4998779296875,
+						["y"] = -14.99991607666016,
+						["x"] = -82.49993896484375,
+						["point"] = "CENTER",
+					},
+				},
+				["Dwarfmounts - Tichondrius"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = -14.99996185302734,
+						["x"] = -82.5,
+						["point"] = "CENTER",
+					},
+				},
+				["Syhlol - Thrall"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = 143,
+						["x"] = -460,
 						["point"] = "BOTTOM",
+						["scale"] = 1,
+					},
+				},
+				["Crylo - Tichondrius"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = -14.99991607666016,
+						["x"] = -82.49993896484375,
+						["point"] = "CENTER",
+					},
+				},
+				["Regèn - Tichondrius"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = -14.99996185302734,
+						["x"] = -82.5,
+						["point"] = "CENTER",
+					},
+				},
+				["Sydh - Thrall"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = -14.99996185302734,
+						["x"] = -82.5,
+						["point"] = "CENTER",
+					},
+				},
+				["Syhlol - Tichondrius"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = -14.99996185302734,
+						["x"] = -82.5,
+						["point"] = "CENTER",
 					},
 				},
 				["Cyf - Tichondrius"] = {
 					["version"] = 3,
 					["position"] = {
-						["y"] = 223.0000152587891,
-						["x"] = -31.4998779296875,
+						["y"] = 143,
+						["x"] = -460,
 						["point"] = "BOTTOM",
+						["scale"] = 1,
+					},
+				},
+				["Global"] = {
+					["enabled"] = false,
+					["version"] = 3,
+					["position"] = {
+						["y"] = -14.99991607666016,
+						["x"] = -82.49993896484375,
+						["point"] = "CENTER",
+					},
+				},
+				["Wthrename - Tichondrius"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = -14.99991607666016,
+						["x"] = -82.49993896484375,
+						["point"] = "CENTER",
+					},
+				},
+				["Gerold - Tichondrius"] = {
+					["version"] = 3,
+					["position"] = {
+						["scale"] = 1,
+						["x"] = -460,
+						["point"] = "BOTTOM",
+						["y"] = 143,
+					},
+				},
+				["Paladin"] = {
+					["enabled"] = false,
+					["version"] = 3,
+					["position"] = {
+						["y"] = -14.99991607666016,
+						["x"] = -82.49993896484375,
+						["point"] = "CENTER",
+					},
+				},
+				["Syhlol - Illidan"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = 143,
+						["x"] = -460,
+						["point"] = "BOTTOM",
+						["scale"] = 1,
+					},
+				},
+				["Scatterffs - Ragnaros"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = -14.99991607666016,
+						["x"] = -82.49993896484375,
+						["point"] = "CENTER",
 					},
 				},
 				["Syhlo - Thrall"] = {
+					["enabled"] = false,
 					["version"] = 3,
 					["position"] = {
-						["y"] = 223.0000152587891,
-						["x"] = -31.4998779296875,
-						["point"] = "BOTTOM",
+						["y"] = -14.99991607666016,
+						["x"] = -82.49993896484375,
+						["point"] = "CENTER",
+					},
+				},
+				["Default"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = -14.99996185302734,
+						["x"] = -82.5,
+						["point"] = "CENTER",
+					},
+				},
+				["Syhdk - Thrall"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = -14.99991607666016,
+						["x"] = -82.49993896484375,
+						["point"] = "CENTER",
+					},
+				},
+				["Pandamounts - Tichondrius"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = -14.99996185302734,
+						["x"] = -82.5,
+						["point"] = "CENTER",
+					},
+				},
+				["Syhloc - Thrall"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = -14.99991607666016,
+						["x"] = -82.49993896484375,
+						["point"] = "CENTER",
+					},
+				},
+				["Youreterribl - Burning Legion"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = -14.99996185302734,
+						["x"] = -82.5,
+						["point"] = "CENTER",
 					},
 				},
 				["Syh - Thrall"] = {
-					["version"] = 3,
+					["enabled"] = false,
 					["position"] = {
-						["y"] = 185.9891357421875,
-						["x"] = -31.4998779296875,
+						["y"] = -14.99991607666016,
+						["x"] = -82.49993896484375,
 						["point"] = "CENTER",
 					},
+					["version"] = 3,
 				},
 			},
 		},
 	},
 	["profileKeys"] = {
+		["Gnomemounts - Tichondrius"] = "Global",
 		["Isellpropane - Proudmoore"] = "Isellpropane - Proudmoore",
 		["Sýh - Thrall"] = "Syh - Thrall",
 		["Syhl - Thrall"] = "Syh - Thrall",
@@ -3193,19 +3923,25 @@ Bartender4DB = {
 		["Crylo - Tichondrius"] = "Syh - Thrall",
 		["Regèn - Tichondrius"] = "Syh - Thrall",
 		["Sydh - Thrall"] = "Sydh - Thrall",
+		["Syhlol - Tichondrius"] = "Global",
 		["Cyf - Tichondrius"] = "Syh - Thrall",
 		["Wthrename - Tichondrius"] = "Wthrename - Tichondrius",
-		["Gerold - Tichondrius"] = "Syh - Thrall",
+		["Gerold - Tichondrius"] = "Paladin",
 		["Scatterffs - Ragnaros"] = "Scatterffs - Ragnaros",
 		["Syhlo - Thrall"] = "Syhlo - Thrall",
 		["Youreterribl - Burning Legion"] = "Youreterribl - Burning Legion",
-		["Syhloc - Thrall"] = "Syh - Thrall",
+		["Syhdk - Thrall"] = "Syh - Thrall",
 		["Pandamounts - Tichondrius"] = "Syh - Thrall",
 		["Syhlol - Illidan"] = "Syhlol - Illidan",
-		["Syhdk - Thrall"] = "Syh - Thrall",
+		["Syhloc - Thrall"] = "Syh - Thrall",
 		["Syh - Thrall"] = "Syh - Thrall",
 	},
 	["profiles"] = {
+		["Gnomemounts - Tichondrius"] = {
+			["focuscastmodifier"] = false,
+			["blizzardVehicle"] = true,
+			["outofrange"] = "hotkey",
+		},
 		["Isellpropane - Proudmoore"] = {
 			["focuscastmodifier"] = false,
 			["minimapIcon"] = {
@@ -3255,9 +3991,23 @@ Bartender4DB = {
 			["blizzardVehicle"] = true,
 			["outofrange"] = "hotkey",
 		},
+		["Syhlol - Tichondrius"] = {
+			["focuscastmodifier"] = false,
+			["blizzardVehicle"] = true,
+			["outofrange"] = "hotkey",
+		},
 		["Cyf - Tichondrius"] = {
 			["focuscastmodifier"] = false,
 			["blizzardVehicle"] = true,
+			["outofrange"] = "hotkey",
+		},
+		["Global"] = {
+			["focuscastmodifier"] = false,
+			["minimapIcon"] = {
+				["hide"] = true,
+			},
+			["blizzardVehicle"] = true,
+			["selfcastmodifier"] = false,
 			["outofrange"] = "hotkey",
 		},
 		["Wthrename - Tichondrius"] = {
@@ -3270,7 +4020,16 @@ Bartender4DB = {
 			["blizzardVehicle"] = true,
 			["outofrange"] = "hotkey",
 		},
-		["Youreterribl - Burning Legion"] = {
+		["Paladin"] = {
+			["focuscastmodifier"] = false,
+			["selfcastmodifier"] = false,
+			["blizzardVehicle"] = true,
+			["minimapIcon"] = {
+				["hide"] = true,
+			},
+			["outofrange"] = "hotkey",
+		},
+		["Syhlol - Illidan"] = {
 			["focuscastmodifier"] = false,
 			["blizzardVehicle"] = true,
 			["outofrange"] = "hotkey",
@@ -3282,11 +4041,11 @@ Bartender4DB = {
 		},
 		["Syhlo - Thrall"] = {
 			["focuscastmodifier"] = false,
-			["selfcastmodifier"] = false,
-			["blizzardVehicle"] = true,
 			["minimapIcon"] = {
 				["hide"] = true,
 			},
+			["blizzardVehicle"] = true,
+			["selfcastmodifier"] = false,
 			["outofrange"] = "hotkey",
 		},
 		["Default"] = {
@@ -3294,7 +4053,7 @@ Bartender4DB = {
 			["blizzardVehicle"] = true,
 			["outofrange"] = "hotkey",
 		},
-		["Syhloc - Thrall"] = {
+		["Syhdk - Thrall"] = {
 			["focuscastmodifier"] = false,
 			["blizzardVehicle"] = true,
 			["outofrange"] = "hotkey",
@@ -3304,12 +4063,12 @@ Bartender4DB = {
 			["blizzardVehicle"] = true,
 			["outofrange"] = "hotkey",
 		},
-		["Syhlol - Illidan"] = {
+		["Syhloc - Thrall"] = {
 			["focuscastmodifier"] = false,
 			["blizzardVehicle"] = true,
 			["outofrange"] = "hotkey",
 		},
-		["Syhdk - Thrall"] = {
+		["Youreterribl - Burning Legion"] = {
 			["focuscastmodifier"] = false,
 			["blizzardVehicle"] = true,
 			["outofrange"] = "hotkey",

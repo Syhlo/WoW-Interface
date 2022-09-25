@@ -1,0 +1,2 @@
+
+CensusPlus_PerCharInfo = nil

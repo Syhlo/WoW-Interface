@@ -62,16 +62,16 @@ Bagnon_Sets = {
 				0.1058823529411765, -- [3]
 				0, -- [4]
 			},
+			["hiddenRules"] = {
+			},
 			["alpha"] = 1,
-			["itemScale"] = 1,
 			["y"] = 28.06169319152832,
 			["bagBreak"] = false,
 			["x"] = -69.52929380508749,
 			["search"] = true,
 			["broker"] = true,
 			["reverseSlots"] = false,
-			["hiddenRules"] = {
-			},
+			["itemScale"] = 1,
 			["rules"] = {
 				"all", -- [1]
 				"all/normal", -- [2]

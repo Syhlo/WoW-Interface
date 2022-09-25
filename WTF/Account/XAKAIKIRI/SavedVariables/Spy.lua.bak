@@ -3,13 +3,13 @@ SpyDB = {
 	["kosData"] = {
 		["Thrall"] = {
 			["Horde"] = {
-				["Sýh"] = {
+				["Syhlol"] = {
 				},
-				["Sydh"] = {
+				["Sýh"] = {
 				},
 				["Syhloc"] = {
 				},
-				["Syhlol"] = {
+				["Sydh"] = {
 				},
 				["Syhlo"] = {
 				},
@@ -41,11 +41,13 @@ SpyDB = {
 				},
 				["Regèn"] = {
 				},
+				["Gnomemounts"] = {
+				},
+				["Crylo"] = {
+				},
 				["Gerold"] = {
 				},
 				["Wthrename"] = {
-				},
-				["Crylo"] = {
 				},
 				["Dwarfmounts"] = {
 				},
@@ -101,6 +103,7 @@ SpyDB = {
 		},
 	},
 	["profileKeys"] = {
+		["Gnomemounts - Tichondrius"] = "Gnomemounts - Tichondrius",
 		["Isellpropane - Proudmoore"] = "Isellpropane - Proudmoore",
 		["Sýh - Thrall"] = "Sýh - Thrall",
 		["Dwarfmounts - Tichondrius"] = "Dwarfmounts - Tichondrius",
@@ -121,6 +124,18 @@ SpyDB = {
 		["Syh - Thrall"] = "Syh - Thrall",
 	},
 	["profiles"] = {
+		["Gnomemounts - Tichondrius"] = {
+			["Colors"] = {
+				["Bar"] = {
+					["Bar Text"] = {
+						["a"] = 1,
+					},
+				},
+			},
+			["AppendUnitNameCheck"] = true,
+			["MainWindowVis"] = false,
+			["AppendUnitKoSCheck"] = true,
+		},
 		["Isellpropane - Proudmoore"] = {
 			["AppendUnitNameCheck"] = true,
 			["MainWindowVis"] = false,
@@ -328,6 +343,8 @@ SpyDB = {
 			["AppendUnitKoSCheck"] = true,
 		},
 		["Pandamounts - Tichondrius"] = {
+			["AppendUnitNameCheck"] = true,
+			["MainWindowVis"] = false,
 			["Colors"] = {
 				["Bar"] = {
 					["Bar Text"] = {
@@ -335,8 +352,6 @@ SpyDB = {
 					},
 				},
 			},
-			["AppendUnitNameCheck"] = true,
-			["MainWindowVis"] = false,
 			["AppendUnitKoSCheck"] = true,
 		},
 		["Syhloc - Thrall"] = {

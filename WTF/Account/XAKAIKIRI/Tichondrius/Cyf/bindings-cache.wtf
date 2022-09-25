@@ -2,6 +2,8 @@ bind BUTTON3 TOGGLEAUTORUN
 bind UP CLICK BT4Button14:LeftButton
 bind S CLICK BT4Button97:LeftButton
 bind DOWN NONE
+bind LEFT NONE
+bind RIGHT NONE
 bind NUMPAD0 MULTIACTIONBAR2BUTTON10
 bind X CLICK BT4Button103:LeftButton
 bind Z CLICK BT4Button99:LeftButton

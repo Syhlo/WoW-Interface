@@ -136,6 +136,10 @@ function WeakAuras.TestSchool(spellSchool, test)
   return spellSchool == test
 end
 
+function WeakAuras.RaidFlagToIndex(flag)
+  return Private.combatlog_raidFlags[flag] or 0
+end
+
 local function get_zoneId_list()
   if WeakAuras.IsClassic() then return "" end
   local currentmap_id = C_Map.GetBestMapForUnit("player")
@@ -638,14 +642,28 @@ if WeakAuras.IsClassicOrBCCOrWrath() then
   function WeakAuras.CheckTalentByIndex(index, extraOption)
     local tab = ceil(index / MAX_NUM_TALENTS)
     local num_talent = (index - 1) % MAX_NUM_TALENTS + 1
-    local _, _, _, _, rank  = GetTalentInfo(tab, num_talent)
-    return rank and rank > 0;
+    local name, _, _, _, rank  = GetTalentInfo(tab, num_talent)
+    if name == nil then
+      return nil
+    end
+    local result = rank and rank > 0
+    if extraOption == 4 then
+      return result
+    elseif extraOption == 5 then
+      return not result
+    end
+    return result;
   end
 else
   function WeakAuras.CheckTalentByIndex(index, extraOption)
     local tier = ceil(index / 3)
     local column = (index - 1) % 3 + 1
     local _, _, _, selected, _, _, _, _, _, _, known  = GetTalentInfo(tier, column, 1)
+    if extraOption == 4 then
+      return selected or known
+    elseif extraOption == 5 then
+      return not (selected or known)
+    end
     if extraOption == 0 or extraOption == 2 then
       return selected or known
     else
@@ -910,59 +928,127 @@ end
 
 local function valuesForTalentFunction(trigger)
   return function()
-    local single_class;
-    -- First check to use if the class load is on multi-select with only one class selected
-    if(trigger.use_class == false and trigger.class and trigger.class.multi) then
-      local num_classes = 0;
-      for class in pairs(trigger.class.multi) do
-        single_class = class;
-        num_classes = num_classes + 1;
-      end
-      if(num_classes ~= 1) then
-        single_class = nil;
-      end
-    end
-    -- If that is not the case, see if it is on single-select
-    if((not single_class) and trigger.use_class and trigger.class and trigger.class.single) then
-      single_class = trigger.class.single
-    end
-
-    if (trigger.use_class == nil) then -- no class selected, fallback to current class
+    local single_class = Private.checkForSingleLoadCondition(trigger, "class")
+    if not single_class then
       single_class = select(2, UnitClass("player"));
     end
 
-    local single_spec;
+    local single_spec
     if WeakAuras.IsRetail() then
-      if single_class then
-        if(trigger.use_spec == false and trigger.spec and trigger.spec.multi) then
-          local num_specs = 0;
-          for spec in pairs(trigger.spec.multi) do
-            single_spec = spec;
-            num_specs = num_specs + 1;
-          end
-          if (num_specs ~= 1) then
-            single_spec = nil;
-          end
-        end
-      end
-      if ((not single_spec) and trigger.use_spec and trigger.spec and trigger.spec.single) then
-        single_spec = trigger.spec.single;
-      end
-
-      if (trigger.use_spec == nil) then
+      single_spec = Private.checkForSingleLoadCondition(trigger, "spec")
+      if single_spec == nil then
         single_spec = GetSpecialization();
       end
     end
+    --[[ dragonflight
+    if WeakAuras.IsDragonflight() and single_class then
+      single_spec = Private.checkForSingleLoadCondition(trigger, "spec", function(specIndex)
+        for classID = 1, GetNumClasses() do
+          local _, classFile = GetClassInfo(classID)
+          if classFile == single_class then
+            if GetSpecializationInfoForClassID(classID, specIndex) then
+              return true
+            end
+            break
+          end
+        end
+      end)
+    end
+    ]]
 
+    local single_class_and_spec
+    if WeakAuras.IsRetail() and trigger.use_spec == nil and trigger.use_class == nil then
+      single_class_and_spec = Private.checkForSingleLoadCondition(trigger, "class_and_spec")
+    end
     -- If a single specific class was found, load the specific list for it
-    if(single_class and Private.talent_types_specific[single_class]
-      and single_spec and Private.talent_types_specific[single_class][single_spec]) then
-      return Private.talent_types_specific[single_class][single_spec];
-    elseif(WeakAuras.IsClassicOrBCCOrWrath() and single_class and Private.talent_types_specific[single_class]
-      and Private.talent_types_specific[single_class]) then
-      return Private.talent_types_specific[single_class];
-    else
-      return Private.talent_types;
+    if false then -- placeholder for dragonflight
+      --[[
+      if single_class_and_spec and Private.talentInfo[specId] then
+        return Private.talentInfo[specId]
+      elseif single_class and single_spec then
+        local classId
+        for i = 1, GetNumClasses() do
+          if select(2, GetClassInfo(i)) == single_class then
+            classId = i
+            break
+          end
+        end
+        local specId = GetSpecializationInfoForClassID(classId, single_spec)
+        return Private.GetTalentInfo(specId)
+      else
+        -- this should never happen
+        return {}
+      end
+      ]]
+    elseif WeakAuras.IsRetail() then
+      if single_class_and_spec then
+        local class = select(6, GetSpecializationInfoByID(single_class_and_spec))
+        if class then
+          for classID = 1, GetNumClasses() do -- we have classFile, we need classID
+            local _, classFile = GetClassInfo(classID)
+            if classFile == class then
+              for specIndex = 1, 4 do -- search specIndex
+                if GetSpecializationInfoForClassID(classID, specIndex) == single_class_and_spec then
+                  if Private.talent_types_specific[classFile] and Private.talent_types_specific[classFile][specIndex] then
+                    return Private.talent_types_specific[classFile][specIndex]
+                  end
+                  break
+                end
+              end
+              break
+            end
+          end
+        end
+      end
+      if single_class and single_spec
+      and Private.talent_types_specific[single_class]
+      and Private.talent_types_specific[single_class][single_spec]
+      then
+        return Private.talent_types_specific[single_class][single_spec]
+      else
+        return Private.talent_types
+      end
+    elseif WeakAuras.IsWrathClassic() then
+      return Private.talentInfo[single_class]
+    else -- classic & tbc
+      if single_class and Private.talent_types_specific[single_class] then
+        return Private.talent_types_specific[single_class]
+      else
+        return Private.talent_types
+      end
+    end
+  end
+end
+
+---helper to check if a condition is checked and have a single value, and return it
+---@param trigger table
+---@param name string
+---@param validateFn? fun(value: any): boolean values that do not validate are ignored
+---@return any
+function Private.checkForSingleLoadCondition(trigger, name, validateFn)
+  local use_name = "use_"..name
+  local trigger_use_name = trigger[use_name]
+  local trigger_name = trigger[name]
+  if trigger_use_name == true
+  and trigger_name
+  and trigger_name.single ~= nil
+  and (validateFn == nil or validateFn(trigger_name.single))
+  then
+    return trigger_name.single
+  end
+  if trigger_use_name == false and trigger_name and trigger_name.multi ~= nil then
+    local count = 0
+    local key
+    for k, v in pairs(trigger_name.multi) do
+      if v ~= nil
+      and (validateFn == nil or validateFn(k))
+      then
+        count = count + 1
+        key = k
+      end
+    end
+    if count == 1 then
+      return key
     end
   end
 end
@@ -1096,23 +1182,8 @@ Private.load_prototype = {
       type = "multiselect",
       values = function(trigger)
         return function()
-          local single_class;
           local min_specs = 4;
-          -- First check to use if the class load is on multi-select with only one class selected
-          -- Also check the number of specs for each class selected in the multi-select and keep track of the minimum
-          -- (i.e., 3 unless Druid is the only thing selected, but this method is flexible in case another spec gets added to another class)
-          if(trigger.use_class == false and trigger.class and trigger.class.multi) then
-            local num_classes = 0;
-            for class in pairs(trigger.class.multi) do
-              single_class = class;
-              -- If any checked class has only 3 specs, min_specs will become 3
-              min_specs = min(min_specs, GetNumSpecializationsForClassID(WeakAuras.class_ids[class]))
-              num_classes = num_classes + 1;
-            end
-            if(num_classes ~= 1) then
-              single_class = nil;
-            end
-          end
+          local single_class = Private.checkForSingleLoadCondition(trigger, "class")
           -- If that is not the case, see if it is on single-select
           if((not single_class) and trigger.use_class and trigger.class and trigger.class.single) then
             single_class = trigger.class.single
@@ -1158,63 +1229,106 @@ Private.load_prototype = {
       type = "multiselect",
       values = valuesForTalentFunction,
       test = "WeakAuras.CheckTalentByIndex(%d, %d)",
+      enableTest = function(...)
+        return WeakAuras.CheckTalentByIndex(...) ~= nil
+      end,
       events = (WeakAuras.IsClassicOrBCC() and {"CHARACTER_POINTS_CHANGED"})
         or (WeakAuras.IsWrathClassic() and {"CHARACTER_POINTS_CHANGED", "PLAYER_TALENT_UPDATE"})
         or {"PLAYER_TALENT_UPDATE"},
       inverse = function(load)
         -- Check for multi select!
-        return load.talent_extraOption == 2 or load.talent_extraOption == 3
+        return (WeakAuras.IsClassicOrBCC() or WeakAuras.IsRetail()) and (load.talent_extraOption == 2 or load.talent_extraOption == 3)
       end,
-      extraOption = {
+      extraOption = (WeakAuras.IsClassicOrBCC() or WeakAuras.IsRetail()) and {
         display = "",
         values = function()
           return Private.talent_extra_option_types
         end
       },
+      control = WeakAuras.IsWrathClassic() and "WeakAurasMiniTalent" or nil,
+      multiNoSingle = WeakAuras.IsWrathClassic(), -- no single mode
+      multiTristate = WeakAuras.IsWrathClassic(), -- values can be true/false/nil
+      multiAll = WeakAuras.IsWrathClassic(), -- require all tests
+      orConjunctionGroup  = WeakAuras.IsWrathClassic() and "talent",
+      multiUseControlWhenFalse = WeakAuras.IsWrathClassic(),
+      enable = function(trigger)
+        local class = Private.checkForSingleLoadCondition(trigger, "class")
+        return WeakAuras.IsClassicOrBCC()
+            or WeakAuras.IsRetail()
+            or (WeakAuras.IsWrathClassic() and class ~= nil)
+      end
     },
     {
       name = "talent2",
-      display = L["And Talent"],
+      display = WeakAuras.IsWrathClassic() and L["Or Talent"] or L["And Talent"],
       type = "multiselect",
       values = valuesForTalentFunction,
       test = "WeakAuras.CheckTalentByIndex(%d, %d)",
-      enable = function(trigger)
-        return trigger.use_talent ~= nil or trigger.use_talent2 ~= nil;
+      enableTest = function(...)
+        return WeakAuras.CheckTalentByIndex(...) ~= nil
       end,
       events = (WeakAuras.IsClassicOrBCC() and {"CHARACTER_POINTS_CHANGED"})
         or (WeakAuras.IsWrathClassic() and {"CHARACTER_POINTS_CHANGED", "PLAYER_TALENT_UPDATE"})
         or {"PLAYER_TALENT_UPDATE"},
       inverse = function(load)
-        return load.talent2_extraOption == 2 or load.talent2_extraOption == 3
+        return (WeakAuras.IsClassicOrBCC() or WeakAuras.IsRetail()) and (load.talent2_extraOption == 2 or load.talent2_extraOption == 3)
       end,
-      extraOption = {
-        display = "",
-        values = function()
-          return Private.talent_extra_option_types
-        end,
-      }
-    },
-    {
-      name = "talent3",
-      display = L["And Talent"],
-      type = "multiselect",
-      values = valuesForTalentFunction,
-      test = "WeakAuras.CheckTalentByIndex(%d, %d)",
-      enable = function(trigger)
-        return (trigger.use_talent ~= nil and trigger.use_talent2 ~= nil) or trigger.use_talent3 ~= nil;
-      end,
-      events = (WeakAuras.IsClassicOrBCC() and {"CHARACTER_POINTS_CHANGED"})
-        or (WeakAuras.IsWrathClassic() and {"CHARACTER_POINTS_CHANGED", "PLAYER_TALENT_UPDATE"})
-        or {"PLAYER_TALENT_UPDATE"},
-      inverse = function(load)
-        return load.talent3_extraOption == 2 or load.talent3_extraOption == 3
-      end,
-      extraOption = {
+      extraOption = (WeakAuras.IsClassicOrBCC() or WeakAuras.IsRetail()) and {
         display = "",
         values = function()
           return Private.talent_extra_option_types
         end,
       },
+      control = WeakAuras.IsWrathClassic() and "WeakAurasMiniTalent" or nil,
+      multiNoSingle = WeakAuras.IsWrathClassic(),
+      multiTristate = WeakAuras.IsWrathClassic(),
+      multiAll = WeakAuras.IsWrathClassic(),
+      orConjunctionGroup  = WeakAuras.IsWrathClassic() and "talent",
+      multiUseControlWhenFalse = WeakAuras.IsWrathClassic(),
+      enable = function(trigger)
+        local class = Private.checkForSingleLoadCondition(trigger, "class")
+        return (trigger.use_talent ~= nil or trigger.use_talent2 ~= nil) and (
+          WeakAuras.IsClassicOrBCC()
+          or WeakAuras.IsRetail()
+          or (WeakAuras.IsWrathClassic() and class ~= nil)
+        )
+      end
+    },
+    {
+      name = "talent3",
+      display = WeakAuras.IsWrathClassic() and L["Or Talent"] or L["And Talent"],
+      type = "multiselect",
+      values = valuesForTalentFunction,
+      test = "WeakAuras.CheckTalentByIndex(%d, %d)",
+      enableTest = function(...)
+        return WeakAuras.CheckTalentByIndex(...) ~= nil
+      end,
+      events = (WeakAuras.IsClassicOrBCC() and {"CHARACTER_POINTS_CHANGED"})
+        or (WeakAuras.IsWrathClassic() and {"CHARACTER_POINTS_CHANGED", "PLAYER_TALENT_UPDATE"})
+        or {"PLAYER_TALENT_UPDATE"},
+      inverse = function(load)
+        return (WeakAuras.IsClassicOrBCC() or WeakAuras.IsRetail()) and (load.talent3_extraOption == 2 or load.talent3_extraOption == 3)
+      end,
+      extraOption = (WeakAuras.IsClassicOrBCC() or WeakAuras.IsRetail()) and {
+        display = "",
+        values = function()
+          return Private.talent_extra_option_types
+        end,
+      },
+      control = WeakAuras.IsWrathClassic() and "WeakAurasMiniTalent" or nil,
+      multiNoSingle = WeakAuras.IsWrathClassic(),
+      multiTristate = WeakAuras.IsWrathClassic(),
+      multiAll = WeakAuras.IsWrathClassic(),
+      orConjunctionGroup  = WeakAuras.IsWrathClassic() and "talent",
+      multiUseControlWhenFalse = WeakAuras.IsWrathClassic(),
+      enable = function(trigger)
+        local class = Private.checkForSingleLoadCondition(trigger, "class")
+        return ((trigger.use_talent ~= nil and trigger.use_talent2 ~= nil) or trigger.use_talent3 ~= nil) and (
+          WeakAuras.IsClassicOrBCC()
+          or WeakAuras.IsRetail()
+          or (WeakAuras.IsWrathClassic() and class ~= nil)
+        )
+      end
     },
     {
       name = "pvptalent",
@@ -1402,7 +1516,7 @@ Private.load_prototype = {
     },
     {
       name = "role",
-      display = L["Assigned Role"],
+      display = WeakAuras.IsWrathClassic() and L["Assigned Role"] or L["Spec Role"],
       type = "multiselect",
       values = "role_types",
       init = "arg",
@@ -3455,6 +3569,22 @@ Private.event_prototypes = {
         end
       },
       {
+        name = "sourceRaidMarkIndex",
+        display = WeakAuras.newFeatureString .. L["Source unit's raid mark index"],
+        init = "WeakAuras.RaidFlagToIndex(sourceRaidFlags)",
+        test = "true",
+        store = true,
+        hidden = true,
+      },
+      {
+        name = "sourceRaidMark",
+        display = WeakAuras.newFeatureString .. L["Source unit's raid mark texture"],
+        test = "true",
+        init = "sourceRaidMarkIndex > 0 and '{rt'..sourceRaidMarkIndex..'}' or ''",
+        store = true,
+        hidden = true,
+      },
+      {
         name = "destGUID",
         init = "arg",
         hidden = "true",
@@ -3571,6 +3701,28 @@ Private.event_prototypes = {
         enable = function(trigger)
           return (trigger.subeventPrefix == "SPELL" and trigger.subeventSuffix == "_CAST_START");
         end
+      },
+      {
+        name = "destRaidMarkIndex",
+        display = WeakAuras.newFeatureString .. L["Destination unit's raid mark index"],
+        init = "WeakAuras.RaidFlagToIndex(destRaidFlags)",
+        test = "true",
+        store = true,
+        hidden = true,
+        enable = function(trigger)
+          return not (trigger.subeventPrefix == "SPELL" and trigger.subeventSuffix == "_CAST_START");
+        end,
+      },
+      {
+        name = "destRaidMark",
+        display = WeakAuras.newFeatureString .. L["Destination unit's raid mark texture"],
+        test = "true",
+        init = "destRaidMarkIndex > 0 and '{rt'..destRaidMarkIndex..'}' or ''",
+        store = true,
+        hidden = true,
+        enable = function(trigger)
+          return not (trigger.subeventPrefix == "SPELL" and trigger.subeventSuffix == "_CAST_START");
+        end,
       },
       {
         name = "spellId",
@@ -3857,7 +4009,7 @@ Private.event_prototypes = {
       {
         hidden = true,
         name = "icon",
-        init = "(not WeakAuras.IsRetail() and spellName and select(3, GetSpellInfo(spellName))) or (WeakAuras.IsRetail() and spellId and select(3, GetSpellInfo(spellId))) or 'Interface\\\\Icons\\\\INV_Misc_QuestionMark'",
+        init = "(WeakAuras.IsClassic() and spellName and select(3, GetSpellInfo(spellName))) or (spellId and select(3, GetSpellInfo(spellId))) or 'Interface\\\\Icons\\\\INV_Misc_QuestionMark'",
         store = true,
         test = "true"
       },
@@ -5547,7 +5699,7 @@ Private.event_prototypes = {
         display = "",
         text = function()
           if not WeakAuras.IsRetail() then
-            return L["Note: Due to how complicated the swing timer behaviour is and the lack of APIs from Blizzard, results are inaccurate in edge cases."]
+            return L["Note: Due to how complicated the swing timer behavior is and the lack of APIs from Blizzard, results are inaccurate in edge cases."]
           end
         end,
 
@@ -7055,10 +7207,12 @@ Private.event_prototypes = {
 
       local ret = [[
         local inverse = %s;
-        local equipped = IsEquippedItem(GetItemInfo(%s));
+        local itemName = GetItemInfo(%s);
+        local itemSlot = %s;
+        local equipped = WeakAuras.CheckForItemEquipped(itemName, itemSlot);
       ]];
 
-      return ret:format(trigger.use_inverse and "true" or "false", itemName);
+      return ret:format(trigger.use_inverse and "true" or "false", itemName, trigger.use_itemSlot and trigger.itemSlot or "nil");
     end,
     args = {
       {
@@ -7067,6 +7221,13 @@ Private.event_prototypes = {
         type = "item",
         required = true,
         test = "true"
+      },
+      {
+        name = "itemSlot",
+        display = WeakAuras.newFeatureString .. L["Item Slot"],
+        type = "select",
+        values = "item_slot_types",
+        test = "true",
       },
       {
         name = "inverse",
@@ -7765,10 +7926,10 @@ Private.event_prototypes = {
         name = "interruptible",
         display = L["Interruptible"],
         type = "tristate",
-        enable = function(trigger) return not WeakAuras.IsBCCOrWrath() and not trigger.use_inverse end,
+        enable = function(trigger) return not WeakAuras.IsBCC() and not trigger.use_inverse end,
         store = true,
         conditionType = "bool",
-        hidden = WeakAuras.IsBCCOrWrath()
+        hidden = WeakAuras.IsBCC()
       },
       {
         name = "remaining",
@@ -9006,11 +9167,11 @@ if WeakAuras.IsClassicOrBCCOrWrath() then
   end
   if not WeakAuras.IsWrathClassic() then
     Private.event_prototypes["Death Knight Rune"] = nil
+    Private.event_prototypes["Crowd Controlled"] = nil
   end
   Private.event_prototypes["Alternate Power"] = nil
   Private.event_prototypes["Equipment Set"] = nil
   Private.event_prototypes["Spell Activation Overlay"] = nil
-  Private.event_prototypes["Crowd Controlled"] = nil
   Private.event_prototypes["PvP Talent Selected"] = nil
   Private.event_prototypes["Class/Spec"] = nil
 else

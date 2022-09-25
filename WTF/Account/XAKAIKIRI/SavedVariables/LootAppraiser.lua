@@ -1,6 +1,7 @@
 
 LootAppraiserDB = {
 	["profileKeys"] = {
+		["Gnomemounts - Tichondrius"] = "Default",
 		["Cyf - Tichondrius"] = "Default",
 		["Sýh - Thrall"] = "Default",
 		["Wthrename - Tichondrius"] = "Default",
@@ -10,9 +11,9 @@ LootAppraiserDB = {
 		["Syhlo - Thrall"] = "Default",
 		["Syhlol - Thrall"] = "Default",
 		["Crylo - Tichondrius"] = "Default",
-		["Pandamounts - Tichondrius"] = "Default",
-		["Regèn - Tichondrius"] = "Default",
 		["Syhdk - Thrall"] = "Default",
+		["Regèn - Tichondrius"] = "Default",
+		["Pandamounts - Tichondrius"] = "Default",
 		["Syh - Thrall"] = "Default",
 	},
 	["profiles"] = {
@@ -39,6 +40,7 @@ LootAppraiserDB = {
 }
 LALootDB = {
 	["profileKeys"] = {
+		["Gnomemounts - Tichondrius"] = "Default",
 		["Cyf - Tichondrius"] = "Default",
 		["Sýh - Thrall"] = "Default",
 		["Wthrename - Tichondrius"] = "Default",
@@ -48,9 +50,9 @@ LALootDB = {
 		["Syhlo - Thrall"] = "Default",
 		["Syhlol - Thrall"] = "Default",
 		["Crylo - Tichondrius"] = "Default",
-		["Pandamounts - Tichondrius"] = "Default",
-		["Regèn - Tichondrius"] = "Default",
 		["Syhdk - Thrall"] = "Default",
+		["Regèn - Tichondrius"] = "Default",
+		["Pandamounts - Tichondrius"] = "Default",
 		["Syh - Thrall"] = "Default",
 	},
 	["global"] = {

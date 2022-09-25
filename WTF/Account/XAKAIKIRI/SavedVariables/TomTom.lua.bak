@@ -1,6 +1,7 @@
 
 TomTomDB = {
 	["profileKeys"] = {
+		["Gnomemounts - Tichondrius"] = "Default",
 		["Isellpropane - Proudmoore"] = "Default",
 		["Sýh - Thrall"] = "Default",
 		["Syhl - Thrall"] = "Default",
@@ -9,16 +10,17 @@ TomTomDB = {
 		["Crylo - Tichondrius"] = "Default",
 		["Regèn - Tichondrius"] = "Default",
 		["Sydh - Thrall"] = "Default",
+		["Syhlol - Tichondrius"] = "Default",
 		["Cyf - Tichondrius"] = "Default",
 		["Wthrename - Tichondrius"] = "Default",
 		["Gerold - Tichondrius"] = "Default",
 		["Scatterffs - Ragnaros"] = "Default",
 		["Syhloc - Thrall"] = "Default",
 		["Syhlo - Thrall"] = "Default",
-		["Pandamounts - Tichondrius"] = "Default",
-		["Syhdk - Thrall"] = "Default",
-		["Youreterribl - Burning Legion"] = "Default",
 		["Syhlol - Illidan"] = "Default",
+		["Pandamounts - Tichondrius"] = "Default",
+		["Youreterribl - Burning Legion"] = "Default",
+		["Syhdk - Thrall"] = "Default",
 		["Syh - Thrall"] = "Default",
 	},
 	["profiles"] = {
@@ -31,6 +33,9 @@ TomTomDB = {
 				["enable"] = false,
 				["setclosest"] = false,
 				["menu"] = false,
+				["showdistance"] = false,
+				["hideDuringPetBattles"] = false,
+				["showtta"] = false,
 				["position"] = {
 					"CENTER", -- [1]
 					nil, -- [2]
@@ -38,9 +43,10 @@ TomTomDB = {
 					0, -- [4]
 					0, -- [5]
 				},
-				["hideDuringPetBattles"] = false,
-				["showtta"] = false,
-				["showdistance"] = false,
+			},
+			["mapcoords"] = {
+				["playerenable"] = false,
+				["cursorenable"] = false,
 			},
 			["block"] = {
 				["bgcolor"] = {
@@ -73,6 +79,7 @@ TomTomDB = {
 TomTomWaypoints = nil
 TomTomWaypointsM = {
 	["profileKeys"] = {
+		["Gnomemounts - Tichondrius"] = "Gnomemounts - Tichondrius",
 		["Isellpropane - Proudmoore"] = "Isellpropane - Proudmoore",
 		["Sýh - Thrall"] = "Sýh - Thrall",
 		["Syhl - Thrall"] = "Syhl - Thrall",
@@ -81,19 +88,22 @@ TomTomWaypointsM = {
 		["Crylo - Tichondrius"] = "Crylo - Tichondrius",
 		["Regèn - Tichondrius"] = "Regèn - Tichondrius",
 		["Sydh - Thrall"] = "Sydh - Thrall",
+		["Syhlol - Tichondrius"] = "Syhlol - Tichondrius",
 		["Cyf - Tichondrius"] = "Cyf - Tichondrius",
 		["Wthrename - Tichondrius"] = "Wthrename - Tichondrius",
 		["Gerold - Tichondrius"] = "Gerold - Tichondrius",
 		["Scatterffs - Ragnaros"] = "Scatterffs - Ragnaros",
 		["Syhloc - Thrall"] = "Syhloc - Thrall",
 		["Syhlo - Thrall"] = "Syhlo - Thrall",
-		["Pandamounts - Tichondrius"] = "Pandamounts - Tichondrius",
-		["Syhdk - Thrall"] = "Syhdk - Thrall",
-		["Youreterribl - Burning Legion"] = "Youreterribl - Burning Legion",
 		["Syhlol - Illidan"] = "Syhlol - Illidan",
+		["Pandamounts - Tichondrius"] = "Pandamounts - Tichondrius",
+		["Youreterribl - Burning Legion"] = "Youreterribl - Burning Legion",
+		["Syhdk - Thrall"] = "Syhdk - Thrall",
 		["Syh - Thrall"] = "Syh - Thrall",
 	},
 	["profiles"] = {
+		["Gnomemounts - Tichondrius"] = {
+		},
 		["Isellpropane - Proudmoore"] = {
 		},
 		["Sýh - Thrall"] = {
@@ -110,7 +120,34 @@ TomTomWaypointsM = {
 		},
 		["Sydh - Thrall"] = {
 		},
+		["Syhlol - Tichondrius"] = {
+		},
 		["Cyf - Tichondrius"] = {
+			[1961] = {
+				["1961:250000000:510000000:TomTom waypoint"] = {
+					1961, -- [1]
+					0.25, -- [2]
+					0.51, -- [3]
+					["arrivaldistance"] = 15,
+					["crazy"] = false,
+					["persistent"] = true,
+					["desc"] = "TomTom waypoint",
+					["silent"] = true,
+					["cleardistance"] = 10,
+					["title"] = "TomTom waypoint",
+					["from"] = "TomTom/way",
+					["callbacks"] = {
+						["distance"] = {
+						},
+						["minimap"] = {
+						},
+						["world"] = {
+						},
+					},
+					["minimap"] = true,
+					["world"] = true,
+				},
+			},
 		},
 		["Wthrename - Tichondrius"] = {
 		},
@@ -122,13 +159,13 @@ TomTomWaypointsM = {
 		},
 		["Syhlo - Thrall"] = {
 		},
-		["Pandamounts - Tichondrius"] = {
+		["Syhlol - Illidan"] = {
 		},
-		["Syhdk - Thrall"] = {
+		["Pandamounts - Tichondrius"] = {
 		},
 		["Youreterribl - Burning Legion"] = {
 		},
-		["Syhlol - Illidan"] = {
+		["Syhdk - Thrall"] = {
 		},
 		["Syh - Thrall"] = {
 		},

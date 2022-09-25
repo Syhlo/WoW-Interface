@@ -1,0 +1,1612 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.blizzard.com/wow/ui/ 
+    ..\..\FrameXML\UI.xsd">
+
+    <Frame name="SortedIconSelectionMenu" parent="UIParent" enableMouse="true" frameStrata="DIALOG" frameLevel="100" hidden="true">
+        <Size x="112" y="128"/>
+        <Frames>
+            <Frame name="$parentDropShadow" parentKey="shadowFrame" inherits="SortedDropShadowTemplate" frameLevel="99"/>
+        </Frames>
+        <Scripts>
+            <OnLoad>
+                self.backdrop = self:CreateTexture()
+                self.backdrop:SetAllPoints()
+                Sorted.RegisterBackdrop(self.backdrop)
+
+                self.icon = self:CreateTexture()
+                self.icon:SetDrawLayer("OVERLAY")
+                self.icon:SetSize(28, 28)
+                self.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+                self.icon:SetPoint("TOP", 0, -8)
+
+                self.iconBorder = self:CreateTexture()
+                self.iconBorder:SetPoint("TOPLEFT", -1, 1)
+                self.iconBorder:SetPoint("BOTTOMRIGHT", 1, -1)
+                self.iconBorder:SetDrawLayer("BACKGROUND")
+
+                self.buttons = {}
+                for i = 1,8 do
+                    local b = CreateFrame("Button", self:GetParent():GetName().."Button"..i, self)
+
+                    b:SetNormalTexture("Interface\\Addons\\Sorted\\Textures\\Favorite-Icons")
+                    b:GetNormalTexture():SetTexCoord(
+                        (math.fmod(i - 1, 4)) * 0.21875, 
+                        (math.fmod(i - 1, 4) + 1) * 0.21875, 
+                        (math.floor((i - 1) / 4)) * 0.21875, 
+                        (math.floor((i - 1) / 4) + 1) * 0.21875
+                    )
+                    b:SetHighlightTexture("Interface\\Addons\\Sorted\\Textures\\Favorite-Icons")
+                    b:GetHighlightTexture():SetTexCoord(
+                        (math.fmod(i - 1, 4)) * 0.21875, 
+                        (math.fmod(i - 1, 4) + 1) * 0.21875, 
+                        (math.floor((i - 1) / 4) + 2) * 0.21875, 
+                        (math.floor((i - 1) / 4) + 3) * 0.21875
+                    )
+                    b:SetPushedTexture("Interface\\Addons\\Sorted\\Textures\\Favorite-Icons")
+                    b:GetPushedTexture():SetTexCoord(
+                        (math.fmod(i - 1, 4)) * 0.21875, 
+                        (math.fmod(i - 1, 4) + 1) * 0.21875, 
+                        (math.floor((i - 1) / 4)) * 0.21875, 
+                        (math.floor((i - 1) / 4) + 1) * 0.21875
+                    )
+
+                    b:SetSize(22, 22)
+                    b.value = i
+                    b.x, b.y = 8 + math.fmod(i - 1, 4) * 24 + 12, -48 - math.floor((i - 1) / 4) * 24 - 12
+                    b:SetPoint("CENTER", self, "TOPLEFT", b.x, b.y)
+
+                    b:SetScript("OnMouseDown", function(self)
+                        self:SetPoint("CENTER", self:GetParent(), "TOPLEFT", self.x + 1, self.y - 1)
+                    end)
+                    b:SetScript("OnMouseUp", function(self)
+                        self:SetPoint("CENTER", self:GetParent(), "TOPLEFT", self.x, self.y)
+                    end)
+                    b:SetScript("OnEnter", function(self)
+                        self:SetSize(24, 24)
+                    end)
+                    b:SetScript("OnLeave", function(self)
+                        self:SetSize(22, 22)
+                    end)
+                    b:SetScript("OnClick", function(self)
+                        Sorted_ToggleFavorite(self:GetParent().itemButton:GetData(), self.value)
+                        Sorted_UpdateItemButtons()
+                        Sorted_FilterItems()
+                        self:GetParent():Hide()
+                    end)
+
+                    self.buttons[i] = b
+                end
+
+
+                local b = CreateFrame("Button", self:GetName().."Clear", self, "SortedDropdownButtonTemplate")
+                b:SetHeight(20)
+                b:SetPoint("RIGHT", 0, 0)
+                b:SetPoint("BOTTOMLEFT", 0, 6)
+
+                b:SetText(Sorted.Localize("DROPDOWN_MENU_CLEAR"))
+                b:GetFontString():SetTextColor(0.8,0.8,0.8)
+                b:GetFontString():SetPoint("CENTER")
+                b:GetHighlightTexture():SetVertexColor(0.6,0.6,0.6)
+                b:GetPushedTexture():SetVertexColor(0.6,0.6,0.6)
+
+                b:SetScript("OnClick", function(self)
+                    Sorted_Unfavorite(self:GetParent().itemButton:GetData())
+                    Sorted_UpdateItemButtons()
+                    Sorted_FilterItems()
+                    self:GetParent():Hide()
+                end)
+                b:HookScript("OnEnter", function(self)
+                    self:GetFontString():SetTextColor(1,1,1)
+                end)
+                b:HookScript("OnLeave", function(self)
+                    self:GetFontString():SetTextColor(0.8,0.8,0.8)
+                end)
+                self.clearButton = b
+
+
+                if not Sorted_IsClassic() then
+                    self:RegisterEvent("GLOBAL_MOUSE_DOWN")
+                end
+            </OnLoad>
+            <OnShow>
+                self.icon:SetTexture(self.itemButton:GetData().texture)
+                local r,g,b = Sorted_GetItemQualityColor(self.itemButton:GetData().quality)
+                self.iconBorder:SetColorTexture(r,g,b)
+                self.animating = true
+                self.animElapsed = 0
+            </OnShow>
+            <OnUpdate>
+                if self.animating then
+                    self.animElapsed = self.animElapsed + elapsed * 5
+                    if self.animElapsed > 1 or Sorted_GetSetting("animations") == 1 then
+                        self.animElapsed = 1
+                        self.animating = false
+                    end
+                    local multiplier = math.sin(self.animElapsed * (math.pi / 2))
+                    self:SetWidth(112 * multiplier)
+                    self:SetHeight(128 * multiplier)
+                    self.iconBorder:SetAlpha(self.animElapsed * self.animElapsed)
+                    self.icon:SetAlpha(self.animElapsed * self.animElapsed)
+                    self.clearButton:SetAlpha(self.animElapsed * self.animElapsed)
+                    for _, button in pairs(self.buttons) do
+                        button:SetScale(multiplier)
+                    end
+                end
+            </OnUpdate>
+            <OnEvent>
+                if event == "GLOBAL_MOUSE_DOWN" and self:IsShown() then
+                    if not self:IsMouseOver() then 
+                        self:Hide() 
+                    end
+                end
+            </OnEvent>
+        </Scripts>
+    </Frame>
+    
+    <Button name="SortedDropdownTemplate" mixin="SortedDropdownButtonMixin" virtual="true">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture parentKey="backdrop">
+                    <Anchors><Anchor point="TOPLEFT"/><Anchor point="BOTTOMRIGHT"/></Anchors>
+                    <Color r="0" g="0" b="0" a="0.5"/>
+                </Texture>
+            </Layer>
+        </Layers>
+        <NormalTexture file="Interface\Buttons\Arrow-Down-Up"/>
+        <HighlightTexture file="Interface\Addons\Sorted\Textures\UI-Highlight" alphaMode="ADD" alpha="1">
+            <TexCoords left="0.4" right="0.6"/>
+        </HighlightTexture>
+        <PushedTexture file="Interface\Buttons\Arrow-Down-Up" alpha="0.4" />
+        <Scripts>
+			<OnLoad method="OnLoad"/>
+			<OnMouseDown method="OnMouseDown"/>
+			<OnMouseUp method="OnMouseUp"/>
+			<OnClick method="OnClick"/>
+			<OnHide method="OnHide"/>
+        </Scripts>
+    </Button>
+    <ScrollFrame name="SortedDropdownMenuParent" mixin="SortedDropdownMenuMixin" inherits="SortedScrollFrameTemplate" enableMouse="true" frameStrata="DIALOG" frameLevel="105" clampedToScreen="true" hidden="true">
+        <Size x="128"/>
+        <Scripts>
+			<OnLoad method="OnLoad"/>
+			<OnShow method="OnShow"/>
+			<OnHide method="OnHide"/>
+			<OnEvent method="OnEvent"/>
+			<OnUpdate method="OnUpdate"/>
+        </Scripts>
+        <Frames>
+            <Frame name="SortedDropdownMenu" parentKey="scrollChild" mixin="SortedDropdownMenuContentsMixin">
+                <Scripts>
+                    <OnLoad method="OnLoad"/>
+                </Scripts>
+            </Frame>
+            <Frame name="$parentDropShadow" parentKey="shadowFrame" inherits="SortedDropShadowTemplate"/>
+        </Frames>
+    </ScrollFrame>
+
+    <Frame name="SortedFrame" parent="UIParent" inherits="PortraitFrameTemplate" enableMouse="true" movable="true" resizable="true" clampedToScreen="true" hidden="true" frameStrata="HIGH" frameLevel ="572">
+        <Size x="540" y="540" />
+        <ResizeBounds>
+            <minResize x="464" y="448"/>
+            <maxResize x="1024" y="1024"/>
+        </ResizeBounds>
+        <Anchors>
+            <Anchor point="BOTTOMRIGHT" x="-64" y="128" />
+        </Anchors>
+        <Scripts>
+            <OnLoad>
+                SortedFrame_OnLoad(self)
+            </OnLoad>
+            <OnShow>
+                self:SetFrameLevel(572)
+            </OnShow>
+            <OnHide>
+                SortedBankSidePanel:Hide()
+                SortedReagentSidePanel:Hide()
+            </OnHide>
+        </Scripts>
+        <Frames>
+            <Frame name="$parentDropShadow" parentKey="shadowFrame" frameLevel="500" inherits="SortedDropShadowTemplate"/>
+            <Frame name="$parentTitleBar" frameLevel="1100">
+                <Size y="22" />
+                <Anchors><Anchor point="TOPLEFT" x="60"/><Anchor point="RIGHT" x="-18"/></Anchors>
+                <Scripts>
+                    <OnMouseDown>
+                        if button == "LeftButton" and not SortedFrame.isMoving then
+                            SortedFrame:StartMoving()
+                            SortedFrame.isMoving = true
+                        end
+                    </OnMouseDown>
+                    <OnMouseUp>
+                        if button == "LeftButton" and SortedFrame.isMoving then
+                            SortedFrame:StopMovingOrSizing();
+                            SortedFrame.isMoving = false;
+                        end
+                    </OnMouseUp>
+                    <OnHide>
+                        if (SortedFrame.isMoving) then
+                            SortedFrame:StopMovingOrSizing()
+                            SortedFrame.isMoving = false
+                        end
+                    </OnHide>
+                </Scripts>
+                <Frames>
+                    <Frame name="SortedMinMaxFrame">
+                        <Anchors>
+                            <Anchor point="TOPRIGHT" x="-6" />
+                            <Anchor point="BOTTOMLEFT" relativePoint="BOTTOMRIGHT" x="-28" />
+                        </Anchors>
+                        <Frames>
+                            <Button name="SortedFrameMinimizeButton" parentKey="MinimizeButton" inherits="UIPanelCloseButtonNoScripts" frameLevel="1140">
+                                <Anchors>
+                                    <Anchor point="CENTER" />
+                                </Anchors>
+                                <NormalTexture file="Interface\Addons\Sorted\Textures\UI-Panel-MinimizeButton-Up"/>
+                                <PushedTexture file="Interface\Addons\Sorted\Textures\UI-Panel-MinimizeButton-Down" />
+                                <Scripts>
+                                    <OnEnter>
+                                        SortedTooltip.CreateLocalized(self, "ANCHOR_RIGHT", "TOOLTIP_MINIMISE")
+                                    </OnEnter>
+                                    <OnLeave>
+                                        SortedTooltip.Cancel()
+                                    </OnLeave>
+                                    <OnClick>
+                                        SortedFrame_MinimizeRightPanel()
+                                    </OnClick>
+                                </Scripts>
+                            </Button>
+                            <Button name="SortedFrameMaximizeButton" parentKey="MaximizeButton" inherits="UIPanelCloseButtonNoScripts" hidden="true" frameLevel="1140">
+                                <Anchors>
+                                    <Anchor point="CENTER" />
+                                </Anchors>
+                                <NormalTexture file="Interface\Addons\Sorted\Textures\UI-Panel-MaximizeButton-Up"/>
+                                <PushedTexture file="Interface\Addons\Sorted\Textures\UI-Panel-MaximizeButton-Down" />
+                                <Scripts>
+                                    <OnEnter>
+                                        SortedTooltip.CreateLocalized(self, "ANCHOR_RIGHT", "TOOLTIP_MAXIMISE")
+                                    </OnEnter>
+                                    <OnLeave>
+                                        SortedTooltip.Cancel()
+                                    </OnLeave>
+                                    <OnClick>
+                                        SortedFrame_MaximizeRightPanel()
+                                    </OnClick>
+                                </Scripts>
+                            </Button>
+                        </Frames>
+                    </Frame>
+                    <Frame name="$parentMinimizeButtonDiv" inherits="SortedTitleBarDiv" frameLevel="1120">
+                        <Anchors>
+                            <Anchor point="TOPRIGHT" x="-22"/>
+                        </Anchors>
+                    </Frame>
+                    <Button name="SortedBlizzardButton" inherits="UIPanelCloseButtonNoScripts" frameLevel="1140">
+                        <Anchors>
+                            <Anchor point="TOPRIGHT" x="-24" y="5" />
+                        </Anchors>
+                        <NormalTexture file="Interface\Addons\Sorted\Textures\UI-Panel-BlizzardButton-Up"/>
+                        <PushedTexture file="Interface\Addons\Sorted\Textures\UI-Panel-BlizzardButton-Down" />
+                        <Scripts>
+                            <OnEnter>
+                                SortedTooltip.CreateLocalized(self, "ANCHOR_RIGHT", "TOOLTIP_TOGGLE_BLIZZARD")
+                            </OnEnter>
+                            <OnLeave>
+                                SortedTooltip.Cancel()
+                            </OnLeave>
+                            <OnClick>
+                                Sorted_ToggleBlizzardBags()
+                            </OnClick>
+                        </Scripts>
+                    </Button>
+                    <Frame name="$parentBlizzardButtonDiv" inherits="SortedTitleBarDiv" frameLevel="1120">
+                        <Anchors>
+                            <Anchor point="TOPRIGHT" x="-47"/>
+                        </Anchors>
+                    </Frame>
+                    <Button name="SortedAltsDropdownButton" inherits="SortedDropdownTemplate">
+                        <Anchors>
+                            <Anchor point="TOPLEFT" y="-3"/>
+                            <Anchor point="BOTTOM" y="2"/>
+                        </Anchors>
+                        <Size x="128" />
+                        <Scripts>
+                            <OnLoad>
+                                self:OnLoad()
+
+                                StaticPopupDialogs["SORTED_DELETE_CHARACTER_DATA"] = {
+                                    text = Sorted.Localize("DIALOG_DELETE_CHARACTER_DATA"),
+                                    button1 = Sorted.Localize("DIALOG_BUTTON_ACCEPT"),
+                                    button2 = Sorted.Localize("DIALOG_BUTTON_CANCEL"),
+                                    OnAccept = function(self, data, data2)
+                                        Sorted_SelectPlayer(UnitGUID("player"))
+                                        Sorted_DeleteData(data)
+                                        SortedDropdownMenu:Hide()
+                                    end,
+                                    timeout = 0,
+                                    hideOnEscape = 1
+                                }
+
+                                local function ButtonClick(self)
+                                    Sorted_SelectPlayer(self.playerGUID)
+                                end
+                                local function DeleteButtonClick(self)
+                                    local dialog = StaticPopup_Show("SORTED_DELETE_CHARACTER_DATA", Sorted_GetData(self:GetParent().playerGUID).name)
+                                    if dialog then 
+                                        dialog.data = self:GetParent().playerGUID 
+                                        dialog.data2 = self:GetParent():GetParent()
+                                    end
+                                end
+
+                                function self:ValueFunc()
+                                    local data = Sorted_GetData()
+                                    if data then
+                                        self:SetValue(Sorted_FormatFaction(data.faction).." "..data.name, Sorted_GetClassColor(data.class):GetRGB())
+                                    end
+                                end
+
+                                function self:InitFunc()
+                                    local data = Sorted_Data
+                                    local sortedTable = {}
+                                    for k, v in pairs(data) do
+                                        table.insert(sortedTable, {["guid"] = k, ["data"] = v})
+                                    end
+                                    table.sort(sortedTable, function(a,b)
+                                        if a.guid == UnitGUID("player") then
+                                            return true
+                                        elseif b.guid == UnitGUID("player") then
+                                            return false
+                                        end
+                                        return b.data.name > a.data.name
+                                    end)
+                                    for _, v in pairs(sortedTable) do
+                                        local guid, data = v.guid, v.data
+                                        if data.realm == GetRealmName() then
+                                            local leftText = Sorted_FormatFaction(data.faction).." "..data.name
+                                            local rightText = data.level .. " " .. C_CreatureInfo.GetRaceInfo(data.race).raceName
+                                            local hasDeleteButton = guid ~= UnitGUID("player")
+                                            local leftColor = {Sorted_GetClassColor(data.class):GetRGB()}
+                                            local rightColor = nil
+                                            local highlightColor = leftColor
+
+                                            local b = SortedDropdownMenu:AddButton(ButtonClick, leftText, rightText, hasDeleteButton, DeleteButtonClick, leftColor, rightColor, highlightColor)
+                                            b.playerGUID = guid
+                                            b.deleteButton:HookScript("OnEnter", function(self)
+                                                SortedTooltip.CreateLocalized(self, "ANCHOR_RIGHT", "TOOLTIP_FORGET_CHARACTER", Sorted_GetData(self:GetParent().playerGUID).name)
+                                            end)
+                                            b.deleteButton:HookScript("OnLeave", function(self)
+                                                SortedTooltip.Cancel()
+                                            end)
+                                        end
+                                    end
+                                end
+                            </OnLoad>
+                            <OnShow>
+                                self:ValueFunc()
+                            </OnShow>
+                        </Scripts>
+                    </Button>
+                    <Frame name="$parentAltsButtonDiv" inherits="SortedTitleBarDiv" frameLevel="1120">
+                        <Anchors>
+                            <Anchor point="LEFT" relativeTo="SortedAltsDropdownButton" relativePoint="RIGHT" x="-2"/>
+                            <Anchor point="TOP"/>
+                        </Anchors>
+                    </Frame>
+
+                    <Button name="SortedEquipmentSetsDropdownButton" inherits="SortedDropdownTemplate">
+                        <Anchors>
+                            <Anchor point="TOPLEFT" relativeTo="$parentAltsButtonDiv" relativePoint="TOPRIGHT" x="-4" y="-3"/>
+                            <Anchor point="BOTTOM" y="2"/>
+                        </Anchors>
+                        <Size x="128"/>
+                        <Scripts>
+                            <OnLoad>
+                                self:OnLoad()
+                                
+                                if 3 > Sorted_WoWMajorVersionNumber() then
+                                    self:Hide()
+                                    return
+                                end
+
+                                function Sorted_DeselectEquipmentSet()
+                                    Sorted_selectedEquipSet = nil
+                                end
+                                Sorted_DeselectEquipmentSet()
+
+                                function Sorted_SelectEquipmentSet(equipSetID)
+                                    if 0 > equipSetID then
+                                        Sorted_selectedEquipSet = -1
+                                        return
+                                    end
+                                    Sorted_selectedEquipSet = equipSetID
+                                end
+
+                                function self:ValueFunc()
+                                    if not Sorted_selectedEquipSet then
+                                        if 6 > Sorted_WoWMajorVersionNumber() then
+                                            self:SetValue("|TInterface\\PaperDollInfoFrame\\UI-GearManager-Button:16:13:0:0:64:64:11:50:8:56|t "..Sorted.Localize("DROPDOWN_MENU_EQUIPMENT_SET"))
+                                        else
+                                            self:SetValue("|TInterface\\Icons\\Garrison_Building_Armory:16:16:-2:0:64:64:4:60:4:60|t "..Sorted.Localize("DROPDOWN_MENU_EQUIPMENT_SET"))
+                                        end
+                                        return
+                                    end
+                                    if 0 > Sorted_selectedEquipSet then
+                                        self:SetValue("|cffff1611 "..Sorted.Localize("DROPDOWN_MENU_EQUIPMENT_SET_NONE"))
+                                        return
+                                    end
+                                    local data = Sorted_GetData()
+                                    if data.equipSets then
+                                        local v = data.equipSets[Sorted_selectedEquipSet]
+                                        self:SetValue("|T"..v.icon..":16:16:-2:0:64:64:4:60:4:60|t |cffffffff"..v.name)
+                                    end
+                                end
+
+                                local function ButtonClick(self)
+                                    Sorted_SelectEquipmentSet(self.id)
+                                    Sorted_FilterItems()
+                                    Sorted_ScrollToTop()
+                                end
+                                local function NoneClick(self)
+                                    Sorted_SelectEquipmentSet(-1)
+                                    Sorted_FilterItems()
+                                    Sorted_ScrollToTop()
+                                end
+                                local function ClearClick(self)
+                                    Sorted_DeselectEquipmentSet()
+                                    Sorted_FilterItems()
+                                    Sorted_ScrollToTop()
+                                end
+
+                                function self:InitFunc()
+                                    local data = Sorted_GetData()
+                                    if data.equipSets then
+                                        for k,v in pairs(data.equipSets) do
+                                            local leftText = "|T"..v.icon..":18:18:-2:0:64:64:4:60:4:60|t |cffffebd0"..v.name
+
+                                            local b = SortedDropdownMenu:AddButton(ButtonClick, leftText, nil, false, nil, nil, nil, {1, 0.9, 0.3})
+                                            b.id = k
+                                        end
+                                    end
+                                    SortedDropdownMenu:AddCenteredButton(NoneClick, Sorted.Localize("DROPDOWN_MENU_EQUIPMENT_SET_NONE"), {1, 0.2, 0.15}, {1, 0.2, 0.15})
+                                    SortedDropdownMenu:AddCenteredButton(ClearClick, Sorted.Localize("DROPDOWN_MENU_CLEAR"), {0.8, 0.8, 0.8}, {0.6, 0.6, 0.6})
+                                end
+                            </OnLoad>
+                            <OnShow>
+                                self:ValueFunc()
+                            </OnShow>
+                        </Scripts>
+                        <Frames>
+                            <Frame name="$parentDiv" inherits="SortedTitleBarDiv" frameLevel="1120">
+                                <Anchors>
+                                    <Anchor point="LEFT" relativePoint="RIGHT" x="-2"/>
+                                    <Anchor point="TOP" y="3"/>
+                                </Anchors>
+                            </Frame>
+                        </Frames>
+                    </Button>
+                </Frames>
+            </Frame>
+
+            <Button name="$parentPortraitButton" frameLevel="1000">
+                <Size x="58" y="58"/>
+				<Anchors>
+					<Anchor point="CENTER" relativePoint="TOPLEFT" x="25" y="-22"/>
+				</Anchors>
+                <Layers>
+                    <Layer level="OVERLAY">
+                        <Texture name="$parentTextTexture" parentKey="textTexture" file="Interface\Addons\Sorted\Textures\Portrait-Text" alpha="0">
+                            <Size x="58" y="58"/>
+                            <Anchors><Anchor point="CENTER"/></Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <NormalTexture file="Interface\Addons\Sorted\Textures\Portrait"/>
+                <HighlightTexture file="Interface\Addons\Sorted\Textures\Portrait-Highlight" alphaMode="ADD" alpha="0.6"/>
+                <PushedTexture file="Interface\Addons\Sorted\Textures\Portrait-Pushed"/>
+                <Scripts>
+                    <OnLoad>
+                        if _G[self:GetParent():GetName().."PortraitFrame"] then
+                            _G[self:GetParent():GetName().."PortraitFrame"]:SetParent(self)
+                        end
+
+                        self.fadeIn = self:CreateAnimationGroup()
+                        local anim = self.fadeIn:CreateAnimation("Alpha")
+                        anim:SetFromAlpha(0)
+                        anim:SetToAlpha(1)
+                        anim:SetDuration(0.1)
+                        anim:SetChildKey("textTexture")
+                        self.fadeIn:HookScript("OnFinished", function(self)
+                            self:GetParent().textTexture:SetAlpha(1)
+                        end)
+                        self.fadeOut = self:CreateAnimationGroup()
+                        local anim = self.fadeOut:CreateAnimation("Alpha")
+                        anim:SetFromAlpha(1)
+                        anim:SetToAlpha(0)
+                        anim:SetDuration(0.1)
+                        anim:SetChildKey("textTexture")
+                        self.fadeOut:HookScript("OnFinished", function(self)
+                            self:GetParent().textTexture:SetAlpha(0)
+                        end)
+                    </OnLoad>
+                    <OnEnter>
+                        if not self.dontAnimate then
+                            self.fadeOut:Stop()
+                            self.fadeIn:Play()
+                        end
+
+                        SortedTooltip.CreateLocalized(self, "ANCHOR_TOP", "TOOLTIP_CONFIG")
+                    </OnEnter>
+                    <OnLeave>
+                        if not self.dontAnimate then
+                            self.fadeIn:Stop()
+                            self.fadeOut:Play()
+                        end
+
+                        SortedTooltip.Cancel()
+                    </OnLeave>
+                    <OnMouseDown>
+                        self.textTexture:SetPoint("CENTER", 1, -1)
+                    </OnMouseDown>
+                    <OnMouseUp>
+                        self.textTexture:SetPoint("CENTER")
+                    </OnMouseUp>
+                    <OnClick>
+                        local frame
+                        if Sorted_HasSettings() then
+                            if _G["SortedConfigFrame"]:IsShown() then
+                                if not _G["SortedConfigFrame"].animating then
+                                    _G["SortedConfigFrame"]:Animate("Hide")
+                                else
+                                    _G["SortedConfigFrame"]:Hide()
+                                end
+                            else
+                                _G["SortedConfigFrame"]:Show()
+                            end
+                        else
+                            _G["SortedConfigFrame"]:Hide()
+                            if _G["SortedProfileSelectFrame"]:IsShown() then
+                                _G["SortedProfileSelectFrame"]:Hide()
+                            else
+                                _G["SortedProfileSelectFrame"]:Show()
+                            end
+                        end
+                    </OnClick>
+                </Scripts>
+            </Button>
+
+            <Frame name="SortedTabsFrame" frameLevel="520">
+                <Size x="32"/>
+                <Anchors>
+                    <Anchor point="RIGHT" relativePoint="LEFT"/>
+                    <Anchor point="BOTTOM" relativePoint="BOTTOM" y="24"/>
+                    <Anchor point="TOP" relativePoint="BOTTOM" y="64"/>
+                </Anchors>
+                <Frames>
+                    <Button name="SortedTabBank" inherits="SortedSideTabButtonTemplate" text="TAB_BANK">
+                        <Size y="72"/>
+                        <Anchors>
+                            <Anchor point="LEFT" />
+                            <Anchor point="BOTTOMRIGHT" />
+                        </Anchors>
+                        <Scripts>
+                            <OnClick>
+                                PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB)
+                                self:GetParent():ToggleTab(1)
+                            </OnClick>
+                        </Scripts>
+                    </Button>
+                    <Button name="SortedTabReagents" inherits="SortedSideTabButtonTemplate" text="TAB_REAGENTS">
+                        <Size y="100"/>
+                        <Anchors>
+                            <Anchor point="LEFT" />
+                            <Anchor point="BOTTOMRIGHT" relativePoint="TOPRIGHT" relativeTo="SortedTabBank" y="-12" />
+                        </Anchors>
+                        <Scripts>
+                            <OnClick>
+                                PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB)
+                                self:GetParent():ToggleTab(2)
+                            </OnClick>
+                        </Scripts>
+                    </Button>
+                    <!--Button name="SortedTabVoidStorage" inherits="SortedSideTabButtonTemplate" text="Void Storage">
+                        <Size y="120"/>
+                        <Anchors>
+                            <Anchor point="LEFT" />
+                            <Anchor point="BOTTOMRIGHT" relativePoint="TOPRIGHT" relativeTo="SortedTabReagents" y="-12" />
+                        </Anchors>
+                        <Scripts>
+                            <OnClick>
+                                PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB)
+                                self:GetParent():ToggleTab(3)
+                            </OnClick>
+                        </Scripts>
+                    </Button>
+                    <Button name="SortedTabCurrency" inherits="SortedSideTabButtonTemplate" text="Currency">
+                        <Size y="96"/>
+                        <Anchors>
+                            <Anchor point="LEFT" />
+                            <Anchor point="BOTTOMRIGHT" relativePoint="TOPRIGHT" relativeTo="SortedTabVoidStorage" y="-12" />
+                        </Anchors>
+                        <Scripts>
+                            <OnClick>
+                                PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB)
+                                self:GetParent():ToggleTab(4)
+                            </OnClick>
+                        </Scripts>
+                    </Button-->
+                </Frames>
+                <Scripts>
+                    <OnLoad>
+                        self.selectedTab = 0
+                        self.tabs = { SortedTabBank }
+                        if not Sorted_IsClassic() then
+                            table.insert(self.tabs, SortedTabReagents)
+                        else
+                            SortedTabReagents:Hide()
+                        end
+                        if Sorted.IsSkinned() then
+                            for _, tab in pairs(self.tabs) do
+                                tab:SetPoint("LEFT", 4, 0)
+                            end
+                        end
+
+                        function self:SelectTab(id)
+                            if self.selectedTab ~= id then
+                                self:ToggleTab(id)
+                            else
+                                Sorted_UpdateItemButtons()
+                                Sorted_FilterItems()
+                            end
+                        end
+
+                        function self:DeselectTab()
+                            if self.selectedTab ~= 0 then
+                                self:ToggleTab(self.selectedTab)
+                            else
+                                Sorted_UpdateItemButtons()
+                                Sorted_FilterItems()
+                            end
+                        end
+
+                        function self:UpdateWidths()
+                            for _, tab in pairs(self.tabs) do
+                                tab:SetHeight(tab.buttonText:GetWidth() + 40)
+                            end
+                        end
+
+                        function self:ToggleTab(id)
+
+                            _G["SortedBankSidePanel"]:Hide()
+                            _G["SortedReagentSidePanel"]:Hide()
+                            SortedTabsFrame:SetPoint("RIGHT", _G["SortedFrame"], "LEFT")
+
+                            if self.selectedTab == id then
+                                id = 0
+                            end
+                            self.selectedTab = 0
+                            for i,v in ipairs(self.tabs) do
+                                if i == id then
+                                    v.selected = true
+                                    v.buttonText:SetPoint("CENTER", -5, -4)
+                                    if Sorted.IsSkinned() then
+                                        v:SetPoint("LEFT")
+                                    end
+                                    self.selectedTab = id
+                                    v.buttonText:SetFontObject("SortedTabSelectedFont")
+                                    _G[v:GetName().."LeftDisabled"]:Show()
+                                    _G[v:GetName().."RightDisabled"]:Show()
+                                    _G[v:GetName().."MiddleDisabled"]:Show()
+                                    _G[v:GetName().."Left"]:Hide()
+                                    _G[v:GetName().."Right"]:Hide()
+                                    _G[v:GetName().."Middle"]:Hide()
+                                    if i == 1 then
+                                        _G["SortedBankSidePanel"]:Show()
+                                        if Sorted.IsSkinned() then
+                                            SortedTabsFrame:SetPoint("RIGHT", _G["SortedBankSidePanel"], "LEFT", 0, 0)
+                                        else
+                                            SortedTabsFrame:SetPoint("RIGHT", _G["SortedBankSidePanel"], "LEFT", 4, 0)
+                                        end
+                                    elseif i == 2 then
+                                        _G["SortedReagentSidePanel"]:Show()
+                                        if Sorted.IsSkinned() then
+                                            SortedTabsFrame:SetPoint("RIGHT", _G["SortedReagentSidePanel"], "LEFT", 0, 0)
+                                        else
+                                            SortedTabsFrame:SetPoint("RIGHT", _G["SortedReagentSidePanel"], "LEFT", 4, 0)
+                                        end
+                                    end
+                                else
+                                    v.selected = false
+                                    v.buttonText:SetPoint("CENTER", -2, -4)
+                                    v.buttonText:SetFontObject("SortedTabFont")
+                                    if Sorted.IsSkinned() then
+                                        v:SetPoint("LEFT", 4, 0)
+                                    end
+                                    _G[v:GetName().."LeftDisabled"]:Hide()
+                                    _G[v:GetName().."RightDisabled"]:Hide()
+                                    _G[v:GetName().."MiddleDisabled"]:Hide()
+                                    _G[v:GetName().."Left"]:Show()
+                                    _G[v:GetName().."Right"]:Show()
+                                    _G[v:GetName().."Middle"]:Show()
+                                end
+                            end
+
+                            self:SetFrameLevel(520)
+
+                            Sorted_UpdateItemButtons()
+                            Sorted_FilterItems()
+                        end
+                    </OnLoad>
+                    <OnShow>
+                        self:UpdateWidths()
+                    </OnShow>
+                </Scripts>
+            </Frame>
+
+            <Frame name="SortedFrameFoot">
+                <Size y="32" />
+                <Anchors>
+                    <Anchor point="BOTTOMLEFT" />
+                    <Anchor point="RIGHT" />
+                </Anchors>
+                <Frames>
+                    <Button name="SortedFrameFootSlots" inherits="SortedBagSlotsTemplate" id="254">
+                        <Size x="76"/>
+                    </Button>
+                    <Frame name="SortedFrameFootBags" inherits="InsetFrameTemplate">
+                        <Size x="120" />
+                        <Anchors>
+                            <Anchor point="TOP" />
+                            <Anchor point="BOTTOMLEFT" relativeTo="SortedFrameFootSlots" relativePoint="BOTTOMRIGHT" />
+                        </Anchors>
+                    </Frame>
+                    <!--Button name="SortedFrameFootItemDropButton">
+                        <Size x="72" />
+                        <Anchors>
+                            <Anchor point="TOP" />
+                            <Anchor point="BOTTOMLEFT" relativeTo="SortedFrameFootBags" relativePoint="BOTTOMRIGHT" />
+                        </Anchors>
+                        <NormalTexture file="Interface\Addons\Sorted\Textures\UI-ItemDrop-Slot"/>
+                        <HighlightTexture file="Interface\Addons\Sorted\Textures\UI-ItemDrop-Slot-Highlight"/>
+                        <Scripts>
+                            <OnMouseDown>
+                                for i = 0, NUM_BAG_SLOTS do
+                                    if GetContainerNumFreeSlots(i) > 0 then
+                                        if i == 0 then
+                                            PutItemInBackpack()
+                                        else
+                                            PutItemInBag(i)
+                                        end
+                                    end
+                                end
+                            </OnMouseDown>
+                            <OnReceiveDrag>
+                                for i = 0, NUM_BAG_SLOTS do
+                                    if GetContainerNumFreeSlots(i) > 0 then
+                                        if i == 0 then
+                                            PutItemInBackpack()
+                                        else
+                                            PutItemInBag(i)
+                                        end
+                                    end
+                                end
+                            </OnReceiveDrag>
+                        </Scripts>
+                    </Button-->
+                    <Frame name="SortedFrameMoneyFrame" inherits="InsetFrameTemplate">
+                        <Anchors>
+                            <Anchor point="TOP" />
+                            <Anchor point="BOTTOMRIGHT" x="-24" y="2" />
+                        </Anchors>
+                        <Frames>
+                            <Frame name="SortedFrameMoneyInnerFrame" inherits="ThinGoldEdgeTemplate">
+                                <Anchors>
+                                    <Anchor point="TOPLEFT" x="3" y="-2" />
+                                    <Anchor point="BOTTOMRIGHT" x="-4" y="2" />
+                                </Anchors>
+                                <Layers>
+                                    <Layer>
+                                        <FontString name="SortedMoneyText" inherits="Sorted12Font" justifyH="RIGHT" text="">
+                                            <Anchors><Anchor point="RIGHT" x="-9"/></Anchors>
+                                        </FontString>
+                                    </Layer>
+                                    <Layer>
+                                        <Texture name="$parentHighlightLeft" file="Interface\Buttons\CheckButtonHilight" alphaMode="ADD" hidden="true" parentKey="highlightLeft" alpha="0.5">
+                                            <Anchors>
+                                                <Anchor point="TOPLEFT" x="1" y="-2"/>
+                                                <Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMLEFT" x="9" y="1"/>
+                                            </Anchors>
+                                            <TexCoords left="0" right="0.25" top="0" bottom="1"/>
+                                        </Texture>
+                                        <Texture name="$parentHighlightRight" file="Interface\Buttons\CheckButtonHilight" alphaMode="ADD" hidden="true" parentKey="highlightRight" alpha="0.5">
+                                            <Anchors>
+                                                <Anchor point="TOPRIGHT" y="-2"/>
+                                                <Anchor point="BOTTOMLEFT" relativePoint="BOTTOMRIGHT" x="-8" y="1"/>
+                                            </Anchors>
+                                            <TexCoords left="0.75" right="1" top="0" bottom="1"/>
+                                        </Texture>
+                                        <Texture name="$parentHighlightMiddle" file="Interface\Buttons\CheckButtonHilight" alphaMode="ADD" hidden="true" parentKey="highlightMiddle" alpha="0.5">
+                                            <Anchors>
+                                                <Anchor point="TOPLEFT" relativeTo="$parentHighlightLeft" relativePoint="TOPRIGHT"/>
+                                                <Anchor point="BOTTOMRIGHT" relativeTo="$parentHighlightRight" relativePoint="BOTTOMLEFT"/>
+                                            </Anchors>
+                                            <TexCoords left="0.25" right="0.75" top="0" bottom="1"/>
+                                        </Texture>
+                                    </Layer>
+                                </Layers>
+                                <Scripts>
+                                    <OnLoad> 
+                                        function SortedMoneyText:UpdateMoneyText() 
+                                            Sorted_GetData(UnitGUID("player")).money = GetMoney()
+                                            local money = Sorted_GetData().money
+                                            if not money then money = 0 end  -- for new characters without money
+                                            if money >= 10000000000 then -- Hide silvers/coppers when player has >1mil gold
+                                                money = math.floor(money / 10000) * 10000
+                                            elseif money >= 100000000 then -- Hide coppers when player has >10k gold
+                                                money = math.floor(money / 100) * 100
+                                            end
+                                            SortedMoneyText:SetText(GetMoneyString(money, true)) 
+                                            SortedFrameMoneyFrame:SetWidth(SortedMoneyText:GetWidth() + 26) 
+                                        end
+                                        self:RegisterEvent("PLAYER_MONEY")
+                                        --self:RegisterEvent("PLAYER_ENTERING_WORLD")
+                                    </OnLoad>
+                                    <OnEvent> 
+                                        SortedMoneyText:UpdateMoneyText()
+                                    </OnEvent>
+                                    <OnEnter>
+                                        self.highlightLeft:Show()
+                                        self.highlightMiddle:Show()
+                                        self.highlightRight:Show()
+
+                                        SortedTooltip.Schedule(function()
+                                            GameTooltip:SetOwner(self, "ANCHOR_LEFT")
+                                            GameTooltip:ClearLines()
+
+                                            local orderedKeys = {}
+                                            for realm, v in pairs(Sorted_totalMoney) do
+                                                table.insert(orderedKeys, realm)
+                                            end
+                                            table.sort(orderedKeys)
+
+                                            GameTooltip:AddLine(Sorted.Localize("TOOLTIP_TITLE_ACCOUNT_GOLD"), 1, 1, 1)
+
+                                            for i, realm in ipairs(orderedKeys) do
+                                                local v = Sorted_totalMoney[realm]
+                                                local allianceMoney = v.alliance
+                                                local hordeMoney = v.horde
+                                                if realm == GetRealmName() then
+                                                    if UnitFactionGroup("player") == "Alliance" then
+                                                        allianceMoney = allianceMoney + GetMoney()
+                                                    else
+                                                        hordeMoney = hordeMoney + GetMoney()
+                                                    end
+                                                end
+                                                GameTooltip:AddLine(" ")
+                                                GameTooltip:AddLine(" "..realm)
+                                                GameTooltip:AddLine("|TInterface\\WORLDSTATEFRAME\\AllianceIcon:18|t "..GetMoneyString(allianceMoney, true).. " ", 1, 1, 1)
+                                                GameTooltip:AddLine("|TInterface\\PVPFrame\\PVP-Currency-Horde:18|t "..GetMoneyString(hordeMoney, true).." ", 1, 1, 1)
+                                            end
+                                            GameTooltip:Show()
+                                        end)
+                                    </OnEnter>
+                                    <OnLeave>
+                                        self.highlightLeft:Hide()
+                                        self.highlightMiddle:Hide()
+                                        self.highlightRight:Hide()
+
+                                        SortedTooltip.Cancel()
+                                    </OnLeave>
+                                </Scripts>
+                            </Frame>
+                        </Frames>
+                    </Frame>
+                    <Frame name="SortedFrameFootCenter" inherits="OutsetFrameTemplate">
+                        <Anchors>
+                            <Anchor point="BOTTOMLEFT" relativeTo="SortedFrameFootBags" relativePoint="BOTTOMRIGHT" />
+                            <Anchor point="TOPRIGHT" relativeTo="SortedFrameMoneyFrame" relativePoint="TOPLEFT" />
+                        </Anchors>
+                    </Frame>
+                    <Frame name="SortedFrameFootRight" inherits="OutsetFrameTemplate">
+                        <Anchors>
+                            <Anchor point="BOTTOMLEFT" relativeTo="SortedFrameMoneyFrame" relativePoint="BOTTOMRIGHT" />
+                            <Anchor point="TOPRIGHT" x="-2" />
+                        </Anchors>
+                        <Frames>
+                            <Button name="SortedFrameResizeHandle">
+                                <Scripts>
+                                    <OnLoad>
+                                        self:RegisterForDrag("LeftButton")
+                                        self.isSizing = false
+                                    </OnLoad>
+                                    <OnEnter>
+                                        SetCursor("Interface\\CURSOR\\UI-Cursor-SizeRight")
+                                    </OnEnter>
+                                    <OnLeave>
+                                        ResetCursor()
+                                    </OnLeave>
+                                    <OnMouseDown>
+                                        SortedFrame:StartSizing()
+                                    </OnMouseDown>
+                                    <OnMouseUp>
+                                        Sorted_UpdateFrameSizes()
+                                        SortedFrame:StopMovingOrSizing()
+                                        Sorted_PositionItemButtons()
+                                        Sorted_SetSetting("width", SortedFrame:GetWidth())
+                                        Sorted_SetSetting("height", SortedFrame:GetHeight())
+                                    </OnMouseUp>
+                                </Scripts>
+                                <Anchors>
+                                    <Anchor point="TOPLEFT" />
+                                    <Anchor point="BOTTOMRIGHT" />
+                                </Anchors>
+                                <NormalTexture file="Interface\Addons\Sorted\Textures\UI-Resize-Button">
+                                    <TexCoords left="0" right="1" top="0" bottom="0.625‬"/>
+                                </NormalTexture>
+                                <HighlightTexture file="Interface\Addons\Sorted\Textures\UI-Resize-Button-Highlight" alphaMode="ADD" alpha="0.5">
+                                    <TexCoords left="0" right="1" top="0" bottom="0.625‬"/>
+                                </HighlightTexture>
+                                <PushedTexture file="Interface\Addons\Sorted\Textures\UI-Resize-Button-Pushed">
+                                    <TexCoords left="0" right="1" top="0" bottom="0.625‬"/>
+                                </PushedTexture>
+                            </Button>
+                        </Frames>
+                    </Frame>
+                    <Frame name="SortedCurrencyFrame" inherits="ThinGoldEdgeTemplate" frameLevel="571">
+                        <Anchors>
+                            <Anchor point="TOPRIGHT" relativeTo="SortedFrameMoneyFrame" relativePoint="BOTTOMRIGHT" x="0" y="6" />
+                        </Anchors>
+                        <Size x="300" y="30"/>
+                        <Layers>
+                            <Layer>
+                                <FontString name="$parentText" parentKey="text" inherits="Sorted12Font" justifyH="RIGHT" text="">
+                                    <Anchors><Anchor point="TOPRIGHT" x="-9" y="-3" /><Anchor point="BOTTOM"/></Anchors>
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                        <Scripts>
+                            <OnLoad>
+                                if Sorted_IsShadowlands() then
+                                    function SortedCurrencyFrame_Update()
+                                        local s = ""
+                                        for i = 1,3 do
+                                            local currencyInfo = C_CurrencyInfo.GetBackpackCurrencyInfo(i)
+                                            if currencyInfo then
+                                                s = s.."   "..BreakUpLargeNumbers(currencyInfo.quantity).." |T"..currencyInfo.iconFileID..":16:16:0:0:64:64:4:60:4:60|t "
+                                            elseif i == 1 then
+                                                SortedCurrencyFrame:Hide()
+                                                return
+                                            end
+                                        end
+                                        SortedCurrencyFrame.text:SetText(s)
+                                        SortedCurrencyFrame:SetWidth(SortedCurrencyFrame.text:GetWidth() + 10)
+                                        SortedCurrencyFrame:Show()
+                                    end
+                                    SortedFrame:HookScript("OnShow", SortedCurrencyFrame_Update)
+                                    self:RegisterEvent("CURRENCY_DISPLAY_UPDATE")
+
+                                elseif Sorted_IsBfA() then
+                                    function SortedCurrencyFrame_Update()
+                                        local s = ""
+                                        for i = 1,3 do
+                                            local name, count, icon, currencyID = GetBackpackCurrencyInfo(i)
+                                            if name then
+                                                s = s.."   "..count.." |T"..icon..":16:16:0:0:64:64:4:60:4:60|t "
+                                            elseif i ==1 then
+                                                SortedCurrencyFrame:Hide()
+                                                return
+                                            end
+                                        end
+                                        SortedCurrencyFrame.text:SetText(s)
+                                        SortedCurrencyFrame:SetWidth(SortedCurrencyFrame.text:GetWidth() + 10)
+                                        SortedCurrencyFrame:Show()
+                                    end
+                                    SortedFrame:HookScript("OnShow", SortedCurrencyFrame_Update)
+                                    self:RegisterEvent("CURRENCY_DISPLAY_UPDATE")
+
+                                else
+                                    self:Hide()
+                                end
+                            </OnLoad>
+                            <OnEvent>
+                                SortedCurrencyFrame_Update()
+                            </OnEvent>
+                        </Scripts>
+                    </Frame>
+                </Frames>
+            </Frame>
+
+            <Frame name="SortedFrameMain" inherits="InsetFrameTemplate">
+                <Anchors>
+                    <Anchor point="TOPLEFT" y="-22" />
+                    <Anchor point="BOTTOMRIGHT" relativeTo="SortedFrameFoot" relativePoint="TOPRIGHT" x="-2" />
+                </Anchors>
+                <Scripts>
+                    <OnLoad>
+                        self.Bg:Hide()
+                    </OnLoad>
+                </Scripts>
+                <Frames>
+                    <Frame name="SortedFrameRight">
+                        <Size x="140" />
+                        <Anchors>
+                            <Anchor point="TOPRIGHT" />
+                            <Anchor point="BOTTOM" y="2" />
+                        </Anchors>
+                        <Frames>
+                            <Frame name="SortedFrameFilterButtons" inherits="InsetFrameTemplate">
+                                <Size y="285" />
+                                <Anchors>
+                                    <Anchor point="TOPLEFT" />
+                                    <Anchor point="RIGHT" x="-2" />
+                                </Anchors>
+                                <Scripts>
+                                    <OnLoad>
+                                        SortedCategoryButtons_OnLoad(self)
+                                    </OnLoad>
+                                </Scripts>
+                                <Layers>
+                                    <Layer level="BORDER" textureSubLevel="-8">
+                                        <Texture parentKey="backdrop" file="Interface\Addons\Sorted\Textures\Backgrounds">
+                                            <Anchors>
+                                                <Anchor point="TOPLEFT" />
+                                                <Anchor point="BOTTOMRIGHT" />
+                                            </Anchors>
+                                            <TexCoords left="0" right="0.5" top="0" bottom="0.79296875" />
+                                        </Texture>
+                                    </Layer>
+                                </Layers>
+                            </Frame>
+                            <Frame name="SortedSubcategoryFrameParent" inherits="InsetFrameTemplate">
+                                <Anchors>
+                                    <Anchor point="TOPLEFT" relativeTo="SortedFrameFilterButtons" relativePoint="BOTTOMLEFT" />
+                                    <Anchor point="BOTTOMRIGHT" x="-2"/>
+                                </Anchors>
+                                <Scripts>
+                                    <OnLoad>
+                                        Sorted.RegisterBackdrop(self.Bg)
+                                    </OnLoad>
+                                </Scripts>
+                                <Frames>
+                                    <ScrollFrame name="SortedSubcategoryFrame">
+                                        <Anchors>
+                                            <Anchor point="TOPLEFT" y="-4" />
+                                            <Anchor point="BOTTOMRIGHT" x="-2" y="2" />
+                                        </Anchors>
+                                        <Frames>
+                                            <Frame name="SortedSubcategoryFrameScrollChild">
+                                                <Size x="116" y="1"/>
+                                                <Anchors><Anchor point="TOPLEFT" /></Anchors>
+                                                <Scripts>
+                                                    <OnLoad>
+                                                        SortedSubcategoryFrame_OnLoad(self)
+                                                    </OnLoad>
+                                                </Scripts>
+                                            </Frame>
+                                        </Frames>
+                                    </ScrollFrame>
+                                </Frames>
+                            </Frame>
+                        </Frames>
+                    </Frame>
+
+                    <Frame name="SortedFrameLeft">
+                        <Anchors>
+                            <Anchor point="TOPLEFT" />
+                            <Anchor point="BOTTOMRIGHT" relativeTo="SortedFrameRight" relativePoint="BOTTOMLEFT"/>
+                        </Anchors>
+                        <KeyValues>
+                            <KeyValue key="type" value="BAGS"/>
+                        </KeyValues>
+                        <Frames>
+                            <Button name="SortedFrameSellGreysButton" inherits="UIPanelButtonTemplate" frameLevel="574" hidden="true">
+                                <Size x="80" y="24" />
+                                <Anchors>
+                                    <Anchor point="TOPRIGHT" x="-1" y="-1" />
+                                </Anchors>
+                                <Layers>
+                                    <Layer>
+                                        <FontString name="$parentText" parentKey="text" inherits="Sorted12Font" justifyH="CENTER">
+                                            <Anchors><Anchor point="CENTER"/></Anchors>
+                                        </FontString>
+                                    </Layer>
+                                </Layers>
+                                <Scripts>
+                                    <OnLoad>
+                                        self.text:SetText(Sorted.Localize("BUTTON_SELL_TRASH"))
+
+                                        function self:SetNormalColor()
+                                            self.text:SetTextColor(1,0.82,0)
+                                        end
+                                        function self:SetHighlightColor()
+                                            self.text:SetTextColor(1,1,1)
+                                        end
+                                        self:SetNormalColor()
+                                        self:RegisterEvent("MERCHANT_SHOW")
+                                        self:RegisterEvent("MERCHANT_CLOSED")
+                                    </OnLoad>
+                                    <OnEnter>
+                                        self:SetHighlightColor()
+                                    </OnEnter>
+                                    <OnLeave>
+                                        self:SetNormalColor()
+                                    </OnLeave>
+                                    <OnEvent>
+                                        if event == "MERCHANT_SHOW" then
+                                            self:Show()
+                                            SortedFrameSearchBox:SetPoint("RIGHT", self, "LEFT", -4, 0)
+                                            
+                                        elseif event == "MERCHANT_CLOSED" then
+                                            self:Hide()
+                                            SortedFrameSearchBox:SetPoint("RIGHT", -4, 0)
+                                        end
+                                    </OnEvent>
+                                    <OnClick>
+                                        Sorted_VendorGreys()
+                                    </OnClick>
+                                </Scripts>
+                            </Button>
+                            <Frame name="SortedFrameSearchBoxFrame" inherits="InsetFrameTemplate">
+                                <Size y="28" />
+                                <Anchors>
+                                    <Anchor point="TOPLEFT" x="2" />
+                                    <Anchor point="RIGHT" />
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="BACKGROUND">
+                                        <Texture parentKey="bg" file="Interface\Addons\Sorted\Textures\Search-Backdrop">
+                                            <Anchors><Anchor point="TOPLEFT"/><Anchor point="BOTTOMRIGHT" x="-26"/></Anchors>
+                                            <TexCoords left="0" right="0.5" top="0" bottom="1" />
+                                        </Texture>
+                                        <Texture parentKey="bgRight" file="Interface\Addons\Sorted\Textures\Search-Backdrop">
+                                            <Anchors><Anchor point="TOPLEFT" relativePoint="TOPRIGHT" x="-26"/><Anchor point="BOTTOMRIGHT"/></Anchors>
+                                            <TexCoords left="0.5" right="1" top="0" bottom="1" />
+                                        </Texture>
+                                    </Layer>
+                                </Layers>
+                                <Frames>
+                                    <EditBox name="SortedFrameSearchBox" inherits="SearchBoxTemplate">
+                                        <Scripts>
+                                            <OnLoad>
+                                                self:GetParent().Bg:Hide()
+                                                self.Left:Hide()
+                                                self.Middle:Hide()
+                                                self.Right:Hide()
+                                                self.searchIcon:SetVertexColor(0.6, 0.6, 0.6);
+                                                self:SetTextInsets(16, 20, 0, 0);
+                                                self.Instructions:SetText(SEARCH);
+                                                self.Instructions:ClearAllPoints();
+                                                self.Instructions:SetPoint("TOPLEFT", self, "TOPLEFT", 16, 0);
+                                                self.Instructions:SetPoint("BOTTOMRIGHT", self, "BOTTOMRIGHT", -20, 0);
+                                                self.Instructions:SetFontObject(Sorted12Font)
+                                                self:SetFontObject(Sorted12Font)
+                                                if not Sorted_IsClassic() then
+                                                    self:RegisterEvent("GLOBAL_MOUSE_DOWN")
+                                                end
+                                                
+                                                _G["SortedFrameSearchBoxClearButton"]:HookScript("OnClick", function(self) 
+                                                    Sorted_FilterItems() 
+                                                    Sorted_ScrollToTop()
+                                                end)
+                                            </OnLoad>
+                                            <OnEvent>
+                                                if event == "GLOBAL_MOUSE_DOWN" and self:IsShown() then
+                                                    if not self:IsMouseOver() then 
+                                                        self:ClearFocus()
+                                                    end
+                                                end
+                                            </OnEvent>
+                                            <OnTextChanged>
+                                                InputBoxInstructions_OnTextChanged(self)
+                                                Sorted_FilterItems()
+                                                Sorted_ScrollToTop()
+                                                Sorted_SetSetting("lastSearch", self:GetText())
+                                            </OnTextChanged>
+                                        </Scripts>
+                                        <Anchors>
+                                            <Anchor point="TOPLEFT" x="60" />
+                                            <Anchor point="RIGHT" x="-4" />
+                                            <Anchor point="BOTTOM" />
+                                        </Anchors>
+                                    </EditBox>
+                                </Frames>
+                            </Frame>
+
+                            <Frame name="SortedFrameSortButtons" inherits="InsetFrameTemplate">
+                                <Size y="24"/>
+                                <Anchors>
+                                    <Anchor point="TOPLEFT" relativeTo="SortedFrameSearchBoxFrame" relativePoint="BOTTOMLEFT" />
+                                    <Anchor point="RIGHT" x="-18" />
+                                </Anchors>
+                                <Scripts>
+                                    <OnLoad>
+                                        SortedSortButtons_OnLoad(self)
+                                    </OnLoad>
+                                </Scripts>
+
+                                <Frames>
+                                    <Button name="SortedFrameFavoritesSortButton" inherits="SortedColumnHeaderTemplate">
+                                        <NormalTexture file="Interface\Addons\Sorted\Textures\Favorite-Icons">
+                                            <Size x="17" y="17"/>
+                                            <Anchors><Anchor point="CENTER" y="-1"/></Anchors>
+                                            <TexCoords left="0" right="0.21875" top="0.4375" bottom="0.65625" />
+                                        </NormalTexture>
+                                        <HighlightTexture file="Interface\Addons\Sorted\Textures\Favorite-Icons" alpha="0.5" alphaMode="ADD">
+                                            <Size x="17" y="17"/>
+                                            <Anchors><Anchor point="CENTER" y="-1"/></Anchors>
+                                            <TexCoords left="0" right="0.21875" top="0" bottom="0.21875" />
+                                        </HighlightTexture>
+                                        <PushedTexture file="Interface\Addons\Sorted\Textures\Favorite-Icons">
+                                            <Size x="17" y="17"/>
+                                            <Anchors><Anchor point="CENTER" y="-1"/></Anchors>
+                                            <TexCoords left="0" right="0.21875" top="0" bottom="0.21875" />
+                                        </PushedTexture>
+                                        <Scripts>
+                                            <OnLoad>
+                                                if Sorted_IsClassic() then
+                                                    self:SetPoint("TOP", 0, -3)
+                                                    self:SetPoint("BOTTOM", 0, -1)
+                                                else
+                                                    self:SetPoint("TOP", 0, -2)
+                                                    self:SetPoint("BOTTOM")
+                                                end
+
+                                                self.value = 0
+                                                function self:UpdateTexture()
+                                                    if self.value == 0 then
+                                                        self:GetNormalTexture():SetTexCoord(0, 0.21875, 0.21875 * 2, 0.21875 * 3)
+                                                        self:GetHighlightTexture():SetTexCoord(0, 0.21875, 0, 0.21875)
+                                                        self:GetPushedTexture():SetTexCoord(0, 0.21875, 0, 0.21875)
+                                                    else
+                                                        self:GetNormalTexture():SetTexCoord(
+                                                            (math.fmod(self.value - 1, 4)) * 0.21875, 
+                                                            (math.fmod(self.value - 1, 4) + 1) * 0.21875, 
+                                                            (math.floor((self.value - 1) / 4)) * 0.21875, 
+                                                            (math.floor((self.value - 1) / 4) + 1) * 0.21875
+                                                        )
+                                                        self:GetHighlightTexture():SetTexCoord(
+                                                            (math.fmod(self.value - 1, 4)) * 0.21875, 
+                                                            (math.fmod(self.value - 1, 4) + 1) * 0.21875, 
+                                                            (math.floor((self.value - 1) / 4) + 2) * 0.21875, 
+                                                            (math.floor((self.value - 1) / 4) + 3) * 0.21875
+                                                        )
+                                                        self:GetPushedTexture():SetTexCoord(
+                                                            (math.fmod(self.value - 1, 4)) * 0.21875, 
+                                                            (math.fmod(self.value - 1, 4) + 1) * 0.21875, 
+                                                            (math.floor((self.value - 1) / 4)) * 0.21875, 
+                                                            (math.floor((self.value - 1) / 4) + 1) * 0.21875
+                                                        )
+                                                    end
+                                                end
+                                                function self:Set(value)
+                                                    self.value = value
+                                                    self:UpdateTexture()
+                                                    Sorted_SetSetting("favoritesOnTop", value + 1)
+                                                    Sorted_SortItems()
+                                                end
+                                                function self:Toggle()
+                                                    if self.value == 0 then
+                                                        self:Set(1)
+                                                    else
+                                                        self:Set(0)
+                                                    end
+                                                end
+                                            </OnLoad>
+                                            <OnShow>
+                                                self:Set(Sorted_GetSetting("favoritesOnTop") - 1)
+                                            </OnShow>
+                                            <OnClick>
+                                                if SortedDropdownMenuParent.toggled then
+                                                    SortedDropdownMenuParent:ToggleOff(self:GetParent())
+                                                else
+                                                    if button == "LeftButton" then
+                                                        self:Toggle()
+                                                        if self.value == 0 then
+                                                            PlaySound(SOUNDKIT.IG_CHAT_SCROLL_UP)
+                                                        else
+                                                            PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON)
+                                                        end
+                                                        Sorted_FilterItems()
+                                                    elseif button == "RightButton" then
+                                                        local x,y = GetCursorPosition()
+                                                        x,y = x/UIParent:GetEffectiveScale(), y/UIParent:GetEffectiveScale()
+                                                        SortedDropdownMenuParent:ToggleOn(self:GetParent())
+                                                        SortedDropdownMenuParent:ClearAllPoints()
+                                                        SortedDropdownMenuParent:SetPoint("TOPLEFT", UIParent, "BOTTOMLEFT", x * (1 / SortedFrame:GetScale()), y * (1 / SortedFrame:GetScale()))
+                                                    end
+                                                    Sorted_ScrollToTop()
+                                                end
+                                            </OnClick>
+                                        </Scripts>
+                                    </Button>
+                                </Frames>
+
+                            </Frame>
+
+                            <ScrollFrame name="SortedFrameItemList" inherits="SortedItemListTemplate">
+                                <Anchors>
+                                    <Anchor point="TOPLEFT" relativeTo="SortedFrameSortButtons" relativePoint="BOTTOMLEFT" />
+                                    <Anchor point="BOTTOM" />
+                                    <Anchor point="RIGHT" />
+                                </Anchors>
+                            </ScrollFrame>
+
+                        </Frames>
+                    </Frame>
+
+                </Frames>
+            </Frame>
+
+        </Frames>
+    </Frame>
+    
+    <Frame name="SortedBankSidePanel" parent="UIParent" inherits="SortedSidePanelTemplate" enableMouse="true" clampedToScreen="true" frameStrata="HIGH" hidden="true" frameLevel ="552">
+        <Size x="400" />
+        <Anchors>
+            <Anchor point="TOPRIGHT" relativeTo="SortedFrameSortButtons" relativePoint="BOTTOMLEFT" x="4" y="4" />
+            <Anchor point="BOTTOM" relativeTo="SortedFrame" />
+        </Anchors>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentBG" parentKey="bg" horizTile="true" vertTile="true">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" x="4" y="-4"/>
+                        <Anchor point="BOTTOMRIGHT" x="-4" y="4"/>
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Scripts>
+            <OnLoad>
+                SortedBankPanel_OnLoad(self)
+                Sorted.RegisterBackdrop(self.bg)
+            </OnLoad>
+            <OnShow>
+                Sorted_UpdateTimeItemsAdded()
+            </OnShow>
+        </Scripts>
+        <Frames>
+            <Frame name="$parentDropShadow" frameLevel="500" inherits="SortedDropShadowTemplate"/>
+            <Frame name="$parentFoot">
+                <Size y="32" />
+                <Anchors>
+                    <Anchor point="BOTTOMLEFT" x="3" y="2" />
+                    <Anchor point="RIGHT" />
+                </Anchors>
+                <Frames>
+                    <Button name="$parentSlots" inherits="SortedBagSlotsTemplate" id="255" />
+                    <Frame name="$parentBags" inherits="InsetFrameTemplate">
+                        <Size x="210" />
+                        <Anchors>
+                            <Anchor point="TOP" />
+                            <Anchor point="BOTTOMLEFT" relativeTo="$parentSlots" relativePoint="BOTTOMRIGHT" />
+                        </Anchors>
+                        <Frames>
+                            <Button name="$parentPurchaseSlotButton">
+                                <Size x="28" y="28"/>
+                                <Anchors>
+                                    <Anchor point="TOPLEFT" />
+                                </Anchors>
+                                <NormalTexture file="Interface\Addons\Sorted\Textures\UI-AddSlotButton-Up" />
+                                <HighlightTexture file="Interface\Buttons\UI-Common-MouseHilight" alphaMode="ADD" />
+                                <PushedTexture file="Interface\Addons\Sorted\Textures\UI-AddSlotButton-Down" />
+                                <Scripts>
+                                    <OnLoad>
+                                        self:RegisterEvent("PLAYER_ENTERING_WORLD")
+                                        self:RegisterEvent("PLAYERBANKBAGSLOTS_CHANGED")
+                                        self:RegisterEvent("BANKFRAME_OPENED")
+                                        self:RegisterEvent("BANKFRAME_CLOSED")
+                                        StaticPopupDialogs["SORTED_BUY_BANK_SLOT"] = {
+                                            text = CONFIRM_BUY_BANK_SLOT,
+                                            button1 = YES,
+                                            button2 = NO,
+                                            OnAccept = function(self)
+                                                PurchaseSlot();
+                                            end,
+                                            OnShow = function(self)
+                                                MoneyFrame_Update(self.moneyFrame, GetBankSlotCost(GetNumBankSlots()))
+                                            end,
+                                            hasMoneyFrame = 1,
+                                            timeout = 0,
+                                            hideOnEscape = 1,
+                                        }
+                                    </OnLoad>
+                                    <OnEvent>
+                                        local numSlots, full = GetNumBankSlots()
+                                        if full then
+                                            self:ClearAllPoints()
+                                            self:Hide()
+                                        elseif event == "BANKFRAME_OPENED" or (Sorted_bankIsOpened and Sorted.IsCurrentPlayerSelected()) then
+                                            self:SetPoint("TOPLEFT", numSlots * 30, 0)
+                                            self:Show()
+                                        else
+                                            self:Hide()
+                                        end
+                                        if event=="PLAYERBANKBAGSLOTS_CHANGED" then
+                                            Sorted_UpdateBagContents()
+                                            Sorted_UpdateItemButtons()
+                                            Sorted_FilterItems()
+                                        end
+                                    </OnEvent>
+                                    <OnClick>
+                                        PlaySound(SOUNDKIT.IG_MAINMENU_OPTION)
+                                        StaticPopup_Show("SORTED_BUY_BANK_SLOT")
+                                    </OnClick>
+                                    <OnEnter>
+                                        SortedTooltip.CreateLocalized(self, "ANCHOR_RIGHT", "TOOLTIP_BUY_BANK_SLOT")
+                                    </OnEnter>
+                                    <OnLeave>
+                                        SortedTooltip.Cancel()
+                                    </OnLeave>
+                                </Scripts>
+                            </Button>
+                        </Frames>
+                    </Frame>
+                    <Frame name="$parentCenter" inherits="OutsetFrameTemplate">
+                        <Anchors>
+                            <Anchor point="BOTTOMLEFT" relativeTo="$parentBags" relativePoint="BOTTOMRIGHT" />
+                            <Anchor point="TOPRIGHT" />
+                        </Anchors>
+                    </Frame>
+                </Frames>
+            </Frame>
+
+            <Frame name="$parentLeftFrame" inherits="InsetFrameTemplate">
+                <Anchors>
+                    <Anchor point="TOP" y="-4"/>
+                    <Anchor point="LEFT" relativeTo="$parentFoot" x="1"/>
+                    <Anchor point="BOTTOMRIGHT" relativeTo="$parentFoot" relativePoint="TOPRIGHT" x="-4" y="0" />
+                </Anchors>
+                <Scripts>
+                    <OnLoad>
+                        self.Bg:Hide()
+                    </OnLoad>
+                </Scripts>
+                <KeyValues>
+                    <KeyValue key="type" value="BANK"/>
+                </KeyValues>
+                <Frames>
+                    <ScrollFrame name="SortedBankItemList" inherits="SortedItemListTemplate" >
+                        <Anchors>
+                            <Anchor point="TOPLEFT" />
+                            <Anchor point="BOTTOMRIGHT" y="2" />
+                        </Anchors>
+                    </ScrollFrame>
+                </Frames>
+            </Frame>
+        </Frames>
+    </Frame>
+
+    <Frame name="SortedReagentSidePanel" parent="UIParent" inherits="SortedSidePanelTemplate" enableMouse="true" clampedToScreen="true" frameStrata="HIGH" hidden="true" frameLevel ="552">
+        <Size x="400" />
+        <Anchors>
+            <Anchor point="TOPRIGHT" relativeTo="SortedFrameSortButtons" relativePoint="BOTTOMLEFT" x="4" y="4" />
+            <Anchor point="BOTTOM" relativeTo="SortedFrame" />
+        </Anchors>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentBG" parentKey="bg" horizTile="true" vertTile="true">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" x="4" y="-4"/>
+                        <Anchor point="BOTTOMRIGHT" x="-4" y="4"/>
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Scripts>
+            <OnLoad>
+                Sorted.RegisterBackdrop(self.bg)
+            </OnLoad>
+        </Scripts>
+        <Frames>
+            <Frame name="$parentDropShadow" frameLevel="500" inherits="SortedDropShadowTemplate"/>
+            <Frame name="$parentFoot">
+                <Size y="32" />
+                <Anchors>
+                    <Anchor point="BOTTOMLEFT" x="3" y="2" />
+                    <Anchor point="RIGHT" />
+                </Anchors>
+                <Frames>
+                    <Button name="$parentSlots" inherits="SortedBagSlotsTemplate" id="252"/>
+                    <Frame name="$parentCenter" inherits="OutsetFrameTemplate">
+                        <Anchors>
+                            <Anchor point="BOTTOMLEFT" relativeTo="$parentSlots" relativePoint="BOTTOMRIGHT" />
+                            <Anchor point="TOPRIGHT" />
+                        </Anchors>
+                        <Frames>
+                            <Button name="$parentDepositButton" inherits="UIPanelButtonTemplate">
+                                <Anchors>
+                                    <Anchor point="CENTER"/>
+                                </Anchors>
+                                <Scripts>
+                                    <OnLoad>
+                                        self:SetText(Sorted.Localize("BUTTON_DEPOSIT_REAGENTS"))
+                                        self:Disable()
+                                        self:SetSize(self:GetFontString():GetWidth() + 16, 24)
+                                        self:SetNormalFontObject("SortedButtonFont")
+                                        self:SetHighlightFontObject("SortedButtonFont")
+                                        self:SetDisabledFontObject("SortedButtonDisabledFont")
+                                    </OnLoad>
+                                    <OnClick>
+                                        PlaySound(SOUNDKIT.IG_MAINMENU_OPTION)
+                                        DepositReagentBank()
+                                    </OnClick>
+                                </Scripts>
+                            </Button>
+                        </Frames>
+                    </Frame>
+                </Frames>
+            </Frame>
+
+            <Frame name="$parentLeftFrame" inherits="InsetFrameTemplate">
+                <Anchors>
+                    <Anchor point="TOP" y="-4"/>
+                    <Anchor point="LEFT" relativeTo="$parentFoot" x="1"/>
+                    <Anchor point="BOTTOMRIGHT" relativeTo="$parentFoot" relativePoint="TOPRIGHT" x="-4" y="0" />
+                </Anchors>
+                <Scripts>
+                    <OnLoad>
+                        self.Bg:Hide()
+                    </OnLoad>
+                </Scripts>
+                <KeyValues>
+                    <KeyValue key="type" value="REAGENT"/>
+                </KeyValues>
+                <Frames>
+                    <ScrollFrame name="SortedReagentItemList" inherits="SortedItemListTemplate" >
+                        <Anchors>
+                            <Anchor point="TOPLEFT" />
+                            <Anchor point="BOTTOMRIGHT" y="2" />
+                        </Anchors>
+
+                        <Frames>
+                            <Button name="$parentPurchaseButton" parentKey="PurchaseButton" inherits="UIPanelButtonTemplate" hidden="true">
+                                <Size x="124" y="21"/>
+                                <Anchors>
+                                    <Anchor point="CENTER" y="-36"/>
+                                </Anchors>
+                                <Scripts>
+                                    <OnLoad>
+                                        if not Sorted_IsClassic() then
+                                            self:SetText(Sorted.Localize("BUTTON_BUY_REAGENTS"))
+
+                                            self:SetNormalFontObject("SortedButtonFont")
+                                            self:SetHighlightFontObject("SortedButtonFont")
+                                            self:SetDisabledFontObject("SortedButtonDisabledFont")
+                                            self:RegisterEvent("REAGENTBANK_PURCHASED")
+                                        end
+                                    </OnLoad>
+                                    <OnEvent>
+                                        self:Hide()
+                                        Sorted_SetReagentUnlocked()
+                                    </OnEvent>
+                                    <OnClick>
+                                        PlaySound(SOUNDKIT.IG_MAINMENU_OPTION);
+                                        StaticPopup_Show("CONFIRM_BUY_REAGENTBANK_TAB");
+                                    </OnClick>
+                                </Scripts>
+                            </Button>
+                            <Frame name="$parentCostMoneyFrame" parentKey="CostMoneyFrame" inherits="SmallMoneyFrameTemplate" hidden="true">
+                                <Anchors>
+                                    <Anchor point="RIGHT" relativeTo="$parentPurchaseButton" relativePoint="LEFT" x="0" y="0"/>
+                                </Anchors>
+                                <Scripts>
+                                    <OnLoad>
+                                        if not Sorted_IsClassic() then
+                                            SmallMoneyFrame_OnLoad(self);
+                                            MoneyFrame_SetType(self, "STATIC");
+                                            MoneyFrame_Update(self, GetReagentBankCost())
+                                            self:RegisterEvent("REAGENTBANK_PURCHASED")
+                                        end
+                                    </OnLoad>
+                                    <OnEvent>
+                                        self:Hide()
+                                    </OnEvent>
+                                </Scripts>
+                            </Frame>
+                        </Frames>
+                    </ScrollFrame>
+                </Frames>
+            </Frame>
+        </Frames>
+    </Frame>
+</Ui>

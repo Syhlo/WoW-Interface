@@ -1,10 +1,10 @@
-VER 3 0000000000000019 " " "134400"
-#001
-/click [btn:1] MegaMacroClicky1
-/click [btn:2] MegaMacroClicky1 RightButton
-/click [btn:3] MegaMacroClicky1 MiddleButton
-/click [btn:4] MegaMacroClicky1 Button4
-/click [btn:5] MegaMacroClicky1 Button5
+VER 3 0000000000000051 " " "134400"
+#068
+/click [btn:1] MegaMacroClicky68
+/click [btn:2] MegaMacroClicky68 RightButton
+/click [btn:3] MegaMacroClicky68 MiddleButton
+/click [btn:4] MegaMacroClicky68 Button4
+/click [btn:5] MegaMacroClicky68 Button5
 END
 VER 3 0000000000000016 " " "134400"
 #002
@@ -478,13 +478,13 @@ VER 3 0000000000000050 " " "134400"
 /click [btn:4] MegaMacroClicky67 Button4
 /click [btn:5] MegaMacroClicky67 Button5
 END
-VER 3 0000000000000051 " " "134400"
-#068
-/click [btn:1] MegaMacroClicky68
-/click [btn:2] MegaMacroClicky68 RightButton
-/click [btn:3] MegaMacroClicky68 MiddleButton
-/click [btn:4] MegaMacroClicky68 Button4
-/click [btn:5] MegaMacroClicky68 Button5
+VER 3 0000000000000017 " " "134400"
+#014
+/click [btn:1] MegaMacroClicky14
+/click [btn:2] MegaMacroClicky14 RightButton
+/click [btn:3] MegaMacroClicky14 MiddleButton
+/click [btn:4] MegaMacroClicky14 Button4
+/click [btn:5] MegaMacroClicky14 Button5
 END
 VER 3 0000000000000052 " " "134400"
 #069
@@ -910,14 +910,6 @@ VER 3 000000000000001D " " "134400"
 /click [btn:4] MegaMacroClicky15 Button4
 /click [btn:5] MegaMacroClicky15 Button5
 END
-VER 3 0000000000000017 " " "134400"
-#014
-/click [btn:1] MegaMacroClicky14
-/click [btn:2] MegaMacroClicky14 RightButton
-/click [btn:3] MegaMacroClicky14 MiddleButton
-/click [btn:4] MegaMacroClicky14 Button4
-/click [btn:5] MegaMacroClicky14 Button5
-END
 VER 3 0000000000000014 "  Target Arena2" "134400"
 #011
 /click [btn:1] MegaMacroClicky11
@@ -957,4 +949,12 @@ VER 3 0000000000000025 "Drink" "134400"
 /click [btn:3] MegaMacroClicky17 MiddleButton
 /click [btn:4] MegaMacroClicky17 Button4
 /click [btn:5] MegaMacroClicky17 Button5
+END
+VER 3 0000000000000019 "TomTom" "134400"
+#001
+/click [btn:1] MegaMacroClicky1
+/click [btn:2] MegaMacroClicky1 RightButton
+/click [btn:3] MegaMacroClicky1 MiddleButton
+/click [btn:4] MegaMacroClicky1 Button4
+/click [btn:5] MegaMacroClicky1 Button5
 END

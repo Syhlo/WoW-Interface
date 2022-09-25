@@ -11,11 +11,11 @@ SpyDB = {
 				},
 				["Syhlo"] = {
 				},
-				["Sýh"] = {
-				},
 				["Syhlol"] = {
 				},
 				["Sydh"] = {
+				},
+				["Sýh"] = {
 				},
 			},
 			["Alliance"] = {
@@ -41,13 +41,15 @@ SpyDB = {
 				},
 				["Regèn"] = {
 				},
-				["Wthrename"] = {
+				["Dwarfmounts"] = {
 				},
-				["Crylo"] = {
+				["Wthrename"] = {
 				},
 				["Gerold"] = {
 				},
-				["Dwarfmounts"] = {
+				["Crylo"] = {
+				},
+				["Gnomemounts"] = {
 				},
 			},
 		},
@@ -101,6 +103,7 @@ SpyDB = {
 		},
 	},
 	["profileKeys"] = {
+		["Gnomemounts - Tichondrius"] = "Gnomemounts - Tichondrius",
 		["Isellpropane - Proudmoore"] = "Isellpropane - Proudmoore",
 		["Sýh - Thrall"] = "Sýh - Thrall",
 		["Dwarfmounts - Tichondrius"] = "Dwarfmounts - Tichondrius",
@@ -121,6 +124,18 @@ SpyDB = {
 		["Syh - Thrall"] = "Syh - Thrall",
 	},
 	["profiles"] = {
+		["Gnomemounts - Tichondrius"] = {
+			["Colors"] = {
+				["Bar"] = {
+					["Bar Text"] = {
+						["a"] = 1,
+					},
+				},
+			},
+			["AppendUnitNameCheck"] = true,
+			["MainWindowVis"] = false,
+			["AppendUnitKoSCheck"] = true,
+		},
 		["Isellpropane - Proudmoore"] = {
 			["AppendUnitNameCheck"] = true,
 			["MainWindowVis"] = false,
@@ -153,6 +168,8 @@ SpyDB = {
 			["Enabled"] = false,
 		},
 		["Dwarfmounts - Tichondrius"] = {
+			["AppendUnitNameCheck"] = true,
+			["MainWindowVis"] = false,
 			["Colors"] = {
 				["Bar"] = {
 					["Bar Text"] = {
@@ -160,8 +177,6 @@ SpyDB = {
 					},
 				},
 			},
-			["AppendUnitNameCheck"] = true,
-			["MainWindowVis"] = false,
 			["AppendUnitKoSCheck"] = true,
 		},
 		["Syhlol - Thrall"] = {

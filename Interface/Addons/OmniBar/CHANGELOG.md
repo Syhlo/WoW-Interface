@@ -1,1 +1,3 @@
-- Add support for WoTLK Classic
+- Track shared cooldowns
+- Update spells
+- Bug fix

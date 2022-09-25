@@ -9,3 +9,4 @@ Capping_Options: enabled
 SortGroup: disabled
 Bagnon_GuildBank: disabled
 Gladius: disabled
+DynamicCam: disabled

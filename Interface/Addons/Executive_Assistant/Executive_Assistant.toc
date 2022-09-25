@@ -1,0 +1,16 @@
+## Interface: 90207
+
+## Title: Executive Assistant
+## Author: VincentSDSH (Vincent - Silver Hand)
+## Version: 1.4b
+## Notes: User configurable Task List Manager
+## SavedVariables: ExecAssistDB
+## DefaultState: Enabled
+
+embeds.xml
+ea_Core.lua
+ea_Options.lua
+ea_TaskWindow.lua
+ea_Tooltip.lua
+ea_Misc.lua
+ea_BindingsConstants.lua

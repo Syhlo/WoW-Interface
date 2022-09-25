@@ -313,7 +313,8 @@ DF.TextEntryCounter = DF.TextEntryCounter or 1
 			self.editbox:SetBackdropColor (unpack (self.enabled_backdrop_color))
 			self.editbox:SetTextColor (unpack (self.enabled_text_color))
 			if (self.editbox.borderframe) then
-				self.editbox.borderframe:SetBackdropColor (unpack (self.editbox.borderframe.onleave_backdrop))
+				local r, g, b, a = DF:ParseColors(unpack(self.editbox.borderframe.onleave_backdrop))
+				self.editbox.borderframe:SetBackdropColor(r, g, b, a)
 			end
 		end
 	end
@@ -341,7 +342,11 @@ DF.TextEntryCounter = DF.TextEntryCounter or 1
 			self.func = func
 		end
 	end
-	
+
+	function TextEntryMetaFunctions:IgnoreNextCallback()
+		self.ignoreNextCallback = true
+	end
+
 ------------------------------------------------------------------------------------------------------------
 --> scripts and hooks
 
@@ -406,7 +411,12 @@ DF.TextEntryCounter = DF.TextEntryCounter or 1
 
 	local OnEnterPressed = function (textentry, byScript)
 		local capsule = textentry.MyObject
-	
+
+		if (capsule.ignoreNextCallback) then
+			DF.Schedules.RunNextTick(function() capsule.ignoreNextCallback = nil end)
+			return
+		end
+
 		local kill = capsule:RunHooksForWidget ("OnEnterPressed", textentry, capsule, capsule.text)
 		if (kill) then
 			return
@@ -457,7 +467,12 @@ DF.TextEntryCounter = DF.TextEntryCounter or 1
 	local OnEditFocusLost = function (textentry)
 
 		local capsule = textentry.MyObject
-	
+
+		if (capsule.ignoreNextCallback) then
+			DF.Schedules.RunNextTick(function() capsule.ignoreNextCallback = nil end)
+			return
+		end
+
 		if (textentry:IsShown()) then
 		
 			local kill = capsule:RunHooksForWidget ("OnEditFocusLost", textentry, capsule, capsule.text)

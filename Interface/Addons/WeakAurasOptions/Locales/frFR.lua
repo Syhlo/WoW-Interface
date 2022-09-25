@@ -122,7 +122,7 @@ local L = WeakAuras.L
 	--[[Translation missing --]]
 	L["|cFFffcc00Font Flags:|r |cFFFF0000%s|r and shadow |c%sColor|r with offset |cFFFF0000%s/%s|r%s%s%s"] = "|cFFffcc00Font Flags:|r |cFFFF0000%s|r and shadow |c%sColor|r with offset |cFFFF0000%s/%s|r%s%s%s"
 	--[[Translation missing --]]
-	L["|cFFffcc00Format Options|r"] = "|cFFffcc00Format Options|r"
+	L["|cffffcc00Format Options|r"] = "|cffffcc00Format Options|r"
 	--[[Translation missing --]]
 	L[ [=[• |cff00ff00Player|r, |cff00ff00Target|r, |cff00ff00Focus|r, and |cff00ff00Pet|r correspond directly to those individual unitIDs.
 • |cff00ff00Specific Unit|r lets you provide a specific valid unitID to watch.
@@ -512,6 +512,8 @@ UNIT_POWER, UNIT_AURA PLAYER_TARGET_CHANGED
 	L["Filter by Class"] = "Filtrer par Classe"
 	L["Filter by Group Role"] = "Filtrer par rôle de groupe"
 	L["Filter by Nameplate Type"] = "Filtrer par Type de Nameplate"
+	--[[Translation missing --]]
+	L["Filter by Npc ID"] = "Filter by Npc ID"
 	L["Filter by Raid Role"] = "Filtrer par rôle de raid"
 	--[[Translation missing --]]
 	L["Filter by Specialization"] = "Filter by Specialization"
@@ -552,7 +554,6 @@ Can use \ to escape -.]=]
 	--[[Translation missing --]]
 	L["Frame Width"] = "Frame Width"
 	L["Frequency"] = "Fréquence"
-	L["From Template"] = "D'après un modèle"
 	L["Full Circle"] = "Cercle Complet"
 	L["Get Help"] = "Obtenir de l'aide"
 	L["Global Conditions"] = "Conditions globales"
@@ -790,6 +791,8 @@ Seule une unique valeur peut être choisie]=]
 	--[[Translation missing --]]
 	L["Note: Automated Messages to SAY and YELL are blocked outside of Instances."] = "Note: Automated Messages to SAY and YELL are blocked outside of Instances."
 	L["Note: The legacy buff trigger is now permanently disabled. It will be removed in the near future."] = "Remarque : le déclencheur de buff hérités est désormais désactivé de façon permanente. Il sera supprimé dans un avenir proche."
+	--[[Translation missing --]]
+	L["Npc ID"] = "Npc ID"
 	L["Number of Entries"] = "Nombre d'entrées"
 	--[[Translation missing --]]
 	L["Offer a guided way to create auras for your character"] = "Offer a guided way to create auras for your character"
@@ -839,6 +842,8 @@ Seule une unique valeur peut être choisie]=]
 	L["Position Settings"] = "Paramètres de position"
 	--[[Translation missing --]]
 	L["Preferred Match"] = "Preferred Match"
+	--[[Translation missing --]]
+	L["Premade Auras"] = "Premade Auras"
 	--[[Translation missing --]]
 	L["Premade Snippets"] = "Premade Snippets"
 	L["Preset"] = "Préréglé"
@@ -904,6 +909,8 @@ Seule une unique valeur peut être choisie]=]
 	L["Same texture as Foreground"] = "Same texture as Foreground"
 	L["Scale"] = "Échelle"
 	L["Search"] = "Chercher"
+	--[[Translation missing --]]
+	L["Select Talent"] = "Select Talent"
 	L["Select the auras you always want to be listed first"] = "Choisissez les auras que vous voulez toujours voir apparaître en premier dans la liste"
 	--[[Translation missing --]]
 	L["Selected Frame"] = "Selected Frame"

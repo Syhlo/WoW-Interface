@@ -1,0 +1,13 @@
+## Interface: 90207
+
+## Title: Executive Assistant File Cabinet
+## Author: Vincent - Silver Hand
+## Email: vincent at silverdaggers dot net
+## Version: 1.0
+## Notes: Backup and Restore Manager for Executive Assistant
+## SavedVariables: FileCabinetDB FileCabinet_IMPORT FileCabinet_EXPORT
+## Dependencies: Executive_Assistant
+## DefaultState: Disabled
+
+embeds.xml
+eafc_Core.lua

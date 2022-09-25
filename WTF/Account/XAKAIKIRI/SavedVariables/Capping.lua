@@ -1,19 +1,21 @@
 
 CappingSettings = {
 	["profileKeys"] = {
+		["Gnomemounts - Tichondrius"] = "Default",
 		["Cyf - Tichondrius"] = "Default",
 		["Sýh - Thrall"] = "Default",
 		["Wthrename - Tichondrius"] = "Default",
 		["Gerold - Tichondrius"] = "Default",
+		["Syh - Thrall"] = "Default",
 		["Dwarfmounts - Tichondrius"] = "Default",
-		["Sydh - Thrall"] = "Default",
 		["Syhlo - Thrall"] = "Default",
 		["Syhlol - Thrall"] = "Default",
+		["Syhdk - Thrall"] = "Default",
 		["Crylo - Tichondrius"] = "Default",
 		["Pandamounts - Tichondrius"] = "Default",
 		["Regèn - Tichondrius"] = "Default",
-		["Syhdk - Thrall"] = "Default",
-		["Syh - Thrall"] = "Default",
+		["Syhlol - Tichondrius"] = "Default",
+		["Sydh - Thrall"] = "Default",
 	},
 	["profiles"] = {
 		["Default"] = {
@@ -23,7 +25,7 @@ CappingSettings = {
 				nil, -- [3]
 				0.7771075665950775, -- [4]
 			},
-			["lock"] = true,
+			["spacing"] = 2,
 			["colorAlliance"] = {
 				nil, -- [1]
 				nil, -- [2]
@@ -45,7 +47,7 @@ CappingSettings = {
 				192.4999694824219, -- [4]
 			},
 			["height"] = 19,
-			["spacing"] = 2,
+			["lock"] = true,
 			["colorHorde"] = {
 				nil, -- [1]
 				nil, -- [2]
