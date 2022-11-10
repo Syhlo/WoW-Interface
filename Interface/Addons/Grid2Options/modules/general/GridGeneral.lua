@@ -29,6 +29,28 @@ Grid2Options:AddGeneralOptions( "General", "Themes", {
 }, nil)
 
 --==========================================================================
+-- Icons Zoom
+--==========================================================================
+
+Grid2Options:AddGeneralOptions( "General", "Icon Textures Zoom", {
+	displayZoomedIcons = {
+		type = "toggle",
+		name = L["Zoom In buffs and debuffs icon textures"],
+		desc = L["Enable this option to hide the default blizzard border of buffs and debuffs Icons."],
+		width = "full",
+		order = 10,
+		get = function ()
+			return Grid2Frame.db.shared.displayZoomedIcons
+		end,
+		set = function (_, v)
+			Grid2Frame.db.shared.displayZoomedIcons = v or nil
+			Grid2:SetupStatusPrototype()
+			Grid2Options:UpdateIndicators()
+		end,
+	},
+})
+
+--==========================================================================
 -- Text formatting
 --==========================================================================
 
@@ -188,53 +210,6 @@ Grid2Options:AddGeneralOptions( "General", "Text Formatting", {
 })
 
 --==========================================================================
--- Blink
---==========================================================================
-
-Grid2Options:AddGeneralOptions( "General", "blink", {
-	effect = {
-		type = "select",
-		name = L["Blink effect"],
-		desc = L["Select the type of Blink effect used by Grid2."],
-		order = 10,
-		get = function () return Grid2Frame.db.shared.blinkType end,
-		set = function (_, v)
-			Grid2Frame.db.shared.blinkType = v
-			for _,indicator in ipairs(Grid2:GetIndicatorsSorted()) do
-				if indicator.GetBlinkFrame then
-					indicator:UpdateDB()
-				end
-			end
-			Grid2Options:MakeStatusesOptions(Grid2Options.statusesOptions)
-		end,
-		values= { None = L["None"], Flash = L["Flash"] },
-	},
-	frequency = {
-		type = "range",
-		name = L["Blink Frequency"],
-		desc = L["Adjust the frequency of the Blink effect."],
-		disabled = function () return Grid2Frame.db.shared.blinkType == "None" end,
-		min = 1,
-		max = 10,
-		step = .5,
-		get = function ()
-			return Grid2Frame.db.shared.blinkFrequency
-		end,
-		set = function (_, v)
-			Grid2Frame.db.shared.blinkFrequency = v
-			for _,indicator in ipairs(Grid2:GetIndicatorsSorted()) do
-				if indicator.GetBlinkFrame then
-					Grid2Frame:WithAllFrames(function (f)
-						local anim = indicator:GetBlinkFrame(f).blinkAnim
-						if anim then anim.settings:SetDuration(1/v) end
-					end)
-				end
-			end
-		end,
-	},
-})
-
---==========================================================================
 -- Classic Auras Duration
 --==========================================================================
 
@@ -289,25 +264,76 @@ end
 
 do
 	local addons = { "Blizzard_CompactRaidFrames", "Blizzard_CUFProfiles" }
-
-	Grid2Options:AddGeneralOptions( "General", "Blizzard Raid Frames", {
-		hideBlizzardRaidFrames = {
-			type = "toggle",
-			name = L["Hide Blizzard Raid Frames"],
-			desc = L["Hide Blizzard Raid Frames"],
-			width = "full",
-			order = 120,
-			get = function () return not IsAddOnLoaded( addons[1] ) end,
-			set = function (_, v)
-				local func = v and DisableAddOn or EnableAddOn
-				for _, v in pairs(addons) do
-					func(v)
-				end
-				ReloadUI()
-			end,
-			confirm = function() return "UI will be reloaded. Are your sure ?" end,
-		},
-	})
+	local function RaidAddonsEnabled(enabled)
+		local func = enabled and EnableAddOn or DisableAddOn
+		for _, v in pairs(addons) do
+			func(v)
+		end
+	end
+	if Grid2.isWoW90 then -- retail
+		local function Get(index) -- true=party&raid / 2=raid / 1=party
+			local v = Grid2.db.profile.hideBlizzardRaidFrames
+			return v==true or tonumber(v)==index
+		end
+		local function Set(index)
+			local v = Grid2.db.profile.hideBlizzardRaidFrames
+			v = bit.bxor( (v and tonumber(v)) or (v and 3) or 0, index ) -- true<=>3 / 2<=>2 / 1<=>1 / nil<=>0
+			Grid2.db.profile.hideBlizzardRaidFrames = (v==3) or (v>0 and v) or nil
+		end
+		local function MessageReload()
+			Grid2Options:ConfirmDialog(L['Changes will take effect on next UI reload. Do you want to reload the UI now ?'], function()	ReloadUI() end)
+		end
+		local function FixAddonNotLoaded() -- fix: reenabling CompactRaidFrames addon because in dragonflight it cannot be disabled.
+			RaidAddonsEnabled(true)
+			Grid2.db.profile.hideBlizzardRaidFrames = nil
+		end
+		Grid2Options:AddGeneralOptions( "General", "Blizzard Raid Frames", {
+			hideBlizzardRaidFrames = {
+				type = "toggle",
+				name = L["Hide Blizzard Raid Frames"],
+				desc = L["Hide Blizzard Raid Frames"],
+				width = "full",
+				order = 120,
+				get = function () return Get(2) or not IsAddOnLoaded(addons[1]) end,
+				set = function (_, v)
+					if IsAddOnLoaded(addons[1]) then
+						Set(2)
+					else
+						FixAddonNotLoaded()
+					end
+					MessageReload()
+				end,
+			},
+			hideBlizzardPartyFrames = {
+				type = "toggle",
+				name = L["Hide Blizzard Party Frames"],
+				desc = L["Hide Blizzard Party Frames"],
+				width = "full",
+				order = 121,
+				get = function () return Get(1) end,
+				set = function (_, v)
+					Set(1)
+					MessageReload()
+				end,
+			},
+		})
+	else -- classic
+		Grid2Options:AddGeneralOptions( "General", "Blizzard Raid Frames", {
+			hideBlizzardRaidFrames = {
+				type = "toggle",
+				name = L["Hide Blizzard Raid Frames"],
+				desc = L["Hide Blizzard Raid Frames"],
+				width = "full",
+				order = 120,
+				get = function () return not IsAddOnLoaded(addons[1]) end,
+				set = function (_, v)
+					RaidAddonsEnabled(not v)
+					ReloadUI()
+				end,
+				confirm = function() return "UI will be reloaded. Are your sure ?" end,
+			},
+		})
+	end
 end
 
 --==========================================================================

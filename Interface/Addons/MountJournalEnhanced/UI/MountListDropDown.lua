@@ -1,5 +1,6 @@
 local ADDON_NAME, ADDON = ...
 
+local menu
 local menuMountId
 
 local function InitializeMountOptionsMenu(sender, level)
@@ -34,21 +35,19 @@ local function InitializeMountOptionsMenu(sender, level)
 
     if not needsFanfare and isCollected then
         local isFavorite, canFavorite = ADDON.Api:GetIsFavoriteByID(menuMountId)
-        info = {notCheckable = true, disabled = not canFavorite }
+        info = { notCheckable = true, disabled = not canFavorite }
 
         if isFavorite then
             info.text = BATTLE_PET_UNFAVORITE
             info.func = function()
                 ADDON.Api:SetIsFavoriteByID(menuMountId, false)
-                ADDON.Api:UpdateIndex()
-                ADDON.UI:UpdateMountList()
+                ADDON:FilterMounts()
             end
         else
             info.text = BATTLE_PET_FAVORITE
             info.func = function()
                 ADDON.Api:SetIsFavoriteByID(menuMountId, true)
-                ADDON.Api:UpdateIndex()
-                ADDON.UI:UpdateMountList()
+                ADDON:FilterMounts()
             end
         end
 
@@ -62,8 +61,7 @@ local function InitializeMountOptionsMenu(sender, level)
                 text = SHOW,
                 func = function()
                     ADDON.settings.hiddenMounts[spellId] = nil
-                    ADDON.Api:UpdateIndex()
-                    ADDON.UI:UpdateMountList()
+                    ADDON:FilterMounts()
                 end
             }
         else
@@ -72,8 +70,7 @@ local function InitializeMountOptionsMenu(sender, level)
                 text = HIDE,
                 func = function()
                     ADDON.settings.hiddenMounts[spellId] = true
-                    ADDON.Api:UpdateIndex()
-                    ADDON.UI:UpdateMountList()
+                    ADDON:FilterMounts()
                 end,
             }
         end
@@ -87,33 +84,18 @@ local function InitializeMountOptionsMenu(sender, level)
             ADDON.UI:CreateNotesFrame(mountId)
         end,
     }
-    
+
     UIDropDownMenu_AddButton(info, level)
 
-    UIDropDownMenu_AddButton({text = CANCEL, notCheckable = true,}, level)
+    UIDropDownMenu_AddButton({ text = CANCEL, notCheckable = true, }, level)
 end
 
-ADDON.Events:RegisterCallback("loadUI", function()
-    local menu
-
-    local OnClick = function(sender, anchor, button)
-        if button ~= "LeftButton" then
-            if menu == nil then
-                menu = CreateFrame("Frame", ADDON_NAME .. "MountOptionsMenu", MountJournal, "UIDropDownMenuTemplate")
-                UIDropDownMenu_Initialize(menu, InitializeMountOptionsMenu, "MENU")
-            end
-
-            menuMountId = sender.mountID;
-            ToggleDropDownMenu(1, nil, menu, anchor, 0, 0)
-        end
+function ADDON.UI:HandleListDropDown(sender, anchor)
+    if menu == nil then
+        menu = CreateFrame("Frame", ADDON_NAME .. "MountOptionsMenu", MountJournal, "UIDropDownMenuTemplate")
+        UIDropDownMenu_Initialize(menu, InitializeMountOptionsMenu, "MENU")
     end
 
-    for _, button in pairs(MountJournal.MJE_ListScrollFrame.buttons) do
-        button:HookScript("OnClick", function(sender, mouseButton)
-            OnClick(sender, sender, mouseButton)
-        end)
-        button.DragButton:HookScript("OnClick", function(sender, mouseButton)
-            OnClick(sender:GetParent(), sender, mouseButton)
-        end)
-    end
-end, "mount dropdown")
+    menuMountId = sender.mountID
+    ToggleDropDownMenu(1, nil, menu, anchor, 0, 0)
+end

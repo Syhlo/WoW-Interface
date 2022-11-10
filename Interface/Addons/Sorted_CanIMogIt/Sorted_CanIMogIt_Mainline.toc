@@ -1,0 +1,12 @@
+## Interface: 100000
+## Title: |A:::|a|TZ|t  - CanIMogIt Plugin
+## Notes: Adds the CanIMogIt icon to show which items you've learned the appearance of.
+## Version: 1.0.0
+## Author: Daft Vader
+## Dependencies: CanIMogIt, Sorted
+## DefaultState: enabled
+
+
+Libs\LibStub\LibStub.lua
+
+Sorted_CanIMogIt.lua

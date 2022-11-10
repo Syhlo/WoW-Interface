@@ -1,2 +1,11 @@
 WeakAurasCompanion: enabled
 WeakAurasArchive: enabled
+Storyline: disabled
+!KalielsTracker: enabled
+SexyMap: enabled
+BigDebuffs: disabled
+OmniBar: disabled
+TidyPlates_ThreatPlates: disabled
+AutoGear: disabled
+Blizzard_ObjectiveTracker: enabled
+Blizzard_CompactRaidFrames: enabled

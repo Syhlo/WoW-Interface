@@ -1,5 +1,5 @@
 local MAJOR_VERSION = "LibATTButtonGlow"
-local MINOR_VERSION = 7
+local MINOR_VERSION = 8
 
 if not LibStub then error(MAJOR_VERSION .. " requires LibStub.") end
 local lib, oldversion = LibStub:NewLibrary(MAJOR_VERSION, MINOR_VERSION)
@@ -39,7 +39,7 @@ end
 
 local function CreateScaleAnim(group, target, order, duration, x, y, delay)
 	local scale = group:CreateAnimation("Scale")
-	scale:SetTarget(target:GetName())
+	scale:SetTarget(target)
 	scale:SetOrder(order)
 	scale:SetDuration(duration)
 	scale:SetScale(x, y)
@@ -50,7 +50,7 @@ end
 
 local function CreateAlphaAnim(group, target, order, duration, fromAlpha, toAlpha, delay)
 	local alpha = group:CreateAnimation("Alpha")
-	alpha:SetTarget(target:GetName())
+	alpha:SetTarget(target)
 	alpha:SetOrder(order)
 	alpha:SetDuration(duration)
 	alpha:SetFromAlpha(fromAlpha)

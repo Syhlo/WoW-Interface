@@ -49,7 +49,7 @@ BigTipDB = {
 		},
 		["statusbarPosition"] = "bottom",
 		["statusbarOffsetX"] = 0,
-		["skinMoreFrames"] = true,
+		["statusbarHeight"] = 4,
 		["bodyFontSize"] = "default",
 		["bodyFontFlag"] = "default",
 		["bodyFont"] = "default",
@@ -57,7 +57,7 @@ BigTipDB = {
 		["statusbarTexture"] = "Interface\\AddOns\\TinyTooltip\\texture\\StatusBar",
 		["headerFontSize"] = "default",
 		["statusbarText"] = false,
-		["statusbarHeight"] = 4,
+		["skinMoreFrames"] = true,
 		["headerFontFlag"] = "default",
 		["borderCorner"] = "Blizzard Tooltip",
 		["statusbarColor"] = "auto",
@@ -212,6 +212,16 @@ BigTipDB = {
 					["wildcard"] = "(%s)",
 					["filter"] = "none",
 				},
+				["factionBig"] = {
+					["enable"] = true,
+					["filter"] = "none",
+				},
+				["guildName"] = {
+					["enable"] = true,
+					["color"] = "ff00ff",
+					["wildcard"] = "<%s>",
+					["filter"] = "none",
+				},
 				["name"] = {
 					["enable"] = true,
 					["color"] = "class",
@@ -222,16 +232,6 @@ BigTipDB = {
 					["enable"] = true,
 					["color"] = "ffffff",
 					["wildcard"] = "%s",
-					["filter"] = "none",
-				},
-				["factionBig"] = {
-					["enable"] = true,
-					["filter"] = "none",
-				},
-				["guildName"] = {
-					["enable"] = true,
-					["color"] = "ff00ff",
-					["wildcard"] = "<%s>",
 					["filter"] = "none",
 				},
 				["title"] = {

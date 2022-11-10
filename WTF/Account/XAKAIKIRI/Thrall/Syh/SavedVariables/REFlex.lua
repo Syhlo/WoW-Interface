@@ -19,7 +19,7 @@ REFlexSettings = {
 		["DateMode"] = 1,
 	},
 	["ArenaStatsLimit"] = 3,
-	["FirstTime"] = true,
+	["FirstTime"] = false,
 	["ConfigVersion"] = 319,
 	["LDBSide"] = "A",
 }

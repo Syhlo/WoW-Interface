@@ -142,6 +142,9 @@ do
 	local function CombatLogEvent()
 		CombatLogEventReal(CombatLogGetCurrentEventInfo())
 	end
+	local function ClearUnitCache(_, unit)
+		health_cache[unit] = nil
+	end
 	function EnableQuickHealth()
 		if HealthCurrent.dbx.quickHealth then
 			RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED", CombatLogEvent)
@@ -149,11 +152,15 @@ do
 			RegisterEvent("UNIT_HEALTH", HealthChangedEvent)
 			RegisterEvent("UNIT_MAXHEALTH", HealthChangedEvent)
 			RegisterEvent("UNIT_HEALTH_FREQUENT", HealthChangedEvent)
+			Grid2.RegisterMessage( HealthCurrent, "Grid_UnitLeft", ClearUnitCache )
+			Grid2.RegisterMessage( HealthCurrent, "Grid_UnitUpdated", ClearUnitCache )
 			UnitHealth = UnitQuickHealth
 		end
 	end
 	function DisableQuickHealth()
 		UnitHealth = UnitHealthOriginal
+		Grid2.UnregisterMessage( HealthCurrent, "Grid_UnitLeft" )
+		Grid2.UnregisterMessage( HealthCurrent, "Grid_UnitUpdated" )
 		UnregisterEvent("COMBAT_LOG_EVENT_UNFILTERED", "GROUP_ROSTER_UPDATE", "UNIT_HEALTH","UNIT_HEALTH_FREQUENT", "UNIT_MAXHEALTH")
 	end
 end
@@ -191,16 +198,16 @@ do
 
 	function EnableBrokenBossesFix()
 		if not registered then
-			Grid2.RegisterMessage( HealthCurrent, "Grid_UnitLeft",  Health_UnitLeft )
-			Grid2.RegisterMessage( HealthCurrent, "Grid_UnitUpdated", Health_UnitUpdated )
+			Grid2.RegisterMessage( brokenUnits, "Grid_UnitLeft",  Health_UnitLeft )
+			Grid2.RegisterMessage( brokenUnits, "Grid_UnitUpdated", Health_UnitUpdated )
 			registered = true
 		end
 	end
 
 	function DisableBrokenBossesFix()
 		if registered then
-			Grid2.UnregisterMessage( HealthCurrent, "Grid_UnitLeft",  Health_UnitLeft )
-			Grid2.UnregisterMessage( HealthCurrent, "Grid_UnitUpdated", Health_UnitUpdated )
+			Grid2.UnregisterMessage( brokenUnits, "Grid_UnitLeft",  Health_UnitLeft )
+			Grid2.UnregisterMessage( brokenUnits, "Grid_UnitUpdated", Health_UnitUpdated )
 			registered = false
 		end
 	end
@@ -564,6 +571,7 @@ Grid2:DbSetStatusDefaultValue( "death", {type = "death", color1 = {r=1,g=1,b=1,a
 -- Heals Interfaces
 local APIHeals = {}
 local HealsUpdateEvent
+local HealComEnabled
 
 -- Blizzard heals API
 do
@@ -591,7 +599,8 @@ do
 end
 
 -- LibHealComm-4 heals API
-if Grid2.versionCli<30000 then -- HealComm only available for vanilla and burning crusade
+Grid2.HealCommSupport = Grid2.versionCli<40000
+if Grid2.HealCommSupport then -- HealComm only available for vanilla and burning crusade and wrath
 	local HealComm = LibStub("LibHealComm-4.0",true)
 	local UnitGUID = UnitGUID
 	local playerGUID = UnitGUID('player')
@@ -653,6 +662,7 @@ local UnregisterEvent
 
 HealsInitialize = function()
 	local API = (Grid2.db.global.HealsUseBlizAPI and APIHeals.Blizzard) or APIHeals.HealCom or APIHeals.Blizzard
+	HealComEnabled = (API == APIHeals.HealCom)
 	RegisterEvent = API.RegisterEvent
 	UnregisterEvent = API.UnregisterEvent
 	UnitGetMyIncomingHeals = API.UnitGetMyIncomingHeals
@@ -737,7 +747,7 @@ function Heals:OnEnable()
 	if self.dbx.includeHealAbsorbs and not Grid2.isClassic then
 		RegisterEvent("UNIT_HEAL_ABSORB_AMOUNT_CHANGED", HealsUpdateEvent)
 	end
-	if not self.dbx.includePlayerHeals and not Grid2.isClassic then -- in classic we do not need to substract player heals
+	if not self.dbx.includePlayerHeals and not HealComEnabled then -- if using HealCom library we do not need to substract player heals
 		myheal_required = bit.bor(myheal_required,1) -- set bit1
 	end
 	heals_enabled = true

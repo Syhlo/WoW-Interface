@@ -1,6 +1,6 @@
 # REFlex
 
-## [v3.1.10](https://github.com/AcidWeb/REFlex/tree/v3.1.10) (2022-08-17)
-[Full Changelog](https://github.com/AcidWeb/REFlex/compare/v3.1.9...v3.1.10) [Previous Releases](https://github.com/AcidWeb/REFlex/releases)
+## [v3.3.1](https://github.com/AcidWeb/REFlex/tree/v3.3.1) (2022-11-01)
+[Full Changelog](https://github.com/AcidWeb/REFlex/compare/v3.3.0...v3.3.1) [Previous Releases](https://github.com/AcidWeb/REFlex/releases)
 
-- TOC bump  
+- Fixed 3v3 filter  

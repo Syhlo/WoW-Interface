@@ -1,8 +1,8 @@
 
-## Interface: 90205
+## Interface: 90207
 ## Title: Diminish Options
 ## Notes: Configuration for Diminish.
-## Version: v2.5.2
+## Version: v2.5.4
 ## Dependencies: Diminish
 
 libs\WardzConfigDropdown-1.0\WardzConfigDropdown-1.0.lua

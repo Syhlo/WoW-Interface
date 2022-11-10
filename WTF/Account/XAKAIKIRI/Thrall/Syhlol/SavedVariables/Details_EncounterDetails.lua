@@ -1,622 +1,5 @@
 
 EncounterDetailsDB = {
-	["emotes"] = {
-		{
-			{
-				0.2060000000055879, -- [1]
-				"Your flesh, yes yes, so perfect, GIVE IT TO US!", -- [2]
-				"Primordius", -- [3]
-				7, -- [4]
-			}, -- [1]
-			["boss"] = "Primordius",
-		}, -- [1]
-		{
-			{
-				0.1950000000069849, -- [1]
-				"Behold the power of the void.", -- [2]
-				"Durumu the Forgotten", -- [3]
-				7, -- [4]
-			}, -- [1]
-			{
-				15.81299999999465, -- [1]
-				"|TInterface\\Icons\\inv_misc_eye_02.blp:20|tDurumu begins charging up his Appraising Eye to cast |cFFFF0000|Hspell:133792|h[Lingering Gaze]|h|r!", -- [2]
-				"Appraising Eye", -- [3]
-				3, -- [4]
-			}, -- [2]
-			{
-				33.54099999999744, -- [1]
-				"|TInterface\\Icons\\ability_monk_forcesphere.blp:20|tDurumu begins charging up his Mind's Eye to cast |cFFFF0000|Hspell:136932|h[Force of Will]|h|r on |cFFFF0000Juliia|r!", -- [2]
-				"Mind's Eye", -- [3]
-				3, -- [4]
-			}, -- [3]
-			{
-				41.24700000000303, -- [1]
-				"The mists hide many secrets ... if you know where to look.", -- [2]
-				"Durumu the Forgotten", -- [3]
-				7, -- [4]
-			}, -- [4]
-			{
-				41.24700000000303, -- [1]
-				"Use the cones of light to find and defeat the hidden Crimson Fogs!", -- [2]
-				"Durumu the Forgotten", -- [3]
-				1, -- [4]
-			}, -- [5]
-			{
-				41.24700000000303, -- [1]
-				"|TInterface\\Icons\\priest_icon_chakra_blue.blp:20|tDurumu begins charging up his Blue Eye to cast |cFFFF0000|Hspell:134122|h[Blue Rays]|h|r on |cFFFF0000Syhlol|r!", -- [2]
-				"Blue Eye", -- [3]
-				3, -- [4]
-			}, -- [6]
-			{
-				41.24700000000303, -- [1]
-				"|TInterface\\Icons\\priest_icon_chakra_red.blp:20|tDurumu begins charging up his Red Eye to cast |cFFFF0000|Hspell:134123|h[Infrared Light]|h|r on |cFFFF0000Juliia|r!", -- [2]
-				"Red Eye", -- [3]
-				3, -- [4]
-			}, -- [7]
-			{
-				41.24700000000303, -- [1]
-				"|TInterface\\Icons\\priest_icon_chakra.blp:20|tDurumu begins charging up his Yellow Eye to cast |cFFFF0000|Hspell:134124|h[Bright Light]|h|r on |cFFFF0000Juliia|r!", -- [2]
-				"Yellow Eye", -- [3]
-				3, -- [4]
-			}, -- [8]
-			{
-				53.57699999999022, -- [1]
-				"The Infrared Light reveals a Crimson Fog!", -- [2]
-				"Crimson Fog", -- [3]
-				3, -- [4]
-			}, -- [9]
-			{
-				62.23199999998906, -- [1]
-				"I'm keeping an eye on you.", -- [2]
-				"Durumu the Forgotten", -- [3]
-				7, -- [4]
-			}, -- [10]
-			{
-				63.16599999999744, -- [1]
-				"The Infrared Light reveals a Crimson Fog!", -- [2]
-				"Crimson Fog", -- [3]
-				3, -- [4]
-			}, -- [11]
-			{
-				78.00800000000163, -- [1]
-				"|TInterface\\Icons\\inv_misc_eye_02.blp:20|tDurumu begins charging up his Appraising Eye to cast |cFFFF0000|Hspell:133792|h[Lingering Gaze]|h|r!", -- [2]
-				"Appraising Eye", -- [3]
-				3, -- [4]
-			}, -- [12]
-			{
-				86.32699999999022, -- [1]
-				"The Infrared Light reveals a Crimson Fog!", -- [2]
-				"Crimson Fog", -- [3]
-				3, -- [4]
-			}, -- [13]
-			{
-				88.92300000000978, -- [1]
-				"|TInterface\\Icons\\ability_monk_forcesphere.blp:20|tDurumu begins charging up his Mind's Eye to cast |cFFFF0000|Hspell:136932|h[Force of Will]|h|r on |cFFFF0000Syhlol|r!", -- [2]
-				"Mind's Eye", -- [3]
-				3, -- [4]
-			}, -- [14]
-			{
-				104.6549999999988, -- [1]
-				"Observe your demise.", -- [2]
-				"Durumu the Forgotten", -- [3]
-				7, -- [4]
-			}, -- [15]
-			{
-				104.6549999999988, -- [1]
-				"|TInterface\\Icons\\inv_misc_eye_02.blp:20|tDurumu begins charging up his Appraising Eye to cast |cFFFF0000|Hspell:133792|h[Lingering Gaze]|h|r!", -- [2]
-				"Appraising Eye", -- [3]
-				3, -- [4]
-			}, -- [16]
-			{
-				110.7719999999972, -- [1]
-				"|TInterface\\Icons\\ability_monk_forcesphere.blp:20|tDurumu begins charging up his Mind's Eye to cast |cFFFF0000|Hspell:136932|h[Force of Will]|h|r on |cFFFF0000Syhlol|r!", -- [2]
-				"Mind's Eye", -- [3]
-				3, -- [4]
-			}, -- [17]
-			{
-				122.8559999999998, -- [1]
-				"|TInterface\\Icons\\spell_shadow_curseofmannoroth.blp:20|tDurumu begins charging up his Evil Eye to cast |cFFFF0000|Hspell:133597|h[Dark Parasite]|h|r on |cFFFF0000Syhlol|r!", -- [2]
-				"Evil Eye", -- [3]
-				3, -- [4]
-			}, -- [18]
-			{
-				135.8010000000068, -- [1]
-				"|TInterface\\Icons\\inv_misc_dust.blp:20|tDurumu begins charging up his eye to cast |cFFFF0000|Hspell:134169|h[Disintegration]|h|r!", -- [2]
-				"Durumu the Forgotten", -- [3]
-				3, -- [4]
-			}, -- [19]
-			{
-				135.8010000000068, -- [1]
-				"Watch your footing ... muhahaha!", -- [2]
-				"Durumu the Forgotten", -- [3]
-				7, -- [4]
-			}, -- [20]
-			{
-				201.6080000000075, -- [1]
-				"Observe your demise.", -- [2]
-				"Durumu the Forgotten", -- [3]
-				7, -- [4]
-			}, -- [21]
-			{
-				231.9709999999905, -- [1]
-				"The mists hide many secrets ... if you know where to look.", -- [2]
-				"Durumu the Forgotten", -- [3]
-				7, -- [4]
-			}, -- [22]
-			{
-				231.9709999999905, -- [1]
-				"Use the cones of light to find and defeat the hidden Crimson Fogs!", -- [2]
-				"Durumu the Forgotten", -- [3]
-				1, -- [4]
-			}, -- [23]
-			{
-				231.9709999999905, -- [1]
-				"|TInterface\\Icons\\priest_icon_chakra_blue.blp:20|tDurumu begins charging up his Blue Eye to cast |cFFFF0000|Hspell:134122|h[Blue Rays]|h|r on |cFFFF0000Juliia|r!", -- [2]
-				"Blue Eye", -- [3]
-				3, -- [4]
-			}, -- [24]
-			{
-				231.9709999999905, -- [1]
-				"|TInterface\\Icons\\priest_icon_chakra_red.blp:20|tDurumu begins charging up his Red Eye to cast |cFFFF0000|Hspell:134123|h[Infrared Light]|h|r on |cFFFF0000Syhlol|r!", -- [2]
-				"Red Eye", -- [3]
-				3, -- [4]
-			}, -- [25]
-			{
-				231.9709999999905, -- [1]
-				"|TInterface\\Icons\\priest_icon_chakra.blp:20|tDurumu begins charging up his Yellow Eye to cast |cFFFF0000|Hspell:134124|h[Bright Light]|h|r on |cFFFF0000Juliia|r!", -- [2]
-				"Yellow Eye", -- [3]
-				3, -- [4]
-			}, -- [26]
-			{
-				246.8550000000105, -- [1]
-				"The Infrared Light reveals a Crimson Fog!", -- [2]
-				"Crimson Fog", -- [3]
-				3, -- [4]
-			}, -- [27]
-			{
-				253.7820000000065, -- [1]
-				"Observe your demise.", -- [2]
-				"Durumu the Forgotten", -- [3]
-				7, -- [4]
-			}, -- [28]
-			{
-				253.7820000000065, -- [1]
-				"|TInterface\\Icons\\inv_misc_eye_02.blp:20|tDurumu begins charging up his Appraising Eye to cast |cFFFF0000|Hspell:133792|h[Lingering Gaze]|h|r!", -- [2]
-				"Appraising Eye", -- [3]
-				3, -- [4]
-			}, -- [29]
-			{
-				261.3349999999919, -- [1]
-				"|TInterface\\Icons\\spell_shadow_lifedrain02.blp:20|tDurumu begins charging up his Hungry Eye to cast |cFFFF0000|Hspell:133795|h[Life Drain]|h|r on |cFFFF0000Juliia|r!", -- [2]
-				"Hungry Eye", -- [3]
-				3, -- [4]
-			}, -- [30]
-			{
-				262.6110000000044, -- [1]
-				"The Blue Rays reveal an Azure Fog!", -- [2]
-				"Azure Fog", -- [3]
-				3, -- [4]
-			}, -- [31]
-			{
-				267.051999999996, -- [1]
-				"The Infrared Light reveals a Crimson Fog!", -- [2]
-				"Crimson Fog", -- [3]
-				3, -- [4]
-			}, -- [32]
-			{
-				274.5130000000063, -- [1]
-				"The Infrared Light reveals a Crimson Fog!", -- [2]
-				"Crimson Fog", -- [3]
-				3, -- [4]
-			}, -- [33]
-			{
-				275.054999999993, -- [1]
-				"The Bright  Light reveals an Amber Fog!", -- [2]
-				"Amber Fog", -- [3]
-				3, -- [4]
-			}, -- [34]
-			{
-				275.6210000000137, -- [1]
-				"|TInterface\\Icons\\spell_shadow_curseofmannoroth.blp:20|tDurumu begins charging up his Evil Eye to cast |cFFFF0000|Hspell:133597|h[Dark Parasite]|h|r on |cFFFF0000Juliia|r!", -- [2]
-				"Evil Eye", -- [3]
-				3, -- [4]
-			}, -- [35]
-			{
-				291.3669999999984, -- [1]
-				"Observe your demise.", -- [2]
-				"Durumu the Forgotten", -- [3]
-				7, -- [4]
-			}, -- [36]
-			{
-				291.3669999999984, -- [1]
-				"|TInterface\\Icons\\inv_misc_eye_02.blp:20|tDurumu begins charging up his Appraising Eye to cast |cFFFF0000|Hspell:133792|h[Lingering Gaze]|h|r!", -- [2]
-				"Appraising Eye", -- [3]
-				3, -- [4]
-			}, -- [37]
-			{
-				320.4670000000042, -- [1]
-				"Observe your demise.", -- [2]
-				"Durumu the Forgotten", -- [3]
-				7, -- [4]
-			}, -- [38]
-			{
-				320.4670000000042, -- [1]
-				"|TInterface\\Icons\\inv_misc_eye_02.blp:20|tDurumu begins charging up his Appraising Eye to cast |cFFFF0000|Hspell:133792|h[Lingering Gaze]|h|r!", -- [2]
-				"Appraising Eye", -- [3]
-				3, -- [4]
-			}, -- [39]
-			{
-				326.5119999999879, -- [1]
-				"|TInterface\\Icons\\inv_misc_dust.blp:20|tDurumu begins charging up his eye to cast |cFFFF0000|Hspell:134169|h[Disintegration]|h|r!", -- [2]
-				"Durumu the Forgotten", -- [3]
-				3, -- [4]
-			}, -- [40]
-			{
-				326.5119999999879, -- [1]
-				"Watch your footing ... muhahaha!", -- [2]
-				"Durumu the Forgotten", -- [3]
-				7, -- [4]
-			}, -- [41]
-			{
-				407.6009999999951, -- [1]
-				"I'm keeping an eye on you.", -- [2]
-				"Durumu the Forgotten", -- [3]
-				7, -- [4]
-			}, -- [42]
-			{
-				422.1199999999953, -- [1]
-				"The mists hide many secrets ... if you know where to look.", -- [2]
-				"Durumu the Forgotten", -- [3]
-				7, -- [4]
-			}, -- [43]
-			{
-				422.1199999999953, -- [1]
-				"Use the cones of light to find and defeat the hidden Crimson Fogs!", -- [2]
-				"Durumu the Forgotten", -- [3]
-				1, -- [4]
-			}, -- [44]
-			{
-				422.1199999999953, -- [1]
-				"|TInterface\\Icons\\priest_icon_chakra_blue.blp:20|tDurumu begins charging up his Blue Eye to cast |cFFFF0000|Hspell:134122|h[Blue Rays]|h|r on |cFFFF0000Juliia|r!", -- [2]
-				"Blue Eye", -- [3]
-				3, -- [4]
-			}, -- [45]
-			{
-				422.1199999999953, -- [1]
-				"|TInterface\\Icons\\priest_icon_chakra_red.blp:20|tDurumu begins charging up his Red Eye to cast |cFFFF0000|Hspell:134123|h[Infrared Light]|h|r on |cFFFF0000Syhlol|r!", -- [2]
-				"Red Eye", -- [3]
-				3, -- [4]
-			}, -- [46]
-			{
-				422.1199999999953, -- [1]
-				"|TInterface\\Icons\\priest_icon_chakra.blp:20|tDurumu begins charging up his Yellow Eye to cast |cFFFF0000|Hspell:134124|h[Bright Light]|h|r on |cFFFF0000Syhlol|r!", -- [2]
-				"Yellow Eye", -- [3]
-				3, -- [4]
-			}, -- [47]
-			{
-				432.3569999999891, -- [1]
-				"The Blue Rays reveal an Azure Fog!", -- [2]
-				"Azure Fog", -- [3]
-				3, -- [4]
-			}, -- [48]
-			{
-				436.7090000000026, -- [1]
-				"The Blue Rays reveal an Azure Fog!", -- [2]
-				"Azure Fog", -- [3]
-				3, -- [4]
-			}, -- [49]
-			{
-				442.7580000000016, -- [1]
-				"|TInterface\\Icons\\inv_misc_eye_02.blp:20|tDurumu begins charging up his Appraising Eye to cast |cFFFF0000|Hspell:133792|h[Lingering Gaze]|h|r!", -- [2]
-				"Appraising Eye", -- [3]
-				3, -- [4]
-			}, -- [50]
-			{
-				450.3640000000014, -- [1]
-				"|TInterface\\Icons\\spell_shadow_lifedrain02.blp:20|tDurumu begins charging up his Hungry Eye to cast |cFFFF0000|Hspell:133795|h[Life Drain]|h|r on |cFFFF0000Juliia|r!", -- [2]
-				"Hungry Eye", -- [3]
-				3, -- [4]
-			}, -- [51]
-			{
-				463.8669999999984, -- [1]
-				"|TInterface\\Icons\\spell_shadow_curseofmannoroth.blp:20|tDurumu begins charging up his Evil Eye to cast |cFFFF0000|Hspell:133597|h[Dark Parasite]|h|r on |cFFFF0000Juliia|r!", -- [2]
-				"Evil Eye", -- [3]
-				3, -- [4]
-			}, -- [52]
-			{
-				475.6389999999956, -- [1]
-				"The Infrared Light reveals a Crimson Fog!", -- [2]
-				"Crimson Fog", -- [3]
-				3, -- [4]
-			}, -- [53]
-			{
-				479.1909999999916, -- [1]
-				"I'm keeping an eye on you.", -- [2]
-				"Durumu the Forgotten", -- [3]
-				7, -- [4]
-			}, -- [54]
-			{
-				479.1909999999916, -- [1]
-				"|TInterface\\Icons\\inv_misc_eye_02.blp:20|tDurumu begins charging up his Appraising Eye to cast |cFFFF0000|Hspell:133792|h[Lingering Gaze]|h|r!", -- [2]
-				"Appraising Eye", -- [3]
-				3, -- [4]
-			}, -- [55]
-			{
-				488.1449999999895, -- [1]
-				"The Infrared Light reveals a Crimson Fog!", -- [2]
-				"Crimson Fog", -- [3]
-				3, -- [4]
-			}, -- [56]
-			{
-				497.2360000000044, -- [1]
-				"The Infrared Light reveals a Crimson Fog!", -- [2]
-				"Crimson Fog", -- [3]
-				3, -- [4]
-			}, -- [57]
-			{
-				504.6529999999912, -- [1]
-				"|TInterface\\Icons\\ability_monk_forcesphere.blp:20|tDurumu begins charging up his Mind's Eye to cast |cFFFF0000|Hspell:136932|h[Force of Will]|h|r on |cFFFF0000Juliia|r!", -- [2]
-				"Mind's Eye", -- [3]
-				3, -- [4]
-			}, -- [58]
-			["boss"] = "Durumu the Forgotten",
-		}, -- [2]
-		{
-			{
-				0.1719999999913853, -- [1]
-				"Behold the power of the void.", -- [2]
-				"Durumu the Forgotten", -- [3]
-				7, -- [4]
-			}, -- [1]
-			{
-				15.83100000000559, -- [1]
-				"|TInterface\\Icons\\inv_misc_eye_02.blp:20|tDurumu begins charging up his Appraising Eye to cast |cFFFF0000|Hspell:133792|h[Lingering Gaze]|h|r!", -- [2]
-				"Appraising Eye", -- [3]
-				3, -- [4]
-			}, -- [2]
-			{
-				32.37299999999232, -- [1]
-				"|TInterface\\Icons\\ability_monk_forcesphere.blp:20|tDurumu begins charging up his Mind's Eye to cast |cFFFF0000|Hspell:136932|h[Force of Will]|h|r on |cFFFF0000Juliia|r!", -- [2]
-				"Mind's Eye", -- [3]
-				3, -- [4]
-			}, -- [3]
-			{
-				41.26399999999558, -- [1]
-				"The mists hide many secrets ... if you know where to look.", -- [2]
-				"Durumu the Forgotten", -- [3]
-				7, -- [4]
-			}, -- [4]
-			{
-				41.26399999999558, -- [1]
-				"Use the cones of light to find and defeat the hidden Crimson Fogs!", -- [2]
-				"Durumu the Forgotten", -- [3]
-				1, -- [4]
-			}, -- [5]
-			{
-				41.26399999999558, -- [1]
-				"|TInterface\\Icons\\priest_icon_chakra_blue.blp:20|tDurumu begins charging up his Blue Eye to cast |cFFFF0000|Hspell:134122|h[Blue Rays]|h|r on |cFFFF0000Syhlol|r!", -- [2]
-				"Blue Eye", -- [3]
-				3, -- [4]
-			}, -- [6]
-			{
-				41.26399999999558, -- [1]
-				"|TInterface\\Icons\\priest_icon_chakra_red.blp:20|tDurumu begins charging up his Red Eye to cast |cFFFF0000|Hspell:134123|h[Infrared Light]|h|r on |cFFFF0000Juliia|r!", -- [2]
-				"Red Eye", -- [3]
-				3, -- [4]
-			}, -- [7]
-			{
-				41.26399999999558, -- [1]
-				"|TInterface\\Icons\\priest_icon_chakra.blp:20|tDurumu begins charging up his Yellow Eye to cast |cFFFF0000|Hspell:134124|h[Bright Light]|h|r on |cFFFF0000Syhlol|r!", -- [2]
-				"Yellow Eye", -- [3]
-				3, -- [4]
-			}, -- [8]
-			{
-				54.71199999999953, -- [1]
-				"The Infrared Light reveals a Crimson Fog!", -- [2]
-				"Crimson Fog", -- [3]
-				3, -- [4]
-			}, -- [9]
-			{
-				55.43600000001607, -- [1]
-				"The Bright  Light reveals an Amber Fog!", -- [2]
-				"Amber Fog", -- [3]
-				3, -- [4]
-			}, -- [10]
-			{
-				61.91000000000349, -- [1]
-				"I'm keeping an eye on you.", -- [2]
-				"Durumu the Forgotten", -- [3]
-				7, -- [4]
-			}, -- [11]
-			{
-				64.38099999999395, -- [1]
-				"The Blue Rays reveal an Azure Fog!", -- [2]
-				"Azure Fog", -- [3]
-				3, -- [4]
-			}, -- [12]
-			{
-				65.23099999999977, -- [1]
-				"The Infrared Light reveals a Crimson Fog!", -- [2]
-				"Crimson Fog", -- [3]
-				3, -- [4]
-			}, -- [13]
-			{
-				72.96199999999953, -- [1]
-				"The Blue Rays reveal an Azure Fog!", -- [2]
-				"Azure Fog", -- [3]
-				3, -- [4]
-			}, -- [14]
-			{
-				73.27999999999884, -- [1]
-				"The Infrared Light reveals a Crimson Fog!", -- [2]
-				"Crimson Fog", -- [3]
-				3, -- [4]
-			}, -- [15]
-			{
-				77.68299999998999, -- [1]
-				"|TInterface\\Icons\\ability_monk_forcesphere.blp:20|tDurumu begins charging up his Mind's Eye to cast |cFFFF0000|Hspell:136932|h[Force of Will]|h|r on |cFFFF0000Syhlol|r!", -- [2]
-				"Mind's Eye", -- [3]
-				3, -- [4]
-			}, -- [16]
-			{
-				83.74799999999232, -- [1]
-				"I'm keeping an eye on you.", -- [2]
-				"Durumu the Forgotten", -- [3]
-				7, -- [4]
-			}, -- [17]
-			{
-				83.74799999999232, -- [1]
-				"|TInterface\\Icons\\inv_misc_eye_02.blp:20|tDurumu begins charging up his Appraising Eye to cast |cFFFF0000|Hspell:133792|h[Lingering Gaze]|h|r!", -- [2]
-				"Appraising Eye", -- [3]
-				3, -- [4]
-			}, -- [18]
-			{
-				98.26000000000931, -- [1]
-				"|TInterface\\Icons\\ability_monk_forcesphere.blp:20|tDurumu begins charging up his Mind's Eye to cast |cFFFF0000|Hspell:136932|h[Force of Will]|h|r on |cFFFF0000Juliia|r!", -- [2]
-				"Mind's Eye", -- [3]
-				3, -- [4]
-			}, -- [19]
-			{
-				109.1259999999893, -- [1]
-				"|TInterface\\Icons\\inv_misc_eye_02.blp:20|tDurumu begins charging up his Appraising Eye to cast |cFFFF0000|Hspell:133792|h[Lingering Gaze]|h|r!", -- [2]
-				"Appraising Eye", -- [3]
-				3, -- [4]
-			}, -- [20]
-			{
-				118.8070000000007, -- [1]
-				"|TInterface\\Icons\\ability_monk_forcesphere.blp:20|tDurumu begins charging up his Mind's Eye to cast |cFFFF0000|Hspell:136932|h[Force of Will]|h|r on |cFFFF0000Juliia|r!", -- [2]
-				"Mind's Eye", -- [3]
-				3, -- [4]
-			}, -- [21]
-			{
-				124.8759999999893, -- [1]
-				"|TInterface\\Icons\\spell_shadow_curseofmannoroth.blp:20|tDurumu begins charging up his Evil Eye to cast |cFFFF0000|Hspell:133597|h[Dark Parasite]|h|r on |cFFFF0000Syhlol|r!", -- [2]
-				"Evil Eye", -- [3]
-				3, -- [4]
-			}, -- [22]
-			{
-				135.7490000000107, -- [1]
-				"|TInterface\\Icons\\inv_misc_dust.blp:20|tDurumu begins charging up his eye to cast |cFFFF0000|Hspell:134169|h[Disintegration]|h|r!", -- [2]
-				"Durumu the Forgotten", -- [3]
-				3, -- [4]
-			}, -- [23]
-			{
-				135.7490000000107, -- [1]
-				"Watch your footing ... muhahaha!", -- [2]
-				"Durumu the Forgotten", -- [3]
-				7, -- [4]
-			}, -- [24]
-			{
-				201.198000000004, -- [1]
-				"Observe your demise.", -- [2]
-				"Durumu the Forgotten", -- [3]
-				7, -- [4]
-			}, -- [25]
-			{
-				231.4670000000042, -- [1]
-				"The mists hide many secrets ... if you know where to look.", -- [2]
-				"Durumu the Forgotten", -- [3]
-				7, -- [4]
-			}, -- [26]
-			{
-				231.4670000000042, -- [1]
-				"Use the cones of light to find and defeat the hidden Crimson Fogs!", -- [2]
-				"Durumu the Forgotten", -- [3]
-				1, -- [4]
-			}, -- [27]
-			{
-				231.4670000000042, -- [1]
-				"|TInterface\\Icons\\priest_icon_chakra_blue.blp:20|tDurumu begins charging up his Blue Eye to cast |cFFFF0000|Hspell:134122|h[Blue Rays]|h|r on |cFFFF0000Syhlol|r!", -- [2]
-				"Blue Eye", -- [3]
-				3, -- [4]
-			}, -- [28]
-			{
-				231.4670000000042, -- [1]
-				"|TInterface\\Icons\\priest_icon_chakra_red.blp:20|tDurumu begins charging up his Red Eye to cast |cFFFF0000|Hspell:134123|h[Infrared Light]|h|r on |cFFFF0000Juliia|r!", -- [2]
-				"Red Eye", -- [3]
-				3, -- [4]
-			}, -- [29]
-			{
-				231.4670000000042, -- [1]
-				"|TInterface\\Icons\\priest_icon_chakra.blp:20|tDurumu begins charging up his Yellow Eye to cast |cFFFF0000|Hspell:134124|h[Bright Light]|h|r on |cFFFF0000Syhlol|r!", -- [2]
-				"Yellow Eye", -- [3]
-				3, -- [4]
-			}, -- [30]
-			{
-				241.6739999999991, -- [1]
-				"The Blue Rays reveal an Azure Fog!", -- [2]
-				"Azure Fog", -- [3]
-				3, -- [4]
-			}, -- [31]
-			{
-				241.6739999999991, -- [1]
-				"The Infrared Light reveals a Crimson Fog!", -- [2]
-				"Crimson Fog", -- [3]
-				3, -- [4]
-			}, -- [32]
-			{
-				253.2790000000096, -- [1]
-				"|TInterface\\Icons\\inv_misc_eye_02.blp:20|tDurumu begins charging up his Appraising Eye to cast |cFFFF0000|Hspell:133792|h[Lingering Gaze]|h|r!", -- [2]
-				"Appraising Eye", -- [3]
-				3, -- [4]
-			}, -- [33]
-			{
-				259.3479999999981, -- [1]
-				"I'm keeping an eye on you.", -- [2]
-				"Durumu the Forgotten", -- [3]
-				7, -- [4]
-			}, -- [34]
-			{
-				260.880999999994, -- [1]
-				"|TInterface\\Icons\\spell_shadow_lifedrain02.blp:20|tDurumu begins charging up his Hungry Eye to cast |cFFFF0000|Hspell:133795|h[Life Drain]|h|r on |cFFFF0000Syhlol|r!", -- [2]
-				"Hungry Eye", -- [3]
-				3, -- [4]
-			}, -- [35]
-			{
-				275.137000000017, -- [1]
-				"|TInterface\\Icons\\spell_shadow_curseofmannoroth.blp:20|tDurumu begins charging up his Evil Eye to cast |cFFFF0000|Hspell:133597|h[Dark Parasite]|h|r on |cFFFF0000Syhlol|r!", -- [2]
-				"Evil Eye", -- [3]
-				3, -- [4]
-			}, -- [36]
-			{
-				283.0659999999916, -- [1]
-				"The Infrared Light reveals a Crimson Fog!", -- [2]
-				"Crimson Fog", -- [3]
-				3, -- [4]
-			}, -- [37]
-			{
-				290.8220000000147, -- [1]
-				"Observe your demise.", -- [2]
-				"Durumu the Forgotten", -- [3]
-				7, -- [4]
-			}, -- [38]
-			{
-				290.8220000000147, -- [1]
-				"|TInterface\\Icons\\inv_misc_eye_02.blp:20|tDurumu begins charging up his Appraising Eye to cast |cFFFF0000|Hspell:133792|h[Lingering Gaze]|h|r!", -- [2]
-				"Appraising Eye", -- [3]
-				3, -- [4]
-			}, -- [39]
-			{
-				292.7119999999995, -- [1]
-				"The Infrared Light reveals a Crimson Fog!", -- [2]
-				"Crimson Fog", -- [3]
-				3, -- [4]
-			}, -- [40]
-			{
-				297.0050000000047, -- [1]
-				"|TInterface\\Icons\\ability_monk_forcesphere.blp:20|tDurumu begins charging up his Mind's Eye to cast |cFFFF0000|Hspell:136932|h[Force of Will]|h|r on |cFFFF0000Syhlol|r!", -- [2]
-				"Mind's Eye", -- [3]
-				3, -- [4]
-			}, -- [41]
-			{
-				303.0480000000098, -- [1]
-				"I'm keeping an eye on you.", -- [2]
-				"Durumu the Forgotten", -- [3]
-				7, -- [4]
-			}, -- [42]
-			["boss"] = "Durumu the Forgotten",
-		}, -- [3]
-	},
 	["encounter_spells"] = {
 		[72143] = {
 			["school"] = 1,
@@ -1511,8 +894,8 @@ EncounterDetailsDB = {
 		[57780] = {
 			["school"] = 8,
 			["token"] = {
-				["SPELL_DAMAGE"] = true,
 				["SPELL_CAST_START"] = true,
+				["SPELL_DAMAGE"] = true,
 			},
 			["source"] = "Steelforged Defender",
 		},
@@ -1733,8 +1116,8 @@ EncounterDetailsDB = {
 		[327089] = {
 			["school"] = 1,
 			["token"] = {
-				["SPELL_HEAL"] = true,
 				["SPELL_DAMAGE"] = true,
+				["SPELL_HEAL"] = true,
 			},
 			["source"] = "Sire Denathrius",
 		},
@@ -1975,29 +1358,30 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Durumu the Forgotten",
 		},
-		[136122] = {
-			["school"] = 4,
+		[137727] = {
+			["school"] = 1,
+			["type"] = "DEBUFF",
 			["token"] = {
-				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_DAMAGE"] = true,
+				["SPELL_AURA_APPLIED"] = true,
 			},
-			["source"] = "Crimson Fog",
+			["source"] = "Hungry Eye",
 		},
-		[134587] = {
+		[134321] = {
+			["school"] = 1,
+			["type"] = "BUFF",
+			["token"] = {
+				["SPELL_AURA_APPLIED"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
+			},
+			["source"] = "Hatchling",
+		},
+		[138923] = {
 			["school"] = 1,
 			["token"] = {
 				["SPELL_CAST_SUCCESS"] = true,
 				["SPELL_CAST_START"] = true,
 			},
-			["source"] = "Red Eye",
-		},
-		[134029] = {
-			["school"] = 32,
-			["token"] = {
-				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_DAMAGE"] = true,
-			},
-			["source"] = "Durumu the Forgotten",
+			["source"] = "Ji-Kun",
 		},
 		[64187] = {
 			["school"] = 8,
@@ -2008,21 +1392,24 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Stormcaller Brundir",
 		},
-		[72149] = {
+		[138052] = {
 			["school"] = 1,
+			["type"] = "BUFF",
+			["token"] = {
+				["SPELL_AURA_APPLIED"] = true,
+				["SPELL_CAST_START"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
+			},
+			["source"] = "Ji-Kun",
+		},
+		[137344] = {
+			["school"] = 2,
 			["token"] = {
 				["SPELL_CAST_START"] = true,
 				["SPELL_CAST_SUCCESS"] = true,
 				["SPELL_DAMAGE"] = true,
 			},
-			["source"] = "Shambling Horror",
-		},
-		[136177] = {
-			["school"] = 16,
-			["token"] = {
-				["SPELL_DAMAGE"] = true,
-			},
-			["source"] = "Azure Fog",
+			["source"] = "High Priestess Mar'li",
 		},
 		[326851] = {
 			["school"] = 32,
@@ -2034,15 +1421,12 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Sire Denathrius",
 		},
-		[137729] = {
-			["school"] = 4,
-			["type"] = "BUFF",
+		[63414] = {
+			["school"] = 1,
 			["token"] = {
-				["SPELL_AURA_APPLIED"] = true,
-				["SPELL_CAST_START"] = true,
 				["SPELL_CAST_SUCCESS"] = true,
 			},
-			["source"] = "Flaming Head",
+			["source"] = "VX-001",
 		},
 		[69920] = {
 			["school"] = 1,
@@ -2051,14 +1435,12 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Skybreaker Assassin",
 		},
-		[57688] = {
+		[11899] = {
 			["school"] = 1,
-			["type"] = "BUFF",
 			["token"] = {
-				["SPELL_AURA_APPLIED"] = true,
-				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_CAST_START"] = true,
 			},
-			["source"] = "Crusher Tentacle",
+			["source"] = "Sandfury Witch Doctor",
 		},
 		[69705] = {
 			["school"] = 32,
@@ -2080,12 +1462,14 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Evil Eye",
 		},
-		[11899] = {
+		[57688] = {
 			["school"] = 1,
+			["type"] = "BUFF",
 			["token"] = {
-				["SPELL_CAST_START"] = true,
+				["SPELL_AURA_APPLIED"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
 			},
-			["source"] = "Sandfury Witch Doctor",
+			["source"] = "Crusher Tentacle",
 		},
 		[11898] = {
 			["school"] = 1,
@@ -2102,20 +1486,20 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Mimiron",
 		},
-		[330217] = {
+		[136753] = {
 			["school"] = 1,
 			["token"] = {
-				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_DAMAGE"] = true,
+				["SPELL_PERIODIC_DAMAGE"] = true,
 			},
-			["source"] = "Remornia",
+			["source"] = "Greater Cave Bat",
 		},
-		[134044] = {
-			["school"] = 32,
+		[136442] = {
+			["school"] = 1,
+			["type"] = "BUFF",
 			["token"] = {
-				["SPELL_DAMAGE"] = true,
+				["SPELL_AURA_APPLIED"] = true,
 			},
-			["source"] = "Appraising Eye",
+			["source"] = "Gara'jal's Soul",
 		},
 		[133768] = {
 			["school"] = 1,
@@ -2126,30 +1510,25 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Durumu the Forgotten",
 		},
-		[133767] = {
-			["school"] = 1,
-			["type"] = "DEBUFF",
+		[137905] = {
+			["school"] = 8,
 			["token"] = {
-				["SPELL_AURA_APPLIED"] = true,
-			},
-			["source"] = "Durumu the Forgotten",
-		},
-		[63276] = {
-			["school"] = 32,
-			["type"] = "DEBUFF",
-			["token"] = {
-				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_AURA_APPLIED"] = true,
-			},
-			["source"] = "General Vezax",
-		},
-		[73529] = {
-			["school"] = 32,
-			["token"] = {
-				["SPELL_CAST_SUCCESS"] = true,
 				["SPELL_DAMAGE"] = true,
 			},
-			["source"] = "Shadow Trap",
+		},
+		[137423] = {
+			["school"] = 8,
+			["token"] = {
+				["SPELL_DAMAGE"] = true,
+			},
+		},
+		[333932] = {
+			["school"] = 32,
+			["token"] = {
+				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_CAST_START"] = true,
+			},
+			["source"] = "Hand of Destruction",
 		},
 		[62942] = {
 			["school"] = 1,
@@ -2158,13 +1537,13 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Ancient Rune Giant",
 		},
-		[63277] = {
-			["school"] = 32,
+		[137422] = {
+			["school"] = 1,
 			["type"] = "DEBUFF",
 			["token"] = {
 				["SPELL_AURA_APPLIED"] = true,
 			},
-			["source"] = "General Vezax",
+			["source"] = "Focused Lightning",
 		},
 		[69911] = {
 			["school"] = 32,
@@ -2179,6 +1558,14 @@ EncounterDetailsDB = {
 			["token"] = {
 				["SPELL_AURA_APPLIED"] = true,
 			},
+		},
+		[63038] = {
+			["school"] = 32,
+			["token"] = {
+				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_CAST_START"] = true,
+			},
+			["source"] = "Guardian of Yogg-Saron",
 		},
 		[136154] = {
 			["school"] = 1,
@@ -2198,14 +1585,6 @@ EncounterDetailsDB = {
 				["SPELL_CAST_SUCCESS"] = true,
 			},
 			["source"] = "Thorim",
-		},
-		[63038] = {
-			["school"] = 32,
-			["token"] = {
-				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_CAST_START"] = true,
-			},
-			["source"] = "Guardian of Yogg-Saron",
 		},
 		[137731] = {
 			["school"] = 4,
@@ -2232,13 +1611,14 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Emergency Fire Bot",
 		},
-		[139316] = {
-			["school"] = 8,
+		[72737] = {
+			["school"] = 64,
 			["type"] = "BUFF",
 			["token"] = {
 				["SPELL_AURA_APPLIED"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
 			},
-			["source"] = "Putrid Waste",
+			["source"] = "Deathbringer Saurfang",
 		},
 		[69898] = {
 			["school"] = 8,
@@ -2267,13 +1647,13 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Sire Denathrius",
 		},
-		[99333] = {
-			["school"] = 4,
+		[70337] = {
+			["school"] = 32,
 			["token"] = {
 				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_DAMAGE"] = true,
+				["SPELL_PERIODIC_DAMAGE"] = true,
 			},
-			["source"] = "Beth'tilac",
+			["source"] = "The Lich King",
 		},
 		[64168] = {
 			["school"] = 32,
@@ -2282,13 +1662,14 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Laughing Skull",
 		},
-		[78801] = {
-			["school"] = 16,
+		[70109] = {
+			["school"] = 1,
+			["type"] = "BUFF",
 			["token"] = {
+				["SPELL_AURA_APPLIED"] = true,
 				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_CAST_START"] = true,
 			},
-			["source"] = "Hydromancer Velratha",
+			["source"] = "Sindragosa",
 		},
 		[63849] = {
 			["school"] = 8,
@@ -2314,14 +1695,12 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Jin'rokh the Breaker",
 		},
-		[62507] = {
-			["school"] = 32,
-			["type"] = "BUFF",
+		[69917] = {
+			["school"] = 16,
 			["token"] = {
-				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_AURA_APPLIED"] = true,
+				["SPELL_PERIODIC_DAMAGE"] = true,
 			},
-			["source"] = "Sif",
+			["source"] = "Skybreaker Dreadblade",
 		},
 		[64156] = {
 			["school"] = 32,
@@ -2331,31 +1710,31 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Corruptor Tentacle",
 		},
-		[61920] = {
-			["school"] = 8,
-			["type"] = "BUFF",
-			["token"] = {
-				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_AURA_APPLIED"] = true,
-			},
-			["source"] = "Runemaster Molgeim",
-		},
-		[62320] = {
-			["school"] = 64,
+		[63364] = {
+			["school"] = 1,
 			["type"] = "BUFF",
 			["token"] = {
 				["SPELL_AURA_APPLIED"] = true,
 				["SPELL_CAST_SUCCESS"] = true,
 			},
-			["source"] = "Dark Rune Warbringer",
+			["source"] = "General Vezax",
 		},
-		[133678] = {
-			["school"] = 16,
+		[65121] = {
+			["school"] = 66,
+			["type"] = "DEBUFF",
 			["token"] = {
-				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_DAMAGE"] = true,
+				["SPELL_AURA_APPLIED"] = true,
 			},
-			["source"] = "Blue Eye",
+			["source"] = "XT-002 Deconstructor",
+		},
+		[329697] = {
+			["school"] = 1,
+			["type"] = "BUFF",
+			["token"] = {
+				["SPELL_AURA_APPLIED"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
+			},
+			["source"] = "Sire Denathrius",
 		},
 		[133793] = {
 			["school"] = 32,
@@ -2364,14 +1743,14 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Appraising Eye",
 		},
-		[342905] = {
-			["school"] = 16,
+		[330042] = {
+			["school"] = 1,
 			["type"] = "BUFF",
 			["token"] = {
-				["SPELL_AURA_APPLIED"] = true,
 				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_AURA_APPLIED"] = true,
 			},
-			["source"] = "Millhouse Manastorm",
+			["source"] = "Sire Denathrius",
 		},
 		[69899] = {
 			["school"] = 8,
@@ -2412,12 +1791,12 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Unbound Smoldering Elemental",
 		},
-		[326833] = {
-			["school"] = 32,
+		[62400] = {
+			["school"] = 1,
 			["token"] = {
-				["SPELL_DAMAGE"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
 			},
-			["source"] = "Echo of Sin",
+			["source"] = "Flame Leviathan",
 		},
 		[70602] = {
 			["school"] = 32,
@@ -2428,12 +1807,15 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Risen Archmage",
 		},
-		[64383] = {
+		[134380] = {
 			["school"] = 1,
+			["type"] = "BUFF",
 			["token"] = {
+				["SPELL_AURA_APPLIED"] = true,
 				["SPELL_CAST_START"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
 			},
-			["source"] = "Leviathan Mk II",
+			["source"] = "Ji-Kun",
 		},
 		[65648] = {
 			["school"] = 68,
@@ -2452,46 +1834,6 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Guardian Lasher",
 		},
-		[62443] = {
-			["school"] = 2,
-			["token"] = {
-				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_CAST_START"] = true,
-			},
-			["source"] = "Dark Rune Acolyte",
-		},
-		[137180] = {
-			["school"] = 1,
-			["token"] = {
-				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_CAST_START"] = true,
-			},
-			["source"] = "Jin'rokh the Breaker",
-		},
-		[133677] = {
-			["school"] = 16,
-			["type"] = "DEBUFF",
-			["token"] = {
-				["SPELL_AURA_APPLIED"] = true,
-				["SPELL_DAMAGE"] = true,
-			},
-			["source"] = "Blue Eye",
-		},
-		[134124] = {
-			["school"] = 1,
-			["token"] = {
-				["SPELL_CAST_SUCCESS"] = true,
-			},
-			["source"] = "Yellow Eye",
-		},
-		[133795] = {
-			["school"] = 1,
-			["token"] = {
-				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_CAST_START"] = true,
-			},
-			["source"] = "Hungry Eye",
-		},
 		[139991] = {
 			["school"] = 64,
 			["type"] = "BUFF",
@@ -2502,12 +1844,53 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Arcane Head",
 		},
-		[326994] = {
+		[137180] = {
+			["school"] = 1,
+			["token"] = {
+				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_CAST_START"] = true,
+			},
+			["source"] = "Jin'rokh the Breaker",
+		},
+		[11900] = {
+			["school"] = 1,
+			["token"] = {
+				["SPELL_HEAL"] = true,
+			},
+			["source"] = "Greater Healing Ward",
+		},
+		[63808] = {
 			["school"] = 1,
 			["type"] = "BUFF",
 			["token"] = {
 				["SPELL_AURA_APPLIED"] = true,
 				["SPELL_CAST_SUCCESS"] = true,
+			},
+			["source"] = "Dark Rune Sentinel",
+		},
+		[133795] = {
+			["school"] = 1,
+			["token"] = {
+				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_CAST_START"] = true,
+			},
+			["source"] = "Hungry Eye",
+		},
+		[134370] = {
+			["school"] = 1,
+			["type"] = "BUFF",
+			["token"] = {
+				["SPELL_AURA_APPLIED"] = true,
+				["SPELL_CAST_START"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
+			},
+			["source"] = "Ji-Kun",
+		},
+		[327227] = {
+			["school"] = 32,
+			["token"] = {
+				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_CAST_START"] = true,
 			},
 			["source"] = "Sire Denathrius",
 		},
@@ -2553,13 +1936,12 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Red Eye",
 		},
-		[73539] = {
+		[70985] = {
 			["school"] = 32,
 			["token"] = {
-				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_CAST_START"] = true,
+				["SPELL_DAMAGE"] = true,
 			},
-			["source"] = "The Lich King",
+			["source"] = "Blood-Queen Lana'thel",
 		},
 		[139992] = {
 			["school"] = 64,
@@ -2568,45 +1950,49 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Arcane Head",
 		},
-		[329974] = {
-			["school"] = 1,
+		[335072] = {
+			["school"] = 64,
 			["token"] = {
 				["SPELL_DAMAGE"] = true,
 			},
-			["source"] = "Remornia",
+			["source"] = "Millhouse Manastorm",
 		},
-		[138467] = {
-			["school"] = 1,
+		[64766] = {
+			["school"] = 64,
+			["type"] = "DEBUFF",
 			["token"] = {
 				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_CAST_START"] = true,
+				["SPELL_AURA_APPLIED"] = true,
 			},
-			["source"] = "Appraising Eye",
+			["source"] = "Mechanostriker 54-A",
 		},
-		[62794] = {
+		[328117] = {
+			["school"] = 32,
+			["type"] = "BUFF",
+			["token"] = {
+				["SPELL_AURA_APPLIED"] = true,
+				["SPELL_CAST_START"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
+			},
+			["source"] = "Sire Denathrius",
+		},
+		[69869] = {
+			["school"] = 20,
+			["type"] = "DEBUFF",
+			["token"] = {
+				["SPELL_AURA_APPLIED"] = true,
+				["SPELL_CAST_START"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
+			},
+			["source"] = "Skybreaker Sorcerer",
+		},
+		[62385] = {
 			["school"] = 1,
 			["type"] = "BUFF",
 			["token"] = {
 				["SPELL_AURA_APPLIED"] = true,
-				["SPELL_CAST_SUCCESS"] = true,
 			},
-			["source"] = "Razorscale",
-		},
-		[320823] = {
-			["school"] = 4,
-			["token"] = {
-				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_CAST_START"] = true,
-			},
-			["source"] = "Millificent Manastorm",
-		},
-		[133733] = {
-			["school"] = 4,
-			["token"] = {
-				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_DAMAGE"] = true,
-			},
-			["source"] = "Red Eye",
+			["source"] = "Elder Brightleaf",
 		},
 		[134755] = {
 			["school"] = 64,
@@ -2621,15 +2007,13 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Jin'rokh the Breaker",
 		},
-		[69869] = {
-			["school"] = 20,
+		[139993] = {
+			["school"] = 64,
 			["type"] = "DEBUFF",
 			["token"] = {
 				["SPELL_AURA_APPLIED"] = true,
-				["SPELL_CAST_START"] = true,
-				["SPELL_CAST_SUCCESS"] = true,
 			},
-			["source"] = "Skybreaker Sorcerer",
+			["source"] = "Arcane Head",
 		},
 		[69901] = {
 			["school"] = 1,
@@ -2646,13 +2030,13 @@ EncounterDetailsDB = {
 				["SPELL_DAMAGE"] = true,
 			},
 		},
-		[62385] = {
-			["school"] = 1,
-			["type"] = "BUFF",
+		[69965] = {
+			["school"] = 8,
 			["token"] = {
-				["SPELL_AURA_APPLIED"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_DAMAGE"] = true,
 			},
-			["source"] = "Elder Brightleaf",
+			["source"] = "Skybreaker Protector",
 		},
 		[332619] = {
 			["school"] = 1,
@@ -2695,24 +2079,6 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Sire Denathrius",
 		},
-		[99859] = {
-			["school"] = 4,
-			["token"] = {
-				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_DAMAGE"] = true,
-			},
-			["source"] = "Beth'tilac",
-		},
-		[70189] = {
-			["school"] = 8,
-			["token"] = {
-				["SPELL_PERIODIC_DAMAGE"] = true,
-				["SPELL_DAMAGE"] = true,
-				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_CAST_START"] = true,
-			},
-			["source"] = "Spire Gargoyle",
-		},
 		[98837] = {
 			["school"] = 1,
 			["type"] = "BUFF",
@@ -2720,6 +2086,24 @@ EncounterDetailsDB = {
 				["SPELL_AURA_APPLIED"] = true,
 			},
 			["source"] = "Right Foot",
+		},
+		[70189] = {
+			["school"] = 8,
+			["token"] = {
+				["SPELL_DAMAGE"] = true,
+				["SPELL_CAST_START"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_PERIODIC_DAMAGE"] = true,
+			},
+			["source"] = "Spire Gargoyle",
+		},
+		[99859] = {
+			["school"] = 4,
+			["token"] = {
+				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_DAMAGE"] = true,
+			},
+			["source"] = "Beth'tilac",
 		},
 		[64062] = {
 			["school"] = 1,
@@ -2737,30 +2121,30 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Professor Putricide",
 		},
-		[99606] = {
-			["school"] = 4,
+		[69968] = {
+			["school"] = 8,
 			["token"] = {
-				["SPELL_DAMAGE"] = true,
-			},
-			["source"] = "Alysrazor",
-		},
-		[139548] = {
-			["school"] = 4,
-			["token"] = {
-				["SPELL_DAMAGE"] = true,
-			},
-			["source"] = "Megaera",
-		},
-		[329181] = {
-			["school"] = 32,
-			["type"] = "DEBUFF",
-			["token"] = {
-				["SPELL_AURA_APPLIED"] = true,
 				["SPELL_CAST_START"] = true,
 				["SPELL_CAST_SUCCESS"] = true,
 				["SPELL_DAMAGE"] = true,
 			},
-			["source"] = "Sire Denathrius",
+			["source"] = "Skybreaker Hierophant",
+		},
+		[64163] = {
+			["school"] = 32,
+			["type"] = "BUFF",
+			["token"] = {
+				["SPELL_AURA_APPLIED"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
+			},
+			["source"] = "Yogg-Saron",
+		},
+		[139552] = {
+			["school"] = 64,
+			["token"] = {
+				["SPELL_DAMAGE"] = true,
+			},
+			["source"] = "Megaera",
 		},
 		[69902] = {
 			["school"] = 1,
@@ -2784,15 +2168,12 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Guardian of Yogg-Saron",
 		},
-		[137313] = {
+		[134375] = {
 			["school"] = 1,
-			["type"] = "BUFF",
 			["token"] = {
-				["SPELL_AURA_APPLIED"] = true,
-				["SPELL_CAST_START"] = true,
-				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_DAMAGE"] = true,
 			},
-			["source"] = "Jin'rokh the Breaker",
+			["source"] = "Ji-Kun",
 		},
 		[70541] = {
 			["school"] = 32,
@@ -2811,6 +2192,65 @@ EncounterDetailsDB = {
 				["SPELL_DAMAGE"] = true,
 			},
 		},
+		[65719] = {
+			["school"] = 32,
+			["token"] = {
+				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_DAMAGE"] = true,
+			},
+			["source"] = "Guardian of Yogg-Saron",
+		},
+		[330580] = {
+			["school"] = 1,
+			["type"] = "BUFF",
+			["token"] = {
+				["SPELL_AURA_APPLIED"] = true,
+				["SPELL_DAMAGE"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
+			},
+			["source"] = "Sire Denathrius",
+		},
+		[329943] = {
+			["school"] = 1,
+			["token"] = {
+				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_CAST_START"] = true,
+			},
+			["source"] = "Remornia",
+		},
+		[69679] = {
+			["school"] = 1,
+			["token"] = {
+				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_CAST_START"] = true,
+			},
+			["source"] = "Skybreaker Mortar Soldier",
+		},
+		[47008] = {
+			["school"] = 1,
+			["type"] = "BUFF",
+			["token"] = {
+				["SPELL_AURA_APPLIED"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
+			},
+			["source"] = "Razorscale",
+		},
+		[63807] = {
+			["school"] = 1,
+			["token"] = {
+				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_DAMAGE"] = true,
+			},
+			["source"] = "Dark Rune Sentinel",
+		},
+		[62386] = {
+			["school"] = 1,
+			["type"] = "BUFF",
+			["token"] = {
+				["SPELL_AURA_APPLIED"] = true,
+			},
+			["source"] = "Elder Stonebark",
+		},
 		[133737] = {
 			["school"] = 1,
 			["type"] = "DEBUFF",
@@ -2818,13 +2258,6 @@ EncounterDetailsDB = {
 				["SPELL_AURA_APPLIED"] = true,
 			},
 			["source"] = "Yellow Eye",
-		},
-		[134375] = {
-			["school"] = 1,
-			["token"] = {
-				["SPELL_DAMAGE"] = true,
-			},
-			["source"] = "Ji-Kun",
 		},
 		[72905] = {
 			["school"] = 16,
@@ -2836,14 +2269,6 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Lady Deathwhisper",
 		},
-		[69679] = {
-			["school"] = 1,
-			["token"] = {
-				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_CAST_START"] = true,
-			},
-			["source"] = "Skybreaker Mortar Soldier",
-		},
 		[332626] = {
 			["school"] = 32,
 			["token"] = {
@@ -2851,53 +2276,12 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Sire Denathrius",
 		},
-		[63807] = {
-			["school"] = 1,
-			["token"] = {
-				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_DAMAGE"] = true,
-			},
-			["source"] = "Dark Rune Sentinel",
-		},
-		[99605] = {
+		[63009] = {
 			["school"] = 4,
 			["token"] = {
-				["SPELL_DAMAGE"] = true,
-			},
-			["source"] = "Alysrazor",
-		},
-		[65719] = {
-			["school"] = 32,
-			["token"] = {
-				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_DAMAGE"] = true,
-			},
-			["source"] = "Guardian of Yogg-Saron",
-		},
-		[329943] = {
-			["school"] = 1,
-			["token"] = {
-				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_CAST_START"] = true,
-			},
-			["source"] = "Remornia",
-		},
-		[47008] = {
-			["school"] = 1,
-			["type"] = "BUFF",
-			["token"] = {
-				["SPELL_AURA_APPLIED"] = true,
 				["SPELL_CAST_SUCCESS"] = true,
 			},
-			["source"] = "Razorscale",
-		},
-		[70191] = {
-			["school"] = 1,
-			["token"] = {
-				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_DAMAGE"] = true,
-			},
-			["source"] = "Frenzied Abomination",
+			["source"] = "Proximity Mine",
 		},
 		[73001] = {
 			["school"] = 1,
@@ -2909,21 +2293,21 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Prince Keleseth",
 		},
-		[62386] = {
-			["school"] = 1,
-			["type"] = "BUFF",
+		[69967] = {
+			["school"] = 2,
 			["token"] = {
-				["SPELL_AURA_APPLIED"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_CAST_START"] = true,
 			},
-			["source"] = "Elder Stonebark",
+			["source"] = "Skybreaker Vicar",
 		},
-		[137507] = {
-			["school"] = 8,
-			["type"] = "DEBUFF",
+		[70670] = {
+			["school"] = 32,
 			["token"] = {
-				["SPELL_AURA_APPLIED"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
 				["SPELL_DAMAGE"] = true,
 			},
+			["source"] = "Cult Fanatic",
 		},
 		[139551] = {
 			["school"] = 8,
@@ -2957,28 +2341,28 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Mind's Eye",
 		},
-		[70670] = {
-			["school"] = 32,
+		[137507] = {
+			["school"] = 8,
+			["type"] = "DEBUFF",
+			["token"] = {
+				["SPELL_AURA_APPLIED"] = true,
+				["SPELL_DAMAGE"] = true,
+			},
+		},
+		[70191] = {
+			["school"] = 1,
 			["token"] = {
 				["SPELL_CAST_SUCCESS"] = true,
 				["SPELL_DAMAGE"] = true,
 			},
-			["source"] = "Cult Fanatic",
+			["source"] = "Frenzied Abomination",
 		},
-		[63009] = {
+		[99605] = {
 			["school"] = 4,
 			["token"] = {
-				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_DAMAGE"] = true,
 			},
-			["source"] = "Proximity Mine",
-		},
-		[69967] = {
-			["school"] = 2,
-			["token"] = {
-				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_CAST_START"] = true,
-			},
-			["source"] = "Skybreaker Vicar",
+			["source"] = "Alysrazor",
 		},
 		[134122] = {
 			["school"] = 1,
@@ -3003,15 +2387,15 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Yellow Eye",
 		},
-		[330580] = {
+		[137313] = {
 			["school"] = 1,
 			["type"] = "BUFF",
 			["token"] = {
 				["SPELL_AURA_APPLIED"] = true,
-				["SPELL_DAMAGE"] = true,
+				["SPELL_CAST_START"] = true,
 				["SPELL_CAST_SUCCESS"] = true,
 			},
-			["source"] = "Sire Denathrius",
+			["source"] = "Jin'rokh the Breaker",
 		},
 		[71405] = {
 			["school"] = 32,
@@ -3020,30 +2404,30 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Prince Keleseth",
 		},
-		[139552] = {
-			["school"] = 64,
+		[329181] = {
+			["school"] = 32,
+			["type"] = "DEBUFF",
+			["token"] = {
+				["SPELL_AURA_APPLIED"] = true,
+				["SPELL_CAST_START"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_DAMAGE"] = true,
+			},
+			["source"] = "Sire Denathrius",
+		},
+		[139548] = {
+			["school"] = 4,
 			["token"] = {
 				["SPELL_DAMAGE"] = true,
 			},
 			["source"] = "Megaera",
 		},
-		[64163] = {
-			["school"] = 32,
-			["type"] = "BUFF",
+		[99606] = {
+			["school"] = 4,
 			["token"] = {
-				["SPELL_AURA_APPLIED"] = true,
-				["SPELL_CAST_SUCCESS"] = true,
-			},
-			["source"] = "Yogg-Saron",
-		},
-		[69968] = {
-			["school"] = 8,
-			["token"] = {
-				["SPELL_CAST_START"] = true,
-				["SPELL_CAST_SUCCESS"] = true,
 				["SPELL_DAMAGE"] = true,
 			},
-			["source"] = "Skybreaker Hierophant",
+			["source"] = "Alysrazor",
 		},
 		[134123] = {
 			["school"] = 1,
@@ -3052,88 +2436,86 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Red Eye",
 		},
-		[69965] = {
-			["school"] = 8,
+		[133733] = {
+			["school"] = 4,
 			["token"] = {
 				["SPELL_CAST_SUCCESS"] = true,
 				["SPELL_DAMAGE"] = true,
 			},
-			["source"] = "Skybreaker Protector",
+			["source"] = "Red Eye",
 		},
-		[139993] = {
-			["school"] = 64,
-			["type"] = "DEBUFF",
+		[320823] = {
+			["school"] = 4,
 			["token"] = {
-				["SPELL_AURA_APPLIED"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_CAST_START"] = true,
 			},
-			["source"] = "Arcane Head",
+			["source"] = "Millificent Manastorm",
 		},
-		[328117] = {
-			["school"] = 32,
+		[62794] = {
+			["school"] = 1,
 			["type"] = "BUFF",
 			["token"] = {
 				["SPELL_AURA_APPLIED"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
+			},
+			["source"] = "Razorscale",
+		},
+		[138467] = {
+			["school"] = 1,
+			["token"] = {
+				["SPELL_CAST_SUCCESS"] = true,
 				["SPELL_CAST_START"] = true,
+			},
+			["source"] = "Appraising Eye",
+		},
+		[329974] = {
+			["school"] = 1,
+			["token"] = {
+				["SPELL_DAMAGE"] = true,
+			},
+			["source"] = "Remornia",
+		},
+		[73539] = {
+			["school"] = 32,
+			["token"] = {
+				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_CAST_START"] = true,
+			},
+			["source"] = "The Lich King",
+		},
+		[326994] = {
+			["school"] = 1,
+			["type"] = "BUFF",
+			["token"] = {
+				["SPELL_AURA_APPLIED"] = true,
 				["SPELL_CAST_SUCCESS"] = true,
 			},
 			["source"] = "Sire Denathrius",
 		},
-		[64766] = {
-			["school"] = 64,
+		[134124] = {
+			["school"] = 1,
+			["token"] = {
+				["SPELL_CAST_SUCCESS"] = true,
+			},
+			["source"] = "Yellow Eye",
+		},
+		[133677] = {
+			["school"] = 16,
 			["type"] = "DEBUFF",
 			["token"] = {
-				["SPELL_CAST_SUCCESS"] = true,
 				["SPELL_AURA_APPLIED"] = true,
-			},
-			["source"] = "Mechanostriker 54-A",
-		},
-		[335072] = {
-			["school"] = 64,
-			["token"] = {
 				["SPELL_DAMAGE"] = true,
 			},
-			["source"] = "Millhouse Manastorm",
+			["source"] = "Blue Eye",
 		},
-		[70985] = {
-			["school"] = 32,
-			["token"] = {
-				["SPELL_DAMAGE"] = true,
-			},
-			["source"] = "Blood-Queen Lana'thel",
-		},
-		[327227] = {
-			["school"] = 32,
+		[62443] = {
+			["school"] = 2,
 			["token"] = {
 				["SPELL_CAST_SUCCESS"] = true,
 				["SPELL_CAST_START"] = true,
 			},
-			["source"] = "Sire Denathrius",
-		},
-		[63808] = {
-			["school"] = 1,
-			["type"] = "BUFF",
-			["token"] = {
-				["SPELL_AURA_APPLIED"] = true,
-				["SPELL_CAST_SUCCESS"] = true,
-			},
-			["source"] = "Dark Rune Sentinel",
-		},
-		[11900] = {
-			["school"] = 1,
-			["token"] = {
-				["SPELL_HEAL"] = true,
-			},
-			["source"] = "Greater Healing Ward",
-		},
-		[134370] = {
-			["school"] = 1,
-			["type"] = "BUFF",
-			["token"] = {
-				["SPELL_AURA_APPLIED"] = true,
-				["SPELL_CAST_START"] = true,
-				["SPELL_CAST_SUCCESS"] = true,
-			},
-			["source"] = "Ji-Kun",
+			["source"] = "Dark Rune Acolyte",
 		},
 		[329951] = {
 			["school"] = 1,
@@ -3143,22 +2525,19 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Remornia",
 		},
-		[134380] = {
+		[64383] = {
 			["school"] = 1,
-			["type"] = "BUFF",
 			["token"] = {
-				["SPELL_AURA_APPLIED"] = true,
 				["SPELL_CAST_START"] = true,
-				["SPELL_CAST_SUCCESS"] = true,
 			},
-			["source"] = "Ji-Kun",
+			["source"] = "Leviathan Mk II",
 		},
-		[62400] = {
-			["school"] = 1,
+		[326833] = {
+			["school"] = 32,
 			["token"] = {
-				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_DAMAGE"] = true,
 			},
-			["source"] = "Flame Leviathan",
+			["source"] = "Echo of Sin",
 		},
 		[139107] = {
 			["school"] = 64,
@@ -3177,40 +2556,40 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Skybreaker Summoner",
 		},
-		[330042] = {
-			["school"] = 1,
-			["type"] = "BUFF",
-			["token"] = {
-				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_AURA_APPLIED"] = true,
-			},
-			["source"] = "Sire Denathrius",
-		},
-		[329697] = {
-			["school"] = 1,
+		[342905] = {
+			["school"] = 16,
 			["type"] = "BUFF",
 			["token"] = {
 				["SPELL_AURA_APPLIED"] = true,
 				["SPELL_CAST_SUCCESS"] = true,
 			},
-			["source"] = "Sire Denathrius",
+			["source"] = "Millhouse Manastorm",
 		},
-		[65121] = {
-			["school"] = 66,
-			["type"] = "DEBUFF",
+		[133678] = {
+			["school"] = 16,
 			["token"] = {
-				["SPELL_AURA_APPLIED"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_DAMAGE"] = true,
 			},
-			["source"] = "XT-002 Deconstructor",
+			["source"] = "Blue Eye",
 		},
-		[63364] = {
-			["school"] = 1,
+		[62320] = {
+			["school"] = 64,
 			["type"] = "BUFF",
 			["token"] = {
 				["SPELL_AURA_APPLIED"] = true,
 				["SPELL_CAST_SUCCESS"] = true,
 			},
-			["source"] = "General Vezax",
+			["source"] = "Dark Rune Warbringer",
+		},
+		[61920] = {
+			["school"] = 8,
+			["type"] = "BUFF",
+			["token"] = {
+				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_AURA_APPLIED"] = true,
+			},
+			["source"] = "Runemaster Molgeim",
 		},
 		[134381] = {
 			["school"] = 1,
@@ -3219,12 +2598,14 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Ji-Kun",
 		},
-		[69917] = {
-			["school"] = 16,
+		[62507] = {
+			["school"] = 32,
+			["type"] = "BUFF",
 			["token"] = {
-				["SPELL_PERIODIC_DAMAGE"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_AURA_APPLIED"] = true,
 			},
-			["source"] = "Skybreaker Dreadblade",
+			["source"] = "Sif",
 		},
 		[71726] = {
 			["school"] = 1,
@@ -3251,14 +2632,13 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Cult Adherent",
 		},
-		[70109] = {
-			["school"] = 1,
-			["type"] = "BUFF",
+		[78801] = {
+			["school"] = 16,
 			["token"] = {
-				["SPELL_AURA_APPLIED"] = true,
 				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_CAST_START"] = true,
 			},
-			["source"] = "Sindragosa",
+			["source"] = "Hydromancer Velratha",
 		},
 		[139364] = {
 			["school"] = 1,
@@ -3268,22 +2648,21 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Spirit Flayer",
 		},
-		[70337] = {
-			["school"] = 32,
+		[99333] = {
+			["school"] = 4,
 			["token"] = {
 				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_PERIODIC_DAMAGE"] = true,
+				["SPELL_DAMAGE"] = true,
 			},
-			["source"] = "The Lich King",
+			["source"] = "Beth'tilac",
 		},
-		[72737] = {
-			["school"] = 64,
+		[139316] = {
+			["school"] = 8,
 			["type"] = "BUFF",
 			["token"] = {
 				["SPELL_AURA_APPLIED"] = true,
-				["SPELL_CAST_SUCCESS"] = true,
 			},
-			["source"] = "Deathbringer Saurfang",
+			["source"] = "Putrid Waste",
 		},
 		[64144] = {
 			["school"] = 1,
@@ -3314,33 +2693,38 @@ EncounterDetailsDB = {
 			},
 			["source"] = "General Vezax",
 		},
-		[137422] = {
+		[63277] = {
+			["school"] = 32,
+			["type"] = "DEBUFF",
+			["token"] = {
+				["SPELL_AURA_APPLIED"] = true,
+			},
+			["source"] = "General Vezax",
+		},
+		[73529] = {
+			["school"] = 32,
+			["token"] = {
+				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_DAMAGE"] = true,
+			},
+			["source"] = "Shadow Trap",
+		},
+		[63276] = {
+			["school"] = 32,
+			["type"] = "DEBUFF",
+			["token"] = {
+				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_AURA_APPLIED"] = true,
+			},
+			["source"] = "General Vezax",
+		},
+		[133767] = {
 			["school"] = 1,
 			["type"] = "DEBUFF",
 			["token"] = {
 				["SPELL_AURA_APPLIED"] = true,
 			},
-			["source"] = "Focused Lightning",
-		},
-		[333932] = {
-			["school"] = 32,
-			["token"] = {
-				["SPELL_CAST_SUCCESS"] = true,
-				["SPELL_CAST_START"] = true,
-			},
-			["source"] = "Hand of Destruction",
-		},
-		[137423] = {
-			["school"] = 8,
-			["token"] = {
-				["SPELL_DAMAGE"] = true,
-			},
-		},
-		[137905] = {
-			["school"] = 8,
-			["token"] = {
-				["SPELL_DAMAGE"] = true,
-			},
+			["source"] = "Durumu the Forgotten",
 		},
 		[70162] = {
 			["school"] = 1,
@@ -3350,20 +2734,20 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Skybreaker Rifleman",
 		},
-		[136442] = {
-			["school"] = 1,
-			["type"] = "BUFF",
+		[134044] = {
+			["school"] = 32,
 			["token"] = {
-				["SPELL_AURA_APPLIED"] = true,
+				["SPELL_DAMAGE"] = true,
 			},
-			["source"] = "Gara'jal's Soul",
+			["source"] = "Appraising Eye",
 		},
-		[136753] = {
+		[330217] = {
 			["school"] = 1,
 			["token"] = {
-				["SPELL_PERIODIC_DAMAGE"] = true,
+				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_DAMAGE"] = true,
 			},
-			["source"] = "Greater Cave Bat",
+			["source"] = "Remornia",
 		},
 		[62276] = {
 			["school"] = 1,
@@ -3388,56 +2772,672 @@ EncounterDetailsDB = {
 			},
 			["source"] = "Ebon Champion",
 		},
-		[63414] = {
-			["school"] = 1,
+		[137729] = {
+			["school"] = 4,
+			["type"] = "BUFF",
 			["token"] = {
+				["SPELL_AURA_APPLIED"] = true,
+				["SPELL_CAST_START"] = true,
 				["SPELL_CAST_SUCCESS"] = true,
 			},
-			["source"] = "VX-001",
+			["source"] = "Flaming Head",
 		},
-		[137344] = {
-			["school"] = 2,
+		[136177] = {
+			["school"] = 16,
+			["token"] = {
+				["SPELL_DAMAGE"] = true,
+			},
+			["source"] = "Azure Fog",
+		},
+		[72149] = {
+			["school"] = 1,
 			["token"] = {
 				["SPELL_CAST_START"] = true,
 				["SPELL_CAST_SUCCESS"] = true,
 				["SPELL_DAMAGE"] = true,
 			},
-			["source"] = "High Priestess Mar'li",
+			["source"] = "Shambling Horror",
 		},
-		[138052] = {
-			["school"] = 1,
-			["type"] = "BUFF",
+		[134029] = {
+			["school"] = 32,
 			["token"] = {
-				["SPELL_AURA_APPLIED"] = true,
-				["SPELL_CAST_START"] = true,
 				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_DAMAGE"] = true,
 			},
-			["source"] = "Ji-Kun",
+			["source"] = "Durumu the Forgotten",
 		},
-		[138923] = {
+		[134587] = {
 			["school"] = 1,
 			["token"] = {
 				["SPELL_CAST_SUCCESS"] = true,
 				["SPELL_CAST_START"] = true,
 			},
-			["source"] = "Ji-Kun",
+			["source"] = "Red Eye",
 		},
-		[134321] = {
-			["school"] = 1,
-			["type"] = "BUFF",
+		[136122] = {
+			["school"] = 4,
 			["token"] = {
-				["SPELL_AURA_APPLIED"] = true,
 				["SPELL_CAST_SUCCESS"] = true,
+				["SPELL_DAMAGE"] = true,
 			},
-			["source"] = "Hatchling",
+			["source"] = "Crimson Fog",
 		},
-		[137727] = {
-			["school"] = 1,
-			["type"] = "DEBUFF",
-			["token"] = {
-				["SPELL_AURA_APPLIED"] = true,
-			},
-			["source"] = "Hungry Eye",
-		},
+	},
+	["emotes"] = {
+		{
+			{
+				0.2060000000055879, -- [1]
+				"Your flesh, yes yes, so perfect, GIVE IT TO US!", -- [2]
+				"Primordius", -- [3]
+				7, -- [4]
+			}, -- [1]
+			["boss"] = "Primordius",
+		}, -- [1]
+		{
+			{
+				0.1950000000069849, -- [1]
+				"Behold the power of the void.", -- [2]
+				"Durumu the Forgotten", -- [3]
+				7, -- [4]
+			}, -- [1]
+			{
+				15.81299999999465, -- [1]
+				"|TInterface\\Icons\\inv_misc_eye_02.blp:20|tDurumu begins charging up his Appraising Eye to cast |cFFFF0000|Hspell:133792|h[Lingering Gaze]|h|r!", -- [2]
+				"Appraising Eye", -- [3]
+				3, -- [4]
+			}, -- [2]
+			{
+				33.54099999999744, -- [1]
+				"|TInterface\\Icons\\ability_monk_forcesphere.blp:20|tDurumu begins charging up his Mind's Eye to cast |cFFFF0000|Hspell:136932|h[Force of Will]|h|r on |cFFFF0000Juliia|r!", -- [2]
+				"Mind's Eye", -- [3]
+				3, -- [4]
+			}, -- [3]
+			{
+				41.24700000000303, -- [1]
+				"The mists hide many secrets ... if you know where to look.", -- [2]
+				"Durumu the Forgotten", -- [3]
+				7, -- [4]
+			}, -- [4]
+			{
+				41.24700000000303, -- [1]
+				"Use the cones of light to find and defeat the hidden Crimson Fogs!", -- [2]
+				"Durumu the Forgotten", -- [3]
+				1, -- [4]
+			}, -- [5]
+			{
+				41.24700000000303, -- [1]
+				"|TInterface\\Icons\\priest_icon_chakra_blue.blp:20|tDurumu begins charging up his Blue Eye to cast |cFFFF0000|Hspell:134122|h[Blue Rays]|h|r on |cFFFF0000Syhlol|r!", -- [2]
+				"Blue Eye", -- [3]
+				3, -- [4]
+			}, -- [6]
+			{
+				41.24700000000303, -- [1]
+				"|TInterface\\Icons\\priest_icon_chakra_red.blp:20|tDurumu begins charging up his Red Eye to cast |cFFFF0000|Hspell:134123|h[Infrared Light]|h|r on |cFFFF0000Juliia|r!", -- [2]
+				"Red Eye", -- [3]
+				3, -- [4]
+			}, -- [7]
+			{
+				41.24700000000303, -- [1]
+				"|TInterface\\Icons\\priest_icon_chakra.blp:20|tDurumu begins charging up his Yellow Eye to cast |cFFFF0000|Hspell:134124|h[Bright Light]|h|r on |cFFFF0000Juliia|r!", -- [2]
+				"Yellow Eye", -- [3]
+				3, -- [4]
+			}, -- [8]
+			{
+				53.57699999999022, -- [1]
+				"The Infrared Light reveals a Crimson Fog!", -- [2]
+				"Crimson Fog", -- [3]
+				3, -- [4]
+			}, -- [9]
+			{
+				62.23199999998906, -- [1]
+				"I'm keeping an eye on you.", -- [2]
+				"Durumu the Forgotten", -- [3]
+				7, -- [4]
+			}, -- [10]
+			{
+				63.16599999999744, -- [1]
+				"The Infrared Light reveals a Crimson Fog!", -- [2]
+				"Crimson Fog", -- [3]
+				3, -- [4]
+			}, -- [11]
+			{
+				78.00800000000163, -- [1]
+				"|TInterface\\Icons\\inv_misc_eye_02.blp:20|tDurumu begins charging up his Appraising Eye to cast |cFFFF0000|Hspell:133792|h[Lingering Gaze]|h|r!", -- [2]
+				"Appraising Eye", -- [3]
+				3, -- [4]
+			}, -- [12]
+			{
+				86.32699999999022, -- [1]
+				"The Infrared Light reveals a Crimson Fog!", -- [2]
+				"Crimson Fog", -- [3]
+				3, -- [4]
+			}, -- [13]
+			{
+				88.92300000000978, -- [1]
+				"|TInterface\\Icons\\ability_monk_forcesphere.blp:20|tDurumu begins charging up his Mind's Eye to cast |cFFFF0000|Hspell:136932|h[Force of Will]|h|r on |cFFFF0000Syhlol|r!", -- [2]
+				"Mind's Eye", -- [3]
+				3, -- [4]
+			}, -- [14]
+			{
+				104.6549999999988, -- [1]
+				"Observe your demise.", -- [2]
+				"Durumu the Forgotten", -- [3]
+				7, -- [4]
+			}, -- [15]
+			{
+				104.6549999999988, -- [1]
+				"|TInterface\\Icons\\inv_misc_eye_02.blp:20|tDurumu begins charging up his Appraising Eye to cast |cFFFF0000|Hspell:133792|h[Lingering Gaze]|h|r!", -- [2]
+				"Appraising Eye", -- [3]
+				3, -- [4]
+			}, -- [16]
+			{
+				110.7719999999972, -- [1]
+				"|TInterface\\Icons\\ability_monk_forcesphere.blp:20|tDurumu begins charging up his Mind's Eye to cast |cFFFF0000|Hspell:136932|h[Force of Will]|h|r on |cFFFF0000Syhlol|r!", -- [2]
+				"Mind's Eye", -- [3]
+				3, -- [4]
+			}, -- [17]
+			{
+				122.8559999999998, -- [1]
+				"|TInterface\\Icons\\spell_shadow_curseofmannoroth.blp:20|tDurumu begins charging up his Evil Eye to cast |cFFFF0000|Hspell:133597|h[Dark Parasite]|h|r on |cFFFF0000Syhlol|r!", -- [2]
+				"Evil Eye", -- [3]
+				3, -- [4]
+			}, -- [18]
+			{
+				135.8010000000068, -- [1]
+				"|TInterface\\Icons\\inv_misc_dust.blp:20|tDurumu begins charging up his eye to cast |cFFFF0000|Hspell:134169|h[Disintegration]|h|r!", -- [2]
+				"Durumu the Forgotten", -- [3]
+				3, -- [4]
+			}, -- [19]
+			{
+				135.8010000000068, -- [1]
+				"Watch your footing ... muhahaha!", -- [2]
+				"Durumu the Forgotten", -- [3]
+				7, -- [4]
+			}, -- [20]
+			{
+				201.6080000000075, -- [1]
+				"Observe your demise.", -- [2]
+				"Durumu the Forgotten", -- [3]
+				7, -- [4]
+			}, -- [21]
+			{
+				231.9709999999905, -- [1]
+				"The mists hide many secrets ... if you know where to look.", -- [2]
+				"Durumu the Forgotten", -- [3]
+				7, -- [4]
+			}, -- [22]
+			{
+				231.9709999999905, -- [1]
+				"Use the cones of light to find and defeat the hidden Crimson Fogs!", -- [2]
+				"Durumu the Forgotten", -- [3]
+				1, -- [4]
+			}, -- [23]
+			{
+				231.9709999999905, -- [1]
+				"|TInterface\\Icons\\priest_icon_chakra_blue.blp:20|tDurumu begins charging up his Blue Eye to cast |cFFFF0000|Hspell:134122|h[Blue Rays]|h|r on |cFFFF0000Juliia|r!", -- [2]
+				"Blue Eye", -- [3]
+				3, -- [4]
+			}, -- [24]
+			{
+				231.9709999999905, -- [1]
+				"|TInterface\\Icons\\priest_icon_chakra_red.blp:20|tDurumu begins charging up his Red Eye to cast |cFFFF0000|Hspell:134123|h[Infrared Light]|h|r on |cFFFF0000Syhlol|r!", -- [2]
+				"Red Eye", -- [3]
+				3, -- [4]
+			}, -- [25]
+			{
+				231.9709999999905, -- [1]
+				"|TInterface\\Icons\\priest_icon_chakra.blp:20|tDurumu begins charging up his Yellow Eye to cast |cFFFF0000|Hspell:134124|h[Bright Light]|h|r on |cFFFF0000Juliia|r!", -- [2]
+				"Yellow Eye", -- [3]
+				3, -- [4]
+			}, -- [26]
+			{
+				246.8550000000105, -- [1]
+				"The Infrared Light reveals a Crimson Fog!", -- [2]
+				"Crimson Fog", -- [3]
+				3, -- [4]
+			}, -- [27]
+			{
+				253.7820000000065, -- [1]
+				"Observe your demise.", -- [2]
+				"Durumu the Forgotten", -- [3]
+				7, -- [4]
+			}, -- [28]
+			{
+				253.7820000000065, -- [1]
+				"|TInterface\\Icons\\inv_misc_eye_02.blp:20|tDurumu begins charging up his Appraising Eye to cast |cFFFF0000|Hspell:133792|h[Lingering Gaze]|h|r!", -- [2]
+				"Appraising Eye", -- [3]
+				3, -- [4]
+			}, -- [29]
+			{
+				261.3349999999919, -- [1]
+				"|TInterface\\Icons\\spell_shadow_lifedrain02.blp:20|tDurumu begins charging up his Hungry Eye to cast |cFFFF0000|Hspell:133795|h[Life Drain]|h|r on |cFFFF0000Juliia|r!", -- [2]
+				"Hungry Eye", -- [3]
+				3, -- [4]
+			}, -- [30]
+			{
+				262.6110000000044, -- [1]
+				"The Blue Rays reveal an Azure Fog!", -- [2]
+				"Azure Fog", -- [3]
+				3, -- [4]
+			}, -- [31]
+			{
+				267.051999999996, -- [1]
+				"The Infrared Light reveals a Crimson Fog!", -- [2]
+				"Crimson Fog", -- [3]
+				3, -- [4]
+			}, -- [32]
+			{
+				274.5130000000063, -- [1]
+				"The Infrared Light reveals a Crimson Fog!", -- [2]
+				"Crimson Fog", -- [3]
+				3, -- [4]
+			}, -- [33]
+			{
+				275.054999999993, -- [1]
+				"The Bright  Light reveals an Amber Fog!", -- [2]
+				"Amber Fog", -- [3]
+				3, -- [4]
+			}, -- [34]
+			{
+				275.6210000000137, -- [1]
+				"|TInterface\\Icons\\spell_shadow_curseofmannoroth.blp:20|tDurumu begins charging up his Evil Eye to cast |cFFFF0000|Hspell:133597|h[Dark Parasite]|h|r on |cFFFF0000Juliia|r!", -- [2]
+				"Evil Eye", -- [3]
+				3, -- [4]
+			}, -- [35]
+			{
+				291.3669999999984, -- [1]
+				"Observe your demise.", -- [2]
+				"Durumu the Forgotten", -- [3]
+				7, -- [4]
+			}, -- [36]
+			{
+				291.3669999999984, -- [1]
+				"|TInterface\\Icons\\inv_misc_eye_02.blp:20|tDurumu begins charging up his Appraising Eye to cast |cFFFF0000|Hspell:133792|h[Lingering Gaze]|h|r!", -- [2]
+				"Appraising Eye", -- [3]
+				3, -- [4]
+			}, -- [37]
+			{
+				320.4670000000042, -- [1]
+				"Observe your demise.", -- [2]
+				"Durumu the Forgotten", -- [3]
+				7, -- [4]
+			}, -- [38]
+			{
+				320.4670000000042, -- [1]
+				"|TInterface\\Icons\\inv_misc_eye_02.blp:20|tDurumu begins charging up his Appraising Eye to cast |cFFFF0000|Hspell:133792|h[Lingering Gaze]|h|r!", -- [2]
+				"Appraising Eye", -- [3]
+				3, -- [4]
+			}, -- [39]
+			{
+				326.5119999999879, -- [1]
+				"|TInterface\\Icons\\inv_misc_dust.blp:20|tDurumu begins charging up his eye to cast |cFFFF0000|Hspell:134169|h[Disintegration]|h|r!", -- [2]
+				"Durumu the Forgotten", -- [3]
+				3, -- [4]
+			}, -- [40]
+			{
+				326.5119999999879, -- [1]
+				"Watch your footing ... muhahaha!", -- [2]
+				"Durumu the Forgotten", -- [3]
+				7, -- [4]
+			}, -- [41]
+			{
+				407.6009999999951, -- [1]
+				"I'm keeping an eye on you.", -- [2]
+				"Durumu the Forgotten", -- [3]
+				7, -- [4]
+			}, -- [42]
+			{
+				422.1199999999953, -- [1]
+				"The mists hide many secrets ... if you know where to look.", -- [2]
+				"Durumu the Forgotten", -- [3]
+				7, -- [4]
+			}, -- [43]
+			{
+				422.1199999999953, -- [1]
+				"Use the cones of light to find and defeat the hidden Crimson Fogs!", -- [2]
+				"Durumu the Forgotten", -- [3]
+				1, -- [4]
+			}, -- [44]
+			{
+				422.1199999999953, -- [1]
+				"|TInterface\\Icons\\priest_icon_chakra_blue.blp:20|tDurumu begins charging up his Blue Eye to cast |cFFFF0000|Hspell:134122|h[Blue Rays]|h|r on |cFFFF0000Juliia|r!", -- [2]
+				"Blue Eye", -- [3]
+				3, -- [4]
+			}, -- [45]
+			{
+				422.1199999999953, -- [1]
+				"|TInterface\\Icons\\priest_icon_chakra_red.blp:20|tDurumu begins charging up his Red Eye to cast |cFFFF0000|Hspell:134123|h[Infrared Light]|h|r on |cFFFF0000Syhlol|r!", -- [2]
+				"Red Eye", -- [3]
+				3, -- [4]
+			}, -- [46]
+			{
+				422.1199999999953, -- [1]
+				"|TInterface\\Icons\\priest_icon_chakra.blp:20|tDurumu begins charging up his Yellow Eye to cast |cFFFF0000|Hspell:134124|h[Bright Light]|h|r on |cFFFF0000Syhlol|r!", -- [2]
+				"Yellow Eye", -- [3]
+				3, -- [4]
+			}, -- [47]
+			{
+				432.3569999999891, -- [1]
+				"The Blue Rays reveal an Azure Fog!", -- [2]
+				"Azure Fog", -- [3]
+				3, -- [4]
+			}, -- [48]
+			{
+				436.7090000000026, -- [1]
+				"The Blue Rays reveal an Azure Fog!", -- [2]
+				"Azure Fog", -- [3]
+				3, -- [4]
+			}, -- [49]
+			{
+				442.7580000000016, -- [1]
+				"|TInterface\\Icons\\inv_misc_eye_02.blp:20|tDurumu begins charging up his Appraising Eye to cast |cFFFF0000|Hspell:133792|h[Lingering Gaze]|h|r!", -- [2]
+				"Appraising Eye", -- [3]
+				3, -- [4]
+			}, -- [50]
+			{
+				450.3640000000014, -- [1]
+				"|TInterface\\Icons\\spell_shadow_lifedrain02.blp:20|tDurumu begins charging up his Hungry Eye to cast |cFFFF0000|Hspell:133795|h[Life Drain]|h|r on |cFFFF0000Juliia|r!", -- [2]
+				"Hungry Eye", -- [3]
+				3, -- [4]
+			}, -- [51]
+			{
+				463.8669999999984, -- [1]
+				"|TInterface\\Icons\\spell_shadow_curseofmannoroth.blp:20|tDurumu begins charging up his Evil Eye to cast |cFFFF0000|Hspell:133597|h[Dark Parasite]|h|r on |cFFFF0000Juliia|r!", -- [2]
+				"Evil Eye", -- [3]
+				3, -- [4]
+			}, -- [52]
+			{
+				475.6389999999956, -- [1]
+				"The Infrared Light reveals a Crimson Fog!", -- [2]
+				"Crimson Fog", -- [3]
+				3, -- [4]
+			}, -- [53]
+			{
+				479.1909999999916, -- [1]
+				"I'm keeping an eye on you.", -- [2]
+				"Durumu the Forgotten", -- [3]
+				7, -- [4]
+			}, -- [54]
+			{
+				479.1909999999916, -- [1]
+				"|TInterface\\Icons\\inv_misc_eye_02.blp:20|tDurumu begins charging up his Appraising Eye to cast |cFFFF0000|Hspell:133792|h[Lingering Gaze]|h|r!", -- [2]
+				"Appraising Eye", -- [3]
+				3, -- [4]
+			}, -- [55]
+			{
+				488.1449999999895, -- [1]
+				"The Infrared Light reveals a Crimson Fog!", -- [2]
+				"Crimson Fog", -- [3]
+				3, -- [4]
+			}, -- [56]
+			{
+				497.2360000000044, -- [1]
+				"The Infrared Light reveals a Crimson Fog!", -- [2]
+				"Crimson Fog", -- [3]
+				3, -- [4]
+			}, -- [57]
+			{
+				504.6529999999912, -- [1]
+				"|TInterface\\Icons\\ability_monk_forcesphere.blp:20|tDurumu begins charging up his Mind's Eye to cast |cFFFF0000|Hspell:136932|h[Force of Will]|h|r on |cFFFF0000Juliia|r!", -- [2]
+				"Mind's Eye", -- [3]
+				3, -- [4]
+			}, -- [58]
+			["boss"] = "Durumu the Forgotten",
+		}, -- [2]
+		{
+			{
+				0.1719999999913853, -- [1]
+				"Behold the power of the void.", -- [2]
+				"Durumu the Forgotten", -- [3]
+				7, -- [4]
+			}, -- [1]
+			{
+				15.83100000000559, -- [1]
+				"|TInterface\\Icons\\inv_misc_eye_02.blp:20|tDurumu begins charging up his Appraising Eye to cast |cFFFF0000|Hspell:133792|h[Lingering Gaze]|h|r!", -- [2]
+				"Appraising Eye", -- [3]
+				3, -- [4]
+			}, -- [2]
+			{
+				32.37299999999232, -- [1]
+				"|TInterface\\Icons\\ability_monk_forcesphere.blp:20|tDurumu begins charging up his Mind's Eye to cast |cFFFF0000|Hspell:136932|h[Force of Will]|h|r on |cFFFF0000Juliia|r!", -- [2]
+				"Mind's Eye", -- [3]
+				3, -- [4]
+			}, -- [3]
+			{
+				41.26399999999558, -- [1]
+				"The mists hide many secrets ... if you know where to look.", -- [2]
+				"Durumu the Forgotten", -- [3]
+				7, -- [4]
+			}, -- [4]
+			{
+				41.26399999999558, -- [1]
+				"Use the cones of light to find and defeat the hidden Crimson Fogs!", -- [2]
+				"Durumu the Forgotten", -- [3]
+				1, -- [4]
+			}, -- [5]
+			{
+				41.26399999999558, -- [1]
+				"|TInterface\\Icons\\priest_icon_chakra_blue.blp:20|tDurumu begins charging up his Blue Eye to cast |cFFFF0000|Hspell:134122|h[Blue Rays]|h|r on |cFFFF0000Syhlol|r!", -- [2]
+				"Blue Eye", -- [3]
+				3, -- [4]
+			}, -- [6]
+			{
+				41.26399999999558, -- [1]
+				"|TInterface\\Icons\\priest_icon_chakra_red.blp:20|tDurumu begins charging up his Red Eye to cast |cFFFF0000|Hspell:134123|h[Infrared Light]|h|r on |cFFFF0000Juliia|r!", -- [2]
+				"Red Eye", -- [3]
+				3, -- [4]
+			}, -- [7]
+			{
+				41.26399999999558, -- [1]
+				"|TInterface\\Icons\\priest_icon_chakra.blp:20|tDurumu begins charging up his Yellow Eye to cast |cFFFF0000|Hspell:134124|h[Bright Light]|h|r on |cFFFF0000Syhlol|r!", -- [2]
+				"Yellow Eye", -- [3]
+				3, -- [4]
+			}, -- [8]
+			{
+				54.71199999999953, -- [1]
+				"The Infrared Light reveals a Crimson Fog!", -- [2]
+				"Crimson Fog", -- [3]
+				3, -- [4]
+			}, -- [9]
+			{
+				55.43600000001607, -- [1]
+				"The Bright  Light reveals an Amber Fog!", -- [2]
+				"Amber Fog", -- [3]
+				3, -- [4]
+			}, -- [10]
+			{
+				61.91000000000349, -- [1]
+				"I'm keeping an eye on you.", -- [2]
+				"Durumu the Forgotten", -- [3]
+				7, -- [4]
+			}, -- [11]
+			{
+				64.38099999999395, -- [1]
+				"The Blue Rays reveal an Azure Fog!", -- [2]
+				"Azure Fog", -- [3]
+				3, -- [4]
+			}, -- [12]
+			{
+				65.23099999999977, -- [1]
+				"The Infrared Light reveals a Crimson Fog!", -- [2]
+				"Crimson Fog", -- [3]
+				3, -- [4]
+			}, -- [13]
+			{
+				72.96199999999953, -- [1]
+				"The Blue Rays reveal an Azure Fog!", -- [2]
+				"Azure Fog", -- [3]
+				3, -- [4]
+			}, -- [14]
+			{
+				73.27999999999884, -- [1]
+				"The Infrared Light reveals a Crimson Fog!", -- [2]
+				"Crimson Fog", -- [3]
+				3, -- [4]
+			}, -- [15]
+			{
+				77.68299999998999, -- [1]
+				"|TInterface\\Icons\\ability_monk_forcesphere.blp:20|tDurumu begins charging up his Mind's Eye to cast |cFFFF0000|Hspell:136932|h[Force of Will]|h|r on |cFFFF0000Syhlol|r!", -- [2]
+				"Mind's Eye", -- [3]
+				3, -- [4]
+			}, -- [16]
+			{
+				83.74799999999232, -- [1]
+				"I'm keeping an eye on you.", -- [2]
+				"Durumu the Forgotten", -- [3]
+				7, -- [4]
+			}, -- [17]
+			{
+				83.74799999999232, -- [1]
+				"|TInterface\\Icons\\inv_misc_eye_02.blp:20|tDurumu begins charging up his Appraising Eye to cast |cFFFF0000|Hspell:133792|h[Lingering Gaze]|h|r!", -- [2]
+				"Appraising Eye", -- [3]
+				3, -- [4]
+			}, -- [18]
+			{
+				98.26000000000931, -- [1]
+				"|TInterface\\Icons\\ability_monk_forcesphere.blp:20|tDurumu begins charging up his Mind's Eye to cast |cFFFF0000|Hspell:136932|h[Force of Will]|h|r on |cFFFF0000Juliia|r!", -- [2]
+				"Mind's Eye", -- [3]
+				3, -- [4]
+			}, -- [19]
+			{
+				109.1259999999893, -- [1]
+				"|TInterface\\Icons\\inv_misc_eye_02.blp:20|tDurumu begins charging up his Appraising Eye to cast |cFFFF0000|Hspell:133792|h[Lingering Gaze]|h|r!", -- [2]
+				"Appraising Eye", -- [3]
+				3, -- [4]
+			}, -- [20]
+			{
+				118.8070000000007, -- [1]
+				"|TInterface\\Icons\\ability_monk_forcesphere.blp:20|tDurumu begins charging up his Mind's Eye to cast |cFFFF0000|Hspell:136932|h[Force of Will]|h|r on |cFFFF0000Juliia|r!", -- [2]
+				"Mind's Eye", -- [3]
+				3, -- [4]
+			}, -- [21]
+			{
+				124.8759999999893, -- [1]
+				"|TInterface\\Icons\\spell_shadow_curseofmannoroth.blp:20|tDurumu begins charging up his Evil Eye to cast |cFFFF0000|Hspell:133597|h[Dark Parasite]|h|r on |cFFFF0000Syhlol|r!", -- [2]
+				"Evil Eye", -- [3]
+				3, -- [4]
+			}, -- [22]
+			{
+				135.7490000000107, -- [1]
+				"|TInterface\\Icons\\inv_misc_dust.blp:20|tDurumu begins charging up his eye to cast |cFFFF0000|Hspell:134169|h[Disintegration]|h|r!", -- [2]
+				"Durumu the Forgotten", -- [3]
+				3, -- [4]
+			}, -- [23]
+			{
+				135.7490000000107, -- [1]
+				"Watch your footing ... muhahaha!", -- [2]
+				"Durumu the Forgotten", -- [3]
+				7, -- [4]
+			}, -- [24]
+			{
+				201.198000000004, -- [1]
+				"Observe your demise.", -- [2]
+				"Durumu the Forgotten", -- [3]
+				7, -- [4]
+			}, -- [25]
+			{
+				231.4670000000042, -- [1]
+				"The mists hide many secrets ... if you know where to look.", -- [2]
+				"Durumu the Forgotten", -- [3]
+				7, -- [4]
+			}, -- [26]
+			{
+				231.4670000000042, -- [1]
+				"Use the cones of light to find and defeat the hidden Crimson Fogs!", -- [2]
+				"Durumu the Forgotten", -- [3]
+				1, -- [4]
+			}, -- [27]
+			{
+				231.4670000000042, -- [1]
+				"|TInterface\\Icons\\priest_icon_chakra_blue.blp:20|tDurumu begins charging up his Blue Eye to cast |cFFFF0000|Hspell:134122|h[Blue Rays]|h|r on |cFFFF0000Syhlol|r!", -- [2]
+				"Blue Eye", -- [3]
+				3, -- [4]
+			}, -- [28]
+			{
+				231.4670000000042, -- [1]
+				"|TInterface\\Icons\\priest_icon_chakra_red.blp:20|tDurumu begins charging up his Red Eye to cast |cFFFF0000|Hspell:134123|h[Infrared Light]|h|r on |cFFFF0000Juliia|r!", -- [2]
+				"Red Eye", -- [3]
+				3, -- [4]
+			}, -- [29]
+			{
+				231.4670000000042, -- [1]
+				"|TInterface\\Icons\\priest_icon_chakra.blp:20|tDurumu begins charging up his Yellow Eye to cast |cFFFF0000|Hspell:134124|h[Bright Light]|h|r on |cFFFF0000Syhlol|r!", -- [2]
+				"Yellow Eye", -- [3]
+				3, -- [4]
+			}, -- [30]
+			{
+				241.6739999999991, -- [1]
+				"The Blue Rays reveal an Azure Fog!", -- [2]
+				"Azure Fog", -- [3]
+				3, -- [4]
+			}, -- [31]
+			{
+				241.6739999999991, -- [1]
+				"The Infrared Light reveals a Crimson Fog!", -- [2]
+				"Crimson Fog", -- [3]
+				3, -- [4]
+			}, -- [32]
+			{
+				253.2790000000096, -- [1]
+				"|TInterface\\Icons\\inv_misc_eye_02.blp:20|tDurumu begins charging up his Appraising Eye to cast |cFFFF0000|Hspell:133792|h[Lingering Gaze]|h|r!", -- [2]
+				"Appraising Eye", -- [3]
+				3, -- [4]
+			}, -- [33]
+			{
+				259.3479999999981, -- [1]
+				"I'm keeping an eye on you.", -- [2]
+				"Durumu the Forgotten", -- [3]
+				7, -- [4]
+			}, -- [34]
+			{
+				260.880999999994, -- [1]
+				"|TInterface\\Icons\\spell_shadow_lifedrain02.blp:20|tDurumu begins charging up his Hungry Eye to cast |cFFFF0000|Hspell:133795|h[Life Drain]|h|r on |cFFFF0000Syhlol|r!", -- [2]
+				"Hungry Eye", -- [3]
+				3, -- [4]
+			}, -- [35]
+			{
+				275.137000000017, -- [1]
+				"|TInterface\\Icons\\spell_shadow_curseofmannoroth.blp:20|tDurumu begins charging up his Evil Eye to cast |cFFFF0000|Hspell:133597|h[Dark Parasite]|h|r on |cFFFF0000Syhlol|r!", -- [2]
+				"Evil Eye", -- [3]
+				3, -- [4]
+			}, -- [36]
+			{
+				283.0659999999916, -- [1]
+				"The Infrared Light reveals a Crimson Fog!", -- [2]
+				"Crimson Fog", -- [3]
+				3, -- [4]
+			}, -- [37]
+			{
+				290.8220000000147, -- [1]
+				"Observe your demise.", -- [2]
+				"Durumu the Forgotten", -- [3]
+				7, -- [4]
+			}, -- [38]
+			{
+				290.8220000000147, -- [1]
+				"|TInterface\\Icons\\inv_misc_eye_02.blp:20|tDurumu begins charging up his Appraising Eye to cast |cFFFF0000|Hspell:133792|h[Lingering Gaze]|h|r!", -- [2]
+				"Appraising Eye", -- [3]
+				3, -- [4]
+			}, -- [39]
+			{
+				292.7119999999995, -- [1]
+				"The Infrared Light reveals a Crimson Fog!", -- [2]
+				"Crimson Fog", -- [3]
+				3, -- [4]
+			}, -- [40]
+			{
+				297.0050000000047, -- [1]
+				"|TInterface\\Icons\\ability_monk_forcesphere.blp:20|tDurumu begins charging up his Mind's Eye to cast |cFFFF0000|Hspell:136932|h[Force of Will]|h|r on |cFFFF0000Syhlol|r!", -- [2]
+				"Mind's Eye", -- [3]
+				3, -- [4]
+			}, -- [41]
+			{
+				303.0480000000098, -- [1]
+				"I'm keeping an eye on you.", -- [2]
+				"Durumu the Forgotten", -- [3]
+				7, -- [4]
+			}, -- [42]
+			["boss"] = "Durumu the Forgotten",
+		}, -- [3]
 	},
 }

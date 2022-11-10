@@ -13,10 +13,11 @@ BattleGroundEnemiesDB = {
 		["Cyf - Tichondrius"] = "Default",
 		["Wthrename - Tichondrius"] = "Default",
 		["Gerold - Tichondrius"] = "Default",
+		["Syhlo - Tichondrius"] = "Default",
 		["Syhlo - Thrall"] = "Default",
 		["Pandamounts - Tichondrius"] = "Default",
 		["Youreterribl - Burning Legion"] = "Default",
-		["Syhdk - Thrall"] = "Default",
+		["Syhdk - Thrall"] = "Global",
 		["Syh - Thrall"] = "Default",
 	},
 	["profiles"] = {
@@ -29,46 +30,66 @@ BattleGroundEnemiesDB = {
 					["Position_X"] = 1125.333099846845,
 				},
 			},
-			["Font"] = "Arial Narrow",
 			["Locked"] = true,
-			["lastReadVersion"] = "9.2.0.11",
+			["Font"] = "Arial Narrow",
+			["DisableArenaFrames"] = true,
 			["Enemies"] = {
 				["40"] = {
 					["Enabled"] = false,
 				},
-				["5"] = {
-					["Enabled"] = false,
+				["RangeIndicator_Frames"] = {
+					["healthBar"] = true,
 				},
 				["15"] = {
-					["NumericTargetindicator_EnableTextshadow"] = true,
-					["Position_Y"] = 526.9336933149316,
 					["BarVerticalSpacing"] = 4,
-					["ObjectiveAndRespawn_Cooldown_EnableTextshadow"] = true,
-					["DrTracking_HorizontalSpacing"] = 3,
-					["PlayerCount_Enabled"] = false,
-					["Auras_Enabled"] = false,
 					["SymbolicTargetindicator_Enabled"] = false,
-					["PowerBar_Texture"] = "Minimalist",
-					["HealthBar_Texture"] = "Minimalist",
-					["Name_Fontsize"] = 12,
-					["Spec_Enabled"] = false,
-					["Position_X"] = 940.7998491697799,
+					["Auras_Enabled"] = false,
+					["PowerBar_Height"] = 3,
 					["Racial_Enabled"] = false,
+					["HealthBar_Texture"] = "Minimalist",
+					["PowerBar_Texture"] = "Minimalist",
+					["Name_Fontsize"] = 12,
 					["DrTracking_Container_Color"] = {
 						nil, -- [1]
 						nil, -- [2]
 						nil, -- [3]
 						0, -- [4]
 					},
+					["Spec_Enabled"] = false,
+					["ObjectiveAndRespawn_Cooldown_EnableTextshadow"] = true,
+					["DrTracking_HorizontalSpacing"] = 3,
+					["NumericTargetindicator_EnableTextshadow"] = true,
 					["PowerBar_Enabled"] = true,
-					["PowerBar_Height"] = 3,
+					["Position_Y"] = 526.9336933149316,
+					["PlayerCount_Enabled"] = false,
+					["Position_X"] = 940.7998491697799,
 				},
-				["RangeIndicator_Frames"] = {
-					["DRContainer"] = false,
-					["healthBar"] = true,
+				["5"] = {
+					["Enabled"] = false,
 				},
 			},
-			["DisableArenaFrames"] = true,
+			["lastReadVersion"] = "9.2.7.2",
+		},
+		["Global"] = {
+			["Font"] = "Cabin",
+			["Allies"] = {
+				["Enabled"] = false,
+			},
+			["onlyShowWhenNewVersion"] = true,
+			["lastReadVersion"] = "10.0.0.1",
+			["Locked"] = true,
+			["Enemies"] = {
+				["5"] = {
+					["Enabled"] = false,
+				},
+				["15"] = {
+					["Position_Y"] = 565.3333904253122,
+					["Position_X"] = 921.600543149325,
+				},
+				["40"] = {
+					["Enabled"] = false,
+				},
+			},
 		},
 	},
 }

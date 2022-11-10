@@ -66,6 +66,21 @@ do
 	end
 end
 
+-- iterate over a list of values example: for value in Grid2.IterateValues(4,2,7,1) do
+function Grid2.IterateValues(...)
+  local i, t = 0, {...}
+  return function() i = i + 1; return t[i] end
+end
+
+-- retrieve config value, falling back to default
+function Grid2.GetSetupValue(condition, value, default)
+	if condition and value~=nil then
+		return value
+	else
+		return default
+	end
+end
+
 -- UTF8 string truncate
 do
 	local strbyte = string.byte
@@ -150,6 +165,12 @@ Grid2.statusLibrary = {
 		for unit in Grid2:IterateRosterUnits() do
 			self:UpdateIndicators(unit)
 		end
+	end,
+	GetTexCoord = function()
+		return 0.05, 0.95, 0.05, 0.95
+	end,
+	GetTexCoordZoomed = function()
+		return 0.08, 0.92, 0.08, 0.92
 	end,
 }
 
@@ -264,10 +285,14 @@ do
 				dispel.Disease = IsPlayerSpell(552) or IsPlayerSpell(528)
 			end
 		elseif class == 'SHAMAN' then
-			func = function()
+			func = Grid2.isWrath and (function()
+				dispel.Disease = IsPlayerSpell(2870) or IsPlayerSpell(526) or IsPlayerSpell(51886)
+				dispel.Poison  = IsPlayerSpell(526) or IsPlayerSpell(51886)
+				dispel.Curse   = IsPlayerSpell(51886)
+			end) or (function()
 				dispel.Disease = IsPlayerSpell(2870)
 				dispel.Poison  = IsPlayerSpell(526)
-			end
+			end)
 		elseif class == 'MAGE' then
 			func = function()
 				dispel.Curse = IsPlayerSpell(475)
@@ -313,6 +338,13 @@ do
 				dispel.Magic   = IsPlayerSpell(115450)
 				dispel.Disease = IsPlayerSpell(115450) or IsPlayerSpell(218164)
 				dispel.Poison  = IsPlayerSpell(115450) or IsPlayerSpell(218164)
+			end
+		elseif class == 'EVOKER' then
+			func = function()
+				dispel.Magic   = IsPlayerSpell(360823)
+				dispel.Curse   = IsPlayerSpell(374251)
+				dispel.Poison  = IsPlayerSpell(360823) or IsPlayerSpell(365585)
+				dispel.Disease = IsPlayerSpell(374251)
 			end
 		end
 	end
@@ -382,3 +414,85 @@ function Grid2:SetMinimapIcon(value)
 		Grid2Layout.minimapIcon:Show("Grid2")
 	end
 end
+
+
+-- Hide blizzard raid & party frames
+do
+	local hiddenFrame
+
+	local function rehide(self)
+		if not InCombatLockdown() then self:Hide() end
+	end
+
+	local function unregister(f)
+		if f then f:UnregisterAllEvents() end
+	end
+
+	local function hideFrame(frame)
+		if frame then
+			UnregisterUnitWatch(frame)
+			frame:Hide()
+			frame:UnregisterAllEvents()
+			frame:SetParent(hiddenFrame)
+			frame:HookScript("OnShow", rehide)
+			unregister(frame.healthbar)
+			unregister(frame.manabar)
+			unregister(frame.powerBarAlt)
+			unregister(frame.spellbar)
+		end
+	end
+
+	-- party frames
+	local function HidePartyFrames()
+		hiddenFrame = hiddenFrame or CreateFrame('Frame')
+		hiddenFrame:Hide()
+		if PartyFrame then
+			hideFrame(PartyFrame)
+			for frame in PartyFrame.PartyMemberFramePool:EnumerateActive() do
+				hideFrame(frame)
+				hideFrame(frame.HealthBar)
+				hideFrame(frame.ManaBar)
+			end
+			PartyFrame.PartyMemberFramePool:ReleaseAll()
+		end
+		hideFrame(CompactPartyFrame)
+		UIParent:UnregisterEvent("GROUP_ROSTER_UPDATE") -- used by compact party frame
+	end
+
+	-- raid frames
+	local function HideRaidFrames()
+		if not CompactRaidFrameManager then return end
+		local function HideFrames()
+			CompactRaidFrameManager:UnregisterAllEvents()
+			CompactRaidFrameContainer:UnregisterAllEvents()
+			if not InCombatLockdown() then
+				CompactRaidFrameManager:Hide()
+				local shown = CompactRaidFrameManager_GetSetting('IsShown')
+				if shown and shown ~= '0' then
+					CompactRaidFrameManager_SetSetting('IsShown', '0')
+				end
+			end
+		end
+		hiddenFrame = hiddenFrame or CreateFrame('Frame')
+		hiddenFrame:Hide()
+		hooksecurefunc('CompactRaidFrameManager_UpdateShown', HideFrames)
+		CompactRaidFrameManager:HookScript('OnShow', HideFrames)
+		CompactRaidFrameContainer:HookScript('OnShow', HideFrames)
+		HideFrames()
+	end
+
+	-- Only for dragonflight, for classic compactRaidFrames addon is disabled from options
+	function Grid2:UpdateBlizzardFrames()
+		if self.isWoW90 then
+			local v = self.db.profile.hideBlizzardRaidFrames
+			if v==true or v==2 then
+				HideRaidFrames()
+			end
+			if v==true or v==1 then
+				HidePartyFrames()
+			end
+		end
+		self.UpdateBlizzardFrames = nil
+	end
+end
+

@@ -3,7 +3,6 @@ local L = Grid2Options.L
 local DEFAULT_FREQS = { 0.25, 0.12, 0.12 }
 local COLOR_VALUES = { [1] = L["Status Color"], [2] = L["Custom Color"] }
 local EFFECT_VALUES = { [1] = L['Pixel'], [2] = L['Shine'], [3] = L["Blizzard"] }
-if Grid2.isClassic then EFFECT_VALUES[2] = nil end
 
 local function CheckBlizzardGlowEffectNotUsed(indExcluded)
 	for _,indicator in Grid2:IterateIndicators() do
@@ -15,14 +14,7 @@ local function CheckBlizzardGlowEffectNotUsed(indExcluded)
 	return true
 end
 
-Grid2Options:RegisterIndicatorOptions("glowborder", true, function(self, indicator)
-	local statuses, options = {}, {}
-	self:MakeIndicatorBorderGlowOptions(indicator, options)
-	self:MakeIndicatorStatusOptions(indicator, statuses)
-	self:AddIndicatorOptions(indicator, statuses, options)
-end)
-
-function Grid2Options:MakeIndicatorBorderGlowOptions(indicator,options)
+local function MakeBorderGlowOptions(self, indicator,options)
 	options.colorSource = {
 			type = "select",
 			order = 10,
@@ -191,3 +183,9 @@ function Grid2Options:MakeIndicatorBorderGlowOptions(indicator,options)
 	return options
 end
 
+Grid2Options:RegisterIndicatorOptions("glowborder", true, function(self, indicator)
+	local statuses, options = {}, {}
+	MakeBorderGlowOptions(self, indicator, options)
+	self:MakeIndicatorStatusOptions(indicator, statuses)
+	self:AddIndicatorOptions(indicator, statuses, options)
+end)

@@ -9,3 +9,7 @@ Bagnon_GuildBank: disabled
 Capping_Options: enabled
 Favorites: disabled
 DynamicCam: enabled
+Storyline: disabled
+AutoGear: disabled
+Blizzard_ObjectiveTracker: enabled
+Blizzard_CompactRaidFrames: enabled

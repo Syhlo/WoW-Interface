@@ -1,5 +1,5 @@
-## Interface: 90207
-## Title: + |TInterface\Addons\Sorted\Textures\Title:24:96|t
+## Interface: 100000
+## Title: |A:::|a|TInterface\Addons\Sorted\Textures\Title:24:96|t
 ## Notes: Modern bag interface with efficient searching and filters.
 ## Notes-frFR: Interface de Sac moderne avec un système de recherche et de filtre efficace.
 ## Notes-deDE: Moderne Taschendarstellung mit effzienter Suche und Filtern.
@@ -9,9 +9,9 @@
 ## Notes-esES: Interfaz de bolsa moderna con búsqueda eficiente y filtros.
 ## Notes-esMX: Interfaz de bolsa moderna con búsqueda eficiente y filtros.
 ## Notes-ptBR: Uma bolsa com interface moderana, com funções eficientes de filtros e procura.
-## Version: 1.2.33
+## Version: 2.1.0
 ## Author: Daft Vader
-## SavedVariables: Sorted_Data, Sorted_enabledColumns, Sorted_settingsProfiles, Sorted_sortButtonOrder
+## SavedVariables: Sorted_Data, Sorted_SettingsProfiles
 ## DefaultState: enabled
 
 
@@ -19,23 +19,35 @@ Libs\LibStub\LibStub.lua
 Libs\CallbackHandler-1.0\CallbackHandler-1.0.lua
 Libs\lib.xml
 
-API.lua
-Locales.lua
 Utilities.lua
-Data.lua
-
-Templates.lua
 Templates.xml
-DropdownMenu.lua
-
-Tooltip.lua
+Color.lua
+FrameTools.lua
 IconPicker.lua
-ItemButton.lua
-ItemList.lua
+Locales.lua
+Tooltip.lua
+Settings.lua
+Data.lua
+Category.lua
 Filtering.lua
-Skinning.lua
 Sorting.lua
+Skinning.lua
+
+EntryButton.lua
+EntryButton_Item.lua
+EntryButton_Currency.lua
+List.lua
+List_Items.lua
+List_Guild.lua
+List_Currencies.lua
+
+FrameBuilder.lua
+FrameBuilder_GuildBank.lua
+SettingsProfiles.lua
+SettingsFrame.lua
+SettingsFrame_Categories.lua
+DropdownMenu.lua
+MarkerIconMenu.lua
 Sorted.lua
 
-Sorted.xml
-ConfigFrame.xml
+API.lua

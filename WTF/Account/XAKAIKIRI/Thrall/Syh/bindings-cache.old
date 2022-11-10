@@ -1,5 +1,5 @@
 bind BUTTON3 TOGGLEAUTORUN
-bind UP CAMERAZOOMIN
+bind UP CLICK BT4Button14:LeftButton
 bind S CLICK BT4Button61:LeftButton
 bind DOWN CAMERAZOOMOUT
 bind LEFT NONE
@@ -10,6 +10,7 @@ bind Z CLICK BT4Button97:LeftButton
 bind NUMLOCK NONE
 bind BUTTON4 NONE
 bind NUMPADDIVIDE CLICK BT4Button34:LeftButton
+bind PAGEUP CLICK BT4Button15:LeftButton
 bind R NONE
 bind SHIFT-R REPLY
 bind 7 NONE
@@ -53,6 +54,7 @@ bind CTRL-- CLICK BT4Button71:LeftButton
 bind ALT-Z NONE
 bind MOUSEWHEELUP NONE
 bind MOUSEWHEELDOWN NONE
+bind HOME CLICK BT4Button13:LeftButton
 bind NUMPAD5 CLICK BT4Button29:LeftButton
 bind NUMPAD1 CLICK BT4Button25:LeftButton
 bind NUMPAD3 CLICK BT4Button27:LeftButton

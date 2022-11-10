@@ -382,6 +382,17 @@ do
         unitchanged = true
         break -- one change is enough to update the unit
       end
+      -- Delete the key to not process it a second time in the loop following this one
+      unitcache[key] = nil
+    end
+
+    -- Also check keys removed from unit
+    for key, value in pairs(unitcache) do
+      if unit[key] ~= value then
+        unitchanged = true
+        break -- one change is enough to update the unit
+      end
+      unitcache[key] = nil
     end
 
     -- Update Style/Indicators
@@ -397,14 +408,14 @@ do
 
     -- Cache the old unit information
     UpdateUnitCache()
-	end
+  end
 
 	---------------------------------------------------------------------------------------------------------------------
 	-- Create / Hide / Show Event Handlers
 	---------------------------------------------------------------------------------------------------------------------
 
   function Addon:UpdateNameplateStyle(plate, unitid)
-    if UnitReaction(unitid, "player") > 4 then
+    if unit.reaction == "FRIENDLY" then
       if SettingsShowFriendlyBlizzardNameplates then
         plate.UnitFrame:Show()
         plate.TPFrame:Hide()
@@ -1021,7 +1032,8 @@ local function FrameOnShow(UnitFrame)
   end
 
   -- Hide ThreatPlates nameplates if Blizzard nameplates should be shown for friendly units
-  if UnitReaction(unitid, "player") > 4 then
+  local unit_reaction = UnitReaction(unitid, "player") or 0
+  if unit_reaction > 4 then
     UnitFrame:SetShown(SettingsShowFriendlyBlizzardNameplates)
   else
     UnitFrame:SetShown(SettingsShowEnemyBlizzardNameplates)
@@ -1105,9 +1117,12 @@ end
 
 -- Payload: { Name = "unitToken", Type = "string", Nilable = false },
 function CoreEvents:NAME_PLATE_UNIT_ADDED(unitid)
-  -- Player's personal resource bar is currently not handled by Threat Plates
-  -- OnShowNameplate is not called on it, therefore plate.TPFrame.Active is nil
-  if UnitIsUnit("player", unitid) or UnitNameplateShowsWidgetsOnly(unitid) then return end
+  -- Player's personal nameplate:
+  --   This nameplate is currently not handled by Threat Plates - OnShowNameplate is not called on it, therefore plate.TPFrame.Active is nil
+  -- Nameplates for non-existing units:
+  --   There are some nameplates for units that do not exists, e.g. Ring of Transference in Oribos. For the time being, we don't show them.
+  --   Without not UnitExists(unitid) they would be shown as nameplates with health 0 and maybe cause Lua errors
+  if UnitIsUnit("player", unitid) or UnitNameplateShowsWidgetsOnly(unitid) or not UnitExists(unitid) then return end
 
   OnShowNameplate(GetNamePlateForUnit(unitid), unitid)
 end
@@ -1707,13 +1722,6 @@ do
     SetObjectAnchor(extended, style.frame.anchor or "CENTER", nameplate, style.frame.x or 0, style.frame.y or 0)
     extended:SetSize(style.healthbar.width, style.healthbar.height)
 
---    if not extended.TestBackground then
---      extended.TestBackground = extended:CreateTexture(nil, "BACKGROUND")
---      extended.TestBackground:SetAllPoints(extended)
---      extended.TestBackground:SetTexture(Addon.LibSharedMedia:Fetch('statusbar', Addon.db.profile.AuraWidget.BackgroundTexture))
---      extended.TestBackground:SetVertexColor(0,0,0,0.5)
---    end
-
     -- Anchorgroup
 		for index = 1, #anchorgroup do
 			local objectname = anchorgroup[index]
@@ -1851,7 +1859,7 @@ function Addon:ConfigClickableArea(toggle_show)
         local extended = ConfigModePlate.TPFrame
 
         -- Draw background to show for clickable area
-        extended.Background = _G.CreateFrame("Frame", nil, extended, BackdropTemplate)
+        extended.Background = _G.CreateFrame("Frame", nil, ConfigModePlate, BackdropTemplate)
         extended.Background:SetBackdrop({
           bgFile = ThreatPlates.Art .. "TP_WhiteSquare.tga",
           edgeFile = ThreatPlates.Art .. "TP_WhiteSquare.tga",
@@ -1862,17 +1870,14 @@ function Addon:ConfigClickableArea(toggle_show)
         extended.Background:SetBackdropBorderColor(0, 0, 0, 0.8)
         extended.Background:SetPoint("CENTER", ConfigModePlate.UnitFrame, "CENTER")
 
-        local width, height = Addon.db.profile.settings.frame.width, Addon.db.profile.settings.frame.height
-
-        local min_scale = CVars:GetAsNumber("nameplateMinScale")
-        --local selected_scale = CVars:GetAsNumber("nameplateSelectedScale")
-        local global_scale = CVars:GetAsNumber("nameplateGlobalScale")
-        local current_scale = global_scale * min_scale
-
-        width = width * current_scale
-        height = height * current_scale
-
+        local width, height
+        if extended.unit.reaction == "FRIENDLY" then          
+          width, height = C_NamePlate.GetNamePlateFriendlySize()
+        else
+          width, height = C_NamePlate.GetNamePlateEnemySize()
+        end
         extended.Background:SetSize(width, height)
+
         extended.Background:Show()
 
         -- remove the config background if the nameplate is hidden to prevent it

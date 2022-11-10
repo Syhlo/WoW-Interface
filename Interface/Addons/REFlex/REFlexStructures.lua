@@ -54,7 +54,9 @@ RE.MapList = {
 	[980] = RE:GetShortMapName(GetRealZoneText(980)),
 	[1911] = RE:GetShortMapName(GetRealZoneText(1911)),
 	[1825] = RE:GetShortMapName(GetRealZoneText(1825)),
-	[2167] = RE:GetShortMapName(GetRealZoneText(2167))
+	[2167] = RE:GetShortMapName(GetRealZoneText(2167)),
+	[2509] = RE:GetShortMapName(GetRealZoneText(2509)),
+	[2563] = RE:GetShortMapName(GetRealZoneText(2563))
 }
 
 RE.MapListLongBG = {
@@ -92,7 +94,9 @@ RE.MapListLongArena = {
 	[980] = GetRealZoneText(980),
 	[1911] = GetRealZoneText(1911),
 	[1825] = GetRealZoneText(1825),
-	[2167] = GetRealZoneText(2167)
+	[2167] = GetRealZoneText(2167),
+	[2509] = GetRealZoneText(2509),
+	[2563] = GetRealZoneText(2563)
 }
 
 RE.MapListLongOrderBG = {
@@ -100,7 +104,7 @@ RE.MapListLongOrderBG = {
 }
 
 RE.MapListLongOrderArena = {
-	1, 1552, 1504, 1672, 617, 2547, 2373, 1825, 1911, 1505, 1134, 2167, 980, 572
+	1, 1552, 1504, 1672, 617, 2547, 2373, 1825, 1911, 1505, 1134, 2167, 980, 572, 2509, 2563
 }
 
 RE.MapListStat = {
@@ -123,49 +127,54 @@ RE.MapListStat = {
 }
 
 RE.RaceIcons = {
-	["Human"]	= {0.86084, 0.89209, 0.000976562, 0.0634766},
-	["Humans"]	= {0.86084, 0.89209, 0.000976562, 0.0634766},
-	["Dwarf"]	= {0.444824, 0.476074, 0.889648, 0.952148},
-	["Dwarves"]	= {0.444824, 0.476074, 0.889648, 0.952148},
-	["Gnome"]	= {0.66748, 0.69873, 0.000976562, 0.0634766},
-	["Gnomes"]	= {0.66748, 0.69873, 0.000976562, 0.0634766},
-	["Night Elf"]	= {0.508301, 0.539551, 0.643555, 0.706055},
-	["Night elves"]	= {0.508301, 0.539551, 0.643555, 0.706055},
-	["Tauren"]	= {0.540527, 0.571777, 0.192383, 0.254883},
-	["Undead"]	= {0.540527, 0.571777, 0.450195, 0.512695},
-	["Troll"]	= {0.540527, 0.571777, 0.321289, 0.383789},
-	["Trolls"]	= {0.540527, 0.571777, 0.321289, 0.383789},
-	["Orc"]	= {0.508301, 0.539551, 0.772461, 0.834961},
-	["Orcs"]	= {0.508301, 0.539551, 0.772461, 0.834961},
-	["Blood Elf"]	= {0.0639648, 0.0952148, 0.889648, 0.952148},
-	["Blood elves"]	= {0.0639648, 0.0952148, 0.889648, 0.952148},
-	["Draenei"]	= {0.317871, 0.349121, 0.889648, 0.952148},
-	["Goblin"]	= {0.731934, 0.763184, 0.000976562, 0.0634766},
-	["Goblins"]	= {0.731934, 0.763184, 0.000976562, 0.0634766},
-	["Worgen"]	= {0.540527, 0.571777, 0.836914, 0.899414},
-	["Pandaren"]	= {0.508301, 0.539551, 0.901367, 0.963867},
-	["Nightborne"]	= {0.508301, 0.539551, 0.514648, 0.577148},
-	["Highmountain Tauren"]	= {0.796387, 0.827637, 0.000976562, 0.0634766},
-	["Void Elf"]	= {0.540527, 0.571777, 0.579102, 0.641602},
-	["Void elves"]	= {0.540527, 0.571777, 0.579102, 0.641602},
-	["Lightforged Draenei"]	= {0.508301, 0.539551, 0.12793, 0.19043},
-	["Dark Iron Dwarf"]	= {0.190918, 0.222168, 0.889648, 0.952148},
-	["Dark Iron Dwarves"]	= {0.190918, 0.222168, 0.889648, 0.952148},
-	["Mag'har Orc"]	= {0.508301, 0.539551, 0.256836, 0.319336},
-	["Zandalari Troll"]	= {0.572754, 0.604004, 0.12793, 0.19043},
-	["Zandalari Trolls"]	= {0.572754, 0.604004, 0.12793, 0.19043},
-	["Kul Tiran"]	= {0.925293, 0.956543, 0.000976562, 0.0634766},
-	["Vulpera"]	= {0.540527, 0.571777, 0.708008, 0.770508},
-	["Vulperas"]	= {0.540527, 0.571777, 0.708008, 0.770508},
-	["Mechagnome"]	= {0.508301, 0.539551, 0.385742, 0.448242},
-	["Mechagnomes"]	= {0.508301, 0.539551, 0.385742, 0.448242}
+	["Human"]	= "raceicon128-human-male",
+	["Humans"]	= "raceicon128-human-male",
+	["Dwarf"]	= "raceicon128-dwarf-male",
+	["Dwarves"]	= "raceicon128-dwarf-male",
+	["Gnome"]	= "raceicon128-gnome-male",
+	["Gnomes"]	= "raceicon128-gnome-male",
+	["Night Elf"]	= "raceicon128-nightelf-male",
+	["Night elves"]	= "raceicon128-nightelf-male",
+	["Tauren"]	= "raceicon128-tauren-male",
+	["Undead"]	= "raceicon128-undead-male",
+	["Troll"]	= "raceicon128-troll-male",
+	["Trolls"]	= "raceicon128-troll-male",
+	["Orc"]	= "raceicon128-orc-male",
+	["Orcs"]	= "raceicon128-orc-male",
+	["Blood Elf"]	= "raceicon128-bloodelf-male",
+	["Blood elves"]	= "raceicon128-bloodelf-male",
+	["Draenei"]	= "raceicon128-draenei-male",
+	["Goblin"]	= "raceicon128-goblin-male",
+	["Goblins"]	= "raceicon128-goblin-male",
+	["Worgen"]	= "raceicon128-worgen-male",
+	["Pandaren"]	= "raceicon128-pandaren-male",
+	["Nightborne"]	= "raceicon128-nightborne-male",
+	["Highmountain Tauren"]	= "raceicon128-highmountain-male",
+	["Void Elf"]	= "raceicon128-voidelf-male",
+	["Void elves"]	= "raceicon128-voidelf-male",
+	["Lightforged Draenei"]	= "raceicon128-lightforged-male",
+	["Dark Iron Dwarf"]	= "raceicon128-darkirondwarf-male",
+	["Dark Iron Dwarves"]	= "raceicon128-darkirondwarf-male",
+	["Mag'har Orc"]	= "raceicon128-magharorc-male",
+	["Zandalari Troll"]	= "raceicon128-zandalari-male",
+	["Zandalari Trolls"]	= "raceicon128-zandalari-male",
+	["Kul Tiran"]	= "raceicon128-kultiran-male",
+	["Vulpera"]	= "raceicon128-vulpera-male",
+	["Vulperas"]	= "raceicon128-vulpera-male",
+	["Mechagnome"]	= "raceicon128-mechagnome-male",
+	["Mechagnomes"]	= "raceicon128-mechagnome-male",
+	["Dracthyr"]	= "raceicon128-dracthyr-male",
+	["Dracthyrs"]	= "raceicon128-dracthyr-male"
 }
 
 RE.BracketNames = {
 	_G.ARENA_2V2,
 	_G.ARENA_3V3,
 	"",
-	_G.BATTLEGROUND_10V10
+	_G.BATTLEGROUND_10V10,
+	"",
+	"",
+	_G.SOLO
 }
 
 RE.MapIDRemap = {

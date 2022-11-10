@@ -7,6 +7,10 @@ MegaMacroCharacterData = {
 			["Macros"] = {
 			},
 		},
+		["Assassination"] = {
+			["Macros"] = {
+			},
+		},
 	},
 	["Activated"] = true,
 }

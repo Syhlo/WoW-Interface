@@ -36,17 +36,19 @@ ThreatPlatesDB = {
 			},
 			["welcome"] = true,
 		},
-		["Dwarfmounts - Tichondrius"] = {
+		["Syhlo - Tichondrius"] = {
 			["spec"] = {
-				[3] = false,
+				nil, -- [1]
+				true, -- [2]
+				false, -- [3]
 			},
 			["welcome"] = true,
 		},
-		["Syhlol - Thrall"] = {
+		["Dwarfmounts - Tichondrius"] = {
+			["welcome"] = true,
 			["spec"] = {
 				[3] = false,
 			},
-			["welcome"] = true,
 		},
 		["Syhlol - Tichondrius"] = {
 			["welcome"] = true,
@@ -54,6 +56,19 @@ ThreatPlatesDB = {
 				true, -- [1]
 				[3] = false,
 			},
+		},
+		["Syhlol - Thrall"] = {
+			["welcome"] = true,
+			["spec"] = {
+				[3] = false,
+			},
+		},
+		["Syhdk - Thrall"] = {
+			["spec"] = {
+				true, -- [1]
+				[3] = false,
+			},
+			["welcome"] = true,
 		},
 		["Crylo - Tichondrius"] = {
 			["welcome"] = true,
@@ -90,17 +105,19 @@ ThreatPlatesDB = {
 	["profileKeys"] = {
 		["Gnomemounts - Tichondrius"] = "Global",
 		["Cyf - Tichondrius"] = "Global",
-		["Sýh - Thrall"] = "Default",
-		["Wthrename - Tichondrius"] = "Default",
+		["Sýh - Thrall"] = "Global",
+		["Wthrename - Tichondrius"] = "Global",
 		["Gerold - Tichondrius"] = "Global",
+		["Syhlo - Tichondrius"] = "Global",
 		["Dwarfmounts - Tichondrius"] = "Global",
+		["Syhlol - Tichondrius"] = "Global",
 		["Syhlol - Thrall"] = "Global",
-		["Syhlol - Tichondrius"] = "Default",
-		["Crylo - Tichondrius"] = "Default",
+		["Syhdk - Thrall"] = "Global",
+		["Crylo - Tichondrius"] = "Global",
 		["Pandamounts - Tichondrius"] = "Global",
-		["Regèn - Tichondrius"] = "Default",
+		["Regèn - Tichondrius"] = "Global",
 		["Syhlo - Thrall"] = "Global",
-		["Syh - Thrall"] = "Default",
+		["Syh - Thrall"] = "Global",
 	},
 	["namespaces"] = {
 		["LibDualSpec-1.0"] = {
@@ -112,7 +129,7 @@ ThreatPlatesDB = {
 		},
 	},
 	["global"] = {
-		["version"] = "10.5.2",
+		["version"] = "11.0.6",
 	},
 	["profiles"] = {
 		["Default"] = {
@@ -194,11 +211,11 @@ ThreatPlatesDB = {
 					["size"] = 13,
 				},
 				["raidicon"] = {
-					["y"] = 65,
+					["show"] = false,
 					["x"] = -2,
 					["scale"] = 44,
 					["hpColor"] = false,
-					["show"] = false,
+					["y"] = 65,
 				},
 			},
 			["AuraWidget"] = {
@@ -222,8 +239,8 @@ ThreatPlatesDB = {
 			},
 			["FocusWidget"] = {
 				["a"] = 0.4900000095367432,
-				["b"] = 0,
 				["r"] = 1,
+				["b"] = 0,
 				["theme"] = "arrow_less_than",
 				["g"] = 0.8274509803921568,
 				["Size"] = 30,
@@ -262,23 +279,21 @@ ThreatPlatesDB = {
 					["NonTarget"] = 0.75,
 				},
 				["scale"] = {
-					["Target"] = 0.2999999999999998,
+					["Target"] = 0.3500000000000005,
 					["FriendlyPlayer"] = 0.7000000000000002,
 				},
 			},
 			["uniqueSettings"] = {
 				{
-					["color"] = {
-						["g"] = 0,
-						["b"] = 0.4509803921568628,
-					},
+					["scale"] = 1.4,
 					["showIcon"] = false,
 					["Trigger"] = {
 						["Name"] = {
-							["Input"] = "Fel Obelisk; Demonic Tyrant",
+							["Input"] = "Fel Obelisk; Demonic Tyrant; Psyfiend",
 							["AsArray"] = {
 								"Fel Obelisk", -- [1]
 								"Demonic Tyrant", -- [2]
+								"Psyfiend", -- [3]
 							},
 						},
 					},
@@ -295,24 +310,19 @@ ThreatPlatesDB = {
 						},
 					},
 					["Name"] = "Emphasized Minions",
-					["scale"] = 1.4,
 					["Enable"] = {
 						["UnitReaction"] = {
 							["FRIENDLY"] = false,
 						},
 					},
+					["color"] = {
+						["g"] = 0,
+						["b"] = 0.4509803921568628,
+					},
 				}, -- [1]
 				{
-					["color"] = {
-						["b"] = 0.5215686274509804,
-						["g"] = 0.5215686274509804,
-						["r"] = 0.5215686274509804,
-					},
 					["showIcon"] = false,
 					["showNameplate"] = false,
-					["ShowHeadlineView"] = true,
-					["alpha"] = 0.7,
-					["Name"] = "Ignored Minions",
 					["Trigger"] = {
 						["Name"] = {
 							["Input"] = "Wild Imp; Malicious Imp; Army of the Dead; Dreadstalker",
@@ -324,10 +334,18 @@ ThreatPlatesDB = {
 							},
 						},
 					},
+					["alpha"] = 0.7,
+					["Name"] = "Ignored Minions",
+					["color"] = {
+						["b"] = 0.5215686274509804,
+						["g"] = 0.5215686274509804,
+						["r"] = 0.5215686274509804,
+					},
+					["ShowHeadlineView"] = true,
 				}, -- [2]
 			},
 			["totemWidget"] = {
-				["scale"] = 50,
+				["scale"] = 65,
 			},
 			["CVarsBackup"] = {
 				["nameplateMinAlpha"] = "0.6",
@@ -335,9 +353,9 @@ ThreatPlatesDB = {
 			},
 			["FocusWidget"] = {
 				["a"] = 0.4900000095367432,
-				["r"] = 1,
-				["g"] = 0.8274509803921568,
 				["b"] = 0,
+				["g"] = 0.8274509803921568,
+				["r"] = 1,
 				["theme"] = "arrow_less_than",
 				["Size"] = 30,
 			},
@@ -349,7 +367,7 @@ ThreatPlatesDB = {
 						["IconHeight"] = 26,
 					},
 					["HealthbarMode"] = {
-						["VerticalOffset"] = 14,
+						["VerticalOffset"] = 10,
 					},
 				},
 				["CrowdControl"] = {
@@ -357,6 +375,7 @@ ThreatPlatesDB = {
 					["ShowFriendly"] = false,
 				},
 				["FlashWhenExpiring"] = true,
+				["ShowTooltips"] = true,
 				["ShowCooldownSpiral"] = true,
 				["Buffs"] = {
 					["HideUnlimitedDuration"] = true,
@@ -412,9 +431,9 @@ ThreatPlatesDB = {
 				["raidicon"] = {
 					["scale"] = 56,
 					["hpColor"] = false,
-					["y"] = 65,
-					["x"] = -2,
 					["show"] = false,
+					["x"] = -2,
+					["y"] = 65,
 				},
 			},
 			["targetWidget"] = {

@@ -1,13 +1,22 @@
 
 ExecAssistDB = {
 	["char"] = {
+		["Syhlol - Tichondrius"] = {
+			["map"] = {
+				["GTP"] = {
+				},
+			},
+			["DBIconTable"] = {
+				["minimapPos"] = 170.2723875833033,
+			},
+		},
 		["Cyf - Tichondrius"] = {
 			["CharSpecificTaskWindow"] = false,
 			["map"] = {
 				["TW"] = {
 					["p"] = "player",
 					["PGT"] = {
-						["g100606"] = {
+						["g399737"] = {
 							["p"] = "__garden",
 							["sibMap"] = {
 							},
@@ -19,7 +28,7 @@ ExecAssistDB = {
 								"g399737", -- [2]
 							},
 						},
-						["g399737"] = {
+						["g100606"] = {
 							["p"] = "__garden",
 							["sibMap"] = {
 							},
@@ -58,16 +67,8 @@ ExecAssistDB = {
 						["p"] = "g100606",
 						["isCollapsed"] = true,
 					},
-					["t271126"] = {
-						["p"] = "g100606",
-						["isCollapsed"] = true,
-					},
 					["t624695"] = {
 						["p"] = "g399737",
-						["isCollapsed"] = true,
-					},
-					["t203809"] = {
-						["p"] = "g100606",
 						["isCollapsed"] = true,
 					},
 					["t338332"] = {
@@ -78,11 +79,11 @@ ExecAssistDB = {
 						["p"] = "g399737",
 						["isCollapsed"] = true,
 					},
-					["t644883"] = {
+					["t775627"] = {
 						["p"] = "g100606",
 						["isCollapsed"] = true,
 					},
-					["t775627"] = {
+					["t203809"] = {
 						["p"] = "g100606",
 						["isCollapsed"] = true,
 					},
@@ -103,12 +104,16 @@ ExecAssistDB = {
 						},
 						["isCollapsed"] = false,
 					},
-					["t136110"] = {
-						["p"] = "g399737",
+					["t644883"] = {
+						["p"] = "g100606",
 						["isCollapsed"] = true,
 					},
 					["t807135"] = {
 						["p"] = "g100606",
+						["isCollapsed"] = true,
+					},
+					["t136110"] = {
+						["p"] = "g399737",
 						["isCollapsed"] = true,
 					},
 					["t643095"] = {
@@ -129,10 +134,6 @@ ExecAssistDB = {
 						["p"] = "g399737",
 						["isCollapsed"] = true,
 					},
-					["t696589"] = {
-						["p"] = "g399737",
-						["isCollapsed"] = true,
-					},
 					["t309613"] = {
 						["p"] = "g399737",
 						["isCollapsed"] = true,
@@ -149,6 +150,12 @@ ExecAssistDB = {
 						["p"] = "g399737",
 						["isCollapsed"] = true,
 					},
+				},
+			},
+		},
+		["Syhlo - Tichondrius"] = {
+			["map"] = {
+				["GTP"] = {
 				},
 			},
 		},
@@ -181,26 +188,10 @@ ExecAssistDB = {
 		["groupStem"] = {
 			["agg"] = {
 				["g399737"] = {
-					["hideDays"] = {
-					},
+					["cmdLineTarget"] = false,
 					["p"] = "garden",
-					["DO"] = {
-						"t725772", -- [1]
-						"t727139", -- [2]
-						"t136110", -- [3]
-						"t332563", -- [4]
-						"t696589", -- [5]
-						"t309613", -- [6]
-						"t583041", -- [7]
-						"t643095", -- [8]
-						"t20733", -- [9]
-						"t624695", -- [10]
-						"t239444", -- [11]
-						"t536129", -- [12]
-					},
 					["isGroup"] = true,
 					["id"] = "g399737",
-					["listName"] = "Weekly Tasks",
 					["G"] = {
 						{
 							["id"] = "g399737",
@@ -208,6 +199,22 @@ ExecAssistDB = {
 						}, -- [1]
 					},
 					["defaultEnabled"] = false,
+					["hideDays"] = {
+					},
+					["DO"] = {
+						"t725772", -- [1]
+						"t727139", -- [2]
+						"t136110", -- [3]
+						"t332563", -- [4]
+						"t309613", -- [5]
+						"t583041", -- [6]
+						"t643095", -- [7]
+						"t20733", -- [8]
+						"t624695", -- [9]
+						"t239444", -- [10]
+						"t536129", -- [11]
+					},
+					["listName"] = "Weekly Tasks",
 				},
 				["t583041"] = {
 					["hideDays"] = {
@@ -229,16 +236,6 @@ ExecAssistDB = {
 					["p"] = "g399737",
 					["defaultEnabled"] = true,
 				},
-				["t278720"] = {
-					["hideDays"] = {
-					},
-					["resetType"] = "Daily Automatic",
-					["isTask"] = true,
-					["id"] = "t278720",
-					["taskName"] = "Kill Theater of Pain elites x5",
-					["p"] = "g100606",
-					["defaultEnabled"] = true,
-				},
 				["t332563"] = {
 					["hideDays"] = {
 					},
@@ -246,16 +243,6 @@ ExecAssistDB = {
 					["isTask"] = true,
 					["id"] = "t332563",
 					["taskName"] = "Ulduar",
-					["p"] = "g399737",
-					["defaultEnabled"] = true,
-				},
-				["t696589"] = {
-					["hideDays"] = {
-					},
-					["resetType"] = "Weekly Automatic",
-					["isTask"] = true,
-					["id"] = "t696589",
-					["taskName"] = "Eye of Eternity",
 					["p"] = "g399737",
 					["defaultEnabled"] = true,
 				},
@@ -269,13 +256,13 @@ ExecAssistDB = {
 					["p"] = "g399737",
 					["defaultEnabled"] = true,
 				},
-				["t644883"] = {
+				["t278720"] = {
 					["hideDays"] = {
 					},
 					["resetType"] = "Daily Automatic",
 					["isTask"] = true,
-					["id"] = "t644883",
-					["taskName"] = "Kill Fleshwing",
+					["id"] = "t278720",
+					["taskName"] = "Kill Theater of Pain elites x5",
 					["p"] = "g100606",
 					["defaultEnabled"] = true,
 				},
@@ -295,13 +282,13 @@ ExecAssistDB = {
 					["p"] = "g399737",
 					["defaultEnabled"] = true,
 				},
-				["t338332"] = {
+				["t644883"] = {
 					["hideDays"] = {
 					},
 					["resetType"] = "Daily Automatic",
 					["isTask"] = true,
-					["id"] = "t338332",
-					["taskName"] = "Kill MoP Warbringers",
+					["id"] = "t644883",
+					["taskName"] = "Kill Fleshwing",
 					["p"] = "g100606",
 					["defaultEnabled"] = true,
 				},
@@ -324,11 +311,10 @@ ExecAssistDB = {
 						"t288802", -- [2]
 						"t775627", -- [3]
 						"t807135", -- [4]
-						"t271126", -- [5]
-						"t278720", -- [6]
-						"t748111", -- [7]
-						"t338332", -- [8]
-						"t203809", -- [9]
+						"t278720", -- [5]
+						"t748111", -- [6]
+						"t338332", -- [7]
+						"t203809", -- [8]
 					},
 					["isGroup"] = true,
 					["id"] = "g100606",
@@ -341,13 +327,13 @@ ExecAssistDB = {
 					},
 					["defaultEnabled"] = false,
 				},
-				["t203809"] = {
+				["t338332"] = {
 					["hideDays"] = {
 					},
 					["resetType"] = "Daily Automatic",
 					["isTask"] = true,
-					["id"] = "t203809",
-					["taskName"] = "Finish Calling(s)",
+					["id"] = "t338332",
+					["taskName"] = "Kill MoP Warbringers",
 					["p"] = "g100606",
 					["defaultEnabled"] = true,
 				},
@@ -358,6 +344,16 @@ ExecAssistDB = {
 					["isTask"] = true,
 					["id"] = "t807135",
 					["taskName"] = "Kill Warbringer Mal'Korak",
+					["p"] = "g100606",
+					["defaultEnabled"] = true,
+				},
+				["t203809"] = {
+					["hideDays"] = {
+					},
+					["resetType"] = "Daily Automatic",
+					["isTask"] = true,
+					["id"] = "t203809",
+					["taskName"] = "Finish Calling(s)",
 					["p"] = "g100606",
 					["defaultEnabled"] = true,
 				},
@@ -389,16 +385,6 @@ ExecAssistDB = {
 					["id"] = "t536129",
 					["taskName"] = "Vault of Archavon",
 					["p"] = "g399737",
-					["defaultEnabled"] = true,
-				},
-				["t271126"] = {
-					["hideDays"] = {
-					},
-					["resetType"] = "Daily Automatic",
-					["isTask"] = true,
-					["id"] = "t271126",
-					["taskName"] = "Kill Violet Mistake",
-					["p"] = "g100606",
 					["defaultEnabled"] = true,
 				},
 				["t748111"] = {
@@ -456,10 +442,10 @@ ExecAssistDB = {
 		["Options"] = {
 			["DailyResetTime"] = 12,
 		},
-		["nextMidnightReset"] = 1664164800,
+		["nextMidnightReset"] = 1668056400,
 		["IsOldHat"] = true,
-		["nextWeeklyReset"] = 1664290800,
-		["nextDailyReset"] = 1664118000,
+		["nextWeeklyReset"] = 1668528000,
+		["nextDailyReset"] = 1668096000,
 		["taskWindow"] = {
 			["locked"] = true,
 			["toggleState_ToggledOff"] = false,
@@ -502,10 +488,55 @@ ExecAssistDB = {
 				},
 				["charClass"] = "MONK",
 			},
-			["Syhlo - Thrall"] = {
+			["Cyf - Tichondrius"] = {
 				["agg"] = {
+					["g399737"] = {
+						["userOverride"] = 2,
+					},
+					["t583041"] = {
+					},
+					["t136110"] = {
+					},
+					["t332563"] = {
+					},
+					["t727139"] = {
+					},
+					["t338332"] = {
+					},
+					["t309613"] = {
+					},
+					["t278720"] = {
+					},
+					["t203809"] = {
+					},
+					["g100606"] = {
+						["userOverride"] = 2,
+					},
+					["t644883"] = {
+					},
+					["t807135"] = {
+					},
+					["t725772"] = {
+					},
+					["t536129"] = {
+					},
+					["t288802"] = {
+						["userOverride"] = 2,
+					},
+					["t643095"] = {
+					},
+					["t239444"] = {
+					},
+					["t748111"] = {
+					},
+					["t775627"] = {
+					},
+					["t20733"] = {
+					},
+					["t624695"] = {
+					},
 				},
-				["charClass"] = "PRIEST",
+				["charClass"] = "DRUID",
 			},
 			["Sýh - Thrall"] = {
 				["agg"] = {
@@ -517,85 +548,49 @@ ExecAssistDB = {
 				},
 				["charClass"] = "PALADIN",
 			},
+			["Syhlo - Tichondrius"] = {
+				["agg"] = {
+				},
+				["charClass"] = "PALADIN",
+			},
+			["Dwarfmounts - Tichondrius"] = {
+				["agg"] = {
+				},
+				["charClass"] = "HUNTER",
+			},
 			["Syhlol - Thrall"] = {
 				["agg"] = {
 				},
 				["charClass"] = "ROGUE",
 			},
-			["Cyf - Tichondrius"] = {
+			["Syhdk - Thrall"] = {
 				["agg"] = {
-					["g399737"] = {
-						["userOverride"] = 2,
-					},
-					["t583041"] = {
-						["checked"] = true,
-					},
-					["t136110"] = {
-						["checked"] = true,
-					},
-					["t332563"] = {
-						["checked"] = true,
-					},
-					["t696589"] = {
-						["checked"] = true,
-					},
-					["t727139"] = {
-						["checked"] = true,
-					},
-					["t278720"] = {
-					},
-					["t338332"] = {
-					},
-					["t309613"] = {
-					},
-					["t644883"] = {
-					},
-					["t203809"] = {
-					},
-					["g100606"] = {
-						["userOverride"] = 2,
-					},
-					["t271126"] = {
-					},
-					["t807135"] = {
-					},
-					["t725772"] = {
-						["checked"] = true,
-					},
-					["t288802"] = {
-						["userOverride"] = 2,
-					},
-					["t536129"] = {
-						["checked"] = true,
-					},
-					["t643095"] = {
-						["checked"] = true,
-					},
-					["t239444"] = {
-						["checked"] = true,
-					},
-					["t748111"] = {
-					},
-					["t775627"] = {
-					},
-					["t20733"] = {
-						["checked"] = true,
-					},
-					["t624695"] = {
-						["checked"] = true,
-					},
 				},
-				["charClass"] = "DRUID",
+				["charClass"] = "DEATHKNIGHT",
+			},
+			["Syhlo - Thrall"] = {
+				["agg"] = {
+				},
+				["charClass"] = "PRIEST",
+			},
+			["Syh - Thrall"] = {
+				["agg"] = {
+				},
+				["charClass"] = "MAGE",
 			},
 		},
 		["hideHelp"] = true,
 	},
 	["profileKeys"] = {
 		["Syhlol - Tichondrius"] = "Default",
-		["Syhlo - Thrall"] = "Default",
+		["Cyf - Tichondrius"] = "Default",
 		["Sýh - Thrall"] = "Default",
 		["Gerold - Tichondrius"] = "Default",
+		["Syhlo - Tichondrius"] = "Default",
+		["Dwarfmounts - Tichondrius"] = "Default",
 		["Syhlol - Thrall"] = "Default",
-		["Cyf - Tichondrius"] = "Default",
+		["Syhdk - Thrall"] = "Default",
+		["Syhlo - Thrall"] = "Default",
+		["Syh - Thrall"] = "Default",
 	},
 }

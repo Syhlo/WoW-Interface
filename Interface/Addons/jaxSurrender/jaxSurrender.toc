@@ -1,0 +1,7 @@
+## Interface: 70300
+## Title: |cff99ff33jax|rSurrender
+## Notes: Disables /afk in arena and makes it surrender
+## Version: v1.0
+## Author: Jax
+
+jaxSurrender.lua

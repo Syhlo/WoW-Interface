@@ -1,5 +1,3 @@
-# 1.8.0 (2020-10-14)
+## 1.9.0 (2022-10-25) by lightspark
 
-What's new
-
-- New: Updated for Shadowlands!
+* Updated for Dragonflight

@@ -2,7 +2,8 @@
 --  Grid2InsecureGroupHeader, Grid2InsecureGroupPetHeader, Grid2InsecureGroupCustomHeader
 --]]
 
-local isClassic = select(4,GetBuildInfo())<30000 -- vanilla or tbc
+local versionCli = select(4,GetBuildInfo())
+local isClassic = versionCli<30000 -- vanilla or tbc
 local dummyFunc = function() end
 local select = select
 local unpack = unpack
@@ -21,6 +22,7 @@ local strtrim = strtrim
 local strfind = strfind
 local UnitExists = UnitExists
 local GetFrameHandle = GetFrameHandle
+local UnitHasVehicleUI = UnitHasVehicleUI
 local RegisterUnitWatch = RegisterUnitWatch
 local UnregisterUnitWatch = UnregisterUnitWatch
 local UnitWatchRegistered = UnitWatchRegistered
@@ -379,10 +381,13 @@ local function DisplayButtons(self, unitTable)
 		else
 			unitButton:SetPoint(point, curAnchor, relPoint, xMult*xOffset, yMult*yOffset)
 		end
-		unitButton:SetAttribute("unit", unitTable[i])
+		local unit = unitTable[i]
+		unitButton:SetAttribute("unit", unit)
 		SetUnitWatch(unitButton, unitWatch)
-		if not unitWatch or UnitExists(unitTable[i]) then
+		if not unitWatch or UnitExists(unit) then
 			unitButton:Show()
+		else
+			unitButton:Hide()
 		end
 		colUnitCount = colUnitCount<unitsPerColumn and colUnitCount+1 or 1
 		buttonNum = buttonNum + 1
@@ -466,14 +471,18 @@ do
 	local function Show(self)
 		self:RegisterEvent("GROUP_ROSTER_UPDATE")
 		self:RegisterEvent("UNIT_NAME_UPDATE")
-		if self.headerType == 'pet' then self:RegisterEvent("UNIT_PET") end
+		if self.headerType == 'pet' then
+			self:RegisterEvent("UNIT_PET")
+		end
 		Update(self)
 	end
 
 	local function Hide(self)
 		self:UnregisterEvent("GROUP_ROSTER_UPDATE")
 		self:UnregisterEvent("UNIT_NAME_UPDATE")
-		if self.headerType == 'pet' then self:UnregisterEvent("UNIT_PET") end
+		if self.headerType == 'pet' then
+			self:UnregisterEvent("UNIT_PET")
+		end
 	end
 
 	function Grid2InsecureGroupHeader_OnLoad(self, isPet)
@@ -490,6 +499,15 @@ unitsFilter = "target, focus, player, party1, boss1, boss2, boss3, arena1, arena
 hideEmptyUnits = true|nil
 --]]
 do
+	--Forze size changed event to refresh decoration visibility
+	local function TriggerSizeChangedEvent(self)
+		if self:GetAttribute('hideEmptyUnits') then
+			local func = self:GetScript("OnSizeChanged")
+			if func then
+				C_Timer.After(0, function()	func(self) end)	end
+		end
+	end
+
 	-- notify grid2 roster for unit changes, OnUnitStateChanged() defined in Grid2Frame.lua
 	local function RefreshButtons(self, pattern)
 		local index, unitButton = 1, self[1]
@@ -499,45 +517,8 @@ do
 			end
 			index = index + 1; unitButton = self[index]
 		end
+		TriggerSizeChangedEvent(self)
 	end
-
-	--[[ Removed this fix and added a different fix in StatusHealth.lua because this fix does not work with instant health updates due to the health_cache used.
-	-- blizzard forgot to trigger events for some boss units (boss6,boss7,boss8), so we have to update the broken units using a timer
-	local isBrokenUnit = { boss6 = true, boss7 = true, boss8 = true }
-	local function UpdateBrokenFrame(self)
-		local unitButton = self.parentButton
-		local unit = unitButton.unit
-		if unit and UnitExists(unit) then
-			unitButton:UpdateIndicators()
-		end
-	end
-	local function SetRegisterBroken(self)
-		local index, unitButton = 1, self[1]
-		while unitButton and unitButton.unit do
-			local isBroken = isBrokenUnit[unitButton.unit]
-			local timer = unitButton.grid2Timer
-			if timer then -- unit buttons are reusable if a broken unit became a normal unit (or viceversa) we need to disable/enable the timer
-				if not timer:IsPlaying() ~= not isBroken then
-					if isBroken then
-						timer:Play()
-					else
-						timer:Stop()
-					end
-				end
-			elseif isBroken then -- create and enable the timer if is a broken unit
-				timer = unitButton:CreateAnimationGroup()
-				timer.animation = timer:CreateAnimation()
-				timer.animation:SetDuration(0.5)
-				timer:SetLooping("REPEAT")
-				timer:SetScript("OnLoop", UpdateBrokenFrame)
-				timer:Play()
-				timer.parentButton = unitButton
-				unitButton.grid2Timer = timer
-			end
-			index = index + 1; unitButton = self[index]
-		end
-	end
-	--]]
 
 	-- event register management
 	local function SetRegisterEvent(self, enabled, event)
@@ -572,7 +553,6 @@ do
 		SetRegisterEvent( self, bossUnits, 'INSTANCE_ENCOUNTER_ENGAGE_UNIT' )
 		SetRegisterEvent( self, arenaUnits, 'ARENA_OPPONENT_UPDATE' )
 		SetRegisterEvent( self, normalUnits, 'GROUP_ROSTER_UPDATE' )
-		-- SetRegisterBroken( self )
 	end
 
 	local function ApplySpecialFilter(self)
@@ -613,8 +593,10 @@ do
 	local function OnEvent(self, event)
 		if event=='PLAYER_TARGET_CHANGED' then
 			self.buttonTarget:OnUnitStateChanged()
+			TriggerSizeChangedEvent(self)
 		elseif event=='PLAYER_FOCUS_CHANGED' then
 			self.buttonFocus:OnUnitStateChanged()
+			TriggerSizeChangedEvent(self)
 		elseif event=='INSTANCE_ENCOUNTER_ENGAGE_UNIT' then
 			self:RegisterEvent('PLAYER_REGEN_ENABLED')
 			RefreshButtons(self, "^boss")

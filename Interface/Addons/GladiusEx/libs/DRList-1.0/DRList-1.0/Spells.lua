@@ -1,4 +1,4 @@
-local MAJOR, MINOR = "DRList-1.0", 43 -- Don't forget to change this in DRList-1.0.lua aswell!
+local MAJOR, MINOR = "DRList-1.0", 46 -- Don't forget to change this in DRList-1.0.lua aswell!
 local Lib = LibStub(MAJOR)
 if Lib.spellListVersion and Lib.spellListVersion >= MINOR then
     return
@@ -53,8 +53,10 @@ if Lib.gameExpansion == "retail" then
         [161372]  = "incapacitate",    -- Polymorph (Peacock)
         [277787]  = "incapacitate",    -- Polymorph (Baby Direhorn)
         [277792]  = "incapacitate",    -- Polymorph (Bumblebee)
+        [321395]  = "incapacitate",    -- Polymorph (Mawrat)
         [82691]   = "incapacitate",    -- Ring of Frost
         [115078]  = "incapacitate",    -- Paralysis
+        [357768]  = "incapacitate",    -- Paralysis 2 (Perpetual Paralysis?)
         [20066]   = "incapacitate",    -- Repentance
         [9484]    = "incapacitate",    -- Shackle Undead
         [200196]  = "incapacitate",    -- Holy Word: Chastise
@@ -80,6 +82,8 @@ if Lib.gameExpansion == "retail" then
 --      [78675]   = "silence",         -- Solar Beam (has no DR)
         [202933]  = "silence",         -- Spider Sting
         [356727]  = "silence",         -- Spider Venom
+        [354831]  = "silence",         -- Wailing Arrow 1
+        [355596]  = "silence",         -- Wailing Arrow 2
         [217824]  = "silence",         -- Shield of Virtue
         [15487]   = "silence",         -- Silence
         [1330]    = "silence",         -- Garrote
@@ -132,6 +136,7 @@ if Lib.gameExpansion == "retail" then
         [204085]  = "root",            -- Deathchill (Chains of Ice)
         [233395]  = "root",            -- Deathchill (Remorseless Winter)
         [339]     = "root",            -- Entangling Roots
+        [235963]  = "root",            -- Entangling Roots (Earthen Grasp)
         [170855]  = "root",            -- Entangling Roots (Nature's Grasp)
         [102359]  = "root",            -- Mass Entanglement
         [117526]  = "root",            -- Binding Shot
@@ -186,6 +191,13 @@ if Lib.gameExpansion == "retail" then
         [51490]   = "knockback",        -- Thunderstorm
 --      [287712]  = "knockback",        -- Haywire (Kul'Tiran Racial)
     }
+
+    if GetSpellInfo(372245) and GetSpellInfo(372245) ~= "" then -- is Dragonflight Beta (quick temporary fix)
+        Lib.spellList[391622]  = "incapacitate"    -- Polymorph (Duck)
+        Lib.spellList[355689]  = "root"            -- Landslide
+        Lib.spellList[372245]  = "stun"            -- Terror of the Skies
+        Lib.spellList[360806]  = "disorient"       -- Sleep Walk
+    end
 
 elseif Lib.gameExpansion == "tbc" then
 
@@ -546,6 +558,7 @@ elseif Lib.gameExpansion == "wotlk" then
         [53540] = "disarm", -- Snatch (Rank 4)
         [53542] = "disarm", -- Snatch (Rank 5)
         [53543] = "disarm", -- Snatch (Rank 6)
+        [64346] = "disarm", -- Fiery Payback
         [64058] = "disarm", -- Psychic Horror Disarm Effect
         [51722] = "disarm", -- Dismantle
         [676]   = "disarm", -- Disarm

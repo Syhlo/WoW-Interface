@@ -155,6 +155,21 @@ function widgets:colorpick(parent, config)
     else
         r, g, b, a = unpack(GetVariable(config.keystring))
     end
+
+    if((r== nil))then
+        r=0
+    end
+    if((g== nil))then
+        g=0
+    end
+    if((b== nil))then 
+        b=0
+    end
+
+    r = tonumber(format("%.4f",r))
+    g = tonumber(format("%.4f",g))
+    b = tonumber(format("%.4f",b))
+
     local frame = CreateFrame("Button", nil, parent)
     frame.keystring = config.keystring
     frame.colortype = config.colortype
@@ -169,7 +184,7 @@ function widgets:colorpick(parent, config)
     frame.Text:SetPoint("LEFT", frame, "RIGHT", 5, 0)
     frame.Text:SetText(L[config.keystring])
     frame.Text:SetShown(not config.hidetitle)
-    frame:GetNormalTexture():SetVertexColor(r, g, b, a)
+    frame:GetNormalTexture():SetVertexColor(r, g, b)
     frame:SetScript("OnClick", function(self)
         local r, g, b, a = self:GetNormalTexture():GetVertexColor()
         local info = {
@@ -371,13 +386,18 @@ saframe:SetScript("OnHide", function() grid:Hide() end)
 local caframe = CreateFrame("Frame", nil, UIParent, BackdropTemplateMixin and "ThinBorderTemplate,BackdropTemplate" or "ThinBorderTemplate")
 caframe:Hide()
 caframe:SetFrameStrata("DIALOG")
-caframe:SetBackdrop({
-    bgFile = "Interface\\Tooltips\\UI-Tooltip-Background",
-    edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
-    tile = true, tileSize = 8, edgeSize = 16,
-    insets = {left = 4, right = 4, top = 4, bottom = 4}
-})
-caframe:SetBackdropColor(0.2,0.2,0.2,0.85)
+if GameTooltip.NineSlice then
+    caframe:SetBackdrop({
+        bgFile = "Interface\\Tooltips\\UI-Tooltip-Background",
+        edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
+        tile = true, tileSize = 8, edgeSize = 16,
+        insets = {left = 4, right = 4, top = 4, bottom = 4}
+    })
+    caframe:SetBackdropColor(GameTooltip.NineSlice:GetCenterColor())
+elseif GameTooltip.GetBackdrop then
+    caframe:SetBackdrop(GameTooltip:GetBackdrop())
+    caframe:SetBackdropColor(GameTooltip:GetBackdropColor())
+end
 caframe:SetSize(200, 200)
 caframe:SetPoint("CENTER")
 caframe:SetClampedToScreen(true)
@@ -626,7 +646,7 @@ local options = {
 local frame = CreateFrame("Frame", nil, UIParent)
 frame.anchor = CreateFrame("Frame", nil, frame)
 frame.anchor:SetPoint("TOPLEFT", 32, -16)
-frame.anchor:SetSize(InterfaceOptionsFramePanelContainer:GetWidth()-64, 1)
+frame.anchor:SetSize(858, 1)
 frame.title = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
 frame.title:SetPoint("TOPLEFT", 18, -16)
 frame.title:SetText(format("%s |cff33eeff%s|r", addonName, "General"))
@@ -635,7 +655,7 @@ frame.name = addonName
 local framePC = CreateFrame("Frame", nil, UIParent)
 framePC.anchor = CreateFrame("Frame", nil, framePC)
 framePC.anchor:SetPoint("TOPLEFT", 32, -13)
-framePC.anchor:SetSize(InterfaceOptionsFramePanelContainer:GetWidth()-64, 1)
+framePC.anchor:SetSize(858, 1)
 framePC.title = framePC:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
 framePC.title:SetPoint("TOPLEFT", 18, -16)
 framePC.title:SetText(format("%s |cff33eeff%s|r", addonName, "Unit Is Player"))
@@ -672,7 +692,7 @@ framePCScrollFrame:Hide()
 local frameNPC = CreateFrame("Frame", nil, UIParent)
 frameNPC.anchor = CreateFrame("Frame", nil, frameNPC)
 frameNPC.anchor:SetPoint("TOPLEFT", 32, -16)
-frameNPC.anchor:SetSize(InterfaceOptionsFramePanelContainer:GetWidth()-64, 1)
+frameNPC.anchor:SetSize(858, 1)
 frameNPC.title = frameNPC:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
 frameNPC.title:SetPoint("TOPLEFT", 18, -16)
 frameNPC.title:SetText(format("%s |cff33eeff%s|r", addonName, "Unit Is NPC"))
@@ -695,7 +715,7 @@ frameNPCScrollFrame.name = " - NPC"
 local frameStatusbar = CreateFrame("Frame", nil, UIParent)
 frameStatusbar.anchor = CreateFrame("Frame", nil, frameStatusbar)
 frameStatusbar.anchor:SetPoint("TOPLEFT", 32, -16)
-frameStatusbar.anchor:SetSize(InterfaceOptionsFramePanelContainer:GetWidth()-64, 1)
+frameStatusbar.anchor:SetSize(858, 1)
 frameStatusbar.title = frameStatusbar:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
 frameStatusbar.title:SetPoint("TOPLEFT", 18, -16)
 frameStatusbar.title:SetText(format("%s |cff33eeff%s|r", addonName, "StatusBar"))
@@ -705,7 +725,7 @@ frameStatusbar.name = " - StatusBar"
 local frameSpell = CreateFrame("Frame", nil, UIParent)
 frameSpell.anchor = CreateFrame("Frame", nil, frameSpell)
 frameSpell.anchor:SetPoint("TOPLEFT", 32, -16)
-frameSpell.anchor:SetSize(InterfaceOptionsFramePanelContainer:GetWidth()-64, 1)
+frameSpell.anchor:SetSize(858, 1)
 frameSpell.title = frameSpell:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
 frameSpell.title:SetPoint("TOPLEFT", 18, -16)
 frameSpell.title:SetText(format("%s |cff33eeff%s|r", addonName, "Spell"))
@@ -715,7 +735,7 @@ frameSpell.name = " - Spell"
 local frameFont = CreateFrame("Frame", nil, UIParent)
 frameFont.anchor = CreateFrame("Frame", nil, frameFont)
 frameFont.anchor:SetPoint("TOPLEFT", 32, -16)
-frameFont.anchor:SetSize(InterfaceOptionsFramePanelContainer:GetWidth()-64, 1)
+frameFont.anchor:SetSize(858, 1)
 frameFont.title = frameFont:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
 frameFont.title:SetPoint("TOPLEFT", 18, -16)
 frameFont.title:SetText(format("%s |cff33eeff%s|r", addonName, "Font"))
@@ -725,7 +745,7 @@ frameFont.name = " - Font"
 local frameVariables = CreateFrame("Frame", nil, UIParent)
 frameVariables.anchor = CreateFrame("Frame", nil, frameVariables)
 frameVariables.anchor:SetPoint("TOPLEFT", 32, -16)
-frameVariables.anchor:SetSize(InterfaceOptionsFramePanelContainer:GetWidth()-64, 1)
+frameVariables.anchor:SetSize(858, 1)
 frameVariables.title = frameVariables:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
 frameVariables.title:SetPoint("TOPLEFT", 18, -16)
 frameVariables.title:SetText(format("%s |cff33eeff%s|r", addonName, "Variables"))

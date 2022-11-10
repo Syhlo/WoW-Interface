@@ -105,12 +105,35 @@
 			"goblinmalezanynpcfarewell01.ogg#550807", "goblinmalezanynpcfarewell03.ogg#550808", "goblinmalezanynpcfarewell04.ogg#550812",
 			"trollfemalelaidbacknpcvendor01.ogg#562812","trollfemalelaidbacknpcvendor02.ogg#562802", "trollfemalelaidbacknpcgreeting01.ogg#562815","trollfemalelaidbacknpcgreeting02.ogg#562814", "trollfemalelaidbacknpcgreeting03.ogg#562816", "trollfemalelaidbacknpcgreeting04.ogg#562807", "trollfemalelaidbacknpcgreeting05.ogg#562804", "trollfemalelaidbacknpcgreeting06.ogg#562803",
 			"trollfemalelaidbacknpcfarewell01.ogg#562809", "trollfemalelaidbacknpcfarewell02.ogg#562808", "trollfemalelaidbacknpcfarewell03.ogg#562813", "trollfemalelaidbacknpcfarewell04.ogg#562817", "trollfemalelaidbacknpcfarewell05.ogg#562806",
+			-- sound/creature/mammoth2/ (mammoth sounds)
+			-- "mammoth2_aggro_4552931.ogg#4552931",
+			-- "mammoth2_aggro_4552929.ogg#4552929",
+			-- "mammoth2_aggro_4552927.ogg#4552927",
 
 			-- Grand Expedition Yak (sound/creature/grummlekooky, sound/creature/grummlestandard)
 			"vo_grummle_kooky_vendor_01.ogg#640180", "vo_grummle_kooky_vendor_02.ogg#640182", "vo_grummle_kooky_vendor_03.ogg#640184",
 			"vo_grummle_kooky_farewell_01.ogg#640158", "vo_grummle_kooky_farewell_02.ogg#640160", "vo_grummle_kooky_farewell_03.ogg#640162", "vo_grummle_kooky_farewell_04.ogg#640164",
 			"vo_grummle_standard_vendor_01.ogg#640336", "vo_grummle_standard_vendor_02.ogg#640338", "vo_grummle_standard_vendor_03.ogg#640340",
 			"vo_grummle_standard_farewell_01.ogg#640314", "vo_grummle_standard_farewell_02.ogg#640316", "vo_grummle_standard_farewell_03.ogg#640318", "vo_grummle_standard_farewell_04.ogg#640320",
+			-- sound/creature/yak/ (Yak sounds)
+			-- "mon_yak_mountspecial_01.ogg#613143",
+			-- "mon_yak_mountspecial_02.ogg#613145",
+			-- "mon_yak_mountspecial_03.ogg#613147",
+			-- "mon_yak_mountspecial_04.ogg#613149",
+
+		},
+
+		-- Brooms
+		["MuteBrooms"] = {
+
+			-- sound/creature/broomstickmount/
+			"broomstickmountland.ogg#545651",
+			"broomstickmounttakeoff.ogg#545652",
+
+			-- sound/spells/
+			"summonbroomstick1.ogg#567986",
+			"summonbroomstick3.ogg#569547",
+			"summonbroomstick2.ogg#568335",
 
 		},
 
@@ -462,6 +485,14 @@
 
 		},
 
+		-- Pierre (sound/creature/cookbot/)
+		["MutePierre"] = {
+			"mon_cookbot_clickable01.ogg#805133", "mon_cookbot_clickable02.ogg#805135", "mon_cookbot_clickable03.ogg#805137", "mon_cookbot_clickable04.ogg#805139", "mon_cookbot_clickable05.ogg#805141", "mon_cookbot_clickable06.ogg#805143", "mon_cookbot_clickable07.ogg#805145", "mon_cookbot_clickable08.ogg#805147", "mon_cookbot_clickable09.ogg#805149",
+			"mon_cookbot_stand.ogg#805163", "mon_cookbot_stand01.ogg#805165", "mon_cookbot_stand02.ogg#805167", "mon_cookbot_stand03.ogg#805169",
+			-- sound/doodad/bush_flamecap.ogg#567067 -- Fire sound (not same as Cooking Fire) (this is enabled by game every time Pierre is summoned)
+			-- sound/doodad/dt_bigdooropen.ogg#595622 and g_huntertrapopen.ogg#565429 -- Summon sounds
+		},
+
 		-- Experimental Anima Cell
 		["MuteAnima"] = {
 
@@ -472,6 +503,11 @@
 			-- sound/doodad/go_9mw_deadsoul_floorspiketrap01_loop_ (Impressive Size loop)
 			-- "3747987.ogg#3747987", "3747989.ogg#3747989", "3747991.ogg#3747991",
 
+		},
+
+		-- Fae Harp (sound/emitters/emiitter_harp_fx_)
+		["MuteHarp"] = {
+			"01.mp3#1506781", "02.mp3#1506780", "03.mp3#1506779", "04.mp3#1506778",
 		},
 
 		-- Rockets (sound/creature/rocketmount/)

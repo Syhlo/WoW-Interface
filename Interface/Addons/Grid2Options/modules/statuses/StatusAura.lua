@@ -38,6 +38,7 @@ end
 
 function Grid2Options:MakeStatusAuraEnableStacksOptions(status, options, optionParams)
 	if not status.dbx.missing then
+		self:MakeHeaderOptions(options, "Stacks")
 		options.enableStacks = {
 			type = "range",
 			order = 5,
@@ -77,48 +78,52 @@ function Grid2Options:MakeStatusAuraMissingOptions(status, options, optionParams
 end
 
 -- Grid2Options:MakeStatusBlinkThresholdOptions()
-function Grid2Options:MakeStatusBlinkThresholdOptions(status, options, optionParams)
-	if Grid2Frame.db.profile.blinkType ~= "None" and (not status.dbx.colorThreshold) then
-		self:MakeHeaderOptions(options, "Thresholds")
-		options.blinkThreshold = {
-			type = "range",
-			order = 51,
-			name = L["Blink"],
-			desc = L["Blink Threshold at which to start blinking the status."],
-			min = 0,
-			max = 30,
-			step = 0.1,
-			bigStep  = 1,
-			get = function ()
-				return status.dbx.blinkThreshold or 0
-			end,
-			set = function (_, v)
-				if v == 0 then v = nil end
-				status.dbx.blinkThreshold = v
-				status:UpdateDB()
-			end,
-		}
+do
+	local VALUES = { L["Never"], L["Always"], L["Threshold"] }
+	function Grid2Options:MakeStatusBlinkThresholdOptions(status, options, optionParams)
+		if not status.dbx.colorThreshold then
+			self:MakeHeaderOptions(options, "Highlights")
+			options.blinkEnabled = {
+				type = "select",
+				order = 111,
+				name = L["Highlight"],
+				desc = L["Select when to highlight the status. Linked indicators must have a hightlight effect configured."],
+				get = function()
+					return (status.dbx.blinkThreshold==nil and 1) or (status.dbx.blinkThreshold==0 and 2) or 3
+				end,
+				set = function(_,v)
+					status.dbx.blinkThreshold = (v==3 and 1) or (v==2 and 0) or nil
+					status:Refresh(true)
+					self:MakeStatusOptions(status)
+				end,
+				values = VALUES,
+			}
+			options.blinkThreshold = {
+				type = "range",
+				order = 112,
+				name = L["Remaining seconds"],
+				desc = L["Threshold in remaining seconds at which to highlight the status. The status will blink or glow depending of the linked indicator configuration."],
+				min = 1,
+				softMax = 30,
+				step = 0.1,
+				bigStep  = 1,
+				get = function ()
+					return status.dbx.blinkThreshold
+				end,
+				set = function (_, v)
+					status.dbx.blinkThreshold = v
+					status:Refresh(true)
+				end,
+				hidden = function() return (status.dbx.blinkThreshold or 0)<=0 end,
+			}
+		end
 	end
 end
 
 function Grid2Options:MakeStatusAuraUseSpellIdOptions(status, options, optionParams)
-	self:MakeHeaderOptions(options, "Misc")
-	options.useSpellId = {
-		type = "toggle",
-		name = L["Track by SpellId"],
-		width = "normal",
-		desc = string.format( "%s (%d) ", L["Track by spellId instead of aura name"], status.dbx.spellName ),
-		order = 115,
-		get = function () return status.dbx.useSpellId end,
-		set = function (_, v)
-			status.dbx.useSpellId = v or nil
-			status:UpdateDB()
-		end,
-		hidden = function() return not tonumber(status.dbx.spellName) end,
-	}
 	options.changeSpell = {
 		type = "input",
-		order = 110,
+		order = 4,
 		name = L["Aura Name or Spell ID"],
 		desc = L["Change Buff/Debuff Name or Spell ID."],
 		width = "normal",
@@ -134,6 +139,34 @@ function Grid2Options:MakeStatusAuraUseSpellIdOptions(status, options, optionPar
 			end
 		end,
 	}
+	options.useSpellId = {
+		type = "toggle",
+		name = L["Track by SpellId"],
+		width = "normal",
+		desc = string.format( "%s (%d) ", L["Track by spellId instead of aura name"], status.dbx.spellName ),
+		order = 4.1,
+		get = function () return status.dbx.useSpellId end,
+		set = function (_, v)
+			status.dbx.useSpellId = v or nil
+			status:UpdateDB()
+		end,
+		hidden = function() return not tonumber(status.dbx.spellName) end,
+	}
+end
+
+function Grid2Options:MakeStatusAuraCombineStacksOptions(status, options, optionParams)
+	options.combineStacks = {
+		type = "toggle",
+		name = L["Combine Stacks"],
+		width = "normal",
+		desc = string.format( "%s ", L["Multiple instances of the same debuff will be treated as multiple stacks of the same debuff"] ),
+		order = 9,
+		get = function () return status.dbx.combineStacks end,
+		set = function (_, v)
+			status.dbx.combineStacks = v or nil
+			status:UpdateDB()
+		end,
+	}
 end
 
 function Grid2Options:MakeStatusAuraCommonOptions(status, options, optionParams)
@@ -142,7 +175,6 @@ function Grid2Options:MakeStatusAuraCommonOptions(status, options, optionParams)
 		options.colorCount = {
 			type = "select",
 			order = 10.1,
-			width ="half",
 			name = L["Color count"],
 			desc = L["Select how many colors the status must provide."],
 			get = function() return status.dbx.colorCount or 1 end,
@@ -239,31 +271,12 @@ function Grid2Options:MakeStatusAuraColorThresholdOptions(status, options, optio
 	end
 end
 
-function Grid2Options:MakeStatusAuraDescriptionOptions(status, options, optionParams)
-	if status.dbx.auras or true then return end
-	local spellID = tonumber(status.dbx.spellName)
-	if not spellID then return end
-	local tip = Grid2Options.Tooltip
-	tip:ClearLines()
-	tip:SetHyperlink("spell:"..spellID)
-	local numLines = tip:NumLines()
-	if numLines>1 and numLines<=10 then
-		options.titleDesc = {
-			type        = "description",
-			order       = 1.2,
-			fontSize    = "small",
-			name        = tip[numLines]:GetText(),
-		}
-	end
-end
-
 function Grid2Options:MakeStatusAuraValueOptions(status, options, optionParams)
 	if status.dbx.auras or status.dbx.missing then return end
 	self:MakeHeaderOptions( options, "Value" )
 	options.trackValue = {
 		type = "select",
 		order = 91,
-		width ="half",
 		name = L["Value"],
 		desc = L["AURAVALUE_DESC"],
 		get = function() return status.dbx.valueIndex or 0 end,
@@ -380,11 +393,10 @@ end
 
 -- {{ Register
 Grid2Options:RegisterStatusOptions("buff", "buff", function(self, status, options, optionParams)
-	self:MakeStatusAuraDescriptionOptions(status, options)
+	self:MakeStatusAuraUseSpellIdOptions(status, options, optionParams)
 	self:MakeStatusAuraCommonOptions(status, options, optionParams)
 	self:MakeStatusAuraEnableStacksOptions(status, options, optionParams)
 	self:MakeStatusAuraMissingOptions(status, options, optionParams)
-	self:MakeStatusAuraUseSpellIdOptions(status, options, optionParams)
 	self:MakeStatusColorOptions(status, options, optionParams)
 	self:MakeStatusAuraColorThresholdOptions(status, options, optionParams)
 	self:MakeStatusBlinkThresholdOptions(status, options, optionParams)
@@ -395,10 +407,10 @@ end,{
 })
 
 Grid2Options:RegisterStatusOptions("debuff", "debuff", function(self, status, options, optionParams)
-	self:MakeStatusAuraEnableStacksOptions(status, options, optionParams)
-	self:MakeStatusAuraDescriptionOptions(status, options, optionParams)
-	self:MakeStatusAuraCommonOptions(status, options, optionParams)
 	self:MakeStatusAuraUseSpellIdOptions(status, options, optionParams)
+	self:MakeStatusAuraEnableStacksOptions(status, options, optionParams)
+	self:MakeStatusAuraCommonOptions(status, options, optionParams)
+	self:MakeStatusAuraCombineStacksOptions(status, options, optionParams)
 	self:MakeStatusColorOptions(status, options, optionParams)
 	self:MakeStatusAuraColorThresholdOptions(status, options, optionParams)
 	self:MakeStatusBlinkThresholdOptions(status, options, optionParams)

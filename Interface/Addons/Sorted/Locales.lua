@@ -1,4 +1,5 @@
 local _, S = ...
+local pairs, ipairs, string, type, time = pairs, ipairs, string, type, time
 
 local locales = {
     [1] = "enUS",
@@ -25,11 +26,16 @@ for _, locale in pairs(locales) do
     localizations[locale] = {}
 end
 
+-- Loads the TSV as a string locally to be cleared by the garbage collector after
+-- Parses it to fill the localizations table
 local function ParseTSV()
 -- Tab Separated Values spreadsheet imported directly from https://docs.google.com/spreadsheets/d/17eIDO0UU86-DUYjvu_ZyJ_9b8kMA9kTbAMDiQ0elXQA/edit?usp=sharing
 local tsv = 
 [[TITLE	Sorted.	Sorted.	Sorted.	Sorted.	Sorted.	Sorted.	Sorted.	Sorted.	Sorted.	Sorted.	Sorted.	Sorted.
 NOTES	Modern bag interface with efficient searching and filters.	Modern bag interface with efficient searching and filters.	Interface de Sac moderne avec un système de recherche et de filtre efficace.	Moderne Taschendarstellung mit effzienter Suche und Filtermöglichkeiten	Moderna interfaccia di zaino con filtri e ricerca efficienti. 	효율적인 검색 및 필터 기능을 갖춘 현대적인 가방 인터페이스.	现代的背包界面，并带有高效搜寻以及过滤分类功能。	摩登酷炫的背包介面，並帶有高效搜尋以及過濾分類功能。	Современный интерфейс сумки с эффективным поиском и фильтрами.	Interfaz de bolsa moderna con búsqueda eficiente y filtros	Interfaz de bolsa moderna con búsqueda eficiente y filtros	Uma bolsa com interface moderana, com funções eficientes de filtros e procura
+BAGS	Bags	Bags	Sacs			가방						
+BANK	Bank	Bank	Banque			은행						
+REAGENTS	Reagent Bank	Reagent Bank	Sac de composent			재료 은행						
 CATEGORY_WEAPONS	Weapons	Weapons	Armes	Waffen	Armi	무기	武器	武器	Оружие	Armas	Armas	Armas
 CATEGORY_ARMOR	Armor	Armour	Armure	Rüstung	Armature	방어구	护甲	護甲	Доспехи	Armadura	Armadura	Armadura
 CATEGORY_ACCESSORIES	Accessories	Accessories	Accessoires	Accessoires	Accessori	장식	配件	配件	Аксессуары	Accesorios	Accesorios	Acessórios
@@ -41,6 +47,7 @@ CATEGORY_GLYPHS	Glyphs	Glyphs	Glyphes	Glyphen	Glifi	문양	雕文	雕紋	Сим�
 CATEGORY_TRADE_GOODS	Trade Goods	Trade Goods	Fournitures d’artisanat	Handwerkswaren	Beni commerciali	직업용품	商品	商品	Хоз. товары	Objetos comerciales	Objetos comerciables	Mercadorias
 CATEGORY_RECIPES	Recipes	Recipes	Recettes	Rezepte	Ricette	제조법	配方	配方	Рецепты	Recetas	Recetas	Receitas
 CATEGORY_BATTLE_PETS	Battle Pets	Battle Pets	Mascottes de combat	Kampfhaustiere	Mascotte da combattimento	전투 애완동물	战斗宠物	戰寵	Питомцы	Mascotas de duelo	Mascotas de duelo	Mascotes de Batalha
+CATEGORY_KEYS	Keys	Keys	Clés			키						
 CATEGORY_QUEST_ITEMS	Quest Items	Quest Items	Objets de quête	Questgegenstände	Oggetti di missione	퀘스트 아이템	任务物品	任務物品	Для задания	Objetos de misión	Objetos con misión	Itens de missão
 CATEGORY_MISCELLANEOUS	Miscellaneous	Miscellaneous	Divers	Verschiedenes	Varie	기타	杂项	雜項	Разное	Miscelánea	Miscelánea	Diversos
 ITEM_BACKPACK	Backpack	Backpack	Sac à dos	Rucksack	Zaino	배낭	背包	背包	Рюкзак	Mochila	Mochila	Mochila
@@ -49,6 +56,8 @@ ITEM_MYTHIC_KEYSTONE	Keystone: %s	Keystone: %s	Clé : %s	Schlüsselstein: %s	Chi
 ITEM_PET_CAGED	Pet Cage: %s	Pet Cage: %s	Mascotte en cage	Haustierkäfig: %s	Mascotte in gabbia: %s	애완동물 우리: %s	宠物笼：%s	寵物籠：%s	Клетка для питомца	Jaula de mascota: %s	Jaula de mascota: %s	Jaula de Mascote
 COLUMN_FAVORITES	Favorites	Favourites	Favoris	Favoriten	Favorito	즐겨찾기	最爱	最愛	Избранное	Favoritos	Favoritos	Favoritos
 COLUMN_QUANTITY	Quantity	Quantity	Quantité	Menge	Quantità	수량	数量	數量	Кол-во	Cantidad	Cantidad	Quantidade
+COLUMN_MAX_STACK	Stack Size	Stack Size										
+COLUMN_MAX_STACK_SHORT	Max	Max										
 COLUMN_ICON	Icon	Icon	Icône	Symbol	Icone	아이콘	图标	圖示	Значок	Icono	Icono	Ícone
 COLUMN_NAME	Name	Name	Nom	Name	Nome	이름	名称	名稱	Имя	Nombre	Nombre	Nome
 COLUMN_NAME_SHORT	Name	Name	Nom	Name	Nome	이름	名称	名稱	Имя	Nombre	Nombre	Nome
@@ -57,7 +66,7 @@ COLUMN_REQUIRED_LEVEL	Required Level	Required Level	Niveau Requis	Benötigtes Le
 COLUMN_REQUIRED_LEVEL_SHORT	Req	Req	Req	Ben.	Ric.	최소렙	需求	需求	рек.	Necesita	Necesita	Necessário
 COLUMN_ITEM_LEVEL	Item Level	Item Level	Niveau d'Objet	Gegenstandslevel	Livello Oggetto	아이템 레벨	物品等级	物品等級	Ур. предмета	Nivel de objeto	Nivel de objeto	Nível de Item
 COLUMN_ITEM_LEVEL_SHORT	Lvl	Lvl	Nv	Lvl	Lvl	템렙	等级	等級	ур.	Nivel	Nivel	Nível
-COLUMN_TIME_ADDED	Time Added	Time Added	Heure d'Ajout	Hinzugefügt	Tempo Aggiunto	획득 시기	添加时间	加入時間	Время	Tiempo añadido	Tiempo añadido	Adquirido em
+COLUMN_TIME_ADDED	Age	Age	Heure d'Ajout	Hinzugefügt	Tempo Aggiunto	획득 시기	添加时间	加入時間	Время	Tiempo añadido	Tiempo añadido	Adquirido em
 COLUMN_TIME_ADDED_SHORT	Age	Age	Age	Alter	Età	획득	时间	時間	Время	Antigüedad	Antigüedad	Idade
 COLUMN_TYPE	Type	Type	Type	Typ	Tipo	종류	类型	類型	Тип	Tipo	Tipo	Tipo
 COLUMN_TYPE_SHORT	Type	Type	Type	Typ	Tipo	종류	类型	類型	Тип	Tipo	Tipo	Tipo
@@ -67,14 +76,21 @@ COLUMN_EXPANSION	Expansion	Expansion	Extension	Erweiterung	Espansione	확장팩	
 COLUMN_EXPANSION_SHORT	Xpac	Xpac	Ext.	Erw.	Esp.	확팩	资料片	資料片	Расш.	Expan	Expan	Expan
 COLUMN_SELL_PRICE	Sell Price	Sell Price	Prix de Vente	Verkaufspreis	Prezo di Venda	판매 가격	售出价格	售出價格	Цена продажи	Precio de venta	Precio de venta	Preço de venda
 COLUMN_SELL_PRICE_SHORT	Value	Value	Valeur	Wert	Valore	값	售价	售價	Цена	Valor	Valor	Valor
-COLUMN_TRASH	Trash	Rubbish		Plunder								
-GROUPING_CATEGORY	Category	Category	Catégorie	Kategorie	Categorìa		类别	類別	Категория			Categoria
+COLUMN_TRASH	Trash	Rubbish	Déchets	Plunder		잡템						
+COLUMN_MAX_QUANTITY	Max	Max	Maximum 			최대						
+COLUMN_WEEKLY_QUANTITY	Quantity This Week	Quantity This Week	Quantité cette semaine			이번 주 수량						
+COLUMN_WEEKLY_QUANTITY_SHORT	#/Wk	#/Wk	#/Sem			#/주						
+COLUMN_MAX_WEEKLY_QUANTITY	Max Per Week	Max Per Week	Maximum par semaine			주당 최대						
+COLUMN_MAX_WEEKLY_QUANTITY_SHORT	Max/Wk	Max/Wk	Maximum/Sem			최대/주						
+GROUPING_CATEGORY	Category	Category	Catégorie	Kategorie	Categorìa	카테고리	类别	類別	Категория			Categoria
 TAB_BANK	Bank	Bank	Banque	Bank	Banca	은행	银行	銀行	Банк	Banco	Banco	Banco
 TAB_REAGENTS	Reagents	Reagents	Composants	Reagenzien	Reagenti	재료 은행	材料银行	材料銀行	Хранилище	Componentes	Componentes	Mercadorias
+TAB_CURRENCY	Currency	Currency	Monnaie			화폐						
 BUTTON_SELL_GRAYS	Sell Grays	Sell Greys	Vendre gris	Verk. Plunder	Vendi grigi	잡동사니 판매	卖出垃圾	賣出垃圾	Продажа	Vender grises	Vender grises	Vender cinzas
-BUTTON_SELL_TRASH	Sell Trash	Sell Rubbish										
+BUTTON_SELL_TRASH	Sell Trash	Sell Rubbish	Vendre les déchets 			잡템 판매						
 BUTTON_DEPOSIT_REAGENTS	Deposit Reagents	Deposit Reagents	Déposer les composants	Reagenzien lagern	Deposito Reagenti	모든 재료 보관	存入材料	存入材料	Сложить предметы	Depositar Componentes	Depositar Componentes	Depositar Mercadorias
 BUTTON_BUY_REAGENTS	Purchase	Purchase	Achats	Kaufen	Acquistare	구입	购买	購買	Покупка	Comprar	Comprar	Comprar
+BUTTON_PLACE_ITEM	Place %s into your %s	Place %s into your %s	Placé %s dans votre %s			%s을(를) %s에 배치						
 WARNING_BUY_REAGENTS	This tab gives you additional storage for raw profession materials.\nDo you wish to purchase this tab?	This tab gives you additional storage for raw profession materials.\nDo you wish to purchase this tab?	Cet onglet vous offre plus d'emplacement de stockage pour les matériaux bruts. Voulez-vous acheter cet onglet?	Dieser Tab gibt Dir zusätzlichen Platz für Rohmaterialien für Berufe. Willst du diesen Tab kaufen?		이 보관함에는 직업용품을 추가로 보관할 수 있습니다.\n이 보관함을 구입하시겠습니까?	此标签页为您提供额外的专业原料存储空间。\n您想要购买此标签页吗？	此標籤為您提供了額外的存儲專業原料的空間。\n您想要購買此標籤頁嗎？	Эта вкладка дает вам дополнительное хранилище для материалов профессии.\nВы хотите приобрести эту вкладку?	Esta pestaña te da almacenaje adicional para materiales de profesiones.\n ¿Te gustaría comprar esta pestaña?	Esta pestaña te da almacenaje adicional para materiales de profesiones.\n ¿Te gustaría comprar esta pestaña?	Esta aba lhe dará espaço adicional para mercadorias.\nVocê deseja comprar esta aba?
 WARNING_NO_ITEMS_FOUND	No items found	No items found	Aucun objet trouvé	Keine Gegenstände gefunden	Nessuno item trovato	아이템을 찾을 수 없음	没找到物品	沒找到物品	Пусто	No se encontraron objetos	No se encontraron objetos	Itens não encontrados
 WARNING_BANK_NOT_CACHED	Visit a banker once on %s\n to see their bank contents here	Visit a banker once on %s\n to see their bank contents here	Rendre visite à un Banquier au moins une fois sur %s\n pour voir le contenu de leur Banque ici	Besuche den Banker einmalig um den Bankinhalt hier zu sehen		%s의 은행원에게 방문하여\n이곳에서 은행 확인	请在%s\n访问银行柜员一次，以便查阅他的银行物品	請登入%s並訪問銀行職員一次\n來查閱他們的銀行物品	Посетите банкира один раз, чтобы увидеть содержимое банка	Visita un banquero en %s\n para ver el contenido del banco aquí	Visita un banquero en %s\n para ver el contenido del banco aquí	Visite um banqueiro uma vez para poder ver seus itens aqui
@@ -83,12 +99,13 @@ WARNING_REAGENTS_NOT_PURCHASED	Visit a banker on %s\n to purchase their reagent 
 DROPDOWN_MENU_EQUIPMENT_SET	Equipment Sets	Equipment Sets	Ensembles d'équipement	Ausrüstungssets		장비 구성	套装	套裝設定	Комплект	Sets de Equipo	Sets de Equipo	Conjuntos de equipamento
 DROPDOWN_MENU_EQUIPMENT_SET_NONE	No Equipment Set	No Equipment Set	Pas d'ensemble d'équipement	Kein Ausrüstungsset		장비 구성 없음	无套装	無套裝設定	Без комплекта	No hay set de Equipo	No hay set de Equipo	Sem conjuntos de equipamento
 DROPDOWN_MENU_CLEAR	Clear	Clear	Vider	Löschen	Spurgàre	초기화	清除	清除	Очистить	Borrar	Borrar	Limpar
+DROPDOWN_MENU_INSTRUCTION_SELECT	Select...	Select...	Selectionner...			선택...						
 FILTER_TYPE	Type	Type	Type	Typ	Tipo	종류	类型	類型	Тип	Tipo	Tipo	Tipo
 FILTER_EQUIP_LOCATION	Equip Location	Equip Location	Emplacement d'équipement	Ausrüstungsplatz	Posizione dello Equipaggiamento	착용 부위	装备位置	裝備位置	Ячейка экипировки	Localización del Equipo	Localización del Equipo	Equipado em
 FILTER_SUBTYPE	Subtype	Subtype	Sous type	Untertyp	Sottotipo	소분류	子类别	子類別	Тип	Subtítulo	Subtítulo	Subtipo
 FILTER_STATS	Stats	Stats	Stats	Attribute	Attributo	능력치	属性	屬性	Характеристики	Estadísticas	Estadísticas	Status
 FILTER_QUALITY	Quality	Quality	Qualité	Qualität	Qualità	품질	品质	品質	Качество	Calidad	Calidad	Qualidade
-FILTER_TIME_ADDED	Time Added	Time Added	Temps ajouté	Hinzugefügt am	Tempo di acquisizione	획득 시간	添加时间	加入時間	Добавлено	Tiempo añadido	Tiempo añadido	Adquirido em
+FILTER_TIME_ADDED	Age	Age	Temps ajouté	Hinzugefügt am	Tempo di acquisizione	획득 시간	添加时间	加入時間	Добавлено	Tiempo añadido	Tiempo añadido	Adquirido em
 FILTER_BINDING	Binding	Binding	Raccourci	Bindung	Legatùra	귀속	绑定	綁定	Перс.	Vendajes	Vendajes	Vinculação
 FILTER_EXPANSION	Expansion	Expansion	Extension	Erweiterung	Espansione	확장팩	资料片	資料片	Расширение	Expansión	Expansión	Expansão
 FILTER_LEVEL	Level	Level	Niveau	Level	Livello	레벨	等级	等級	Уровень	Nivel	Nivel	Nível
@@ -297,10 +314,10 @@ SUBFILTER_TIME_DAYS	Days	Days	Jours	Tage	Giorni	일	天	天	дней	Días	Días
 SUBFILTER_TIME_DAYS_SHORT	Days	Days	Jours	Tage	Giorni	일	天	天	дн.	Días	Días	Dias
 SUBFILTER_TIME_WEEK_SHORT	Week	Week	Semaine	Woche	Settimana	주	周	週	неделя	Semana	Semana	Semana
 SUBFILTER_TIME_WEEKS	Weeks	Weeks	Semaines	Wochen	Settimane	주	周	週	недель	Semanas	Semanas	Semanas
-SUBFILTER_TIME_WEEKS_SHORT	Wks	Wks	Sem	Wo.	Set.	주	周	週	н.	Semanas	Semanas	Semanas
+SUBFILTER_TIME_WEEKS_SHORT	Wks	Wks	Sems	Wo.	Set.	주	周	週	н.	Semanas	Semanas	Semanas
 SUBFILTER_TIME_MONTH_SHORT	Mnth	Mnth	Mois	Mon.	Set	개월	月	月	месяц	Mes	Mes	Mes
 SUBFILTER_TIME_MONTHS	Months	Months	Mois	Monate	Mesi	개월	月	月	месяцев	Meses	Meses	Meses
-SUBFILTER_TIME_MONTHS_SHORT	Mths	Mths	m	Mon.	Mesi	개월	月	月	мес.	Meses	Meses	Meses
+SUBFILTER_TIME_MONTHS_SHORT	Mths	Mths	M	Mon.	Mesi	개월	月	月	мес.	Meses	Meses	Meses
 SUBFILTER_TIME_YEAR_SHORT	Year	Year	Année	Jahr	Anno	년	年	年	год	Año	Año	Ano
 SUBFILTER_TIME_YEARS	Years	Years	Années	Jahre	Anni	년	年	年	лет	Años	Años	Anos
 SUBFILTER_TIME_YEARS_SHORT	Yrs	Yrs	an	J.	A	년	年	年	г.	Años	Años	Anos
@@ -328,23 +345,33 @@ SUBFILTER_EXPANSION_LEGION_SHORT	Legion	Legion	Legion	Legion	Legion	군단	军�
 SUBFILTER_EXPANSION_BFA	Battle for Azeroth	Battle for Azeroth	Battle for Azeroth	Battle for Azeroth	Battle for Azeroth	격전의 아제로스	争霸艾泽拉斯	決戰艾澤拉斯	Battle for Azeroth	Battle for Azeroth	Battle for Azeroth	Batalha por Azeroth
 SUBFILTER_EXPANSION_BFA_SHORT	BfA	BfA	BfA	BfA	BfA	격아	争霸	決戰	BfA	BfA	BfA	BfA
 SUBFILTER_EXPANSION_SHADOW	Shadowlands	Shadowlands	Shadowlands	Shadowlands	Shadowlands	어둠땅	暗影国度	暗影之境	Shadowlands	Shadowlands	Shadowlands	Shadowlands
-SUBFILTER_EXPANSION_SHADOW_SHORT	Shadow	Shadow	Shadow	Shadow	Shadow	둠땅	暗影	暗影	Shadowlands	Shadow	Shadow	Shadow
+SUBFILTER_EXPANSION_SHADOW_SHORT	SL	SL				둠땅						
+SUBFILTER_EXPANSION_DRAGONFLIGHT	Dragonflight	Dragonflight				용군단						
+SUBFILTER_EXPANSION_DRAGONFLIGHT_SHORT	DF	DF				용군						
 SUBFILTER_LEVEL_ITEM_LEVEL	Item Level	Item Level	Niveau d'objet	Gegenstandslevel	Livello Oggetto	아이템 레벨	物品等级	物品等級	Ур. предмета	Nivel de objeto	Nivel de objeto	Nível de Item
 SUBFILTER_LEVEL_REQUIRED_LEVEL	Required Level	Required Level	Niveau requis	Benötigtes Level	Richied il livello	착용 레벨	需求等级	需求等級	Треб. уровень	Nivel necesario	Nivel necesario	Nível Necessário
 SUBFILTER_MARKER_ICON_NONE	No Marker Icon	No Marker Icon	Aucun	Keines	Nessuno	없음	无	無	нет	Ninguno	Ninguno	Nenhum
 SUBFILTER_SPECIFIC_ITEMS_ID	ID	ID	ID	ID	ID	ID	ID	ID	ID	ID	ID	ID
 SUBFILTER_SPECIFIC_ITEMS_NAME	Name	Name	Nom	Name	Nome	이름	名称	名稱	Имя	Nombre	Nombre	Nome
 CONFIG_APPEARANCE	Appearance	Appearance	Apparence	Aussehen	Aspetti	외형	外观	外觀	Внешность	Apariencia	Apariencia	Aparência
+CONFIG_FEATURES	Features	Features	Caractéristiques 			특징						
+CONFIG_LIST	List View	List View	Voir la liste			목록보기						
+CONFIG_GRID	Grid View	Grid View	Voir la grille			격자보기						
 CONFIG_BEHAVIOR	Behavior	Behavior	Comportement	Verhalten	Comportamento	동작	动作	動作	Поведение	Comportamiento	Comportamiento	Comportamento
 CONFIG_CATEGORIES	Categories	Categories	Catégories	Kategorien	Categorie	분류	类别	類別	Категории	Categorías	Categorías	Categorias
 CONFIG_COLUMNS	Columns	Columns	Colonnes	Spalten	Colonne	열	列	欄目	Столбцы	Columnas	Columnas	Colunas
 CONFIG_GROUPING	Grouping	Grouping	Groupage	Gruppierungen	Raggruppamento	묶기	分组	分組	Группировка			Agrupar
 CONFIG_PROFILES	Profiles	Profiles	Profils	Profile	Profili	프로필	设定档	設定檔	Профили	Perfiles	Perfiles	Perfis
+CONFIG_SKIN_DESATURATE_CATEGORIES	Desaturate Unselected	Desaturate Unselected										
+CONFIG_SKIN_CATEGORIES_POSITION_TOP	Top	Top				상단						
+CONFIG_SKIN_CATEGORIES_POSITION_SIDE	Side	Side				옆						
+CONFIG_FEATURES_PIN_NEW_ITEMS	Pin New Items	Pin New Items				새 항목 고정						
 CONFIG_APPEARANCE_SCALE	Scale	Scale	Echelle	Skalierung	Scala	크기 비율	缩放	縮放	Масштаб	Escala	Escala	Escala
 CONFIG_APPEARANCE_ICON_SIZE	Icon Size	Icon Size	Taille d'icône	Symbolgröße	Dimensione icona	아이콘 크기	图标尺寸	圖示尺寸	Размер значков	Tamaño del icono	Tamaño del icono	Tamanho de Icone
-CONFIG_APPEARANCE_ICON_SHAPE	Round Icons	Round Icons										
+CONFIG_APPEARANCE_ICON_SHAPE	Round Icons	Round Icons	Icônes rondes			동그란 아이콘						
 CONFIG_APPEARANCE_ICON_BORDERS	Icon Borders	Icon Borders	Bordures d'icône	Symbolränder	Bordi delle icone	아이콘 테두리	图标外框	圖示外框	Границы значков	Bordes del icono	Bordes del icono	Bordas de Icone
 CONFIG_APPEARANCE_ICON_BORDER_THICKNESS	Border Thickness	Border Thickness	Epaisseur des bordures	Rahmenbreite	Spessore del bordo	테두리 두께	外框厚度	外框厚度	Толщина границы	Grosor del borde		Grossura da borda
+CONFIG_APPEARANCE_PADDING	Padding	Padding	Remplissage			채워넣기						
 CONFIG_APPEARANCE_SPACING	Spacing	Spacing	Espacement	Abstand	Spaziatura	간격	间距	間距	Интервал	Espaciado	Espaciado	Espaçamento
 CONFIG_APPEARANCE_BACKDROP	Backdrop Texture	Backdrop Texture	Texture de Fond	Hintergrundtextur	Texture di Sfondo	배경 텍스쳐	背景材质	背景材質	Текстура фона			Textura de fundo
 CONFIG_APPEARANCE_BACKDROP_OPACITY	Backdrop Opacity	Backdrop Opacity	Opacité du fond	Hintergrunddeckkraft	Opacità dello sfondo	배경 투명도	背景透明度	背景透明度	Прозрачность	Opacidad del fondo	Opacidad del fondo	Opacidade do Fundo
@@ -353,18 +380,23 @@ CONFIG_APPEARANCE_FONT_SIZE	Size	Size	Taille	Größe	Taglia	크기	尺寸	尺寸
 CONFIG_APPEARANCE_FONT_SIZE_1	Tiny	Tiny	Très petit	Winzig	Minuscola	매우 작음	超小	超小	Крошечный	Minúsculo	Minúsculo	Minúsculo
 CONFIG_APPEARANCE_FONT_SIZE_2	Small	Small	Petit	Kleintier	Piccola	작음	小	小	Маленький	Pequeño	Pequeño	Pequeno
 CONFIG_APPEARANCE_FONT_SIZE_3	Normal	Normal	Normal	Normal	Normale	기본	普通	普通	Обычный	Normal	Normal	Normal
-CONFIG_APPEARANCE_FONT_SIZE_4	Large	Large	Large	Groß	Grande	큼	大	大	Большой	Grande	Grande	Grande
+CONFIG_APPEARANCE_FONT_SIZE_4	Large	Large	Grand	Groß	Grande	큼	大	大	Большой	Grande	Grande	Grande
 CONFIG_APPEARANCE_FONT_SIZE_5	Huge	Huge	Très Grand	Riesig	Enorme	매우 큼	超大	超大	Огромный	Gigante	Gigante	Gigante
 CONFIG_APPEARANCE_FONT_OUTLINE	Outline	Outline	Contour	Outline	Schema	외곽선	轮廓	描邊	Контур	Contorno	Contorno	Contorno
 CONFIG_APPEARANCE_FONT_OUTLINE_1	None	None	Aucun	Nichts	Nessuna	없음	无	無	Нет	Ninguno	Ninguno	Nenhum
-CONFIG_APPEARANCE_FONT_OUTLINE_2	Thin	Thin	Fin	Dünn	Sottile	얇음	细	細	Тонкий	Delgado	Delgado	Fino
-CONFIG_APPEARANCE_FONT_OUTLINE_3	Thick	Thick	Epais	Dick	Spessa	굵음	粗	粗	Толстый	Gordo	Gordo	Grosso
+CONFIG_APPEARANCE_FONT_OUTLINE_2	Thin	Thin	Mince	Dünn	Sottile	얇음	细	細	Тонкий	Delgado	Delgado	Fino
+CONFIG_APPEARANCE_FONT_OUTLINE_3	Thick	Thick	Épais	Dick	Spessa	굵음	粗	粗	Толстый	Gordo	Gordo	Grosso
+CONFIG_APPEARANCE_FONT_SHADOW	Shadow	Shadow	Ombre			그림자						
 CONFIG_APPEARANCE_SIDE_PANE_WIDTH	Side Pane Width	Side Pane Width	Largeur du volet latéral	Seitenpanelbreite	Larghezza pannello laterale	측면 칸 넓이	侧窗格宽度	側窗格寬度	Ширина бок. панели	Ancho del panel lateral	Ancho del panel lateral	Largura do painel Lateral
-CONFIG_APPEARANCE_ALWAYS_USE_ICONS	Always Use Icons	Always Use Icons	Toujours utiliser les icônes	Immer Symbole benutzen	Usa sempre le icone	항상 아이콘 사용	一直使用图标	永遠使用圖示	Всегда исп. значки	Siempre utilizar iconos	Siempre utilizar iconos	Sempre utilizar ícones
-CONFIG_APPEARANCE_ELVUI_SKIN	ElvUI Skin	ElvUI Skin	Skin ElvUI	ElvUI Skin	ElvUI Skin	ElvUI 스킨	ElvUI外观	ElvUI外觀	ElvUI Skin			Skin ElvUI
+CONFIG_APPEARANCE_ALWAYS_USE_ICONS	Always Use Icons	Always Use Icons	Utiliser toujours les icônes	Immer Symbole benutzen	Usa sempre le icone	항상 아이콘 사용	一直使用图标	永遠使用圖示	Всегда исп. значки	Siempre utilizar iconos	Siempre utilizar iconos	Sempre utilizar ícones
+CONFIG_APPEARANCE_SKINNING	Skin	Skin	Apparence			스킨						
+CONFIG_APPEARANCE_SKINNING_DEFAULT	Default	Default	Par défault			기본						
+CONFIG_APPEARANCE_SKINNING_CLEAN	Clean	Clean				깔끔함						
+CONFIG_APPEARANCE_SKINNING_ADDONSKINS	AddOnSkins	AddOnSkins				애드온 스킨						
+CONFIG_APPEARANCE_ELVUI_SKIN	ElvUI Skin	ElvUI Skin	Apparence ElvUI	ElvUI Skin	ElvUI Skin	ElvUI 스킨	ElvUI外观	ElvUI外觀	ElvUI Skin			Skin ElvUI
 CONFIG_BEHAVIOR_SCROLLING_HEADER	Scrolling	Scrolling	Défilement	Scrollen	Scorrimento	스크롤	滚动	捲動	Прокрутка			Rolamento
 CONFIG_BEHAVIOR_SCROLL_WHEEL_SPEED	Wheel Scroll Speed	Wheel Scroll Speed	Vitesse du bouton de défilement	Mausradgeschwindigkeit	Velocità di scorrimento della rotella	스크롤 속도	鼠标滚轮速度	滾輪捲動速度	Скорость прокрутки	Velocidad de la rueda de desplazamiento	Velocidad de la rueda de desplazamiento	Velocidade da roda do mouse
-CONFIG_BEHAVIOR_SMOOTH_SCROLLING	Smooth Scrolling	Smooth Scrolling	Défilement doux	Sanftes Scrollen	Scorrimento fluido	부드러운 스크롤	平滑滚动	平滑捲動	Плавная прокрутка	Desplazamiento suave	Desplazamiento suave	Deslizamento suave
+CONFIG_BEHAVIOR_SMOOTH_SCROLLING	Smooth Scrolling	Smooth Scrolling	Défilement léger	Sanftes Scrollen	Scorrimento fluido	부드러운 스크롤	平滑滚动	平滑捲動	Плавная прокрутка	Desplazamiento suave	Desplazamiento suave	Deslizamento suave
 CONFIG_BEHAVIOR_SMOOTH_SCROLLING_POWER	Smoothing Strength	Smoothing Strength	Puissance du lissage	Sanftheit-Stärke	Forza levigante	부드러움 강도	平滑强度	平滑強度	Сглаживание	Suavizar fuerza	Suavizar fuerza	Força da suavização
 CONFIG_BEHAVIOR_ANIMATIONS	Animations	Animations	Animations	Animationen	Animazioni	애니메이션	动画效果	動畫效果	Анимация	Animaciones	Animaciones	Animações
 CONFIG_BEHAVIOR_RESET_WINDOW	Reset Window on Close	Reset Window on Close	Réinitialiser la fênetre à la fermeture	Fenster beim Schließen zurücksetzen	Reimposta finestra alla chiusura	닫으면 창 초기화	关闭后重置视窗	關閉後重設視窗	Сброс при закрытии	Reiniciar ventana al cerrar	Reiniciar ventana al cerrar	Reiniciar Janela ao Fechar
@@ -373,6 +405,7 @@ CONFIG_BEHAVIOR_NEW_ITEMS_HEADER	New Items	New Items	Nouveaux objets	Neue Gegens
 CONFIG_BEHAVIOR_NEW_INDICATORS	Category Indicators	Category Indicators	Indicateur de Catégorie	Kategorieindikatoren	Indicatori di categoria	분류에 표시	类别指标	類別指標	Индикатор категории	Indicadores de Cartegoría		Indicador de Categoria
 CONFIG_BEHAVIOR_PIN_NEW	Pin to Top	Pin to Top	Epingler en haut	Anpinnen	Metti in primo piano	상단에 고정	置顶	置頂	Закрепить наверху	Fijar arriba		Manter no Topo
 CONFIG_BEHAVIOR_TOOLTIP_HEADER	Tooltips	Tooltips	Infobulle	Tooltips	Tooltips	툴팁	提示资讯	提示資訊	Всплывающие подсказки			Tooltip
+CONFIG_BEHAVIOR_EXTENDED_TOOLTIPS	Extended Item Tooltips	Extended Item Tooltips	Info-bulles étendu des articles			아이템 툴팁 확장						
 CONFIG_BEHAVIOR_TOOLTIP_INFO	Info on Item Tooltips	Info on Item Tooltips	Informations sur les info-bulles des articles	Gegenstands Tooltip	Informazioni sui tooltip degli oggetti	툴팁에 정보 표시	物品提示统计资讯	物品提示統計資訊	Информация на подсказках о предмете	Info en el globo de ayuda		Informação no Tooltip
 CONFIG_BEHAVIOR_TOOLTIP_DELAY	Tooltip Delay	Tooltip Delay	Délai d'infobulle	Tooltip-Verzögerung	Ritardo dello tooltip	툴팁 등장 속도	提示延迟	工具提示延遲	Задержка подсказки	Retraso del Globo de Ayuda	Retraso del Globo de Ayuda	Atraso da janela de Dica
 CONFIG_BEHAVIOR_TOOLTIP_DELAY_SECOND	Second	Second	Seconde	Sekunden	Secondo	초	秒	秒	Секунда	Segundo	Segundo	Segundo
@@ -402,8 +435,11 @@ CONFIG_CATEGORIES_DEFAULT_NAME	New Category	New Category	Nouvelle Catégorie	Neu
 CONFIG_COLUMNS_COLUMN	Column	Column	Colonne	Spalte	Colonna	열	列	欄目	Столбец	Columna	Columna	Coluna
 CONFIG_COLUMNS_WIDTH	Width	Width	Largeur	Breite	Larghezza pannello laterale	넓이	宽度	寬度	Ширина	Ancho	Ancho	Largura
 CONFIG_COLUMNS_ENABLED	Enabled	Enabled	Activer	Aktiviert	Abilitato	활성화	启用	啟用	Вкл.	Activado	Activado	Habilitado
+CONFIG_AUTOMATION	Automation	Automation	Automatiser			자동화						
 CONFIG_PROFILES_PROFILE	Settings Profile	Settings Profile	Options du profil	Einstellungsprofil	Profilo delle impostazioni	사용중인 프로필	配置设定档	配置設定檔	Настройки профиля	Perfil de Opciones	Perfil de Opciones	Perfil de Opções
 CONFIG_PROFILES_NAME	Name	Name	Nom	Name	Nome	이름	名称	名稱	Имя	Nombre	Nombre	Nome
+CONFIG_PROFILES_CHANGE_NAME	Change Name	Change Name	Changer le nom			이름 바꾸기						
+CONFIG_PROFILES_CHANGE_NAME_INSTRUCTION	Enter name...	Enter name...	Entrer un nom			이름을 입력하세요...						
 CONFIG_PROFILES_NEW	New	New	Nouveau	Neu	Nuovo	생성	新	新	Новый	Nuevo	Nuevo	Novo
 CONFIG_PROFILES_COPY	Copy	Copy	Copier	Kopieren	copia	복사	复制	複製	Копир.	Copiar	Copiar	Copiar
 CONFIG_PROFILES_DELETE	Delete	Delete	Supprimer	Löschen	Elimina	삭제	删除	刪除	Удалить	Borrar	Borrar	Apagar
@@ -418,7 +454,7 @@ TOOLTIP_LAYOUT_LIST	Display as List	Display as List	Afficher en Liste	Listen-Anz
 TOOLTIP_LAYOUT_GRID	Display as Grid	Display as Grid	Afficher en Grille	Grid-Anzeige	Visualizza come griglia	칸으로 표시	格子显示	格子顯示	Отобразить как сетку			Mostrar como grid
 TOOLTIP_TITLE_ACCOUNT_GOLD	Account Gold	Account Gold	Or du Compte	Accountweites Gold	Oro dell'Account	계정 골드	账号金额	帳號金錢	Золото акквунта	Oro en la cuenta	Oro en la cuenta	Ouro na conta
 TOOLTIP_TITLE_BAGS	Bags	Bags	Sacs	Taschen	Borse	가방	背包	背包	Сумки	Bolsas	Bolsas	Bolsas
-TOOLTIP_TITLE_BANK	Bank Bags	Bank Bags		Bankfächer	Borse da banca	은행 가방	银行背包	銀行容器	Сумки банка	Bolsas del Banco	Bolsas del Banco	Bolsas do banco
+TOOLTIP_TITLE_BANK	Bank Bags	Bank Bags	Sacs de banque	Bankfächer	Borse da banca	은행 가방	银行背包	銀行容器	Сумки банка	Bolsas del Banco	Bolsas del Banco	Bolsas do banco
 TOOLTIP_TITLE_REAGENTS	Reagent Bank	Reagent Bank	Banque de Composants	Reagenzienbank	Banca reagenti	재료 가방	材料银行	材料銀行	Банк реагентов	Banco de componentes	Banco de componentes	Banco de Materiais
 TOOLTIP_NEW_ITEM	1 New Item	1 New Item	1 Nouvel Objet	1 neuer Gegenstand	1 nuovo elemento	1 새 아이템	1个新物品	1個新物品	1 новый предмет	1 Nuevo Objeto		1 Novo Item
 TOOLTIP_NEW_ITEMS	%s New Items	%s New Items	% Nouveaux Objets	%s neue Gegenstände	%s nuovi articoli	%s 새 아이템	%s个新物品	%s個新物品	%s новые предметы	%s Nuevos objetos		%s Novos Itens
@@ -441,6 +477,7 @@ TOOLTIP_CONFIG_RESET_ON_CLOSE	Reset Window on Close:\n|cffffffffLeave unchecked 
 TOOLTIP_CONFIG_COMBINE_STACKS	Combine Stacks:\n|cffffffffMerges identical items into one line.\nInteracting with an item will interact with\nthe largest stack of that item in your bags.	Combine Stacks:\n|cffffffffMerges identical items into one line.\nInteracting with an item will interact with\nthe largest stack of that item in your bags.	Combiner des piles:\n|cffffffffFusionne les articles identiques en une seule ligne.\nL'interaction avec un article prendra toujours la plus grande pile de cet article dans vos sacs.	Stabel kombinieren:\n|cffffffffStapelt identische Gegenstände in einer Reihe. Wenn du mit einem Gegenstand interagierst, beeinflusst du den größten Stapel dieses Gegenständes in deinen Taschen.		갯수 합치기:\n|cffffffff같은 아이템을 한 줄로 합칩니다.\n아이템을 사용하면 해당 아이템 묶음 중\n가장 큰 묶음을 사용합니다.	合并堆叠:\n|cffffffff将相同的物品合并为一行。 \n与物品进行互动将与您背包中\n该物品的最大堆叠物品互动。	合併堆疊:\n|cffffffff將相同的物品合併為一行。\n與物品進行互動將與您背包中\n該物品的最大堆疊物品互動。	Объединить стопки:\n|cffffffffСоединяет идентичные элементы в одну строку.	Combinar Stacks:\n|cffffffffUnifica objetos identicos en una linea.\nçinteractuar con un item hara que se interactue con\nlos items como ese que tienes en tu mochila.	Combinar Stacks:\n|cffffffffUnifica objetos identicos en una linea.\nçinteractuar con un item hara que se interactue con\nlos items como ese que tienes en tu mochila.	Combinar ítens empilháveis: Junta itens idênticos em uma única linha. Interagir com um item irá interagir com a maior pilha de sua bolsa.
 TOOLTIP_CONFIG_REMOVE_CATEGORY	Remove "%s"	Remove "%s"	Effacer "%s" ?	%s' entfernen		"%s" 삭제	移除 "%s"	移除 "%s"	Удалить "%s"	Borrar "%s"	Borrar "%s"	Remover "%s
 TOOLTIP_BUY_BANK_SLOT	Purchase Bag Slot	Purchase Bag Slot	Acheter un emplacement pour sac	Taschenfach kaufen		가방 칸 구입	购买背包格位	購買背包格位	Купить слот	Comprar Ranura de Bolsa	Comprar Ranura de Bolsa	Comprar Espaço de Bolsa
+TOOLTIP_EMPTY_BAG	< Right click to empty this bag >	< Right click to empty this bag >	< Clic droit pour vider ce sac>			< 이 가방을 비우려면 오른쪽 클릭 >						
 DIALOG_DELETE_CHARACTER_DATA	You will no longer be able to preview %s's items until you next play that character	You will no longer be able to preview %s's items until you next play that character	Vous ne pourrez plus prévisualiser les éléments de %s\njusqu'à ce que vous jouiez de nouveau avec ce personnage.	Du wirst nicht länger Gegenstände von %s sehen können bis Du dieen Charakter wieder gespielt hast		해당 캐릭터를 다시 플레이하기 전까지 %s의 아이템을 확인할 수 없을 것입니다.	在您下次玩此角色前，您将无法预览 %s 的物品	在你下次玩此角色前你再也無法預覽 %s的物品	Вы больше не сможете просматривать предметы, пока не сыграете этим персонажем в следующий раз.	No podrás ver la vista previa de los objetos de %s hasta que vuelvas a jugar con ese personaje	No podrás ver la vista previa de los objetos de %s hasta que vuelvas a jugar con ese personaje	Você não poderá mais previsualizar os itens de %s Até você logar nele novamente
 DIALOG_DELETE_SETTINGS_PROFILE	Are you sure you want to delete the settings for profile '%s'?	Are you sure you want to delete the settings for profile '%s'?	Voulez-vous vraiment supprimer  la configuration du profil  '%s'  ?	Bist Du sicher, dass du die Einstellungen für Profil '%s' löschen willst?		%s' 프로필 설정을 정말로 삭제하시겠습니까?	您确定要删除设定档'%s'的配置吗？	您確定想要刪除設定檔 '%s'的配置嗎？	Вы действительно хотите удалить настройки для профиля '%s'?	¿Estás seguro que quiéres eliminar las opciones del perfil de '%s'?	¿Estás seguro que quiéres eliminar las opciones del perfil de '%s'?	Tem certeza de que quer elimitar todas as configurações do perfil '%s'?
 DIALOG_BUTTON_ACCEPT	Accept	Accept	Accepter	Annehmen		승락	接受	接受	Принять	Aceptar	Aceptar	Aceitar
@@ -451,7 +488,8 @@ WARNING_BANK_NOT_CACHED_OTHER	Visit a banker once on %s\nto see their bank conte
 WARNING_REAGENTBANK_NOT_PURCHASED	Visit a banker to purchase\nthe reagent bank	Visit a banker to purchase\nthe reagent bank	Se rendre à la banque pour acheter la banque de  composants	Besuch einen Bankier um die Reagenzienbank zu kaufen		은행원에게 방문하여\n재료 은행 구입	访问银行柜员来\n购买材料银行	訪問銀行職員來\n購買材料銀行	Посетите банкира\nдля покупки хранилища.	Visita un banquero para comprar\nel banco de componentes	Visita un banquero para comprar\nel banco de componentes	Visite o banqueiro e compre o banco de Reagentes
 WARNING_REAGENTBANK_NOT_PURCHASED_OTHER	Visit a banker on %s\nto purchase their reagent bank	Visit a banker on %s\nto purchase their reagent bank	Se rendre à la banque pour acheter la banque de  composants	Besuch einen Bankier um die Reagenzienbank zu kaufen		%s의 은행원에게 방문하여\n재료 은행 구입	请登入%s并访问银行柜员\n来购买他的材料银行	請登入%s並訪問銀行職員\n來購買他們的材料銀行	Посетите банкира, чтобы\nкупить банк реагентов.	Visita un banquero en %s\npara comprar su banco de componentes	Visita un banquero en %s\npara comprar su banco de componentes	Visite o banqueiro com %s\n para comprar o banco de reagentes dele
 WARNING_REAGENTBANK_PURCHASE	This tab gives you additional storage for raw profession materials.\nDo you wish to purchase this tab?	This tab gives you additional storage for raw profession materials.\nDo you wish to purchase this tab?	Rendre visite à un banquier avec %s pour acheter sa banque de composants	Dieser Reiter gibt dir zufälligen PLatz für Rohmaterialen für Berufe. Willst Du diesen Reiter kaufen?		이 보관함에는 직업용품을 추가로 보관할 수 있습니다.\n이 보관함을 구입하시겠습니까?	此标签页为您提供了额外的专业原料存储空间。 \n您想要购买此标签页嘛？	此標籤為您提供了額外的存儲專業原料的空間。\n您想要購買此標籤嘛？	Эта вкладка показывает хранилище для материалов профессии.\nВы хотите приобрести эту вкладку?	Esta pestaña te da almacenamiento adicional para materiales de profesiones.\n¿Te gustaría comprar esta pestaña?	Esta pestaña te da almacenamiento adicional para materiales de profesiones.\n¿Te gustaría comprar esta pestaña?	Esta aba lhe dará armazenamento adicional para seus materiais de profissão. Você deseja comprar esta aba?
-WARNING_NO_ITEMS_FOUND	No items found	No items found	Aucun objet trouvé	Keine Gegenstände gefunden	Nessun elemento trovato	아이템을 찾을 수 없음	没找到物品	沒找到物品	Пусто	No se encontraron objetos	No se encontraron objetos	Não foram incontrados Itens]]
+WARNING_NO_ITEMS_FOUND	No items found	No items found	Aucun objet trouvé	Keine Gegenstände gefunden	Nessun elemento trovato	아이템을 찾을 수 없음	没找到物品	沒找到物品	Пусто	No se encontraron objetos	No se encontraron objetos	Não foram incontrados Itens
+WARNING_BAG_COULDNT_EMPTY	Not enough space; bag wasn't completely emptied.	Not enough space; bag wasn't completely emptied.	Pas assez d'espace, le sac n'a pas été complètement vidé.			공간이 충분하지 않습니다; 가방이 완전히 비어 있지 않았습니다.						]]
 
     for row in string.gmatch(tsv, "[^\r\n]+") do
         local key = string.match(row, "(.-)\t")

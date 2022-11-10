@@ -36,21 +36,35 @@ ThreatPlatesDB = {
 				false, -- [3]
 			},
 		},
-		["Dwarfmounts - Tichondrius"] = {
+		["Syhlo - Tichondrius"] = {
 			["welcome"] = true,
 			["spec"] = {
-				[3] = false,
+				nil, -- [1]
+				true, -- [2]
+				false, -- [3]
 			},
 		},
-		["Syhlol - Thrall"] = {
-			["welcome"] = true,
+		["Dwarfmounts - Tichondrius"] = {
 			["spec"] = {
 				[3] = false,
 			},
+			["welcome"] = true,
 		},
 		["Syhlol - Tichondrius"] = {
 			["spec"] = {
 				true, -- [1]
+				[3] = false,
+			},
+			["welcome"] = true,
+		},
+		["Syhlol - Thrall"] = {
+			["spec"] = {
+				[3] = false,
+			},
+			["welcome"] = true,
+		},
+		["Syhlo - Thrall"] = {
+			["spec"] = {
 				[3] = false,
 			},
 			["welcome"] = true,
@@ -74,11 +88,12 @@ ThreatPlatesDB = {
 			},
 			["welcome"] = true,
 		},
-		["Syhlo - Thrall"] = {
+		["Syhdk - Thrall"] = {
+			["welcome"] = true,
 			["spec"] = {
+				true, -- [1]
 				[3] = false,
 			},
-			["welcome"] = true,
 		},
 		["Syh - Thrall"] = {
 			["spec"] = {
@@ -90,17 +105,19 @@ ThreatPlatesDB = {
 	["profileKeys"] = {
 		["Gnomemounts - Tichondrius"] = "Global",
 		["Cyf - Tichondrius"] = "Global",
-		["Sýh - Thrall"] = "Default",
-		["Wthrename - Tichondrius"] = "Default",
+		["Sýh - Thrall"] = "Global",
+		["Wthrename - Tichondrius"] = "Global",
 		["Gerold - Tichondrius"] = "Global",
+		["Syhlo - Tichondrius"] = "Global",
 		["Dwarfmounts - Tichondrius"] = "Global",
+		["Syhlol - Tichondrius"] = "Global",
 		["Syhlol - Thrall"] = "Global",
-		["Syhlol - Tichondrius"] = "Default",
-		["Crylo - Tichondrius"] = "Default",
-		["Pandamounts - Tichondrius"] = "Global",
-		["Regèn - Tichondrius"] = "Default",
 		["Syhlo - Thrall"] = "Global",
-		["Syh - Thrall"] = "Default",
+		["Crylo - Tichondrius"] = "Global",
+		["Pandamounts - Tichondrius"] = "Global",
+		["Regèn - Tichondrius"] = "Global",
+		["Syhdk - Thrall"] = "Global",
+		["Syh - Thrall"] = "Global",
 	},
 	["namespaces"] = {
 		["LibDualSpec-1.0"] = {
@@ -112,7 +129,7 @@ ThreatPlatesDB = {
 		},
 	},
 	["global"] = {
-		["version"] = "10.5.2",
+		["version"] = "11.0.6",
 	},
 	["profiles"] = {
 		["Default"] = {
@@ -123,8 +140,8 @@ ThreatPlatesDB = {
 					["TargetA"] = true,
 				},
 				["alpha"] = {
-					["OccludedUnits"] = 0.75,
 					["Target"] = 2,
+					["OccludedUnits"] = 0.75,
 					["NonTarget"] = 0.75,
 				},
 				["scale"] = {
@@ -132,6 +149,31 @@ ThreatPlatesDB = {
 					["Pet"] = 0.6000000000000005,
 					["FriendlyPlayer"] = 0.7000000000000002,
 				},
+			},
+			["threat"] = {
+				["ON"] = false,
+			},
+			["CVarsBackup"] = {
+				["nameplateMinAlpha"] = "0.6",
+				["nameplateMaxAlpha"] = "1.0",
+			},
+			["Scale"] = {
+				["IgnoreUIScale"] = false,
+				["PixelPerfectUI"] = true,
+			},
+			["HeadlineView"] = {
+				["EnemySubtext"] = "NONE",
+			},
+			["FocusWidget"] = {
+				["a"] = 0.4900000095367432,
+				["r"] = 1,
+				["b"] = 0,
+				["g"] = 0.8274509803921568,
+				["theme"] = "arrow_less_than",
+				["Size"] = 30,
+			},
+			["AuraWidget"] = {
+				["ON"] = false,
 			},
 			["uniqueSettings"] = {
 				{
@@ -149,50 +191,14 @@ ThreatPlatesDB = {
 					},
 				}, -- [1]
 			},
-			["CVarsBackup"] = {
-				["nameplateMinAlpha"] = "0.6",
-				["nameplateMaxAlpha"] = "1.0",
-			},
-			["FocusWidget"] = {
-				["a"] = 0.4900000095367432,
-				["b"] = 0,
-				["g"] = 0.8274509803921568,
-				["r"] = 1,
-				["theme"] = "arrow_less_than",
-				["Size"] = 30,
-			},
-			["totemWidget"] = {
-				["scale"] = 50,
-			},
-			["Scale"] = {
-				["IgnoreUIScale"] = false,
-				["PixelPerfectUI"] = true,
-			},
-			["AuraWidget"] = {
-				["ON"] = false,
-			},
 			["settings"] = {
 				["customtext"] = {
 					["typeface"] = "Friz Quadrata TT",
 					["size"] = 8,
 					["SubtextColorUseSpecific"] = true,
 				},
-				["eliteicon"] = {
-					["theme"] = "stddragon",
-				},
-				["spellicon"] = {
-					["y"] = -20,
-				},
-				["elitehealthborder"] = {
-					["show"] = true,
-				},
-				["level"] = {
-					["x"] = 42,
-					["typeface"] = "Arial Narrow",
-					["show"] = false,
-					["size"] = 8,
-				},
 				["healthbar"] = {
+					["height"] = 8,
 					["TargetUnit"] = {
 						["Font"] = {
 							["flags"] = "NONE, MONOCHROME",
@@ -200,42 +206,50 @@ ThreatPlatesDB = {
 						},
 					},
 					["width"] = 140,
-					["height"] = 8,
 				},
-				["castbar"] = {
-					["y"] = -20,
+				["eliteicon"] = {
+					["theme"] = "stddragon",
 				},
 				["threatborder"] = {
 					["show"] = false,
 				},
+				["spellicon"] = {
+					["y"] = -20,
+				},
+				["elitehealthborder"] = {
+					["show"] = true,
+				},
+				["castbar"] = {
+					["y"] = -20,
+				},
 				["name"] = {
 					["typeface"] = "Arial Narrow",
-					["size"] = 13,
 					["y"] = 16,
+					["size"] = 13,
+				},
+				["level"] = {
+					["typeface"] = "Arial Narrow",
+					["x"] = 42,
+					["show"] = false,
+					["size"] = 8,
 				},
 				["frame"] = {
 					["height"] = 50.525,
 					["width"] = 182,
 				},
 				["raidicon"] = {
+					["show"] = false,
+					["x"] = -2,
 					["scale"] = 44,
 					["hpColor"] = false,
 					["y"] = 65,
-					["x"] = -2,
-					["show"] = false,
 				},
-			},
-			["targetWidget"] = {
-				["a"] = 0.5722883641719818,
-				["r"] = 0.984313725490196,
-				["b"] = 0.984313725490196,
-				["theme"] = "squarethin",
-			},
-			["HeadlineView"] = {
-				["EnemySubtext"] = "NONE",
 			},
 			["classWidget"] = {
 				["ON"] = false,
+			},
+			["totemWidget"] = {
+				["scale"] = 50,
 			},
 			["questWidget"] = {
 				["scale"] = 32,
@@ -245,8 +259,11 @@ ThreatPlatesDB = {
 					["Show"] = false,
 				},
 			},
-			["threat"] = {
-				["ON"] = false,
+			["targetWidget"] = {
+				["a"] = 0.5722883641719818,
+				["r"] = 0.984313725490196,
+				["theme"] = "squarethin",
+				["b"] = 0.984313725490196,
 			},
 		},
 		["Global"] = {
@@ -257,75 +274,27 @@ ThreatPlatesDB = {
 					["TargetA"] = true,
 				},
 				["alpha"] = {
-					["Target"] = 2,
 					["OccludedUnits"] = 0.6499999999999999,
+					["Target"] = 2,
 					["NonTarget"] = 0.75,
 				},
 				["scale"] = {
-					["Target"] = 0.2999999999999998,
+					["Target"] = 0.3500000000000005,
 					["FriendlyPlayer"] = 0.7000000000000002,
-				},
-			},
-			["threat"] = {
-				["ON"] = false,
-			},
-			["CVarsBackup"] = {
-				["nameplateMinAlpha"] = "0.6",
-				["nameplateMaxAlpha"] = "1.0",
-			},
-			["Scale"] = {
-				["IgnoreUIScale"] = false,
-				["PixelPerfectUI"] = true,
-			},
-			["HeadlineView"] = {
-				["EnemySubtext"] = "NONE",
-			},
-			["AuraWidget"] = {
-				["Debuffs"] = {
-					["ModeIcon"] = {
-						["IconWidth"] = 26,
-						["Style"] = "custom",
-						["IconHeight"] = 26,
-					},
-					["HealthbarMode"] = {
-						["VerticalOffset"] = 14,
-					},
-				},
-				["CrowdControl"] = {
-					["ShowFriendly"] = false,
-					["ShowEnemy"] = false,
-				},
-				["FlashWhenExpiring"] = true,
-				["ShowCooldownSpiral"] = true,
-				["Buffs"] = {
-					["ShowEnemy"] = false,
-					["HideUnlimitedDuration"] = true,
-					["ShowAllEnemy"] = true,
-					["ShowOnEnemyNPCs"] = false,
-					["ShowDispellable"] = false,
 				},
 			},
 			["uniqueSettings"] = {
 				{
-					["color"] = {
-						["g"] = 0,
-						["b"] = 0.4509803921568628,
-					},
+					["scale"] = 1.4,
 					["showIcon"] = false,
 					["Trigger"] = {
 						["Name"] = {
-							["Input"] = "Fel Obelisk; Demonic Tyrant",
+							["Input"] = "Fel Obelisk; Demonic Tyrant; Psyfiend",
 							["AsArray"] = {
 								"Fel Obelisk", -- [1]
 								"Demonic Tyrant", -- [2]
+								"Psyfiend", -- [3]
 							},
-						},
-					},
-					["scale"] = 1.4,
-					["Name"] = "Emphasized Minions",
-					["Enable"] = {
-						["UnitReaction"] = {
-							["FRIENDLY"] = false,
 						},
 					},
 					["Effects"] = {
@@ -340,9 +309,18 @@ ThreatPlatesDB = {
 							["CustomColor"] = true,
 						},
 					},
+					["Name"] = "Emphasized Minions",
+					["Enable"] = {
+						["UnitReaction"] = {
+							["FRIENDLY"] = false,
+						},
+					},
+					["color"] = {
+						["g"] = 0,
+						["b"] = 0.4509803921568628,
+					},
 				}, -- [1]
 				{
-					["ShowHeadlineView"] = true,
 					["showIcon"] = false,
 					["showNameplate"] = false,
 					["Trigger"] = {
@@ -356,20 +334,56 @@ ThreatPlatesDB = {
 							},
 						},
 					},
-					["Name"] = "Ignored Minions",
 					["alpha"] = 0.7,
+					["Name"] = "Ignored Minions",
 					["color"] = {
 						["r"] = 0.5215686274509804,
 						["g"] = 0.5215686274509804,
 						["b"] = 0.5215686274509804,
 					},
+					["ShowHeadlineView"] = true,
 				}, -- [2]
 			},
 			["totemWidget"] = {
-				["scale"] = 50,
+				["scale"] = 65,
 			},
-			["classWidget"] = {
-				["ON"] = false,
+			["CVarsBackup"] = {
+				["nameplateMinAlpha"] = "0.6",
+				["nameplateMaxAlpha"] = "1.0",
+			},
+			["FocusWidget"] = {
+				["a"] = 0.4900000095367432,
+				["r"] = 1,
+				["g"] = 0.8274509803921568,
+				["b"] = 0,
+				["theme"] = "arrow_less_than",
+				["Size"] = 30,
+			},
+			["AuraWidget"] = {
+				["Debuffs"] = {
+					["ModeIcon"] = {
+						["IconWidth"] = 26,
+						["Style"] = "custom",
+						["IconHeight"] = 26,
+					},
+					["HealthbarMode"] = {
+						["VerticalOffset"] = 10,
+					},
+				},
+				["CrowdControl"] = {
+					["ShowEnemy"] = false,
+					["ShowFriendly"] = false,
+				},
+				["FlashWhenExpiring"] = true,
+				["ShowTooltips"] = true,
+				["ShowCooldownSpiral"] = true,
+				["Buffs"] = {
+					["HideUnlimitedDuration"] = true,
+					["ShowEnemy"] = false,
+					["ShowAllEnemy"] = true,
+					["ShowOnEnemyNPCs"] = false,
+					["ShowDispellable"] = false,
+				},
 			},
 			["settings"] = {
 				["customtext"] = {
@@ -377,8 +391,19 @@ ThreatPlatesDB = {
 					["size"] = 8,
 					["SubtextColorUseSpecific"] = true,
 				},
+				["eliteicon"] = {
+					["theme"] = "stddragon",
+				},
+				["elitehealthborder"] = {
+					["show"] = true,
+				},
+				["level"] = {
+					["x"] = 42,
+					["typeface"] = "Arial Narrow",
+					["show"] = false,
+					["size"] = 8,
+				},
 				["healthbar"] = {
-					["height"] = 14,
 					["TargetUnit"] = {
 						["Font"] = {
 							["flags"] = "NONE, MONOCHROME",
@@ -386,60 +411,54 @@ ThreatPlatesDB = {
 						},
 					},
 					["width"] = 145,
-				},
-				["eliteicon"] = {
-					["theme"] = "stddragon",
-				},
-				["threatborder"] = {
-					["show"] = false,
-				},
-				["elitehealthborder"] = {
-					["show"] = true,
+					["height"] = 14,
 				},
 				["castbar"] = {
 					["y"] = -20,
 				},
+				["threatborder"] = {
+					["show"] = false,
+				},
 				["name"] = {
 					["typeface"] = "Arial Narrow",
-					["y"] = 16,
 					["size"] = 13,
+					["y"] = 16,
 				},
 				["frame"] = {
 					["height"] = 57.575,
 					["width"] = 189,
 				},
-				["level"] = {
-					["typeface"] = "Arial Narrow",
-					["x"] = 42,
-					["show"] = false,
-					["size"] = 8,
-				},
 				["raidicon"] = {
-					["show"] = false,
-					["x"] = -2,
 					["scale"] = 56,
 					["hpColor"] = false,
 					["y"] = 65,
-				},
-			},
-			["FocusWidget"] = {
-				["a"] = 0.4900000095367432,
-				["b"] = 0,
-				["r"] = 1,
-				["g"] = 0.8274509803921568,
-				["theme"] = "arrow_less_than",
-				["Size"] = 30,
-			},
-			["Visibility"] = {
-				["FriendlyMinus"] = {
-					["Show"] = false,
+					["x"] = -2,
+					["show"] = false,
 				},
 			},
 			["targetWidget"] = {
 				["a"] = 0.5722883641719818,
 				["r"] = 0.984313725490196,
-				["theme"] = "squarethin",
 				["b"] = 0.984313725490196,
+				["theme"] = "squarethin",
+			},
+			["HeadlineView"] = {
+				["EnemySubtext"] = "NONE",
+			},
+			["Scale"] = {
+				["IgnoreUIScale"] = false,
+				["PixelPerfectUI"] = true,
+			},
+			["classWidget"] = {
+				["ON"] = false,
+			},
+			["threat"] = {
+				["ON"] = false,
+			},
+			["Visibility"] = {
+				["FriendlyMinus"] = {
+					["Show"] = false,
+				},
 			},
 		},
 	},

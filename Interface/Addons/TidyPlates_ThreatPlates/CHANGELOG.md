@@ -1,3 +1,4 @@
-# 10.5.2 (2022-09-09)
+# 11.0.6 (2022-11-04)
 
-* Off-tank detection in Wrath Classic now uses the MAINTANK role flag in raids instead of the role from LFG (consistent with Classic and TBC Classic).
+* Fixed a bug with custom styles for nameplates where the nameplate style wasn't correctly reset after a trigger was no longer active (e.g., after the aura triggering the style expired).
+* Upgrade integrated libraries (LibSharedMedia v10.0.0, LibCustomGlow 1.0.3-4-g357b944) [Comment #6591].

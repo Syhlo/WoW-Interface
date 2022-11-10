@@ -2,16 +2,22 @@
 GlassDB = {
 	["profileKeys"] = {
 		["Syhlol - Tichondrius"] = "Default",
-		["Syhlol - Thrall"] = "Default",
+		["Cyf - Tichondrius"] = "Default",
 		["Sýh - Thrall"] = "Default",
 		["Gerold - Tichondrius"] = "Default",
+		["Syhlo - Tichondrius"] = "Default",
+		["Dwarfmounts - Tichondrius"] = "Default",
 		["Syhlo - Thrall"] = "Default",
-		["Cyf - Tichondrius"] = "Default",
+		["Syhdk - Thrall"] = "Default",
+		["Syhlol - Thrall"] = "Default",
+		["Syh - Thrall"] = "Default",
 	},
 	["global"] = {
 		["version"] = "1.8.0",
 	},
 	["profiles"] = {
+		["Tichondrius"] = {
+		},
 		["Default"] = {
 			["frameHeight"] = 200,
 			["positionAnchor"] = {
@@ -20,6 +26,10 @@ GlassDB = {
 			["chatHoldTime"] = 15,
 			["font"] = "Designosaur (GladiusEx)",
 			["frameWidth"] = 430,
+		},
+		["Syhlo - Tichondrius"] = {
+		},
+		["PALADIN"] = {
 		},
 	},
 }

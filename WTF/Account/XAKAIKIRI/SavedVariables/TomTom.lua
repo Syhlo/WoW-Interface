@@ -14,11 +14,12 @@ TomTomDB = {
 		["Cyf - Tichondrius"] = "Default",
 		["Wthrename - Tichondrius"] = "Default",
 		["Gerold - Tichondrius"] = "Default",
+		["Syhlo - Tichondrius"] = "Default",
 		["Scatterffs - Ragnaros"] = "Default",
 		["Syhloc - Thrall"] = "Default",
 		["Syhlo - Thrall"] = "Default",
-		["Syhdk - Thrall"] = "Default",
 		["Pandamounts - Tichondrius"] = "Default",
+		["Syhdk - Thrall"] = "Default",
 		["Youreterribl - Burning Legion"] = "Default",
 		["Syhlol - Illidan"] = "Default",
 		["Syh - Thrall"] = "Default",
@@ -92,11 +93,12 @@ TomTomWaypointsM = {
 		["Cyf - Tichondrius"] = "Cyf - Tichondrius",
 		["Wthrename - Tichondrius"] = "Wthrename - Tichondrius",
 		["Gerold - Tichondrius"] = "Gerold - Tichondrius",
+		["Syhlo - Tichondrius"] = "Syhlo - Tichondrius",
 		["Scatterffs - Ragnaros"] = "Scatterffs - Ragnaros",
 		["Syhloc - Thrall"] = "Syhloc - Thrall",
 		["Syhlo - Thrall"] = "Syhlo - Thrall",
-		["Syhdk - Thrall"] = "Syhdk - Thrall",
 		["Pandamounts - Tichondrius"] = "Pandamounts - Tichondrius",
+		["Syhdk - Thrall"] = "Syhdk - Thrall",
 		["Youreterribl - Burning Legion"] = "Youreterribl - Burning Legion",
 		["Syhlol - Illidan"] = "Syhlol - Illidan",
 		["Syh - Thrall"] = "Syh - Thrall",
@@ -124,17 +126,48 @@ TomTomWaypointsM = {
 		},
 		["Cyf - Tichondrius"] = {
 			[1961] = {
-				["1961:250000000:510000000:TomTom waypoint"] = {
+				["1961:390000000:340000000:under tree roots"] = {
 					1961, -- [1]
-					0.25, -- [2]
-					0.51, -- [3]
+					0.39, -- [2]
+					0.34, -- [3]
 					["arrivaldistance"] = 15,
 					["crazy"] = false,
 					["persistent"] = true,
-					["desc"] = "TomTom waypoint",
+					["desc"] = "under tree roots",
 					["silent"] = true,
 					["cleardistance"] = 10,
-					["title"] = "TomTom waypoint",
+					["title"] = "under tree roots",
+					["from"] = "TomTom/way",
+					["callbacks"] = {
+						["distance"] = {
+							[10] = nil --[[ skipped inline function ]],
+							[15] = nil --[[ skipped inline function ]],
+						},
+						["world"] = {
+							["onclick"] = nil --[[ skipped inline function ]],
+							["tooltip_update"] = nil --[[ skipped inline function ]],
+							["tooltip_show"] = nil --[[ skipped inline function ]],
+						},
+						["minimap"] = {
+							["onclick"] = nil --[[ skipped inline function ]],
+							["tooltip_update"] = nil --[[ skipped inline function ]],
+							["tooltip_show"] = nil --[[ skipped inline function ]],
+						},
+					},
+					["minimap"] = true,
+					["world"] = true,
+				},
+				["1961:350000000:460000000:on chain"] = {
+					1961, -- [1]
+					0.35, -- [2]
+					0.46, -- [3]
+					["arrivaldistance"] = 15,
+					["crazy"] = false,
+					["persistent"] = true,
+					["desc"] = "on chain",
+					["silent"] = true,
+					["cleardistance"] = 10,
+					["title"] = "on chain",
 					["from"] = "TomTom/way",
 					["callbacks"] = {
 						["distance"] = {
@@ -161,15 +194,17 @@ TomTomWaypointsM = {
 		},
 		["Gerold - Tichondrius"] = {
 		},
+		["Syhlo - Tichondrius"] = {
+		},
 		["Scatterffs - Ragnaros"] = {
 		},
 		["Syhloc - Thrall"] = {
 		},
 		["Syhlo - Thrall"] = {
 		},
-		["Syhdk - Thrall"] = {
-		},
 		["Pandamounts - Tichondrius"] = {
+		},
+		["Syhdk - Thrall"] = {
 		},
 		["Youreterribl - Burning Legion"] = {
 		},

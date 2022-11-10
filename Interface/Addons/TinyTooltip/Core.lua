@@ -587,6 +587,11 @@ addon.filterfunc.sameguild = function(raw)
         return true
     end
 end
+addon.filterfunc.samefaction = function(raw)
+    if (raw.factionGroup == UnitFactionGroup("player")) then
+        return true
+    end
+end
 
 LibEvent:attachTrigger("tooltip.scale", function(self, frame, scale)
     frame:SetScale(scale)
@@ -621,10 +626,27 @@ end)
 LibEvent:attachTrigger("tooltip.style.background", function(self, frame, r, g, b, a)
     LibEvent:trigger("tooltip.style.init", frame)
     local rr, gg, bb, aa = frame.style:GetBackdropColor()
+
+    if((r== nil))then
+        r=0
+    end
+    if((g== nil))then
+        g=0
+    end
+    if((b== nil))then 
+        b=0
+    end
+
+    r = tonumber(format("%.1f",r))
+    g = tonumber(format("%.1f",g))
+    b = tonumber(format("%.1f",b))
+    a = tonumber(format("%.1f",a))
+
     if (rr ~= r or gg ~= g or bb ~= b or aa ~= a) then
         if (frame.SetBackdrop) then frame:SetBackdrop(nil) end
         frame.style:SetBackdropColor(r or rr, g or gg, b or bb, a or aa)
     end
+    
 end)
 
 LibEvent:attachTrigger("tooltip.style.bgfile", function(self, frame, bgvalue)
@@ -806,8 +828,10 @@ LibEvent:attachTrigger("tooltip.style.init", function(self, tip)
         edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
         edgeSize = 14,
     }
-    if (tip.SetBackdrop) then
+    if tip.SetBackdrop then
         tip:SetBackdrop(nil)
+    elseif tip.NineSlice then
+        tip.NineSlice:Hide()
     end
     tip.style = CreateFrame("Frame", nil, tip, BackdropTemplateMixin and "BackdropTemplate" or nil)
     tip.style:SetFrameLevel(tip:GetFrameLevel())
@@ -832,7 +856,7 @@ LibEvent:attachTrigger("tooltip.style.init", function(self, tip)
     tip.style.mask:SetPoint("TOPLEFT", 3, -3)
     tip.style.mask:SetPoint("BOTTOMRIGHT", tip.style, "TOPRIGHT", -3, -32)
     tip.style.mask:SetBlendMode("ADD")
-    tip.style.mask:SetGradientAlpha("VERTICAL", 0, 0, 0, 0, 0.9, 0.9, 0.9, 0.4)
+    tip.style.mask:SetGradient("VERTICAL", {r=0, b=0, g=0, a=0},{ r=0.9, b=0.9, g=0.9, a=0.4})
     tip.style.mask:Hide()
     tip:HookScript("OnShow", function(self) LibEvent:trigger("tooltip:show", self) end)
     tip:HookScript("OnHide", function(self) LibEvent:trigger("tooltip:hide", self) end)
@@ -883,8 +907,12 @@ end)
 
 if (SharedTooltip_SetBackdropStyle) then
     hooksecurefunc("SharedTooltip_SetBackdropStyle", function(self, style, embedded)
-        if (self.style and self.NineSlice) then
-            self.NineSlice:Hide()
+        if (self.style) then
+            if self.SetBackdrop then
+                self:SetBackdrop(nil)
+            elseif self.NineSlice then
+                self.NineSlice:Hide()
+            end
         end
     end)
 end

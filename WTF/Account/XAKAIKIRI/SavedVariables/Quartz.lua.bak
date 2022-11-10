@@ -29,6 +29,8 @@ Quartz3DB = {
 		},
 		["LibDualSpec-1.0"] = {
 		},
+		["EnemyCasts"] = {
+		},
 		["Player"] = {
 			["profiles"] = {
 				["Default"] = {
@@ -46,8 +48,6 @@ Quartz3DB = {
 					["alpha"] = 0.75,
 				},
 			},
-		},
-		["EnemyCasts"] = {
 		},
 		["GCD"] = {
 		},
@@ -72,8 +72,8 @@ Quartz3DB = {
 						1, -- [4]
 					},
 					["w"] = 207,
-					["y"] = 120,
-					["x"] = -265,
+					["y"] = 134.0002049234136,
+					["x"] = -267.9999939176778,
 					["icongap"] = 4,
 					["iconposition"] = "left",
 					["point"] = "CENTER",
@@ -118,13 +118,14 @@ Quartz3DB = {
 		["Cyf - Tichondrius"] = "Default",
 		["Wthrename - Tichondrius"] = "Default",
 		["Gerold - Tichondrius"] = "Default",
+		["Syhlo - Tichondrius"] = "Default",
 		["Scatterffs - Ragnaros"] = "Default",
 		["Syhlo - Thrall"] = "Default",
 		["Youreterribl - Burning Legion"] = "Default",
 		["Syhloc - Thrall"] = "Default",
-		["Pandamounts - Tichondrius"] = "Default",
-		["Syhlol - Illidan"] = "Default",
 		["Syhdk - Thrall"] = "Default",
+		["Syhlol - Illidan"] = "Default",
+		["Pandamounts - Tichondrius"] = "Default",
 		["Syh - Thrall"] = "Default",
 	},
 	["profiles"] = {

@@ -1,0 +1,12 @@
+## Interface: 100002
+## Title: |A:::|a|TZ|t  - Scrap Plugin
+## Notes: Replaces Sorted's built-in trash handling with Scrap's.
+## Version: 1.0.0
+## Author: Daft Vader
+## Dependencies: Scrap, Sorted
+## DefaultState: enabled
+
+
+Libs\LibStub\LibStub.lua
+
+Sorted_Scrap.lua

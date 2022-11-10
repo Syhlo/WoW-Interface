@@ -24,6 +24,7 @@ function StatusBarMod:SetupOptions()
 			get = function() return self.db.profile.enabled end,
 			set = "ToggleModule",
 			handler = self,
+			width = "full",
 		}
 		self.optionobject:AddElement("general", "enabled", enabled)
 
@@ -37,16 +38,6 @@ function StatusBarMod:SetupOptions()
 			set = function(info, state) self.db.profile.width = state; self.bar:PerformLayout() end,
 		}
 		self.optionobject:AddElement("general", "width", width)
-
-		local sections = {
-			type = "toggle",
-			order = 81,
-			name = L["Use twenty sections"],
-			desc = L["Divide the bar into 20 sections, instead of only 10, for long status bars."],
-			get = function() return self.db.profile.twentySections end,
-			set = function(info, state) self.db.profile.twentySections = state; self.bar:PerformLayout() end,
-		}
-		self.optionobject:AddElement("general", "twentySections", sections)
 
 		self.disabledoptions = {
 			general = {
@@ -63,7 +54,7 @@ function StatusBarMod:SetupOptions()
 			order = 100,
 			type = "group",
 			name = L["Status Tracking Bar"],
-			desc = L["Configure the Status Tracking Bar"],
+			desc = L["The Status Tracking Bar combines XP/Reputation/Honor into one bar, stacking up to two tracked elements"],
 			childGroups = "tab",
 		}
 		Bartender4:RegisterBarOptions("Status", self.options)

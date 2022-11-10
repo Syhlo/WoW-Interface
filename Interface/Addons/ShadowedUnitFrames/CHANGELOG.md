@@ -1,7 +1,9 @@
 # Shadowed Unit Frames
 
-## [v4.3.7](https://github.com/Nevcairiel/ShadowedUnitFrames/tree/v4.3.7) (2021-06-30)
-[Full Changelog](https://github.com/Nevcairiel/ShadowedUnitFrames/compare/v4.3.6...v4.3.7) [Previous Releases](https://github.com/Nevcairiel/ShadowedUnitFrames/releases)
+## [v4.4.1](https://github.com/Nevcairiel/ShadowedUnitFrames/tree/v4.4.1) (2022-11-06)
+[Full Changelog](https://github.com/Nevcairiel/ShadowedUnitFrames/compare/v4.4.0...v4.4.1) [Previous Releases](https://github.com/Nevcairiel/ShadowedUnitFrames/releases)
 
-- Some tweaking for ghoul bar  
-- Added Totem bar for Death Knight Ghouls  
+- Add Evoker to the raid class filter  
+- Remove unused function  
+- Check for expired fade before trying to set alpha  
+    This prevents an out of bound alpha value  

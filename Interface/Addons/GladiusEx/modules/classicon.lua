@@ -217,9 +217,6 @@ function ClassIcon:SetSideTexture(unit, texture, _needs_crop, left, right, top, 
   if self.db[unit].classIconSideView then
     -- Never crop borders
     SetClassIconTexture(self, unit, 'sideicon', texture, false, left, right, top, bottom, self.db[unit].classIconSideViewSize)
-    self.frame[unit].side:Show()
-  else
-    self.frame[unit].side:Hide()
   end
 end
 
@@ -328,6 +325,12 @@ function ClassIcon:SetClassIcon(unit)
 
   texture, left, right, top, bottom, needs_crop = GetClassRoleSpecIcon(self, unit, self.db[unit].classIconSideViewMode)
   self:SetSideTexture(unit, texture, needs_crop, left, right, top, bottom)
+
+  if self.db[unit].classIconSideView then
+    self.frame[unit].side:Show()
+  else
+    self.frame[unit].side:Hide()
+  end
 end
 
 function ClassIcon:CreateFrame(unit)
@@ -339,7 +342,7 @@ function ClassIcon:CreateFrame(unit)
 	self.frame[unit]:EnableMouse(false)
 	self.frame[unit].texture = _G[self.frame[unit]:GetName().."Icon"]
 	self.frame[unit].normalTexture = _G[self.frame[unit]:GetName().."NormalTexture"]
-	self.frame[unit].cooldown = _G[self.frame[unit]:GetName().."Cooldown"]
+	self.frame[unit].cooldown = CreateFrame("Cooldown", nil, self.frame[unit], "CooldownFrameTemplate")
 	self.frame[unit].cooldown:SetSwipeColor(0, 0, 0, 1)
 	self.frame[unit].texture_border = self.frame[unit]:CreateTexture(nil, "BACKGROUND", nil, -1)
 	self.frame[unit].texture_border:SetTexture([[Interface\AddOns\GladiusEx\media\icon_border]])

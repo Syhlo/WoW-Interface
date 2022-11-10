@@ -2,7 +2,7 @@
 -- Written by KyrosKrane Sylvanblade (kyros@kyros.info)
 -- Copyright (c) 2015-2022 KyrosKrane Sylvanblade
 -- Licensed under the MIT License, as per the included file.
--- Addon version: v14.1.1-release
+-- Addon version: v14.2.0-release
 
 --#########################################
 --# Description
@@ -46,7 +46,7 @@ APR.USER_ADDON_NAME = L["Annoying Pop-up Remover"]
 APR.USER_ADDON_SHORT_NAME = L["APR"]
 
 -- Set the current version so we can display it.
-APR.Version = "v14.1.1-release"
+APR.Version = "v14.2.0-release"
 
 
 --#########################################

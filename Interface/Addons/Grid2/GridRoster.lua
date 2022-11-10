@@ -11,6 +11,7 @@ local UnitExists = UnitExists
 local GetNumGroupMembers = GetNumGroupMembers
 local isClassic = Grid2.isClassic
 local isVanilla = Grid2.isVanilla
+local isWrath   = Grid2.isWrath
 
 -- helper tables to check units types/categories
 local party_indexes   = {} -- player=>0, party1=>1, ..
@@ -253,6 +254,9 @@ do
 		if self.debugging then
 			self:Debug("GetInstanceInfo %s %s %s/%s/%s %s@%s(%s)", tostring(event), tostring(instName), tostring(instMapID), tostring(difficultyID), tostring(maxPlayers), tostring(self.groupType), tostring(self.instType), tostring(self.instMaxPlayers))
 		end
+		if isWrath then
+			self:RefreshToggleForVehicleWorkaround(instMapID)
+		end
 		if newInstType == "arena" then
 			newGroupType = newInstType	-- arena@arena instances
 		elseif IsInRaid() then
@@ -293,6 +297,8 @@ do
 		if maxPlayers == nil or maxPlayers == 0 then
 			maxPlayers = 40
 			self:FixGroupMaxPlayers(newInstType)
+		elseif maxPlayers>40 then -- In Wrath Wintergrasp GetInstanceInfo() may return more than 40 players.
+			maxPlayers = 40
 		end
 		if self.groupType ~= newGroupType or self.instType ~= newInstType or self.instMaxPlayers ~= maxPlayers then
 			self:Debug("GroupChanged", event, instName, instMapID, self.groupType, self.instType, self.instMaxPlayers, "=>", newGroupType, newInstType, maxPlayers)
@@ -354,6 +360,7 @@ Grid2.roster_players  = roster_players
 Grid2.roster_pets     = roster_pets
 Grid2.roster_names    = roster_names
 Grid2.owner_of_unit   = owner_of_unit
+Grid2.pet_of_unit     = pet_of_unit
 Grid2.roster_my_units = roster_my_units
 Grid2.grouped_units   = grouped_units
 Grid2.raid_indexes    = raid_indexes

@@ -1,0 +1,15 @@
+## Interface: 100002
+## Title: AutoGear
+## Notes: Automatically chooses loot and equips gear
+## Author: Synthetikaryote, BujuArena
+## OptionalDeps: Pawn
+
+TaintLess.xml
+localization.core.lua
+localization.ru.lua
+AutoGear.lua
+## SavedVariables: AutoGearDB
+## SavedVariablesPerCharacter: AutoGearDB
+
+## X-Curse-Project-ID: 39179
+## X-WoWI-ID: 26415

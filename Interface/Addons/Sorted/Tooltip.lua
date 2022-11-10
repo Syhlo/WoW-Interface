@@ -1,11 +1,15 @@
 local _, S = ...
+local pairs, ipairs, string, type, time = pairs, ipairs, string, type, time
 
-SortedTooltip = {}
+S.Tooltip = {}
+local extraTooltip = CreateFrame("GameTooltip", "SortedExtendedTooltip", GameTooltip, "GameTooltipTemplate")
+
+
 
 local i = 0
 
-function SortedTooltip.Schedule(func)
-    local tooltipDelay = Sorted_GetSetting("tooltipDelay")
+function S.Tooltip.Schedule(func)
+    local tooltipDelay = S.Settings.Get("tooltipDelay")
     if tooltipDelay == 0 then
         func()
         return
@@ -19,32 +23,40 @@ function SortedTooltip.Schedule(func)
     end)
 end
 
-function SortedTooltip.Cancel()
+function S.Tooltip.Cancel()
     GameTooltip:Hide()
-    if not Sorted_IsClassic() then
+    extraTooltip:Hide()
+    if S.WoWVersion() >= 5 then
         BattlePetTooltip:Hide()
     end
     i = i + 1
 end
 
 
-local function CreateLocalized()
-    GameTooltip:SetOwner(SortedTooltip.parent, SortedTooltip.anchor)
+local function Create()
+    GameTooltip:SetOwner(S.Tooltip.parent, S.Tooltip.anchor)
     GameTooltip:ClearLines()
-    GameTooltip:AddLine(SortedTooltip.text)
+    GameTooltip:AddLine(S.Tooltip.text)
     GameTooltip:Show()
 end
-function SortedTooltip.CreateLocalized(parent, anchor, key, arg1, arg2, arg3)
-    SortedTooltip.parent = parent
-    SortedTooltip.anchor = anchor
-    SortedTooltip.text = Sorted.Localize(key, arg1, arg2, arg3)
-    SortedTooltip.Schedule(CreateLocalized)
+function S.Tooltip.CreateText(parent, anchor, text)
+    S.Tooltip.parent = parent
+    S.Tooltip.anchor = anchor
+    S.Tooltip.text = text
+    S.Tooltip.Schedule(Create)
+end
+function S.Tooltip.CreateLocalized(parent, anchor, key, arg1, arg2, arg3)
+    S.Tooltip.CreateText(parent, anchor, S.Localize(key, arg1, arg2, arg3))
 end
 
 
 
-local extraTooltip = CreateFrame("GameTooltip", "SortedTooltip", GameTooltip, "GameTooltipTemplate")
 local extraTooltipLines = {}
+extraTooltip.logo = extraTooltip:CreateTexture("")
+extraTooltip.logo:SetTexture("Interface\\Addons\\Sorted\\Textures\\Portrait-Text")
+extraTooltip.logo:SetTexCoord(0, 1, 0.25, 0.75)
+extraTooltip.logo:SetPoint("TOPLEFT", 10, -6)
+extraTooltip.logo:SetSize(64, 32)
 extraTooltip.bagIcon = extraTooltip:CreateTexture("")
 extraTooltip.bagIcon:SetTexture("Interface\\Addons\\Sorted\\Textures\\Tooltip-Icons")
 extraTooltip.bagIcon:SetTexCoord(0, 0.25, 0, 1)
@@ -63,17 +75,17 @@ extraTooltip.reagentIcon:SetSize(20, 20)
 local function GetLine(index)
     if extraTooltipLines[index] then return extraTooltipLines[index] end
     local line = {}
-    line.nameString = extraTooltip:CreateFontString("")
-    line.nameString:SetFontObject("Sorted12Font")
+    line.nameString = extraTooltip:CreateFontString(nil)
+    line.nameString:SetFontObject("SortedFont")
     line.nameString:SetPoint("LEFT", extraTooltip, "TOPLEFT", 8, -index * 24 - 22)
-    line.bagString = extraTooltip:CreateFontString("")
-    line.bagString:SetFontObject("Sorted12Font")
+    line.bagString = extraTooltip:CreateFontString(nil)
+    line.bagString:SetFontObject("SortedFont")
     line.bagString:SetPoint("CENTER", extraTooltip.bagIcon, "CENTER", 0, -index * 24)
-    line.bankString = extraTooltip:CreateFontString("")
-    line.bankString:SetFontObject("Sorted12Font")
+    line.bankString = extraTooltip:CreateFontString(nil)
+    line.bankString:SetFontObject("SortedFont")
     line.bankString:SetPoint("CENTER", extraTooltip.bankIcon, "CENTER", 0, -index * 24)
-    line.reagentString = extraTooltip:CreateFontString("")
-    line.reagentString:SetFontObject("Sorted12Font")
+    line.reagentString = extraTooltip:CreateFontString(nil)
+    line.reagentString:SetFontObject("SortedFont")
     line.reagentString:SetPoint("CENTER", extraTooltip.reagentIcon, "CENTER", 0, -index * 24)
     extraTooltipLines[index] = line
     return extraTooltipLines[index]
@@ -81,15 +93,15 @@ end
 
 local textColor = {["r"] = 1, ["g"] = 1, ["b"] = 1}
 local grayedTextColor = {["r"] = 0.6, ["g"] = 0.61, ["b"] = 0.65}
-function Sorted_AddToTooltip(tooltip, bag, slot)
-    local self = Sorted_GetContainerItemInfo(bag, slot)
+function S.Tooltip.Extended(bag, slot)
+    local self = S.Data.GetItem(bag, slot)
     local i = 0
     if self.classID == LE_ITEM_CLASS_BATTLEPET then return end
     -- Add Sorted's tooltip info
-    extraTooltip:SetOwner(tooltip, "ANCHOR_BOTTOM")
+    extraTooltip:SetOwner(GameTooltip, "ANCHOR_BOTTOM")
     extraTooltip:ClearLines()
     --extraTooltip:AddLine("|TInterface\\Addons\\Sorted\\Textures\\Title:24:96:-6:4|t")
-    extraTooltip:AddLine("|TInterface\\Addons\\Sorted\\Textures\\Title-No-Bg:24:96:0:2|t")
+    extraTooltip:AddLine(" ")
     for _, line in pairs(extraTooltipLines) do
         line.nameString:Hide()
         line.bagString:Hide()
@@ -101,7 +113,7 @@ function Sorted_AddToTooltip(tooltip, bag, slot)
             local bagCount = 0
             for bag = BACKPACK_CONTAINER, NUM_BAG_SLOTS do
                 for slot = 1, 36 do
-                    local itemData = data.containers[bag][slot]
+                    local itemData = S.Data.GetItem(bag, slot, GUID)
                     if itemData.itemID == self.itemID and itemData.count then
                         bagCount = bagCount + itemData.count
                     end
@@ -109,9 +121,9 @@ function Sorted_AddToTooltip(tooltip, bag, slot)
             end
 
             local bankCount = 0
-            for _, bag in pairs(Sorted_ContainersOfType("BANK")) do
+            for _, bag in pairs(S.Utils.ContainersOfType("BANK")) do
                 for slot = 1, 36 do
-                    local itemData = data.containers[bag][slot]
+                    local itemData = S.Data.GetItem(bag, slot, GUID)
                     if itemData.itemID == self.itemID and itemData.count then
                         bankCount = bankCount + itemData.count
                     end
@@ -119,9 +131,9 @@ function Sorted_AddToTooltip(tooltip, bag, slot)
             end
 
             local reagentCount = 0
-            if not Sorted_IsClassic() then
+            if S.WoWVersion() >= 6 then
                 for slot = 1, 98 do
-                    local itemData = data.containers[REAGENTBANK_CONTAINER][slot]
+                    local itemData = S.Data.GetItem(REAGENTBANK_CONTAINER, slot, GUID)
                     if itemData.itemID == self.itemID and itemData.count then
                         reagentCount = reagentCount + itemData.count
                     end
@@ -131,7 +143,7 @@ function Sorted_AddToTooltip(tooltip, bag, slot)
             if bagCount > 0 or bankCount > 0 or reagentCount > 0 then
                 i = i + 1
                 local line = GetLine(i)
-                line.nameString:SetText(Sorted_FormatFaction(data.faction)..Sorted_GetClassColor(data.class):GenerateHexColorMarkup()..data.name)
+                line.nameString:SetText(S.Utils.FormatFaction(data.faction)..S.Utils.GetClassHexColor(data.class)..data.name)
                 line.bagString:SetText(bagCount)
                 if bagCount > 0 then line.bagString:SetTextColor(textColor.r, textColor.g, textColor.b) else line.bagString:SetTextColor(grayedTextColor.r, grayedTextColor.g, grayedTextColor.b) end
                 line.bankString:SetText(bankCount)
@@ -139,7 +151,7 @@ function Sorted_AddToTooltip(tooltip, bag, slot)
                 line.nameString:Show()
                 line.bagString:Show()
                 line.bankString:Show()
-                if not Sorted_IsClassic() then
+                if S.WoWVersion() >= 6 then
                     line.reagentString:SetText(reagentCount)
                     if reagentCount > 0 then line.reagentString:SetTextColor(textColor.r, textColor.g, textColor.b) else line.reagentString:SetTextColor(grayedTextColor.r, grayedTextColor.g, grayedTextColor.b) end
                     line.reagentString:Show()
@@ -159,32 +171,13 @@ function Sorted_AddToTooltip(tooltip, bag, slot)
             end
         end
     end
-    tooltip:Show()
     extraTooltip:Show()
-    local width = tooltip:GetWidth()
+    local width = GameTooltip:GetWidth()
     if width < 256 then
-        tooltip:SetWidth(256)
+        GameTooltip:SetWidth(256)
         width = 256
     end
-    extraTooltip:SetPoint("LEFT", tooltip, "RIGHT", -288, 0)
-    extraTooltip:SetPoint("RIGHT", tooltip)
+    extraTooltip:SetPoint("LEFT", GameTooltip, "RIGHT", -288, 0)
+    extraTooltip:SetPoint("RIGHT", GameTooltip)
     extraTooltip:SetHeight(i * 24 + 40)
 end
---[[hooksecurefunc(GameTooltip, "SetBagItem", AddToTooltip)
-hooksecurefunc(GameTooltip, "SetInventoryItem",
-    function(tooltip, unit, slot)
-        if unit == "player" then
-            if Sorted_IsClassic() then
-                if slot >= 48 and slot <= 71 then
-                    AddToTooltip(tooltip, BANK_CONTAINER, slot - 47)
-                end
-            else
-                if slot >= 52 and slot <= 79 then
-                    AddToTooltip(tooltip, BANK_CONTAINER, slot - 51)
-                elseif slot >= 99 and slot <= 196 then
-                    AddToTooltip(tooltip, REAGENTBANK_CONTAINER, slot - 98)
-                end
-            end
-        end
-    end
-)]]

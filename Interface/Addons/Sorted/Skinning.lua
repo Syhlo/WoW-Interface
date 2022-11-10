@@ -1,261 +1,286 @@
 local _, S = ...
-local doSkinning = false
+local pairs, ipairs, string, type, time = pairs, ipairs, string, type, time
 
-function S.InitialiseSkinning()
-    if IsAddOnLoaded("AddOnSkins") and Sorted_GetSetting("skinning") == 2 then
-        S.AS = unpack(AddOnSkins)
-        Sorted.AddOnSkins = S.AS
-        doSkinning = true
+S.Skinning = {}
+
+S.Skinning.DEFAULT = 1
+S.Skinning.CLEAN = 2
+S.Skinning.ADDONSKINS = 3
+local hasSkinnedWithAddOnSkins = false
+
+
+local canSkin = false
+function S.Skinning.AddOnSkinsAvailable()
+    return canSkin
+end
+
+local currentSkin = S.Skinning.DEFAULT
+function S.Skinning.GetSkin()
+    return currentSkin
+end
+
+
+local texSizeX, texSizeY = 0.296875, 0.3125
+function S.Skinning.SkinDefault()
+    currentSkin = S.Skinning.DEFAULT
+    local f = S.primaryFrame
+    f.border:Show()
+    f.sideFrame.border:Show()
+    f.head.bg:Show()
+    f.head.characterSelectDropdown.bg:Show()
+    if S.WoWVersion() >= 3 then
+        f.head.equipSetDropdown.bg:Show()
+    end
+    f.head.characterSelectDropdown:SetPoint("TOPLEFT", 48, 0)
+    f.head:SetPoint("BOTTOM", f, "TOP", 0, -60)
+
+    f.closeButton:SetSize(34, 34)
+    f.closeButton:SetNormalTexture("Interface\\Addons\\Sorted\\Textures\\redbutton2x")
+    f.closeButton:SetHighlightTexture("Interface\\Addons\\Sorted\\Textures\\redbutton2x")
+    f.closeButton:SetPushedTexture("Interface\\Addons\\Sorted\\Textures\\redbutton2x")
+    f.closeButton:GetHighlightTexture():SetTexCoord(texSizeX * 2, texSizeX * 2.5, 0, texSizeY)
+    f.closeButton:GetHighlightTexture():SetAlpha(1)
+
+    f.minimiseButton:SetSize(29, 30)
+    f.minimiseButton:SetPoint("CENTER", f, "TOPRIGHT", -42, -12)
+    f.minimiseButton:SetNormalTexture("Interface\\Addons\\Sorted\\Textures\\redbutton2x")
+    f.minimiseButton:SetHighlightTexture("Interface\\Addons\\Sorted\\Textures\\redbutton2x")
+    f.minimiseButton:SetPushedTexture("Interface\\Addons\\Sorted\\Textures\\redbutton2x")
+    f.minimiseButton.clean = false
+    f.minimiseButton:Update()
+
+    f.wowButton:SetSize(29, 30)
+    f.wowButton:SetPoint("CENTER", f, "TOPRIGHT", -68, -12)
+    f.wowButton:SetNormalTexture("Interface\\Addons\\Sorted\\Textures\\wow-button")
+    f.wowButton:SetHighlightTexture("Interface\\Addons\\Sorted\\Textures\\wow-button")
+    f.wowButton:GetHighlightTexture():SetTexCoord(texSizeX, texSizeX * 2, 0, texSizeY)
+    f.wowButton:SetPushedTexture("Interface\\Addons\\Sorted\\Textures\\wow-button")
+
+    f.settingsButton:SetSize(40, 40)
+    f.settingsButton:SetPoint("CENTER", f, "TOPLEFT", 21, -6)
+    f.settingsButton:GetNormalTexture():SetSize(64, 64)
+    f.settingsButton:GetHighlightTexture():SetSize(64, 64)
+    f.settingsButton:GetPushedTexture():SetSize(64, 64)
+    f.settingsButton:SetNormalTexture("Interface\\Addons\\Sorted\\Textures\\BagSlots2x")
+    f.settingsButton:SetHighlightTexture("Interface\\Addons\\Sorted\\Textures\\BagSlots2x")
+    f.settingsButton:SetPushedTexture("Interface\\Addons\\Sorted\\Textures\\BagSlots2x")
+    f.settingsButton:GetNormalTexture():SetTexCoord(0, 0.375, 0, 0.375)
+    f.settingsButton:GetHighlightTexture():SetTexCoord(0.375, 0.75, 0, 0.375)
+    f.settingsButton:GetPushedTexture():SetTexCoord(0, 0.375, 0, 0.375)
+    f.settingsButton.text:SetTexture("Interface\\Addons\\Sorted\\Textures\\Portrait-Text")
+
+    f.sideFrame:SetPoint("RIGHT", f, "LEFT", -2, 0)
+    if f.sideFrame:IsShown() then
+        f.sideTabFrame:SetPoint("BOTTOMRIGHT", f.sideFrame, "BOTTOMLEFT", -1, 16)
+    else
+        f.sideTabFrame:SetPoint("BOTTOMRIGHT", f, "BOTTOMLEFT", -1, 16)
     end
 end
 
-function S.DoSkinning()
-    return doSkinning
+
+function S.Skinning.SkinClean()
+    currentSkin = S.Skinning.CLEAN
+    local f = S.primaryFrame
+    f.border:Hide()
+    f.sideFrame.border:Hide()
+    f.head.bg:Hide()
+    f.head.characterSelectDropdown.bg:Hide()
+    if S.WoWVersion() >= 3 then
+        f.head.equipSetDropdown.bg:Hide()
+    end
+    f.head.characterSelectDropdown:SetPoint("TOPLEFT", 28, 0)
+    f.head:SetPoint("BOTTOM", f, "TOP", 0, -52)
+    
+    f.closeButton:SetSize(26, 26)
+    f.closeButton:SetNormalTexture("Interface\\Addons\\Sorted\\Textures\\redbutton2x-Clean")
+    f.closeButton:SetHighlightTexture("Interface\\Addons\\Sorted\\Textures\\redbutton2x-Clean")
+    f.closeButton:GetHighlightTexture():SetTexCoord(0.1484375, 0.296875, 0, 0.3125)
+    f.closeButton:GetHighlightTexture():SetAlpha(0.6)
+    f.closeButton:SetPushedTexture("Interface\\Addons\\Sorted\\Textures\\redbutton2x-Clean")
+
+    f.minimiseButton:SetSize(24, 24)
+    f.minimiseButton:SetPoint("CENTER", f, "TOPRIGHT", -38, -12)
+    f.minimiseButton:SetNormalTexture("Interface\\Addons\\Sorted\\Textures\\redbutton2x-Clean")
+    f.minimiseButton:SetHighlightTexture("Interface\\Addons\\Sorted\\Textures\\redbutton2x-Clean")
+    f.minimiseButton:SetPushedTexture("Interface\\Addons\\Sorted\\Textures\\redbutton2x-Clean")
+    f.minimiseButton.clean = true
+    f.minimiseButton:Update()
+
+    f.wowButton:SetSize(24, 24)
+    f.wowButton:SetPoint("CENTER", f, "TOPRIGHT", -62, -12)
+    f.wowButton:SetNormalTexture("Interface\\Addons\\Sorted\\Textures\\wow-button-Clean")
+    f.wowButton:SetHighlightTexture("Interface\\Addons\\Sorted\\Textures\\wow-button-Clean")
+    f.wowButton:GetHighlightTexture():SetTexCoord(0, texSizeX, 0, texSizeY)
+    f.wowButton:SetPushedTexture("Interface\\Addons\\Sorted\\Textures\\wow-button-Clean")
+
+    f.settingsButton:SetSize(22, 22)
+    f.settingsButton:SetPoint("CENTER", f, "TOPLEFT", 12, -12)
+    f.settingsButton:GetNormalTexture():SetSize(24, 24)
+    f.settingsButton:GetHighlightTexture():SetSize(24, 24)
+    f.settingsButton:GetPushedTexture():SetSize(24, 24)
+    f.settingsButton:SetNormalTexture("Interface\\Addons\\Sorted\\Textures\\Settings-Icon")
+    f.settingsButton:SetHighlightTexture("Interface\\Addons\\Sorted\\Textures\\Settings-Icon")
+    f.settingsButton:SetPushedTexture("Interface\\Addons\\Sorted\\Textures\\Settings-Icon")
+    f.settingsButton:GetNormalTexture():SetTexCoord(0,1,0,1)
+    f.settingsButton:GetHighlightTexture():SetTexCoord(0,1,0,1)
+    f.settingsButton:GetPushedTexture():SetTexCoord(0,1,0,1)
+    f.settingsButton.text:SetTexture("")
+
+    f.sideFrame:SetPoint("RIGHT", f, "LEFT", 0, 0)
+    if f.sideFrame:IsShown() then
+        f.sideTabFrame:SetPoint("BOTTOMRIGHT", f.sideFrame, "BOTTOMLEFT", 1, 16)
+    else
+        f.sideTabFrame:SetPoint("BOTTOMRIGHT", f, "BOTTOMLEFT", 1, 16)
+    end
 end
 
-local function SkinDropdown(frame)
-    S.AS:SkinArrowButton(frame, "down")
-    local normalMask, disabledMask, pushedMask = frame:GetNormalTexture():GetMaskTexture(1), frame:GetDisabledTexture():GetMaskTexture(1), frame:GetPushedTexture():GetMaskTexture(1)
-    normalMask:ClearAllPoints()
-    normalMask:SetPoint("TOPLEFT", frame, "TOPRIGHT", -frame:GetHeight(), -1)
-    normalMask:SetPoint("BOTTOMRIGHT", -4, 3)
-    disabledMask:ClearAllPoints()
-    disabledMask:SetPoint("TOPLEFT", frame, "TOPRIGHT", -frame:GetHeight(), -1)
-    disabledMask:SetPoint("BOTTOMRIGHT", -4, 3)
-    pushedMask:ClearAllPoints()
-    pushedMask:SetPoint("TOPLEFT", frame, "TOPRIGHT", -frame:GetHeight(), -1)
-    pushedMask:SetPoint("BOTTOMRIGHT", -4, 3)
-end
 
-function S:SkinCheckBox(cb)
-    S.AS:SkinCheckBox(cb)
-    cb.hilight:SetColorTexture(unpack(S.AS.Color))
-    cb.hilight:SetAlpha(0.3)
-end
-
-function S.Skin()
-    if S.DoSkinning() then
-        -- ITEM LISTS
-        for _, itemList in pairs(Sorted_itemLists) do
-            --S.AS:StripTextures(itemList)
-            S.AS:SkinScrollBar(itemList.scrollBar)
-            for _, groupHeader in pairs(itemList.groupHeaders) do
-                S.AS:SkinArrowButton(groupHeader.expandButton, "right")
-                S.AS:SkinArrowButton(groupHeader.collapseButton, "down")
-                groupHeader.bg:Hide()
-            end
-        end
-        --S.AS:SkinFrame(SortedIconSelectionMenu, "Default")
-
-        -- DROPDOWN MENUS
-        S.AS:SkinFrame(SortedDropdownMenuParent, "Default")
-
-        -- MAIN FRAME
-        S.AS:SkinFrame(SortedFrame)
-        if Sorted_WoWMajorVersionNumber() < 8 then
-            SortedFramePortraitFrame:Hide()
-        end
-
-        -- Title bar
-        SortedFrameCloseButton:SetPoint("TOPRIGHT", 3, 5)
-        S.AS:SkinMaxMinFrame(SortedMinMaxFrame)
-        SortedFrameTitleBarMinimizeButtonDiv:Hide()
-        SortedFrameTitleBarBlizzardButtonDiv:Hide()
-        SortedBlizzardButton:ClearAllPoints()
-        SortedBlizzardButton:SetSize(36, 16)
-        SortedBlizzardButton:SetPoint("RIGHT", SortedMinMaxFrame, "LEFT", -2, 0)
-        SortedBlizzardButton:SetText("ElvUI")
-        SortedBlizzardButton:SetNormalFontObject(Sorted12Font)
-        S.AS:SkinButton(SortedBlizzardButton, true)
-        SkinDropdown(SortedAltsDropdownButton)
-        SortedAltsDropdownButton:SetAlpha(1)
-        SortedAltsDropdownButton:SetPoint("TOPLEFT", -1, -4)
-        SkinDropdown(SortedEquipmentSetsDropdownButton)
-        SortedEquipmentSetsDropdownButton:SetAlpha(1)
-        SortedEquipmentSetsDropdownButton:SetPoint("TOPLEFT", SortedAltsDropdownButton, "TOPRIGHT", 4, 0)
-        SortedFrameTitleBarAltsButtonDiv:Hide()
-        S.AS:StripTextures(SortedEquipmentSetsDropdownButtonDiv)
-        S.AS:SkinButton(SortedFramePortraitButton)
-        S.AS:SkinEditBox(SortedFrameSearchBox)
-        S.AS:StripTextures(SortedFrameSearchBoxFrame)
-        SortedFrameSearchBoxFrame:SetPoint("TOPLEFT", 4, -2)
-        SortedFrameSearchBoxFrame:SetHeight(24)
-        SortedFrameSearchBox:SetPoint("TOPLEFT", 56, 0)
-        SortedFrameSearchBox:SetPoint("BOTTOM", 0, 2)
-        S.AS:SkinButton(SortedFrameSellGreysButton)
-
-        SortedFramePortraitButton.dontAnimate = true
-        SortedFramePortraitButton.textTexture:SetAlpha(1)
-        SortedFramePortraitButton.textTexture:SetTexture("Interface\\Addons\\Sorted\\Textures\\Title-Flat")
-        SortedFramePortraitButton.textTexture:SetTexCoord(0, 0.625, 0, 1)
-        SortedFramePortraitButton.textTexture:SetSize(50, 20)
-        SortedFramePortraitButton:ClearAllPoints()
-        SortedFramePortraitButton:SetPoint("TOPLEFT", 4, -4)
-        SortedFramePortraitButton:SetPoint("RIGHT", SortedAltsDropdownButton, "LEFT", -4, 0)
-        SortedFramePortraitButton:SetPoint("BOTTOM", SortedFrameSearchBoxFrame, "BOTTOM", 0, 1)
-
-        S.AS:StripTextures(SortedFrameMain)
-
-        -- Sort buttons
-        S.AS:StripTextures(SortedFrameSortButtons)
-        SortedFrameSortButtons:SetPoint("RIGHT", -20, 0)
-        for k, v in pairs(Sorted_sortButtons) do
-            if v.uniqueID == SORTED_SORTBUTTON_FAVORITES then
-                S.AS:SkinFrame(v.button, "Default", true)
-                v.button.l:Hide()
-                v.button.c:Hide()
-                v.button.r:Hide()
+local function SkinCircleButton(b)
+    b.SetNormalTexture = b.SetNormalTextureOriginal
+    b.icon:SetTexCoord(0.2, 0.8, 0.2, 0.8)
+    b.mask:SetTexture("Interface\\Addons\\Sorted\\Textures\\Solid")
+    S.AS:SkinButton(b)
+    S.AS:SetInside(b.icon)
+    if b.SetCheckedTexture then
+        b:SetCheckedTexture("")
+        hooksecurefunc(b, "SetChecked", function(self, checked)
+            if self:GetChecked() then
+                self:SetBackdropBorderColor(unpack(S.AS.Color))
             else
-                S.AS:SkinButton(v.button, true)
+                self:SetBackdropBorderColor(unpack(S.AS.BorderColor))
             end
-            if v.columnSeparators then
-                for _, colSep in pairs(v.columnSeparators) do
-                    colSep:SetAlpha(0)
+        end)
+        b:HookScript("OnEnter", function(self)
+            if self:GetChecked() then
+                self:SetBackdropBorderColor(unpack(S.AS.Color))
+            end
+        end)
+        b:HookScript("OnLeave", function(self)
+            if self:GetChecked() then
+                self:SetBackdropBorderColor(unpack(S.AS.Color))
+            end
+        end)
+    end
+    b:SetSize(28, 28)
+end
+
+local eventHandlerFrame = CreateFrame("FRAME")
+eventHandlerFrame:RegisterEvent("PLAYER_LOGIN")
+eventHandlerFrame:SetScript("OnEvent", function(self)
+    if IsAddOnLoaded("AddOnSkins") then
+        S.AS = unpack(AddOnSkins)
+        canSkin = true
+        doSkinning = true
+    end
+
+    function S.Skinning.SkinWithAddOnSkins()
+        hasSkinnedWithAddOnSkins = true
+        currentSkin = S.Skinning.ADDONSKINS
+
+        local f = S.primaryFrame
+        S.AS:SkinFrame(f)
+        f.border:Hide()
+        f.outerShadow:Hide()
+        S.AS:SkinFrame(f.sideFrame)
+        f.sideFrame.border:Hide()
+        S.AS:StripTextures(f.head)
+        S.AS:StripTextures(f.foot.moneyFrame)
+        S.AS:SkinCloseButton(f.closeButton)
+        f.closeButton:GetHighlightTexture():SetAlpha(1)
+
+        f.head:SetPoint("BOTTOM", f, "TOP", 0, -60)
+        f.head.characterSelectDropdown.bg:Hide()
+        if S.WoWVersion() >= 3 then
+            f.head.equipSetDropdown.bg:Hide()
+        end
+        f.head.characterSelectDropdown:SetPoint("TOPLEFT", 68, 0)
+        f.head.equipSetDropdown:SetPoint("TOPLEFT", f.head.characterSelectDropdown, "TOPRIGHT", 0, 0)
+        S.AS:SkinButton(f.head.characterSelectDropdown)
+        S.AS:SkinButton(f.head.equipSetDropdown)
+
+        S.AS:SkinButton(f.settingsButton)
+        f.settingsButton:ClearAllPoints()
+        f.settingsButton.text:SetTexture("")
+        f.settingsButton.textString = f.settingsButton:CreateFontString(nil, "OVERLAY", "SortedFont")
+        f.settingsButton.textString:SetPoint("CENTER")
+        f.settingsButton.textString:SetText("Sorted.")
+        f.settingsButton.textString:SetTextColor(S.Utils.GetButtonTextColor():GetRGB())
+        f.settingsButton:HookScript("OnEnter", function(self) self.textString:SetTextColor(1, 1, 1) end)
+        f.settingsButton:HookScript("OnLeave", function(self) self.textString:SetTextColor(S.Utils.GetButtonTextColor():GetRGB()) end)
+        f.settingsButton:SetPoint("TOPLEFT", 0, 0)
+        f.settingsButton:SetSize(64, 24)
+
+        S.AS:SkinButton(f.minimiseButton)
+        f.minimiseButton.text = f.minimiseButton:CreateFontString(nil, "Overlay", "SortedFont")
+        f.minimiseButton.text:SetPoint("CENTER")
+        f.minimiseButton.text:SetText("-")
+        f.minimiseButton:SetSize(f.closeButton.Backdrop:GetWidth(), f.closeButton.Backdrop:GetHeight())
+        f.minimiseButton:SetPoint("CENTER", f, "TOPRIGHT", -36, -12)
+        local lists = {S.primaryItemList,S.CurrencyList,S.BankItemList,S.ReagentItemList}
+        for _, list in pairs(lists) do
+            S.AS:SkinBackdropFrame(list)
+            S.AS:SkinScrollBar(list.scrollBar)
+            if list.head then
+                S.AS:StripTextures(list.head)
+                S.AS:SkinButton(list.head.toggleGridButton, true)
+                list.head.toggleGridButton:Update()
+                for _, button in pairs(list.columnHeadings) do
+                    button.normalTex:SetTexture("")
+                    button.normalTex:ClearAllPoints()
+                    button.normalTexL:SetTexture("")
+                    button.normalTexL:ClearAllPoints()
+                    button.normalTexR:SetTexture("")
+                    button.normalTexR:ClearAllPoints()
+                    S.AS:SkinButton(button)
+                end
+            end
+            if list.containerButtons then
+                for _, button in pairs(list.containerButtons) do
+                    SkinCircleButton(button)
                 end
             end
         end
-
-        -- Categories
-        S.AS:SkinFrame(SortedFrameFilterButtons)
-        for i = 1, 22 do
-            local button, miniButton = _G["SortedFilterButton"..i], _G["SortedFilterButton"..i.."Mini"]
-            S.AS:SkinButton(button)
-            button.selectedTexture:SetColorTexture(unpack(S.AS.Color))
-            button.selectedTexture:SetBlendMode("ADD")
-            button.selectedTexture:SetAlpha(0.3)
-            button:SetHeight(button:GetHeight() - 1)
-            S.AS:StripTextures(button.newItemsIndicator)
-
-            _G["SortedFilterButton"..i.."MiniBackdrop"]:Hide()
-            S.AS:SkinIconButton(miniButton)
-            miniButton:GetHighlightTexture():SetColorTexture(unpack(S.AS.Color))
-            miniButton:GetHighlightTexture():SetBlendMode("ADD")
-            miniButton:GetHighlightTexture():SetAlpha(0.3)
-            miniButton.selectedTexture:SetColorTexture(unpack(S.AS.Color))
-            miniButton.selectedTexture:SetBlendMode("ADD")
-            miniButton.selectedTexture:SetAlpha(0.4)
-            S.AS:SkinFrame(miniButton.newItemsIndicator)
-            miniButton.newItemsIndicator:SetWidth(36)
-            miniButton.newItemsIndicator:SetPoint("LEFT", miniButton, "RIGHT", 4, 0)
+        for _, button in pairs(f.categoriesFrame.buttons) do
+            SkinCircleButton(button)
         end
-        S.AS:SkinFrame(SortedSubcategoryFrameParent)
-        --SortedSubcategoryFrameParent:SetPoint("TOPLEFT", SortedFrameFilterButtons, "BOTTOMLEFT", 0, -4)
-        S.AS:SkinScrollBar(SortedSubcategoryFrameScrollBar)
+        --f.searchBox:SetPoint("LEFT", 8, -1)
+        S.AS:SkinEditBox(f.searchBox)
+        S.AS:SkinBackdropFrame(S.dropdownMenu)
+        S.dropdownMenu.border:Hide()
 
-        -- Item list
-        SortedFrameItemList:SetPoint("TOPLEFT", SortedFrameSortButtons, "BOTTOMLEFT", 0, 1)
-        SortedFrameItemList:SetPoint("RIGHT", -24, 0)
-        SortedFrameItemListScrollBar:SetPoint("TOPRIGHT", 22, 7)
-        SortedFrameItemListScrollBar:SetPoint("BOTTOM", 0, 14)
-
-        -- Footer
-        S.AS:SkinFrame(SortedFrameFootSlots)
-        SortedFrameFootSlots:SetPoint("BOTTOMLEFT", 4, 3)
-        S.AS:StripTextures(SortedFrameFootBags)
-        for i = 0,3 do
-            S.AS:SkinIconButton(_G["Sorted___Bag"..i.."Slot"])
+        f.sideFrame:SetPoint("RIGHT", f, "LEFT", 0, 0)
+        if f.sideFrame:IsShown() then
+            f.sideTabFrame:SetPoint("BOTTOMRIGHT", f.sideFrame, "BOTTOMLEFT", 1, 16)
+        else
+            f.sideTabFrame:SetPoint("BOTTOMRIGHT", f, "BOTTOMLEFT", 1, 16)
         end
-        SortedFrameFootBags:SetPoint("BOTTOMLEFT", SortedFrameFootSlots, "BOTTOMRIGHT", 3, 0)
-        S.AS:StripTextures(SortedFrameFootCenter)
-        SortedFrameResizeHandle:SetNormalTexture("Interface\\Addons\\Sorted\\Textures\\UI-Resize-Button-Highlight")
-        SortedFrameResizeHandle:SetPushedTexture("Interface\\Addons\\Sorted\\Textures\\UI-Resize-Button-Highlight")
-        S.AS:StripTextures(SortedFrameMoneyFrame)
-        S.AS:SkinFrame(SortedFrameMoneyInnerFrame)
-        S.AS:StripTextures(SortedFrameFootRight)
-        S.AS:SkinFrame(SortedCurrencyFrame)
-        SortedCurrencyFrame:SetPoint("TOPRIGHT", SortedFrame, "BOTTOMRIGHT", -24, 1)
-        SortedCurrencyFrameText:SetPoint("BOTTOM", 0, 2)
-
-        -- Item buttons
-        for _, itemList in pairs(Sorted_itemLists) do
-            for _, itemButton in pairs(itemList.itemButtons) do
-                itemButton.bgTex:Hide()
-            end
+        for _, button in pairs(f.sideTabs) do
+            S.AS:StripTextures(button.overlayShadowFrame)
+            S.AS:SkinFrame(button, true)
+            button:SetWidth(28)
+            button.text:SetPoint("CENTER", -4, -4)
         end
+        f.sideTabs[1]:SetPoint("BOTTOM")
+        f.sideTabs[2]:SetPoint("BOTTOM", f.sideTabs[1], "TOP", 0, 2)
+        f.sideTabs[3]:SetPoint("BOTTOM", f.sideTabs[2], "TOP", 0, 2)
+    end
 
-        -- Side tabs
-        SortedTabsFrame.UpdateWidths = function(self)
-            for _, tab in pairs(self.tabs) do
-                tab:SetHeight(tab.buttonText:GetWidth() + 16)
-            end
-        end
-        S.AS:SkinButton(SortedTabBank, true)
-        S.AS:SkinButton(SortedTabReagents, true)
-        SortedTabReagents:SetPoint("BOTTOMRIGHT", SortedTabBank, "TOPRIGHT", 0, 8)
+end)
 
 
-        -- BANK SIDE PANEL
-        S.AS:SkinFrame(SortedBankSidePanel)
-        SortedBankSidePanel:SetPoint("TOPRIGHT", SortedFrameSortButtons, "BOTTOMLEFT", -3, 4)
-        S.AS:StripTextures(SortedBankSidePanelLeftFrame)
-        -- Footer
-        S.AS:StripTextures(SortedBankSidePanelFootCenter)
-        S.AS:SkinFrame(SortedBankSidePanelFootBags)
-        SortedBankSidePanelShadowFrame:Hide()
-        for _, button in pairs(Sorted_BankContainerSlots) do
-            S.AS:SkinIconButton(button)
-        end
-        S.AS:SkinFrame(SortedBankSidePanelFootSlots)
-        SortedBankSidePanelFootSlots:SetPoint("BOTTOMLEFT", 1, 1)
-        SortedBankSidePanelFootBags:SetPoint("BOTTOMLEFT", SortedBankSidePanelFootSlots, "BOTTOMRIGHT", 3, 0)
-        SortedBankSidePanelFoot:SetHeight(30)
-        -- Item list
-        SortedBankItemList:SetPoint("BOTTOMRIGHT", -21, 2)
-        SortedBankItemListScrollBar:SetPoint("TOPRIGHT", 22, -14)
-        SortedBankItemListScrollBar:SetPoint("BOTTOM", 0, 14)
-
-
-        -- REAGENTS SIDE PANEL
-        S.AS:SkinFrame(SortedReagentSidePanel)
-        SortedReagentSidePanel:SetPoint("TOPRIGHT", SortedFrameSortButtons, "BOTTOMLEFT", -3, 4)
-        S.AS:StripTextures(SortedReagentSidePanelLeftFrame)
-        -- Footer
-        S.AS:StripTextures(SortedReagentSidePanelFootCenter)
-        SortedReagentSidePanelShadowFrame:Hide()
-        S.AS:SkinFrame(SortedReagentSidePanelFootSlots)
-        SortedReagentSidePanelFootSlots:SetPoint("BOTTOMLEFT", 1, 1)
-        S.AS:SkinButton(SortedReagentSidePanelFootCenterDepositButton)
-        SortedReagentSidePanelFoot:SetHeight(30)
-        -- Item list
-        if Sorted_IsShadowlands() then
-            SortedReagentItemList:SetPoint("BOTTOMRIGHT", -21, 2)
-            SortedReagentItemListScrollBar:SetPoint("TOPRIGHT", 22, -14)
-            SortedReagentItemListScrollBar:SetPoint("BOTTOM", 0, 14)
-            S.AS:SkinButton(SortedReagentItemListPurchaseButton)
-        end
-
-
-        -- INDIVIDUAL BAG FRAMES
-        for _, bagFrame in pairs(S.bagFrames) do
-            S.AS:SkinFrame(bagFrame)
-            --_G[bagFrame:GetName().."Portrait"]:Hide()
-            bagFrame.skinnedPortrait = bagFrame:CreateTexture()
-            --bagFrame.skinnedPortrait:SetPoint("TOPLEFT", 2, -2)
-            --bagFrame.skinnedPortrait:SetSize(48, 48)
-            S.AS:StripTextures(_G[bagFrame:GetName().."Head"])
-            S.AS:SkinFrame(_G[bagFrame:GetName().."Slots"])
-        end
-
-
-        -- Backdrops
-        SortedFrame.Center:Hide()
-        SortedFrameBg:SetAllPoints()
-        _G[SortedFrame:GetName().."DropShadow"]:SetAllPoints()
-
-        SortedBankSidePanel.Center:Hide()
-        SortedBankSidePanel.bg:SetAllPoints()
-        _G[SortedBankSidePanel:GetName().."DropShadow"]:SetAllPoints()
-
-        SortedReagentSidePanel.Center:Hide()
-        SortedReagentSidePanel.bg:SetAllPoints()
-        _G[SortedReagentSidePanel:GetName().."DropShadow"]:SetAllPoints()
-
-        for _, bagFrame in pairs(S.bagFrames) do
-            bagFrame.Center:Hide()
-            bagFrame.bg:SetAllPoints()
-            _G[bagFrame:GetName().."DropShadow"]:SetAllPoints()
-        end
-
-        Sorted_UpdateBackdropTexture()
+-- Apply skinning setting
+local function OnSettingChanged(self, event, value)
+    if hasSkinnedWithAddOnSkins and value ~= S.Skinning.ADDONSKINS then
+        C_UI.Reload()
+    end
+    if value == S.Skinning.DEFAULT then
+        S.Skinning.SkinDefault()
+    elseif value == S.Skinning.CLEAN then
+        S.Skinning.SkinClean()
+    elseif value == S.Skinning.ADDONSKINS and S.Skinning.AddOnSkinsAvailable() then
+        S.Skinning.SkinWithAddOnSkins()
+    else
+        S.Settings.Set("skinning", S.Skinning.DEFAULT)
     end
 end
+S.Utils.RunOnEvent(nil, "SettingChanged-skinning", OnSettingChanged)

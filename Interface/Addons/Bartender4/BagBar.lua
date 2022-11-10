@@ -3,6 +3,10 @@
 	All rights reserved.
 ]]
 local _, Bartender4 = ...
+
+local WoW10 = select(4, GetBuildInfo()) >= 100000
+if not WoW10 then return end
+
 local L = LibStub("AceLocale-3.0"):GetLocale("Bartender4")
 -- register module
 local BagBarMod = Bartender4:NewModule("BagBar", "AceHook-3.0")
@@ -15,17 +19,15 @@ local _G = _G
 local next, pairs, setmetatable = next, pairs, setmetatable
 local table_insert, table_remove = table.insert, table.remove
 
-local WoWClassic = (WOW_PROJECT_ID ~= WOW_PROJECT_MAINLINE)
-
--- GLOBALS: UIParent, MainMenuBarBackpackButton, CharacterBag0Slot, CharacterBag1Slot, CharacterBag2Slot, CharacterBag3Slot, KeyRingButton
-
 -- create prototype information
 local BagBar = setmetatable({}, {__index = ButtonBar})
 
-local defaults = { profile = Bartender4:Merge({
+local defaults = { profile = Bartender4.Util:Merge({
 	enabled = true,
+	verticalAlignment = "CENTER",
 	keyring = true,
 	onebag = false,
+	onebagreagents = true,
 	visibility = {
 		possess = false,
 	},
@@ -41,6 +43,12 @@ local noopFunc = function() end
 function BagBarMod:OnEnable()
 	if not self.bar then
 		self.bar = setmetatable(Bartender4.ButtonBar:Create("BagBar", self.db.profile, L["Bag Bar"]), {__index = BagBar})
+
+		CharacterReagentBag0Slot.SetBarExpanded = noopFunc
+		CharacterBag3Slot.SetBarExpanded = noopFunc
+		CharacterBag2Slot.SetBarExpanded = noopFunc
+		CharacterBag1Slot.SetBarExpanded = noopFunc
+		CharacterBag0Slot.SetBarExpanded = noopFunc
 	end
 	self.bar:Enable()
 	self:ToggleOptions()
@@ -68,16 +76,23 @@ local function clearSetPoint(btn, ...)
 	btn:SetPoint(...)
 end
 
-if WoWClassic then
-BagBar.button_width = 37
-BagBar.button_height = 37
-else
+local function MasqueButtonType(button)
+	if button == CharacterReagentBag0Slot then
+		return "ReagentBag"
+	elseif button == MainMenuBarBackpackButton then
+		return "Backpack"
+	else
+		return "BagSlot"
+	end
+end
+
 BagBar.button_width = 30
 BagBar.button_height = 30
-end
-BagBarMod.button_count = 5
+BagBarMod.button_count = 6
 function BagBar:FeedButtons()
 	local count = 1
+	local group = self.MasqueGroup
+
 	if self.buttons then
 		while next(self.buttons) do
 			local btn = table_remove(self.buttons)
@@ -85,19 +100,16 @@ function BagBar:FeedButtons()
 			btn:SetParent(UIParent)
 			btn:ClearSetPoint("CENTER")
 
-			if not WoWClassic or btn ~= KeyRingButton then
-				if btn.MasqueButtonData then
-					local group = self.MasqueGroup
-					group:RemoveButton(btn)
-				end
+			if group and btn.MasqueButtonData then
+				group:RemoveButton(btn)
 			end
 		end
 	else
 		self.buttons = {}
 	end
 
-	if WoWClassic and self.config.keyring then
-		table_insert(self.buttons, KeyRingButton)
+	if not self.config.onebag or self.config.onebagreagents then
+		table_insert(self.buttons, CharacterReagentBag0Slot)
 		count = count + 1
 	end
 
@@ -106,6 +118,7 @@ function BagBar:FeedButtons()
 		table_insert(self.buttons, CharacterBag2Slot)
 		table_insert(self.buttons, CharacterBag1Slot)
 		table_insert(self.buttons, CharacterBag0Slot)
+
 		count = count + 4
 	end
 
@@ -114,19 +127,15 @@ function BagBar:FeedButtons()
 	for i,v in pairs(self.buttons) do
 		v:SetParent(self)
 		v:Show()
-		if not WoWClassic or v ~= KeyRingButton then
-			v:SetNormalTexture("")
 
-			if Masque then
-				local group = self.MasqueGroup
-				if not v.MasqueButtonData then
-					v.MasqueButtonData = {
-						Button = v,
-						Icon = _G[v:GetName() .. "IconTexture"],
-					}
-				end
-				group:AddButton(v, v.MasqueButtonData, "Item")
+		if group then
+			if not v.MasqueButtonData then
+				v.MasqueButtonData = {
+					Button = v,
+					Icon = v.icon
+				}
 			end
+			group:AddButton(v, v.MasqueButtonData, MasqueButtonType(v))
 		end
 
 		v.ClearSetPoint = clearSetPoint
@@ -136,4 +145,10 @@ function BagBar:FeedButtons()
 	if BagBarMod.optionobject then
 		BagBarMod.optionobject.table.general.args.rows.max = count
 	end
+end
+
+function BagBar:UpdateButtonLayout()
+	ButtonBar.UpdateButtonLayout(self)
+	local w, h = self:GetSize()
+	self:SetSize(w + 14, h)
 end

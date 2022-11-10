@@ -37,6 +37,9 @@ HHTD_SavedVariables = {
 		["Gerold - Tichondrius"] = {
 			["settingsMigrated"] = false,
 		},
+		["Syhlo - Tichondrius"] = {
+			["settingsMigrated"] = false,
+		},
 		["Syhlo - Thrall"] = {
 			["settingsMigrated"] = false,
 		},
@@ -53,6 +56,14 @@ HHTD_SavedVariables = {
 			["settingsMigrated"] = false,
 		},
 	},
+	["global"] = {
+		["settingsMigrated"] = false,
+		["HealerUnderAttackAlerts"] = false,
+		["SetFriendlyHealersRole"] = false,
+		["Pve"] = false,
+		["oldNameEnableState"] = 0,
+		["ShowChatCommandReminder"] = false,
+	},
 	["profileKeys"] = {
 		["Gnomemounts - Tichondrius"] = "Gnomemounts - Tichondrius",
 		["Isellpropane - Proudmoore"] = "Isellpropane - Proudmoore",
@@ -66,19 +77,12 @@ HHTD_SavedVariables = {
 		["Cyf - Tichondrius"] = "Cyf - Tichondrius",
 		["Wthrename - Tichondrius"] = "Wthrename - Tichondrius",
 		["Gerold - Tichondrius"] = "Gerold - Tichondrius",
+		["Syhlo - Tichondrius"] = "Syhlo - Tichondrius",
 		["Syhlo - Thrall"] = "Syhlo - Thrall",
 		["Pandamounts - Tichondrius"] = "Pandamounts - Tichondrius",
 		["Youreterribl - Burning Legion"] = "Youreterribl - Burning Legion",
 		["Syhdk - Thrall"] = "Syhdk - Thrall",
 		["Syh - Thrall"] = "Syh - Thrall",
-	},
-	["global"] = {
-		["settingsMigrated"] = false,
-		["HealerUnderAttackAlerts"] = false,
-		["SetFriendlyHealersRole"] = false,
-		["Pve"] = false,
-		["oldNameEnableState"] = 0,
-		["ShowChatCommandReminder"] = false,
 	},
 	["namespaces"] = {
 		["Announcer"] = {

@@ -1,0 +1,12 @@
+## Interface: 100000
+## Title: |A:::|a|TZ|t  - Pawn Plugin
+## Notes: Adds the Pawn icon to show which items are upgrades to what you have equipped.
+## Version: 1.0.0
+## Author: Daft Vader
+## Dependencies: Pawn, Sorted
+## DefaultState: enabled
+
+
+Libs\LibStub\LibStub.lua
+
+Sorted_Pawn.lua

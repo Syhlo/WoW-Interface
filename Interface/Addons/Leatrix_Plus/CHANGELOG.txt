@@ -1,3 +1,99 @@
+10.0.10 - 9th November 2022
+- For 'Enhance minimap' ('Interface'), repositioned instance difficulty banner slightly.
+- Dragonflight includes a lot of API changes.  To make sure Leatrix Plus runs error-free, always use the latest release downloaded from CurseForge (app or website).  If you want to report an issue, there is a support link on leatrix.com.
+
+10.0.09 - 8th November 2022
+- Due to problems with Blizzard's code in Dragonflight, the '/ltp' slash command has been removed for the time being.  As a workaround, you can enter '/run leaplus()' to open Leatrix Plus.  If you want to pass a parameter, enter it in quotes between the brackets.  Example: /run leaplus("wipe").  This (hopefully temporary) change is necessary because of a bug in the game code with the slash command system.  Entering any addon related slash command will taint the UI and cause errors to show at some point.  Blizzard are aware of the bug.  When they fix it, the /ltp slash command will return.  You can assign a hotkey to open Leatrix Plus in the game keybindings panel and you can open Leatrix Plus using the minimap button if it's enabled in the Leatrix Plus settings menu so there are plenty of options.
+
+10.0.08 - 7th November 2022
+- The 'Fix Blizzard's NO QUALITY LOOT spam' setting (part of 'Faster auto loot') is now disabled by default.  If you use this setting, you will need to enable it again after installing this update.  If you use XLoot, the setting will now be locked out.  As a reminder (and this is noted in the setting tooltip), if you use a loot frame replacement addon, you may need to disable the 'Fix Blizzard's NO QUALITY LOOT spam' setting.
+
+10.0.07 - 7th November 2022
+- For 10.0.2 clients only (currently BETA), added zone, dungeon and main title music for Dragonflight.  There are now 1979 music tracks and 123 movies available in the addon.
+- If you use the Glass addon, some chat settings will now be locked out of Leatrix Plus in order to ensure that the addon loads correctly.
+- For addon authors, the enhanced minimap combined button frame now has a global reference of LeaPlusGlobalMinimapCombinedButtonFrame.
+
+10.0.06 - 2nd November 2022
+- For 'Faster auto loot' ('System'), there is a new configuration panel that lets you enable or disable the NO QUALITY LOOT fix.
+- For 'Mute game sounds' ('System'), you can now mute the Fae Harp toy.
+- For 'Remove transforms' ('System'), you can now remove the Turkey transform (Pilgrim's Bounty) and the Spraybot transforms.
+- Fixed a Lua error with 'Hide chat buttons' ('Chat').  The tab glow bar has changed appearance slightly and no longer flashes.
+- Due to problems with Blizzard's code in Dragonflight, the 'Disable bag automation' option ('System') has been removed.
+- Due to problems with Blizzard's code in Dragonflight, the 'Disable sticky editbox' option ('Chat') has been removed.
+
+10.0.05 - 31st October 2022
+- The 'Faster auto loot' temporary fix now supports open loot window at mouse.
+
+10.0.04 - 30th October 2022
+- Fixed an issue with 'Restore chat messages' ('Chat') which may have caused a Lua error to show in BugSack when logging out.
+- Due to Blizzard's changes to the UI in Dragonflight, the 'Disable bag automation' option ('System') is unavailable for now.
+
+10.0.03 - 29th October 2022
+- The faster auto loot fix will no longer apply to ElvUI users.
+
+10.0.02 - 28th October 2022
+- Added a temporary fix for 'Faster auto loot' ('System') to prevent the game from spamming you with NO QUALITY LOOT messages.  This spamming issue is caused by the game code and is not caused by addons.  This fix will be removed if Blizzard removes the two lines of unnecessary game code that are the cause of the spamming.  As this fix is only temporary, open loot window at mouse is not supported.  Usually, faster looting is so quick that you won't even see a loot window.  But when you do, it will be anchored to the Edit Mode position.  You can change the position with Edit Mode if you wish.
+- Added a new option 'Hide rested sleep' ('Frames') which will allow you to hide the player frame rested sleep animation so your character no longer looks to be sleeping while banking, chatting, dancing, jumping, fishing, trading, crafting and using the auction house.
+- For 'Automate gossip' ('Automation'), gossip from Katy Stampwhistle (the toy and the npc) will now be skipped automatically.
+
+10.0.01 - 27th October 2022
+- For 'Enhance minimap' ('Interface'), there is a new setting to hide the addon menu (the compartment menu).  It's enabled by default.  The minimum cluster scale is now 50% (was 100%).
+- For the time being, the addon will not register with the minimap compartment menu.
+- Fixed an issue with 'Hide keybind text' and 'Hide macro text' ('Text') which caused them to not apply to bars 6, 7 and 8.
+
+10.0.00 - 24th October 2022
+- Welcome to Dragonflight!
+- Added a new option 'Manage vehicle' ('Frames') which will allow you to move and scale the vehicle seat indicator frame.
+- Added Dragonflight cinematic (movie and cinematic audio).
+- For 'Sell junk automatically' ('Automation'), white items entered in the exclusions editbox will be sold automatically.  Junk items entered in the editbox will not be sold automatically (as before).
+- For 'Mute game sounds' ('System'), you can now mute broom mount sounds.
+- The 'More font sizes' option ('Chat') has been replaced by 'Set chat font size'.
+- The 'Manage frames', 'Manage buffs', 'Manage power bar', 'Manage focus', 'Hide gryphons', 'Hide bags and micro', 'Set field of view' and 'Save profession filters' options have all been removed as they are now included in the game.
+- The 'Show character addons' option ('System') has been removed due to issues with the game code.
+- Having ElvUI installed will no longer uncheck conflicting option checkboxes.  Conflicting option checkboxes will still be locked but they won't be unchecked.  So if a conflicting option checkbox was checked before installing ElvUI or before enabling a conflicting ElvUI module, it will still be checked after disabling ElvUI or disabling the conflicting ElvUI module.
+- Removed Shadowlands legacy code.  This release is not compatible with Shadowlands.
+
+9.2.45 - 19th October 2022
+- Dragonflight: For 'Enhance tooltip' ('Interface'), all of the tooltip settings work again except show target (this will be fixed later).
+- Dragonflight: Updated 'Sell junk automatically' ('Automation') for 10.0.2.46144.
+
+9.2.44 - 17th October 2022
+- Dragonflight: For 'Enhance tooltip' ('Interface'), tooltip color coding, guild ranks, colored backdrops and target will not currently be applied due to issues with the game code.
+- Dragonflight: Leatrix Plus entries in the game keybindings menu do not currently have labels due to issues with the game code.  The keybindings themselves will work though.
+- Dragonflight: Opening the game keybindings menu and closing it may cause a Lua error to be shown due to issues with the game code.  If so, you should reload your UI.
+- Dragonflight: There is no entry for Leatrix Plus in the game addons menu due to issues with the game code.
+
+9.2.43 - 17th October 2022
+- Dragonflight: Fixed 'Unclamp chat frame' ('Chat').
+- Dragonflight: For 'Enhance minimap' square minimap, fixed the Dragon Isles Summary minimap button position.
+
+9.2.42 - 16th October 2022
+- You can now assign a keybind for /mountspecial in the game key bindings menu.  The 'Easy mount special' option has been removed.
+- For 'Show minimap icon', some of the modified clicks have changed.  Read the option tooltip for more details.
+- For 'Mute game sounds' ('System'), you can now make Pierre quieter.
+- Dragonflight: Updated 'Hide talking frame' ('Frames') for 10.0.2.46157.
+- Dragonflight: Updated 'Enhance tooltip' ('Interface') for 10.0.2.45969.
+- Dragonflight: Updated 'Show cooldowns' ('Interface').
+- Dragonflight: Removed the temporary vendoring fix that was added in 9.2.40.
+- Dragonflight: Fixed a minor issue with 'Enhance minimap' ('Interface') which caused other addon minimap buttons to be positioned incorrectly when using the square minimap.
+- Dragonflight: Fixed a rare Lua error with 'Automate quests' ('Automation').
+
+9.2.40 - 2nd October 2022
+- Dragonflight: Added a temporary fix for the vendoring bug with game version 10.0.2.45779.  This bug is nothing to do with Leatrix Plus but it's difficult to play without being able to vendor anything.  This fix will only run with game version 10.0.2.45779 (since Blizzard will likely fix it anyway in the next update).
+
+9.2.39 - 1st October 2022
+- Dragonflight: Fixed the Lua error with 'Sell junk automatically' ('Automation').
+
+9.2.38 - 29th September 2022
+- Dragonflight: Updated for 10.0.2.45779 (Sep 25 2022) (100002).
+- Dragonflight: Fixed 'Show wowhead links' not showing in the world map frame.
+- Dragonflight: Fixed the Lua error caused by changes to Dragonflight code.
+
+9.2.37 - 28th September 2022
+- Added a new option 'Block shared quests' ('Social').  If enabled, shared quests will be automatically declined unless the player sharing the quest is a friend.
+- Dragonflight: The 'Show player chain' option ('Interface') is now available.
+- Dragonflight: The 'Enhance dressup' zoom speed setting now affects the character frame model as well as the dressing room model.
+
 9.2.36 - 22nd September 2022
 - Dragonflight: Updated for game version 10.0.2.45698 (Sep 20 2022) (100002).
 - Dragonflight: Updated 'Class cololored frames' ('Frames').

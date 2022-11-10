@@ -18,51 +18,51 @@ local dropDownFrame
 -- Internal --
 --------------
 
-local function SetHooks()
-	-- DropDown
-	function QuestMapQuestOptionsDropDown_Initialize(self)	-- R
-		local info = MSA_DropDownMenu_CreateInfo();
-		info.isNotRadio = true;
-		info.notCheckable = true;
+local function QuestMapQuestOptionsDropDown_Initialize(self)
+	local info = MSA_DropDownMenu_CreateInfo();
+	info.isNotRadio = true;
+	info.notCheckable = true;
 
-		info.text = TRACK_QUEST;
-		if ( QuestUtils_IsQuestWatched(self.questID) ) then
-			info.text = UNTRACK_QUEST;
-		end
-		info.disabled = (db.filterAuto[1])
-		info.func =function(_, questID) QuestMapQuestOptions_TrackQuest(questID) end;
+	info.text = TRACK_QUEST;
+	if ( QuestUtils_IsQuestWatched(self.questID) ) then
+		info.text = UNTRACK_QUEST;
+	end
+	info.disabled = (db.filterAuto[1])
+	info.func =function(_, questID) QuestMapQuestOptions_TrackQuest(questID) end;
+	info.arg1 = self.questID;
+	MSA_DropDownMenu_AddButton(info, MSA_DROPDOWNMENU_MENU_LEVEL);
+
+	info.disabled = false;
+
+	info.text = SHARE_QUEST;
+	info.func = function(_, questID) QuestMapQuestOptions_ShareQuest(questID) end;
+	info.arg1 = self.questID;
+	if ( not C_QuestLog.IsPushableQuest(self.questID) or not IsInGroup() ) then
+		info.disabled = 1;
+	end
+	MSA_DropDownMenu_AddButton(info, MSA_DROPDOWNMENU_MENU_LEVEL);
+
+	info.disabled = false;
+
+	if C_QuestLog.CanAbandonQuest(self.questID) then
+		info.text = ABANDON_QUEST;
+		info.func = function(_, questID) QuestMapQuestOptions_AbandonQuest(questID) end;
 		info.arg1 = self.questID;
 		MSA_DropDownMenu_AddButton(info, MSA_DROPDOWNMENU_MENU_LEVEL);
-
-		info.disabled = false;
-
-		info.text = SHARE_QUEST;
-		info.func = function(_, questID) QuestMapQuestOptions_ShareQuest(questID) end;
-		info.arg1 = self.questID;
-		if ( not C_QuestLog.IsPushableQuest(self.questID) or not IsInGroup() ) then
-			info.disabled = 1;
-		end
-		MSA_DropDownMenu_AddButton(info, MSA_DROPDOWNMENU_MENU_LEVEL);
-
-		info.disabled = false;
-
-		if C_QuestLog.CanAbandonQuest(self.questID) then
-			info.text = ABANDON_QUEST;
-			info.func = function(_, questID) QuestMapQuestOptions_AbandonQuest(questID) end;
-			info.arg1 = self.questID;
-			MSA_DropDownMenu_AddButton(info, MSA_DROPDOWNMENU_MENU_LEVEL);
-		end
-
-		if db.menuWowheadURL then
-			info.text = "|cff33ff99Wowhead|r URL";
-			info.func = KT.Alert_WowheadURL;
-			info.arg1 = "quest";
-			info.arg2 = self.questID;
-			MSA_DropDownMenu_AddButton(info, MSA_DROPDOWN_MENU_LEVEL);
-		end
 	end
 
-	function QuestMapLogTitleButton_OnClick(self, button)	-- R
+	if db.menuWowheadURL then
+		info.text = "|cff33ff99Wowhead|r URL";
+		info.func = KT.Alert_WowheadURL;
+		info.arg1 = "quest";
+		info.arg2 = self.questID;
+		MSA_DropDownMenu_AddButton(info, MSA_DROPDOWN_MENU_LEVEL);
+	end
+end
+
+local function SetHooks()
+	-- DropDown - QuestMapFrame.lua
+	function QuestMapLogTitleButton_OnClick(self, button)  -- R
 		if ( ChatEdit_TryInsertQuestLinkForQuestID(self.questID) ) then
 			return;
 		end
@@ -78,7 +78,6 @@ local function SetHooks()
 					MSA_CloseDropDownMenus();
 				end
 				dropDownFrame.questID = self.questID;
-				QuestMapFrame.questID = self.questID;	-- for Abandon
 				MSA_ToggleDropDownMenu(1, nil, dropDownFrame, "cursor", 6, -6, nil, nil, MSA_DROPDOWNMENU_SHOW_TIME);
 			elseif button == "LeftButton" then
 				if IsModifiedClick(db.menuWowheadURLModifier) then

@@ -15,6 +15,10 @@ MegaMacroCharacterData = {
 			["Macros"] = {
 			},
 		},
+		["Windwalker"] = {
+			["Macros"] = {
+			},
+		},
 	},
 	["Activated"] = true,
 }

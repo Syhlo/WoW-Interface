@@ -8,6 +8,8 @@ MJEPersonalSettings = {
 		["showAchievementPoints"] = true,
 		["compactMountList"] = true,
 		["enableCursorKeys"] = true,
+		["colorizeNameByRarity"] = true,
+		["showStatistics"] = true,
 		["windowSize"] = {
 			0, -- [1]
 			0, -- [2]
@@ -16,13 +18,14 @@ MJEPersonalSettings = {
 		["moveEquipmentSlot"] = true,
 		["previewButton"] = true,
 		["showShopButton"] = false,
-		["showUsageStatistics"] = true,
 		["unlockDisplayCamera"] = true,
 		["debugMode"] = false,
 	},
 	["hiddenMounts"] = {
 	},
 	["personalUi"] = false,
+	["notes"] = {
+	},
 	["favoredMounts"] = {
 	},
 	["sort"] = {
@@ -30,6 +33,7 @@ MJEPersonalSettings = {
 		["descending"] = false,
 		["by"] = "name",
 		["favoritesOnTop"] = true,
+		["dragonridingOnTop"] = true,
 		["unusableToBottom"] = false,
 	},
 	["filter"] = {
@@ -42,38 +46,58 @@ MJEPersonalSettings = {
 			true, -- [6]
 			true, -- [7]
 			true, -- [8]
+			true, -- [9]
 			[0] = true,
 		},
 		["source"] = {
-			["Reputation"] = true,
-			["Black Market"] = true,
-			["World Event"] = true,
-			["Island Expedition"] = true,
 			["Instance"] = true,
-			["PVP"] = true,
-			["Promotion"] = true,
-			["Profession"] = true,
+			["Black Market"] = true,
+			["Vendor"] = true,
 			["Achievement"] = true,
+			["Reputation"] = true,
+			["PVP"] = true,
+			["Garrison"] = true,
+			["Drop"] = true,
+			["Island Expedition"] = true,
 			["Shop"] = true,
 			["Covenants"] = true,
-			["Drop"] = true,
+			["Profession"] = true,
 			["Class"] = true,
-			["Vendor"] = true,
+			["World Event"] = true,
 			["Quest"] = true,
-			["Garrison"] = true,
+			["Promotion"] = true,
+		},
+		["rarity"] = {
+			true, -- [1]
+			true, -- [2]
+			true, -- [3]
+			true, -- [4]
+			true, -- [5]
 		},
 		["hiddenIngame"] = false,
 		["color"] = {
 		},
-		["hidden"] = false,
+		["notCollected"] = true,
+		["mountType"] = {
+			["repair"] = true,
+			["flying"] = true,
+			["underwater"] = true,
+			["dragonriding"] = true,
+			["passenger"] = true,
+			["ground"] = true,
+			["transform"] = true,
+		},
 		["faction"] = {
 			["horde"] = true,
 			["alliance"] = true,
 			["noFaction"] = true,
 		},
-		["onlyUsable"] = false,
 		["onlyFavorites"] = false,
 		["family"] = {
+			["Mollusc"] = {
+				["Snail"] = true,
+				["Slug"] = true,
+			},
 			["Arachnids"] = {
 				["Scorpions"] = true,
 				["Blood Ticks"] = true,
@@ -128,6 +152,7 @@ MJEPersonalSettings = {
 				["Chickens"] = true,
 				["Raptora"] = true,
 				["Phoenixes"] = true,
+				["Eagle"] = true,
 				["Crows"] = true,
 				["Roc"] = true,
 				["Dread Ravens"] = true,
@@ -169,6 +194,7 @@ MJEPersonalSettings = {
 			},
 			["Carnivorans"] = {
 				["Bears"] = true,
+				["Ottuk"] = true,
 				["Foxes"] = true,
 				["Hounds"] = true,
 				["Hyenas"] = true,
@@ -176,7 +202,13 @@ MJEPersonalSettings = {
 				["Vulpin"] = true,
 				["Quilen"] = true,
 			},
-			["Rats"] = true,
+			["Dinosaurs"] = {
+				["Direhorns"] = true,
+				["Brutosaurs"] = true,
+				["Raptors"] = true,
+				["Falcosaurs"] = true,
+				["Pterrordaxes"] = true,
+			},
 			["Wolves"] = {
 				["Undead Wolves"] = true,
 				["Lupine"] = true,
@@ -228,6 +260,8 @@ MJEPersonalSettings = {
 				["Sea Serpents"] = true,
 				["Shardhides"] = true,
 			},
+			["Crabs"] = true,
+			["Jellyfish"] = true,
 			["Ungulates"] = {
 				["Mammoths"] = true,
 				["Elekks"] = true,
@@ -241,8 +275,6 @@ MJEPersonalSettings = {
 				["Riverbeasts"] = true,
 				["Runestag"] = true,
 			},
-			["Jellyfish"] = true,
-			["Crabs"] = true,
 			["Elementals"] = {
 				["Sabers"] = true,
 				["Wind Drakes"] = true,
@@ -252,19 +284,13 @@ MJEPersonalSettings = {
 				["Others"] = true,
 			},
 			["Rays"] = {
-				["Fathom Rays"] = true,
 				["Nether Rays"] = true,
-				["Mana Rays"] = true,
 				["Stingrays"] = true,
+				["Mana Rays"] = true,
+				["Fathom Rays"] = true,
 			},
 			["Vombata"] = true,
-			["Dinosaurs"] = {
-				["Direhorns"] = true,
-				["Brutosaurs"] = true,
-				["Raptors"] = true,
-				["Falcosaurs"] = true,
-				["Pterrordaxes"] = true,
-			},
+			["Rats"] = true,
 			["Demons"] = {
 				["Felsabers"] = true,
 				["Ur'zul"] = true,
@@ -273,22 +299,15 @@ MJEPersonalSettings = {
 				["Infernals"] = true,
 			},
 			["Rylaks"] = true,
-			["Snail"] = true,
 		},
-		["mountType"] = {
-			["repair"] = true,
-			["flying"] = true,
-			["underwater"] = true,
-			["passenger"] = true,
-			["ground"] = true,
-			["transform"] = true,
-		},
+		["onlyUsable"] = false,
 		["onlyTradable"] = false,
 		["collected"] = true,
 		["onlyRecent"] = false,
-		["notCollected"] = true,
+		["hidden"] = false,
 	},
 	["personalHiddenMounts"] = false,
+	["searchInNotes"] = true,
 	["searchInDescription"] = true,
 	["autoFavor"] = false,
 }

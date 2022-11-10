@@ -41,23 +41,7 @@ Quartz3DB = {
 				},
 			},
 		},
-		["Player"] = {
-			["profiles"] = {
-				["Default"] = {
-					["h"] = 26,
-					["nametextx"] = 10,
-					["w"] = 297,
-					["y"] = -172.5997503846857,
-					["font"] = "Arial Narrow",
-					["icongap"] = 4,
-					["point"] = "CENTER",
-					["scale"] = 0.800000011920929,
-					["border"] = "None",
-					["texture"] = "Solid",
-					["x"] = 4.000112020970846,
-					["alpha"] = 0.75,
-				},
-			},
+		["EnemyCasts"] = {
 		},
 		["GCD"] = {
 		},
@@ -82,7 +66,7 @@ Quartz3DB = {
 						1, -- [4]
 					},
 					["w"] = 207,
-					["y"] = 120,
+					["y"] = 134.0002049234136,
 					["font"] = "Arial Narrow",
 					["icongap"] = 4,
 					["iconposition"] = "left",
@@ -90,7 +74,7 @@ Quartz3DB = {
 					["scale"] = 0.8999999761581421,
 					["border"] = "None",
 					["texture"] = "Solid",
-					["x"] = -265,
+					["x"] = -267.9999939176778,
 					["noInterruptChangeBorder"] = false,
 					["alpha"] = 0.75,
 				},
@@ -98,7 +82,23 @@ Quartz3DB = {
 		},
 		["Mirror"] = {
 		},
-		["EnemyCasts"] = {
+		["Player"] = {
+			["profiles"] = {
+				["Default"] = {
+					["h"] = 26,
+					["nametextx"] = 10,
+					["w"] = 297,
+					["y"] = -172.5997503846857,
+					["font"] = "Arial Narrow",
+					["icongap"] = 4,
+					["point"] = "CENTER",
+					["scale"] = 0.800000011920929,
+					["border"] = "None",
+					["texture"] = "Solid",
+					["x"] = 4.000112020970846,
+					["alpha"] = 0.75,
+				},
+			},
 		},
 		["Latency"] = {
 		},
@@ -118,11 +118,12 @@ Quartz3DB = {
 		["Cyf - Tichondrius"] = "Default",
 		["Wthrename - Tichondrius"] = "Default",
 		["Gerold - Tichondrius"] = "Default",
+		["Syhlo - Tichondrius"] = "Default",
 		["Scatterffs - Ragnaros"] = "Default",
 		["Syhlo - Thrall"] = "Default",
 		["Youreterribl - Burning Legion"] = "Default",
-		["Syhdk - Thrall"] = "Default",
 		["Pandamounts - Tichondrius"] = "Default",
+		["Syhdk - Thrall"] = "Default",
 		["Syhlol - Illidan"] = "Default",
 		["Syhloc - Thrall"] = "Default",
 		["Syh - Thrall"] = "Default",

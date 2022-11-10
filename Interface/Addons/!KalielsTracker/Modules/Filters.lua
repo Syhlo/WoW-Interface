@@ -22,7 +22,7 @@ local db, dbChar
 local mediaPath = "Interface\\AddOns\\"..addonName.."\\Media\\"
 
 local KTF = KT.frame
-local OTF = ObjectiveTrackerFrame
+local OTF = KT_ObjectiveTrackerFrame
 local OTFHeader = OTF.HeaderMenu
 
 local continents = KT.GetMapContinents()
@@ -81,7 +81,7 @@ local function RemoveFavorite(type, id)
 end
 
 local function SetHooks()
-	local bck_ObjectiveTracker_OnEvent = OTF:GetScript("OnEvent")
+	local bck_KT_ObjectiveTracker_OnEvent = OTF:GetScript("OnEvent")
 	OTF:SetScript("OnEvent", function(self, event, ...)
 		if event == "QUEST_ACCEPTED" then
 			local questID = ...
@@ -89,25 +89,18 @@ local function SetHooks()
 				return
 			end
 		end
-		bck_ObjectiveTracker_OnEvent(self, event, ...)
+		bck_KT_ObjectiveTracker_OnEvent(self, event, ...)
 	end)
 
 	-- Quests
-	local bck_QuestObjectiveTracker_UntrackQuest = QuestObjectiveTracker_UntrackQuest
-	QuestObjectiveTracker_UntrackQuest = function(dropDownButton, questID)
+	local bck_KT_QuestObjectiveTracker_UntrackQuest = KT_QuestObjectiveTracker_UntrackQuest
+	KT_QuestObjectiveTracker_UntrackQuest = function(dropDownButton, questID)
 		if not db.filterAuto[1] then
-			bck_QuestObjectiveTracker_UntrackQuest(dropDownButton, questID)
+			bck_KT_QuestObjectiveTracker_UntrackQuest(dropDownButton, questID)
 		end
 	end
 	
-	local bck_QuestMapQuestOptions_TrackQuest = QuestMapQuestOptions_TrackQuest
-	QuestMapQuestOptions_TrackQuest = function(questID)
-		if not db.filterAuto[1] then
-			bck_QuestMapQuestOptions_TrackQuest(questID)
-		end
-	end
-
-	hooksecurefunc("QuestObjectiveTracker_OnOpenDropDown", function(self)
+	hooksecurefunc("KT_QuestObjectiveTracker_OnOpenDropDown", function(self)
 		local block = self.activeFrame
 
 		local info = MSA_DropDownMenu_CreateInfo()
@@ -126,14 +119,14 @@ local function SetHooks()
 	end)
 	
 	-- Achievements
-	local bck_AchievementObjectiveTracker_UntrackAchievement = AchievementObjectiveTracker_UntrackAchievement
-	AchievementObjectiveTracker_UntrackAchievement = function(dropDownButton, achievementID)
+	local bck_KT_AchievementObjectiveTracker_UntrackAchievement = KT_AchievementObjectiveTracker_UntrackAchievement
+	KT_AchievementObjectiveTracker_UntrackAchievement = function(dropDownButton, achievementID)
 		if not db.filterAuto[2] then
-			bck_AchievementObjectiveTracker_UntrackAchievement(dropDownButton, achievementID)
+			bck_KT_AchievementObjectiveTracker_UntrackAchievement(dropDownButton, achievementID)
 		end
 	end
 
-	hooksecurefunc("AchievementObjectiveTracker_OnOpenDropDown", function(self)
+	hooksecurefunc("KT_AchievementObjectiveTracker_OnOpenDropDown", function(self)
 		local block = self.activeFrame
 
 		local info = MSA_DropDownMenu_CreateInfo()
@@ -151,7 +144,14 @@ local function SetHooks()
 		MSA_DropDownMenu_AddButton(info, MSA_DROPDOWN_MENU_LEVEL)
 	end)
 
-	-- Quest Log
+	-- Quest Log - QuestMapFrame.lua
+	local bck_QuestMapQuestOptions_TrackQuest = QuestMapQuestOptions_TrackQuest
+	QuestMapQuestOptions_TrackQuest = function(questID)
+		if not db.filterAuto[1] then
+			bck_QuestMapQuestOptions_TrackQuest(questID)
+		end
+	end
+
 	hooksecurefunc("QuestMapFrame_UpdateQuestDetailsButtons", function()
 		if db.filterAuto[1] then
 			QuestMapFrame.DetailsFrame.TrackButton:Disable()
@@ -162,7 +162,7 @@ local function SetHooks()
 		end
 	end)
 
-	-- POI
+	-- POI - QuestPOI.lua
 	local bck_QuestPOIButton_OnClick = QuestPOIButton_OnClick
 	QuestPOIButton_OnClick = function(self)
 		if not QuestUtils_IsQuestWatched(self.questID) and db.filterAuto[1] then
@@ -176,20 +176,21 @@ local function SetHooks()
 	end
 end
 
+-- Blizzard_AchievementUI
 local function SetHooks_AchievementUI()
-	local bck_AchievementButton_ToggleTracking = AchievementButton_ToggleTracking
-	AchievementButton_ToggleTracking = function(id)
+	local bck_AchievementTemplateMixin_ToggleTracking = AchievementTemplateMixin.ToggleTracking
+	function AchievementTemplateMixin:ToggleTracking()
 		if not db.filterAuto[2] then
-			return bck_AchievementButton_ToggleTracking(id)
+			return bck_AchievementTemplateMixin_ToggleTracking(self)
 		end
 	end
 	
-	hooksecurefunc("AchievementButton_DisplayAchievement", function(button, category, achievement, selectionID, renderOffScreen)
-		if not button.completed then
+	hooksecurefunc(AchievementTemplateMixin, "Init", function(self, elementData)
+		if not self.completed then
 			if db.filterAuto[2] then
-				button.tracked:Disable()
+				self.Tracked:Disable()
 			else
-				button.tracked:Enable()
+				self.Tracked:Enable()
 			end
 		end
 	end)
@@ -235,7 +236,7 @@ local function IsInstanceQuest(questID)
 	return false
 end
 
-local function Filter_Quests(self, spec, idx)
+local function Filter_Quests(spec, idx)
 	if not spec then return end
 	local numEntries, _ = C_QuestLog.GetNumQuestLogEntries()
 
@@ -342,13 +343,13 @@ local function Filter_Quests(self, spec, idx)
 	KT.stopUpdate = false
 
 	C_QuestLog.SortQuestWatches()
-	ObjectiveTracker_Update(OBJECTIVE_TRACKER_UPDATE_MODULE_QUEST)
+	KT_ObjectiveTracker_Update(KT_OBJECTIVE_TRACKER_UPDATE_MODULE_QUEST)
 	if C_SuperTrack.GetSuperTrackedQuestID() == 0 then
-		QuestSuperTracking_ChooseClosestQuest()
+		KT_QuestSuperTracking_ChooseClosestQuest()
 	end
 end
 
-local function Filter_Achievements(self, spec)
+local function Filter_Achievements(spec)
 	if not spec then return end
 	local trackedAchievements = { GetTrackedAchievements() }
 
@@ -510,7 +511,7 @@ local function Filter_Achievements(self, spec)
 	if AchievementFrame then
 		AchievementFrameAchievements_ForceUpdate()
 	end
-	ObjectiveTracker_Update(OBJECTIVE_TRACKER_UPDATE_MODULE_ACHIEVEMENT)
+	KT_ObjectiveTracker_Update(KT_OBJECTIVE_TRACKER_UPDATE_MODULE_ACHIEVEMENT)
 end
 
 local DropDown_Initialize	-- function
@@ -528,13 +529,24 @@ local function DropDown_Toggle(level, button)
 	end
 end
 
-local function Filter_AutoTrack(self, id, spec)
+local function Filter_Menu_Quests(self, spec, idx)
+	KT.collapsedByUser = nil
+	Filter_Quests(spec, idx)
+end
+
+local function Filter_Menu_Achievements(self, spec)
+	KT.collapsedByUser = nil
+	Filter_Achievements(spec)
+end
+
+local function Filter_Menu_AutoTrack(self, id, spec)
 	db.filterAuto[id] = (db.filterAuto[id] ~= spec) and spec or nil
 	if db.filterAuto[id] then
+		KT.collapsedByUser = nil
 		if id == 1 then
-			Filter_Quests(self, spec)
+			Filter_Quests(spec)
 		elseif id == 2 then
-			Filter_Achievements(self, spec)
+			Filter_Achievements(spec)
 		end
 		KTF.FilterButton:GetNormalTexture():SetVertexColor(0, 1, 0)
 	else
@@ -555,7 +567,7 @@ local function Filter_AchievCat_CheckAll(self, state)
 		db.filterAchievCat[id] = state
 	end
 	if db.filterAuto[2] then
-		Filter_Achievements(_, db.filterAuto[2])
+		Filter_Menu_Achievements(self, db.filterAuto[2])
 		MSA_CloseDropDownMenus()
 	else
 		local listFrame = _G["MSA_DropDownList"..MSA_DROPDOWNMENU_MENU_LEVEL]
@@ -587,7 +599,7 @@ function DropDown_Initialize(self, level)
 
 		info.isTitle = false
 		info.disabled = (db.filterAuto[1])
-		info.func = Filter_Quests
+		info.func = Filter_Menu_Quests
 
 		info.text = "All  ("..dbChar.quests.num..")"
 		info.hasArrow = not (db.filterAuto[1])
@@ -637,7 +649,7 @@ function DropDown_Initialize(self, level)
 		info.arg1 = 1
 		info.arg2 = "zone"
 		info.checked = (db.filterAuto[info.arg1] == info.arg2)
-		info.func = Filter_AutoTrack
+		info.func = Filter_Menu_AutoTrack
 		MSA_DropDownMenu_AddButton(info)
 
 		MSA_DropDownMenu_AddSeparator(info)
@@ -659,7 +671,7 @@ function DropDown_Initialize(self, level)
 
 		info.keepShownOnClick = false
 		info.hasArrow = false
-		info.func = Filter_Achievements
+		info.func = Filter_Menu_Achievements
 
 		info.text = "Favorites"
 		info.colorCode = "|cff009bff"
@@ -689,7 +701,7 @@ function DropDown_Initialize(self, level)
 		info.arg1 = 2
 		info.arg2 = "zone"
 		info.checked = (db.filterAuto[info.arg1] == info.arg2)
-		info.func = Filter_AutoTrack
+		info.func = Filter_Menu_AutoTrack
 		MSA_DropDownMenu_AddButton(info)
 
 		-- Addon - PetTracker
@@ -709,7 +721,7 @@ function DropDown_Initialize(self, level)
 			info.func = function()
 				PetTracker.Tracker:Toggle()
 				if dbChar.collapsed and PetTracker.sets.trackPets then
-					ObjectiveTracker_MinimizeButton_OnClick()
+					KT:MinimizeButton_OnClick(true)
 				end
 			end
 			MSA_DropDownMenu_AddButton(info)
@@ -726,7 +738,7 @@ function DropDown_Initialize(self, level)
 
 		if MSA_DROPDOWNMENU_MENU_VALUE == 1 then
 			info.arg1 = "group"
-			info.func = Filter_Quests
+			info.func = Filter_Menu_Quests
 
 			if numEntries > 0 then
 				local headerTitle, headerOnMap, headerCampaign, headerShown
@@ -777,7 +789,7 @@ function DropDown_Initialize(self, level)
 					info.func = function(_, arg)
 						db.filterAchievCat[arg] = not db.filterAchievCat[arg]
 						if db.filterAuto[2] then
-							Filter_Achievements(_, db.filterAuto[2])
+							Filter_Menu_Achievements(_, db.filterAuto[2])
 							MSA_CloseDropDownMenus()
 						end
 					end
@@ -805,8 +817,8 @@ local function SetFrames()
 				end
 			elseif event == "QUEST_POI_UPDATE" then
 				KT.questStateStopUpdate = true
-				Filter_Quests(_, "zone")
-				QuestSuperTracking_OnQuestTracked(pendingQuestID)
+				Filter_Quests("zone")
+				KT_QuestSuperTracking_OnQuestTracked(pendingQuestID)
 				pendingQuestID = nil
 				KT.questStateStopUpdate = false
 				self:UnregisterEvent(event)
@@ -818,23 +830,19 @@ local function SetFrames()
 			elseif event == "ZONE_CHANGED_NEW_AREA" then
 				if not KT.IsInBetween() then
 					C_Timer.After(0, function()
-						KT.autoExpand = false
 						if db.filterAuto[1] == "zone" then
-							Filter_Quests(_, "zone")
+							Filter_Quests("zone")
 						end
 						if db.filterAuto[2] == "zone" then
-							Filter_Achievements(_, "zone")
+							Filter_Achievements("zone")
 						end
-						KT.autoExpand = true
 					end)
 				end
 			elseif event == "ZONE_CHANGED" or event == "ZONE_CHANGED_INDOORS" then
 				if not KT.IsInBetween() then
-					KT.autoExpand = false
 					if db.filterAuto[1] == "zone" then
-						Filter_Quests(_, "zone")
+						Filter_Quests("zone")
 					end
-					KT.autoExpand = true
 				end
 			end
 		end)

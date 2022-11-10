@@ -16,6 +16,8 @@ local mediaPath = "Interface\\AddOns\\"..addonName.."\\Media\\"
 local helpPath = mediaPath.."Help\\"
 local helpName = "help"
 local helpNumPages = 12
+local supportersName = "supporters"
+local supportersNumPages = 1
 local cTitle = "|cffffd200"
 local cBold = "|cff00ffe3"
 local cWarning = "|cffff7f00"
@@ -40,6 +42,34 @@ local function AddonInfo(name)
 		info = info.." |cffff0000is not installed|r."
 	end
 	return info
+end
+
+local function SetFormatedPatronName(tier, name, realm, note)
+	if realm then
+		realm = " @"..realm
+	else
+		realm = ""
+	end
+	if note then
+		note = " ... "..note
+	else
+		note = ""
+	end
+	return format("- |cff%s%s|r|cff7f7f7f%s%s|r\n", KT.QUALITY_COLORS[tier], name, realm, note)
+end
+
+local function SetFormatedPlayerName(name, realm, note)
+	if realm then
+		realm = " @"..realm
+	else
+		realm = ""
+	end
+	if note then
+		note = " ... "..note
+	else
+		note = ""
+	end
+	return format("- %s|cff7f7f7f%s%s|r\n", name, realm, note)
 end
 
 local function SetupTutorials()
@@ -165,7 +195,7 @@ local function SetupTutorials()
 			image = helpPath.."help_tracker-modules",
 			text = cTitle.."Order of Modules|r\n\n"..
 					"Allows to change the order of modules inside the tracker. Supports all modules including external (e.g. PetTracker).\n\n\n"..
-					cTitle.."Collapsible Modules|r  "..new.."\n\n"..
+					cTitle.."Collapsible Modules|r\n\n"..
 					"All modules, including external ones, can be collapsed by clicking on the module header.",
 			shine = KTF,
 			shineTop = 5,
@@ -205,50 +235,61 @@ local function SetupTutorials()
 			shineRight = 11,
 		},
 		{	-- 11
-			text = cTitle.."LFG Hack|r  "..new.."\n\n"..
+			text = cTitle.."         Hacks|r\n\n"..
+					cWarning.."Warning:|r Hacks may affect other addons!\n\n"..
+					cTitle.."LFG Hack|r\n\n"..
 					cBold.."Affects the small Eye buttons|r for finding groups inside the tracker. When the hack is active, "..
 					"the buttons work without errors. When hack is inactive, the buttons are not available.\n\n"..
-					cWarning2.."Negative|r impacts:|r\n"..
+					cWarning2.."Negative|r impacts:\n"..
 					"- Inside the dialog for create Premade Group is hidden item \"Goal\".\n"..
 					"- Tooltips of items in the list of Premade Groups have a hidden 2nd (green) row"..
 					offs.."with \"Goal\".\n"..
 					"- Inside the dialog for create Premade Group, no automatically set the \"Title\","..
 					offs.."e.g. keystone level for Mythic+.\n\n"..
-					"LFG Hack is enabled by default, you can disable it in "..KT.title.." Options (section \"Hacks\").\n\n"..
-					cWarning.."Warning:|r Hacks may affect other addons!",
+					"LFG Hack is enabled by default, you can disable it in "..KT.title.." Options (section \"Hacks\").",
+			textY = -20,
 		},
 		{	-- 12
-			text = cTitle.."         What's NEW in version |r|cffffffff4.4.0|r\n\n"..
-					cWarning2.."I'm sorry for the delay in updating ... COVID got me.|r\n\n"..
+			text = cTitle.."         What's NEW|r\n\n"..
+					cTitle.."Version 6.0.0|r\n"..
+					"Many changes have been made in this version as error prevention. These changes may result in the cancellation of cooperation with other addons.\n\n"..
+					"All profiles have been reset, because the new version is not compatible with stored settings.\n\n"..
+					"- IMPROVED - Edit Mode Hack - Hack has been reduced and all negative"..
+					offs.."impacts have been removed. Removed hack info from Options and Help.\n"..
+					"- IMPROVED - Quest Log - Quest DropDown menu\n"..
+					"- IMPROVED - Addons version comparison\n"..
+					"- FIXED - Torghast - Error and Maw Buffs positioning\n"..
+					"- FIXED - Error when activating Party Sync, wrong Group quest data (Blizz bug)\n"..
+					"- FIXED - Error when show tooltip during Party Sync switching\n"..
+					"- UPDATED - Prevents opening Options in Edit Mode\n"..
+					"- UPDATED - Quests - Active Button - compatibility for Default, Bartender,"..
+					offs.."ElvUI, Tukui\n"..
+					"- UPDATED - Help - Supporters (Patreon)\n"..
+					"- UPDATED - Addon support - Masque 10.0.1\n"..
+					"- UPDATED - Addon support - PetTracker 10.0\n"..
+					"- UPDATED - Addon support - TomTom 3.3.4-release\n"..
+					"- UPDATED - Addon support - ElvUI 12.99, Tukui 20.33\n"..
+					"- REMOVED - Compatibility - addon Chinchilla Minimap\n"..
+					"- REMOVED - Compatibility - addon Dugi Questing Essential\n"..
+					"- REMOVED - Compatibility - addon Aurora\n"..
+					"- REMOVED - Compatibility - addon MoveAnything\n\n"..
 
-					"- ADDED - Support for WoW 9.1.5\n"..
-					"- ADDED - "..cBold.."Collapsible Tracker sections|r (Quests, Achievements etc.)\n"..
-					"- ADDED - LFG Hack - Affects the small Eye buttons for finding groups inside"..
-					offs.."the tracker (fix errors), "..cBold.."see new Help page 11|r\n"..
-					"- FIXED - Torghast - Wrong display of Blessings and Torments\n"..
-					"- IMPROVED - Selection of tracked quest\n"..
-					"- IMPROVED - Counting quests method - Calling quests not included now\n"..
-					"- IMPROVED - Auto Zone filter - Tracker auto expand\n"..
-					"- UPDATED - Addon support - Masque 9.1.5\n"..
-					"- UPDATED - Addon support - PetTracker 9.1.2\n"..
-					"- UPDATED - Addon support - TomTom v3.0.3\n"..
-					"- UPDATED - Addon support - ElvUI 12.62, Tukui 20.25, RealUI 2.3.1,"..
-					offs.."SpartanUI 6.0.27\n"..
-					"- UPDATED - Help (new page 11)\n"..
-					"- UPDATED - Libs\n\n"..
-
-					cTitle.."WoW 9.1.5 - Known issues w/o solution|r\n"..
+					cTitle.."WoW 10.0.0 - Known issues w/o solution|r\n"..
 					"- Clicking on tracked quests or achievements has no response during combat.\n"..
 					"- Header buttons Q and A don't work during combat.\n\n"..
 
 					cTitle.."Issue reporting|r\n"..
 					"For reporting please use "..cBold.."Tickets|r instead of Comments on CurseForge.\n\n\n\n"..
 
-					cWarning.."Before reporting of error, please deactivate all other addons and make sure the bug is not caused by a collision with another addon.|r\n\n"..
-					cWarning2.."All error reports with general information \"addon does not work\" or only with an error log without a description, I ignore|r ... Please don't waste my time.",
+					cWarning.."Before reporting of error, please deactivate all other addons and make sure the bug is not caused by a collision with another addon.|r",
 			textY = -20,
-			editbox = "https://www.curseforge.com/wow/addons/kaliels-tracker/issues",
-			editboxBottom = 75,
+			editbox = {
+				{
+					text = "https://www.curseforge.com/wow/addons/kaliels-tracker/issues",
+					width = 450,
+					bottom = 40,
+				}
+			},
 			shine = KTF,
 			shineTop = 5,
 			shineBottom = -5,
@@ -257,7 +298,7 @@ local function SetupTutorials()
 		},
 		onShow = function(self, i)
 			if dbChar.collapsed then
-				ObjectiveTracker_MinimizeButton_OnClick()
+				KT:MinimizeButton_OnClick(true)
 			end
 			if i == 2 then
 				if KTF.FilterButton then
@@ -267,7 +308,7 @@ local function SetupTutorials()
 				end
 			elseif i == 3 then
 				local questID = C_QuestLog.GetQuestIDForQuestWatchIndex(1)
-				local block = QUEST_TRACKER_MODULE:GetExistingBlock(questID)
+				local block = KT_QUEST_TRACKER_MODULE:GetExistingBlock(questID)
 				if block then
 					self[i].shine = block
 				end
@@ -276,14 +317,49 @@ local function SetupTutorials()
 			elseif i == 10 then
 				for j=1, C_QuestLog.GetNumQuestWatches() do
 					local questID = C_QuestLog.GetQuestIDForQuestWatchIndex(j)
-					local block = QUEST_TRACKER_MODULE:GetExistingBlock(questID)
+					local block = KT_QUEST_TRACKER_MODULE:GetExistingBlock(questID)
 					if block and (QuestHasPOIInfo(questID) or block.questCompleted) then
-						self[i].shine = QuestPOI_FindButton(ObjectiveTrackerFrame.BlocksFrame, questID)
+						self[i].shine = QuestPOI_FindButton(KT_ObjectiveTrackerFrame.BlocksFrame, questID)
 						break
 					end
 				end
 			end
+		end,
+		onHide = function()
+			T.TriggerTutorial("supporters", 1)
 		end
+	})
+
+	T.RegisterTutorial("supporters", {
+		savedvariable = KT.db.global,
+		key = "supportersTutorial",
+		title = KT.title.." |cffffffff"..KT.version.."|r",
+		icon = helpPath.."KT_logo",
+		font = "Fonts\\FRIZQT__.TTF",
+		width = 552,
+		imageHeight = 256,
+		{	-- 1
+			text = cTitle.."         Become a Patron|r\n\n"..
+					"If you like "..KT.title..", support me on |cfff34a54Patreon|r.\n\n"..
+					"Click on button  |T"..helpPath.."help_patreon:20:154:1:0:256:32:0:156:0:20|t  on CurseForge addon page.\n\n"..
+					"After 10 years of working on an addon, I started Patreon. It's created as\na compensation for the amount "..
+					"of time that addon development requires.\n\n"..
+					"                                    Many thanks to all supporters  |T"..helpPath.."help_patreon:16:16:0:0:256:32:157:173:0:16|t\n\n"..
+					cTitle.."Patrons|r\n"..
+					SetFormatedPatronName("Legendary", "Zayah", "Vek'nilash")..
+					SetFormatedPatronName("Epic", "Squishses", "Area 52")..
+					SetFormatedPatronName("Uncommon", "Flex (drantor)")..
+					SetFormatedPatronName("Uncommon", "Kyle Fuller")..
+					SetFormatedPatronName("Uncommon", "Pablo Sebastián Molina Silva")..
+					SetFormatedPatronName("Uncommon", "Torresman", "Drak'thul")..
+					SetFormatedPatronName("Uncommon", "Xeelee", "Razorfen")..
+					SetFormatedPatronName("Common", "Darren Divecha")..
+					"\n"..
+					cTitle.."Testers|r\n"..
+					SetFormatedPlayerName("Asimeria", "Drak'thul")..
+					SetFormatedPlayerName("Torresman", "Drak'thul"),
+			textY = -20,
+		},
 	})
 end
 
@@ -313,7 +389,13 @@ function M:OnEnable()
 end
 
 function M:ShowHelp(index)
-	InterfaceOptionsFrame:Hide()
+	HideUIPanel(SettingsPanel)
 	T.ResetTutorial(helpName)
 	T.TriggerTutorial(helpName, helpNumPages, index or false)
+end
+
+function M:ShowSupporters()
+	HideUIPanel(SettingsPanel)
+	T.ResetTutorial(supportersName)
+	T.TriggerTutorial(supportersName, supportersNumPages)
 end

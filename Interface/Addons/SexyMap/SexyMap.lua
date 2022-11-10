@@ -68,10 +68,16 @@ mod.options = {
 			name = ROTATE_MINIMAP,
 			desc = OPTION_TOOLTIP_ROTATE_MINIMAP,
 			get = function()
-				return InterfaceOptionsDisplayPanelRotateMinimap:GetValue() == "1" and true
+				return mod.db.rotate
 			end,
-			set = function()
-				InterfaceOptionsDisplayPanelRotateMinimap:Click()
+			set = function(_, value)
+				if value then
+					mod.db.rotate = true
+					C_CVar.SetCVar("rotateMinimap", 1)
+				else
+					mod.db.rotate = nil
+					C_CVar.SetCVar("rotateMinimap", 0)
+				end
 			end,
 		},
 		rightClickToConfig = {
@@ -96,7 +102,7 @@ mod.options = {
 			bigStep = 0.01,
 			width = 2,
 			get = function(info)
-				return mod.db.scale or 1
+				return mod.db.scale or (MinimapNorthTag and 1 or 1.1)
 			end,
 			set = function(info, v)
 				mod.db.scale = v
@@ -111,16 +117,17 @@ mod.options = {
 				return mod.db.northTag
 			end,
 			set = function(info, v)
+				if not MinimapNorthTag then return end
 				if v then
 					MinimapNorthTag.Show = MinimapNorthTag.oldShow
 					MinimapNorthTag.oldShow = nil
 					MinimapCompassTexture.Show = MinimapCompassTexture.oldShow
 					MinimapCompassTexture.oldShow = nil
-					if InterfaceOptionsDisplayPanelRotateMinimap:GetValue() == "1" then
-						MinimapCompassTexture:Show()
-					else
-						MinimapNorthTag:Show()
-					end
+					--if InterfaceOptionsDisplayPanelRotateMinimap:GetValue() == "1" then
+					--	MinimapCompassTexture:Show()
+					--else
+					--	MinimapNorthTag:Show()
+					--end
 				else
 					MinimapNorthTag:Hide()
 					MinimapNorthTag.oldShow = MinimapNorthTag.Show
@@ -131,6 +138,7 @@ mod.options = {
 				end
 				mod.db.northTag = v
 			end,
+			disabled = not MinimapNorthTag,
 		},
 		zoom = {
 			order = 7,
@@ -404,7 +412,7 @@ function mod:PLAYER_LOGIN()
 		if button == "RightButton" and mod.db.rightClickToConfig then
 			SlashCmdList.SexyMap()
 		else
-			Minimap_OnClick(frame, button)
+			Minimap:OnClick()
 		end
 	end)
 
@@ -461,6 +469,21 @@ end)
 MinimapBackdrop:ClearAllPoints()
 MinimapBackdrop:SetPoint("CENTER", Minimap, "CENTER", -8, -23)
 
+-- Remove this fugly attempt by Blizz
+mod.frame.SetParent(AddonCompartmentFrame, mod.frame)
+hooksecurefunc(AddonCompartmentFrame, "SetParent", function()
+	mod.frame.SetParent(AddonCompartmentFrame, mod.frame)
+end)
+
+-- To turn off Blizz auto hiding the zoom buttons, we pretend the mouse is always over it.
+-- The alternative is killing the Minimap OnEnter/OnLeave script which could screw over other addons.
+-- See MinimapMixin:OnLeave() on line 185 of FrameXML/Minimap.lua
+local fakeMouseOver = function() return true end
+Minimap.ZoomIn.IsMouseOver = fakeMouseOver
+Minimap.ZoomIn:Show()
+Minimap.ZoomOut.IsMouseOver = fakeMouseOver
+Minimap.ZoomOut:Show()
+
 function mod:SetupMap()
 	local Minimap = Minimap
 
@@ -492,7 +515,11 @@ function mod:SetupMap()
 		current = current + 1
 		if started == current then
 			for i = 1, Minimap:GetZoom() or 0 do
-				Minimap_ZoomOutClick() -- Call it directly so we don't run our own hook
+				if Minimap_ZoomOutClick then
+					Minimap_ZoomOutClick() -- Call it directly so we don't run our own hook
+				else
+					Minimap.ZoomOut:OnClick()
+				end
 			end
 			started, current = 0, 0
 		end
@@ -505,16 +532,21 @@ function mod:SetupMap()
 		end
 	end
 	zoomBtnFunc()
-	MinimapZoomIn:HookScript("OnClick", zoomBtnFunc)
-	MinimapZoomOut:HookScript("OnClick", zoomBtnFunc)
+	if MinimapZoomIn then
+		MinimapZoomIn:HookScript("OnClick", zoomBtnFunc)
+		MinimapZoomOut:HookScript("OnClick", zoomBtnFunc)
+	else
+		Minimap.ZoomIn:HookScript("OnClick", zoomBtnFunc)
+		Minimap.ZoomOut:HookScript("OnClick", zoomBtnFunc)
+	end
 
 	--[[ MouseWheel Zoom ]]--
 	Minimap:EnableMouseWheel(true)
 	Minimap:SetScript("OnMouseWheel", function(frame, d)
 		if d > 0 then
-			MinimapZoomIn:Click()
+			(MinimapZoomIn or Minimap.ZoomIn):Click()
 		elseif d < 0 then
-			MinimapZoomOut:Click()
+			(MinimapZoomOut or Minimap.ZoomOut):Click()
 		end
 	end)
 
@@ -526,7 +558,7 @@ function mod:SetupMap()
 	Minimap:SetQuestBlobRingScalar(0)
 	Minimap:SetQuestBlobRingAlpha(0)
 
-	if not mod.db.northTag then
+	if MinimapNorthTag and not mod.db.northTag then
 		MinimapNorthTag:Hide()
 		MinimapNorthTag.oldShow = MinimapNorthTag.Show
 		MinimapNorthTag.Show = MinimapNorthTag.Hide
@@ -535,11 +567,23 @@ function mod:SetupMap()
 		MinimapCompassTexture.Show = MinimapCompassTexture.Hide
 	end
 
-	MinimapBorderTop:Hide()
+	if MinimapBorderTop then
+		MinimapBorderTop:Hide()
+	end
 	Minimap:RegisterForDrag("LeftButton")
 	Minimap:SetClampedToScreen(mod.db.clamp)
-	Minimap:SetScale(mod.db.scale or 1)
+	Minimap:SetScale(mod.db.scale or (MinimapNorthTag and 1 or 1.1))
+	Minimap:SetSize(140, 140)
 	Minimap:SetMovable(not mod.db.lock)
+
+	if mod.db.rotate then
+		C_CVar.SetCVar("rotateMinimap", 1)
+	end
+	hooksecurefunc(MinimapCluster, "SetRotateMinimap", function()
+		if mod.db.rotate then
+			C_CVar.SetCVar("rotateMinimap", 1)
+		end
+	end)
 
 	Minimap:SetScript("OnDragStart", function(self) if self:IsMovable() then self:StartMoving() end end)
 	Minimap:SetScript("OnDragStop", function(self)
@@ -549,8 +593,12 @@ function mod:SetupMap()
 	end)
 
 	if mod.db.point then
-		Minimap:ClearAllPoints()
-		Minimap:SetPoint(mod.db.point, UIParent, mod.db.relpoint, mod.db.x, mod.db.y)
+		mod.frame.ClearAllPoints(Minimap)
+		mod.frame.SetPoint(Minimap, mod.db.point, UIParent, mod.db.relpoint, mod.db.x, mod.db.y)
+		hooksecurefunc(Minimap, "SetPoint", function() -- Edit mode for the minimap has a "header underneath" option which changes Minimap points
+			mod.frame.ClearAllPoints(Minimap)
+			mod.frame.SetPoint(Minimap, mod.db.point, UIParent, mod.db.relpoint, mod.db.x, mod.db.y)
+		end)
 	end
 	self.SetupMap = nil
 end
@@ -559,4 +607,3 @@ function mod:RegisterModuleOptions(modName, optionTbl, displayName)
 	LibStub("AceConfigRegistry-3.0"):RegisterOptionsTable(name..modName, optionTbl, true)
 	LibStub("AceConfigDialog-3.0"):AddToBlizOptions(name..modName, displayName, name)
 end
-

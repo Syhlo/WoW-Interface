@@ -1,7 +1,9 @@
 MegaMacroCachedClass = nil
 MegaMacroCachedSpecialization = nil
 MegaMacroFullyActive = false
-MegaMacroSystemTime = GetTime()
+MegaMacroSystemTime = GetTime
+MegaMacroNextActive = 0
+MegaMacroUpdateIntervall = 2
 
 local f = CreateFrame("Frame", "MegaMacro_EventFrame", UIParent)
 f:RegisterEvent("PLAYER_ENTERING_WORLD")
@@ -11,10 +13,14 @@ f:RegisterEvent("PLAYER_TARGET_CHANGED")
 
 local function OnUpdate(_, elapsed)
     MegaMacroSystemTime = GetTime()
+    if MegaMacroSystemTime < MegaMacroNextActive then
+        return
+    end
     local elapsedMs = elapsed * 1000
     MegaMacroIconEvaluator.Update(elapsedMs)
     MegaMacroActionBarEngine.OnUpdate(elapsed)
     MegaMacroIconNavigator.OnUpdate()
+    MegaMacroNextActive = MegaMacroSystemTime + MegaMacroUpdateIntervall
 end
 
 local function Initialize()
@@ -67,3 +73,5 @@ f:SetScript("OnEvent", function(self, event)
         MegaMacroActionBarEngine.OnTargetChanged()
     end
 end)
+
+MegaMacro_RegisterShiftClicks()

@@ -17,12 +17,13 @@ BigDebuffsDB = {
 		["Cyf - Tichondrius"] = "Default",
 		["Wthrename - Tichondrius"] = "Default",
 		["Gerold - Tichondrius"] = "Default",
+		["Syhlo - Tichondrius"] = "Default",
 		["Scatterffs - Ragnaros"] = "Default",
 		["Youreterribl - Burning Legion"] = "Default",
 		["Syhlol - Illidan"] = "Default",
 		["Syhdk - Thrall"] = "Default",
-		["Syhlo - Thrall"] = "Default",
 		["Pandamounts - Tichondrius"] = "Default",
+		["Syhlo - Thrall"] = "Default",
 		["Syh - Thrall"] = "Default",
 	},
 	["profiles"] = {
@@ -47,12 +48,29 @@ BigDebuffsDB = {
 				},
 			},
 			["unitFrames"] = {
+				["party3"] = {
+				},
+				["party"] = {
+					["enabled"] = false,
+				},
+				["arena2"] = {
+				},
+				["party4"] = {
+				},
+				["arena5"] = {
+				},
 				["arena1"] = {
+				},
+				["party2"] = {
+				},
+				["arena4"] = {
+				},
+				["party1"] = {
+				},
+				["arena3"] = {
 				},
 				["arena"] = {
 					["enabled"] = false,
-				},
-				["arena4"] = {
 				},
 			},
 		},

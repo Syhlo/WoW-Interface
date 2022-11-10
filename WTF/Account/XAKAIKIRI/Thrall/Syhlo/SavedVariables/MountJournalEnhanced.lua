@@ -8,21 +8,23 @@ MJEPersonalSettings = {
 		["showAchievementPoints"] = true,
 		["compactMountList"] = true,
 		["enableCursorKeys"] = true,
+		["colorizeNameByRarity"] = true,
 		["windowSize"] = {
 			0, -- [1]
 			0, -- [2]
 		},
 		["showPersonalCount"] = true,
-		["moveEquipmentSlot"] = true,
+		["unlockDisplayCamera"] = true,
 		["previewButton"] = true,
 		["showShopButton"] = false,
-		["showUsageStatistics"] = true,
-		["unlockDisplayCamera"] = true,
+		["moveEquipmentSlot"] = true,
+		["showStatistics"] = true,
 		["debugMode"] = false,
 	},
 	["hiddenMounts"] = {
 	},
 	["personalUi"] = false,
+	["searchInDescription"] = true,
 	["favoredMounts"] = {
 	},
 	["sort"] = {
@@ -30,6 +32,7 @@ MJEPersonalSettings = {
 		["descending"] = false,
 		["by"] = "name",
 		["favoritesOnTop"] = true,
+		["dragonridingOnTop"] = true,
 		["unusableToBottom"] = false,
 	},
 	["filter"] = {
@@ -42,43 +45,40 @@ MJEPersonalSettings = {
 			true, -- [6]
 			true, -- [7]
 			true, -- [8]
+			true, -- [9]
 			[0] = true,
 		},
 		["source"] = {
-			["Reputation"] = true,
-			["Black Market"] = true,
-			["World Event"] = true,
-			["Island Expedition"] = true,
 			["Instance"] = true,
-			["PVP"] = true,
-			["Promotion"] = true,
-			["Profession"] = true,
+			["Black Market"] = true,
+			["Vendor"] = true,
 			["Achievement"] = true,
+			["Reputation"] = true,
+			["PVP"] = true,
+			["Garrison"] = true,
+			["Drop"] = true,
+			["Island Expedition"] = true,
 			["Shop"] = true,
 			["Covenants"] = true,
-			["Drop"] = true,
+			["Profession"] = true,
 			["Class"] = true,
-			["Vendor"] = true,
+			["World Event"] = true,
 			["Quest"] = true,
-			["Garrison"] = true,
+			["Promotion"] = true,
 		},
-		["hiddenIngame"] = false,
 		["color"] = {
 			255, -- [1]
 			255, -- [2]
 			255, -- [3]
 		},
+		["hiddenIngame"] = false,
 		["hidden"] = false,
-		["onlyUsable"] = false,
-		["mountType"] = {
-			["repair"] = false,
-			["flying"] = true,
-			["underwater"] = false,
-			["passenger"] = true,
-			["ground"] = false,
-			["transform"] = false,
+		["notCollected"] = true,
+		["faction"] = {
+			["horde"] = true,
+			["alliance"] = true,
+			["noFaction"] = true,
 		},
-		["onlyFavorites"] = false,
 		["family"] = {
 			["Arachnids"] = {
 				["Scorpions"] = true,
@@ -113,7 +113,24 @@ MJEPersonalSettings = {
 				["Wyverns"] = true,
 			},
 			["Gargoyle"] = true,
-			["Bats"] = true,
+			["Birds"] = {
+				["Cranes"] = true,
+				["Chickens"] = true,
+				["Raptora"] = true,
+				["Phoenixes"] = true,
+				["Crows"] = true,
+				["Dread Ravens"] = true,
+				["Roc"] = true,
+				["Parrots"] = true,
+				["Pandaren Phoenixes"] = true,
+				["Talonbirds"] = true,
+				["Hawkstriders"] = true,
+				["Tallstriders"] = true,
+				["Mechanical Birds"] = true,
+				["Eagle"] = true,
+				["Albatross"] = true,
+				["Vultures"] = true,
+			},
 			["Cats"] = {
 				["Sabers"] = true,
 				["Stone Cats"] = true,
@@ -129,22 +146,9 @@ MJEPersonalSettings = {
 				["Seahorses"] = true,
 				["Stingrays"] = true,
 			},
-			["Birds"] = {
-				["Cranes"] = true,
-				["Chickens"] = true,
-				["Raptora"] = true,
-				["Phoenixes"] = true,
-				["Crows"] = true,
-				["Roc"] = true,
-				["Dread Ravens"] = true,
-				["Mechanical Birds"] = true,
-				["Talonbirds"] = true,
-				["Hawkstriders"] = true,
-				["Tallstriders"] = true,
-				["Pandaren Phoenixes"] = true,
-				["Parrots"] = true,
-				["Albatross"] = true,
-				["Vultures"] = true,
+			["Mollusc"] = {
+				["Slug"] = true,
+				["Snail"] = true,
 			},
 			["Razorwing"] = true,
 			["Horses"] = {
@@ -175,14 +179,21 @@ MJEPersonalSettings = {
 			},
 			["Carnivorans"] = {
 				["Bears"] = true,
+				["Hyenas"] = true,
 				["Foxes"] = true,
 				["Hounds"] = true,
-				["Hyenas"] = true,
 				["Gargon"] = true,
 				["Vulpin"] = true,
+				["Ottuk"] = true,
 				["Quilen"] = true,
 			},
-			["Rats"] = true,
+			["Dinosaurs"] = {
+				["Direhorns"] = true,
+				["Brutosaurs"] = true,
+				["Raptors"] = true,
+				["Falcosaurs"] = true,
+				["Pterrordaxes"] = true,
+			},
 			["Wolves"] = {
 				["Undead Wolves"] = true,
 				["Lupine"] = true,
@@ -194,6 +205,7 @@ MJEPersonalSettings = {
 			["Humanoids"] = {
 				["Gronnlings"] = true,
 				["Gorger"] = true,
+				["Others"] = true,
 				["Yetis"] = true,
 			},
 			["Amphibian"] = {
@@ -214,10 +226,9 @@ MJEPersonalSettings = {
 				["Gorm"] = true,
 				["Silithids"] = true,
 				["Wasp"] = true,
-				["Ravagers"] = true,
+				["Others"] = true,
 				["Flies"] = true,
 				["Krolusks"] = true,
-				["Bees"] = true,
 				["Aqir Flyers"] = true,
 				["Animite"] = true,
 				["Moth"] = true,
@@ -234,6 +245,8 @@ MJEPersonalSettings = {
 				["Sea Serpents"] = true,
 				["Shardhides"] = true,
 			},
+			["Crabs"] = true,
+			["Jellyfish"] = true,
 			["Ungulates"] = {
 				["Mammoths"] = true,
 				["Elekks"] = true,
@@ -247,8 +260,6 @@ MJEPersonalSettings = {
 				["Riverbeasts"] = true,
 				["Runestag"] = true,
 			},
-			["Jellyfish"] = true,
-			["Crabs"] = true,
 			["Elementals"] = {
 				["Sabers"] = true,
 				["Wind Drakes"] = true,
@@ -258,19 +269,13 @@ MJEPersonalSettings = {
 				["Others"] = true,
 			},
 			["Rays"] = {
-				["Stingrays"] = true,
 				["Fathom Rays"] = true,
-				["Mana Rays"] = true,
 				["Nether Rays"] = true,
+				["Mana Rays"] = true,
+				["Stingrays"] = true,
 			},
 			["Vombata"] = true,
-			["Dinosaurs"] = {
-				["Direhorns"] = true,
-				["Brutosaurs"] = true,
-				["Raptors"] = true,
-				["Falcosaurs"] = true,
-				["Pterrordaxes"] = true,
-			},
+			["Rats"] = true,
 			["Demons"] = {
 				["Felsabers"] = true,
 				["Ur'zul"] = true,
@@ -279,19 +284,33 @@ MJEPersonalSettings = {
 				["Infernals"] = true,
 			},
 			["Rylaks"] = true,
-			["Snail"] = true,
+			["Bats"] = true,
 		},
-		["faction"] = {
-			["horde"] = true,
-			["alliance"] = true,
-			["noFaction"] = true,
+		["onlyFavorites"] = false,
+		["onlyUsable"] = false,
+		["mountType"] = {
+			["repair"] = false,
+			["flying"] = true,
+			["underwater"] = false,
+			["dragonriding"] = true,
+			["passenger"] = true,
+			["ground"] = false,
+			["transform"] = false,
 		},
 		["onlyTradable"] = false,
 		["collected"] = true,
 		["onlyRecent"] = false,
-		["notCollected"] = true,
+		["rarity"] = {
+			true, -- [1]
+			true, -- [2]
+			true, -- [3]
+			true, -- [4]
+			true, -- [5]
+		},
 	},
 	["personalHiddenMounts"] = false,
-	["searchInDescription"] = true,
+	["notes"] = {
+	},
+	["searchInNotes"] = true,
 	["autoFavor"] = false,
 }

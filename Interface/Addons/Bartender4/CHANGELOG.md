@@ -1,8 +1,12 @@
 # Bartender4
 
-## [4.11.6](https://github.com/Nevcairiel/Bartender4/tree/4.11.6) (2022-09-10)
-[Full Changelog](https://github.com/Nevcairiel/Bartender4/compare/4.11.5...4.11.6) [Previous Releases](https://github.com/Nevcairiel/Bartender4/releases)
+## [4.13.5](https://github.com/Nevcairiel/Bartender4/tree/4.13.5) (2022-11-09)
+[Full Changelog](https://github.com/Nevcairiel/Bartender4/compare/4.13.4...4.13.5) [Previous Releases](https://github.com/Nevcairiel/Bartender4/releases)
 
-- Add Wrath DualSpec support  
-- Enable Shadowform and Tree of Life stances on Wrath Classic  
-    Fixes #79  
+- Fix the Pet Bar on Classic Era  
+- Unregister more events on the MainMenuBar  
+- Improve hiding of EditMode managed action bars and reduce taint  
+- Add a PurgeKey utility function  
+    This function can purge a key and force a re-hash of the table to  
+    untaint it  
+- Factor Merge function into a new Util structure  

@@ -1,5 +1,5 @@
 bind BUTTON3 TOGGLEAUTORUN
-bind UP NONE
+bind UP CLICK BT4Button15:LeftButton
 bind S CLICK BT4Button97:LeftButton
 bind DOWN NONE
 bind LEFT NONE
@@ -27,13 +27,12 @@ bind CTRL-7 NONE
 bind CTRL-8 NONE
 bind CTRL-9 NONE
 bind CTRL-0 NONE
-bind TAB TARGETNEARESTENEMYPLAYER
-bind SHIFT-TAB TARGETPREVIOUSENEMYPLAYER
 bind F1 CLICK BT4Button57:LeftButton
 bind F2 CLICK BT4Button59:LeftButton
 bind F3 NONE
 bind F4 CLICK BT4Button113:LeftButton
 bind F5 NONE
+bind SHIFT-F4 CLICK BT4Button16:LeftButton
 bind G CLICK BT4Button109:LeftButton
 bind F CLICK BT4Button111:LeftButton
 bind V CLICK BT4Button101:LeftButton
@@ -81,7 +80,7 @@ bind ALT-- NONE
 bind ALT-= NONE
 bind BUTTON5 NONE
 bind ALT-BACKSPACE NONE
-bind SHIFT-7 CLICK BT4Button13:LeftButton
+bind SHIFT-7 NONE
 bind ` ACTIONBUTTON8
 bind NUMPAD2 CLICK BT4Button26:LeftButton
 bind NUMPAD4 CLICK BT4Button28:LeftButton

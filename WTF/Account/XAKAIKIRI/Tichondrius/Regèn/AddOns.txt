@@ -3,3 +3,8 @@ WeakAurasCompanion: enabled
 WeakAurasArchive: enabled
 Spy: disabled
 Gladius: disabled
+!KalielsTracker: enabled
+BigDebuffs: disabled
+OmniBar: disabled
+TidyPlates_ThreatPlates: disabled
+AutoGear: disabled
